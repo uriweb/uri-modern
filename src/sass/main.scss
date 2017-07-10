@@ -1,0 +1,55 @@
+/* ==============================
+   RESET
+   ============================== */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; text-decoration: none; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+blockquote, q { quotes: none; }
+ol, ul { list-style: none; }
+body { line-height: 1; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* ==============================
+   VARIABLES
+   ============================== */
+
+/* -- Fonts -- */
+
+$header: 'Hind', sans-serif;
+
+/* -- Colors --  */
+
+$lightblue: #c0ddf2;
+$keaneyblue: #2277b3;
+$midblue: #30557e;
+$blue: #002147;
+$darkblue: #001228;
+
+$lightgold: #fefada;
+$midgold: #ffd453;
+$gold: #c4960c;
+
+$white: #ffffff;
+$lightgrey: #f8f8f8;
+$grey: #dddddd;
+$midgrey: #999999;
+$darkgrey: #555555;
+$black: #000000;
+
+$link: #0047c2;
+$linkhover: #003287;
+
+
+/* ==============================
+   IMPORTS
+   ============================== */
+
+@import url("https://fonts.googleapis.com/css?family=Hind:400,600|Open+Sans:400,700") all;
+
+@import 'partials/type';
+@import 'partials/layout';
+
+
+/* PIECES */
+@import 'partials/pieces/programfinder';

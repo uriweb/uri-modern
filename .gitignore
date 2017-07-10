@@ -1,0 +1,5 @@
+.DS_Store
+.jscsrc
+.jshintignore
+node_modules
+work_files

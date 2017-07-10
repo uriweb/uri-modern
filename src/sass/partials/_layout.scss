@@ -1,0 +1,125 @@
+body {
+    background: #f8f8f8;
+    font-family: "Open Sans", sans-serif;
+    font-weight: normal;
+    font-size: 1em;
+    color: #000;
+}
+
+#masthead {
+    width: 100%;
+    background: #002147;
+    padding: 30px 0;
+}
+
+#masthead .site-branding {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 25px;
+    color: #fff;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+}
+
+@media screen and (min-width: 1050px) {
+    #masthead .site-branding {
+        width: 1000px;
+        padding: 0;
+    }
+}
+
+#content {
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 25px;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+}
+
+@media screen and (min-width: 600px) {
+    #content {
+        margin: 60px auto;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    #content {
+        width: 1000px;
+        padding: 0;
+    }
+}
+
+
+/*
+ * TWO COLUMN LAYOUT
+ */
+   
+#twocol:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#twocol #sidebar,
+#twocol #primary {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+#twocol #sidebar {
+    border-bottom: 1px solid $midgrey;
+    padding-bottom: 40px;
+}
+
+#twocol #primary {
+    padding-top: 40px;
+}
+
+@media screen and (min-width: 800px) {
+
+    #twocol #sidebar {
+        width: 20%;
+        float: left;
+        padding-right: 4%;
+        padding-bottom: 30px;
+        border-bottom: none;
+        border-right: 1px solid $midgrey;
+    }
+
+    #twocol #primary {
+        width: 80%;
+        float: right;
+        padding-top: 0;
+        padding-left: 6%;
+    }
+    
+}
+
+
+/*
+ * FOOTER
+ */
+
+#global-footer {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px 0;
+    background: #002147;
+}
+
+#colophon {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 25px;
+    color: #fff;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+}
+
+@media screen and (min-width: 1050px) {
+    #colophon {
+        width: 1000px;
+        padding: 0;
+    }
+}
