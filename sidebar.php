@@ -7,8 +7,20 @@
  * @package _s
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+?> 
+
+<div id="primarynav">
+    <?php wp_nav_menu( array('theme_location' => 'menu-1', 'menu_class' => 'cl-menu', 'container' => '', 'fallback_cb' => false) ); ?>
+</div>
+
+<?php
+
+if ( ! is_active_sidebar( 'primary_sidebar' ) ) {
 	return;
 }
- 
-dynamic_sidebar( 'sidebar-1' );
+
+?>
+
+<div id="dynamicsidebar">  
+    <?php dynamic_sidebar( 'primary_sidebar' ); ?>
+</div>
