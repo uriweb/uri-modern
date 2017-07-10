@@ -2,21 +2,23 @@ h1 {
     font-family: $header;
     font-weight: normal;
     font-size: 2.8rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
 }
 
 h2 {
     font-family: $header;
     font-size: 1.8rem;
     margin-bottom: 2rem;
-    color: #0047c2;
+    color: $keaneyblue;
+    max-width: 800px;
 }
 
 h3 {
     font-family: $header;
     font-weight: 700;
     font-size: 1.4rem;
-    color: #444;
+    color: $darkgrey;
     margin-bottom: 1.3rem;
 }
 
@@ -30,15 +32,128 @@ h4 {
 h5 {
     font-family: $header;
     font-weight: 300;
-    font-size: 1.1rem;
-    color: #555;
+    font-size: 1rem;
+    color: $darkgrey;
     margin: 2.5rem 0 .8rem;
-    width: 50%;
-    border-bottom: 1px solid #ccc;
-    
+}
+
+h6 {
+    font-family: $header;
+    font-weight: 300;
+    font-size: .9rem;
+    color: $darkgrey;
+    margin: 2.5rem 0 .8rem;
 }
 
 p {
+    max-width: 600px;
     line-height: 1.5;
     padding-top: 1rem;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: $grey;
+    margin: 2rem 0;
+}
+
+dl {
+    margin-bottom: 2rem;
+}
+
+dt {
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+dd {
+    margin-bottom: 1rem;
+    text-indent: 1rem;
+}
+
+ol {
+    list-style-type: decimal;
+    margin: 0 0 2rem 2.5rem;
+}
+
+ol li {
+    margin-bottom: .5rem;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 0 0 2rem 2.5rem;
+}
+
+ul li {
+    margin-bottom: .5rem;
+}
+
+fieldset {
+    background: #eee;
+    padding: 2rem;
+    border: 2px solid $white;
+    border-radius: .4rem;
+}
+
+fieldset legend {
+    background: $darkgrey;
+    color: $white;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    border-radius: 2px;
+}
+
+fieldset form:not(:first-child) {
+    margin-top: 2rem;
+}
+
+form label {
+    font-weight: 600;
+}
+
+input.button {
+    & {
+        display: inline-block !important;
+        margin: 0 .5rem;
+        padding: 1rem 2rem;
+        background: $white;
+        border: 1px solid $grey !important;
+        font-size: .7rem;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        line-height: normal;
+        text-transform: uppercase;
+        text-align: center;
+        color: $blue !important;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        text-shadow: none;
+    }
+    
+    &:hover,
+    &:focus {
+        background: $blue;
+        border: 1px solid $blue !important;
+        color: $white !important;
+        transition: all .1s;
+        cursor: pointer;
+    }
+    
+    &:matches([type="submit"]) {
+        & {
+            background: linear-gradient(315deg, $blue, $midblue);
+            color: $white !important;
+            border: none !important;
+        }
+        
+        &:hover,
+        &:focus {
+            background: linear-gradient(315deg, $darkblue, $blue);
+            border: none !important;
+        }
+    }
+    
 }
