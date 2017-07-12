@@ -12,10 +12,16 @@
 get_header(); ?>
 
     <div id="twocol">
-        <div id="sidebar" role="complementary">
-            <?php get_sidebar(); ?>
-        </div><!-- #sidebar -->
-
+    
+        <?php if(has_nav_menu('menu-1')) : ?>
+            <!-- This is the primary site navigation. It only shows up if the menu location is selected as 'Primary'. -->
+            <div id="primarynav">
+                <input type="checkbox" id="pnmenu-toggle">
+                <label for="pnmenu-toggle" id="pnmenu">Menu</label>
+                <?php wp_nav_menu( array('theme_location' => 'menu-1', 'container' => '', 'fallback_cb' => false) ); ?>
+            </div>
+        <?php endif; ?>
+        
         <div id="primary" class="content-area">
             <div id="main" class="site-main" role="main">
 
@@ -34,6 +40,12 @@ get_header(); ?>
 
             </div><!-- #main -->
         </div><!-- #primary -->
+        
+        <div id="sidebar" role="complementary">
+            <p>Here's some awesome sidebar content.  It should go on the left-hand side under the primary navigation (if it exists) on full-width, and bump down below the page content on mobile.</p>
+            <?php get_sidebar(); ?>
+        </div><!-- #sidebar -->
+        
     </div><!-- #twocol -->
 
 <?php

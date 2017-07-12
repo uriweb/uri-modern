@@ -1,8 +1,8 @@
 body {
-    background: #f8f8f8;
+    background: $lightgrey;
     font-family: "Open Sans", sans-serif;
     font-weight: normal;
-    font-size: 1em;
+    font-size: .9rem;
     color: #000;
 }
 
@@ -31,6 +31,7 @@ body {
 /*
  * TWO COLUMN LAYOUT
  */
+
    
 #twocol:after {
     content: '';
@@ -46,8 +47,9 @@ body {
 }
 
 #twocol #sidebar {
-    border-bottom: 1px solid $midgrey;
-    padding-bottom: 40px;
+    border-top: 1px solid $midgrey;
+    padding-top: 40px;
+    margin-top: 40px;
 }
 
 #twocol #primary {
@@ -59,10 +61,12 @@ body {
     #twocol #sidebar {
         width: 20%;
         float: left;
+        margin-top: 0;
         padding-right: 4%;
+        padding-top: 0;
         padding-bottom: 30px;
-        border-bottom: none;
-        border-right: 1px solid $midgrey;
+        border-top: none;
+        border-right: 5px solid $grey;
     }
 
     #twocol #primary {
@@ -72,32 +76,4 @@ body {
         padding-left: 6%;
     }
     
-}
-
-
-/*
- * FOOTER
- */
-
-#global-footer {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 30px 0;
-    background: #002147;
-}
-
-#colophon {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 25px;
-    color: #fff;
-    box-sizing: border-box;
-    transition: all .2s ease-in-out;
-}
-
-@media screen and (min-width: 1050px) {
-    #colophon {
-        width: 1000px;
-        padding: 0;
-    }
 }

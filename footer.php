@@ -15,8 +15,9 @@
 
 	<footer id="global-footer">
         <div id="colophon">
-            Some great footer content
+            Some great footer content.
         </div>
+        
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

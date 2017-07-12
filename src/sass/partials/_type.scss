@@ -51,6 +51,19 @@ p {
     padding-top: 1rem;
 }
 
+p:first-child {
+    padding-top: 0;
+}
+
+a {
+    color: $link;
+}
+
+a:hover,
+a:focus {
+    color: $linkhover;
+}
+
 hr {
     border: none;
     height: 1px;

@@ -1,7 +1,8 @@
 #masthead {
     width: 100%;
-    background: #002147;
     padding: 0;
+    background: $white;
+    border-bottom: 1px solid $grey;
 }
 
 
@@ -9,9 +10,260 @@
  * GLOBAL NAV
  */
 
-#globalnav {
-    background: #f00;
+#globalbanner {
+    width: 100%;
+    background-color: #002147;
+    background-image: url('images/footer.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto 325px;
+    color: #fff;
+    padding-left: 25px;
 }
+
+#globalnav {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    font-size: .7rem;
+    letter-spacing: .05rem;
+}
+
+#globalnav:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#identity {
+    width: 0;
+    height: 40px;
+    padding-left: 220px;
+    overflow: hidden;
+    float: left;
+    background-image: url('images/logo_inline_white.svg');
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: 220px auto;
+}
+
+#gn {
+    & {
+        display: none;  
+        list-style-type: none;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        z-index: 10;
+        background: #fff;
+        box-shadow: 0 .1rem .3rem rgba(0,0,0,.2);
+        transition: right .2s ease-in-out;
+    }
+    li {
+        margin: 0;
+    }
+    li a {
+        display: block;
+        padding: 1rem;
+        font-size: .8rem;
+        color: #000;
+        transition: all .1s ease-in-out;
+    }
+    li a:hover {
+        background: $blue;
+        color: $white;
+    }
+}
+
+#gnmenu-toggle {
+    display: none;
+}
+
+#gnmenu {
+    display: block;
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 0;
+    padding-left: 40px;
+    overflow: hidden;
+    background-color: $darkblue;
+    background-image: url('images/menu.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    transition: all .2s ease-in-out;
+}    
+
+#gnmenu:hover,
+#gnmenu:focus {
+    background-color: $link;
+    cursor: pointer;
+}
+
+#gnmenu-toggle:checked {
+    & ~ #gnmenu {
+        background-color: $link;
+    }
+    & ~ #gn {
+        display: block;
+    }
+}
+
+#globalsearch {
+    & {
+        position: relative;
+        right: 25px;
+        width: 100vw;
+    }
+
+    #gs-query {
+        float: left;
+        font-family: 'Arial', sans-serif;
+        font-weight: 600;
+        height: 40px;
+        width: calc(100% - 40px);
+        padding: 0 1.5rem;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid $grey;
+        color: #0047c2;
+    }
+
+    #gs-submit {
+        float: left;
+        margin: 0;
+        height: 40px;
+        width: 0;
+        padding: 0 0 0 40px;
+        overflow: hidden;
+        background-image: url('images/search.svg');
+        background-position: center center;
+        background-size: 50% 50%;
+        background-repeat: no-repeat;
+        background-color: $lightblue;
+        border: none;
+    }
+    
+    #gs-submit:hover,
+    #gs-submit:focus {
+        cursor: pointer;
+    }
+    
+}
+
+@media screen and (min-width: 420px) {
+    #identity {
+        padding-left: 300px;
+        background-size: 300px auto;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    #gnmenu {
+        right: 40%;
+    }
+    
+    #gnmenu-toggle:checked ~ #gn {
+        right: initial;
+        left: calc((100vw - 25px) * 0.6 - 80px);
+    }
+        
+    #globalsearch {
+        & {
+            position: absolute;
+            right: 0;
+            width: 40%;
+            transition: width .2s ease-in-out;
+        }
+        #gs-query {
+            padding: 0 .5rem;
+        }
+    }
+}
+
+@media screen and (min-width: 920px) {
+    #globalnav {
+        max-width: 1000px;
+    }
+    
+    #gnmenu-toggle:checked ~ #gn, #gn {
+    
+        & {
+            position: relative;
+            top: 0;
+            left: 0;
+            background: transparent;
+            display: block;
+            margin: 0 0 0 1rem;
+            float: left;
+            box-shadow: none;
+        }
+
+        li {
+            display: inline-block;
+            margin: 0 0 0 1vw;
+        }
+
+        li a {
+            font-size: inherit;
+            height: 40px;
+            line-height: 40px;
+            color: #fff;
+            padding: 0 1rem;
+        }
+
+        li a:hover,
+        li a:focus {
+            background: #fff;
+            color: $blue;
+        }
+
+        #gn-you a:after {
+            content: '';
+            display: inline-block;
+            margin-left: 6px;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid $white;
+            transition: all .1s ease-in-out;
+        }
+
+        #gn-you a:hover:after {
+            border-top: 6px solid $blue;
+        }
+
+    }
+    #gnmenu {
+        display: none;
+    }
+    #globalsearch {
+        & {
+            width: 200px;
+            position: relative;
+            float: right;
+            transition: none;
+        }
+        #gs-query {
+            width: 160px;
+        }
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    #globalbanner {
+        padding-left: 0;
+    }
+    #globalnav {
+        margin: 0 auto;
+    }
+}
+
+
 
 
 /*
@@ -23,15 +275,23 @@
         width: 100%;
         margin: 0 auto;
         padding: 20px 25px;
-        color: #fff;
+        color: #002147;
         box-sizing: border-box;
         transition: all .2s ease-in-out;
     }
     h1 {
+        font-family: 'trajan-pro', 'Lucida Grande', serif;
         margin-bottom: 0;
+        max-width: 100%;
+        font-size: 1.5rem;
+        text-transform: uppercase;
     }
     h1 a:visited {
         color: inherit;
+    }
+    .site-description {
+        font-size: .9rem;
+        color: $darkgrey;
     }
 }
 
@@ -39,5 +299,6 @@
     #masthead .site-branding {
         width: 1000px;
         padding: 30px 0;
+        font-size: 2rem;
     }
 }

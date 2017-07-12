@@ -1,0 +1,102 @@
+/* ======= MENUS ======= */
+
+#primarynav {
+    position: relative;
+}
+
+#pnmenu-toggle {
+    display: none;
+}
+
+#pnmenu {
+    display: block;
+    position: relative;
+    height: 40px;
+    width: 0;
+    padding-left: 40px;
+    overflow: hidden;
+    background-color: $grey;
+    background-image: url('images/menu.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    transition: all .2s ease-in-out;
+}    
+
+#pnmenu:hover,
+#pnmenu:focus {
+    background-color: $link;
+    color: #fff;
+    cursor: pointer;
+}
+
+#pnmenu-toggle:checked {
+    & ~ #pnmenu {
+        background-color: $link;
+        color: #fff;
+    }
+    & ~ ul {
+        display: block;
+    }
+}
+    
+#primarynav>ul {
+
+    & {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
+        list-style-type: none;
+        border-radius: 0 .2rem .2rem .2rem;
+        overflow: hidden;
+    }
+    
+    li {
+        margin: 0;
+    }
+
+    li:not(:first-child) {
+        border-top: 1px solid $grey;
+    }
+
+    a {
+        display: block;
+        padding: 1rem .5rem;
+        color: $black;
+        transition: all .1s ease-in-out;
+    }
+    
+    a:hover,
+    a:focus {
+        background: $blue;
+        color: $white;
+    }
+    
+}
+
+@media screen and (min-width: 800px) {
+    #primarynav {
+        float: left;
+        width: 20%;
+        padding-bottom: 40px;
+        border-right: 5px solid $grey;
+        padding-right: 4%;
+    }
+    #primarynav>ul {
+        display: block;
+        position: relative;
+        top: 0;
+        background: transparent;
+        box-shadow: none;
+        border-radius: none;
+    }
+    #pnmenu {
+        display: none;
+    }
+}

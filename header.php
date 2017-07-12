@@ -17,6 +17,12 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+    
+<!-- Typekit embed code -->
+<script type="text/javascript" src="//use.typekit.com/qcq6uhe.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<!-- End TK -->
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -25,8 +31,28 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-        <div id="globalnav">
-            Global Nav
+        <div id="globalbanner">
+            <div id="globalnav">
+                <a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
+                <?php if (of_get_option('urim_gnvis') == 'on') : ?>
+                    <input type="checkbox" id="gnmenu-toggle">
+                    <label for="gnmenu-toggle" id="gnmenu">Menu</label>
+                    <ul id="gn">
+                        <li id="gn-apply"><a href="#" title="Apply">Apply</a></li>
+                        <li id="gn-academics"><a href="#" title="Academics">Academics</a></li>
+                        <li id="gn-research"><a href="#" title="Research">Research</a></li>
+                        <li id="gn-you"><a href="#" title="You">You</a></li>
+                    </ul>
+                <?php endif; ?>
+                <div id="globalsearch">
+                    <form method="get" action="http://www.uri.edu/search" name="global_general_search_form">
+                        <input type="hidden" name="cx" value="016863979916529535900:17qai8akniu" />
+                        <input type="hidden" name="cof" value="FORID:11" />
+                        <input name="q" id="gs-query" value="<?php print (isset($_GET['q'])) ? htmlentities($_GET['q']) : '' ?>" type="text" placeholder="Search" />
+                        <input type="submit" id="gs-submit" class="searchsubmit" name="searchsubmit" value="Search" />
+                    </form>
+                </div>
+            </div>
         </div>
         
 		<div class="site-branding">

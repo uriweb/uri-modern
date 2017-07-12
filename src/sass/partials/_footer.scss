@@ -1,0 +1,27 @@
+#global-footer {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px 0;
+    height: 325px;
+    background-color: #002147;
+    background-image: url('images/footer.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto 325px;
+}
+
+#colophon {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 25px;
+    color: #fff;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+}
+
+@media screen and (min-width: 1050px) {
+    #colophon {
+        width: 1000px;
+        padding: 0;
+    }
+}
