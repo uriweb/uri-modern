@@ -50,6 +50,13 @@ function optionsframework_options() {
         'options' => $globalnav_vis
     );
     
+    $options[] = array(
+		'name' => 'Site Hero',
+		'desc' => 'Upload an image',
+		'id' => 'urim_sitehero',
+		'type' => 'upload'
+	);
+    
     return $options;
     
 }

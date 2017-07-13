@@ -20,7 +20,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 50% auto;
-    transition: all .2s ease-in-out;
+    transition: all .1s ease-in-out;
 }    
 
 #pnmenu:hover,
@@ -50,11 +50,12 @@
         background: #fff;
         box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
         width: 100%;
-        max-width: 300px;
+        max-width: 100%;
         margin: 0;
         list-style-type: none;
         border-radius: 0 .2rem .2rem .2rem;
         overflow: hidden;
+        transition: all .1s ease-in-out;
     }
     
     li {
@@ -62,12 +63,12 @@
     }
 
     li:not(:first-child) {
-        border-top: 1px solid $grey;
+        border-top: 1px solid #eee;
     }
 
     a {
         display: block;
-        padding: 1rem .5rem;
+        padding: 1rem;
         color: $black;
         transition: all .1s ease-in-out;
     }
@@ -80,21 +81,35 @@
     
 }
 
+@media screen and (min-width: 480px) {
+    #primarynav>ul {
+        max-width: 300px;
+    }
+}
+
 @media screen and (min-width: 800px) {
     #primarynav {
         float: left;
         width: 20%;
         padding-bottom: 40px;
-        border-right: 5px solid $grey;
+        border-right: 5px solid $white;
         padding-right: 4%;
     }
     #primarynav>ul {
-        display: block;
-        position: relative;
-        top: 0;
-        background: transparent;
-        box-shadow: none;
-        border-radius: none;
+        & {
+            display: block;
+            position: relative;
+            top: 0;
+            background: transparent;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        a {
+            padding: 1rem .5rem;
+        }
+        li:not(:first-child) {
+            border-top: 1px solid $grey;
+        }
     }
     #pnmenu {
         display: none;

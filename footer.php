@@ -13,11 +13,11 @@
 
 	</div><!-- #content -->
 
-	<footer id="global-footer">
+	<footer id="globalfooter">
         <div id="colophon">
             Some great footer content.
         </div>
-        
+        <div id="tagline"></div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

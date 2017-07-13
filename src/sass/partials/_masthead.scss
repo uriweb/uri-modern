@@ -43,7 +43,7 @@
     padding-left: 220px;
     overflow: hidden;
     float: left;
-    background-image: url('images/logo_inline_white.svg');
+    background-image: url('images/logo-inline-white.svg');
     background-position: center left;
     background-repeat: no-repeat;
     background-size: 220px auto;
@@ -53,16 +53,23 @@
     & {
         display: none;  
         list-style-type: none;
+        overflow: hidden;
         position: absolute;
         top: 40px;
         right: 0;
-        z-index: 10;
+        z-index: 9996;
+        width: 50%;
+        padding-top: 1rem;
         background: #fff;
-        box-shadow: 0 .1rem .3rem rgba(0,0,0,.2);
+        border-radius: 0 0 0 .2rem;
+        box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
         transition: right .2s ease-in-out;
     }
     li {
         margin: 0;
+    }
+    li:not(:first-child) {
+        border-top: 1px solid #eee;
     }
     li a {
         display: block;
@@ -85,17 +92,18 @@
     display: block;
     position: absolute;
     right: 0;
+    z-index: 9997;
     height: 40px;
     width: 0;
     padding-left: 40px;
-    overflow: hidden;
+    color: transparent;
     background-color: $darkblue;
     background-image: url('images/menu.svg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 50% auto;
-    transition: all .2s ease-in-out;
-}    
+    transition: all .1s ease-in-out;
+}   
 
 #gnmenu:hover,
 #gnmenu:focus {
@@ -106,6 +114,19 @@
 #gnmenu-toggle:checked {
     & ~ #gnmenu {
         background-color: $link;
+    }
+    & ~ #gnmenu:after {
+        content: '';
+        display: block;
+        z-index: 9997;
+        position: absolute;
+        top: 40px;
+        left: 8px;
+        width: 0;
+        height: 0;
+        border-top: .7rem solid $link;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
     }
     & ~ #gn {
         display: block;
@@ -169,6 +190,8 @@
     #gnmenu-toggle:checked ~ #gn {
         right: initial;
         left: calc((100vw - 25px) * 0.6 - 80px);
+        border-radius: 0 0 .2rem .2rem;
+        width: calc(40% + 40px);
     }
         
     #globalsearch {
@@ -195,8 +218,10 @@
             position: relative;
             top: 0;
             left: 0;
+            width: auto;
             background: transparent;
             display: block;
+            padding-top: 0;
             margin: 0 0 0 1rem;
             float: left;
             box-shadow: none;
@@ -206,7 +231,11 @@
             display: inline-block;
             margin: 0 0 0 1vw;
         }
-
+        
+        li:not(:first-child) {
+            border-top: none;
+        }
+        
         li a {
             font-size: inherit;
             height: 40px;
