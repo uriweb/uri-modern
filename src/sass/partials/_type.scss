@@ -46,13 +46,17 @@ h6 {
 }
 
 p {
-    max-width: 600px;
+    max-width: $maxtypewidth;
     line-height: 1.5;
     padding-top: 1rem;
 }
 
 p:first-child {
     padding-top: 0;
+}
+
+p:last-child {
+    padding-bottom: 2rem;
 }
 
 a {
@@ -70,6 +74,25 @@ hr {
     height: 1px;
     background: $grey;
     margin: 2rem 0;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted $link;
+	cursor: help;
+} 
+
+sup {
+    vertical-align: super;
+    font-size: 80%;
+}
+
+sub {
+    vertical-align: sub;
+    font-size: 80%;
+}
+
+cite {
+    color: $darkgrey;
 }
 
 dl {
@@ -104,70 +127,22 @@ ul li {
     margin-bottom: .5rem;
 }
 
-fieldset {
-    background: #eee;
-    padding: 2rem;
-    border: 2px solid $white;
-    border-radius: .4rem;
+li {
+    max-width: $maxtypewidth;
+    line-height: 1.5;
 }
 
-fieldset legend {
-    background: $darkgrey;
-    color: $white;
-    padding: 5px 10px;
-    text-transform: uppercase;
-    font-size: .8rem;
-    border-radius: 2px;
+blockquote {
+	font-style: italic;
+	padding: 1rem 2rem;
 }
-
-fieldset form:not(:first-child) {
-    margin-top: 2rem;
+blockquote cite {
+	color: $darkgrey;
+	display: block;
+	font-size: .8rem;
+	text-align: right;
+	text-transform: uppercase;
 }
-
-form label {
-    font-weight: 600;
-}
-
-input.button {
-    & {
-        display: inline-block !important;
-        margin: 0 .5rem;
-        padding: 1rem 2rem;
-        background: $white;
-        border: 1px solid $grey !important;
-        font-size: .7rem;
-        font-weight: 700;
-        letter-spacing: .1rem;
-        line-height: normal;
-        text-transform: uppercase;
-        text-align: center;
-        color: $blue !important;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        text-shadow: none;
-    }
-    
-    &:hover,
-    &:focus {
-        background: $blue;
-        border: 1px solid $blue !important;
-        color: $white !important;
-        transition: all .1s;
-        cursor: pointer;
-    }
-    
-    &:matches([type="submit"]) {
-        & {
-            background: linear-gradient(315deg, $blue, $midblue);
-            color: $white !important;
-            border: none !important;
-        }
-        
-        &:hover,
-        &:focus {
-            background: linear-gradient(315deg, $darkblue, $blue);
-            border: none !important;
-        }
-    }
-    
+blockquote cite:before {
+	content: ' — ';
 }

@@ -20,6 +20,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 $header: 'Hind', sans-serif;
 $body: 'Open Sans', sans-serif;
 
+$maxtypewidth: 750px;
+
 
 /* ==============================
    COLORS
@@ -53,6 +55,7 @@ $linkhover: #003287;
 /* PARTIALS */
 @import 'partials/type';
 @import 'partials/layout';
+@import 'partials/elements';
 @import 'partials/masthead';
 @import 'partials/footer';
 @import 'partials/primarynav';

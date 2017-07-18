@@ -3,12 +3,12 @@ body {
     font-family: $body;
     font-weight: normal;
     font-size: .9rem;
-    color: #000;
+    color: $black;
 }
 
 #content {
     width: 100%;
-    margin: 40px auto;
+    margin: 40px auto 50px;
     padding: 0 25px;
     box-sizing: border-box;
     transition: all .2s ease-in-out;
@@ -16,7 +16,7 @@ body {
 
 @media screen and (min-width: 640px) {
     #content {
-        margin: 60px auto;
+        margin: 60px auto 80px;
     }
 }
 
@@ -61,6 +61,7 @@ body {
     #twocol #sidebar {
         width: 20%;
         float: left;
+        clear: left;
         margin-top: 0;
         padding-right: 4%;
         padding-top: 0;

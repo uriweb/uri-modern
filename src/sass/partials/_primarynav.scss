@@ -93,6 +93,7 @@
 @media screen and (min-width: 800px) {
     #primarynav {
         float: left;
+        clear: left;
         width: 20%;
         padding-bottom: 40px;
         border-right: 5px solid $white;

@@ -3,18 +3,18 @@
     box-sizing: border-box;
     width: 100%;
     padding: 30px 0;
-    max-height: 325px;
-    //overflow: hidden;
+    max-height: 500px;
+    overflow: hidden;
     background-color: #002147;
-    background-image: url('images/footer.jpg');
+    background-image: url('images/campus-screen.jpg');
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: auto 325px;
+    background-size: auto 500px;
 }
 
 #globalfooter:before {
     position: absolute;
-    top: -2px;
+    top: 0;
     left: 0;
     display: block;
     content: '';
@@ -37,7 +37,7 @@
     display: block;
     width: 100%;
     height: 1px;
-    margin: 80px auto 40px;
+    margin: 80px auto 60px;
     background: linear-gradient(to right, $midblue 10%, $lightblue 30%, $midblue);
     transition: all .2s ease-in-out;
 }
@@ -51,14 +51,47 @@
     width: 100%;
     height: 100px;
     background-image: url('images/tagline.png');
-    background-position: calc(50% - 5px) top;
+    background-position: center top;
     background-repeat: no-repeat;
     background-size: 200px auto;
 }
 
-@media screen and (min-width: 640px) {
+#legal {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    margin: 10px auto;
+    padding: 0 25px;
+    
+    font-size: .5rem;
+    box-sizing: border-box;
+    transtition: all .2s ease-in-out;
+}
+
+#legal p {
+    color: $lightblue;
+    max-width: 100%;
+    padding-top: 0;
+    text-align: center;
+}
+
+#legal a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#legal a:hover,
+#legal a:focus {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 750px) {
+    #legal p {
+        text-align: left;
+    }
     #tagline {
         background: linear-gradient(to right, $midblue 50%, $lightblue 70%, $midblue);
+        margin: 80px auto 0;
     }
     #tagline:after {
         background-position: right 25px top;
@@ -67,6 +100,7 @@
 
 @media screen and (min-width: 1050px) {
     #colophon,
+    #legal,
     #tagline,
     #tagline:after {
         width: 1000px;
@@ -74,5 +108,25 @@
     }
     #tagline:after {
         background-position: right top;
+    }
+}
+
+/* PRINT */
+
+@media print {
+    #globalfooter {
+        padding: 0;
+    }
+    #colophon,
+    #tagline {
+        display: none;
+    }
+    #legal {
+        padding-top: 20px;
+        border-top: 1px solid #000;
+    }
+    #legal p {
+        color: #000;
+        text-align: left;
     }
 }

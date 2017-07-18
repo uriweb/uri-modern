@@ -30,7 +30,10 @@
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a> -->
 
 	<header id="masthead" class="site-header" role="banner">
-
+        
+        <!-- This URL will need to change, but for now it works for testing -->
+        <div id="identity-print"><img src="http://web.uri.edu/business/wp-content/themes/urideptbranch/images/logo-print.png" width="120px" alt="University of Rhode Island"></div>
+        
         <div id="globalbanner">
             <div id="globalnav">
                 <a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>

@@ -18,6 +18,10 @@
             Some great footer content.
         </div>
         <div id="tagline"></div>
+        <div id="legal">
+            <p>Copyright &copy; <a href="http://www.uri.edu/">University of Rhode Island</a> | University of Rhode Island, Kingston, RI 02881, USA | 1.401.874.1000</p>
+            <p>URI is an equal opportunity employer committed to the principles of affirmative action.</p>
+        </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

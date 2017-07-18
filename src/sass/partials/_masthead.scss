@@ -5,6 +5,9 @@
     border-bottom: 1px solid $grey;
 }
 
+#identity-print {
+    display: none;
+}
 
 /*
  * GLOBAL NAV
@@ -13,10 +16,10 @@
 #globalbanner {
     width: 100%;
     background-color: #002147;
-    background-image: url('images/footer.jpg');
+    background-image: url('images/campus-screen.jpg');
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: auto 325px;
+    background-size: auto 500px;
     color: #fff;
     padding-left: 25px;
 }
@@ -351,5 +354,22 @@
         width: 1000px;
         padding: 30px 0;
         font-size: 2rem;
+    }
+}
+
+
+/* PRINT */
+
+@media print {
+    #globalbanner,
+    #primarynav {
+        display: none;
+    }
+    
+    #identity-print {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 25px;
     }
 }
