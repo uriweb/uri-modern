@@ -1,0 +1,79 @@
+article.post {
+    
+    .entry-meta {
+        margin-bottom: 2rem;
+        font-size: .8rem;
+        color: $darkgrey;
+    }
+    
+    .entry-summary {
+        border-left: 5px solid #eee;
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .entry-content {
+        margin-bottom: 2rem;
+    }
+    
+    footer {
+        font-size: .8rem;
+        color: $darkgrey;
+    }
+    
+    footer .cat-links a {
+        font-size: .7rem;
+        display: inline-block;
+        padding: 4px 10px;
+        margin: 0 2px;
+        color: #fff;
+        text-transform: capitalize;
+        background-color: $keaneyblue;
+        border-radius: .2rem;
+        transition: all .1s ease-in-out;
+    }
+    
+    footer .cat-links a:hover,
+    footer .cat-links a:focus {
+        background-color: $blue;
+    }
+    
+}
+
+
+/* Search Results */
+
+body.search-results {
+    
+    article {
+
+        & {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid $grey;
+        }
+
+        h2 {
+            max-width: 500px;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .entry-meta {
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        color: $darkgrey;
+    }   
+
+    h1 span {
+        display: block;
+        font-size: 2.8rem;
+        color: $black;
+    }
+    
+}

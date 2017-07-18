@@ -3,12 +3,24 @@
     box-sizing: border-box;
     width: 100%;
     padding: 30px 0;
-    height: 325px;
+    max-height: 325px;
+    //overflow: hidden;
     background-color: #002147;
     background-image: url('images/footer.jpg');
     background-position: top center;
     background-repeat: no-repeat;
     background-size: auto 325px;
+}
+
+#globalfooter:before {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    display: block;
+    content: '';
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(135deg, $gold, $midgold, $gold, $midgold);
 }
 
 #colophon {
@@ -24,9 +36,9 @@
     position: relative;
     display: block;
     width: 100%;
-    height: 50px;
-    margin: 50px auto 0;
-    border-bottom: 1px solid #435C79;
+    height: 1px;
+    margin: 80px auto 40px;
+    background: linear-gradient(to right, $midblue 10%, $lightblue 30%, $midblue);
     transition: all .2s ease-in-out;
 }
 
@@ -34,7 +46,7 @@
     content: '';
     display: block;
     position: absolute;
-    top: 11px;
+    top: -39px;
     left: 0;
     width: 100%;
     height: 100px;
@@ -45,6 +57,9 @@
 }
 
 @media screen and (min-width: 640px) {
+    #tagline {
+        background: linear-gradient(to right, $midblue 50%, $lightblue 70%, $midblue);
+    }
     #tagline:after {
         background-position: right 25px top;
     }

@@ -187,17 +187,17 @@
     }
 }
 
-#program-results .card {
+#program-results .cl-card {
     margin-top: 2%;
 }
 
-#program-results .card .badges {
+#program-results .cl-card .badges {
     display: block;
     z-index: 2;
     margin: 1rem 0 -1rem 1.2rem;
 }
 
-#program-results .card .badges li {
+#program-results .cl-card .badges li {
     display: inline-block;
     height: 20px;
     line-height: 20px;
@@ -210,34 +210,34 @@
     padding: 0 8px;
 }
 
-#program-results .card .badges li.bs,
-#program-results .card .badges li.ba {
+#program-results .cl-card .badges li.bs,
+#program-results .cl-card .badges li.ba {
     background: #0385a5;
     color: #fff;
 }
 
-#program-results .card .badges li.ms,
-#program-results .card .badges li.ma {
+#program-results .cl-card .badges li.ms,
+#program-results .cl-card .badges li.ma {
     background: #6246ba;
     color: #fff;
 }
 
-#program-results .card .badges li.phd {
+#program-results .cl-card .badges li.phd {
     background: #555;
     color: #fff;
 }
 
-#program-results .card .badges li.cert {
+#program-results .cl-card .badges li.cert {
     background: #3a9137;
     color: #fff;
 }
 
-#program-results .card .badges li.pro {
+#program-results .cl-card .badges li.pro {
     background: #9f382f;
     color: #fff;
 }
 
-#program-results .card .badges li.uw {
+#program-results .cl-card .badges li.uw {
     background: #a0966b;
     color: #fff;
 }

@@ -41,7 +41,7 @@
                         <li id="gn-apply"><a href="#" title="Apply">Apply</a></li>
                         <li id="gn-academics"><a href="#" title="Academics">Academics</a></li>
                         <li id="gn-research"><a href="#" title="Research">Research</a></li>
-                        <li id="gn-you"><a href="#" title="You">You</a></li>
+                        <li id="gn-you" class="multi"><a href="#" title="You">You</a></li>
                     </ul>
                 <?php endif; ?>
                 <div id="globalsearch">

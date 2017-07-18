@@ -57,6 +57,7 @@ p:first-child {
 
 a {
     color: $link;
+    transition: color .1s ease-in-out;
 }
 
 a:hover,
