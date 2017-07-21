@@ -1,13 +1,29 @@
 /* IMAGES */
 
-img.alignright {
-    float: right;
-    padding: 1rem 0 2rem 1.5rem;
+img.alignright,
+img.alignleft {
+    display: block;
+    padding: 1.5rem 0;
+    position: relative;
+    width: 100vw;
+    left: -50vw;
+    margin-left: 50%;
 }
 
-img.alignleft {
-    float: left;
-    padding: 1rem 1.5rem 2rem 0;
+@media screen and (min-width: 480px) {
+    img.alignright,
+    img.alignleft {
+        width: 60%;
+        float: right;
+        left: 0;
+        margin-left: 0;
+    }
+    img.alignright {
+        padding: 1rem 0 2rem 1.5rem;
+    }
+    img.alignleft {
+        padding: 1rem 1.5rem 2rem 0;
+    }
 }
 
 

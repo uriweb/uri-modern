@@ -39,7 +39,7 @@
                 <a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
                 <?php if (of_get_option('urim_gnvis') == 'on') : ?>
                     <input type="checkbox" id="gnmenu-toggle">
-                    <label for="gnmenu-toggle" id="gnmenu">Menu</label>
+                    <label for="gnmenu-toggle" id="gnmenu"><span>Menu</span></label>
                     <ul id="gn">
                         <li id="gn-apply"><a href="#" title="Apply">Apply</a></li>
                         <li id="gn-academics"><a href="#" title="Academics">Academics</a></li>

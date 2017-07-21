@@ -22,6 +22,7 @@
     background-size: auto 500px;
     color: #fff;
     padding-left: 25px;
+    box-sizing: border-box;
 }
 
 /*
@@ -112,7 +113,6 @@
     height: 40px;
     width: 0;
     padding-left: 40px;
-    color: transparent;
     background-color: $darkblue;
     background-image: url('images/menu.svg');
     background-position: center center;
@@ -125,6 +125,10 @@
 #gnmenu:focus {
     background-color: $link;
     cursor: pointer;
+}
+
+#gnmenu span {
+    display: none;
 }
 
 #gnmenu-toggle:checked {
@@ -166,6 +170,7 @@
         padding: 0 1.5rem;
         margin: 0;
         border: none;
+        box-sizing: border-box;
         border-bottom: 1px solid $grey;
         color: #0047c2;
     }

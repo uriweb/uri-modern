@@ -91,7 +91,7 @@
     }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 920px) {
     #primarynav {
         float: left;
         clear: left;
@@ -99,6 +99,7 @@
         padding-bottom: 40px;
         border-right: 5px solid $white;
         padding-right: 4%;
+        box-sizing: border-box;
     }
     #primarynav>ul {
         & {
