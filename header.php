@@ -23,6 +23,14 @@
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <!-- End TK -->
 
+<!-- Custom CSS -->
+<?php if (of_get_option('urim_customcss')) { ?>
+<style type="text/css">
+    <?php print of_get_option('urim_customcss'); ?>
+</style>
+<?php } ?>
+<!-- End Custom CSS -->
+
 </head>
 
 <body <?php body_class(); ?>>

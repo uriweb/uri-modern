@@ -52,10 +52,18 @@ function optionsframework_options() {
     
     $options[] = array(
 		'name' => 'Site Hero',
-		'desc' => 'Upload an image',
+		'desc' => "Upload an image.  This isn't used for anything yet.",
 		'id' => 'urim_sitehero',
 		'type' => 'upload'
 	);
+    
+    $options[] = array(
+		'name' => 'Custom CSS',
+		'desc' => 'Insert custom css here.  It will be included in the &lt;head&gt; on every page in the site.',
+		'id' => 'urim_customcss',
+		'std' => '',
+		'type' => 'textarea'
+	); 
     
     return $options;
     
