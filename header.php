@@ -23,13 +23,6 @@
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <!-- End TK -->
 
-<!-- Custom CSS -->
-<?php if (of_get_option('urim_customcss')) { ?>
-<style type="text/css">
-    <?php print of_get_option('urim_customcss'); ?>
-</style>
-<?php } ?>
-<!-- End Custom CSS -->
 
 </head>
 
@@ -45,7 +38,7 @@
         <div id="globalbanner">
             <div id="globalnav">
                 <a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
-                <?php if (of_get_option('urim_gnvis') == 'on') : ?>
+                <?php if (!get_option('uri_modern_options_hideglobalnav')) : ?>
                     <input type="checkbox" id="gnmenu-toggle">
                     <label for="gnmenu-toggle" id="gnmenu"><span>Menu</span></label>
                     <ul id="gn">
