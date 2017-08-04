@@ -6,12 +6,18 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package _s
+ * @package uri-modern
  */
 
 ?>
 
 	</div><!-- #content -->
+
+    <div id="sitefooter">
+        <div id="sf-content">
+            Site footer content
+        </div>
+    </div>
 
 	<footer id="globalfooter">
         <div id="colophon">

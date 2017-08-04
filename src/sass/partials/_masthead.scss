@@ -60,7 +60,7 @@
     padding-left: 220px;
     overflow: hidden;
     float: left;
-    background-image: url('images/logo-inline-white.svg');
+    background-image: url('images/logo-inline-white.png');
     background-position: center left;
     background-repeat: no-repeat;
     background-size: 220px auto;
@@ -200,7 +200,7 @@
 @media screen and (min-width: 420px) {
     #identity {
         padding-left: 300px;
-        background-size: 300px auto;
+        background-size: 275px auto;
     }
 }
 
@@ -326,17 +326,27 @@
 
 
 /*
- * SITE BRANDING
+ * SITE BANNER
  */
 
-#masthead .site-branding {
+#sitebanner {
+    position: relative;
+}
+
+#sitebranding {
     & {
+        position: relative;
         width: 100%;
         margin: 0 auto;
-        padding: 20px 25px;
+        padding: 0 25px;
+        height: 80px;
+        line-height: 80px;
         color: #002147;
         box-sizing: border-box;
         transition: all .2s ease-in-out;
+        backdrop-filter: blur(20px) saturate(180%);
+        background-color: rgba(255,255,255,.7);
+        z-index: 2;
     }
     h1 {
         font-family: 'trajan-pro', 'Lucida Grande', serif;
@@ -355,11 +365,14 @@
     }
 }
 
+
 @media screen and (min-width: 1050px) {
-    #masthead .site-branding {
+    #sitebranding {
         width: 1000px;
-        padding: 30px 0;
+        padding: 0;
         font-size: 2rem;
+        height: 100px;
+        line-height: 100px;
     }
 }
 

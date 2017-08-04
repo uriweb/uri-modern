@@ -1,10 +1,10 @@
 <?php
 /**
- * _s functions and definitions
+ * URI Modern functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package _s
+ * @package uri-modern
  */
 
 if ( ! function_exists( 'uri_modern_setup' ) ) :

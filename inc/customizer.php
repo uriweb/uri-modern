@@ -1,8 +1,8 @@
 <?php
 /**
- * _s Theme Customizer
+ * URI Modern Theme Customizer
  *
- * @package _s
+ * @package uri-modern
  */
 
 /**
@@ -42,12 +42,12 @@ function uri_modern_options_customizer($wp_customize) {
 
 
 	// set up the sections
-	$section_globalheader = 'uri_modern_options_globalheader';
+	$section_globalheader = 'uri_modern_options_header';
 	$wp_customize->add_section($section_globalheader, array(
     'priority'       => 10,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
-    'title'          => 'Global Header',
+    'title'          => 'Header',
     'description'    => '',
     'panel'          => $panel,
 	));
@@ -69,20 +69,32 @@ function uri_modern_options_customizer($wp_customize) {
     
     $elements[] = array(
 		'name' => 'uri_modern_options_hideglobalnav',
+        'type' => '',
 		'options' => array(
 			'sanitize_callback' => 'uri_modern_sanitize_checkbox',
 		),
 		'control' => array(
-			'label'    => __( 'Hide global navigation', 'uri-modern' ),
+			'label'    => __( 'Hide Global Navigation', 'uri-modern' ),
 			'section'  => $section_globalheader,
             'description' => __( 'Check to hide global navigation on this site', 'uri-modern' ),
 	 		'type' => 'checkbox'
 		)
 	);
     
+    $elements[] = array(
+		'name' => 'uri_modern_options_sitehero',
+        'type' => 'image',
+		'options' => array(),
+		'control' => array(
+			'label'    => __( 'Site Hero', 'uri-modern' ),
+			'section'  => $section_globalheader,
+            'description' => __( 'Upload an image to be used on the site frontpage', 'uri-modern' )
+		)
+	);
+    
     // loop over the elements 
 	foreach($elements as $el) {
-		uri_modern_add_customizer_element( $wp_customize, $el['name'], $el['options'], $el['control'] );
+		uri_modern_add_customizer_element( $wp_customize, $el['name'], $el['type'], $el['options'], $el['control'] );
 	}
     
 }
@@ -98,7 +110,7 @@ function uri_modern_options_customizer($wp_customize) {
  * @param arr $control The control args
  */
 
-function uri_modern_add_customizer_element( $wp_customize_object, $name, $options=array(), $control=array() ) {
+function uri_modern_add_customizer_element( $wp_customize_object, $name, $type, $options=array(), $control=array() ) {
 
 	$default_options = array(
 		'type' => 'option',
@@ -123,8 +135,14 @@ function uri_modern_add_customizer_element( $wp_customize_object, $name, $option
 	);
 	
 	$args = array_merge( $default_control, $control );
-
-	$wp_customize_object->add_control( new WP_Customize_Control( $wp_customize_object, $name, $args ));
+            
+    switch ($type) {
+        case 'image':
+            $wp_customize_object->add_control( new WP_Customize_Image_Control( $wp_customize_object, $name, $args ));
+            break;
+        default:
+            $wp_customize_object->add_control( new WP_Customize_Control( $wp_customize_object, $name, $args ));
+    }
 
 }
 

@@ -12,24 +12,31 @@
     background-size: auto 500px;
 }
 
-#globalfooter:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    content: '';
-    height: 3px;
+#sitefooter {
+    position: relative;
+    box-sizing: border-box;
     width: 100%;
-    background: linear-gradient(135deg, $gold, $midgold, $gold, $midgold);
+    padding: 30px 0;
+    background: #eee;
+    border-top: 1px solid #ddd;
+    transition: all .2s ease-in-out;
 }
 
+#sf-content,
 #colophon {
     width: 100%;
     margin: 0 auto;
     padding: 0 25px;
-    color: #fff;
     box-sizing: border-box;
     transition: all .2s ease-in-out;
+}
+
+#sf-content {
+    color: #555;
+}
+
+#colophon {
+    color: #fff;
 }
 
 #tagline {
@@ -86,6 +93,9 @@
 }
 
 @media screen and (min-width: 750px) {
+    #sitefooter {
+        padding: 50px 0;
+    }
     #legal p {
         text-align: left;
     }
@@ -99,6 +109,7 @@
 }
 
 @media screen and (min-width: 1050px) {
+    #sf-content,
     #colophon,
     #legal,
     #tagline,
@@ -117,6 +128,7 @@
     #globalfooter {
         padding: 0;
     }
+    #sf-content,
     #colophon,
     #tagline {
         display: none;
