@@ -142,6 +142,17 @@ function uri_modern_quicktags() {
 }
 add_action('admin_print_footer_scripts','uri_modern_quicktags');
 
+/**
+ * Debugging
+ */
+require get_template_directory() . '/console.php';
+
+// Don't break the site if debugging is removed
+if ( !function_exists( 'theme_console' ) ) {
+	function theme_console() {
+		return FALSE;
+	}
+}
 
 /**
  * Implement the Custom Header feature.

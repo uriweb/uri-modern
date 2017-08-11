@@ -84,7 +84,7 @@ function uri_modern_options_customizer($wp_customize) {
     $elements[] = array(
 		'name' => 'uri_modern_options_sitehero',
         'type' => 'image',
-		'options' => array(),
+        'options' => array(),
 		'control' => array(
 			'label'    => __( 'Site Hero', 'uri-modern' ),
 			'section'  => $section_globalheader,
@@ -136,6 +136,9 @@ function uri_modern_add_customizer_element( $wp_customize_object, $name, $type, 
 	
 	$args = array_merge( $default_control, $control );
             
+    theme_console('type', $type);
+    theme_console('args', $args);
+    
     switch ($type) {
         case 'image':
             $wp_customize_object->add_control( new WP_Customize_Image_Control( $wp_customize_object, $name, $args ));
