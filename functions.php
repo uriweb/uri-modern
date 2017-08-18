@@ -148,8 +148,8 @@ add_action('admin_print_footer_scripts','uri_modern_quicktags');
 require get_template_directory() . '/console.php';
 
 // Don't break the site if debugging is removed
-if ( !function_exists( 'theme_console' ) ) {
-	function theme_console() {
+if ( !function_exists( 'uri_console' ) ) {
+	function uri_console() {
 		return FALSE;
 	}
 }

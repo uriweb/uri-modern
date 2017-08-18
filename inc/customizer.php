@@ -136,8 +136,9 @@ function uri_modern_add_customizer_element( $wp_customize_object, $name, $type, 
 	
 	$args = array_merge( $default_control, $control );
             
-    theme_console('type', $type);
-    theme_console('args', $args);
+    uri_console('type', $type);
+    uri_console('args', $args);
+    uri_console('args[input_attrs]', $args['input_attrs']);
     
     switch ($type) {
         case 'image':
