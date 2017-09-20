@@ -7,6 +7,21 @@
  * @package uri-modern
  */
 
+
+/**
+ * returns a string to be used for cache busting
+ * @return str
+ */
+function uri_modern_cache_buster() {
+	static $cache_buster;
+	if(empty($cache_buster)) {
+		$cache_buster = wp_get_theme()->get('Version');
+		//$cache_buster = date(time());
+	}
+	return $cache_buster;
+}
+
+
 if ( ! function_exists( 'uri_modern_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -105,11 +120,13 @@ add_action( 'widgets_init', 'uri_modern_widgets_init' );
  * Enqueue scripts and styles.
  */
 function uri_modern_scripts() {
-	wp_enqueue_style( 'base', get_stylesheet_uri() );
+	wp_enqueue_style( 'uri-modern-style', get_template_directory_uri() . '/style.css', array(), uri_modern_cache_buster(), 'all' );
 
-	wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'uri-modern-navigation', get_template_directory_uri() . '/js/navigation.js', array(), uri_modern_cache_buster(), true );
 
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'uri-modern-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), uri_modern_cache_buster(), true );
+    
+    wp_enqueue_script( 'uri-modern-scripts', get_template_directory_uri() . '/js/script.min.js', array(), uri_modern_cache_buster(), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -117,30 +134,6 @@ function uri_modern_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'uri_modern_scripts' );
 
-// Add buttons to html editor
-function uri_modern_quicktags() {
-	?>
-	<script type="text/javascript" charset="utf-8">
-	<?php
-	/* Adding Quicktag buttons to the editor Wordpress ver. 3.3 and above
-	* - Button HTML ID (required)
-	* - Button display, value="" attribute (required)
-	* - Opening Tag (required)
-	* - Closing Tag (required)
-	* - Access key, accesskey="" attribute for the button (optional)
-	* - Title, title="" attribute (optional)
-	* - Priority/position on bar, 1-9 = first, 11-19 = second, 21-29 = third, etc. (optional)
-	*/
-	?>
-    QTags.addButton( 'clqt-button', 'Button', '<a class="button" href="" title="">Button', '</a>' );
-	QTags.addButton( 'clqt-card', 'Card', '<a class="card" href="" title=""><img src="" alt=""><h1>Title</h1><p>Body</p><span class="button">Button</span>', '</a>' );
-    QTags.addButton( 'clqt-flexcard', 'Flex Card', '<a class="flexcard" href="" title=""><figure><img src="" alt=""></figure><article><h1>Title</h1><p>Body</p><span class="button">Button</span></article>', '</a>' );
-    QTags.addButton( 'clqt-dcard', 'Detail Card', '<a class="dcard" href="" title=""><img src="" alt=""><h1>Title</h1><p>Body</p>', '</a>' );
-    QTags.addButton( 'clqt-cutout', 'Cutout', '<div class="cutout"><h1>Title</h1><p>Body</p><a class="button" href="" title="">Button</a>', '</div>' );
-    </script>
-	<?php
-}
-add_action('admin_print_footer_scripts','uri_modern_quicktags');
 
 /**
  * Debugging

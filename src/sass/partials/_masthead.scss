@@ -1,3 +1,7 @@
+/* ==============================
+   MASTHEAD
+   ============================== */
+
 #masthead {
     width: 100%;
     padding: 0;
@@ -9,11 +13,106 @@
     display: none;
 }
 
-/*
- * GLOBAL NAV
- */
+/* Global Search */
+
+#globalsearch {
+    position: relative;
+    width: 100%;
+    background: $keaneyblue;
+}
+    
+#gs {
+    height: 0px;
+    transition: height .4s $easeInOutQuint;
+}
+
+#gsform-toggle:checked {
+    & ~ #gs {
+        height: 50px;
+    }
+
+    & ~ #gsform {
+        top: 50px;
+        background-color: $link;
+        background-size: 50% auto;
+    }
+    
+    & ~ #gsform:before {
+        top: -11px;
+        border-bottom: 11px solid $link;
+    }
+
+}
+
+#gs-query {
+    font-weight: 300;
+    font-size: 1.5rem;
+    height: 50px;
+    width: 100%;
+    padding: 0 1.5rem;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    color: #fff;
+    background: transparent;
+    outline: none;
+}
+
+#gs-query::placeholder {
+    color: #fff;
+}
+
+#gsform-toggle {
+    display: none;
+}
+
+#gsform {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9997;
+    height: 40px;
+    width: 0;
+    padding-left: 40px;
+    background-color: transparent;
+    background-image: url('images/search.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    transition: all .4s $easeInOutQuint;
+}  
+
+#gsform:before {
+    content: '';
+    display: block;
+    z-index: 9997;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 0px solid $link;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    transition: all .4s $easeInOutQuint;
+}
+
+#gsform:hover,
+#gsform:focus {
+    background-color: $link;
+    cursor: pointer;
+}
+
+#gsform span {
+    display: none;
+}
+
+
+/* Brand Bar */
 
 #globalbanner {
+    position: relative;
     width: 100%;
     background-color: #002147;
     background-image: url('images/campus-screen.jpg');
@@ -25,18 +124,7 @@
     box-sizing: border-box;
 }
 
-/*
-#globalbanner:after {
-    content: '';
-    position: relative;
-    left: -25px;
-    display: block;
-    clear: both;
-    height: 3px;
-    width: 100vw;
-    background: linear-gradient(135deg, $gold, $midgold, $gold, $midgold);
-}
-*/
+/* Global Navigation */
 
 #globalnav {
     position: relative;
@@ -99,7 +187,8 @@
         background: $blue;
         color: $white;
     }
-}
+    
+} // #gn
 
 #gnmenu-toggle {
     display: none;
@@ -108,12 +197,12 @@
 #gnmenu {
     display: block;
     position: absolute;
-    right: 0;
+    right: 40px;
     z-index: 9997;
     height: 40px;
     width: 0;
     padding-left: 40px;
-    background-color: $darkblue;
+    background-color: transparent;
     background-image: url('images/menu.svg');
     background-position: center center;
     background-repeat: no-repeat;
@@ -141,61 +230,17 @@
         z-index: 9997;
         position: absolute;
         top: 40px;
-        left: 8px;
+        left: 0;
         width: 0;
         height: 0;
-        border-top: .7rem solid $link;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
+        border-top: 11px solid $link;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
     }
     & ~ #gn {
         display: block;
     }
-}
-
-#globalsearch {
-    & {
-        position: relative;
-        right: 25px;
-        width: 100vw;
-    }
-
-    #gs-query {
-        float: left;
-        font-family: 'Arial', sans-serif;
-        font-weight: 400;
-        font-size: 1rem;
-        height: 40px;
-        width: calc(100% - 40px);
-        padding: 0 1.5rem;
-        margin: 0;
-        border: none;
-        box-sizing: border-box;
-        border-bottom: 1px solid $grey;
-        color: #0047c2;
-    }
-
-    #gs-submit {
-        float: left;
-        margin: 0;
-        height: 40px;
-        width: 0;
-        padding: 0 0 0 40px;
-        overflow: hidden;
-        background-image: url('images/search.svg');
-        background-position: center center;
-        background-size: 50% 50%;
-        background-repeat: no-repeat;
-        background-color: $lightblue;
-        border: none;
-    }
-    
-    #gs-submit:hover,
-    #gs-submit:focus {
-        cursor: pointer;
-    }
-    
-}
+} // #gn-menu-toggle:checked
 
 @media screen and (min-width: 420px) {
     #identity {
@@ -205,33 +250,14 @@
 }
 
 @media screen and (min-width: 640px) {
-    #gnmenu {
-        right: 40%;
-    }
     
     #gnmenu-toggle:checked ~ #gn {
-        right: initial;
-        left: calc((100vw - 25px) * 0.6 - 80px);
-        border-radius: 0 0 .2rem .2rem;
-        width: calc(40% + 40px);
+        width: 40%;
     }
-        
-    #globalsearch {
-        & {
-            position: absolute;
-            right: 0;
-            width: 40%;
-            transition: width .2s ease-in-out;
-        }
-        #gs-query {
-            font-weight: 600;
-            font-size: .8rem;
-            padding: 0 .5rem;
-        }
-    }
+    
 }
 
-@media screen and (min-width: 920px) {
+@media screen and (min-width: 800px) {
     #globalnav {
         max-width: 1000px;
     }
@@ -290,39 +316,32 @@
             border-top: 6px solid $blue;
         }
 
-    }
+    } // #gnmenu-toggle:checked ~ #gn, #gn
+    
     #gnmenu {
         display: none;
     }
-    #globalsearch {
-        & {
-            width: 200px;
-            position: relative;
-            float: right;
-            transition: none;
-        }
-        #gs-query {
-            font-size: .7rem;
-            width: 160px;
-        }
+    
+    #gsform {
+        background-size: 35% auto;
     }
-}
+    
+} // min-width: 920px
 
 @media screen and (min-width: 1050px) {
     #globalbanner {
         padding-left: 0;
     }
-    /*
-    #globalbanner:after {
-        left: 0;
-    }
-    */
     #globalnav {
         margin: 0 auto;
     }
-}
-
-
+    #gs-query {
+        padding: 0 calc((100vw - 1000px) / 2);
+    }
+    #gsform {
+        margin-right: calc((100vw - 1000px) / 2);
+    }
+} // min-width: 1050px
 
 
 /*
@@ -344,8 +363,6 @@
         color: #002147;
         box-sizing: border-box;
         transition: all .2s ease-in-out;
-        backdrop-filter: blur(20px) saturate(180%);
-        background-color: rgba(255,255,255,.7);
         z-index: 2;
     }
     h1 {
@@ -363,7 +380,7 @@
         color: $darkgrey;
         padding-bottom: 0;
     }
-}
+} // #sitebranding
 
 
 @media screen and (min-width: 1050px) {
@@ -374,7 +391,7 @@
         height: 100px;
         line-height: 100px;
     }
-}
+} // min-width: 1050px
 
 
 /* PRINT */
@@ -391,4 +408,4 @@
         box-sizing: border-box;
         padding: 0 25px;
     }
-}
+} // @media print

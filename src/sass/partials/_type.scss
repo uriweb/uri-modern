@@ -1,9 +1,28 @@
+/* ==============================
+   TYPEOGRAPHY
+   ============================== */
+
+@import url("https://fonts.googleapis.com/css?family=Hind:400,600,700|Hind+Siliguri:300,400,600") all;
+
+$header: 'Hind', sans-serif;
+$body: 'Hind Siliguri', sans-serif;
+
+$maxtypewidth: 750px;
+
+html {
+    font-family: $body;
+    font-weight: normal;
+    font-size: 16px;
+    color: $black;
+}
+
 h1 {
     font-family: $header;
-    font-weight: normal;
-    font-size: 2.8rem;
+    font-weight: 700;
+    font-size: 2.5rem;
     margin-bottom: 2.5rem;
     max-width: 800px;
+    color: $blue;
 }
 
 h2 {
