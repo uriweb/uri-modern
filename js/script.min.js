@@ -5,6 +5,8 @@
 
 
 (function(){
+    
+    'use strict';
         
     window.addEventListener('load', init, false);
     
@@ -56,7 +58,7 @@
      * @param parsed obj the parsed gallery
      */
     function build(el, parsed) {
-        var S, carouselWrapper, carousel, li, caption, i;
+        var S, carouselWrapper, carousel, captions, counter, li, cap, i;
                 
         S = document.createElement('div');
         S.className = 'cl-slideshow';
@@ -68,26 +70,32 @@
         carousel = document.createElement('ul');
         carousel.className = 'carousel';
         carouselWrapper.appendChild(carousel);
+        
+        captions = document.createElement('ul');
+        captions.className = 'captions';
+        S.appendChild(captions);
+        
+        counter = document.createElement('div');
+        counter.className = 'counter';
+        counter.innerHTML = '<span></span> of ' + parsed.length;
+        S.appendChild(counter);
+        
                 
         for (i=0; i<parsed.length; i++) {
                         
             li = document.createElement('li');
             li.className = 'slide';
             li.style.backgroundImage = 'url(' + parsed[i].img + ')';
-            
-            if (parsed[i].caption) {
-                caption = document.createElement('div');
-                caption.className = 'caption';
-                caption.innerHTML = parsed[i].caption;
-                
-                li.appendChild(caption);
-            }
-                      
             carousel.appendChild(li);
             
+            cap = document.createElement('li');
+            cap.className = 'caption';
+            cap.innerHTML = parsed[i].caption ? parsed[i].caption : '';
+            captions.appendChild(cap);
+                     
         }
         
-        S.appendChild(initDots(carousel, parsed));
+        carouselWrapper.appendChild(initButtons(carousel));
         
         setPosition(carousel, 0);
             
@@ -96,29 +104,34 @@
     }
     
     
-    /*
-     * Initiate nav dots
+    /**
+	 * Create controlls
      * @param c obj the carousel
-     * @param parsed obj the parsed gallery
-     */
-    function initDots(c, parsed) {
-        var ul, li, i;
+	 */
+	function initButtons(c) {
+		var controls, types, target, button, x;
         
-        ul = document.createElement('ul');
-        ul.className = 'navdots';
+		controls = document.createElement('div');
+        controls.className = 'controls';
         
-        for (i=0; i<parsed.length; i++) {
-            li = document.createElement('li');
-            li.className = 'dot';
-            li.title = 'Slide ' + (i + 1);
-            li.innerHTML = i + 1;
-            li.addEventListener('click', setPosition.bind(null, c, i) );
-            ul.appendChild(li);
-        }
+		types = ['Previous', 'Next'];
         
-        return ul;
-         
-    }
+        for (x in types) {
+			target = document.createElement('div');
+			target.className = 'target ' + types[x].toLowerCase();
+            target.title = types[x];
+			target.addEventListener('click', controlDirection.bind(null, c, types[x]) );
+            
+            button = document.createElement('div');
+            button.className = 'controller';
+            target.appendChild(button);
+            
+			controls.appendChild(target);
+		}
+        
+        return controls;
+        
+	}
     
     
     /*
@@ -153,18 +166,25 @@
      * @param index int the index to move to
      */
     function setPosition(c, index) {
-                
-        var dots, i;
         
+        var S, captions, counter, i;
+                        
         c.style.transform = 'translateX(-' + (index * 100) + '%)';
         c.setAttribute('data-position', index);
         
-        dots = c.parentNode.parentNode.querySelector('.navdots').querySelectorAll('li');
-        for(i=0; i<dots.length; i++) {
-            dots[i].classList.remove('active');
-        }
-        dots[index].classList.add('active');
+        S = c.parentNode.parentNode;
         
+        captions = S.querySelectorAll('.caption');        
+        for (i=0; i<captions.length; i++) {
+            captions[i].classList.remove('active');
+        }
+        
+        captions[index].classList.add('active');
+        
+        counter = S.querySelector('.counter span');
+        counter.innerHTML = index + 1;
+        
+    
     }
     
     

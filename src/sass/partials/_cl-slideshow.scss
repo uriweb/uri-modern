@@ -13,8 +13,14 @@
         display: block;
         width: 100%;
         text-align: center;
-        margin-bottom: 2rem;
         box-sizing: border-box;
+        margin-bottom: 2rem;
+    }
+    
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
     }
     
     .carousel-wrapper {
@@ -26,6 +32,7 @@
             overflow: hidden;
             background: #eee;
             border-radius: .2rem;
+            margin-bottom: 1rem;
         }
         
         .carousel {
@@ -52,61 +59,158 @@
             background-repeat: no-repeat;
         }
         
-        .caption {
-            display: block;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 2% 10%;
-            background: rgba(255,255,255,.8);
-            text-align: center;
-            white-space: normal;
-            font-family: sans-serif;
-            font-size: .8rem;
-            color: #555;
+        .controls {
+            
+            & {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all .4s ease-in-out;
+            }
+            
+            &:after {
+                display: block;
+                clear: both;
+                content: '';
+            }
+            
+            .target {
+                height: 100%;
+                width: 50%;
+                padding: 0 2%;
+            }
+            
+            .target.previous {
+                float: left;
+            }
+            
+            .target.next {
+                float: right;
+            }
+            
+            .target:hover {
+                cursor: pointer;
+            }
+            
+            .controller {
+                position: relative;
+                top: calc(50% - 20px);
+                width: 40px;
+                height: 40px;
+                background-color: rgba(255,255,255,.8);
+                border-radius: 50%;
+                transition: padding .2s ease-in-out;
+            }
+            
+            .controller:after {
+                display: block;
+                content: '';
+                position: relative;
+                top: 26%;
+                left: 17%;
+                width: 45%;
+                height: 45%;
+                border-top: 1px solid rgba(0,0,0,.5);
+                border-right: 1px solid rgba(0,0,0,.5);
+                transition: all .2s ease-in-out;
+            }
+            
+            .target:hover .controller:after {
+                border-top: 1px solid $black;
+                border-right: 1px solid $black;
+            }
+            
+            .target.previous .controller:after {
+                transform: rotate(225deg);
+                left: 34%;
+            }
+            
+            .target.next .controller:after {
+                transform: rotate(45deg);
+            }
+            
+            .target.next .controller {
+                float: right;
+            }
+            
+            
+        } // .cl-slideshow .carouselWrapper .controls
+        
+        &:hover {
+            
+            .controls {
+                opacity: 1;
+            }
             
         }
         
+    } // .cl-slideshow .carouselWrapper
+    
+    .captions {
+    
+        & {
+            display: block;
+            float: left;
+            list-style: none;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            width: 40%;
+            min-width: 250px;
+        }
         
-    } // .cl-slideshow .carousel
+        .caption {
+            padding: 0;
+            margin: 0;
+            display: none;
+            font-size: .8rem;
+            color: $darkgrey;
+        }
+        
+        .caption.active {
+            display: block;
+        }
+        
+    } // .cl-slideshow .captions
     
-    
-    .navdots {
+    .counter {
         
         & {
             display: block;
-            margin: .5rem 0;
-            list-style: none;
+            float: right;
+            font-size: .8rem;
+            color: $darkgrey;
+            margin-bottom: 5rem;
         }
         
-        .dot {
-            display: inline-block;
-            width: 0;
-            height: 0;
-            padding: 10px 0 0 10px;
-            margin: 0 10px;
-            overflow: hidden;
-            border-radius: 50%;
-            background: #ddd;
-            transition: all .2s ease-in-out;
+        span {
+            font-weight: 600;
         }
         
-        .dot.active,
-        .dot:hover,
-        .dot:focus {
-            cursor: pointer;
-            background: #555;
-        }
-        
-    } // .cl-slideshow .navdots
-    
+    } // .cl-slideshow .counter
 
 } // .cl-slideshow
+
+
+
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+    .cl-slideshow .carousel-wrapper .controls .controller { -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); background-color: rgba(255,255,255,.5); }
+}
 
 @media screen and (min-width: $break1) {
     
     .cl-slideshow .carousel-wrapper {
         height: 400px;
+    }
+    
+    .cl-slideshow .carousel-wrapper .controls .controller {
+        top: calc(50% - 25px);
+        width: 50px;
+        height: 50px;
     }
     
 }
@@ -115,6 +219,12 @@
     
     .cl-slideshow .carousel-wrapper {
         height: 500px;
+    }
+    
+    .cl-slideshow .carousel-wrapper .controls .controller {
+        top: calc(50% - 30px);
+        width: 60px;
+        height: 60px;
     }
     
 }
