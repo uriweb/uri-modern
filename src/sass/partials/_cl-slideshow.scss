@@ -22,13 +22,13 @@
         & {
             position: relative;
             width: 100%;
-            height: 500px;
+            height: 300px;
             overflow: hidden;
             background: #eee;
             border-radius: .2rem;
         }
         
-        ul {
+        .carousel {
             position: relative;
             display: block;
             white-space: nowrap;
@@ -39,7 +39,7 @@
             transition: transform .4s cubic-bezier(0.77, 0, 0.175, 1);
         }
         
-        li {
+        .slide {
             display: inline-block;
             position: relative;
             margin: 0;
@@ -47,84 +47,26 @@
             height: 100%;
             max-width: 100%;
             text-align: center;
+            background-position: center center;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
         
-        a {
+        .caption {
             display: block;
-            position: relative;
+            position: absolute;
+            bottom: 0;
             width: 100%;
-            height: 100%;
+            padding: 2% 10%;
+            background: rgba(255,255,255,.8);
+            text-align: center;
+            white-space: normal;
+            font-family: sans-serif;
+            font-size: .8rem;
+            color: #555;
+            
         }
         
-        img {
-            height: 100%;
-        }
-        
-        .motionswitch {
-            
-            & {
-                position: absolute;
-                right: 5%;
-                top: 5%;
-                z-index: 5;
-                opacity: 0;
-                width: 40px;
-                height: 40px;
-                background: #000;
-                border: 1px solid #fff;
-                border-radius: 50%;
-                transition: all .3s ease-in-out;
-            }
-            
-            &:before,
-            &:after {
-                content: '';
-                position: absolute;
-                top: 9px;
-                left: 11px;
-                height: 20px;
-                border-style: solid;
-                border-width: 0 0 0 6px;
-                border-color: transparent transparent transparent #fff;
-                transition: all .2s ease-in-out;
-            }
-            
-            &:after {
-                left: 21px;
-            }
-            
-        } // .carousel .motionswitch
-
-        
-        &.paused .motionswitch {
-            
-            &:before {
-                height: 10px;
-                border-width: 5px 0 5px 10px;
-                border-color: transparent transparent transparent #fff;
-            }
-            
-            &:after {
-                top: 14px;
-                height: 0;
-                border-width: 5px 0 5px 10px;
-                border-color: transparent transparent transparent #fff;
-            }
-            
-        } // .carousel.paused .motionswitch
-
-        
-        &:hover .motionswitch,
-        &:focus .motionswitch {
-            opacity: .4;
-        }
-
-        
-        & .motionswitch:hover,
-        & .motionswitch:focus {
-            cursor: pointer;
-            opacity: .8;
-        }
         
     } // .cl-slideshow .carousel
     
@@ -137,13 +79,11 @@
             list-style: none;
         }
         
-        li {
+        .dot {
             display: inline-block;
             width: 0;
             height: 0;
-            position: relative;
-            top: 0;
-            padding: 9px 0 0 9px;
+            padding: 10px 0 0 10px;
             margin: 0 10px;
             overflow: hidden;
             border-radius: 50%;
@@ -151,12 +91,9 @@
             transition: all .2s ease-in-out;
         }
         
-        li.active,
-        li:hover,
-        li:focus {
-            top: 3px;
-            margin: 0 7px;
-            padding: 15px 0 0 15px;
+        .dot.active,
+        .dot:hover,
+        .dot:focus {
             cursor: pointer;
             background: #555;
         }
@@ -165,3 +102,19 @@
     
 
 } // .cl-slideshow
+
+@media screen and (min-width: $break1) {
+    
+    .cl-slideshow .carousel-wrapper {
+        height: 400px;
+    }
+    
+}
+
+@media screen and (min-width: $break2) {
+    
+    .cl-slideshow .carousel-wrapper {
+        height: 500px;
+    }
+    
+}

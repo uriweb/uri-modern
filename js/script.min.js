@@ -5,9 +5,6 @@
 
 
 (function(){
-    
-    var slideTimer,
-        interval = 8000;
         
     window.addEventListener('load', init, false);
     
@@ -34,22 +31,15 @@
             
             parts = {};
             
-            a = figs[i].querySelector('a');
-            if (a) {
-                parts.a = a.getAttribute('href');
-            }
-            
             img = figs[i].querySelector('img');
             if(img) {
                 parts.img = img.getAttribute('src');
             }
             
-            /*
             caption = figs[i].querySelector('figcaption');
             if(caption) {
                 parts.caption = caption.innerHTML;
             }
-            */
             
             parsed.push(parts);
             
@@ -66,7 +56,7 @@
      * @param parsed obj the parsed gallery
      */
     function build(el, parsed) {
-        var S, carouselWrapper, carousel, li, html, i, button;
+        var S, carouselWrapper, carousel, li, caption, i;
                 
         S = document.createElement('div');
         S.className = 'cl-slideshow';
@@ -76,93 +66,32 @@
         S.appendChild(carouselWrapper);
         
         carousel = document.createElement('ul');
+        carousel.className = 'carousel';
         carouselWrapper.appendChild(carousel);
                 
         for (i=0; i<parsed.length; i++) {
                         
             li = document.createElement('li');
+            li.className = 'slide';
+            li.style.backgroundImage = 'url(' + parsed[i].img + ')';
             
-            html = '';
-            
-            html += '<a href="' + parsed[i].a + '">';
-            html += '<img src="' + parsed[i].img + '">';
-            html += '</a>';
-            
-            /*
             if (parsed[i].caption) {
-                html += '<span>' + parsed[i].caption + '</span>';
+                caption = document.createElement('div');
+                caption.className = 'caption';
+                caption.innerHTML = parsed[i].caption;
+                
+                li.appendChild(caption);
             }
-            */
-            
-            li.innerHTML = html;
-                        
+                      
             carousel.appendChild(li);
             
         }
         
-        button = document.createElement('div');
-        button.className = 'motionswitch';
-        button.title = 'Pause';
-        button.addEventListener('click', motionHandler.bind(null, carousel), false);
-        carouselWrapper.appendChild(button);
-        
         S.appendChild(initDots(carousel, parsed));
         
         setPosition(carousel, 0);
-        
-        initAutoAdvance(carousel);
-    
+            
         el.parentNode.replaceChild(S, el);
-        
-    }
-    
-    
-    /*
-     * Initiate auto advance
-     * @param c obj the carousel
-     */
-    function initAutoAdvance(c) {
-		c.parentNode.addEventListener('mouseover', function() {
-			window.clearTimeout(slideTimer);
-		}, true );
-		c.parentNode.addEventListener('mouseout', function() {
-            if (!c.parentNode.classList.contains('paused')) {
-                autoAdvance(c);
-            }
-		}, true );
-		autoAdvance(c);
-	}
-	
-    
-    /*
-     * Control the auto advance timer
-     * @param c obj the carousel
-     */
-	function autoAdvance(c) {
-		window.clearTimeout(slideTimer);
-		var adv = function(c) {
-            controlDirection(c, 'Next');
-			autoAdvance(c);
-		};
-		slideTimer = window.setTimeout(adv, interval, c);
-	}
-    
-    
-    /*
-     * Handle the motion switch
-     * @param c obj the carousel
-     */
-    function motionHandler(c) {
-        
-        var p = c.parentNode;
-        
-        if (p.classList.contains('paused')) {
-            p.classList.remove('paused');
-            autoAdvance(c);
-        } else {
-            p.classList.add('paused');
-            window.clearTimeout(slideTimer);
-        }
         
     }
     
@@ -180,6 +109,7 @@
         
         for (i=0; i<parsed.length; i++) {
             li = document.createElement('li');
+            li.className = 'dot';
             li.title = 'Slide ' + (i + 1);
             li.innerHTML = i + 1;
             li.addEventListener('click', setPosition.bind(null, c, i) );
@@ -231,9 +161,9 @@
         
         dots = c.parentNode.parentNode.querySelector('.navdots').querySelectorAll('li');
         for(i=0; i<dots.length; i++) {
-            dots[i].className = '';
+            dots[i].classList.remove('active');
         }
-        dots[index].className = 'active';
+        dots[index].classList.add('active');
         
     }
     
