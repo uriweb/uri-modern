@@ -2,15 +2,18 @@
    PRIMARY NAVIGATION
    ============================== */
 
-#primarynav {
+#localnav {
     position: relative;
+    font-family: $header;
+    font-size: .75rem;
+    padding-top: 40px;
 }
 
-#pnmenu-toggle {
+#lnmenu-toggle {
     display: none;
 }
 
-#pnmenu {
+#lnmenu {
     display: block;
     position: relative;
     height: 40px;
@@ -26,16 +29,16 @@
     transition: all .1s ease-in-out;
 }    
 
-#pnmenu:hover,
-#pnmenu:focus {
+#lnmenu:hover,
+#lnmenu:focus {
     background-color: $link;
     color: #fff;
     cursor: pointer;
     border-radius: .4rem;
 }
 
-#pnmenu-toggle:checked {
-    & ~ #pnmenu {
+#lnmenu-toggle:checked {
+    & ~ #lnmenu {
         background-color: $link;
         color: #fff;
         border-radius: 0;
@@ -45,12 +48,12 @@
     }
 }
     
-#primarynav>ul {
+#localnav>ul {
 
     & {
         display: none;
         position: absolute;
-        top: 40px;
+        top: 90px;
         left: 0;
         z-index: 10;
         background: #fff;
@@ -81,29 +84,35 @@
     
     a:hover,
     a:focus {
-        background: $blue;
+        background: $keaneyblue;
         color: $white;
+    }
+    
+    li.active>a {
+        background: $keaneyblue;
+        color: $white;
+        font-weight: 600;
+        padding-left: 1rem;
     }
     
 }
 
 @media screen and (min-width: 480px) {
-    #primarynav>ul {
+    #localnav>ul {
         max-width: 300px;
     }
 }
 
 @media screen and (min-width: 920px) {
-    #primarynav {
+    #localnav {
         float: left;
         clear: left;
         width: 20%;
         padding-bottom: 40px;
-        border-right: 5px solid $white;
         padding-right: 4%;
         box-sizing: border-box;
     }
-    #primarynav>ul {
+    #localnav>ul {
         & {
             display: block;
             position: relative;
@@ -113,13 +122,14 @@
             border-radius: 0;
         }
         a {
-            padding: 1rem .5rem;
+            padding: .75rem .5rem;
+            margin-bottom: 2px;
         }
         li:not(:first-child) {
-            border-top: 1px solid $grey;
+            border-top: none;
         }
     }
-    #pnmenu {
+    #lnmenu {
         display: none;
     }
 }

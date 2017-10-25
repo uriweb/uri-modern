@@ -32,7 +32,7 @@ function scripts(done) {
 	gulp.src('./src/js/*.js')
     .pipe(concat('script.min.js'))
     //.pipe(stripDebug())
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest('./js/'));
     
 	done();

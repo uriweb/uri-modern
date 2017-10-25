@@ -171,3 +171,15 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Add page slug to body class list in the format 'ln-{slug}'
+ */
+function uri_modern_add_slug_body_class( $classes ) {
+    global $post;
+    if ( isset( $post ) ) {
+        $classes[] = 'ln-' . $post->post_name;
+    }
+    return $classes;
+    }
+add_filter( 'body_class', 'uri_modern_add_slug_body_class' );

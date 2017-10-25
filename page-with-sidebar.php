@@ -15,9 +15,9 @@ get_header(); ?>
     
         <?php if(has_nav_menu('menu-1')) : ?>
             <!-- This is the primary site navigation. It only shows up if the menu location is selected as 'Primary'. -->
-            <div id="primarynav">
-                <input type="checkbox" id="pnmenu-toggle">
-                <label for="pnmenu-toggle" id="pnmenu">Menu</label>
+            <div id="localnav">
+                <input type="checkbox" id="lnmenu-toggle">
+                <label for="lnmenu-toggle" id="lnmenu">Menu</label>
                 <?php wp_nav_menu( array('theme_location' => 'menu-1', 'container' => '', 'fallback_cb' => false) ); ?>
             </div>
         <?php endif; ?>

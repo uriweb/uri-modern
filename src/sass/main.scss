@@ -26,7 +26,7 @@ $midgold: #ffd453;
 $gold: #c4960c;
 
 $white: #ffffff;
-$lightgrey: #f8f8f8;
+$lightgrey: #fafafa;
 $grey: #dddddd;
 $midgrey: #999999;
 $darkgrey: #555555;
@@ -76,8 +76,11 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @import 'partials/elements';
 @import 'partials/masthead';
 @import 'partials/footer';
-@import 'partials/primarynav';
+@import 'partials/localnav';
 @import 'partials/posts';
+@import 'partials/queryposts';
+
+@import 'partials/cl-slideshow';
 
 /* PIECES */
 @import 'partials/pieces/programfinder';

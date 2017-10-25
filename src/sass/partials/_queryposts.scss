@@ -1,0 +1,69 @@
+/* ==============================
+   QUERY POSTS
+
+   Styling is specific to the Display Posts Shortcode plugin
+   https://wordpress.org/plugins/display-posts-shortcode/
+
+   ============================== */
+
+
+ul.display-posts-listing {
+    
+    & {
+        list-style: none;
+        margin: 2rem 0;
+    }
+    
+    li.listing-item {
+        
+        &:not(:last-child) {
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid $grey;
+        }
+        
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        img {
+            float: left;
+            margin-right: 2rem;
+            margin-bottom: .5rem;
+        }
+        
+        img.size-thumbnail {
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+        
+        // Titles get H3 styling
+        .title {
+            display: block;
+            font-family: $header;
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: $black;
+        }
+        
+        .title:hover,
+        .title:focus {
+            color: $link;
+        }
+        
+        .excerpt-dash {
+            display: none;
+        }
+        
+        .excerpt {
+            display: block;
+            font-size: 1rem;
+            color: $darkgrey;
+        }
+        
+    } // li.listing-item
+    
+} // ul.display-posts-listing

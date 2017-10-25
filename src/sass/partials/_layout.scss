@@ -12,16 +12,10 @@ body {
 
 #content {
     width: 100%;
-    margin: 40px auto 50px;
+    margin: 0 auto;
     padding: 0 25px;
     box-sizing: border-box;
     transition: all .2s ease-in-out;
-}
-
-@media screen and (min-width: 640px) {
-    #content {
-        margin: 60px auto 80px;
-    }
 }
 
 @media screen and (min-width: 1050px) {
@@ -29,6 +23,11 @@ body {
         width: 1000px;
         padding: 0;
     }
+}
+
+#primary {
+    //background: $lightgrey;
+    padding-top: 40px;
 }
 
 
@@ -51,14 +50,13 @@ body {
 }
 
 #twocol #sidebar {
+    font-family: $header;
+    font-size: .9rem;
     border-top: 1px solid $midgrey;
     padding-top: 40px;
     margin-top: 40px;
 }
 
-#twocol #primary {
-    padding-top: 40px;
-}
 
 @media screen and (min-width: 920px) {
 
@@ -68,16 +66,13 @@ body {
         clear: left;
         margin-top: 0;
         padding-right: 4%;
-        padding-top: 0;
         padding-bottom: 30px;
         border-top: none;
-        border-right: 5px solid $white;
     }
 
     #twocol #primary {
         width: 80%;
         float: right;
-        padding-top: 0;
         padding-left: 6%;
     }
     

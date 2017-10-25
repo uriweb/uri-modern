@@ -357,27 +357,26 @@
         position: relative;
         width: 100%;
         margin: 0 auto;
-        padding: 0 25px;
-        height: 80px;
-        line-height: 80px;
+        padding: 0.5rem 25px;
         color: #002147;
         box-sizing: border-box;
         transition: all .2s ease-in-out;
         z-index: 2;
     }
     h1 {
-        font-family: 'trajan-pro', 'Lucida Grande', serif;
+        font-family: $header;
         margin-bottom: 0;
         max-width: 100%;
-        font-size: 1.5rem;
-        text-transform: uppercase;
+        font-size: 1.8rem;
     }
     h1 a:visited {
         color: inherit;
     }
     .site-description {
-        font-size: .9rem;
+        font-size: 1rem;
+        font-family: $header;
         color: $darkgrey;
+        padding-top: .5rem;
         padding-bottom: 0;
     }
 } // #sitebranding
@@ -386,10 +385,8 @@
 @media screen and (min-width: 1050px) {
     #sitebranding {
         width: 1000px;
-        padding: 0;
+        padding: 1rem 0;
         font-size: 2rem;
-        height: 100px;
-        line-height: 100px;
     }
 } // min-width: 1050px
 
@@ -398,7 +395,7 @@
 
 @media print {
     #globalbanner,
-    #primarynav {
+    #localnav {
         display: none;
     }
     
