@@ -42,6 +42,16 @@ function uri_modern_options_customizer($wp_customize) {
 
 
 	// set up the sections
+    $section_frontpage = 'uri_modern_options_dev';
+	$wp_customize->add_section($section_dev, array(
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '',
+    'title'          => 'DEVELOPMENT',
+    'description'    => '',
+    'panel'          => $panel,
+	));
+    
 	$section_globalheader = 'uri_modern_options_header';
 	$wp_customize->add_section($section_globalheader, array(
     'priority'       => 10,
@@ -52,20 +62,25 @@ function uri_modern_options_customizer($wp_customize) {
     'panel'          => $panel,
 	));
     
-	$section_frontpage = 'uri_modern_options_frontpage';
-	$wp_customize->add_section($section_frontpage, array(
-    'priority'       => 10,
-    'capability'     => 'edit_theme_options',
-    'theme_supports' => '',
-    'title'          => 'Front Page',
-    'description'    => '',
-    'panel'          => $panel,
-	));
     
-    
+ 
     // set up the individual settings
 	
 	$elements = array();
+    
+    $elements[] = array(
+		'name' => 'uri_modern_options_dev_cl',
+        'type' => '',
+		'options' => array(
+			'sanitize_callback' => 'uri_modern_sanitize_checkbox',
+		),
+		'control' => array(
+			'label'    => __( 'DEV CL', 'uri-modern' ),
+			'section'  => $section_dev,
+            'description' => __( 'Check to enable the development version of the Component Library if the plugin is not activated.', 'uri-modern' ),
+	 		'type' => 'checkbox'
+		)
+	);
     
     $elements[] = array(
 		'name' => 'uri_modern_options_hideglobalnav',
@@ -81,17 +96,7 @@ function uri_modern_options_customizer($wp_customize) {
 		)
 	);
     
-    $elements[] = array(
-		'name' => 'uri_modern_options_sitehero',
-        'type' => 'image',
-        'options' => array(),
-		'control' => array(
-			'label'    => __( 'Site Hero', 'uri-modern' ),
-			'section'  => $section_globalheader,
-            'description' => __( 'Upload an image to be used on the site frontpage', 'uri-modern' )
-		)
-	);
-    
+
     // loop over the elements 
 	foreach($elements as $el) {
 		uri_modern_add_customizer_element( $wp_customize, $el['name'], $el['type'], $el['options'], $el['control'] );
@@ -136,9 +141,9 @@ function uri_modern_add_customizer_element( $wp_customize_object, $name, $type, 
 	
 	$args = array_merge( $default_control, $control );
             
-    uri_console('type', $type);
-    uri_console('args', $args);
-    uri_console('args[input_attrs]', $args['input_attrs']);
+    //uri_console('type', $type);
+    //uri_console('args', $args);
+    //uri_console('args[input_attrs]', $args['input_attrs']);
     
     switch ($type) {
         case 'image':

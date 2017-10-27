@@ -22,9 +22,10 @@
         }
         */
         
+        var name;
         for (x in classes) {
             if (String(classes[x]).match(/^ln-/)) {
-                var name = classes[x];
+                name = classes[x];
             }
         }
                 

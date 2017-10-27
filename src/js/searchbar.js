@@ -13,7 +13,11 @@
             gsquery = document.getElementById('gs-query');
         
         gstoggle.addEventListener('change', function() {
-            this.checked ? gsquery.focus() : gsquery.blur();
+            if (this.checked) {
+                gsquery.focus();
+            } else {
+                gsquery.blur();
+            }
         });
     }
     
