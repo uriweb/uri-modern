@@ -173,15 +173,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Load the development version of the component library from the playground
- * This will load so long as the plugin is not activated and the DEV CL option
- * in the Customizer is checked
- */
-//if ( !is_admin() && get_option('uri_modern_options_dev_cl') ) {
-//    require $_SERVER['DOCUMENT_ROOT'] . '/playground/uri-component-library/uri-component-library-dev.php';
-//}
-
-/**
  * Add page slug to body class list in the format 'ln-{slug}'
  */
 function uri_modern_add_slug_body_class( $classes ) {
