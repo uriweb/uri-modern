@@ -6,7 +6,6 @@
     width: 100%;
     padding: 0;
     background: $white;
-    border-bottom: 1px solid $grey;
 }
 
 #identity-print {
@@ -80,7 +79,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 50% auto;
-    transition: all .4s $easeInOutQuint;
+    transition: top .4s $easeInOutQuint, background-size .4s $easeInOutQuint;
 }  
 
 #gsform:before {
@@ -111,7 +110,7 @@
 
 /* Brand Bar */
 
-#globalbanner {
+#globalbanner-wrapper {
     position: relative;
     width: 100%;
     background-color: #002147;
@@ -126,17 +125,14 @@
 
 /* Global Navigation */
 
-#globalnav {
+#globalbanner {
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    font-weight: 600;
-    font-size: .7rem;
-    letter-spacing: .05rem;
+    font-size: .9rem;
 }
 
-#globalnav:after {
+#globalbanner:after {
     content: '';
     display: block;
     clear: both;
@@ -154,7 +150,7 @@
     background-size: 220px auto;
 }
 
-#gn {
+#gateways-menu {
     & {
         display: none;  
         list-style-type: none;
@@ -163,23 +159,19 @@
         top: 40px;
         right: 0;
         z-index: 9996;
-        width: 50%;
-        padding-top: 1rem;
+        width: 220px;
+        padding: 1.5rem 0 1rem;
         background: #fff;
-        border-radius: 0 0 0 .2rem;
+        border-radius: 0 0 .2rem .2rem;
         box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
         transition: right .2s ease-in-out;
     }
     li {
         margin: 0;
     }
-    li:not(:first-child) {
-        border-top: 1px solid #eee;
-    }
     li a {
         display: block;
-        padding: 1rem;
-        font-size: .8rem;
+        padding: .5rem 1.5rem;
         color: #000;
         transition: all .1s ease-in-out;
     }
@@ -188,59 +180,74 @@
         color: $white;
     }
     
-} // #gn
+} // #gateways-menu
 
-#gnmenu-toggle {
+#gateways-toggle {
     display: none;
 }
 
-#gnmenu {
+#gateways-label {
     display: block;
     position: absolute;
     right: 40px;
     z-index: 9997;
     height: 40px;
-    width: 0;
-    padding-left: 40px;
+    line-height: 40px;
+    padding: 0 1rem;
+    font-size: .8rem;
+    font-weight: 600;
     background-color: transparent;
-    background-image: url('images/menu.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 50% auto;
     transition: all .1s ease-in-out;
 }   
 
-#gnmenu:hover,
-#gnmenu:focus {
+#gateways-label:hover,
+#gateways-label:focus {
     background-color: $link;
     cursor: pointer;
 }
 
-#gnmenu span {
-    display: none;
+#gateways-label span {
+    padding-right: 1.2rem;
 }
 
-#gnmenu-toggle:checked {
-    & ~ #gnmenu {
+#gateways-label span:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 1rem;
+    width: 0;
+    height: 0;
+    border-top: 6px solid $white;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    transform: rotate(0);
+    transition: transform .2s $easeInOutQuart;
+}
+
+#gateways-toggle:checked {
+    & ~ #gateways-label {
         background-color: $link;
     }
-    & ~ #gnmenu:after {
+    & ~ #gateways-label:after {
         content: '';
         display: block;
         z-index: 9997;
         position: absolute;
         top: 40px;
-        left: 0;
         width: 0;
         height: 0;
         border-top: 11px solid $link;
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
     }
-    & ~ #gn {
+    & ~ #gateways-label span:after {
+        transform: rotate(180deg);
+    }
+    & ~ #gateways-menu {
         display: block;
     }
-} // #gn-menu-toggle:checked
+} // #gateways-toggle:checked
 
 @media screen and (min-width: 420px) {
     #identity {
@@ -249,90 +256,22 @@
     }
 }
 
-@media screen and (min-width: 640px) {
-    
-    #gnmenu-toggle:checked ~ #gn {
-        width: 40%;
-    }
-    
-}
-
 @media screen and (min-width: 800px) {
-    #globalnav {
+    #globalbanner {
         max-width: 1000px;
     }
     
-    #gnmenu-toggle:checked ~ #gn, #gn {
-    
-        & {
-            position: relative;
-            top: 0;
-            left: 0;
-            width: auto;
-            background: transparent;
-            display: block;
-            padding-top: 0;
-            margin: 0 0 0 1rem;
-            float: left;
-            box-shadow: none;
-        }
-
-        li {
-            display: inline-block;
-            margin: 0 0 0 1vw;
-        }
-        
-        li:not(:first-child) {
-            border-top: none;
-        }
-        
-        li a {
-            font-size: inherit;
-            height: 40px;
-            line-height: 40px;
-            color: #fff;
-            padding: 0 1rem;
-        }
-
-        li a:hover,
-        li a:focus {
-            background: #fff;
-            color: $blue;
-        }
-
-        li.multi a:after {
-            content: '';
-            display: inline-block;
-            margin-left: 6px;
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 6px solid $white;
-            transition: all .1s ease-in-out;
-        }
-
-        li.multi a:hover:after {
-            border-top: 6px solid $blue;
-        }
-
-    } // #gnmenu-toggle:checked ~ #gn, #gn
-    
-    #gnmenu {
-        display: none;
-    }
-    
     #gsform {
-        background-size: 35% auto;
+        background-size: 40% auto;
     }
     
-} // min-width: 920px
+} // min-width: 800px
 
 @media screen and (min-width: 1050px) {
-    #globalbanner {
+    #globalbanner-wrapper {
         padding-left: 0;
     }
-    #globalnav {
+    #globalbanner {
         margin: 0 auto;
     }
     #gs-query {
@@ -341,13 +280,16 @@
     #gsform {
         margin-right: calc((100vw - 1000px) / 2);
     }
+    #gateways-menu {
+        right: 40px;
+    }
 } // min-width: 1050px
 
 
 /* PRINT */
 
 @media print {
-    #globalbanner,
+    #globalbanner-wrapper,
     #localnav {
         display: none;
     }
