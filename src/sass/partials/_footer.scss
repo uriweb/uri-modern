@@ -2,26 +2,13 @@
    FOOTER
    ============================== */
 
-#globalfooter {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 30px 0;
-    max-height: 500px;
-    overflow: hidden;
-    background-color: #002147;
-    background-image: url('images/campus-screen.jpg');
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: auto 500px;
-}
 
 #actionbar-wrapper {
     position: relative;
     box-sizing: border-box;
     width: 100%;
     padding: 30px 0;
-    background: #eee;
+    background: $white;
     border-top: 1px solid #ddd;
     transition: all .2s ease-in-out;
 }
@@ -37,6 +24,20 @@
 
 #actionbar {
     color: #555;
+}
+
+#globalfooter {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px 0;
+    max-height: 500px;
+    overflow: hidden;
+    background-color: #002147;
+    background-image: url('images/campus-screen.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: auto 500px;
 }
 
 #basement {

@@ -7,6 +7,7 @@
     background-color: #fff;
     background-position: center center;
     background-size: cover;
+    border-top: 1px solid $white;
 }
 
 #sitebranding {
@@ -31,7 +32,7 @@
         color: inherit;
     }
     .site-description {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         font-family: $type-header;
         color: $white;
         padding-top: .2rem;
