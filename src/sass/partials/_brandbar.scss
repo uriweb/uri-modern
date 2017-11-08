@@ -130,10 +130,7 @@
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    font-weight: 600;
-    font-size: .7rem;
-    letter-spacing: .05rem;
+    font-size: .9rem;
 }
 
 #globalnav:after {
@@ -164,22 +161,18 @@
         right: 0;
         z-index: 9996;
         width: 220px;
-        padding-top: 1rem;
+        padding: 1.5rem 0 1rem;
         background: #fff;
-        border-radius: 0 0 0 .2rem;
+        border-radius: 0 0 .2rem .2rem;
         box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
         transition: right .2s ease-in-out;
     }
     li {
         margin: 0;
     }
-    li:not(:first-child) {
-        border-top: 1px solid #eee;
-    }
     li a {
         display: block;
-        padding: 1rem;
-        font-size: .8rem;
+        padding: .5rem 1.5rem;
         color: #000;
         transition: all .1s ease-in-out;
     }
@@ -200,13 +193,11 @@
     right: 40px;
     z-index: 9997;
     height: 40px;
-    width: 0;
-    padding-left: 40px;
+    line-height: 40px;
+    padding: 0 1rem;
+    font-size: .8rem;
+    font-weight: 600;
     background-color: transparent;
-    background-image: url('images/menu.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 50% auto;
     transition: all .1s ease-in-out;
 }   
 
@@ -217,7 +208,22 @@
 }
 
 #gateways-label span {
-    display: none;
+    padding-right: 1.2rem;
+}
+
+#gateways-label span:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 1rem;
+    width: 0;
+    height: 0;
+    border-top: 6px solid $white;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    transform: rotate(0);
+    transition: transform .2s $easeInOutQuart;
 }
 
 #gateways-toggle:checked {
@@ -230,12 +236,14 @@
         z-index: 9997;
         position: absolute;
         top: 40px;
-        left: 0;
         width: 0;
         height: 0;
         border-top: 11px solid $link;
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
+    }
+    & ~ #gateways-label span:after {
+        transform: rotate(180deg);
     }
     & ~ #gateways-menu {
         display: block;
@@ -255,7 +263,7 @@
     }
     
     #gsform {
-        background-size: 35% auto;
+        background-size: 40% auto;
     }
     
 } // min-width: 800px

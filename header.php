@@ -51,7 +51,7 @@
                 <a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
                                     
                 <input type="checkbox" id="gateways-toggle">
-                <label for="gateways-toggle" id="gateways-label"><span>Menu</span></label>
+                <label for="gateways-toggle" id="gateways-label"><span>You</span></label>
                 <ul id="gateways-menu">
                     <li><a href="#">Prospective Students</a></li>
                     <li><a href="#">Students</a></li>
