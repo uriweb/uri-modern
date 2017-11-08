@@ -2,16 +2,18 @@
    TYPEOGRAPHY
    ============================== */
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,600|Hind:400,600,700|Hind+Siliguri:300,400,600") all;
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700|Hind:400,600,700|Rubik:400,500,700") all;
 
-$header: 'Roboto', sans-serif;
-$body: 'Hind Siliguri', sans-serif;
+$type-header: 'Roboto', 'Hind', Arial, sans-serif;
+$type-serif: 'Charter', 'Georgia', serif;
+$type-body: 'Hind', Arial, sans-serif;
+$type-numeric: 'Rubik', 'Hind', Arial, sans-serif;
 
 $maxtypewidth: 750px;
 
 html {
-    font-family: $body;
-    font-weight: normal;
+    font-family: $type-body;
+    font-weight: 400;
     font-size: 16px;
     color: $black;
 }
@@ -21,8 +23,8 @@ body {
 }
 
 h1 {
-    font-family: $header;
-    font-weight: 600;
+    font-family: $type-header;
+    font-weight: 700;
     font-size: 1.875rem;
     margin-bottom: 2rem;
     max-width: 800px;
@@ -35,44 +37,52 @@ h1.super {
 }
 
 h2 {
-    font-family: $header;
+    font-family: $type-header;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 2rem;
     color: $black;
     max-width: 800px;
 }
 
 h3 {
-    font-family: $header;
-    font-weight: 600;
+    font-family: $type-header;
+    font-weight: 700;
     font-size: 1.3rem;
     color: $black;
     margin-bottom: 1.3rem;
 }
 
 h4 {
-    font-family: $header;
-    font-weight: 600;
+    font-family: $type-header;
+    font-weight: 700;
     font-size: 1.2rem;
     color: $darkgrey;
     margin: 2.5rem 0 1.3rem;
 }
 
 h5 {
-    font-family: $header;
-    font-weight: 600;
+    font-family: $type-header;
+    font-weight: 700;
     font-size: 1rem;
     color: $darkgrey;
     margin: 2.5rem 0 .8rem;
 }
 
 h6 {
-    font-family: $header;
-    font-weight: 300;
+    font-family: $type-header;
+    font-weight: 400;
     font-size: 1rem;
     color: $darkgrey;
     margin: 2.5rem 0 .8rem;
+}
+
+.type-serif {
+    font-family: $type-serif;
+}
+
+.type-numeric {
+    font-family: $type-numeric;
 }
 
 p {

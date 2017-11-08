@@ -364,7 +364,7 @@
         z-index: 2;
     }
     h1 {
-        font-family: $header;
+        font-family: $type-header;
         margin-bottom: 0;
         max-width: 100%;
         font-size: 1.8rem;
@@ -374,7 +374,7 @@
     }
     .site-description {
         font-size: 1rem;
-        font-family: $header;
+        font-family: $type-header;
         color: $darkgrey;
         padding-top: .5rem;
         padding-bottom: 0;
