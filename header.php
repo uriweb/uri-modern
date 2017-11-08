@@ -30,7 +30,7 @@
 <div id="page" class="site">
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uri-modern' ); ?></a> -->
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="brandbar" class="site-header" role="banner">
         
         <!-- This URL will need to change, but for now it works for testing -->
         <div id="identity-print"><img src="http://web.uri.edu/business/wp-content/themes/urideptbranch/images/logo-print.png" width="120px" alt="University of Rhode Island"></div>
@@ -65,23 +65,7 @@
                 
             </div>
         </div>
-        
-        <div id="sitebanner">
-        
-            <div id="sitebranding">
 
-                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                
-                <?php $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?>
-                    <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-                <?php
-                endif; ?>
-
-            </div><!-- #sitebranding -->
-                    
-        </div><!-- #sitebanner -->
-
-	</header><!-- #masthead -->
+	</header><!-- #brandbar -->
     
 	<div id="content" class="site-content">
