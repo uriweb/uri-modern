@@ -37,7 +37,7 @@
         
         <div id="globalsearch">
             <input type="checkbox" id="gsform-toggle">
-            <label for="gsform-toggle" id="gsform"><span>Menu</span></label>
+            <label for="gsform-toggle" id="gsform"><span>Search</span></label>
             <form id="gs" method="get" action="http://www.uri.edu/search" name="global_general_search_form">
                 <input type="hidden" name="cx" value="016863979916529535900:17qai8akniu" />
                 <input type="hidden" name="cof" value="FORID:11" />
@@ -49,20 +49,18 @@
         <div id="globalbanner">
             <div id="globalnav">
                 <a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
-                
-                <?php if (!get_option('uri_modern_options_hideglobalnav')) : ?>
-                    
-                <input type="checkbox" id="gnmenu-toggle">
-                <label for="gnmenu-toggle" id="gnmenu"><span>Menu</span></label>
-                <ul id="gn">
-                    <li id="gn-apply"><a href="#" title="Apply">Apply</a></li>
-                    <li id="gn-academics"><a href="#" title="Academics">Academics</a></li>
-                    <li id="gn-research"><a href="#" title="Research">Research</a></li>
-                    <li id="gn-you" class="multi"><a href="#" title="You">You</a></li>
+                                    
+                <input type="checkbox" id="gateways-toggle">
+                <label for="gateways-toggle" id="gateways-label"><span>Menu</span></label>
+                <ul id="gateways-menu">
+                    <li><a href="#">Prospective Students</a></li>
+                    <li><a href="#">Students</a></li>
+                    <li><a href="#">Faculty and Staff</a></li>
+                    <li><a href="#">Parents and Families</a></li>
+                    <li><a href="#">Alumni</a></li>
+                    <li><a href="#">Community</a></li>
                 </ul>
-                
-                <?php endif; ?>
-                
+                                
             </div>
         </div>
 
