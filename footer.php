@@ -13,14 +13,14 @@
 
 	</div><!-- #content -->
 
-    <div id="sitefooter">
-        <div id="sf-content">
+    <div id="actionbar-wrapper">
+        <div id="actionbar">
             Site footer content
         </div>
-    </div>
+    </div><!-- #actionbar-wrapper -->
 
 	<footer id="globalfooter">
-        <div id="colophon">
+        <div id="basement">
             Some great footer content.
         </div>
         <div id="tagline"></div>
@@ -28,7 +28,7 @@
             <p>Copyright &copy; <a href="http://www.uri.edu/">University of Rhode Island</a> | University of Rhode Island, Kingston, RI 02881, USA | 1.401.874.1000</p>
             <p>URI is an equal opportunity employer committed to the principles of affirmative action.</p>
         </div>
-	</footer><!-- #colophon -->
+	</footer><!-- #globalfooter -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

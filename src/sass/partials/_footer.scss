@@ -16,7 +16,7 @@
     background-size: auto 500px;
 }
 
-#sitefooter {
+#actionbar-wrapper {
     position: relative;
     box-sizing: border-box;
     width: 100%;
@@ -26,8 +26,8 @@
     transition: all .2s ease-in-out;
 }
 
-#sf-content,
-#colophon {
+#actionbar,
+#basement {
     width: 100%;
     margin: 0 auto;
     padding: 0 25px;
@@ -35,11 +35,11 @@
     transition: all .2s ease-in-out;
 }
 
-#sf-content {
+#actionbar {
     color: #555;
 }
 
-#colophon {
+#basement {
     color: #fff;
 }
 
@@ -97,7 +97,7 @@
 }
 
 @media screen and (min-width: 750px) {
-    #sitefooter {
+    #actionbar-wrapper {
         padding: 50px 0;
     }
     #legal p {
@@ -113,8 +113,8 @@
 }
 
 @media screen and (min-width: 1050px) {
-    #sf-content,
-    #colophon,
+    #actionbar,
+    #basement,
     #legal,
     #tagline,
     #tagline:after {
@@ -132,8 +132,8 @@
     #globalfooter {
         padding: 0;
     }
-    #sf-content,
-    #colophon,
+    #actionbar,
+    #basement,
     #tagline {
         display: none;
     }

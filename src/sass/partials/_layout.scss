@@ -10,7 +10,7 @@ body {
     overflow: hidden;
 }
 
-#content {
+#main {
     width: 100%;
     margin: 0 auto;
     padding: 0 25px;
@@ -19,61 +19,8 @@ body {
 }
 
 @media screen and (min-width: 1050px) {
-    #content {
+    #main {
         width: 1000px;
         padding: 0;
     }
-}
-
-#primary {
-    //background: $lightgrey;
-    padding-top: 40px;
-}
-
-
-/*
- * TWO COLUMN LAYOUT
- */
-
-   
-#twocol:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-#twocol #sidebar,
-#twocol #primary {
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-}
-
-#twocol #sidebar {
-    font-family: $type-header;
-    font-size: .9rem;
-    border-top: 1px solid $midgrey;
-    padding-top: 40px;
-    margin-top: 40px;
-}
-
-
-@media screen and (min-width: 920px) {
-
-    #twocol #sidebar {
-        width: 20%;
-        float: left;
-        clear: left;
-        margin-top: 0;
-        padding-right: 4%;
-        padding-bottom: 30px;
-        border-top: none;
-    }
-
-    #twocol #primary {
-        width: 80%;
-        float: right;
-        padding-left: 6%;
-    }
-    
 }
