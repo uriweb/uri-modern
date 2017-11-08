@@ -46,8 +46,8 @@
             </form>
         </div>
         
-        <div id="globalbanner">
-            <div id="globalnav">
+        <div id="globalbanner-wrapper">
+            <div id="globalbanner">
                 <a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
                                     
                 <input type="checkbox" id="gateways-toggle">

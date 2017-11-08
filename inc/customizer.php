@@ -68,20 +68,6 @@ function uri_modern_options_customizer($wp_customize) {
 	
 	$elements = array();
     
-    $elements[] = array(
-		'name' => 'uri_modern_options_hideglobalnav',
-        'type' => '',
-		'options' => array(
-			'sanitize_callback' => 'uri_modern_sanitize_checkbox',
-		),
-		'control' => array(
-			'label'    => __( 'Hide Global Navigation', 'uri-modern' ),
-			'section'  => $section_globalheader,
-            'description' => __( 'Check to hide global navigation on this site', 'uri-modern' ),
-	 		'type' => 'checkbox'
-		)
-	);
-    
 
     // loop over the elements 
 	foreach($elements as $el) {

@@ -6,7 +6,6 @@
     width: 100%;
     padding: 0;
     background: $white;
-    border-bottom: 1px solid $grey;
 }
 
 #identity-print {
@@ -111,7 +110,7 @@
 
 /* Brand Bar */
 
-#globalbanner {
+#globalbanner-wrapper {
     position: relative;
     width: 100%;
     background-color: #002147;
@@ -126,14 +125,14 @@
 
 /* Global Navigation */
 
-#globalnav {
+#globalbanner {
     position: relative;
     width: 100%;
     box-sizing: border-box;
     font-size: .9rem;
 }
 
-#globalnav:after {
+#globalbanner:after {
     content: '';
     display: block;
     clear: both;
@@ -258,7 +257,7 @@
 }
 
 @media screen and (min-width: 800px) {
-    #globalnav {
+    #globalbanner {
         max-width: 1000px;
     }
     
@@ -269,10 +268,10 @@
 } // min-width: 800px
 
 @media screen and (min-width: 1050px) {
-    #globalbanner {
+    #globalbanner-wrapper {
         padding-left: 0;
     }
-    #globalnav {
+    #globalbanner {
         margin: 0 auto;
     }
     #gs-query {
@@ -290,7 +289,7 @@
 /* PRINT */
 
 @media print {
-    #globalbanner,
+    #globalbanner-wrapper,
     #localnav {
         display: none;
     }
