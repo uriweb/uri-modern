@@ -4,6 +4,9 @@
 
 #sitebanner {
     position: relative;
+    background-color: #fff;
+    background-position: center center;
+    background-size: cover;
 }
 
 #sitebranding {
@@ -22,24 +25,28 @@
         margin-bottom: 0;
         max-width: 100%;
         font-size: 1.8rem;
+        color: $white;
     }
     h1 a:visited {
         color: inherit;
     }
     .site-description {
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-family: $type-header;
-        color: $darkgrey;
-        padding-top: .5rem;
+        color: $white;
+        padding-top: .2rem;
         padding-bottom: 0;
     }
 } // #sitebranding
 
 
 @media screen and (min-width: 1050px) {
+    #sitebanner {
+        height: 140px;
+    }
     #sitebranding {
         width: 1000px;
-        padding: 1rem 0;
+        padding: 2.2rem 0;
         font-size: 2rem;
     }
 } // min-width: 1050px

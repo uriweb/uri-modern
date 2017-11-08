@@ -20,8 +20,8 @@ function uri_modern_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'uri_modern_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 2560,
+		'height'                 => 300,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'uri_modern_header_style',
 	) ) );

@@ -9,7 +9,7 @@
 ?>
 
 
-<div id="sitebanner">
+<div id="sitebanner"<?php if ( get_header_image() ) { echo ' style="background-image:url(' . get_header_image() . ')"'; } ?>>
         
     <div id="sitebranding">
 
