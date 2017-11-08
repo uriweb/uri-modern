@@ -15,7 +15,9 @@
 
     <div id="actionbar-wrapper">
         <div id="actionbar">
-            Site footer content
+            <a href="#" id="action-apply"><span></span>Apply</a>
+            <a href="#" id="action-tour"><span></span>Tour</a>
+            <a href="#" id="action-give"><span></span>Give</a>
         </div>
     </div><!-- #actionbar-wrapper -->
 

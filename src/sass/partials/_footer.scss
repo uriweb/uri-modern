@@ -7,7 +7,6 @@
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    padding: 30px 0;
     background: $white;
     border-top: 1px solid #ddd;
     transition: all .2s ease-in-out;
@@ -23,8 +22,60 @@
 }
 
 #actionbar {
-    color: #555;
-}
+    & {
+        display: flex;
+    }
+
+    & a {
+        display: block;
+        flex: 1;
+        height: 150px;
+        text-align: center;
+        color: $black;
+        transition: all .1s ease-in-out;
+    }
+
+    & a:hover {
+        color: $white;
+        background-color: $link;
+    }
+    
+    & a span {
+        display: block;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: 24px;
+        background-image: url('images/actionbar-sprite.png');
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+    }
+    
+    & #action-apply span {
+        background-position: center 0;
+    }
+    
+    & #action-tour span {
+        background-position: center -48px;
+    }
+    
+    & #action-give span {
+        background-position: center -96px;
+    }
+    
+    & #action-apply:hover span {
+        background-position: center -24px;
+    }
+    
+    & #action-tour:hover span {
+        background-position: center -72px;
+    }
+    
+    & #action-give:hover span {
+        background-position: center -120px;
+    }
+    
+} // #actionbar
 
 #globalfooter {
     position: relative;
@@ -98,9 +149,6 @@
 }
 
 @media screen and (min-width: 750px) {
-    #actionbar-wrapper {
-        padding: 50px 0;
-    }
     #legal p {
         text-align: left;
     }
