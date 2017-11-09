@@ -11,16 +11,18 @@
 }
 
 #sitebranding {
-    & {
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0.5rem 25px;
-        color: #002147;
-        box-sizing: border-box;
-        transition: all .2s ease-in-out;
-        z-index: 2;
-    }
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 25px;
+    color: #002147;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+    z-index: 2;
+}
+
+#siteidentity {
+    
     h1 {
         font-family: $type-header;
         margin-bottom: 0;
@@ -28,26 +30,44 @@
         font-size: 1.8rem;
         color: $white;
     }
+    
     h1 a:visited {
         color: inherit;
     }
-    .site-description {
+    
+    h2 {
         font-size: 1.3rem;
-        font-family: $type-header;
+        font-weight: 400;
         color: $white;
-        padding-top: .2rem;
-        padding-bottom: 0;
+        padding-top: .5rem;
+        margin: 0;
     }
-} // #sitebranding
+    
+} // #siteidentity
+
+#sitesocial {
+    font-size: initial;
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 600px) {
+    #sitebranding {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    #sitesocial {
+        margin-top: 0;
+    }
+} // min-width: 600px
 
 
 @media screen and (min-width: 1050px) {
-    #sitebanner {
-        height: 140px;
-    }
+    
     #sitebranding {
         width: 1000px;
         padding: 2.2rem 0;
         font-size: 2rem;
     }
+    
 } // min-width: 1050px

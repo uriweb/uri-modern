@@ -38,53 +38,73 @@ function uri_modern_options_customizer($wp_customize) {
     // Add field for Facebook URL
     $wp_customize->add_setting( 'department_facebook_URL', array(
         'default' => '',
+        'type' => 'option',
         'sanitize_callback' => 'uri_modern_sanitize_url'
     ) );
     
-    $wp_customize->add_control( 'department_facebook_URL', array(
-        'section' => 'uri_modern_customizer_social',
-        'label' => __( 'Facebook URL', 'uri-modern' ),
-        'description' => __( 'Enter a complete URL to include Facebook in the site header social bar.', 'uri-modern' ),
-        'type' => 'text'
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'department_facebook_URL',
+        array(
+            'section' => 'uri_modern_customizer_social',
+            'label' => __( 'Facebook URL', 'uri-modern' ),
+            'description' => __( 'Enter a complete URL to include Facebook in the site header social bar.', 'uri-modern' ),
+            'type' => 'text'
+        )
     ) );
     
     // Add field for Instagram URL
     $wp_customize->add_setting( 'department_instagram_URL', array(
         'default' => '',
+        'type' => 'option',
         'sanitize_callback' => 'uri_modern_sanitize_url'
     ) );
     
-    $wp_customize->add_control( 'department_instagram_URL', array(
-        'section' => 'uri_modern_customizer_social',
-        'label' => __( 'Instagram URL', 'uri-modern' ),
-        'description' => __( 'Enter a complete URL to include Instagram in the site header social bar.', 'uri-modern' ),
-        'type' => 'text'
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'department_instagram_URL',
+        array(
+            'section' => 'uri_modern_customizer_social',
+            'label' => __( 'Instagram URL', 'uri-modern' ),
+            'description' => __( 'Enter a complete URL to include Instagram in the site header social bar.', 'uri-modern' ),
+            'type' => 'text'
+        )
     ) );
     
     // Add field for Twitter URL
     $wp_customize->add_setting( 'department_twitter_URL', array(
         'default' => '',
+        'type' => 'option',
         'sanitize_callback' => 'uri_modern_sanitize_url'
     ) );
     
-    $wp_customize->add_control( 'department_twitter_URL', array(
-        'section' => 'uri_modern_customizer_social',
-        'label' => __( 'Twitter URL', 'uri-modern' ),
-        'description' => __( 'Enter a complete URL to include Twitter in the site header social bar.', 'uri-modern' ),
-        'type' => 'text'
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'department_twitter_URL',
+        array(
+            'section' => 'uri_modern_customizer_social',
+            'label' => __( 'Twitter URL', 'uri-modern' ),
+            'description' => __( 'Enter a complete URL to include Twitter in the site header social bar.', 'uri-modern' ),
+            'type' => 'text'
+        )
     ) );
     
     // Add field for LinkedIn URL
     $wp_customize->add_setting( 'department_linkedin_URL', array(
         'default' => '',
+        'type' => 'option',
         'sanitize_callback' => 'uri_modern_sanitize_url'
     ) );
     
-    $wp_customize->add_control( 'department_linkedin_URL', array(
-        'section' => 'uri_modern_customizer_social',
-        'label' => __( 'LinkedIn URL', 'uri-modern' ),
-        'description' => __( 'Enter a complete URL to include LinkedIn in the site header social bar.', 'uri-modern' ),
-        'type' => 'text'
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'department_linkedin_URL',
+        array(
+            'section' => 'uri_modern_customizer_social',
+            'label' => __( 'LinkedIn URL', 'uri-modern' ),
+            'description' => __( 'Enter a complete URL to include LinkedIn in the site header social bar.', 'uri-modern' ),
+            'type' => 'text'
+        )
     ) );
 
 
