@@ -56,12 +56,12 @@
                         echo do_shortcode('[uri-tides darkmode=true height=20]');
                     }
                 ?>
-                <ul class="socialbar">
-                    <li><a href="#" class="sb-facebook">Facebook</a></li>
-                    <li><a href="#" class="sb-instagram">Instagram</a></li>
-                    <li><a href="#" class="sb-twitter">Twitter</a></li>
-                    <li><a href="#" class="sb-linkedin">LinkedIn</a></li>
-                </ul>
+                <!-- Social Media Component -->
+                <?php 
+                    if (function_exists('uri_cl_shortcode_social')) {
+                        echo do_shortcode('[cl-social style="white" facebook="#" instagram="#" twitter="#" linkedin="#"]');
+                    }
+                ?>
             </div>
         </div>
         <div id="tagline"></div>
