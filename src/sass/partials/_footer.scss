@@ -102,6 +102,10 @@
 
 #storagebins {
     
+    & {
+        text-align: center;
+    }
+    
     ul {
         list-style: none;
         font-size: 1rem;
@@ -112,6 +116,15 @@
         text-transform: uppercase;
         font-weight: 600;
         margin-bottom: 1rem;
+    }
+
+    a {
+        color: $white;
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: underline;
     }
     
 } // #storagebins
@@ -127,6 +140,7 @@
         padding: 0;
         border: none;
         background: none;
+        text-align: left;
     }
     .uri-tides-widget .label {
         font-size: .7rem;
@@ -216,6 +230,7 @@
     #storagebins {
         & {
             float: left;
+            text-align: left;
         }
         ul {
             display: inline-block;
@@ -223,13 +238,6 @@
         }
         ul:not(:first-child) {
             margin: 0 0 0 3rem;
-        }
-        a {
-            color: $white;
-        }
-        a:hover,
-        a:focus {
-            text-decoration: underline;
         }
     } // #storagebins
 
