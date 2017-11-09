@@ -32,7 +32,7 @@
         height: 150px;
         text-align: center;
         color: $black;
-        transition: all .1s ease-in-out;
+        transition: none;
     }
 
     a:hover {
@@ -102,19 +102,10 @@
 
 #storagebins {
     
-    & {
-        float: left;
-    }
-    
     ul {
         list-style: none;
-        font-size: .7rem;
-        display: inline-block;
+        font-size: 1rem;
         margin: 0;
-    }
-    
-    ul:not(:first-child) {
-        margin: 0 0 0 3rem;
     }
     
     li:first-child {
@@ -123,71 +114,48 @@
         margin-bottom: 1rem;
     }
     
-    a {
-        color: $white;
-    }
-    
-    a:hover,
-    a:focus {
-        text-decoration: underline;
-    }
-    
 } // #storagebins
 
 #gimmicks {
     
     & {
-        float: right;
-    }
-    
-    &:after {
-        display: block;
-        content: '';
-        clear: both;
-    }
-    
-    &>* {
-        float: left;
+        text-align: center;
     }
     
     .uri-tides-widget {
-        margin: 0;
+        margin: 1rem 0;
         padding: 0;
         border: none;
         background: none;
     }
-    
     .uri-tides-widget .label {
         font-size: .7rem;
         text-transform: uppercase;
         font-weight: 600;
     }
-    
     .uri-tides-metrics div {
         font-family: $type-numeric;
         font-weight: 400;
     }
-    
     .uri-tides-metrics em {
         font-weight: 500;
     }
-    
     .uri-tides-source {
         color: rgba(255,255,255,.4);
+        font-size: .55rem;
     }
-    
     .socialbar {
-       margin-left: 3rem;
+        margin: 1rem 0;
     }
     
-}
+} // #gimmicks
 
 #tagline {
     position: relative;
     display: block;
     width: 100%;
     height: 1px;
-    margin: 60px auto;
+    margin: 80px auto;
     background: linear-gradient(to right, $midblue 10%, $lightblue 30%, $midblue);
     transition: all .2s ease-in-out;
 }
@@ -214,7 +182,7 @@
         width: 100%;
         margin: 10px auto;
         padding: 0 25px;
-        font-size: .6rem;
+        font-size: .55rem;
         box-sizing: border-box;
         transtition: all .2s ease-in-out;
     }
@@ -244,7 +212,50 @@
 
 } // #legal
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 800px) {
+    #storagebins {
+        & {
+            float: left;
+        }
+        ul {
+            display: inline-block;
+            font-size: .7rem;
+        }
+        ul:not(:first-child) {
+            margin: 0 0 0 3rem;
+        }
+        a {
+            color: $white;
+        }
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+    } // #storagebins
+
+    #gimmicks {
+        
+        & {
+            float: right;
+            text-align: initial;
+        }   
+        &:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+        &>* {
+            float: left;
+        }
+        .uri-tides-widget {
+            margin: 0;
+        }
+        .socialbar {
+           margin: 0 0 0 3rem;
+        }
+        
+    } // #gimmicks
+    
     #legal p {
         text-align: left;
     }
