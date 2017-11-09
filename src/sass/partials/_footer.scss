@@ -26,7 +26,7 @@
         display: flex;
     }
 
-    & a {
+    a {
         display: block;
         flex: 1;
         height: 150px;
@@ -35,12 +35,12 @@
         transition: all .1s ease-in-out;
     }
 
-    & a:hover {
+    a:hover {
         color: $white;
         background-color: $link;
     }
     
-    & a span {
+    a span {
         display: block;
         margin-top: 2.5rem;
         margin-bottom: 1rem;
@@ -51,27 +51,27 @@
         background-size: 24px auto;
     }
     
-    & #action-apply span {
+    #action-apply span {
         background-position: center 0;
     }
     
-    & #action-tour span {
+    #action-tour span {
         background-position: center -48px;
     }
     
-    & #action-give span {
+    #action-give span {
         background-position: center -96px;
     }
     
-    & #action-apply:hover span {
+    #action-apply:hover span {
         background-position: center -24px;
     }
     
-    & #action-tour:hover span {
+    #action-tour:hover span {
         background-position: center -72px;
     }
     
-    & #action-give:hover span {
+    #action-give:hover span {
         background-position: center -120px;
     }
     
@@ -82,7 +82,6 @@
     box-sizing: border-box;
     width: 100%;
     padding: 30px 0;
-    max-height: 500px;
     overflow: hidden;
     background-color: #002147;
     background-image: url('images/campus-screen.jpg');
@@ -95,12 +94,100 @@
     color: #fff;
 }
 
+#basement:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#storagebins {
+    
+    & {
+        float: left;
+    }
+    
+    ul {
+        list-style: none;
+        font-size: .7rem;
+        display: inline-block;
+        margin: 0;
+    }
+    
+    ul:not(:first-child) {
+        margin: 0 0 0 3rem;
+    }
+    
+    li:first-child {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    
+    a {
+        color: $white;
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+    
+} // #storagebins
+
+#gimmicks {
+    
+    & {
+        float: right;
+    }
+    
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+    
+    &>* {
+        float: left;
+    }
+    
+    .uri-tides-widget {
+        margin: 0;
+        padding: 0;
+        border: none;
+        background: none;
+    }
+    
+    .uri-tides-widget .label {
+        font-size: .7rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    
+    .uri-tides-metrics div {
+        font-family: $type-numeric;
+        font-weight: 400;
+    }
+    
+    .uri-tides-metrics em {
+        font-weight: 500;
+    }
+    
+    .uri-tides-source {
+        color: rgba(255,255,255,.4);
+    }
+    
+    .socialbar {
+       margin-left: 3rem;
+    }
+    
+}
+
 #tagline {
     position: relative;
     display: block;
     width: 100%;
     height: 1px;
-    margin: 80px auto 60px;
+    margin: 60px auto;
     background: linear-gradient(to right, $midblue 10%, $lightblue 30%, $midblue);
     transition: all .2s ease-in-out;
 }
@@ -120,33 +207,42 @@
 }
 
 #legal {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    margin: 10px auto;
-    padding: 0 25px;
+
+    & {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        margin: 10px auto;
+        padding: 0 25px;
+        font-size: .6rem;
+        box-sizing: border-box;
+        transtition: all .2s ease-in-out;
+    }
+
+    p {
+        color: $white;
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+    }
     
-    font-size: .5rem;
-    box-sizing: border-box;
-    transtition: all .2s ease-in-out;
-}
+    a {
+        text-decoration: none;
+        color: #01a7ff;
+        font-weight: 600;
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+    
+    a.subtle {
+        color: inherit;
+        font-weight: inherit;
+    }
 
-#legal p {
-    color: $lightblue;
-    max-width: 100%;
-    padding-top: 0;
-    text-align: center;
-}
-
-#legal a {
-    color: inherit;
-    text-decoration: none;
-}
-
-#legal a:hover,
-#legal a:focus {
-    text-decoration: underline;
-}
+} // #legal
 
 @media screen and (min-width: 750px) {
     #legal p {
@@ -154,7 +250,7 @@
     }
     #tagline {
         background: linear-gradient(to right, $midblue 50%, $lightblue 70%, $midblue);
-        margin: 80px auto 0;
+        margin: 60px auto 0;
     }
     #tagline:after {
         background-position: right 25px top;

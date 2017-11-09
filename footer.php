@@ -23,12 +23,50 @@
 
 	<footer id="globalfooter">
         <div id="basement">
-            Some great footer content.
+            <div id="storagebins">
+                <ul>
+                    <li>University</li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">Diveristy and Inclusion</a></li>
+                    <li><a href="#">Global</a></li>
+                    <li><a href="#">Campuses</a></li>
+                    <li><a href="#">Safety</a></li>
+                </ul>
+                <ul>
+                    <li>Student Life</li>
+                    <li><a href="#">Housing</a></li>
+                    <li><a href="#">Dining</a></li>
+                    <li><a href="#">Athletics and Recreation</a></li>
+                    <li><a href="#">Health and Wellness</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+                <ul>
+                    <li>Academics</li>
+                    <li><a href="#">Undergraduate</a></li>
+                    <li><a href="#">Graduate</a></li>
+                    <li><a href="#">Advising</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li><a href="#">Colleges</a></li>
+                </ul>
+            </div>
+            <div id="gimmicks">
+                <?php 
+                    if (function_exists('uri_tides_shortcode')) {
+                        echo do_shortcode('[uri-tides darkmode=true height=20]');
+                    }
+                ?>
+                <ul class="socialbar">
+                    <li><a href="#" class="sb-facebook">Facebook</a></li>
+                    <li><a href="#" class="sb-instagram">Instagram</a></li>
+                    <li><a href="#" class="sb-twitter">Twitter</a></li>
+                    <li><a href="#" class="sb-linkedin">LinkedIn</a></li>
+                </ul>
+            </div>
         </div>
         <div id="tagline"></div>
         <div id="legal">
-            <p>Copyright &copy; <a href="http://www.uri.edu/">University of Rhode Island</a> | University of Rhode Island, Kingston, RI 02881, USA | 1.401.874.1000</p>
-            <p>URI is an equal opportunity employer committed to the principles of affirmative action.</p>
+            <p>Copyright &copy; <a class="subtle" href="http://www.uri.edu/">University of Rhode Island</a> | University of Rhode Island, Kingston, RI 02881, USA | 1.401.874.1000</p>
+            <p>URI is an equal opportunity employer committed to the principles of affirmative action.&nbsp;&nbsp;<a href="#">Work at URI</a></p>
         </div>
 	</footer><!-- #globalfooter -->
 </div><!-- #page -->
