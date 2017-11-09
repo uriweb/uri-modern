@@ -7,7 +7,6 @@
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    padding: 30px 0;
     background: $white;
     border-top: 1px solid #ddd;
     transition: all .2s ease-in-out;
@@ -23,15 +22,66 @@
 }
 
 #actionbar {
-    color: #555;
-}
+    & {
+        display: flex;
+    }
+
+    a {
+        display: block;
+        flex: 1;
+        height: 150px;
+        text-align: center;
+        color: $black;
+        transition: none;
+    }
+
+    a:hover {
+        color: $white;
+        background-color: $link;
+    }
+    
+    a span {
+        display: block;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: 24px;
+        background-image: url('images/actionbar-sprite.png');
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+    }
+    
+    #action-apply span {
+        background-position: center 0;
+    }
+    
+    #action-tour span {
+        background-position: center -48px;
+    }
+    
+    #action-give span {
+        background-position: center -96px;
+    }
+    
+    #action-apply:hover span {
+        background-position: center -24px;
+    }
+    
+    #action-tour:hover span {
+        background-position: center -72px;
+    }
+    
+    #action-give:hover span {
+        background-position: center -120px;
+    }
+    
+} // #actionbar
 
 #globalfooter {
     position: relative;
     box-sizing: border-box;
     width: 100%;
     padding: 30px 0;
-    max-height: 500px;
     overflow: hidden;
     background-color: #002147;
     background-image: url('images/campus-screen.jpg');
@@ -44,12 +94,82 @@
     color: #fff;
 }
 
+#basement:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#storagebins {
+    
+    & {
+        text-align: center;
+    }
+    
+    ul {
+        list-style: none;
+        font-size: 1rem;
+        margin: 0;
+    }
+    
+    li:first-child {
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    a {
+        color: $white;
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+    
+} // #storagebins
+
+#gimmicks {
+    
+    & {
+        text-align: center;
+    }
+    
+    .uri-tides-widget {
+        margin: 1rem 0;
+        padding: 0;
+        border: none;
+        background: none;
+        text-align: left;
+    }
+    .uri-tides-widget .label {
+        font-size: .7rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .uri-tides-metrics div {
+        font-family: $type-numeric;
+        font-weight: 400;
+    }
+    .uri-tides-metrics em {
+        font-weight: 500;
+    }
+    .uri-tides-source {
+        color: rgba(255,255,255,.4);
+        font-size: .55rem;
+    }
+    .cl-social {
+        margin: 1rem 0;
+    }
+    
+} // #gimmicks
+
 #tagline {
     position: relative;
     display: block;
     width: 100%;
     height: 1px;
-    margin: 80px auto 60px;
+    margin: 80px auto;
     background: linear-gradient(to right, $midblue 10%, $lightblue 30%, $midblue);
     transition: all .2s ease-in-out;
 }
@@ -69,44 +189,87 @@
 }
 
 #legal {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    margin: 10px auto;
-    padding: 0 25px;
-    
-    font-size: .5rem;
-    box-sizing: border-box;
-    transtition: all .2s ease-in-out;
-}
 
-#legal p {
-    color: $lightblue;
-    max-width: 100%;
-    padding-top: 0;
-    text-align: center;
-}
-
-#legal a {
-    color: inherit;
-    text-decoration: none;
-}
-
-#legal a:hover,
-#legal a:focus {
-    text-decoration: underline;
-}
-
-@media screen and (min-width: 750px) {
-    #actionbar-wrapper {
-        padding: 50px 0;
+    & {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        margin: 10px auto;
+        padding: 0 25px;
+        font-size: .55rem;
+        box-sizing: border-box;
+        transtition: all .2s ease-in-out;
     }
+
+    p {
+        color: $white;
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #01a7ff;
+        font-weight: 600;
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+    
+    a.subtle {
+        color: inherit;
+        font-weight: inherit;
+    }
+
+} // #legal
+
+@media screen and (min-width: 800px) {
+    #storagebins {
+        & {
+            float: left;
+            text-align: left;
+        }
+        ul {
+            display: inline-block;
+            font-size: .7rem;
+        }
+        ul:not(:first-child) {
+            margin: 0 0 0 3rem;
+        }
+    } // #storagebins
+
+    #gimmicks {
+        
+        & {
+            float: right;
+            text-align: initial;
+        }   
+        &:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+        &>* {
+            float: left;
+        }
+        .uri-tides-widget {
+            margin: 0;
+        }
+        .cl-social {
+           margin: 0 0 0 3rem;
+        }
+        
+    } // #gimmicks
+    
     #legal p {
         text-align: left;
     }
     #tagline {
         background: linear-gradient(to right, $midblue 50%, $lightblue 70%, $midblue);
-        margin: 80px auto 0;
+        margin: 60px auto 0;
     }
     #tagline:after {
         background-position: right 25px top;
