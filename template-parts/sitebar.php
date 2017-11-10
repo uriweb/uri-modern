@@ -25,7 +25,16 @@
         <div id="sitesocial">
             <?php 
                 if (function_exists('uri_cl_shortcode_social')) {
-                    echo do_shortcode('[cl-social style="white" facebook="' . get_option('department_facebook_URL') . '" instagram="' . get_option('department_instagram_URL') . '" twitter="' . get_option('department_twitter_URL') . '" linkedin="' . get_option('department_linkedin_URL') . '"]');
+                    $socials = array(
+                        'facebook' => get_option('department_facebook_URL'),
+                        'instagram' => get_option('department_instagram_URL'),
+                        'twitter' => get_option('department_twitter_URL'),
+                        'youtube' => get_option('department_youtube_URL'),
+                        'snapchat' => get_option('department_snapchat_URL'),
+                        'linkedin' => get_option('department_linkedin_URL')
+                    );
+                        
+                    echo do_shortcode('[cl-social style="white" facebook="' . $socials['facebook'] . '" instagram="' . $socials['instagram'] . '" twitter="' . $socials['twitter'] . '" youtube="' . $socials['youtube'] . '" snapchat="' . $socials['snapchat'] . '" linkedin="' . $socials['linkedin'] . '"]');
                 }
             ?>
         </div>

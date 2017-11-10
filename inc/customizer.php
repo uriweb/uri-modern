@@ -89,6 +89,42 @@ function uri_modern_options_customizer($wp_customize) {
         )
     ) );
     
+    // Add field for YouTube URL
+    $wp_customize->add_setting( 'department_youtube_URL', array(
+        'default' => '',
+        'type' => 'option',
+        'sanitize_callback' => 'uri_modern_sanitize_url'
+    ) );
+    
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'department_youtube_URL',
+        array(
+            'section' => 'uri_modern_customizer_social',
+            'label' => __( 'YouTube URL', 'uri-modern' ),
+            'description' => __( 'Enter a complete URL to include YouTube in the site header social bar.', 'uri-modern' ),
+            'type' => 'text'
+        )
+    ) );
+    
+    // Add field for Snapchat URL
+    $wp_customize->add_setting( 'department_snapchat_URL', array(
+        'default' => '',
+        'type' => 'option',
+        'sanitize_callback' => 'uri_modern_sanitize_url'
+    ) );
+    
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'department_snapchat_URL',
+        array(
+            'section' => 'uri_modern_customizer_social',
+            'label' => __( 'Snapchat URL', 'uri-modern' ),
+            'description' => __( 'Enter a complete URL to include Snapchat in the site header social bar.', 'uri-modern' ),
+            'type' => 'text'
+        )
+    ) );
+    
     // Add field for LinkedIn URL
     $wp_customize->add_setting( 'department_linkedin_URL', array(
         'default' => '',

@@ -141,13 +141,13 @@
 #identity {
     width: 0;
     height: 40px;
-    padding-left: 220px;
+    padding-left: 180px;
     overflow: hidden;
     float: left;
     background-image: url('images/logo-inline-white.png');
     background-position: center left;
     background-repeat: no-repeat;
-    background-size: 220px auto;
+    background-size: 180px auto;
 }
 
 #gateways-menu {
@@ -193,7 +193,7 @@
     z-index: 9997;
     height: 40px;
     line-height: 40px;
-    padding: 0 1rem;
+    padding: 0 .5rem;
     font-size: .8rem;
     font-weight: 600;
     background-color: transparent;
@@ -215,7 +215,7 @@
     display: block;
     position: absolute;
     top: 16px;
-    right: 1rem;
+    right: 0.5rem;
     width: 0;
     height: 0;
     border-top: 6px solid $white;
@@ -248,6 +248,22 @@
         display: block;
     }
 } // #gateways-toggle:checked
+
+@media screen and (min-width: 370px) {
+    #identity {
+        padding-left: 220px;
+        background-size: 220px auto;
+    }
+    #gateways-label {
+        padding: 0 1rem;
+    }
+    #gateways-label span {
+        padding-right: 1.1rem;
+    }
+    #gateways-label span:after {
+        right: .8rem;
+    }
+}
 
 @media screen and (min-width: 420px) {
     #identity {
