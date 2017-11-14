@@ -1,0 +1,32 @@
+/* ==============================
+   404
+   ============================== */
+
+#rhody404 {
+    width: 150px;
+    height: 300px;
+    margin: 2rem 0;
+    background-image: url(images/404.png);
+    background-position: 0 0;
+    background-size: 150px auto;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 680px) {
+    #rhody404 {
+        float: left;
+        margin: 0 50px 0 0;
+    }
+    .content-404 {
+        width: calc(100% - 300px);
+        float: left;
+        padding-top: 2rem;
+    }
+    
+    section.error-404:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+
+}
