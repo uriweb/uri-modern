@@ -59,7 +59,7 @@
                 <!-- Social Media Component -->
                 <?php 
                     if (function_exists('uri_cl_shortcode_social')) {
-                        echo do_shortcode('[cl-social style="white" facebook="#" instagram="#" twitter="#" youtube="#"]');
+                        echo do_shortcode('[cl-social style="light" facebook="#" instagram="#" twitter="#" youtube="#"]');
                     }
                 ?>
             </div>

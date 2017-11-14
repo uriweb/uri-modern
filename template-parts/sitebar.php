@@ -34,7 +34,7 @@
                         'linkedin' => get_option('department_linkedin_URL')
                     );
                         
-                    echo do_shortcode('[cl-social style="white" facebook="' . $socials['facebook'] . '" instagram="' . $socials['instagram'] . '" twitter="' . $socials['twitter'] . '" youtube="' . $socials['youtube'] . '" snapchat="' . $socials['snapchat'] . '" linkedin="' . $socials['linkedin'] . '"]');
+                    echo do_shortcode('[cl-social style="light" facebook="' . $socials['facebook'] . '" instagram="' . $socials['instagram'] . '" twitter="' . $socials['twitter'] . '" youtube="' . $socials['youtube'] . '" snapchat="' . $socials['snapchat'] . '" linkedin="' . $socials['linkedin'] . '"]');
                 }
             ?>
         </div>
