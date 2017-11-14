@@ -2,6 +2,10 @@
    BRANDBAR
    ============================== */
 
+// Vars
+$barheight: 40px;
+
+
 #brandbar {
     width: 100%;
     padding: 0;
@@ -27,11 +31,11 @@
 
 #gsform-toggle:checked {
     & ~ #gs {
-        height: 50px;
+        height: 60px;
     }
 
     & ~ #gsform {
-        top: 50px;
+        top: 60px;
         background-color: $link;
         background-size: 50% auto;
     }
@@ -46,7 +50,7 @@
 #gs-query {
     font-weight: 300;
     font-size: 1.5rem;
-    height: 50px;
+    height: 60px;
     width: 100%;
     padding: 0 1.5rem;
     margin: 0;
@@ -71,9 +75,9 @@
     right: 0;
     top: 0;
     z-index: 9997;
-    height: 40px;
+    height: $barheight;
     width: 0;
-    padding-left: 40px;
+    padding-left: $barheight;
     background-color: transparent;
     background-image: url('images/search.svg');
     background-position: center center;
@@ -92,8 +96,8 @@
     width: 0;
     height: 0;
     border-bottom: 0px solid $link;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
+    border-left: calc(#{$barheight} / 2) solid transparent;
+    border-right: calc(#{$barheight} / 2) solid transparent;
     transition: all .4s $easeInOutQuint;
 }
 
@@ -140,7 +144,7 @@
 
 #identity {
     width: 0;
-    height: 40px;
+    height: $barheight;
     padding-left: 180px;
     overflow: hidden;
     float: left;
@@ -156,7 +160,7 @@
         list-style-type: none;
         overflow: hidden;
         position: absolute;
-        top: 40px;
+        top: $barheight;
         right: 0;
         z-index: 9996;
         width: 220px;
@@ -189,10 +193,10 @@
 #gateways-label {
     display: block;
     position: absolute;
-    right: 40px;
+    right: $barheight;
     z-index: 9997;
-    height: 40px;
-    line-height: 40px;
+    height: $barheight;
+    line-height: $barheight;
     padding: 0 .5rem;
     font-size: .8rem;
     font-weight: 600;
@@ -214,7 +218,7 @@
     content: '';
     display: block;
     position: absolute;
-    top: 16px;
+    top: calc(#{$barheight} / 2 - 4px);
     right: 0.5rem;
     width: 0;
     height: 0;
@@ -234,7 +238,8 @@
         display: block;
         z-index: 9997;
         position: absolute;
-        top: 40px;
+        top: $barheight;
+        left: calc(50% - 20px);
         width: 0;
         height: 0;
         border-top: 11px solid $link;
@@ -297,7 +302,7 @@
         margin-right: calc((100vw - 1000px) / 2);
     }
     #gateways-menu {
-        right: 40px;
+        right: $barheight;
     }
 } // min-width: 1050px
 
