@@ -3,7 +3,56 @@
    ============================== */
 
 #breadcrumbs {
-    margin: 1.5rem 0 4rem;
-    font-size: .8rem;
-    color: $darkgrey;
-}
+    
+    & {
+        margin: 1.5rem 0 4rem;
+        font-size: .7rem;
+        font-family: $type-header;
+        color: $black;
+    }
+
+    ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    ol:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+    
+    li {
+        position: relative; 
+        float: left;
+    }
+    
+    li:not(:first-child) {
+        margin-left: 8px;
+        padding-left: 15px;
+    }
+    
+    li:not(:first-child):before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 6px solid $darkgrey;
+        border-top: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+    }
+    
+    a {
+        color: $darkgrey;
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+    
+} // #breadcrumbs

@@ -28,16 +28,6 @@ if(function_exists('register_field_group')) {
 				'message' => 'If checked the standard page title will not be used and you can use your own in the body content of the page.',
 				'order_no' => '0',
 			),
-			array (
-				'key' => 'field_502b9eb29fc46',
-				'label' => 'Use Manual Formatting?',
-				'name' => 'autop_disable',
-				'type' => 'true_false',
-				'instructions' => '',
-				'required' => '0',
-				'message' => 'If checked WordPress will not autoformat your HTML and you will be expected to create your own linebreaks and paragraphs in HTML.',
-				'order_no' => '0',
-			),
 		),
 		'location' => array (
 			'rules' => array (
@@ -66,18 +56,3 @@ if(function_exists('register_field_group')) {
 	));
     
 };
-
-
-/**
- * Disables the wpautop() on a post by post (or page by page) basis.
- * @param str
- * @return str
- */
-function uri_modern_bypass_auto_formatting($content) {
-	global $post;
-	if( get_post_meta($post->ID, 'autop_disable', true) == 1) {
-		remove_filter('the_content', 'wpautop');
-	}
-	return $content;   
-}
-add_filter( 'the_content', 'uri_modern_bypass_auto_formatting', 1 );

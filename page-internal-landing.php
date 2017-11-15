@@ -14,9 +14,7 @@ get_template_part( 'template-parts/sitebar' );
     
     <main id="main" class="site-main" role="main">
         
-        <div id="breadcrumbs">
-            Breadcrumbs go here
-        </div>
+        <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
 
         <?php
         while ( have_posts() ) : the_post();

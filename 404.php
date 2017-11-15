@@ -13,9 +13,7 @@ get_template_part( 'template-parts/sitebar' );
 
     <main id="main" class="site-main" role="main">
         
-        <div id="breadcrumbs">
-            Breadcrumbs go here
-        </div>
+        <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
         
         <?php if(has_nav_menu('menu-1')) : ?>
         <!-- This is the primary site navigation. It only shows up if the menu location is selected as 'Primary'. -->

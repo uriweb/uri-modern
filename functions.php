@@ -7,6 +7,7 @@
  * @package uri-modern
  */
 
+include 'inc/get-breadcrumbs.php';
 
 /**
  * returns a string to be used for cache busting
@@ -133,6 +134,41 @@ function uri_modern_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'uri_modern_scripts' );
+
+
+/**
+ * Gets the current WP path as known by Apache, not WordPress.
+ * @param bool $right is a switch to strip slashes from the end of the URL
+ * it does this so that paths like "who" and "who/*" can be differentiated
+ * otherwise, there's no way to single out "who"
+ * @return str
+ */
+function uri_modern_get_current_path($strip=TRUE) {
+
+	
+	if ( strpos($_SERVER['HTTP_REFERER'], 'wp-admin/customize.php') === FALSE ) {
+		$current_path = trim($_SERVER['REQUEST_URI']);
+	} else {
+		// when the Customizer is being used, we need to use the referrer 
+		// because the Request URI is a different endpoint.
+		$url = parse_url( $_SERVER['HTTP_REFERER'] );
+		$q = trim( urldecode ( $url['query'] ) );
+		$q = str_replace( 'url=', '', $q );
+		$url = parse_url ( $q );
+		$current_path = $url['path'];
+	}
+
+
+	$base_bits = parse_url( site_url() );	
+	if ( strpos ( $current_path, $base_bits['path'] ) === 0 ) {
+		$current_path = substr( $current_path, strlen( $base_bits['path'] ) );
+	}
+	if($strip === TRUE) {
+		$current_path = rtrim($current_path, '/');
+	}
+	
+	return $current_path;
+}
 
 
 /**
