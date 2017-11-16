@@ -5,10 +5,11 @@
 #breadcrumbs {
     
     & {
-        margin: 1.5rem 0 4rem;
+        margin: 1.5rem 0 2rem;
         font-size: .7rem;
         font-family: $type-header;
         color: $black;
+        transition: margin .1s ease-in-out;
     }
 
     ol {
@@ -56,3 +57,9 @@
     }
     
 } // #breadcrumbs
+
+@media screen and (min-width: 920px) {
+    #breadcrumbs {
+        margin: 1.5rem 0 4rem;
+    }
+}

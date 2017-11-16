@@ -16,32 +16,63 @@
 #lnmenu {
     display: block;
     position: relative;
+    box-sizing: border-box;
+    max-width: 400px;
     height: 40px;
-    width: 0;
-    padding-left: 40px;
-    overflow: hidden;
-    background-color: $grey;
-    background-image: url('images/menu.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 50% auto;
-    border-radius: 50%;
+    line-height: 40px;
+    padding: 0 1rem;
+    font-size: .8rem;
+    font-weight: 600;
+    background-color: #eee;
+    border-radius: .2rem;
+    color: $darkgrey;
     transition: all .1s ease-in-out;
 }    
 
+#lnmenu span {
+    padding-right: 1.2rem;
+}
+
+#lnmenu span:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 1rem;
+    width: 0;
+    height: 0;
+    border-top: 6px solid $darkgrey;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    transform: rotate(0);
+    transition: transform .2s $easeInOutQuart;
+}
+
 #lnmenu:hover,
 #lnmenu:focus {
-    background-color: $link;
-    color: #fff;
-    cursor: pointer;
-    border-radius: .4rem;
+
+    & {
+        background-color: $darkgrey;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    & span:after {
+        border-top: 6px solid $white;
+    }
+    
 }
 
 #lnmenu-toggle:checked {
     & ~ #lnmenu {
-        background-color: $link;
+        background-color: $darkgrey;
         color: #fff;
-        border-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    & ~ #lnmenu span:after {
+        transform: rotate(180deg);
+        border-top: 6px solid $white;
     }
     & ~ ul {
         display: block;
@@ -53,7 +84,7 @@
     & {
         display: none;
         position: absolute;
-        top: 90px;
+        top: 42px;
         left: 0;
         z-index: 10;
         background: #fff;
@@ -62,7 +93,7 @@
         max-width: 100%;
         margin: 0;
         list-style-type: none;
-        border-radius: .2rem;
+        border-radius: 0 0 .2rem .2rem;
         overflow: hidden;
         transition: all .1s ease-in-out;
     }
@@ -84,19 +115,20 @@
     
     a:hover,
     a:focus {
-        background: $keaneyblue;
+        background: $link;
         color: $white;
     }
     
     li.active>a {
-        background: $keaneyblue;
+        background: $link;
         color: $white;
     }
     
 }
 
 @media screen and (min-width: 480px) {
-    #localnav>ul {
+    #localnav>ul,
+    #lnmenu {
         max-width: 300px;
     }
 }

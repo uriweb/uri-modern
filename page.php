@@ -22,14 +22,11 @@ get_template_part( 'template-parts/sitebar' );
         
         <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
         
-        <?php if(has_nav_menu('menu-1')) : ?>
-        <!-- This is the primary site navigation. It only shows up if the menu location is selected as 'Primary'. -->
-        <div id="localnav">
-            <input type="checkbox" id="lnmenu-toggle">
-            <label for="lnmenu-toggle" id="lnmenu">Menu</label>
-            <?php wp_nav_menu( array('theme_location' => 'menu-1', 'container' => '', 'fallback_cb' => false) ); ?>
-        </div>
-        <?php endif; ?>
+        <?php
+        if(has_nav_menu('menu-1')) {
+            get_template_part( 'template-parts/localnav' );
+        }
+        ?>
 
         <?php
         while ( have_posts() ) : the_post();
