@@ -10,6 +10,6 @@
 
 <div id="localnav">
     <input type="checkbox" id="lnmenu-toggle">
-    <label for="lnmenu-toggle" id="lnmenu">Menu</label>
+    <label for="lnmenu-toggle" id="lnmenu"><span>Menu</span></label>
     <?php wp_nav_menu( array('theme_location' => 'menu-1', 'container' => '', 'fallback_cb' => false) ); ?>
 </div>
