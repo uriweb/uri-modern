@@ -59,7 +59,11 @@
                 <!-- Social Media Component -->
                 <?php 
                     if (function_exists('uri_cl_shortcode_social')) {
-                        echo do_shortcode('[cl-social style="light" facebook="#" instagram="#" twitter="#" youtube="#"]');
+                        $facebook = 'https://www.facebook.com/universityofri';
+                        $instagram = 'https://www.instagram.com/universityofri/';
+                        $twitter = 'https://twitter.com/universityofri';
+                        $youtube = 'https://www.youtube.com/user/UniversityOfRI';
+                        echo do_shortcode('[cl-social style="light" facebook="' . $facebook . '" instagram="' . $instagram . '" twitter="' . $twitter . '" youtube="' . $youtube . '"]');
                     }
                 ?>
             </div>
