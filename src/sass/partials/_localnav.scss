@@ -52,7 +52,7 @@
 #lnmenu:focus {
 
     & {
-        background-color: $link;
+        background-color: $darkgrey;
         color: #fff;
         cursor: pointer;
     }
@@ -65,7 +65,7 @@
 
 #lnmenu-toggle:checked {
     & ~ #lnmenu {
-        background-color: $link;
+        background-color: $darkgrey;
         color: #fff;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
@@ -84,7 +84,7 @@
     & {
         display: none;
         position: absolute;
-        top: 40px;
+        top: 42px;
         left: 0;
         z-index: 10;
         background: #fff;
@@ -115,13 +115,13 @@
     
     a:hover,
     a:focus {
-        background: #eee;
-        //color: $white;
+        background: $link;
+        color: $white;
     }
     
     li.active>a {
-        background: #eee;
-        //color: $white;
+        background: $link;
+        color: $white;
     }
     
 }
