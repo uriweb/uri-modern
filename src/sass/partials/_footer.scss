@@ -121,11 +121,27 @@
     }
     
     label {
+        position: relative;
         text-transform: uppercase;
         font-weight: 600;
         display: block;
         width: 100%;
         padding: 1.5rem 0 1.2rem;
+    }
+    
+    label span:after {
+        content: '';
+        display: block;
+        position: relative;
+        top: 3px;
+        left: calc(50% - 6px);
+        width: 0;
+        height: 0;
+        border-top: 6px solid $white;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        transform: rotate(0);
+        transition: transform .2s $easeInOutQuart;
     }
     
     label:hover,
@@ -276,6 +292,12 @@
         }
         div:not(:first-child) {
             margin-left: 3rem;
+        }
+        label {
+            padding: 0;
+        }
+        label span:after {
+            display: none;
         }
         label:hover,
         label:focus {

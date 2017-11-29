@@ -26,7 +26,7 @@
             <div id="storagebins">
                 <div>
                     <input id="sb-university" type="radio" name="storagebin" value="university">
-                    <label for="sb-university">University</label>
+                    <label for="sb-university"><span>University</span></label>
                     <ul>
                         <li><a href="#">Leadership</a></li>
                         <li><a href="#">Diveristy and Inclusion</a></li>
@@ -37,7 +37,7 @@
                 </div>
                 <div>
                     <input id="sb-student-life" type="radio" name="storagebin" value="student-life">
-                    <label for="sb-student-life">Student Life</label>
+                    <label for="sb-student-life"><span>Student Life</span></label>
                     <ul>
                         <li><a href="#">Housing</a></li>
                         <li><a href="#">Dining</a></li>
@@ -48,7 +48,7 @@
                 </div>
                 <div>
                     <input id="sb-academics" type="radio" name="storagebin" value="academics">
-                    <label for="sb-academics">Academics</label>
+                    <label for="sb-academics"><span>Academics</span></label>
                     <ul>
                         <li><a href="#">Undergraduate</a></li>
                         <li><a href="#">Graduate</a></li>
