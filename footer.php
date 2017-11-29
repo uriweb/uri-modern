@@ -24,30 +24,39 @@
 	<footer id="globalfooter">
         <div id="basement">
             <div id="storagebins">
-                <ul>
-                    <li>University</li>
-                    <li><a href="#">Leadership</a></li>
-                    <li><a href="#">Diveristy and Inclusion</a></li>
-                    <li><a href="#">Global</a></li>
-                    <li><a href="#">Campuses</a></li>
-                    <li><a href="#">Safety</a></li>
-                </ul>
-                <ul>
-                    <li>Student Life</li>
-                    <li><a href="#">Housing</a></li>
-                    <li><a href="#">Dining</a></li>
-                    <li><a href="#">Athletics and Recreation</a></li>
-                    <li><a href="#">Health and Wellness</a></li>
-                    <li><a href="#">Events</a></li>
-                </ul>
-                <ul>
-                    <li>Academics</li>
-                    <li><a href="#">Undergraduate</a></li>
-                    <li><a href="#">Graduate</a></li>
-                    <li><a href="#">Advising</a></li>
-                    <li><a href="#">Library</a></li>
-                    <li><a href="#">Colleges</a></li>
-                </ul>
+                <div>
+                    <input id="sb-university" type="radio" name="storagebin" value="university">
+                    <label for="sb-university">University</label>
+                    <ul>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">Diveristy and Inclusion</a></li>
+                        <li><a href="#">Global</a></li>
+                        <li><a href="#">Campuses</a></li>
+                        <li><a href="#">Safety</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <input id="sb-student-life" type="radio" name="storagebin" value="student-life">
+                    <label for="sb-student-life">Student Life</label>
+                    <ul>
+                        <li><a href="#">Housing</a></li>
+                        <li><a href="#">Dining</a></li>
+                        <li><a href="#">Athletics and Recreation</a></li>
+                        <li><a href="#">Health and Wellness</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <input id="sb-academics" type="radio" name="storagebin" value="academics">
+                    <label for="sb-academics">Academics</label>
+                    <ul>
+                        <li><a href="#">Undergraduate</a></li>
+                        <li><a href="#">Graduate</a></li>
+                        <li><a href="#">Advising</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Colleges</a></li>
+                    </ul>
+                </div>
             </div>
             <div id="gimmicks">
                 <!-- Tides Widget -->
