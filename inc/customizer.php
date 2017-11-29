@@ -167,7 +167,7 @@ function uri_modern_options_site_header($wp_customize) {
         array(
             'section' => 'header_image',
             'label' => __( 'Use dark colors', 'uri-modern' ),
-            'description' => __( 'Use dark colors for header text and social media.  Check if using a light background.', 'uri-modern' ),
+            'description' => __( 'Use dark colors for header text and social media.  Check when using a light background.', 'uri-modern' ),
             'type' => 'checkbox'
         )
     ) );
