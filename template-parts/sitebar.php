@@ -13,13 +13,14 @@
         
     <div id="sitebranding">
 
-        <div id="siteidentity">
+        <div id="siteidentity"<?php if ( get_option('site_header_text_color') ) { echo 'class="dark"'; } ?>>
             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <?php $description = get_bloginfo( 'description', 'display' );
             if ( $description || is_customize_preview() ) : ?>
                 <h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
             <?php
             endif; ?>
+            
         </div>
         
         <div id="sitesocial">
@@ -33,8 +34,14 @@
                         'snapchat' => get_option('department_snapchat_URL'),
                         'linkedin' => get_option('department_linkedin_URL')
                     );
+                    
+                    $style = 'light';
+                    
+                    if ( get_option('site_header_text_color') ) {
+                        $style = 'dark';
+                    }
                         
-                    echo do_shortcode('[cl-social style="light" facebook="' . $socials['facebook'] . '" instagram="' . $socials['instagram'] . '" twitter="' . $socials['twitter'] . '" youtube="' . $socials['youtube'] . '" snapchat="' . $socials['snapchat'] . '" linkedin="' . $socials['linkedin'] . '"]');
+                    echo do_shortcode('[cl-social style="' . $style . '" facebook="' . $socials['facebook'] . '" instagram="' . $socials['instagram'] . '" twitter="' . $socials['twitter'] . '" youtube="' . $socials['youtube'] . '" snapchat="' . $socials['snapchat'] . '" linkedin="' . $socials['linkedin'] . '"]');
                 }
             ?>
         </div>

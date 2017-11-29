@@ -15,19 +15,21 @@ function uri_modern_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
     
-    uri_modern_options_customizer( $wp_customize );
+    // rename "Header Image" section to "Header"
+	$wp_customize->get_section('header_image')->title = esc_html__( 'Header', 'uri2016' );
+    
+    uri_modern_options_social_media( $wp_customize );
+    uri_modern_options_site_header( $wp_customize );
 }
 add_action( 'customize_register', 'uri_modern_customize_register' );
 
 
 /**
- * Creates the Theme Options customizer panel
- * Used for contact information and social media information
- * keeping its code in its own container
+ * Creates options for social media
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-function uri_modern_options_customizer($wp_customize) {
+function uri_modern_options_social_media($wp_customize) {
     
     // Add section for social media
     $wp_customize->add_section( 'uri_modern_customizer_social' , array(
@@ -144,6 +146,32 @@ function uri_modern_options_customizer($wp_customize) {
     ) );
 
 
+}
+
+/**
+ * Creates options for site header
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function uri_modern_options_site_header($wp_customize) {
+    
+    $wp_customize->add_setting( 'site_header_text_color', array(
+        'default' => '',
+        'type' => 'option',
+        'sanitize_callback' => 'uri_modern_validate_checkbox'
+    ) );
+    
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'site_header_text_color',
+        array(
+            'section' => 'header_image',
+            'label' => __( 'Use dark colors', 'uri-modern' ),
+            'description' => __( 'Use dark colors for header text and social media.  Check if using a light background.', 'uri-modern' ),
+            'type' => 'checkbox'
+        )
+    ) );
+    
 }
 
 

@@ -43,6 +43,11 @@
         margin: 0;
     }
     
+    &.dark h1,
+    &.dark h2 {
+        color: $darkgrey;
+    }
+    
 } // #siteidentity
 
 #sitesocial {
