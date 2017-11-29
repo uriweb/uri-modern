@@ -172,6 +172,23 @@ function uri_modern_get_current_path($strip=TRUE) {
 
 
 /**
+ * Wrap oembeds with a styleable class
+ */
+function uri_modern_embed_oembed_html($html, $url, $attr, $post_id) {
+	// $attr is an array with width and height... neither value seems to have a purpose
+	// $post_id is the id of the current post
+	// $url is the URL that was originally included in the post
+
+	// parse the URL of the embed to convert the domain name into a CSS class
+	preg_match('#(http|ftp)s?://(www\.)?([a-z0-9\.\-]+)/?.*#i', $url, $matches);
+	$server_class = str_replace(".", "-", $matches[3]);
+
+	return '<div class="oembed oembed-' . $server_class . '" style="" data-url="' . $url . '">' . $html . '</div>';
+}
+add_filter('embed_oembed_html', 'uri_modern_embed_oembed_html', 99, 4);
+
+
+/**
  * Debugging
  */
 require get_template_directory() . '/console.php';
