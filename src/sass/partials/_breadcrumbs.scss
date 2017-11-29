@@ -8,7 +8,8 @@
         margin: 1.5rem 0 2rem;
         font-size: .7rem;
         font-family: $type-header;
-        color: $black;
+        font-weight: 600;
+        color: $darkgrey;
         transition: margin .1s ease-in-out;
     }
 
@@ -48,7 +49,7 @@
     }
     
     a {
-        color: $darkgrey;
+        font-weight: 400;
     }
     
     a:hover,
