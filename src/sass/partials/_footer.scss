@@ -91,7 +91,7 @@
     background-image: url('images/campus-screen.jpg');
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: auto 500px;
+    background-size: auto 100%;
 }
 
 #basement {
@@ -113,6 +113,7 @@
         position: relative;
         left: 50%;
         margin-left: -50vw;
+        background: rgba(0,0,0,.5);
     }
     
     &:after {
@@ -124,6 +125,11 @@
     div {
         float: left;
         width: 33.33%;
+        box-sizing: border-box;
+    }
+    
+    div:not(:first-child) {
+        border-left: 2px solid rgba(34,90,154,.6);
     }
     
     input {
@@ -208,6 +214,12 @@
     
     & {
         text-align: center;
+        background: rgba(34,90,154,.6);
+        padding: 10px 0 15px;
+        position: relative;
+        left: -50vw;
+        margin-left: 50%;
+        width: 100vw;
     }
     
     .uri-tides-widget {
@@ -234,7 +246,12 @@
         font-size: .55rem;
     }
     .cl-social {
-        margin: 1rem 0;
+        border-top: 1px solid rgba(255,255,255,.5);
+        padding: 1rem 0 0;
+        margin: 0;
+    }
+    .cl-social li:not(:first-child) {
+        margin-left: 18%;
     }
     
 } // #gimmicks
@@ -244,7 +261,7 @@
     display: block;
     width: 100%;
     height: 1px;
-    margin: 80px auto;
+    margin: 80px auto 60px;
     background: linear-gradient(to right, $midblue 10%, $lightblue 30%, $midblue);
     transition: all .2s ease-in-out;
 }
@@ -268,16 +285,15 @@
     & {
         position: relative;
         z-index: 10;
-        width: 100%;
-        margin: 10px auto;
-        padding: 0 25px;
-        font-size: .55rem;
+        width: 200px;
+        margin: 0 auto;
+        font-size: .5rem;
         box-sizing: border-box;
         transtition: all .2s ease-in-out;
     }
 
     p {
-        color: $white;
+        color: rgba(255,255,255,.6);
         max-width: 100%;
         padding: 0;
         text-align: center;
@@ -304,6 +320,7 @@
 @media screen and (min-width: 800px) {
     #globalfooter {
         padding: 30px 0;
+        background-size: auto 500px;
     }
     #actionbar a {
         height: 150px;
@@ -319,6 +336,7 @@
             width: auto;
             left: 0;
             margin-left: 0;
+            background: none;
         }
         div {
             font-size: .7rem;
@@ -328,6 +346,7 @@
         }
         div:not(:first-child) {
             margin-left: 3rem;
+            border-left: none;
         }
         label {
             padding: 0;
@@ -368,6 +387,11 @@
         & {
             float: right;
             text-align: initial;
+            background: none;
+            padding: 0;
+            left: 0;
+            margin-left: 0;
+            width: auto;
         }   
         &:after {
             display: block;
@@ -381,12 +405,24 @@
             margin: 0;
         }
         .cl-social {
-           margin: 0 0 0 3rem;
+            margin-left: 3rem;
+            padding: 0;
+            border-top: none;
+        }
+        .cl-social li:not(:first-child) {
+            margin-left: 10px;
         }
         
     } // #gimmicks
     
+    #legal {
+        width: 100%;
+        font-size: .55rem;
+        margin-top: .5rem;
+        padding: 0 25px;
+    }
     #legal p {
+        color: $white;
         text-align: left;
     }
     #tagline {
