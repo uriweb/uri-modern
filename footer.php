@@ -24,30 +24,39 @@
 	<footer id="globalfooter">
         <div id="basement">
             <div id="storagebins">
-                <ul>
-                    <li>University</li>
-                    <li><a href="#">Leadership</a></li>
-                    <li><a href="#">Diveristy and Inclusion</a></li>
-                    <li><a href="#">Global</a></li>
-                    <li><a href="#">Campuses</a></li>
-                    <li><a href="#">Safety</a></li>
-                </ul>
-                <ul>
-                    <li>Student Life</li>
-                    <li><a href="#">Housing</a></li>
-                    <li><a href="#">Dining</a></li>
-                    <li><a href="#">Athletics and Recreation</a></li>
-                    <li><a href="#">Health and Wellness</a></li>
-                    <li><a href="#">Events</a></li>
-                </ul>
-                <ul>
-                    <li>Academics</li>
-                    <li><a href="#">Undergraduate</a></li>
-                    <li><a href="#">Graduate</a></li>
-                    <li><a href="#">Advising</a></li>
-                    <li><a href="#">Library</a></li>
-                    <li><a href="#">Colleges</a></li>
-                </ul>
+                <div id="sb-university">
+                    <input id="sb-university-toggle" type="radio" name="storagebin" value="university">
+                    <label for="sb-university-toggle"><span>University</span></label>
+                    <ul>
+                        <li><a href="#">Leadership</a></li>
+                        <li><a href="#">Diveristy and Inclusion</a></li>
+                        <li><a href="#">Global</a></li>
+                        <li><a href="#">Campuses</a></li>
+                        <li><a href="#">Safety</a></li>
+                    </ul>
+                </div>
+                <div id="sb-student-life">
+                    <input id="sb-student-life-toggle" type="radio" name="storagebin" value="student-life">
+                    <label for="sb-student-life-toggle"><span>Student Life</span></label>
+                    <ul>
+                        <li><a href="#">Housing</a></li>
+                        <li><a href="#">Dining</a></li>
+                        <li><a href="#">Athletics and Recreation</a></li>
+                        <li><a href="#">Health and Wellness</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+                <div id="sb-academics">
+                    <input id="sb-academics-toggle" type="radio" name="storagebin" value="academics">
+                    <label for="sb-academics-toggle"><span>Academics</span></label>
+                    <ul>
+                        <li><a href="#">Undergraduate</a></li>
+                        <li><a href="#">Graduate</a></li>
+                        <li><a href="#">Advising</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Colleges</a></li>
+                    </ul>
+                </div>
             </div>
             <div id="gimmicks">
                 <!-- Tides Widget -->
