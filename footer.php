@@ -24,9 +24,9 @@
 	<footer id="globalfooter">
         <div id="basement">
             <div id="storagebins">
-                <div>
-                    <input id="sb-university" type="radio" name="storagebin" value="university">
-                    <label for="sb-university"><span>University</span></label>
+                <div id="sb-university">
+                    <input id="sb-university-toggle" type="radio" name="storagebin" value="university">
+                    <label for="sb-university-toggle"><span>University</span></label>
                     <ul>
                         <li><a href="#">Leadership</a></li>
                         <li><a href="#">Diveristy and Inclusion</a></li>
@@ -35,9 +35,9 @@
                         <li><a href="#">Safety</a></li>
                     </ul>
                 </div>
-                <div>
-                    <input id="sb-student-life" type="radio" name="storagebin" value="student-life">
-                    <label for="sb-student-life"><span>Student Life</span></label>
+                <div id="sb-student-life">
+                    <input id="sb-student-life-toggle" type="radio" name="storagebin" value="student-life">
+                    <label for="sb-student-life-toggle"><span>Student Life</span></label>
                     <ul>
                         <li><a href="#">Housing</a></li>
                         <li><a href="#">Dining</a></li>
@@ -46,9 +46,9 @@
                         <li><a href="#">Events</a></li>
                     </ul>
                 </div>
-                <div>
-                    <input id="sb-academics" type="radio" name="storagebin" value="academics">
-                    <label for="sb-academics"><span>Academics</span></label>
+                <div id="sb-academics">
+                    <input id="sb-academics-toggle" type="radio" name="storagebin" value="academics">
+                    <label for="sb-academics-toggle"><span>Academics</span></label>
                     <ul>
                         <li><a href="#">Undergraduate</a></li>
                         <li><a href="#">Graduate</a></li>
