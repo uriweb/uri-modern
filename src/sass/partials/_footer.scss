@@ -215,7 +215,6 @@
     & {
         text-align: center;
         background: rgba(34,90,154,.6);
-        padding: 10px 0 15px;
         position: relative;
         left: -50vw;
         margin-left: 50%;
@@ -223,7 +222,7 @@
     }
     
     .uri-tides-widget {
-        margin: 1rem 0;
+        margin: 18px 0 15px;
         padding: 0;
         border: none;
         background: none;
@@ -245,9 +244,12 @@
         color: rgba(255,255,255,.4);
         font-size: .55rem;
     }
+    hr {
+        margin: 0;
+        background: rgba(255,255,255,.5);
+    }
     .cl-social {
-        border-top: 1px solid rgba(255,255,255,.5);
-        padding: 1rem 0 0;
+        padding: 18px 0 15px;
         margin: 0;
     }
     .cl-social li:not(:first-child) {
@@ -400,6 +402,9 @@
         }
         &>* {
             float: left;
+        }
+        hr {
+            display: none;
         }
         .uri-tides-widget {
             margin: 0;

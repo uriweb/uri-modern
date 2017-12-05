@@ -65,6 +65,11 @@
                         echo do_shortcode('[uri-tides darkmode=true height=20]');
                     }
                 ?>
+                
+                <?php if (function_exists('uri_tides_shortcode') && function_exists('uri_cl_shortcode_social')) : ?> 
+                <hr>
+                <?php endif ?>
+                
                 <!-- Social Media Component -->
                 <?php 
                     if (function_exists('uri_cl_shortcode_social')) {
