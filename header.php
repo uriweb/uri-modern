@@ -35,13 +35,13 @@
         <!-- This URL will need to change, but for now it works for testing -->
         <div id="identity-print"><img src="http://web.uri.edu/business/wp-content/themes/urideptbranch/images/logo-print.png" width="120px" alt="University of Rhode Island"></div>
         
-        <div id="globalsearch">
-            <input type="checkbox" id="gsform-toggle">
+        <div id="globalsearch" role="search">
+            <input type="checkbox" id="gsform-toggle" role="presentation">
             <label for="gsform-toggle" id="gsform"><span>Search</span></label>
             <form id="gs" method="get" action="http://www.uri.edu/search" name="global_general_search_form">
                 <input type="hidden" name="cx" value="016863979916529535900:17qai8akniu" />
                 <input type="hidden" name="cof" value="FORID:11" />
-                <input name="q" id="gs-query" value="<?php print (isset($_GET['q'])) ? htmlentities($_GET['q']) : '' ?>" type="text" placeholder="Search" />
+                <input role="searchbox" name="q" id="gs-query" value="<?php print (isset($_GET['q'])) ? htmlentities($_GET['q']) : '' ?>" type="text" placeholder="Search" />
                 <!--<input type="submit" id="gs-submit" class="searchsubmit" name="searchsubmit" value="Search" />-->
             </form>
         </div>
@@ -50,15 +50,15 @@
             <div id="globalbanner">
                 <a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
                                     
-                <input type="checkbox" id="gateways-toggle">
+                <input type="checkbox" id="gateways-toggle" role="presentation">
                 <label for="gateways-toggle" id="gateways-label"><span>You</span></label>
-                <ul id="gateways-menu">
-                    <li><a href="#">Prospective Students</a></li>
-                    <li><a href="#">Students</a></li>
-                    <li><a href="#">Faculty and Staff</a></li>
-                    <li><a href="#">Parents and Families</a></li>
-                    <li><a href="#">Alumni</a></li>
-                    <li><a href="#">Community</a></li>
+                <ul id="gateways-menu" role="menu">
+                    <li role="presentation"><a href="#" role="menuitem">Prospective Students</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Students</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Faculty and Staff</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Parents and Families</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Alumni</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">Community</a></li>
                 </ul>
                                 
             </div>
