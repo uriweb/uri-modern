@@ -13,7 +13,7 @@
         
     <div id="sitebranding">
 
-        <div id="siteidentity"<?php if ( get_option('site_header_text_color') ) { echo 'class="dark"'; } ?>>
+        <div id="siteidentity"<?php if ( get_option('site_header_text_color') ) { echo 'class="light"'; } ?>>
             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <?php $description = get_bloginfo( 'description', 'display' );
             if ( $description || is_customize_preview() ) : ?>
@@ -35,10 +35,10 @@
                         'linkedin' => get_option('department_linkedin_URL')
                     );
                     
-                    $style = 'light';
+                    $style = 'dark';
                     
                     if ( get_option('site_header_text_color') ) {
-                        $style = 'dark';
+                        $style = 'light';
                     }
                         
                     echo do_shortcode('[cl-social style="' . $style . '" facebook="' . $socials['facebook'] . '" instagram="' . $socials['instagram'] . '" twitter="' . $socials['twitter'] . '" youtube="' . $socials['youtube'] . '" snapchat="' . $socials['snapchat'] . '" linkedin="' . $socials['linkedin'] . '"]');
