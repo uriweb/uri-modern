@@ -25,9 +25,9 @@
         <div id="basement">
             <div id="storagebins">
                 <div id="sb-university">
-                    <input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation">
+                    <input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" aria-label="Open the University footer menu when browsing on mobile.">
                     <label for="sb-university-toggle"><span>University</span></label>
-                    <ul role="menu">
+                    <ul role="menu" aria-label="The University footer menu.">
                         <li role="presentation"><a href="#" role="menuitem">Leadership</a></li>
                         <li role="presentation"><a href="#" role="menuitem">Diveristy and Inclusion</a></li>
                         <li role="presentation"><a href="#" role="menuitem">Global</a></li>
@@ -36,9 +36,9 @@
                     </ul>
                 </div>
                 <div id="sb-student-life">
-                    <input id="sb-student-life-toggle" type="radio" name="storagebin" value="student-life" role="presentation">
+                    <input id="sb-student-life-toggle" type="radio" name="storagebin" value="student-life" role="presentation" aria-label="Open the Student Life footer menu when browsing on mobile.">
                     <label for="sb-student-life-toggle"><span>Student Life</span></label>
-                    <ul role="menu">
+                    <ul role="menu" aria-label="The Student Life footer menu.">
                         <li role="presentation"><a href="#" role="menuitem">Housing</a></li>
                         <li role="presentation"><a href="#" role="menuitem">Dining</a></li>
                         <li role="presentation"><a href="#" role="menuitem">Athletics and Recreation</a></li>
@@ -47,9 +47,9 @@
                     </ul>
                 </div>
                 <div id="sb-academics">
-                    <input id="sb-academics-toggle" type="radio" name="storagebin" value="academics" role="presentation">
+                    <input id="sb-academics-toggle" type="radio" name="storagebin" value="academics" role="presentation" aria-label="Open the Academics footer menu when browsing on mobile.">
                     <label for="sb-academics-toggle"><span>Academics</span></label>
-                    <ul role="menu">
+                    <ul role="menu" aria-label="The Academics footer menu.">
                         <li role="presentation"><a href="#" role="menuitem">Undergraduate</a></li>
                         <li role="presentation"><a href="#" role="menuitem">Graduate</a></li>
                         <li role="presentation"><a href="#" role="menuitem">Advising</a></li>
