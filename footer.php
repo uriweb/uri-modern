@@ -15,9 +15,9 @@
 
     <div id="actionbar-wrapper">
         <div id="actionbar" role="menu">
-            <a href="#" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>
-            <a href="#" id="action-tour" role="menuitem"><span role="presentation"></span>Tour</a>
-            <a href="#" id="action-give" role="menuitem"><span role="presentation"></span>Give</a>
+            <a href="https://www.uri.edu/apply" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>
+            <a href="https://www.uri.edu/tour" id="action-tour" role="menuitem"><span role="presentation"></span>Tour</a>
+            <a href="https://www.uri.edu/give" id="action-give" role="menuitem"><span role="presentation"></span>Give</a>
         </div>
     </div><!-- #actionbar-wrapper -->
 

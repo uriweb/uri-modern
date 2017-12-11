@@ -32,8 +32,7 @@
 
 	<header id="brandbar" class="site-header" role="banner">
         
-        <!-- This URL will need to change, but for now it works for testing -->
-        <div id="identity-print"><img src="http://web.uri.edu/business/wp-content/themes/urideptbranch/images/logo-print.png" width="120px" alt="University of Rhode Island"></div>
+        <div id="identity-print"><img src="<?php echo get_template_directory() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island"></div>
         
         <div id="globalsearch" role="search">
             <input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
@@ -53,12 +52,12 @@
                 <input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
                 <label for="gateways-toggle" id="gateways-label"><span>You</span></label>
                 <ul id="gateways-menu" role="menu">
-                    <li role="presentation"><a href="#" role="menuitem">Prospective Students</a></li>
-                    <li role="presentation"><a href="#" role="menuitem">Students</a></li>
-                    <li role="presentation"><a href="#" role="menuitem">Faculty and Staff</a></li>
-                    <li role="presentation"><a href="#" role="menuitem">Parents and Families</a></li>
-                    <li role="presentation"><a href="#" role="menuitem">Alumni</a></li>
-                    <li role="presentation"><a href="#" role="menuitem">Community</a></li>
+                    <li role="presentation"><a href="https://www.uri.edu/gateway/prospectives" role="menuitem">Prospective Students</a></li>
+                    <li role="presentation"><a href="https://www.uri.edu/gateway/students" role="menuitem">Students</a></li>
+                    <li role="presentation"><a href="https://www.uri.edu/gateway/facstaff" role="menuitem">Faculty and Staff</a></li>
+                    <li role="presentation"><a href="https://www.uri.edu/gateway/families" role="menuitem">Parents and Families</a></li>
+                    <li role="presentation"><a href="https://www.uri.edu/gateway/alumni" role="menuitem">Alumni</a></li>
+                    <li role="presentation"><a href="https://www.uri.edu/gateway/community" role="menuitem">Community</a></li>
                 </ul>
                                 
             </div>
