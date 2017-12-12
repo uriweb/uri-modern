@@ -9,11 +9,14 @@
 ?>
 
 
-<div id="sitebanner"<?php if ( get_header_image() ) { echo ' style="background-image:url(' . get_header_image() . ')"'; } ?>>
+<div id="sitebanner"<?php if ( get_header_image() ) { echo ' style="background-image:url(' . get_header_image() . ')"'; }; if ( get_option('site_header_text_color') ) { echo ' class="light"'; } ?>>
         
+    <div id="sb-screen"></div>
+    
     <div id="sitebranding">
 
-        <div id="siteidentity"<?php if ( get_option('site_header_text_color') ) { echo 'class="light"'; } ?>>
+        <div id="siteidentity">
+            
             <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <?php $description = get_bloginfo( 'description', 'display' );
             if ( $description || is_customize_preview() ) : ?>

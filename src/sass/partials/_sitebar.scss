@@ -10,6 +10,29 @@
     border-top: 1px solid $white;
 }
 
+#sitebanner.light {
+    
+    #siteidentity h1,
+    #siteidentity h2 {
+        color: $white;
+    }
+    
+    #sb-screen {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.15);
+    }
+    
+}
+
+#sb-screen {
+    display: none;
+}
+
 #sitebranding {
     position: relative;
     width: 100%;
@@ -42,11 +65,6 @@
         color: $black;
         padding-top: .5rem;
         margin: 0;
-    }
-    
-    &.light h1,
-    &.light h2 {
-        color: $white;
     }
     
 } // #siteidentity
