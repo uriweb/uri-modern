@@ -28,33 +28,33 @@
                     <input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" aria-label="Open the University footer menu when browsing on mobile.">
                     <label for="sb-university-toggle"><span>University</span></label>
                     <ul role="menu" aria-label="The University footer menu.">
-                        <li role="presentation"><a href="#" role="menuitem">Leadership</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Diveristy and Inclusion</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Global</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Campuses</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Safety</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/about/university-leadership/" role="menuitem">Leadership</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/diversity/" role="menuitem">Diveristy and Inclusion</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/globaluri/" role="menuitem">Global</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/about/campuses/" role="menuitem">Campuses</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/publicsafety/" role="menuitem">Safety</a></li>
                     </ul>
                 </div>
                 <div id="sb-student-life">
                     <input id="sb-student-life-toggle" type="radio" name="storagebin" value="student-life" role="presentation" aria-label="Open the Student Life footer menu when browsing on mobile.">
                     <label for="sb-student-life-toggle"><span>Student Life</span></label>
                     <ul role="menu" aria-label="The Student Life footer menu.">
-                        <li role="presentation"><a href="#" role="menuitem">Housing</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Dining</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Athletics and Recreation</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Health and Wellness</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Events</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/housing/" role="menuitem">Housing</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/dining/" role="menuitem">Dining</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/athletics/" role="menuitem">Athletics and Recreation</a></li>
+                        <li role="presentation"><a href="https://health.uri.edu" role="menuitem">Health and Wellness</a></li>
+                        <li role="presentation"><a href="https://events.uri.edu" role="menuitem">Events</a></li>
                     </ul>
                 </div>
                 <div id="sb-academics">
                     <input id="sb-academics-toggle" type="radio" name="storagebin" value="academics" role="presentation" aria-label="Open the Academics footer menu when browsing on mobile.">
                     <label for="sb-academics-toggle"><span>Academics</span></label>
                     <ul role="menu" aria-label="The Academics footer menu.">
-                        <li role="presentation"><a href="#" role="menuitem">Undergraduate</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Graduate</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Advising</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Library</a></li>
-                        <li role="presentation"><a href="#" role="menuitem">Colleges</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/academics/" role="menuitem">Undergraduate</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/graduate-school/" role="menuitem">Graduate</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/advising/" role="menuitem">Advising</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/library/" role="menuitem">Library</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/about/departments/" role="menuitem">Colleges</a></li>
                     </ul>
                 </div>
             </div>
