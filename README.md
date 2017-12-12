@@ -23,10 +23,16 @@ Finally, as noted by the fourth guiding principle, it's important to emphasize t
 
 ## Development
 
-Development on URI Modern uses a git model with two main branches, `master` and `develop`.  We're generally following [this model](http://nvie.com/posts/a-successful-git-branching-model/ "A successful Git branching model").
+Development on URI Modern uses a Git model with two main branches, `master` and `develop`.  We're generally following [this model](http://nvie.com/posts/a-successful-git-branching-model/ "A successful Git branching model").
+
+### Feature development
 
 In this model, all development occurs on the `develop` branch, with features and experimental modifications occuring on `feature-*` branches which are created from, and later merged back into, `develop`.
 
+### Release
+
 When enough new features and changes have been amassed, a `release-#` branch is created from `develop`, where the version number is bumped and any final release preparations and bug fixes are made.  Changes to the `release-#` branch may be continuously merged back into `develop`.  When the release is ready, `release-#` is merged into `master` and tagged with the version number.
+
+### Hotfixes
 
 If a serious bug emerges in production, it can be fixed in a `hotfix-#` branch created from `master`.  When the fix is complete, the version number is bumped and `hotfix-#` is merged into both `master` (with a new tag) and `develop`.
