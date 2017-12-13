@@ -52,11 +52,12 @@
                 <input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
                 <label for="gateways-toggle" id="gateways-label"><span>You</span></label>
                 <ul id="gateways-menu" role="menu">
-                    <li role="presentation"><a href="https://www.uri.edu/gateway/prospectives" role="menuitem">Prospective Students</a></li>
+                    <li role="presentation"><a href="https://www.uri.edu/gateway/prospectives" role="menuitem">Future Students</a></li>
                     <li role="presentation"><a href="https://www.uri.edu/gateway/students" role="menuitem">Students</a></li>
-                    <li role="presentation"><a href="https://www.uri.edu/gateway/facstaff" role="menuitem">Faculty and Staff</a></li>
+                    <li role="presentation"><a href="https://www.uri.edu/gateway/faculty" role="menuitem">Faculty</a></li>
+                    <li role="presentation"><a href="https://www.uri.edu/gateway/staff" role="menuitem">Staff</a></li>
                     <li role="presentation"><a href="https://www.uri.edu/gateway/families" role="menuitem">Parents and Families</a></li>
-                    <li role="presentation"><a href="https://www.uri.edu/gateway/alumni" role="menuitem">Alumni</a></li>
+                    <li role="presentation"><a href="https://alumni.uri.edu" role="menuitem">Alumni</a></li>
                     <li role="presentation"><a href="https://www.uri.edu/gateway/community" role="menuitem">Community</a></li>
                 </ul>
                                 

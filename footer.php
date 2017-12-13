@@ -29,7 +29,7 @@
                     <label for="sb-university-toggle"><span>University</span></label>
                     <ul role="menu" aria-label="The University footer menu.">
                         <li role="presentation"><a href="https://web.uri.edu/about/university-leadership/" role="menuitem">Leadership</a></li>
-                        <li role="presentation"><a href="https://web.uri.edu/diversity/" role="menuitem">Diveristy and Inclusion</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/diversity/" role="menuitem">Diversity and Inclusion</a></li>
                         <li role="presentation"><a href="https://web.uri.edu/globaluri/" role="menuitem">Global</a></li>
                         <li role="presentation"><a href="https://web.uri.edu/about/campuses/" role="menuitem">Campuses</a></li>
                         <li role="presentation"><a href="https://web.uri.edu/publicsafety/" role="menuitem">Safety</a></li>
@@ -42,7 +42,7 @@
                         <li role="presentation"><a href="https://web.uri.edu/housing/" role="menuitem">Housing</a></li>
                         <li role="presentation"><a href="https://web.uri.edu/dining/" role="menuitem">Dining</a></li>
                         <li role="presentation"><a href="https://web.uri.edu/athletics/" role="menuitem">Athletics and Recreation</a></li>
-                        <li role="presentation"><a href="https://health.uri.edu" role="menuitem">Health and Wellness</a></li>
+                        <li role="presentation"><a href="https://web.uri.edu/campus-life/health-and-safety/" role="menuitem">Health and Wellness</a></li>
                         <li role="presentation"><a href="https://events.uri.edu" role="menuitem">Events</a></li>
                     </ul>
                 </div>
