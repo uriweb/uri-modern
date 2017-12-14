@@ -10,6 +10,10 @@ ol, ul { list-style: none; }
 body { line-height: 1; }
 table { border-collapse: collapse; border-spacing: 0; }
 
+[hidden] {
+    display: none;
+}
+
 
 /* ==============================
    BREAKPOINTS
