@@ -80,6 +80,15 @@ h6 {
     font-family: $type-numeric;
 }
 
+b,
+strong {
+    font-weight: 600;
+}
+
+i {
+    font-style: italic;
+}
+
 p {
     max-width: $maxtypewidth;
     line-height: 1.875;
