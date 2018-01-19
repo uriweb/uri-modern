@@ -189,6 +189,24 @@ add_filter('embed_oembed_html', 'uri_modern_embed_oembed_html', 99, 4);
 
 
 /**
+ * People Tool compatibility
+ */
+function uri_modern_people_page_template( $template ) {
+
+	if ( is_singular( 'people' )  ) {
+		$new_template = locate_template( array( 'page.php' ) );
+		if ( '' != $new_template ) {
+			return $new_template;
+		}
+	}
+
+	return $template;
+}
+add_filter( 'template_include', 'uri_modern_people_page_template', 99 );
+
+
+
+/**
  * Debugging
  */
 require get_template_directory() . '/console.php';
