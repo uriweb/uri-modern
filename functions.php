@@ -7,6 +7,7 @@
  * @package uri-modern
  */
 
+include 'inc/get-breadcrumbs.php';
 
 /**
  * returns a string to be used for cache busting
@@ -136,6 +137,76 @@ add_action( 'wp_enqueue_scripts', 'uri_modern_scripts' );
 
 
 /**
+ * Gets the current WP path as known by Apache, not WordPress.
+ * @param bool $right is a switch to strip slashes from the end of the URL
+ * it does this so that paths like "who" and "who/*" can be differentiated
+ * otherwise, there's no way to single out "who"
+ * @return str
+ */
+function uri_modern_get_current_path($strip=TRUE) {
+
+	
+	if ( strpos($_SERVER['HTTP_REFERER'], 'wp-admin/customize.php') === FALSE ) {
+		$current_path = trim($_SERVER['REQUEST_URI']);
+	} else {
+		// when the Customizer is being used, we need to use the referrer 
+		// because the Request URI is a different endpoint.
+		$url = parse_url( $_SERVER['HTTP_REFERER'] );
+		$q = trim( urldecode ( $url['query'] ) );
+		$q = str_replace( 'url=', '', $q );
+		$url = parse_url ( $q );
+		$current_path = $url['path'];
+	}
+
+
+	$base_bits = parse_url( site_url() );	
+	if ( strpos ( $current_path, $base_bits['path'] ) === 0 ) {
+		$current_path = substr( $current_path, strlen( $base_bits['path'] ) );
+	}
+	if($strip === TRUE) {
+		$current_path = rtrim($current_path, '/');
+	}
+	
+	return $current_path;
+}
+
+
+/**
+ * Wrap oembeds with a styleable class
+ */
+function uri_modern_embed_oembed_html($html, $url, $attr, $post_id) {
+	// $attr is an array with width and height... neither value seems to have a purpose
+	// $post_id is the id of the current post
+	// $url is the URL that was originally included in the post
+
+	// parse the URL of the embed to convert the domain name into a CSS class
+	preg_match('#(http|ftp)s?://(www\.)?([a-z0-9\.\-]+)/?.*#i', $url, $matches);
+	$server_class = str_replace(".", "-", $matches[3]);
+
+	return '<div class="oembed oembed-' . $server_class . '" style="" data-url="' . $url . '">' . $html . '</div>';
+}
+add_filter('embed_oembed_html', 'uri_modern_embed_oembed_html', 99, 4);
+
+
+/**
+ * People Tool compatibility
+ */
+function uri_modern_people_page_template( $template ) {
+
+	if ( is_singular( 'people' )  ) {
+		$new_template = locate_template( array( 'page.php' ) );
+		if ( '' != $new_template ) {
+			return $new_template;
+		}
+	}
+
+	return $template;
+}
+add_filter( 'template_include', 'uri_modern_people_page_template', 99 );
+
+
+
+/**
  * Debugging
  */
 require get_template_directory() . '/console.php';
@@ -166,6 +237,11 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Layout options
+ */
+require get_template_directory() . '/inc/layout-options.php';
 
 /**
  * Load Jetpack compatibility file.

@@ -10,70 +10,29 @@ body {
     overflow: hidden;
 }
 
-#content {
+#main {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     padding: 0 25px;
     box-sizing: border-box;
     transition: all .2s ease-in-out;
 }
 
+#main.external-landing {
+    margin: 0 auto;
+}
+
 @media screen and (min-width: 1050px) {
-    #content {
+    #main {
         width: 1000px;
         padding: 0;
+        margin: 0 auto 6rem;
     }
 }
 
-#primary {
-    //background: $lightgrey;
-    padding-top: 40px;
-}
-
-
-/*
- * TWO COLUMN LAYOUT
- */
-
-   
-#twocol:after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-#twocol #sidebar,
-#twocol #primary {
-    width: 100%;
-    display: block;
-    box-sizing: border-box;
-}
-
-#twocol #sidebar {
-    font-family: $header;
-    font-size: .9rem;
-    border-top: 1px solid $midgrey;
-    padding-top: 40px;
-    margin-top: 40px;
-}
-
-
-@media screen and (min-width: 920px) {
-
-    #twocol #sidebar {
-        width: 20%;
-        float: left;
-        clear: left;
-        margin-top: 0;
-        padding-right: 4%;
-        padding-bottom: 30px;
-        border-top: none;
-    }
-
-    #twocol #primary {
-        width: 80%;
-        float: right;
-        padding-left: 6%;
-    }
-    
+.breakout {
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    margin-left: -50vw !important;
 }

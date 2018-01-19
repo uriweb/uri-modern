@@ -10,6 +10,10 @@ ol, ul { list-style: none; }
 body { line-height: 1; }
 table { border-collapse: collapse; border-spacing: 0; }
 
+[hidden] {
+    display: none;
+}
+
 
 /* ==============================
    BREAKPOINTS
@@ -44,6 +48,8 @@ $black: #000000;
 
 $link: #0047c2;
 $linkhover: #003287;
+
+$accentblue: #057fd4;
 
 
 /* ==============================
@@ -84,11 +90,16 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @import 'partials/type';
 @import 'partials/layout';
 @import 'partials/elements';
-@import 'partials/masthead';
+@import 'partials/brandbar';
 @import 'partials/footer';
+@import 'partials/sitebar';
+@import 'partials/breadcrumbs';
 @import 'partials/localnav';
+@import 'partials/404';
 @import 'partials/posts';
 @import 'partials/queryposts';
+@import 'partials/oembeds';
+@import 'partials/galleries';
 
 /* PIECES */
 @import 'partials/pieces/programfinder';

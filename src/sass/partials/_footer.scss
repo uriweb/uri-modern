@@ -2,46 +2,261 @@
    FOOTER
    ============================== */
 
+
+#actionbar-wrapper {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    background: $white;
+    border-top: 1px solid #ddd;
+    transition: all .2s ease-in-out;
+}
+
+#actionbar,
+#basement {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+}
+
+#basement {
+    padding: 0 25px;
+}
+
+#actionbar {
+    & {
+        display: flex;
+        padding: 0;
+    }
+
+    a {
+        display: block;
+        flex: 1;
+        height: 120px;
+        text-align: center;
+        color: $black;
+        transition: none;
+    }
+
+    a:hover {
+        color: $white;
+        background-color: $link;
+    }
+    
+    a span {
+        display: block;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: 24px;
+        background-image: url('images/actionbar-sprite.png');
+        background-repeat: no-repeat;
+        background-size: 24px auto;
+    }
+    
+    #action-apply span {
+        background-position: center 0;
+    }
+    
+    #action-tour span {
+        background-position: center -48px;
+    }
+    
+    #action-give span {
+        background-position: center -96px;
+    }
+    
+    #action-apply:hover span {
+        background-position: center -24px;
+    }
+    
+    #action-tour:hover span {
+        background-position: center -72px;
+    }
+    
+    #action-give:hover span {
+        background-position: center -120px;
+    }
+    
+} // #actionbar
+
 #globalfooter {
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    padding: 30px 0;
-    max-height: 500px;
+    padding: 0 0 30px;
     overflow: hidden;
     background-color: #002147;
     background-image: url('images/campus-screen.jpg');
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: auto 500px;
+    background-size: auto 100%;
 }
 
-#sitefooter {
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 30px 0;
-    background: #eee;
-    border-top: 1px solid #ddd;
-    transition: all .2s ease-in-out;
-}
-
-#sf-content,
-#colophon {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 25px;
-    box-sizing: border-box;
-    transition: all .2s ease-in-out;
-}
-
-#sf-content {
-    color: #555;
-}
-
-#colophon {
+#basement {
     color: #fff;
 }
+
+#basement:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#storagebins {
+    
+    & {
+        text-align: center;
+        font-size: .9rem;
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+        background: rgba(0,0,0,.5);
+    }
+    
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    
+    div {
+        float: left;
+        width: 33.33%;
+        box-sizing: border-box;
+    }
+    
+    div:not(:first-child) {
+        border-left: 2px solid rgba(34,90,154,.6);
+    }
+    
+    input {
+        display: none;
+    }
+    
+    label {
+        text-transform: uppercase;
+        font-weight: 600;
+        display: block;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        padding-bottom: 5px;
+    }
+    
+    label span:after {
+        content: '';
+        display: block;
+        position: relative;
+        top: -15px;
+        left: calc(50% - 6px);
+        width: 0;
+        height: 0;
+        border-top: 6px solid $white;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        transform: rotate(0);
+        transition: transform .2s $easeInOutQuart;
+    }
+    
+    label:hover,
+    label:focus {
+        cursor: pointer;
+    }
+    
+    ul {
+        margin: 0;
+        padding: 1rem 0 .5rem;
+        list-style: none;
+        display: none;
+        background: $white;
+        width: 100vw;
+        position: relative;
+    }
+    
+    #sb-university ul {
+        margin-left: 0;
+        left: 0;
+    }
+    
+    #sb-student-life ul {
+        margin-left: 50%;
+        left: -50vw;
+    }
+    
+    #sb-academics ul {
+        margin-left: 100%;
+        left: -100vw;
+    }
+    
+    input:checked ~ label {
+        background: $link;
+    }
+    
+    input:checked ~ ul {
+        display: block;
+    }
+
+    a {
+        color: $blue;
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+    
+} // #storagebins
+
+#gimmicks {
+    
+    & {
+        text-align: center;
+        background: rgba(34,90,154,.6);
+        position: relative;
+        left: -50vw;
+        margin-left: 50%;
+        width: 100vw;
+    }
+    
+    .uri-tides-widget {
+        margin: 18px 0 15px;
+        padding: 0;
+        border: none;
+        background: none;
+        text-align: left;
+    }
+    .uri-tides-widget .label {
+        font-size: .7rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    .uri-tides-metrics div {
+        font-family: $type-numeric;
+        font-weight: 400;
+    }
+    .uri-tides-metrics em {
+        font-weight: 500;
+    }
+    .uri-tides-source {
+        color: rgba(255,255,255,.4);
+        font-size: .55rem;
+    }
+    hr {
+        margin: 0;
+        background: rgba(255,255,255,.5);
+    }
+    .cl-social {
+        padding: 18px 0 15px;
+        margin: 0;
+    }
+    .cl-social li:not(:first-child) {
+        margin-left: 18%;
+    }
+    
+} // #gimmicks
 
 #tagline {
     position: relative;
@@ -68,44 +283,156 @@
 }
 
 #legal {
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    margin: 10px auto;
-    padding: 0 25px;
+
+    & {
+        position: relative;
+        z-index: 10;
+        width: 200px;
+        margin: 0 auto;
+        font-size: .5rem;
+        box-sizing: border-box;
+        transtition: all .2s ease-in-out;
+    }
+
+    p {
+        color: rgba(255,255,255,.6);
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+    }
     
-    font-size: .5rem;
-    box-sizing: border-box;
-    transtition: all .2s ease-in-out;
-}
+    a {
+        text-decoration: none;
+        color: #01a7ff;
+        font-weight: 600;
+    }
+    
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+    
+    a.subtle {
+        color: inherit;
+        font-weight: inherit;
+    }
 
-#legal p {
-    color: $lightblue;
-    max-width: 100%;
-    padding-top: 0;
-    text-align: center;
-}
+} // #legal
 
-#legal a {
-    color: inherit;
-    text-decoration: none;
-}
+@media screen and (min-width: 800px) {
+    #globalfooter {
+        padding: 30px 0;
+        background-size: auto 500px;
+    }
+    #actionbar a {
+        height: 150px;
+    }
+    #actionbar a span {
+        margin-top: 2.5rem;
+    }
+    #storagebins {
+        & {
+            float: left;
+            text-align: left;
+            display: block;
+            width: auto;
+            left: 0;
+            margin-left: 0;
+            background: none;
+        }
+        div {
+            font-size: .7rem;
+            display: inline-block;
+            float: none;
+            width: auto;
+        }
+        div:not(:first-child) {
+            margin-left: 3rem;
+            border-left: none;
+        }
+        label {
+            padding: 0;
+            width: auto;
+            height: auto;
+            line-height: initial;
+            padding-bottom: 0;
+        }
+        label span:after {
+            display: none;
+        }
+        label:hover,
+        label:focus {
+            cursor: default;
+        }
+        input:checked ~ label {
+            background: none;
+        }
+        ul {
+            display: block;
+            background: none;
+            padding: 1rem 0;
+            width: auto;
+        }
+        #sb-university ul,
+        #sb-student-life ul,
+        #sb-academics ul {
+            margin-left: 0;
+            left: 0;
+        }
+        a {
+            color: $white;
+        }
+    } // #storagebins
 
-#legal a:hover,
-#legal a:focus {
-    text-decoration: underline;
-}
-
-@media screen and (min-width: 750px) {
-    #sitefooter {
-        padding: 50px 0;
+    #gimmicks {
+        
+        & {
+            float: right;
+            text-align: initial;
+            background: none;
+            padding: 0;
+            left: 0;
+            margin-left: 0;
+            width: auto;
+        }   
+        &:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+        &>* {
+            float: left;
+        }
+        hr {
+            display: none;
+        }
+        .uri-tides-widget {
+            margin: 0;
+        }
+        .cl-social {
+            margin-left: 3rem;
+            padding: 0;
+            border-top: none;
+        }
+        .cl-social li:not(:first-child) {
+            margin-left: 10px;
+        }
+        
+    } // #gimmicks
+    
+    #legal {
+        width: 100%;
+        font-size: .55rem;
+        margin-top: .5rem;
+        padding: 0 25px;
     }
     #legal p {
+        color: $white;
         text-align: left;
     }
     #tagline {
         background: linear-gradient(to right, $midblue 50%, $lightblue 70%, $midblue);
-        margin: 80px auto 0;
+        margin: 60px auto 0;
     }
     #tagline:after {
         background-position: right 25px top;
@@ -113,8 +440,8 @@
 }
 
 @media screen and (min-width: 1050px) {
-    #sf-content,
-    #colophon,
+    #actionbar,
+    #basement,
     #legal,
     #tagline,
     #tagline:after {
@@ -132,8 +459,8 @@
     #globalfooter {
         padding: 0;
     }
-    #sf-content,
-    #colophon,
+    #actionbar,
+    #basement,
     #tagline {
         display: none;
     }
