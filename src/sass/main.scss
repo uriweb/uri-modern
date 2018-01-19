@@ -51,6 +51,11 @@ $linkhover: #003287;
 
 $accentblue: #057fd4;
 
+/* ==============================
+   FAWNTS
+   ============================== */
+$sans: 'Hind', Arial, sans-serif;
+$serif: Charter, Georgia, Serif;
 
 /* ==============================
    EASING (see http://easings.net)
@@ -100,6 +105,7 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @import 'partials/queryposts';
 @import 'partials/oembeds';
 @import 'partials/galleries';
+@import 'partials/events';
 
 /* PIECES */
 @import 'partials/pieces/programfinder';
