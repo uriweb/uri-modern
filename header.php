@@ -24,7 +24,7 @@
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() . '/images/apple-touch-icon.png'; ?>">
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() . '/images/apple-touch-icon-180x180.png'; ?>">
 
-<!-- Typekit embed code -->
+<!-- Typekit embed code
 <script type="text/javascript" src="//use.typekit.com/qcq6uhe.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <!-- End TK -->
