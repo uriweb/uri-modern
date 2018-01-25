@@ -51,11 +51,20 @@ $linkhover: #003287;
 
 $accentblue: #057fd4;
 
+
 /* ==============================
    FAWNTS
    ============================== */
-$sans: 'Hind', Arial, sans-serif;
-$serif: Charter, Georgia, Serif;
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700|Hind:400,600,700|Rubik:400,500,700") all;
+
+$type-header: 'Roboto', 'Hind', Arial, sans-serif;
+$type-sans: 'Hind', Arial, sans-serif;
+$type-serif: 'Charter', 'Georgia', serif;
+$type-numeric: 'Rubik', 'Hind', Arial, sans-serif;
+
+$maxtypewidth: 750px;
+
 
 /* ==============================
    EASING (see http://easings.net)
