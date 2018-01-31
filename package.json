@@ -1,7 +1,7 @@
 {
   "name": "uri-modern",
   "version": "0.2.0",
-  "description": "Pushing the boundaries of URI's web presence",
+  "description": "A modern WordPress theme for the University of Rhode Island",
   "main": "index.php",
   "homepage": "https://www.uri.edu",
   "repository": "https://github.com/uriweb/uri-modern",
@@ -28,17 +28,7 @@
     "jshint": "^2.9.4"
   },
   "browserslist": {
-    "production": [
-      "> 1%",
-      "last 2 versions",
-      "Firefox >= 20",
-      "iOS >=8"
-    ],
-    "development": [
-      "> 1%",
-      "last 2 versions",
-      "Firefox >= 20",
-      "iOS >=8"
-    ]
+    "production": ["> 1%", "last 2 versions", "Firefox >= 20", "iOS >=8"],
+    "development": ["> 1%", "last 2 versions", "Firefox >= 20", "iOS >=8"]
   }
 }
