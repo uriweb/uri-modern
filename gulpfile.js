@@ -7,12 +7,10 @@ var imagemin = require('gulp-imagemin');
 var concat = require('gulp-concat');
 var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
-var minifyCSS = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
 var postcss = require('gulp-postcss');
-var rename = require('gulp-rename');
 var header = require('gulp-header');
 
 
@@ -68,7 +66,7 @@ function styles(done) {
 		.pipe(sourcemaps.init())
 		.pipe(sass(sassOptions).on('error', sass.logError))
 		.pipe(concat('style.css'))
-		.pipe(postcss([ autoprefixer() ]))
+        .pipe(postcss([ autoprefixer() ]))
 		.pipe(header(banner, { pkg : pkg } ))
 		.pipe(sourcemaps.write('./map'))
 		.pipe(gulp.dest('.'));
