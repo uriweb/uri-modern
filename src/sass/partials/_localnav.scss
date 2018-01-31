@@ -6,7 +6,7 @@
     position: relative;
     font-family: $type-header;
     font-size: 1rem;
-    padding: 0 0 40px;
+    padding: 1rem 0 3rem;
 }
 
 #lnmenu-toggle {
@@ -137,7 +137,7 @@
     #localnav {
         width: 100%;
         box-sizing: border-box;
-        padding: 0 0 4rem;
+        padding: 2rem 0 4rem;
     }
     #localnav>ul {
         & {

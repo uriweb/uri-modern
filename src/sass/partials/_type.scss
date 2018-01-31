@@ -2,17 +2,8 @@
    TYPEOGRAPHY
    ============================== */
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700|Hind:400,600,700|Rubik:400,500,700") all;
-
-$type-header: 'Roboto', 'Hind', Arial, sans-serif;
-$type-serif: 'Charter', 'Georgia', serif;
-$type-body: 'Hind', Arial, sans-serif;
-$type-numeric: 'Rubik', 'Hind', Arial, sans-serif;
-
-$maxtypewidth: 750px;
-
 html {
-    font-family: $type-body;
+    font-family: $type-sans;
     font-weight: 400;
     font-size: 16px;
     color: $black;
@@ -72,12 +63,18 @@ h6 {
     margin: 2.5rem 0 .8rem;
 }
 
-.type-serif {
+.entry-content {
     font-family: $type-serif;
 }
 
 .type-numeric {
     font-family: $type-numeric;
+}
+
+.type-intro {
+    font-family: $type-sans;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 b,

@@ -18,7 +18,13 @@
 
 <?php wp_head(); ?>
     
-<!-- Typekit embed code -->
+<!-- Favicons -->
+<link rel="mask-icon" href="<?php echo get_template_directory_uri() . '/images/safari-pinned-tab.svg'; ?>" color="#0047c2">
+<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() . '/images/favicon.png'; ?>">
+<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() . '/images/apple-touch-icon.png'; ?>">
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() . '/images/apple-touch-icon-180x180.png'; ?>">
+
+<!-- Typekit embed code
 <script type="text/javascript" src="//use.typekit.com/qcq6uhe.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 <!-- End TK -->
@@ -37,7 +43,7 @@
         <div id="globalsearch" role="search">
             <input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
             <label for="gsform-toggle" id="gsform"><span>Search</span></label>
-            <form id="gs" method="get" action="http://www.uri.edu/search" name="global_general_search_form">
+            <form id="gs" method="get" action="https://www.uri.edu/search" name="global_general_search_form">
                 <input type="hidden" name="cx" value="016863979916529535900:17qai8akniu" />
                 <input type="hidden" name="cof" value="FORID:11" />
                 <input role="searchbox" name="q" id="gs-query" value="<?php print (isset($_GET['q'])) ? htmlentities($_GET['q']) : '' ?>" type="text" placeholder="Search" />
