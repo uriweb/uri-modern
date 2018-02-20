@@ -21,7 +21,7 @@ Instead, get in touch outside the repository by contacting someone below on the 
 
 We will do our best to respond to your questions quickly and thoroughly.
 
-If you think something is missing, doesn't work right, or could work better, consider [reporting a bug](#find-a-bug) or [requesting a feature](#request-feature).
+If you think something is missing, doesn't work right, or could work better, consider [reporting a bug](#find-a-bug) or [requesting a feature](#features).
 
 ## <a name="bugs"></a>Find a bug?
 
@@ -61,7 +61,7 @@ Before you can develop URI Modern, you'll need to install a few prerequisites.
 
 * [Git](https://git-scm.com) and/or a Git client, such as [GitHub Desktop](https://desktop.github.com) or [Sourcetree](https://www.atlassian.com/software/sourcetree)
 * [Node.js](https://nodejs.org/), (version specified in the engines field of [`package.json`](https://github.com/uriweb/uri-modern/blob/develop/package.json)) which is used to distribute [npm](https://www.npmjs.com)
-* [npm](https://www.npmjs.com), (version specified in the engines field of [`package.json`](https://github.com/uriweb/uri-modern/blob/develop/package.json)) which is used to install dependencies (npm is included in Node.js but may need to be updated)
+* [npm](https://www.npmjs.com), (version specified in the engines field of [`package.json`](https://github.com/uriweb/uri-modern/blob/develop/package.json)) which is used to install dependencies (npm is included in Node.js but may need to be updated separately)
 * [Gulp.js](https://gulpjs.com) and [gulp-cli](https://www.npmjs.com/package/gulp-cli), which is used to compile the source code
 
 ### Fork
@@ -117,15 +117,19 @@ $ gulp
 
 ### Git Model
 
-Development on URI Modern uses a Git model with two main branches, `master` and `develop`.  We're following [this model](http://nvie.com/posts/a-successful-git-branching-model/ "A successful Git branching model").
+Although you will be working in your own forked repository prior to sending any pull requests, it might be useful to know the development model used in the main URI Modern repository. URI Modern uses a Git model with two main branches, `master` and `develop`.  We'll explain it a bit here, but check out [this article](http://nvie.com/posts/a-successful-git-branching-model/ "A successful Git branching model") for a deeper dive.
 
 #### Feature development
 
-In this model, all development occurs on the `develop` branch, with features and experimental modifications occuring on `feature-*` branches which are created from, and later merged back into, `develop`.
+URI Modern uses `develop` as the default branch, which you may not be used to.  This ensures that any new branches are created from and merged back into `develop` by default, reducing the risk of inadvertently merging development code into production via a feature branch.
+
+All development occurs off of the `develop` branch, with features and experimental modifications occuring on `feature-*` branches which are created from, and later merged back into, `develop`.
 
 #### Release
 
-When enough new features and changes have been amassed, a `release-#` branch is created from `develop`, where the version number is bumped and any final release preparations and bug fixes are made.  Changes to the `release-#` branch may be continuously merged back into `develop`.  When the release is ready, `release-#` is merged into `master` and tagged with the version number.
+When enough new features and changes have been amassed, a `release-#` branch is created from `develop`, where the version number is bumped and any final release preparations and bug fixes are made.  Changes to the `release-#` branch may be continuously merged back into `develop`.
+
+When the release is ready, `release-#` is merged into `master` and tagged with the version number. `release-#` is also merged back into `develop` at this point, after which it can be deleted.
 
 #### Hotfixes
 
