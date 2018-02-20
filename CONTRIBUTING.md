@@ -37,7 +37,7 @@ If there's a new feature you'd like to work on and eventually see implemented, w
 
 ## <a name="submission"></a>Submission Guidelines
 
-### Submitting an Issue
+### <a name="submit-issue"></a>Submitting an Issue
 
 First off, before you submit an issue, we ask that you search the [issue tracker](https://github.com/uriweb/uri-modern/issues) to see if it's already been documented.  Duplicate issues will be tagged as such and may be closed or merged with the most comprehensive submission.
 
@@ -45,7 +45,7 @@ If the issue hasn't been documented, file a [new issue](https://github.com/uriwe
 
 If you think you came across a bug but aren't able to reproduce it, please hold off on submitting an issue.  If it's important enough, you can [get in touch](#questions) with us outside of GitHub, and we can decide how to proceed from there.
 
-### Submitting a Pull Request
+### <a name="submit-pr"></a>Submitting a Pull Request
 
 If you're thinking about fixing a bug or developing a new feature, we ask that you first check for any open or closed [pull requests](https://github.com/uriweb/uri-modern/pulls) that relate to what you'd like to do.  It's possible that someone beat you to it.
 
