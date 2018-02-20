@@ -10,8 +10,8 @@
   },
   "author": "URI",
   "authorHuman": "Brandon Fuller <bjcfuller@uri.edu>",
-  "license": "GPL-2.0-or-later",
-  "licenseURI": "http://www.gnu.org/licenses/gpl-2.0.html",
+  "license": "GPL-3.0",
+  "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "gulp": "^4.0.0",
