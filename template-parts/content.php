@@ -31,6 +31,7 @@
 	<?php
 		get_template_part( 'template-parts/lead-art' );
 	?>
+
 	<div class="entry-content">
 		<?php
 			
