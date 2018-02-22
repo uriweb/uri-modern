@@ -1,0 +1,33 @@
+/* ==============================
+   FEATURED IMAGES
+   ============================== */
+
+.featured-image {
+    
+    max-width: 100%;
+    margin-bottom: 2rem;
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    figcaption {
+        font-size: .9rem;
+        line-height: 1.4;
+        padding: .3rem 0;
+        color: $darkgrey;
+    }
+    
+}
+
+@media screen and (min-width: 800px) {
+    
+    .featured-image {
+        float: right;
+        max-width: 500px;
+        margin-left: 2rem;
+    }
+    
+}
+
