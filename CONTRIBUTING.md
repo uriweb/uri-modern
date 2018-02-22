@@ -115,7 +115,7 @@ Run gulp to make sure everything worked:
 $ gulp
 ```
 
-__Note:__ It's probably a good idea to stop and restart gulp when switching branches, in case there are differences in `gulpfile.js` or added/removed partials.  That way you're guaranteed a clean compile.
+__Note:__ It's probably a good idea to stop gulp before switching branches and restart after switching, in case there are differences in [`gulpfile.js`](https://github.com/uriweb/uri-modern/blob/develop/gulpfile.js) or added/removed partials.  That way you're guaranteed a clean compile.
 
 ### Git Model
 
