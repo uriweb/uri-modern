@@ -91,13 +91,13 @@ URI Modern source files are compiled with [gulp.js](https://gulpjs.com/).  You'l
 You might need to first remove any previous versions of gulp you may have installed globally:
 
 ```shell
-$ npm rm --global gulp
+$ npm rm -g gulp
 ```
 
 Then install gulp-cli globally:
 
 ```shell
-$ npm install --global gulp-cli
+$ npm install -g gulp-cli
 ```
 
 Finally, install gulp locally, along with dependencies:
@@ -114,6 +114,8 @@ Run gulp to make sure everything worked:
 ```shell
 $ gulp
 ```
+
+__Note:__ It's probably a good idea to stop and restart gulp when switching branches, in case there are differences in `gulpfile.js` or added/removed partials.  That way you're guaranteed a clean compile.
 
 ### Git Model
 
