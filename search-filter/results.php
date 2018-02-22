@@ -27,7 +27,7 @@ $search = ( ! empty ( $_REQUEST['_sf_s'] ) ) ? $_REQUEST['_sf_s'] : FALSE;
 /**
  * quick and dirty pagination 
  */
-function _uri_department_search_filter_pagination($current_page, $num_pages, $offset=3, $separator=' ') {
+function _uri_modern_search_filter_pagination($current_page, $num_pages, $offset=3, $separator=' ') {
 	
 	$pagination = array();
 	
@@ -52,7 +52,7 @@ function _uri_department_search_filter_pagination($current_page, $num_pages, $of
 /**
  * quick and dirty number of results 
  */
-function _uri_department_search_filter_number_of_results($total) {
+function _uri_modern_search_filter_number_of_results($total) {
 	$r = ( $total == 1 ) ? 'result' : 'results';
 	return '<div class="search-filter-total">Found ' . $total . ' ' . $r . '</div>';
 }
@@ -63,7 +63,7 @@ function _uri_department_search_filter_number_of_results($total) {
  * if relevanssi is present, highlight search terms found in the string.  
  * otherwise, return the field contents
  */
-function _uri_department_result_highlight($string, $search) {
+function _uri_modern_result_highlight($string, $search) {
 	if ( $search !== FALSE && function_exists( 'relevanssi_highlight_terms' ) ) {  
 		return relevanssi_highlight_terms( $string, $search ); 
 	}
@@ -90,7 +90,7 @@ $sf_current_query = $searchandfilter->get($query_id)->current_query();
 if ( $query->have_posts() ): ?>
 	<div class="search-filter-results">
 		<div class="results-meta">
-			<?php print _uri_department_search_filter_number_of_results($query->found_posts); ?>
+			<?php print _uri_modern_search_filter_number_of_results($query->found_posts); ?>
 			<div class="pagination">
 				Page: 
 				<?php
@@ -98,7 +98,7 @@ if ( $query->have_posts() ): ?>
 					if ( empty ( $current_page ) ) {
 						$current_page = 1;
 					}
-					print _uri_department_search_filter_pagination($current_page, $query->max_num_pages);
+					print _uri_modern_search_filter_pagination($current_page, $query->max_num_pages);
 				?>
 			</div>
 		</div>
@@ -124,28 +124,28 @@ if ( $query->have_posts() ): ?>
 						<h3><a href="<?php the_permalink(); ?>"><?php
 							// the_title();
 							$title = get_the_title();
-							echo _uri_department_result_highlight( $title, $search );
+							echo _uri_modern_result_highlight( $title, $search );
 						?></a></h3>
 
 			
 						<?php if ( $people_title = get_field( 'peopletitle' ) ): ?>
 							<div class="people-title people-field"><?php
 								 //the_field( 'peopletitle' );
-								 echo _uri_department_result_highlight( $people_title, $search );
+								 echo _uri_modern_result_highlight( $people_title, $search );
 							?></div>
 						<?php endif; ?>
 			
 						<?php if ( $people_department = get_field( 'peopledepartment' ) ): ?>
 							<div class="people-department people-field"><?php
 								//the_field( 'peopledepartment' );
-								 echo _uri_department_result_highlight( $people_department, $search );
+								 echo _uri_modern_result_highlight( $people_department, $search );
 							?></div>
 						<?php endif; ?>
 			
 						<?php if ( $people_research == get_field( 'peopleresearch' ) ): ?>
 							<div class="people-research people-field"><?php
 								//the_field( 'peopleresearch' );
-								 echo _uri_department_result_highlight( $people_research, $search );
+								 echo _uri_modern_result_highlight( $people_research, $search );
 							?></div>
 						<?php endif; ?>
 			
@@ -161,7 +161,7 @@ if ( $query->have_posts() ): ?>
 								<div class="people-expertise people-field">Areas of expertise: <?php
 									$terms = implode ( ', ', $terms );
 									// echo $terms;
-									echo _uri_department_result_highlight( $terms, $search );
+									echo _uri_modern_result_highlight( $terms, $search );
 								?></div>
 							<?php endif; ?>
 			
@@ -173,13 +173,13 @@ if ( $query->have_posts() ): ?>
 						<h2><a href="<?php the_permalink(); ?>"><?php
 							// the_title();
 							$title = get_the_title();
-							echo _uri_department_result_highlight( $title, $search );
+							echo _uri_modern_result_highlight( $title, $search );
 						?></a></h2>
 			
 						<p><br /><?php
 							//the_excerpt();
 							$excerpt = get_the_excerpt();
-							echo _uri_department_result_highlight( $excerpt, $search );
+							echo _uri_modern_result_highlight( $excerpt, $search );
 						?></p>
 						<?php 
 							if ( has_post_thumbnail() ) {
@@ -201,7 +201,7 @@ if ( $query->have_posts() ): ?>
 		</div>
 
 		<div class="results-meta">
-			<?php print _uri_department_search_filter_number_of_results($query->found_posts); ?>
+			<?php print _uri_modern_search_filter_number_of_results($query->found_posts); ?>
 			<div class="pagination">
 				Page: 
 				<?php
@@ -209,7 +209,7 @@ if ( $query->have_posts() ): ?>
 					if ( empty ( $current_page ) ) {
 						$current_page = 1;
 					}
-					print _uri_department_search_filter_pagination($current_page, $query->max_num_pages);
+					print _uri_modern_search_filter_pagination($current_page, $query->max_num_pages);
 				?>
 			</div>
 		</div>
