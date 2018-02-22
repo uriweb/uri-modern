@@ -1,0 +1,155 @@
+/* ==============================
+   FORMS
+   ============================== */
+
+fieldset {
+    background: #eee;
+    padding: 2rem;
+    border-radius: .2rem;
+}
+
+fieldset legend {
+    background: $darkgrey;
+    color: $white;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-size: .8rem;
+    border-radius: 2px;
+}
+
+fieldset form:not(:first-child) {
+    margin-top: 2rem;
+}
+
+form label {
+    font-weight: 600;
+}
+
+input.button {
+    & {
+        display: inline-block !important;
+        margin: 0 .5rem;
+        padding: 1rem 2rem;
+        background: $white;
+        border: 1px solid $grey !important;
+        font-size: .7rem;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        line-height: normal;
+        text-transform: uppercase;
+        text-align: center;
+        color: $blue !important;
+        text-decoration: none;
+        transition: all .2s ease-in-out;
+        text-shadow: none;
+    }
+    
+    &:hover,
+    &:focus {
+        background: $blue;
+        border: 1px solid $blue !important;
+        color: $white !important;
+        transition: all .1s;
+        cursor: pointer;
+    }
+    
+    &:matches([type="submit"]) {
+        & {
+            background: linear-gradient(315deg, $blue, $midblue);
+            color: $white !important;
+            border: none !important;
+        }
+        
+        &:hover,
+        &:focus {
+            background: linear-gradient(315deg, $darkblue, $blue);
+            border: none !important;
+        }
+    }
+    
+}
+
+/* Material inspired checkboxes/radio buttons from https://codepen.io/BuddyLReno/pen/boGRPO */
+
+.input-group {
+    background-color: #fff;
+    display: block;
+    margin: 10px 0;
+    position: relative;
+
+    label {
+      padding: 12px 30px;
+      width: 100%;
+      display: block;
+      text-align: left;
+      color: #3C454C;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+      transition: color 200ms ease-in;
+      overflow: hidden;
+
+      &:before {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        content: '';
+        background-color: #5562eb;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale3d(1, 1, 1);
+        transition: all 300ms cubic-bezier(0.4, 0.0, 0.2, 1);
+        opacity: 0;
+        z-index: -1;
+      }
+
+      &:after {
+        width: 32px;
+        height: 32px;
+        content: '';
+        border: 2px solid #D1D7DC;
+        background-color: #fff;
+        background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+        background-repeat: no-repeat;
+        background-position: 2px 3px;
+        border-radius: 50%;
+        z-index: 2;
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        transition: all 200ms ease-in;
+      }
+    }
+
+    input:checked ~ label {
+      color: #fff;
+
+      &:before {
+        transform: translate(-50%, -50%) scale3d(56, 56, 1);
+        opacity: 1;
+      }
+
+      &:after {
+        background-color: #54E0C7;
+        border-color: #54E0C7;
+      }
+    }
+
+    input {
+      width: 32px;
+      height: 32px;
+      order: 1;
+      z-index: 2;
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      visibility: hidden;
+    }
+    
+}
+
