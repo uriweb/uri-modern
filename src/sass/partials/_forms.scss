@@ -69,7 +69,7 @@ input.button {
     
 }
 
-/* Material inspired checkboxes/radio buttons from https://codepen.io/BuddyLReno/pen/boGRPO */
+/* Material inspired checkboxes/radio buttons from https://codepen.io/BuddyLReno/pen/boGRPO
 
 .input-group {
     background-color: #fff;
@@ -150,6 +150,86 @@ input.button {
       cursor: pointer;
       visibility: hidden;
     }
+    
+}
+
+*/
+
+@keyframes activateInput {
+    0% { background: #fff; }
+    5% { background: #dfeeff; }
+    100% { background: #fff; }
+}
+
+.input-group {
+    display: block;
+    margin: 1rem 0;
+    position: relative;
+    font-family: $type-sans;
+    
+    br {
+        display: none;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        display: none;
+    }
+    
+    input[type="checkbox"] + label,
+    input[type="radio"] + label {
+        
+        display: block;
+        background: #fff;
+        margin: .2rem 0;
+        line-height: 50px;
+        height: 50px;
+        padding: 0 50px 0 1rem;
+        max-width: 300px;
+        position: relative;
+        box-shadow: $level1;
+        transition: all .2s ease-in-out;
+        
+        &:before {
+            content: '';
+            display: block;
+            box-sizing: border-box;
+            position: absolute;
+            top: calc(50% - 12px);
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            background-color: #fff;
+            border: 2px solid #999;
+            border-radius: 50%;
+            //transition: all .2s ease-in-out;
+        }
+        
+        &:hover,
+        &:focus {
+            cursor: pointer;
+            box-shadow: $level2;
+        }
+        
+        &:active {
+            box-shadow: $level3;
+        }
+        
+    }
+    
+    input[type="checkbox"]:checked + label,
+    input[type="radio"]:checked + label {
+        
+        animation-name: activateInput;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        
+        &:before {
+            border: 8px solid $link;
+        }
+        
+    }
+    
     
 }
 

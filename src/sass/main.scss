@@ -53,6 +53,16 @@ $accentblue: #057fd4;
 
 
 /* ==============================
+   BOX SHADOW LEVELS
+   ============================== */
+
+// [x-offset y-offset blur-radius color]
+$level1: 0 .1rem .3rem rgba(0,0,0,0.1);
+$level2: 0 .3rem 1rem rgba(0,0,0,0.2);
+$level3: 0 .3rem 1rem rgba(0,0,0,0.35);
+
+
+/* ==============================
    FAWNTS
    ============================== */
 
