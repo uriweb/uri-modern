@@ -21,10 +21,6 @@ fieldset form:not(:first-child) {
     margin-top: 2rem;
 }
 
-form label {
-    font-weight: 600;
-}
-
 input.button {
     & {
         display: inline-block !important;
@@ -157,7 +153,7 @@ input.button {
 
 @keyframes activateInput {
     0% { background: #fff; }
-    5% { background: #dfeeff; }
+    5% { background: $lightgrey; }
     100% { background: #fff; }
 }
 
@@ -182,12 +178,15 @@ input.button {
         display: block;
         background: #fff;
         margin: .2rem 0;
+        box-sizing: border-box;
         line-height: 50px;
         height: 50px;
-        padding: 0 50px 0 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 0 4rem 0 1rem;
         max-width: 300px;
         position: relative;
-        box-shadow: $level1;
+        //box-shadow: $level1;
         transition: all .2s ease-in-out;
         
         &:before {
@@ -196,23 +195,23 @@ input.button {
             box-sizing: border-box;
             position: absolute;
             top: calc(50% - 12px);
-            right: 10px;
+            right: 1rem;
             width: 24px;
             height: 24px;
             background-color: #fff;
-            border: 2px solid #999;
+            border: 2px solid $grey;
             border-radius: 50%;
-            //transition: all .2s ease-in-out;
+            transition: all .1s ease-in-out;
         }
         
         &:hover,
         &:focus {
             cursor: pointer;
-            box-shadow: $level2;
+            box-shadow: $level1;
         }
         
         &:active {
-            box-shadow: $level3;
+            box-shadow: $level2;
         }
         
     }
@@ -225,7 +224,7 @@ input.button {
         animation-timing-function: ease-in-out;
         
         &:before {
-            border: 8px solid $link;
+            border: 9px solid $link;
         }
         
     }
