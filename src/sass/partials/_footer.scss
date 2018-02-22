@@ -35,7 +35,9 @@
         flex: 1;
         height: 120px;
         text-align: center;
-        color: $black;
+        color: #8393A7;
+        font-size: 1.4rem;
+        font-weight: 600;
         transition: none;
     }
 
@@ -292,9 +294,9 @@
     & {
         position: relative;
         z-index: 10;
-        width: 200px;
+        width: 300px;
         margin: 0 auto;
-        font-size: .5rem;
+        font-size: .7rem;
         box-sizing: border-box;
         transtition: all .2s ease-in-out;
     }
@@ -327,7 +329,7 @@
 
 @media screen and (min-width: 900px) {
     #globalfooter {
-        padding: 30px 0;
+        padding: 35px 0;
         background-size: auto 500px;
     }
     #actionbar a {
