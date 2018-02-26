@@ -11,7 +11,7 @@
 get_header('external'); 
 ?>
     
-    <main id="main" class="site-main external-landing" role="main">
+    <main id="main" class="site-main" role="main">
 
         <?php
         while ( have_posts() ) : the_post();

@@ -10,23 +10,32 @@ body {
     overflow: hidden;
 }
 
+.content-width,
+#main {
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
 #main {
     width: 100%;
-    margin: 0 auto 2rem;
-    padding: 0 25px;
+    margin-bottom: 2rem;
     box-sizing: border-box;
     transition: all .2s ease-in-out;
 }
 
-#main.external-landing {
-    margin: 0 auto;
+.page-template-page-external-landing #main {
+    margin-bottom: 0;
 }
 
 @media screen and (min-width: 1050px) {
+    .content-width,
     #main {
         width: 1000px;
+        margin: 0 auto;
         padding: 0;
-        margin: 0 auto 6rem;
+    }
+    #main {
+         margin-bottom: 6rem;
     }
 }
 
