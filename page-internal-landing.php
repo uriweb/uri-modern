@@ -8,6 +8,7 @@
  *
  */
 
+$uri_modern_page_template = 'internal';
 get_header(); 
 get_template_part( 'template-parts/sitebar' );
 ?>

@@ -8,6 +8,7 @@
  *
  */
 
+$uri_modern_page_template = 'external';
 get_header(); 
 ?>
     
