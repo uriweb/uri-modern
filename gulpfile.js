@@ -1,4 +1,23 @@
 var gulp = require('gulp');
+var pkg = require('./package.json');
+
+var banner = ['/*',
+  'Theme Name: <%= pkg.name %>',
+  'Theme URI: <%= pkg.homepage %>',
+  'Author: <%= pkg.author %>',
+  'Author URI: <%= pkg.homepage %>',
+  'Description: <%= pkg.description %>',
+  'Version: <%= pkg.version %>',
+  'License: <%= pkg.license %>',
+  'License URI: <%= pkg.licenseURI %>',
+  'Text Domain: <%= pkg.name %>',
+  'Tags:',
+  '',
+  '@version v<%= pkg.version %>',
+  '@author <%= pkg.authorHuman %>',
+  '',
+  '*/',
+  ''].join('\n');
 
 // include plug-ins
 var jshint = require('gulp-jshint');
@@ -24,13 +43,15 @@ var sassOptions = {
 gulp.task('scripts', scripts);
 
 function scripts(done) {
+    
   gulp.src('./src/js/*.js')
     .pipe(jshint(done))
     .pipe(jshint.reporter('default'));
 	gulp.src('./src/js/*.js')
     .pipe(concat('script.min.js'))
     //.pipe(stripDebug())
-    //.pipe(uglify())
+    .pipe(uglify())
+    .pipe(header(banner, { pkg : pkg } ))
     .pipe(gulp.dest('./js/'));
     
 	done();
@@ -41,26 +62,6 @@ function scripts(done) {
 gulp.task('styles', styles);
 
 function styles(done) {
-
-	var pkg = require('./package.json');
-	var banner = ['/*',
-  'Theme Name: <%= pkg.name %>',
-  'Theme URI: <%= pkg.homepage %>',
-  'Author: <%= pkg.author %>',
-  'Author URI: <%= pkg.homepage %>',
-  'Description: <%= pkg.description %>',
-  'Version: <%= pkg.version %>',
-  'License: <%= pkg.license %>',
-  'License URI: <%= pkg.licenseURI %>',
-  'Text Domain: <%= pkg.name %>',
-  'Tags:',
-  '',
-  '@version v<%= pkg.version %>',
-  '@author <%= pkg.authorHuman %>',
-  '',
-  '*/',
-  ''].join('\n')
-
 
 	gulp.src('./src/sass/*.scss')
 		.pipe(sourcemaps.init())
