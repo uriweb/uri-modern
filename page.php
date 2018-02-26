@@ -15,18 +15,9 @@
  */
 
 get_header();
-get_template_part( 'template-parts/sitebar' );
 ?>
 
     <main id="main" class="site-main" role="main">
-        
-        <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
-        
-        <?php
-        if(has_nav_menu('menu-1')) {
-            get_template_part( 'template-parts/localnav' );
-        }
-        ?>
 
         <?php
         while ( have_posts() ) : the_post();

@@ -8,8 +8,7 @@
  *
  */
 
-$uri_modern_page_template = 'external';
-get_header(); 
+get_header('external'); 
 ?>
     
     <main id="main" class="site-main external-landing" role="main">
