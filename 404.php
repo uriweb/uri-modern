@@ -8,19 +8,10 @@
  */
 
 get_header();
-get_template_part( 'template-parts/sitebar' );
 ?>
 
     <main id="main" class="site-main" role="main">
         
-        <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
-        
-        <?php
-        if(has_nav_menu('menu-1')) {
-            get_template_part( 'template-parts/localnav' );
-        }
-        ?>
-
         <section class="error-404 not-found">
             <div id="rhody404"></div>
             <div class="content-404">
