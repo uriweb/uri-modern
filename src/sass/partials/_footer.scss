@@ -35,7 +35,9 @@
         flex: 1;
         height: 120px;
         text-align: center;
-        color: $black;
+        color: #8393A7;
+        font-size: 1.4rem;
+        font-weight: 600;
         transition: none;
     }
 
@@ -176,6 +178,10 @@
         position: relative;
     }
     
+    li {
+        max-width: 100%;
+    }
+    
     #sb-university ul {
         margin-left: 0;
         left: 0;
@@ -229,9 +235,10 @@
         text-align: left;
     }
     .uri-tides-widget .label {
-        font-size: .7rem;
+        font-size: .9rem;
         text-transform: uppercase;
         font-weight: 600;
+        margin-bottom: .5rem;
     }
     .uri-tides-metrics div {
         font-family: $type-numeric;
@@ -287,9 +294,9 @@
     & {
         position: relative;
         z-index: 10;
-        width: 200px;
+        width: 300px;
         margin: 0 auto;
-        font-size: .5rem;
+        font-size: .7rem;
         box-sizing: border-box;
         transtition: all .2s ease-in-out;
     }
@@ -299,6 +306,7 @@
         max-width: 100%;
         padding: 0;
         text-align: center;
+        line-height: 1.3;
     }
     
     a {
@@ -319,9 +327,9 @@
 
 } // #legal
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 900px) {
     #globalfooter {
-        padding: 30px 0;
+        padding: 35px 0;
         background-size: auto 500px;
     }
     #actionbar a {
@@ -341,7 +349,6 @@
             background: none;
         }
         div {
-            font-size: .7rem;
             display: inline-block;
             float: none;
             width: auto;
@@ -354,7 +361,7 @@
             padding: 0;
             width: auto;
             height: auto;
-            line-height: initial;
+            line-height: 1;
             padding-bottom: 0;
         }
         label span:after {
@@ -370,7 +377,7 @@
         ul {
             display: block;
             background: none;
-            padding: 1rem 0;
+            padding: 1.2rem 0 1rem;
             width: auto;
         }
         #sb-university ul,
@@ -409,6 +416,9 @@
         .uri-tides-widget {
             margin: 0;
         }
+        .uri-tides-widget .label {
+            font-size: .9rem;
+        }
         .cl-social {
             margin-left: 3rem;
             padding: 0;
@@ -422,12 +432,11 @@
     
     #legal {
         width: 100%;
-        font-size: .55rem;
+        font-size: .7rem;
         margin-top: .5rem;
         padding: 0 25px;
     }
     #legal p {
-        color: $white;
         text-align: left;
     }
     #tagline {

@@ -10,6 +10,7 @@ img.alignleft {
     padding: 1.5rem 0;
     position: relative;
     width: 100vw;
+    height: auto;
     left: -50vw;
     margin-left: 50%;
 }
@@ -18,6 +19,7 @@ img.alignleft {
     img.alignright,
     img.alignleft {
         width: 60%;
+        height: auto;
         float: right;
         left: 0;
         margin-left: 0;

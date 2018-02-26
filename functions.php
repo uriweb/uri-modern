@@ -117,6 +117,91 @@ function uri_modern_widgets_init() {
 }
 add_action( 'widgets_init', 'uri_modern_widgets_init' );
 
+
+/**
+ * Add open graph elements to the <head>
+ * @todo: allow other twitter handles
+ */
+function uri_modern_open_graph() {
+	global $post;
+	$summary_type = 'summary';
+	if( is_single() || is_page() ) {
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+		
+		// use a larger image in twitter card if the image is wider than it is tall
+		$landscape = ($image[1] > $image[2]);
+		if($landscape === TRUE) {
+			$summary_type = 'summary_large_image';
+		}
+		
+		$image_thumb = $image[0];
+		if( empty( $image_thumb ) ) {
+			$image_thumb = get_template_directory_uri() . '/images/logo-wordmark.png';
+			$summary_type = 'summary_large_image';
+		}
+		
+		$title = get_the_title();
+		if( empty ( $title) ) { $title = get_bloginfo( 'name', 'display' ); }
+		
+		//setup_postdata( $post );
+		//$excerpt = get_the_excerpt($post);
+		$excerpt = '';
+		// since the excerpt is just about always empty...
+		if( empty ( $excerpt ) ) {
+			if( strpos( $post->post_content, '<!--more' ) !== FALSE && 1==2) {
+				$bits = explode('<!--more', $post->post_content);
+			} else {
+				$bits = explode( "\n", wordwrap( $post->post_content, 200 ));
+			}
+			$excerpt = strip_tags($bits[0]);
+			$excerpt = str_replace('"', '&quot;', $excerpt);
+			$excerpt = trim($excerpt);
+		}
+
+		?>
+<meta name="twitter:card" content="<?php echo $summary_type; ?>" />
+<meta name="twitter:site" content="@universityofri" />
+<meta name="twitter:creator" content="@universityofri" />
+<meta property="og:url" content="<?php echo get_permalink(); ?>" />
+<meta property="og:title" content="<?php echo $title; ?>" />
+<meta property="og:description" content="<?php echo $excerpt; ?>" />
+<?php if( $image_thumb ): ?><meta property="og:image" content="<?php echo $image_thumb; ?>" /><?php endif;
+	}
+	//wp_reset_postdata();
+}
+
+add_action('wp_head', 'uri_modern_open_graph');
+
+
+/**
+ * Set the Google Tag Manager property ID
+ * @return str
+ */
+function uri_modern_gtm_value() {
+        
+	return 'GTM-K5GL9W';
+    
+}
+
+
+/**
+ * Adds Google Tag Manager code to <head>
+ */
+function uri_modern_gtm() {
+	$gtm = uri_modern_gtm_value();
+	if ( ! empty ( $gtm ) ):
+	?>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','<?php echo $gtm; ?>');</script>
+	<?php
+	endif;
+}
+add_action('wp_head', 'uri_modern_gtm');
+
+
 /**
  * Enqueue scripts and styles.
  */
