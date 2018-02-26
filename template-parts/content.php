@@ -34,14 +34,18 @@
 
 	<div class="entry-content">
 		<?php
-        if ( !is_single() || !is_page() && $excerpt = get_the_excerpt() ) {
+        
+        $continue = sprintf(
+				        /* translators: %s: Name of current post. */
+				        wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uri-modern' ), array( 'span' => array( 'class' => array() ) ) ),
+				        the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                    );
+        
+        if ( !is_single() && !is_page() && $excerpt = get_the_excerpt() ) {
             the_excerpt();
+            echo '<a href="' . get_permalink() . '">' . $continue . '</a>';
         } else {
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uri-modern' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+			the_content( $continue );
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri-modern' ),
