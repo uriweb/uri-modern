@@ -7,7 +7,7 @@
  * @package uri-modern
  */
 
-get_header(); ?>
+get_header('external'); ?>
 
     <main id="main" class="site-main" role="main">
 

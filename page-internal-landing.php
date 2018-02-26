@@ -8,14 +8,11 @@
  *
  */
 
-get_header(); 
-get_template_part( 'template-parts/sitebar' );
+get_header('internal'); 
 ?>
     
     <main id="main" class="site-main" role="main">
         
-        <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
-
         <?php
         while ( have_posts() ) : the_post();
 

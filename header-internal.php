@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme
+ * The internal landing page header for our theme
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
@@ -30,11 +30,6 @@
     
     <div class="content-width">
         <?php get_template_part( 'header-parts/breadcrumbs' ); ?>  
-        <?php
-        if(has_nav_menu('menu-1')) {
-            get_template_part( 'header-parts/localnav' );
-        }
-        ?>
     </div>
     
 	<div id="content" class="site-content">
