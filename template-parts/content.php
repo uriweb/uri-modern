@@ -34,7 +34,9 @@
 
 	<div class="entry-content">
 		<?php
-			
+        if ( !is_single() || !is_page() && $excerpt = get_the_excerpt() ) {
+            the_excerpt();
+        } else {
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uri-modern' ), array( 'span' => array( 'class' => array() ) ) ),
@@ -45,6 +47,7 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri-modern' ),
 				'after'  => '</div>',
 			) );
+        }
 		?>
 	</div><!-- .entry-content -->
 
