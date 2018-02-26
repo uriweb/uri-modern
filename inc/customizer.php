@@ -33,7 +33,7 @@ function uri_modern_options_social_media($wp_customize) {
     
     // Add section for social media
     $wp_customize->add_section( 'uri_modern_customizer_social' , array(
-        'title'      => __( 'Social Media', 'uri-modern' ),
+        'title'      => __( 'Social Media', 'uri' ),
         'priority'   => 70,
     ) );
     
@@ -49,8 +49,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_facebook_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'Facebook URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include Facebook in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'Facebook URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include Facebook in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -67,8 +67,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_instagram_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'Instagram URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include Instagram in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'Instagram URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include Instagram in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -85,8 +85,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_twitter_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'Twitter URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include Twitter in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'Twitter URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include Twitter in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -103,8 +103,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_youtube_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'YouTube URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include YouTube in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'YouTube URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include YouTube in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -121,8 +121,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_snapchat_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'Snapchat URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include Snapchat in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'Snapchat URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include Snapchat in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -139,8 +139,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_linkedin_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'LinkedIn URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include LinkedIn in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'LinkedIn URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include LinkedIn in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -166,8 +166,8 @@ function uri_modern_options_site_header($wp_customize) {
         'site_header_text_color',
         array(
             'section' => 'header_image',
-            'label' => __( 'Use light colors', 'uri-modern' ),
-            'description' => __( 'Use light colors for header text and social media icons.  Check when using most background images.', 'uri-modern' ),
+            'label' => __( 'Use light colors', 'uri' ),
+            'description' => __( 'Use light colors for header text and social media icons.  Check when using most background images.', 'uri' ),
             'type' => 'checkbox'
         )
     ) );
