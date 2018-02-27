@@ -99,24 +99,6 @@ function uri_modern_content_width() {
 }
 add_action( 'after_setup_theme', 'uri_modern_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function uri_modern_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'uri' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'uri' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'uri_modern_widgets_init' );
-
 
 /**
  * Add open graph elements to the <head>
@@ -200,6 +182,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	endif;
 }
 add_action('wp_head', 'uri_modern_gtm');
+
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function uri_modern_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Before Content', 'uri' ),
+		'id'            => 'before-content',
+		'description'   => esc_html__( 'Widgets here appear after the header and above the content.', 'uri' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'After Content', 'uri' ),
+		'id'            => 'after-content',
+		'description'   => esc_html__( 'Widgets here appear after content and above the footer.', 'uri' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	
+}
+add_action( 'widgets_init', 'uri_modern_widgets_init' );
 
 
 /**
@@ -302,6 +315,11 @@ if ( !function_exists( 'uri_console' ) ) {
 		return FALSE;
 	}
 }
+
+/**
+ * Enable shortcodes in text widgets
+ */
+add_filter('widget_text','do_shortcode');
 
 /**
  * Implement the Custom Header feature.
