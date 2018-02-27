@@ -29,7 +29,8 @@
     <?php get_template_part( 'header-parts/sitebar' ); ?>
     
     <div class="content-width">
-        <?php get_template_part( 'header-parts/breadcrumbs' ); ?>  
+        <?php get_template_part( 'header-parts/breadcrumbs' ); ?>
+        <?php get_template_part( 'header-parts/widgetarea' ); ?>
     </div>
     
 	<div id="content" class="site-content">
