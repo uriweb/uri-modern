@@ -13,6 +13,12 @@ article.page {
 
 article.post {
     
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+    
     .entry-meta {
         margin-bottom: 2rem;
         font-size: .8rem;
