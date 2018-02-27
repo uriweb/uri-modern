@@ -13,6 +13,12 @@
 
 	</div><!-- #content -->
 
+    <?php if ( is_active_sidebar( 'after-content' ) ) : ?>
+		<div id="region-after-content" class="region-after-content widgets content-width">
+			<?php dynamic_sidebar( 'after-content' ); ?>
+		</div><!-- #after-content -->
+	<?php endif; ?>
+
     <div id="actionbar-wrapper">
         <div id="actionbar" role="menu">
             <a href="https://www.uri.edu/apply" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>

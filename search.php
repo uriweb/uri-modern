@@ -42,5 +42,4 @@ get_header('external'); ?>
     </main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

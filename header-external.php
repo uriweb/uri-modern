@@ -27,6 +27,10 @@
 
 	<?php get_template_part( 'header-parts/brandbar' ); ?>
     
+    <div class="content-width">
+        <?php get_template_part( 'header-parts/widgetarea' ); ?>
+    </div>
+    
 	<div id="content" class="site-content">
         
     

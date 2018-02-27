@@ -35,6 +35,7 @@
             get_template_part( 'header-parts/localnav' );
         }
         ?>
+        <?php get_template_part( 'header-parts/widgetarea' ); ?>
     </div>
     
 	<div id="content" class="site-content">
