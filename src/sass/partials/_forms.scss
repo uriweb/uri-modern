@@ -1,0 +1,233 @@
+/* ==============================
+   FORMS
+   ============================== */
+
+fieldset {
+    background: #fff;
+    box-sizing: border-box;
+    border-bottom: 1px solid $grey;
+    border-top: 1px solid $grey;
+    padding: 1.5rem 2rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    font-family: $type-sans;
+}
+
+@media screen and (min-width: $break1) {
+    fieldset {
+        border: 1px solid $grey;
+        padding: 1.5rem 1rem;
+        border-radius: .2rem;
+        width: 100%;
+        left: 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: $break2) {
+    fieldset {
+        padding: 2rem;
+    }
+}
+
+fieldset legend {
+    background: $link;
+    color: $white;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    padding: .5rem .8rem;
+    text-transform: uppercase;
+    font-size: .8rem;
+    border-radius: 2px;
+}
+
+fieldset form:not(:first-child) {
+    margin-top: 2rem;
+}
+
+label {
+    color: $midblue;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+input.button {
+    & {
+        display: inline-block;
+        margin: 0 .5rem;
+        padding: 1rem 2rem;
+        background: $white;
+        border: 1px solid $grey;
+        font-size: .7rem;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: $darkgrey;
+        text-decoration: none;
+        border-radius: .2rem;
+        transition: all .2s ease-in-out;
+        text-shadow: none;
+    }
+    
+    &:first-of-type {
+        margin-left: 0;
+    }
+    
+    &:hover,
+    &:focus {
+        background: $lightgrey;
+        cursor: pointer;
+    }
+    
+    &:matches([type="submit"]) {
+        & {
+            background: $link;
+            color: $white !important;
+            border: none !important;
+        }
+        
+        &:hover,
+        &:focus {
+            background: $blue;
+            border: none !important;
+        }
+    }
+    
+}
+
+@keyframes activateInput {
+    0% { background: $grey; }
+    5% { background: #ccc; }
+    100% { background: $grey; }
+}
+
+.input-group {
+    display: block;
+    margin: 1rem 0 2rem;
+    position: relative;
+    font-family: $type-sans;
+    
+    br {
+        display: none;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        
+        display: none;
+    
+        & + label {
+
+            display: block;
+            background: none;
+            border: 1px solid $grey;
+            border-radius: .2rem;
+            margin: .5rem 0;
+            box-sizing: border-box;
+            line-height: 50px;
+            height: 50px;
+            color: $darkgrey;
+            padding: 0 4rem 0 1rem;
+            max-width: 300px;
+            position: relative;
+            transition: all .2s ease-in-out;
+
+            &:before {
+                content: '';
+                display: block;
+                box-sizing: border-box;
+                position: absolute;
+                top: calc(50% - 12px);
+                right: 1rem;
+                width: 24px;
+                height: 24px;
+                background: #fff;
+                border: 2px solid $grey;
+                border-radius: 50%;
+                transition: all .1s ease-in-out;
+            }
+
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                background: $lightgrey;
+                //box-shadow: $level1;
+            }
+
+            &:active {
+                //box-shadow: $level2;
+            }
+
+        }
+
+        &:checked + label {
+
+            //animation-name: activateInput;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+
+            &:before {
+                border: 9px solid $link;
+            }
+
+        }
+        
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        
+        display: block;
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        padding: .3rem .2rem;
+        box-sizing: border-box;
+        margin-top: .5rem;
+        border: none;
+        outline: none;
+        background: none;
+        border-bottom: 1px solid $grey;
+        color: $black;
+        font-size: 1.2rem;
+        transition: all .2s ease-in-out;
+        
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid $lightgrey;
+            background: $lightgrey;
+            color: $darkgrey;
+        }
+        
+    }
+    
+    textarea {
+        
+        display: block;
+        width: 100%;
+        max-width: 800px;
+        margin-top: .5rem;
+        padding: .5rem;
+        box-sizing: border-box;
+        outline: none;
+        background: none;
+        border: 1px solid $grey;
+        color: $black;
+        font-size: 1rem;
+        transition: all .2s ease-in-out;
+        
+        &:hover,
+        &:focus {
+            border: 1px solid $lightgrey;
+            background: $lightgrey;
+            color: $darkgrey;
+        }
+        
+    }
+    
+    
+}
+
