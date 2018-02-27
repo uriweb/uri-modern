@@ -1,16 +1,16 @@
-### Issue Type
+## Issue Type
 
 <!-- Put an X between the brackets of one or more items below: -->
 
-* [ ] Bug
-* [ ] New Feature
-* [ ] Enhancement
+[] Bug  
+[] New Feature  
+[] Enhancement  
     
-### Description
+## Description
 
 [Description of the issue]
 
-### Steps to Reproduce
+## Steps to Reproduce
 
 1. [First Step]
 2. [Second Step]
@@ -22,29 +22,15 @@
 
 **Reproduces how often:** [What percentage of the time does it reproduce?]
 
-### Versions and Environment
+**Additional information:** [Add any additional information useful in reproducing the problem]
 
-<!-- What version are you using and what is your OS and browser? -->
+## Environment
 
-Version: X.x.x
+<!-- What version(s) exhibit(s) this issue? -->
+**Version:** X.x.x
 
-OS:
+<!-- What OS(s) exhibit(s) this issue? -->
+**OS:** [please list]
 
-* [ ] macOS 10.x.x
-* [ ] Windows #
-* [ ] iOS X.x.x
-* [ ] Android X.x.x
-* [ ] Other: [describe]
-
-Browser:
-
-* [ ] Safari X.x.x
-* [ ] Chrome X.x.x
-* [ ] Firefox X.x.x
-* [ ] Edge X.x.x
-* [ ] IE X.x.x
-* [ ] Other: [describe]
-
-### Additional Information
-
-Any additional information, configuration or data that might be necessary to reproduce the issue.
+<!-- What browser(s) exhibit(s) this issue? -->
+**Browsers:** [please list]
