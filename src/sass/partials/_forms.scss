@@ -83,62 +83,83 @@ input.button {
 
     input[type="checkbox"],
     input[type="radio"] {
+        
         display: none;
+    
+        & + label {
+
+            display: block;
+            background: #fff;
+            margin: .2rem 0;
+            box-sizing: border-box;
+            line-height: 50px;
+            height: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0 4rem 0 1rem;
+            max-width: 300px;
+            position: relative;
+            transition: all .2s ease-in-out;
+
+            &:before {
+                content: '';
+                display: block;
+                box-sizing: border-box;
+                position: absolute;
+                top: calc(50% - 12px);
+                right: 1rem;
+                width: 24px;
+                height: 24px;
+                background-color: #fff;
+                border: 2px solid $grey;
+                border-radius: 50%;
+                transition: all .1s ease-in-out;
+            }
+
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                box-shadow: $level1;
+            }
+
+            &:active {
+                box-shadow: $level2;
+            }
+
+        }
+
+        &:checked + label {
+
+            animation-name: activateInput;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+
+            &:before {
+                border: 9px solid $link;
+            }
+
+        }
+        
     }
     
-    input[type="checkbox"] + label,
-    input[type="radio"] + label {
+    input[type="text"] {
         
         display: block;
-        background: #fff;
-        margin: .2rem 0;
-        box-sizing: border-box;
-        line-height: 50px;
-        height: 50px;
-        font-size: 1rem;
-        font-weight: 600;
-        padding: 0 4rem 0 1rem;
-        max-width: 300px;
-        position: relative;
-        //box-shadow: $level1;
+        width: 100%;
+        max-width: 800px;
+        padding: .8rem 0 .2rem;
+        border: none;
+        outline: none;
+        background: none;
+        border-bottom: 1px solid $grey;
+        color: $darkgrey;
+        font-size: 1.2rem;
         transition: all .2s ease-in-out;
-        
-        &:before {
-            content: '';
-            display: block;
-            box-sizing: border-box;
-            position: absolute;
-            top: calc(50% - 12px);
-            right: 1rem;
-            width: 24px;
-            height: 24px;
-            background-color: #fff;
-            border: 2px solid $grey;
-            border-radius: 50%;
-            transition: all .1s ease-in-out;
-        }
         
         &:hover,
         &:focus {
-            cursor: pointer;
-            box-shadow: $level1;
-        }
-        
-        &:active {
-            box-shadow: $level2;
-        }
-        
-    }
-    
-    input[type="checkbox"]:checked + label,
-    input[type="radio"]:checked + label {
-        
-        animation-name: activateInput;
-        animation-duration: 1s;
-        animation-timing-function: ease-in-out;
-        
-        &:before {
-            border: 9px solid $link;
+            border-bottom: 1px solid $link;
+            color: $link;
         }
         
     }
