@@ -4,14 +4,40 @@
 
 fieldset {
     background: #fff;
-    padding: 2rem;
-    border-radius: .2rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid $grey;
+    border-top: 1px solid $grey;
+    padding: 1.5rem 2rem;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    font-family: $type-sans;
+}
+
+@media screen and (min-width: $break1) {
+    fieldset {
+        border: 1px solid $grey;
+        padding: 1.5rem 1rem;
+        border-radius: .2rem;
+        width: 100%;
+        left: 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (min-width: $break2) {
+    fieldset {
+        padding: 2rem;
+    }
 }
 
 fieldset legend {
-    background: $darkgrey;
+    background: $link;
     color: $white;
-    padding: 5px 10px;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    padding: .5rem .8rem;
     text-transform: uppercase;
     font-size: .8rem;
     border-radius: 2px;
@@ -22,49 +48,50 @@ fieldset form:not(:first-child) {
 }
 
 label {
-    color: $darkgrey;
+    color: $midblue;
     font-size: 1rem;
     font-weight: 600;
 }
 
 input.button {
     & {
-        display: inline-block !important;
+        display: inline-block;
         margin: 0 .5rem;
         padding: 1rem 2rem;
         background: $white;
-        border: 1px solid $grey !important;
+        border: 1px solid $grey;
         font-size: .7rem;
-        font-weight: 700;
+        font-weight: 600;
         letter-spacing: .1rem;
-        line-height: normal;
         text-transform: uppercase;
         text-align: center;
-        color: $blue !important;
+        color: $darkgrey;
         text-decoration: none;
+        border-radius: .2rem;
         transition: all .2s ease-in-out;
         text-shadow: none;
     }
     
+    &:first-of-type {
+        margin-left: 0;
+    }
+    
     &:hover,
     &:focus {
-        background: $blue;
-        border: 1px solid $blue !important;
-        color: $white !important;
-        transition: all .1s;
+        background: $lightgrey;
         cursor: pointer;
     }
     
     &:matches([type="submit"]) {
         & {
-            background: linear-gradient(315deg, $blue, $midblue);
+            background: $link;
             color: $white !important;
             border: none !important;
         }
         
         &:hover,
         &:focus {
-            background: linear-gradient(315deg, $darkblue, $blue);
+            background: $blue;
             border: none !important;
         }
     }
@@ -72,14 +99,14 @@ input.button {
 }
 
 @keyframes activateInput {
-    0% { background: #fff; }
-    5% { background: $lightgrey; }
-    100% { background: #fff; }
+    0% { background: $grey; }
+    5% { background: #ccc; }
+    100% { background: $grey; }
 }
 
 .input-group {
     display: block;
-    margin: 1rem 0;
+    margin: 1rem 0 2rem;
     position: relative;
     font-family: $type-sans;
     
@@ -95,11 +122,14 @@ input.button {
         & + label {
 
             display: block;
-            background: #fff;
-            margin: .2rem 0;
+            background: none;
+            border: 1px solid $grey;
+            border-radius: .2rem;
+            margin: .5rem 0;
             box-sizing: border-box;
             line-height: 50px;
             height: 50px;
+            color: $darkgrey;
             padding: 0 4rem 0 1rem;
             max-width: 300px;
             position: relative;
@@ -114,7 +144,7 @@ input.button {
                 right: 1rem;
                 width: 24px;
                 height: 24px;
-                background-color: #fff;
+                background: #fff;
                 border: 2px solid $grey;
                 border-radius: 50%;
                 transition: all .1s ease-in-out;
@@ -123,18 +153,19 @@ input.button {
             &:hover,
             &:focus {
                 cursor: pointer;
-                box-shadow: $level1;
+                background: $lightgrey;
+                //box-shadow: $level1;
             }
 
             &:active {
-                box-shadow: $level2;
+                //box-shadow: $level2;
             }
 
         }
 
         &:checked + label {
 
-            animation-name: activateInput;
+            //animation-name: activateInput;
             animation-duration: 1s;
             animation-timing-function: ease-in-out;
 
