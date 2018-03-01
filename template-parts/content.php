@@ -37,7 +37,7 @@
         
         $continue = sprintf(
 				        /* translators: %s: Name of current post. */
-				        wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uri-modern' ), array( 'span' => array( 'class' => array() ) ) ),
+				        wp_kses( __( '<span class="continue-reading">Continue reading %s <span class="meta-nav">&rarr;</span></span>', 'uri-modern' ), array( 'span' => array( 'class' => array() ) ) ),
 				        the_title( '<span class="screen-reader-text">"', '"</span>', false )
                     );
         

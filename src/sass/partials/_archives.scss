@@ -1,0 +1,50 @@
+/* ==============================
+   ARCHIVES
+   ============================== */
+
+body.archive {
+    
+    article.post {
+        padding: 2rem 0 1rem;
+    }
+    
+    article.post:not(:first-of-type) {
+        border-top: 1px solid $grey;
+    }
+    
+    .entry-title a {
+        
+        color: $black;
+        
+        &:hover,
+        &:focus {
+            color: $link;
+        }
+        
+    }
+    
+    .entry-content {
+        font-size: 1.2rem;
+        color: $darkgrey;
+    }
+    
+    .continue-reading {
+        
+        padding: .3rem .8rem;
+        background: #eee;
+        font-family: $type-sans;
+        font-size: .9rem;
+        color: $darkgrey;
+        border-radius: .2rem;
+        transition: all .1s ease-in-out;
+    
+        &:hover,
+        &:focus {
+            background: $link;
+            color: $white;
+        }
+        
+    }
+    
+    
+}
