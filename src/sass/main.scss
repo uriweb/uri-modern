@@ -63,6 +63,13 @@ $level3: 0 .3rem 1rem rgba(0,0,0,0.35);
 
 
 /* ==============================
+   OTHER VARS
+   ============================== */
+
+$brandbarheight: 40px;
+
+
+/* ==============================
    FAWNTS
    ============================== */
 
@@ -116,6 +123,7 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @import 'partials/elements';
 @import 'partials/forms';
 @import 'partials/brandbar';
+@import 'partials/globalnav';
 @import 'partials/footer';
 @import 'partials/sitebar';
 @import 'partials/breadcrumbs';

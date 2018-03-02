@@ -1,0 +1,40 @@
+/* ==============================
+   GLOBAL NAV
+   ============================== */
+
+
+.globalnav {
+    
+    background: rgba(255,255,255,.8);
+    
+    ul {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+    }
+    
+    li {
+        display: inline;
+        margin-bottom: 0;
+        line-height: $brandbarheight;
+    }
+    
+    li:not(:last-child) {
+        margin-right: 3rem;
+    }
+    
+    a {
+        display: inline-block;
+        color: $blue;
+        font-size: .9rem;
+        font-weight: 600;
+        font-family: $type-sans;
+        line-height: $brandbarheight;
+    }
+    
+    a:hover,
+    a:focus {
+        color: $link;
+    }
+    
+}
