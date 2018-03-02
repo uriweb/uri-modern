@@ -96,6 +96,10 @@ p.fullwidth {
     max-width: 100%;
 }
 
+p:empty {
+    display: none;
+}
+
 a {
     color: $link;
     transition: color .1s ease-in-out;
