@@ -17,7 +17,44 @@
 
         <div id="siteidentity">
             
-            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <h1 class="site-title">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <?php 
+                    
+                    $bases = array(
+                        'https://www.uri.edu',
+                        'http://quack.uri.edu'
+                        );
+                    
+                    $pages = array(
+                        '/admissions',
+                        '/academics',
+                        '/research',
+                        '/campus-life',
+                        '/about'
+                        );
+                    
+                    $url = get_permalink();
+                                        
+                    foreach($bases as $b) {
+                        foreach($pages as $p) {
+                            $test = $b . $p . '/';
+                            if ($url == $test) {
+                                $usetitle = true;
+                                return;
+                            }
+                        }
+                    }
+                    
+                    if ($usetitle) {
+                        the_title();
+                    } else {
+                        bloginfo( 'name' );
+                    }
+                    
+                    ?>
+                </a>
+            </h1>
             <?php $description = get_bloginfo( 'description', 'display' );
             if ( $description || is_customize_preview() ) : ?>
                 <h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
