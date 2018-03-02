@@ -10,3 +10,17 @@
 .cl-button {
     font-family: $type-sans;
 }
+
+/* Metrics */
+
+.cl-metric {
+    
+    span:first-child {
+        font-family: $type-numeric;
+    }
+    
+    span:last-child {
+        font-family: $type-sans;
+    }
+    
+}
