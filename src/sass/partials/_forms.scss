@@ -47,13 +47,13 @@ fieldset form:not(:first-child) {
     margin-top: 2rem;
 }
 
-label {
+form label {
     color: $midblue;
     font-size: 1rem;
     font-weight: 600;
 }
 
-input.button {
+form input.button {
     & {
         display: inline-block;
         margin: 0 .5rem;
@@ -104,7 +104,7 @@ input.button {
     100% { background: $grey; }
 }
 
-.input-group {
+form .input-group {
     display: block;
     margin: 1rem 0 2rem;
     position: relative;
