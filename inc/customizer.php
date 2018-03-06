@@ -182,9 +182,26 @@ function uri_modern_options_site_header($wp_customize) {
         'site_header_alternate_titles',
         array(
             'section' => 'header_image',
-            'label' => __( 'Alternate Site Title', 'uri' ),
-            'description' => __( 'Use the page title instead of the site title on these pages', 'uri' ),
+            'label' => __( 'Use page title for site name', 'uri' ),
+            'description' => __( 'Use the page title instead of the site name on these pages.  List each URL on a separate line (e.g. /about)', 'uri' ),
             'type' => 'textarea'
+        )
+    ) );
+    
+    $wp_customize->add_setting( 'site_header_alternate_titles_hide_tagline', array(
+        'default' => '',
+        'type' => 'option',
+        'sanitize_callback' => 'uri_modern_validate_checkbox'
+    ) );
+    
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'site_header_alternate_titles_hide_tagline',
+        array(
+            'section' => 'header_image',
+            'label' => __( 'Hide alternate title taglines', 'uri' ),
+            'description' => __( 'Check to hide the header tagline on pages that display the alternate site name.  Note: This will have no effect while the Customizer is open', 'uri' ),
+            'type' => 'checkbox'
         )
     ) );
     

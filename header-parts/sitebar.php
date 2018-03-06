@@ -20,21 +20,8 @@
             <h1 class="site-title">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                     <?php 
-                    
-                    $site_url = get_site_url();
-                    $site_permalink = get_permalink();
-                                        
-                    $alt_title_whitelist = explode(PHP_EOL, get_option('site_header_alternate_titles') );
-                                        
-                    $use_alt_title = false;
-                    foreach($alt_title_whitelist as $a) {
-                        if ($site_url . $a == $site_permalink || $site_url . $a . '/' == $site_permalink ) {
-                            $use_alt_title = true;
-                            break;
-                        }
-                    }
 
-                    if ($use_alt_title) {
+                    if (uri_modern_use_alternate_site_title()) {
                         the_title();
                     } else {
                         bloginfo( 'name' );
@@ -44,7 +31,7 @@
                 </a>
             </h1>
             <?php $description = get_bloginfo( 'description', 'display' );
-            if ( $description || is_customize_preview() ) : ?>
+            if ( uri_modern_show_alternate_site_title_tagline() && $description || is_customize_preview() ) : ?>
                 <h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
             <?php
             endif; ?>
