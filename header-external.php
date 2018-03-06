@@ -26,9 +26,10 @@
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uri' ); ?></a> -->
 
 	<?php get_template_part( 'header-parts/brandbar' ); ?>
+    <?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
     
     <div class="content-width">
-        <?php get_template_part( 'header-parts/widgetarea' ); ?>
+        <?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
     </div>
     
 	<div id="content" class="site-content">

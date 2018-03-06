@@ -2,9 +2,6 @@
    BRANDBAR
    ============================== */
 
-// Vars
-$barheight: 40px;
-
 
 #brandbar {
     width: 100%;
@@ -75,9 +72,9 @@ $barheight: 40px;
     right: 0;
     top: 0;
     z-index: 9997;
-    height: $barheight;
+    height: $brandbarheight;
     width: 0;
-    padding-left: $barheight;
+    padding-left: $brandbarheight;
     background-color: transparent;
     background-image: url('images/search.svg');
     background-position: center center;
@@ -96,8 +93,8 @@ $barheight: 40px;
     width: 0;
     height: 0;
     border-bottom: 0px solid $link;
-    border-left: calc(#{$barheight} / 2) solid transparent;
-    border-right: calc(#{$barheight} / 2) solid transparent;
+    border-left: calc(#{$brandbarheight} / 2) solid transparent;
+    border-right: calc(#{$brandbarheight} / 2) solid transparent;
     transition: all .4s $easeInOutQuint;
 }
 
@@ -149,7 +146,7 @@ $barheight: 40px;
 
 #identity {
     width: 0;
-    height: $barheight;
+    height: $brandbarheight;
     padding-left: 180px;
     overflow: hidden;
     float: left;
@@ -165,7 +162,7 @@ $barheight: 40px;
         list-style-type: none;
         overflow: hidden;
         position: absolute;
-        top: $barheight;
+        top: $brandbarheight;
         right: 0;
         z-index: 9996;
         width: 220px;
@@ -198,10 +195,10 @@ $barheight: 40px;
 #gateways-label {
     display: block;
     position: absolute;
-    right: $barheight;
+    right: $brandbarheight;
     z-index: 9997;
-    height: $barheight;
-    line-height: $barheight;
+    height: $brandbarheight;
+    line-height: $brandbarheight;
     padding: 0 .5rem;
     font-size: .8rem;
     font-weight: 600;
@@ -223,7 +220,7 @@ $barheight: 40px;
     content: '';
     display: block;
     position: absolute;
-    top: calc(#{$barheight} / 2 - 4px);
+    top: calc(#{$brandbarheight} / 2 - 4px);
     right: 0.5rem;
     width: 0;
     height: 0;
@@ -243,7 +240,7 @@ $barheight: 40px;
         display: block;
         z-index: 9997;
         position: absolute;
-        top: $barheight;
+        top: $brandbarheight;
         left: calc(50% - 20px);
         width: 0;
         height: 0;
@@ -307,7 +304,7 @@ $barheight: 40px;
         margin-right: calc((100vw - 1000px) / 2);
     }
     #gateways-menu {
-        right: $barheight;
+        right: $brandbarheight;
     }
 } // min-width: 1050px
 

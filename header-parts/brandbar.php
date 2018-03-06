@@ -20,13 +20,13 @@
                 <input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
                 <label for="gateways-toggle" id="gateways-label"><span>You</span></label>
                 <ul id="gateways-menu" role="menu">
-                    <li role="presentation"><a href="/gateway/prospectives" role="menuitem">Future Students</a></li>
-                    <li role="presentation"><a href="/gateway/students" role="menuitem">Students</a></li>
-                    <li role="presentation"><a href="/gateway/faculty" role="menuitem">Faculty</a></li>
-                    <li role="presentation"><a href="/gateway/staff" role="menuitem">Staff</a></li>
-                    <li role="presentation"><a href="/gateway/families" role="menuitem">Parents and Families</a></li>
-                    <li role="presentation"><a href="https://alumni.uri.edu" role="menuitem">Alumni</a></li>
-                    <li role="presentation"><a href="/gateway/community" role="menuitem">Community</a></li>
+                    <li><a href="/gateway/prospectives" role="menuitem">Future Students</a></li>
+                    <li><a href="/gateway/students" role="menuitem">Students</a></li>
+                    <li><a href="/gateway/faculty" role="menuitem">Faculty</a></li>
+                    <li><a href="/gateway/staff" role="menuitem">Staff</a></li>
+                    <li><a href="/gateway/families" role="menuitem">Parents and Families</a></li>
+                    <li><a href="https://alumni.uri.edu" role="menuitem">Alumni</a></li>
+                    <li><a href="/gateway/community" role="menuitem">Community</a></li>
                 </ul>
                                 
             </div>
