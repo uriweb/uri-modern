@@ -327,10 +327,16 @@ function uri_modern_show_alternate_site_title_tagline() {
  * @return bool
  */
 function uri_modern_use_alternate_site_title() {
+    
+    $whitelist_str = get_option('site_header_alternate_titles');
+    if ( empty($whitelist_str) ) {
+        return false;
+    }
+    
     $url = get_site_url();
     $permalink = get_permalink();
 
-    $whitelist = explode(PHP_EOL, get_option('site_header_alternate_titles') );
+    $whitelist = explode(PHP_EOL, $whitelist_str );
 
     foreach($whitelist as $w) {
         if ($url . $w == $permalink || $url . $w . '/' == $permalink ) {
