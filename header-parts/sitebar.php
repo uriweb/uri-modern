@@ -35,13 +35,14 @@
                         );
                     
                     $url = get_permalink();
-                                        
+                    
+                    $usetitle = false;
                     foreach($bases as $b) {
                         foreach($pages as $p) {
                             $test = $b . $p . '/';
                             if ($url == $test) {
                                 $usetitle = true;
-                                return;
+                                break;
                             }
                         }
                     }
