@@ -21,33 +21,20 @@
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                     <?php 
                     
-                    $bases = array(
-                        'https://www.uri.edu',
-                        'http://quack.uri.edu'
-                        );
-                    
-                    $pages = array(
-                        '/admissions',
-                        '/academics',
-                        '/research',
-                        '/campus-life',
-                        '/about'
-                        );
-                    
-                    $url = get_permalink();
-                    
-                    $usetitle = false;
-                    foreach($bases as $b) {
-                        foreach($pages as $p) {
-                            $test = $b . $p . '/';
-                            if ($url == $test) {
-                                $usetitle = true;
-                                break;
-                            }
+                    $site_url = get_site_url();
+                    $site_permalink = get_permalink();
+                                        
+                    $alt_title_whitelist = explode(PHP_EOL, get_option('site_header_alternate_titles') );
+                                        
+                    $use_alt_title = false;
+                    foreach($alt_title_whitelist as $a) {
+                        if ($site_url . $a == $site_permalink || $site_url . $a . '/' == $site_permalink ) {
+                            $use_alt_title = true;
+                            break;
                         }
                     }
-                    
-                    if ($usetitle) {
+
+                    if ($use_alt_title) {
                         the_title();
                     } else {
                         bloginfo( 'name' );

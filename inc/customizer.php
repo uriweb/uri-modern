@@ -149,7 +149,7 @@ function uri_modern_options_social_media($wp_customize) {
 }
 
 /**
- * Creates options for site header
+ * Creates options for site header and footer
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
@@ -169,6 +169,22 @@ function uri_modern_options_site_header($wp_customize) {
             'label' => __( 'Use light colors', 'uri' ),
             'description' => __( 'Use light colors for header text and social media icons.  Check when using most background images.', 'uri' ),
             'type' => 'checkbox'
+        )
+    ) );
+    
+    $wp_customize->add_setting( 'site_header_alternate_titles', array(
+        'default' => '',
+        'type' => 'option'
+    ) );
+    
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'site_header_alternate_titles',
+        array(
+            'section' => 'header_image',
+            'label' => __( 'Alternate Site Title', 'uri' ),
+            'description' => __( 'Use the page title instead of the site title on these pages', 'uri' ),
+            'type' => 'textarea'
         )
     ) );
     
