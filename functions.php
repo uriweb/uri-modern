@@ -303,6 +303,13 @@ function uri_modern_people_page_template( $template ) {
 add_filter( 'template_include', 'uri_modern_people_page_template', 99 );
 
 
+/**
+ * Determine if the tagline should show on pages using
+ * the page title in place of the site name in the header.
+ *
+ * @see inc/customizer.php
+ * @return bool
+ */
 function uri_modern_show_alternate_site_title_tagline() {
     if ( get_option('site_header_alternate_titles_hide_tagline') && uri_modern_use_alternate_site_title() ) {
         return false;
@@ -312,6 +319,13 @@ function uri_modern_show_alternate_site_title_tagline() {
 }
 
 
+/**
+ * Determine if the page should use the page title in
+ * place of the site name in the header
+ *
+ * @see inc/customizer.php
+ * @return bool
+ */
 function uri_modern_use_alternate_site_title() {
     $url = get_site_url();
     $permalink = get_permalink();
