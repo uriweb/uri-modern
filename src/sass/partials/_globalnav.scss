@@ -2,39 +2,133 @@
    GLOBAL NAV
    ============================== */
 
-
 .globalnav {
     
-    background: rgba(255,255,255,.8);
+    background: $white;
+    position: relative;
     
-    ul {
+    #globalnav-menu {
+        display: none;
+        width: 100%;
         list-style: none;
         text-align: center;
-        padding: 0;
-    }
-    
-    li {
-        display: inline;
-        margin-bottom: 0;
-        line-height: $brandbarheight;
-    }
-    
-    li:not(:last-child) {
-        margin-right: 3rem;
+        padding: 1rem 0;
+        position: absolute;
+        left: 0;
+        top: $brandbarheight;
+        z-index: 9990;
+        background: $white;
+        border-bottom: 1px solid $grey;
     }
     
     a {
         display: inline-block;
+        width: 100%;
         color: $blue;
-        font-size: .9rem;
+        font-size: 1rem;
         font-weight: 600;
         font-family: $type-sans;
-        line-height: $brandbarheight;
     }
     
     a:hover,
     a:focus {
         color: $link;
     }
+    
+    #globalnav-toggle {
+        display: none;
+    }
+
+    #globalnav-label {
+        display: block;
+        text-align: center;
+        height: $brandbarheight;
+        line-height: $brandbarheight;
+        background: $white;
+        color: $blue;
+        font-size: .8rem;
+        font-weight: 600;
+        font-family: $type-sans;
+        transition: all .1s ease-in-out;
+    }   
+
+    #globalnav-label:hover,
+    #globalnav-label:focus {
+        background-color: $link;
+        color: $white;
+        cursor: pointer;
+    }
+
+    #globalnav-label span {
+        padding-right: 1.2rem;
+    }
+
+    #globalnav-toggle:checked {
+        & ~ #globalnav-label {
+            background-color: $link;
+            color: $white;
+        }
+        & ~ #globalnav-menu {
+            display: block;
+        }
+    }
+    
+}
+
+@media screen and (min-width: $break1) {
+    
+    .globalnav {
+
+        background: rgba(255,255,255,.8);
+
+        #globalnav-menu {
+            display: block;
+            padding: 0;
+            position: relative;
+            top: 0;
+            left: 0;
+            background: transparent;
+            border-bottom: none;
+        }
+        
+        #globalnav-label {
+            display: none;
+        }
+
+        li {
+            display: inline;
+            margin-bottom: 0;
+            line-height: $brandbarheight;
+        }
+
+        li:not(:last-child) {
+            margin-right: 2.5rem;
+            transition: margin-right .2s ease-in-out;
+        }
+
+        a {
+            display: inline-block;
+            width: auto;
+            font-size: .8rem;
+            line-height: $brandbarheight;
+        }
+
+    }
+    
+}
+
+@media screen and (min-width: $break2) {
+    .globalnav {
+        
+        li:not(:last-child) {
+            margin-right: 3rem;
+        }
+        
+        a {
+            font-size: .9rem;
+        }
+        
+    }
+    
     
 }
