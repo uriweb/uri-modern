@@ -15,7 +15,7 @@ get_header('external'); ?>
     if ( have_posts() ) : ?>
 
         <header class="page-header">
-            <h1 class="page-title"><?php printf( esc_html__( 'You searched for %s', 'uri-modern' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+            <h1 class="page-title"><?php printf( esc_html__( 'You searched for %s', 'uri' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
         </header><!-- .page-header -->
 
         <?php
@@ -42,5 +42,4 @@ get_header('external'); ?>
     </main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

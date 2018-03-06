@@ -24,6 +24,47 @@
     padding: 0 25px;
 }
 
+@keyframes ab_apply_animate {
+    0% { transform: rotate(0); }
+    5% { transform: rotate(20deg); }
+    10% { transform: rotate(-18deg); }
+    20% { transform: rotate(15deg); }
+    30% { transform: rotate(-13deg); }
+    40% { transform: rotate(10deg); }
+    50% { transform: rotate(-6deg); }
+    60% { transform: rotate(3deg); }
+    70% { transform: rotate(-2deg); }
+    80% { transform: rotate(1deg); }
+    90% { transform: rotate(-1deg); }
+    100% { transform: rotate(0); }
+}
+
+@keyframes ab_tour_animate {
+    0% { top: 0; }
+    18% { top: -10px; }
+    30% { top: 0; }
+    45% { top: -8px; }
+    53% { top: 0; }
+    64% { top: -5px; }
+    70% { top: 0; }
+    78% { top: -2px; }
+    84% { top: 0; }
+    90% { top: -1px; }
+    91% { top: 0; }
+    100% { top: 0; }
+}
+
+@keyframes ab_give_animate {
+    0% { transform: rotate(0); }
+    40% { transform: rotate(200deg); }
+    50% { transform: rotate(165deg); }
+    60% { transform: rotate(195deg); }
+    70% { transform: rotate(170deg); }
+    80% { transform: rotate(190deg); }
+    90% { transform: rotate(175deg); }
+    100% { transform: rotate(180deg); }
+}
+
 #actionbar {
     & {
         display: flex;
@@ -35,19 +76,20 @@
         flex: 1;
         height: 120px;
         text-align: center;
-        color: #8393A7;
+        color: #003b8d;
         font-size: 1.4rem;
-        font-weight: 600;
+        //font-weight: 600;
         transition: none;
     }
 
     a:hover {
         color: $white;
-        background-color: $link;
+        background: linear-gradient(-135deg, #009DFF, #0900FF);
     }
     
     a span {
         display: block;
+        position: relative;
         margin-top: 1.8rem;
         margin-bottom: 1rem;
         width: 100%;
@@ -71,14 +113,23 @@
     
     #action-apply:hover span {
         background-position: center -24px;
+        animation-name: ab_apply_animate;
+        animation-duration: .8s;
+        animation-timing-function: ease-in-out;
     }
     
     #action-tour:hover span {
         background-position: center -72px;
+        animation-name: ab_tour_animate;
+        animation-duration: .8s;
+        animation-timing-function: ease-in-out;
     }
     
     #action-give:hover span {
         background-position: center -120px;
+        animation-name: ab_give_animate;
+        animation-duration: .7s;
+        animation-timing-function: ease-in-out;
     }
     
 } // #actionbar
@@ -305,6 +356,7 @@
         color: rgba(255,255,255,.6);
         max-width: 100%;
         padding: 0;
+        margin: 0;
         text-align: center;
         line-height: 1.3;
     }

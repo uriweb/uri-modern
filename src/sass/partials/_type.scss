@@ -89,11 +89,15 @@ i {
 p {
     max-width: $maxtypewidth;
     line-height: 1.875;
-    padding-bottom: 1.875rem;
+    margin: 0 0 2rem;
 }
 
-p:last-child {
-    padding-bottom: 0;
+p.fullwidth {
+    max-width: 100%;
+}
+
+p:empty {
+    display: none;
 }
 
 a {

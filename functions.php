@@ -36,9 +36,9 @@ function uri_modern_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on _s, use a find and replace
-	 * to change 'uri-modern' to the name of your theme in all the template files.
+	 * to change 'uri' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'uri-modern', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'uri', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -60,7 +60,7 @@ function uri_modern_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'uri-modern' ),
+		'menu-1' => esc_html__( 'Primary', 'uri' ),
 	) );
 
 	/*
@@ -98,24 +98,6 @@ function uri_modern_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'uri_modern_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'uri_modern_content_width', 0 );
-
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function uri_modern_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'uri-modern' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'uri-modern' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'uri_modern_widgets_init' );
 
 
 /**
@@ -200,6 +182,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	endif;
 }
 add_action('wp_head', 'uri_modern_gtm');
+
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function uri_modern_widgets_init() {
+    
+    register_sidebar( array(
+		'name'          => esc_html__( 'Banner', 'uri' ),
+		'id'            => 'banner',
+		'description'   => esc_html__( 'Widgets here appear between the brandbar and sitebar', 'uri' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Before Content', 'uri' ),
+		'id'            => 'before-content',
+		'description'   => esc_html__( 'Widgets here appear after the header and above the content.', 'uri' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'After Content', 'uri' ),
+		'id'            => 'after-content',
+		'description'   => esc_html__( 'Widgets here appear after content and above the footer.', 'uri' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	
+}
+add_action( 'widgets_init', 'uri_modern_widgets_init' );
 
 
 /**
@@ -290,6 +313,49 @@ function uri_modern_people_page_template( $template ) {
 add_filter( 'template_include', 'uri_modern_people_page_template', 99 );
 
 
+/**
+ * Determine if the tagline should show on pages using
+ * the page title in place of the site name in the header.
+ *
+ * @see inc/customizer.php
+ * @return bool
+ */
+function uri_modern_show_alternate_site_title_tagline() {
+    if ( get_option('site_header_alternate_titles_hide_tagline') && uri_modern_use_alternate_site_title() ) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+
+/**
+ * Determine if the page should use the page title in
+ * place of the site name in the header
+ *
+ * @see inc/customizer.php
+ * @return bool
+ */
+function uri_modern_use_alternate_site_title() {
+    
+    $whitelist_str = get_option('site_header_alternate_titles');
+    if ( empty($whitelist_str) ) {
+        return false;
+    }
+    
+    $url = get_site_url();
+    $permalink = get_permalink();
+
+    $whitelist = explode(PHP_EOL, $whitelist_str );
+
+    foreach($whitelist as $w) {
+        if ($url . $w == $permalink || $url . $w . '/' == $permalink ) {
+            return true;
+            break;
+        }
+    }
+}
+
 
 /**
  * Debugging
@@ -302,6 +368,11 @@ if ( !function_exists( 'uri_console' ) ) {
 		return FALSE;
 	}
 }
+
+/**
+ * Enable shortcodes in text widgets
+ */
+add_filter('widget_text','do_shortcode');
 
 /**
  * Implement the Custom Header feature.
@@ -327,6 +398,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Layout options
  */
 require get_template_directory() . '/inc/layout-options.php';
+
+/**
+ * Shortcodes additions.
+ */
+require get_template_directory() . '/inc/shortcodes.php';
 
 /**
  * Load Jetpack compatibility file.

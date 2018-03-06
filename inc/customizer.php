@@ -16,7 +16,7 @@ function uri_modern_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
     
     // rename "Header Image" section to "Header"
-	$wp_customize->get_section('header_image')->title = esc_html__( 'Header', 'uri2016' );
+	$wp_customize->get_section('header_image')->title = esc_html__( 'Header / Footer', 'uri' );
     
     uri_modern_options_social_media( $wp_customize );
     uri_modern_options_site_header( $wp_customize );
@@ -33,7 +33,7 @@ function uri_modern_options_social_media($wp_customize) {
     
     // Add section for social media
     $wp_customize->add_section( 'uri_modern_customizer_social' , array(
-        'title'      => __( 'Social Media', 'uri-modern' ),
+        'title'      => __( 'Social Media', 'uri' ),
         'priority'   => 70,
     ) );
     
@@ -49,8 +49,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_facebook_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'Facebook URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include Facebook in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'Facebook URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include Facebook in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -67,8 +67,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_instagram_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'Instagram URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include Instagram in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'Instagram URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include Instagram in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -85,8 +85,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_twitter_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'Twitter URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include Twitter in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'Twitter URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include Twitter in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -103,8 +103,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_youtube_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'YouTube URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include YouTube in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'YouTube URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include YouTube in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -121,8 +121,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_snapchat_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'Snapchat URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include Snapchat in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'Snapchat URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include Snapchat in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -139,8 +139,8 @@ function uri_modern_options_social_media($wp_customize) {
         'department_linkedin_URL',
         array(
             'section' => 'uri_modern_customizer_social',
-            'label' => __( 'LinkedIn URL', 'uri-modern' ),
-            'description' => __( 'Enter a complete URL to include LinkedIn in the site header social bar.', 'uri-modern' ),
+            'label' => __( 'LinkedIn URL', 'uri' ),
+            'description' => __( 'Enter a complete URL to include LinkedIn in the site header social bar.', 'uri' ),
             'type' => 'text'
         )
     ) );
@@ -149,12 +149,13 @@ function uri_modern_options_social_media($wp_customize) {
 }
 
 /**
- * Creates options for site header
+ * Creates options for site header and footer
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function uri_modern_options_site_header($wp_customize) {
     
+    /* Site Header text color */
     $wp_customize->add_setting( 'site_header_text_color', array(
         'default' => '',
         'type' => 'option',
@@ -166,8 +167,61 @@ function uri_modern_options_site_header($wp_customize) {
         'site_header_text_color',
         array(
             'section' => 'header_image',
-            'label' => __( 'Use light colors', 'uri-modern' ),
-            'description' => __( 'Use light colors for header text and social media icons.  Check when using most background images.', 'uri-modern' ),
+            'label' => __( 'Use light colors', 'uri' ),
+            'description' => __( 'Use light colors for header text and social media icons.  Check when using most background images.', 'uri' ),
+            'type' => 'checkbox'
+        )
+    ) );
+    
+    /* Action Bar Give url */
+    $wp_customize->add_setting( 'action_bar_give_url', array(
+        'default' => '',
+        'type' => 'option',
+        'sanitize_callback' => 'uri_modern_sanitize_url'
+    ) );
+    
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'action_bar_give_url',
+        array(
+            'section' => 'header_image',
+            'label' => __( 'Give Link', 'uri' ),
+            'description' => __( 'Set a custom URL for Give in the Action Bar (default: www.uri.edu/give)', 'uri' ),
+            'type' => 'text'
+        )
+    ) );
+    
+    
+    $wp_customize->add_setting( 'site_header_alternate_titles', array(
+        'default' => '',
+        'type' => 'option'
+    ) );
+    
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'site_header_alternate_titles',
+        array(
+            'section' => 'header_image',
+            'label' => __( 'Use page title for site name', 'uri' ),
+            'description' => __( 'Use the page title instead of the site name on these pages.  List each URL on a separate line (e.g. /about)', 'uri' ),
+            'type' => 'textarea'
+        )
+    ) );
+    
+    
+    $wp_customize->add_setting( 'site_header_alternate_titles_hide_tagline', array(
+        'default' => '',
+        'type' => 'option',
+        'sanitize_callback' => 'uri_modern_validate_checkbox'
+    ) );
+    
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize,
+        'site_header_alternate_titles_hide_tagline',
+        array(
+            'section' => 'header_image',
+            'label' => __( 'Hide alternate title taglines', 'uri' ),
+            'description' => __( 'Check to hide the header tagline on pages that display the alternate site name.  Note: This will have no effect while the Customizer is open', 'uri' ),
             'type' => 'checkbox'
         )
     ) );
