@@ -16,7 +16,7 @@ function uri_modern_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
     
     // rename "Header Image" section to "Header"
-	$wp_customize->get_section('header_image')->title = esc_html__( 'Header', 'uri2016' );
+	$wp_customize->get_section('header_image')->title = esc_html__( 'Header / Footer', 'uri' );
     
     uri_modern_options_social_media( $wp_customize );
     uri_modern_options_site_header( $wp_customize );
@@ -155,6 +155,7 @@ function uri_modern_options_social_media($wp_customize) {
  */
 function uri_modern_options_site_header($wp_customize) {
     
+    /* Site Header text color */
     $wp_customize->add_setting( 'site_header_text_color', array(
         'default' => '',
         'type' => 'option',
@@ -169,6 +170,24 @@ function uri_modern_options_site_header($wp_customize) {
             'label' => __( 'Use light colors', 'uri' ),
             'description' => __( 'Use light colors for header text and social media icons.  Check when using most background images.', 'uri' ),
             'type' => 'checkbox'
+        )
+    ) );
+    
+    /* Action Bar Give url */
+    $wp_customize->add_setting( 'action_bar_give_url', array(
+        'default' => '',
+        'type' => 'option',
+        'sanitize_callback' => 'uri_modern_sanitize_url'
+    ) );
+    
+    $wp_customize->add_control( new WP_Customize_Control( 
+	   $wp_customize, 
+        'action_bar_give_url',
+        array(
+            'section' => 'header_image',
+            'label' => __( 'Give Link', 'uri' ),
+            'description' => __( 'Set a custom URL for Give in the Action Bar (default: www.uri.edu/give)', 'uri' ),
+            'type' => 'text'
         )
     ) );
     
