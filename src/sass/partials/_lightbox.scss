@@ -1,0 +1,51 @@
+/* ==============================
+   LIGHTBOX
+   ============================== */
+
+#overlay {
+    background-color: #fff;
+}
+
+#imageContainer {
+    padding: 0;
+}
+
+#lightboxImage {
+    width: 100% !important;
+    height: auto !important;
+}
+
+#bottomNavClose {
+    padding-bottom: 0 !important;
+}
+
+#bottomNavClose:before {
+    content: 'close';
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: $type-sans;
+    font-weight: 600;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 16px;
+    line-height: 18px;
+    margin: .5rem 0;
+    padding-right: 24px;
+    color: $midgrey;
+    background-image: url('images/close.png');
+    background-size: 16px auto;
+    background-repeat: no-repeat;
+    background-position: right 0;
+}
+
+#bottomNavClose:hover:before,
+#bottomNavClose:focus:before {
+    background-position: right -16px;
+    color: $black;
+}
+
+#bottomNavClose img {
+    display: none;
+}
