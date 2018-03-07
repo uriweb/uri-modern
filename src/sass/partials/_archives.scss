@@ -1,0 +1,83 @@
+/* ==============================
+   ARCHIVES
+   ============================== */
+
+body.archive {
+    
+    article.post {
+        padding: 1.5rem 0 0;
+        margin: 0 0 1rem;
+        background: $white;
+        border-radius: .2rem;
+        border: 1px solid #eee;
+    }
+    
+    .entry-title {
+        padding: 0 1.5rem;
+    }
+    
+    .entry-title a {
+        
+        color: $black;
+        
+        &:hover,
+        &:focus {
+            color: $link;
+        }
+        
+    }
+    
+    .entry-content {
+        padding: 0 1.5rem;
+        font-size: 1.2rem;
+        color: $darkgrey;
+    }
+    
+    .continue-reading {
+        
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
+        background: #eee;
+        font-family: $type-sans;
+        font-size: .9rem;
+        text-align: center;
+        color: $darkgrey;
+        border-radius: .2rem;
+        transition: all .1s ease-in-out;
+    
+        &:hover,
+        &:focus {
+            background: $link;
+            color: $white;
+        }
+        
+    }
+    
+}
+
+@media screen and (min-width: $break1) {
+    body.archive {
+        
+        article.post {
+            padding: 2rem 2rem .7rem;
+        }
+        
+        .entry-title {
+            padding: 0;
+        }
+        
+        .entry-content {
+            padding: 0;
+        }
+        
+        .continue-reading {
+            display: inline;
+            width: auto;
+            text-align: left;
+            padding: .5rem 1rem;
+        }
+        
+    }
+}

@@ -358,6 +358,24 @@ function uri_modern_use_alternate_site_title() {
 
 
 /**
+ * Get the featured image caption
+ */
+function uri_modern_get_thumbnail_caption($post) {
+	if( empty( $post ) ) {
+		return FALSE;
+	}
+
+  $thumbnail_id    = get_post_thumbnail_id($post->ID);
+  $thumbnail_image = get_posts(array('p' => $thumbnail_id, 'post_type' => 'attachment'));
+
+  if ($thumbnail_image && isset($thumbnail_image[0])) {
+    return nl2br($thumbnail_image[0]->post_excerpt);
+  }
+  return '';
+}
+
+
+/**
  * Debugging
  */
 require get_template_directory() . '/console.php';

@@ -13,6 +13,14 @@ article.page {
 
 article.post {
     
+    margin: 0 0 2rem;
+    
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+    
     .entry-meta {
         margin-bottom: 2rem;
         font-size: .8rem;
@@ -28,7 +36,7 @@ article.post {
     .entry-content {
         margin-bottom: 2rem;
     }
-    
+
     footer {
         font-size: .8rem;
         color: $darkgrey;
@@ -51,6 +59,109 @@ article.post {
         background-color: $blue;
     }
     
+}
+
+    
+nav.post-navigation {
+    
+    margin: 0 0 2rem;
+    padding: 2rem 0 0;
+    border-top: 1px solid #ddd;
+    font-size: 1rem;    
+    
+    .screen-reader-text {
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+        
+    .nav-links {
+        
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        &>div a {
+            background: #eee;
+            padding: .5rem 1rem;
+            border-radius: .3rem;
+            color: $darkgrey;
+            position: relative;
+        }
+
+        &>div a:hover,
+        &>div a:focus {
+            background: $link;
+            color: $white;
+        }
+
+        .nav-previous a:before,
+        .nav-next a:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: calc(50% - 7px);
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            transition: all .1s ease-in-out;
+        }
+        
+        .nav-previous {
+            
+            float: left;
+            
+            a {
+                padding-left: 30px;
+            }
+
+            a:before {
+                left: 8px;
+                border-right: 12px solid $darkgrey;
+            }
+
+            a:hover:before,
+            a:focus:before {
+                border-right: 12px solid $white;
+            }
+            
+        }
+        
+        .nav-next {
+            
+            float: right;
+            
+            a {
+                padding-right: 30px;
+            }
+
+            a:after {
+                right: 8px;
+                border-left: 12px solid $darkgrey;
+            }
+
+            a:hover:after,
+            a:focus:after {
+                border-left: 12px solid $white;
+            }
+            
+        }
+
+        &>div:before,
+        &>div:after {
+            display: none;
+        }
+        
+    }
+    
+}
+
+#comments {
+    display: none;
 }
 
 
