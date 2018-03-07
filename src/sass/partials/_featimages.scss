@@ -9,6 +9,7 @@
     
     img {
         max-width: 100%;
+        width: 100%;
         height: auto;
     }
     
@@ -21,12 +22,18 @@
     
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: $break1) {
+    .featured-image img {
+        width: auto;
+    }
+}
+
+@media screen and (min-width: $break2) {
     
     .featured-image {
         float: right;
         max-width: 500px;
-        margin-left: 2rem;
+        margin-left: 3rem;
     }
     
 }
