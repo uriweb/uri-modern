@@ -11,6 +11,20 @@
     font-family: $type-sans;
 }
 
+/* Cards */
+
+.cl-card,
+.cl-dcard {
+    
+    font-family: $type-sans;
+    
+    p {
+        font-size: .9rem;
+    }
+    
+}
+
+
 /* Metrics */
 
 .cl-metric {
