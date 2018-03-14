@@ -1,6 +1,6 @@
     <header id="brandbar" class="site-header" role="banner">
         
-        <div id="identity-print"><img src="<?php echo get_template_directory() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island"></div>
+        <div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island"></div>
         
         <div id="globalsearch" role="search">
             <input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
