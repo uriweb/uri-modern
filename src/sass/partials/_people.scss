@@ -1,0 +1,28 @@
+/* ==============================
+   PEOPLE
+   ============================== */
+
+
+.people-list {
+    
+    list-style: none;
+    margin-left: 0;
+    font-family: $type-sans;
+    font-size: 1rem;
+    border-left: 3px solid #eee;
+    padding-left: 1rem;
+    
+    .people-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    
+    .people-department {
+        padding: .3rem .5rem .2rem;
+        background: #eee;
+        display: inline-block;
+        border-radius: .2rem;
+        margin-bottom: 2rem;
+    }
+    
+}
