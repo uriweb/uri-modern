@@ -15,9 +15,9 @@
 
 	<div class="entry-content">
 
-			<figure class="people-image">
-				<?php the_post_thumbnail('people-big'); ?>
-			</figure>
+			<?php
+                get_template_part( 'template-parts/featured-image' );
+            ?>
 			
 			<ul class="people-list">
 				<?php if(get_field('peopletitle')): ?><li class="people-title"><?php the_field('peopletitle'); ?></li><?php endif; ?>
