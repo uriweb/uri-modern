@@ -78,18 +78,24 @@
         display: block;
     }
 }
-
-#localnav>ul ul {
-    display: none;
-}
     
+#localnav>ul {
+    
+    overflow: hidden;
+    
+    ul {
+        display: none;
+    }
+    
+}
+
 #localnav>ul,
 #cl-localnav>ul {
 
     & {
         display: none;
         position: absolute;
-        top: 42px;
+        top: 3.9rem;
         left: 0;
         z-index: 10;
         background: #fff;
@@ -99,15 +105,14 @@
         margin: 0;
         list-style-type: none;
         border-radius: 0 0 .2rem .2rem;
-        overflow: hidden;
         transition: all .1s ease-in-out;
     }
     
-    li {
+    &>li {
         margin: 0;
     }
 
-    li:not(:first-child) {
+    &>li:not(:first-child) {
         border-top: 1px solid #eee;
     }
 
@@ -127,6 +132,33 @@
     li.current_page_item>a {
         background: $link;
         color: $white;
+    }
+    
+}
+
+#cl-localnav {
+    
+    span.cl-menu-toggle.active ~ ul.cl-menu-list {
+        display: block;
+    }
+    
+    ul.sub-menu a {
+        padding: 1rem 1rem 1rem 1.5rem;
+        border-left: 3px solid $darkgrey;
+        background: #eee;
+    }
+    
+    ul.sub-menu a:hover,
+    ul.sub-menu a:focus {
+        background: $link;
+    }
+    
+    span.cl-menu-arrow {
+        top: 1.5rem;
+    }
+    
+    li.current_page_item span.cl-menu-arrow {
+        border-top: 8px solid $white;
     }
     
 }
@@ -163,7 +195,7 @@
             content: '';
             clear: both;
         }
-        li {
+        &>li {
             display: block;
             float: left;
             border: none !important;
@@ -185,10 +217,59 @@
             border-bottom-style: solid;
             border-bottom-color: transparent;
         }
+        
+        ul a,
+        ul.sub-menu a {
+            padding: .5rem 1rem;
+        }
+            
     }
     
-    #cl-localnav .cl-menu-list .current_page_item {
-        box-shadow: none;
+    #cl-localnav {
+        li.current_page_item {
+            box-shadow: none;
+        }
+        li.menu-item-has-children {
+            margin-right: 3rem;
+            padding-right: 0;
+        }
+        a.cl-menu-trigger {
+            padding-right: 2rem;
+        }
+        span.cl-menu-arrow {
+            top: .9rem;
+            right: 0;
+        }
+        span.cl-menu-arrow,
+        li.current_page_item span.cl-menu-arrow {
+            border-top: 8px solid #999;
+        }
+        a:hover ~ span.cl-menu-arrow {
+            border-top: 8px solid $accentblue;
+        }
+        ul.sub-menu {
+            a {
+                border-left: none;
+                background: none;
+            }
+            
+            li {
+                a:hover,
+                a:focus {
+                    border-bottom: 3px solid transparent;
+                    background: #eee;
+                }
+            }
+            
+            li.current_page_item {
+                a:hover,
+                a:focus {
+                    border-bottom: 3px solid $accentblue;
+                    background: none;
+                }
+            }
+        }
+            
     }
         
     #lnmenu {
