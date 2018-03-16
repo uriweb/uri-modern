@@ -138,6 +138,8 @@
 
 #cl-localnav {
     
+    margin-bottom: 0;
+    
     span.cl-menu-toggle.active ~ ul.cl-menu-list {
         display: block;
     }
