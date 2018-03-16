@@ -78,6 +78,10 @@
         display: block;
     }
 }
+
+#localnav>ul ul {
+    display: none;
+}
     
 #localnav>ul,
 #cl-localnav>ul {
