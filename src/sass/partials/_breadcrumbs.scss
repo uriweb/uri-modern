@@ -5,6 +5,7 @@
 #breadcrumbs {
     
     & {
+        display: none;
         margin: 1.5rem 0 1rem;
         font-size: .7rem;
         font-family: $type-header;
@@ -12,16 +13,14 @@
         color: $darkgrey;
         transition: margin .1s ease-in-out;
     }
-
-    ol {
-        display: none;
-    }
     
 } // #breadcrumbs
 
 @media screen and (min-width: 700px) {
     
     #breadcrumbs {
+        
+        display: block;
 
         ol {
             display: block;
