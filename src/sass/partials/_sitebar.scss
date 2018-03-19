@@ -8,6 +8,7 @@
     background-position: center center;
     background-size: cover;
     border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
 }
 
 #sitebanner.light {
@@ -74,7 +75,7 @@
     margin-top: 1rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: $break1) {
     #sitebranding {
         display: flex;
         align-items: flex-end;
@@ -85,6 +86,11 @@
     }
 } // min-width: 600px
 
+@media screen and (min-width: $break2) {
+    #sitebanner {
+        border-bottom: none;
+    }
+}
 
 @media screen and (min-width: 1050px) {
     
