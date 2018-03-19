@@ -57,16 +57,37 @@
         background-color: $link;
         color: $white;
         cursor: pointer;
+        
+        span {
+            background-position: 0 -18px;
+        }
+            
     }
 
     #globalnav-label span {
-        padding-right: 1.2rem;
+        display: inline-block;
+        width: 0;
+        height: 9px;
+        padding-left: 9px;
+        margin-left: 10px;
+        margin-top: 3px;
+        overflow: hidden;
+        background-image: url('images/close.svg');
+        background-repeat: no-repeat;
+        background-position: 0 -27px;
+        background-size: 9px auto;
+        transform: rotate(-45deg);
+        transition: transform .2s ease-in-out;
     }
 
     #globalnav-toggle:checked {
         & ~ #globalnav-label {
             background-color: $link;
             color: $white;
+        }
+        & ~ #globalnav-label span {
+            background-position: 0 -18px;
+            transform: rotate(0);
         }
         & ~ #globalnav-menu {
             display: block;
