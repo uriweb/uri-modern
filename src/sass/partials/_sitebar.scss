@@ -70,7 +70,7 @@
     
 } // #siteidentity
 
-#sitesocial {
+#sitesocial ul {
     font-size: initial;
     margin-top: 1rem;
 }
@@ -81,7 +81,7 @@
         align-items: flex-end;
         justify-content: space-between;
     }
-    #sitesocial {
+    #sitesocial ul {
         margin-top: 0;
     }
 } // min-width: 600px
