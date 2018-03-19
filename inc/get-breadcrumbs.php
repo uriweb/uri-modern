@@ -53,7 +53,7 @@ function uri_modern_breadcrumbs_get_link($path) {
 // 	var_dump($path);
 // 	echo '</pre>';
 	
-	if($post_id !== 0) { // it's not a post or a page
+	if($post_id !== 0) { // it's a post or a page
 		$p = get_page_by_path( $path );	
 		$output = array(
 			'name' => get_the_title($p->ID),
@@ -63,6 +63,7 @@ function uri_modern_breadcrumbs_get_link($path) {
 	}
 	
 	// is it a category?
+    // @todo Catch custom post type categories too
 	$category = get_category_by_path( $path );
 	if ( is_object( $category ) && isset ( $category->term_id ) ) {
 		$output = array(
@@ -72,6 +73,15 @@ function uri_modern_breadcrumbs_get_link($path) {
 		return $output;
 	}
 
+    // is it a custom post type?
+    $slug = get_post_type_object( get_post_type() )->rewrite['slug'];
+    if($slug) { 
+        $output = array(
+            'name' => ucfirst($slug),
+            'href' => get_site_url() . $path
+        );
+        return $output;
+    }
 	
 }
 
