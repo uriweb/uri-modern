@@ -71,7 +71,8 @@ h6 {
     font-family: $type-numeric;
 }
 
-.type-intro {
+.type-intro,
+.section-intro p {
     font-family: $type-sans;
     font-size: 1.5rem;
     font-weight: 300;
@@ -205,7 +206,7 @@ blockquote cite:before {
     
     p {
         max-width: 650px;
-        margin: 0 auto;
+        margin: 0 auto 2rem;
     }
     
 }
