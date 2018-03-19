@@ -84,10 +84,10 @@
         #globalnav-menu {
             display: block;
             padding: 0;
-            position: relative;
+            position: absolute;
             top: 0;
             left: 0;
-            background: transparent;
+            background: rgba(255,255,255,.8);
             border-bottom: none;
         }
         
@@ -113,6 +113,13 @@
             line-height: $brandbarheight;
         }
 
+    }
+    
+    @supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+        .globalnav #globalnav-menu {
+            background: rgba(255,255,255,.8);
+            backdrop-filter: blur(10px) saturate(250%);
+        }
     }
     
 }
