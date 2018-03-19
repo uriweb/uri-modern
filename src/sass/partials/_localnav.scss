@@ -165,15 +165,7 @@
     
 }
 
-@media screen and (min-width: 480px) {
-    #localnav>ul,
-    #cl-localnav>ul,
-    #lnmenu {
-        max-width: 300px;
-    }
-}
-
-@media screen and (min-width: 920px) {
+@media screen and (min-width: $break1) {
     #localnav {
         width: 100%;
         box-sizing: border-box;

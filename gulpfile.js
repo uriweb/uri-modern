@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var pkg = require('./package.json');
-var build = getBuild();
 
 var banner = ['/*',
   'Theme Name: <%= pkg.name %>',
@@ -16,8 +15,6 @@ var banner = ['/*',
   '',
   '@version v<%= pkg.version %>',
   '@author <%= pkg.authorHuman %>',
-  '',
-  'build ' + build,
   '',
   '*/',
   ''].join('\n');
