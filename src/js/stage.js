@@ -53,6 +53,7 @@
 
         //console.log(M, S);
         
+        handleScroll(M, S, content);
         window.addEventListener('scroll', handleScroll.bind(null, M, S, content)); 
         
     }
@@ -69,12 +70,12 @@
         }
         
         var p = window.pageYOffset,
-            h = S.h + S.initialOffset,
+            h = S.h + S.initialOffset - M.h,
             b = Math.min(p/h*50, 50),
             c = Math.min(p/h*1, 1);
 
         S.overlay.style.webkitBackdropFilter = 'blur(' + b + 'px)';
-        S.overlay.style.backgroundColor = 'rgba(243,243,243,' + c + ')';
+        S.overlay.style.backgroundColor = 'rgba(250,250,250,' + c + ')';
         
     }
     
