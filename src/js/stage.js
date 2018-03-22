@@ -5,84 +5,77 @@
 (function(){
     
     'use strict';
-    
-    var header = document.getElementById('siteheader');
-    
+        
     window.addEventListener('load', initStage, false);
     
     function initStage() {
+                
+        var stage = document.getElementById('stage');
         
-        var stage, header, animated;
-        
-        stage = document.getElementById('stage');
-        if (stage !== null) {
-            
-            hideHeader();
-            
-            animated = stage.querySelector('.animated');
-            if (animated !== null) {
-                listenForAnimation(animated);
-            }
-            
-            window.addEventListener('scroll', detectScroll);
-            
+        if (stage !== null) {  
+            setTheStage(stage);
         }
         
     }
     
-    function detectScroll(animated) {
+    function setTheStage(stage) {
+                    
+        document.body.classList.add('stage');
+        document.getElementById('siteheader').appendChild(stage);
         
-        animated = stage.querySelector('.animated');
-        if (animated !== null) {
-            animated.classList.add('endframe');
-        }
-        showHeader();
-        window.removeEventListener('scroll', detectScroll);
-        
-    }
-    
-    function hideHeader() {
-        header.style.display = 'none';
+        var overlay = document.createElement('div');
+        overlay.classList = "overlay";
+        stage.insertBefore(overlay, stage.childNodes[0]);
+
+        // Resize any superheros
         if(CLResizeSuperheros !== null) {
             CLResizeSuperheros();
         }
-    }
-    
-    function showHeader() {
-        header.style.display = 'block';
-        if(CLResizeSuperheros !== null) {
-            CLResizeSuperheros();
-        }
-    }
-    
-    function whichTransitionEvent(){
-        var t;
-        var el = document.createElement('fakeelement');
-        var transitions = {
-            'animation':'animationend',
-            'OAnimation':'oAnimationEnd',
-            'MozAnimation':'animationend',
-            'WebkitAnimation':'webkitAnimationEnd'
-        }
 
-        for(t in transitions){
-            if( el.style[t] !== undefined ){
-                return transitions[t];
-            }
-        }
-    }
+        // Store the masthead specs
+        var masthead = document.getElementById('masthead');
+        var M = {
+            el : masthead,
+            h : masthead.offsetHeight,
+            offset : masthead.getBoundingClientRect().top
+        };
+                
+        // Store the stage specs
+        var S = {
+            el : stage,
+            overlay : overlay,
+            h : stage.offsetHeight,
+            offset : stage.getBoundingClientRect().top,
+            initialOffset : stage.getBoundingClientRect().top + window.pageYOffset
+        };
+        
+        var content = document.getElementById('content');
 
-    function listenForAnimation(e) {
+        //console.log(M, S);
         
-        var transitionEvent = whichTransitionEvent();
-        
-        console.log(e, transitionEvent);
-        
-        transitionEvent && e.addEventListener(transitionEvent, function() {
-            showHeader();
-        });
+        window.addEventListener('scroll', handleScroll.bind(null, M, S, content)); 
         
     }
     
+    function handleScroll(M, S, content) {
+                
+        var scroll = content.getBoundingClientRect().top;
+        //console.log(scroll);
+        
+        if (scroll < M.h + M.offset ) {
+            document.body.classList.add('stage-fluid');
+        } else {
+            document.body.classList.remove('stage-fluid');
+        }
+        
+        var p = window.pageYOffset,
+            h = S.h + S.initialOffset,
+            b = Math.min(p/h*50, 50),
+            c = Math.min(p/h*1, 1);
+
+        S.overlay.style.webkitBackdropFilter = 'blur(' + b + 'px)';
+        S.overlay.style.backgroundColor = 'rgba(243,243,243,' + c + ')';
+        
+    }
     
 })();

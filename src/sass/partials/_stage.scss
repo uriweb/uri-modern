@@ -1,0 +1,56 @@
+/* ==============================
+   STAGE
+   ============================== */
+
+body.stage {
+    
+    #stage {
+        position: fixed;
+        top: $brandbarheight;
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
+        z-index: 1;
+        
+        .overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+        
+    }
+    
+    #masthead,
+    #content,
+    #actionbar-wrapper,
+    #globalfooter {
+        position: relative;
+        z-index: 10;
+    }
+    
+    #content {
+        background: #fafafa;
+        padding-top: 3rem;
+        margin-top: 100vh;
+    }
+    
+    #masthead {
+        position: fixed;
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
+    }
+    
+    &.stage-fluid {
+        
+        #masthead {
+            position: absolute;
+        }
+        
+    }
+    
+}
+
+
+    
