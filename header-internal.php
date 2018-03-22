@@ -27,12 +27,17 @@
 
 	<?php get_template_part( 'header-parts/brandbar' ); ?>
     <?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
-    <?php get_template_part( 'header-parts/sitebar' ); ?>
     
-    <div class="content-width">
-        <?php get_template_part( 'header-parts/breadcrumbs' ); ?>
-        <?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
-    </div>
+    <header id="siteheader">
+        
+        <?php get_template_part( 'header-parts/sitebar' ); ?>
+
+        <div class="content-width">
+            <?php get_template_part( 'header-parts/breadcrumbs' ); ?>
+            <?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
+        </div>
+        
+    </header>
     
 	<div id="content" class="site-content">
         

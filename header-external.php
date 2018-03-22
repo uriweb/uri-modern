@@ -28,9 +28,13 @@
 	<?php get_template_part( 'header-parts/brandbar' ); ?>
     <?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
     
-    <div class="content-width">
-        <?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
-    </div>
+    <header id="siteheader">
+    
+        <div class="content-width">
+            <?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
+        </div>
+        
+    </header>
     
 	<div id="content" class="site-content">
         
