@@ -133,7 +133,7 @@
         e = Math.pow(t / 1, 4);
 
         // Adjust the styles accordingly
-        els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + (t * 50) + 'px); background-color: rgba(250,250,250,' + t + ')';
+        els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + (t * 50) + 'px); backdrop-filter: blur(' + (t * 50) + 'px); background-color: rgba(250,250,250,' + t + ')';
         if (els.navigation !== null) {
             els.navigation.style.opacity = Math.min(e*8, 1);
         }
