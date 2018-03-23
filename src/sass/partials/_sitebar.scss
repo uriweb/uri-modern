@@ -5,7 +5,7 @@
 #sitebanner {
     position: relative;
     border-top: 1px solid $white;
-    border-bottom: 1px solid $white;
+    margin-bottom: 1px;
     z-index: 10;
 }
 
@@ -106,7 +106,7 @@
 
 @media screen and (min-width: $break2) {
     #sitebanner {
-        border-bottom: none;
+        margin-bottom: 0;
     }
 }
 

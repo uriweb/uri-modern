@@ -11,6 +11,11 @@
 
 <div id="sitebanner" <?php if ( get_option('site_header_text_color') ) { echo ' class="light"'; } ?>>
     
+    <div id="sb-backdrop">
+        <div id="sb-background-image" <?php if ( get_header_image() ) { echo ' style="background-image:url(' . get_header_image() . ')"'; }; ?>></div>
+        <div id="sb-screen"></div>
+    </div>
+    
     <div id="sitebranding">
 
         <div id="siteidentity">
@@ -60,10 +65,5 @@
         </div>
         
     </div><!-- #sitebranding -->
-    
-    <div id="sb-backdrop">
-        <div id="sb-screen"></div>
-        <div id="sb-background-image" <?php if ( get_header_image() ) { echo ' style="background-image:url(' . get_header_image() . ')"'; }; ?>></div>
-    </div>
 
 </div><!-- #sitebanner -->
