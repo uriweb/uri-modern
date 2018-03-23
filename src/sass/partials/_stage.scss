@@ -10,7 +10,7 @@ body.stage {
         width: 100vw;
         left: 50%;
         margin-left: -50vw;
-        z-index: 1;
+        z-index: 0;
         
         .overlay {
             position: absolute;
@@ -42,10 +42,17 @@ body.stage {
         margin-left: -50vw;
     }
     
+    #sb-backdrop,
+    #breadcrumbs {
+        opacity: 0;
+    }
+    
     &.stage-fluid {
         
         #masthead {
             position: absolute;
+            left: 0;
+            margin-left: 0;
         }
         
     }

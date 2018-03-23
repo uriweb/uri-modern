@@ -19,8 +19,12 @@
     }
     
     function setTheStage(stage) {
+        
+        var els = {};
+        
+        els.docClassList = document.body.classList;
                     
-        document.body.classList.add('stage');
+        els.docClassList.add('stage');
         document.getElementById('siteheader').appendChild(stage);
         
         var overlay = document.createElement('div');
@@ -34,14 +38,14 @@
 
         // Store the masthead specs
         var masthead = document.getElementById('masthead');
-        var M = {
+        els.masthead = {
             el : masthead,
             h : masthead.offsetHeight,
             offset : masthead.getBoundingClientRect().top
         };
                 
         // Store the stage specs
-        var S = {
+        els.stage = {
             el : stage,
             overlay : overlay,
             h : stage.offsetHeight,
@@ -49,34 +53,41 @@
             initialOffset : stage.getBoundingClientRect().top + window.pageYOffset
         };
         
-        var content = document.getElementById('content');
-
-        //console.log(M, S);
+        els.backdrop = document.getElementById('sb-backdrop');
+        els.breadcrumbs = document.getElementById('breadcrumbs');
+        els.content = document.getElementById('content');
         
-        handleScroll(M, S, content);
-        window.addEventListener('scroll', handleScroll.bind(null, M, S, content)); 
+        handleScroll(els);
+        window.addEventListener('scroll', handleScroll.bind(null, els)); 
+        window.addEventListener('resize', handleScroll.bind(null, els)); 
         
     }
     
-    function handleScroll(M, S, content) {
+    function handleScroll(els) {
                 
-        var scroll = content.getBoundingClientRect().top;
-        //console.log(scroll);
-        
-        if (scroll < M.h + M.offset ) {
-            document.body.classList.add('stage-fluid');
+        var contentPosition = els.content.getBoundingClientRect().top,
+            windowHeight = window.innerHeight;
+                        
+        if (contentPosition <= els.masthead.h + els.masthead.offset) {
+            if (!els.docClassList.contains('stage-fluid')) {
+                els.docClassList.add('stage-fluid');
+                els.masthead.el.style.top = windowHeight - els.masthead.h + els.masthead.offset + 'px';
+            }
         } else {
-            document.body.classList.remove('stage-fluid');
+            if (els.docClassList.contains('stage-fluid')) {
+                els.docClassList.remove('stage-fluid');
+                els.masthead.el.style.top = 'initial';
+            }
         }
         
         var p = window.pageYOffset,
-            h = S.h + S.initialOffset - M.h,
-            b = Math.min(p/h*50, 50),
-            c = Math.min(p/h*1, 1);
+            h = els.stage.h - els.masthead.h,
+            t = Math.min(p/h*1, 1),
+            q = Math.pow(t / 1, 4);
 
-        S.overlay.style.webkitBackdropFilter = 'blur(' + b + 'px)';
-        S.overlay.style.backgroundColor = 'rgba(250,250,250,' + c + ')';
-        
+        els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + (t * 50) + 'px); background-color: rgba(250,250,250,' + t + ')';
+        els.breadcrumbs.style.opacity = q;
+        els.backdrop.style.opacity = q;
     }
     
 })();
