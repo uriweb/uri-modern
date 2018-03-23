@@ -59,7 +59,7 @@
         
         // Store a few other elements
         els.backdrop = document.getElementById('sb-backdrop');
-        els.breadcrumbs = document.getElementById('breadcrumbs');
+        els.navigation = document.getElementById('navigation');
         
         // Initialize scroll and add event listeners
         handleScroll(els);
@@ -107,6 +107,13 @@
         // the scroll position
         p = window.pageYOffset; 
         
+        // set a special body class if the scroll is 0
+        if (p == 0 && !els.docClassList.contains('stage-initial')) {
+            els.docClassList.add('stage-initial');
+        } else if (els.docClassList.contains('stage-initial')) {
+            els.docClassList.remove('stage-initial');
+        }
+        
         // the distance over which to tween the animation
         d = els.stage.h - els.masthead.h; 
         
@@ -127,8 +134,8 @@
 
         // Adjust the styles accordingly
         els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + (t * 50) + 'px); background-color: rgba(250,250,250,' + t + ')';
-        els.breadcrumbs.style.opacity = Math.min(e*4, 1);
-        els.backdrop.style.opacity = Math.min(e*4, 1);
+        els.navigation.style.opacity = Math.min(e*8, 1);
+        els.backdrop.style.opacity = Math.min(e*8, 1);
         
     }
     

@@ -33,13 +33,15 @@
 
             <?php get_template_part( 'header-parts/sitebar' ); ?>
 
-            <div class="content-width">
+            <div id="navigation" class="content-width">
                 <?php get_template_part( 'header-parts/breadcrumbs' ); ?>  
                 <?php
                 if(has_nav_menu('menu-1')) {
                     get_template_part( 'header-parts/localnav' );
                 }
                 ?>
+            </div>
+            <div class="content-width">
                 <?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
             </div>
 

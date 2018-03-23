@@ -43,18 +43,18 @@ body.stage {
     }
     
     #sb-backdrop,
-    #breadcrumbs {
+    #navigation {
         opacity: 0;
     }
     
-    &.stage-fluid {
-        
-        #masthead {
-            position: absolute;
-            left: 0;
-            margin-left: 0;
-        }
-        
+    &.stage-initial #navigation {
+        pointer-events: none;
+    }
+    
+    &.stage-fluid #masthead {
+        position: absolute;
+        left: 0;
+        margin-left: 0;
     }
     
 }
