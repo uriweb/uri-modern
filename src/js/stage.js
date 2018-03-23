@@ -86,8 +86,8 @@
             q = Math.pow(t / 1, 4);
 
         els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + (t * 50) + 'px); background-color: rgba(250,250,250,' + t + ')';
-        els.breadcrumbs.style.opacity = q;
-        els.backdrop.style.opacity = q;
+        els.breadcrumbs.style.opacity = Math.min(q*8, 1);
+        els.backdrop.style.opacity = Math.min(q*8, 1);
     }
     
 })();
