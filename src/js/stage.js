@@ -134,8 +134,12 @@
 
         // Adjust the styles accordingly
         els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + (t * 50) + 'px); background-color: rgba(250,250,250,' + t + ')';
-        els.navigation.style.opacity = Math.min(e*8, 1);
-        els.backdrop.style.opacity = Math.min(e*8, 1);
+        if (els.navigation !== null) {
+            els.navigation.style.opacity = Math.min(e*8, 1);
+        }
+        if (els.backdrop !== null) {
+            els.backdrop.style.opacity = Math.min(e*8, 1);
+        }
         
     }
     
