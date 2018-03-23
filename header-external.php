@@ -25,11 +25,17 @@
 <div id="page" class="site">
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uri' ); ?></a> -->
 
-	<?php get_template_part( 'header-parts/brandbar' ); ?>
-    <?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
-    
-    <div class="content-width">
-        <?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
+    <div id="masthead">
+        <?php get_template_part( 'header-parts/brandbar' ); ?>
+        <?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
+
+        <header id="siteheader">
+
+            <div class="content-width">
+                <?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
+            </div>
+
+        </header>
     </div>
     
 	<div id="content" class="site-content">

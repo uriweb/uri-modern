@@ -6,9 +6,9 @@
     
     'use strict';
     
-    window.addEventListener('load', init, false);
+    window.addEventListener('load', initSearchBar, false);
     
-    function init() {
+    function initSearchBar() {
         var gstoggle = document.getElementById('gsform-toggle'),
             gsquery = document.getElementById('gs-query');
         
