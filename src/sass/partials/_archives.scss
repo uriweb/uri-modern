@@ -4,7 +4,7 @@
 
 body.archive {
     
-    article.post {
+    article[class^='post'] {
         padding: 1.5rem 0 0;
         margin: 0 0 1rem;
         background: $white;
@@ -53,6 +53,11 @@ body.archive {
             color: $white;
         }
         
+        .screen-reader-text {
+            position: absolute;
+            left: -9999px;
+        }
+        
     }
     
 }
@@ -60,7 +65,7 @@ body.archive {
 @media screen and (min-width: $break1) {
     body.archive {
         
-        article.post {
+        article[class^='post'] {
             padding: 2rem 2rem .7rem;
         }
         

@@ -77,9 +77,9 @@ $brandbarheight: 40px;
    FAWNTS
    ============================== */
 
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700|Hind:400,600|Rubik:500") all;
+@import url("https://fonts.googleapis.com/css?family=Lato:400,900|Hind:400,600|Rubik:500") all;
 
-$type-header: 'Roboto', 'Hind', Arial, sans-serif;
+$type-header: 'Lato', 'Hind', Arial, sans-serif;
 $type-sans: 'Hind', Arial, sans-serif;
 $type-serif: 'Charter', 'Georgia', serif;
 $type-numeric: 'Rubik', 'Hind', Arial, sans-serif;
@@ -128,10 +128,12 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @import 'partials/forms';
 @import 'partials/brandbar';
 @import 'partials/globalnav';
+@import 'partials/actionbar';
 @import 'partials/footer';
 @import 'partials/sitebar';
 @import 'partials/breadcrumbs';
 @import 'partials/localnav';
+@import 'partials/stage';
 @import 'partials/404';
 @import 'partials/widgetareas';
 @import 'partials/archives';
@@ -144,3 +146,4 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 @import 'partials/featimages';
 @import 'partials/lightbox';
 @import 'partials/programfinder';
+@import 'partials/people';

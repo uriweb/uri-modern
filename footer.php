@@ -37,8 +37,8 @@
         <div id="basement">
             <div id="storagebins">
                 <div id="sb-university">
-                    <input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" aria-label="Open the University footer menu when browsing on mobile.">
-                    <label for="sb-university-toggle"><span>University</span></label>
+                    <input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" checked>
+                    <label for="sb-university-toggle" aria-label="Open the University footer menu when browsing on mobile."><span>University</span></label>
                     <ul role="menu" aria-label="The University footer menu.">
                         <li><a href="https://web.uri.edu/about/university-leadership/" role="menuitem">Leadership</a></li>
                         <li><a href="https://web.uri.edu/diversity/" role="menuitem">Diversity and Inclusion</a></li>
@@ -48,8 +48,8 @@
                     </ul>
                 </div>
                 <div id="sb-student-life">
-                    <input id="sb-student-life-toggle" type="radio" name="storagebin" value="student-life" role="presentation" aria-label="Open the Student Life footer menu when browsing on mobile.">
-                    <label for="sb-student-life-toggle"><span>Student Life</span></label>
+                    <input id="sb-student-life-toggle" type="radio" name="storagebin" value="student-life" role="presentation">
+                    <label for="sb-student-life-toggle" aria-label="Open the Student Life footer menu when browsing on mobile."><span>Student Life</span></label>
                     <ul role="menu" aria-label="The Student Life footer menu.">
                         <li><a href="https://web.uri.edu/housing/" role="menuitem">Housing</a></li>
                         <li><a href="https://web.uri.edu/dining/" role="menuitem">Dining</a></li>
@@ -59,8 +59,8 @@
                     </ul>
                 </div>
                 <div id="sb-academics">
-                    <input id="sb-academics-toggle" type="radio" name="storagebin" value="academics" role="presentation" aria-label="Open the Academics footer menu when browsing on mobile.">
-                    <label for="sb-academics-toggle"><span>Academics</span></label>
+                    <input id="sb-academics-toggle" type="radio" name="storagebin" value="academics" role="presentation">
+                    <label for="sb-academics-toggle" aria-label="Open the Academics footer menu when browsing on mobile."><span>Academics</span></label>
                     <ul role="menu" aria-label="The Academics footer menu.">
                         <li><a href="https://web.uri.edu/academics/" role="menuitem">Undergraduate</a></li>
                         <li><a href="https://web.uri.edu/graduate-school/" role="menuitem">Graduate</a></li>
@@ -103,32 +103,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
-<!--
-            _o_
-           / _ \
-           \XX./X
-        ___X| |_X__
-      O(____  XX___)O
-         X  | |
-         X  | |
-          X | |
-           X| |
-  o____     | |X    ____o
-  |   /     / \ X   \   |
-  |__ \_   |   | X _/ __|
-     \  \_XX   \X_/  /
-      \_    XXXX   _/
-        X____^____/
-        X
-.__      X                
-|  |__   ____ ______   ____  
-|  |  \ /  _ \\____ \ / __ \ 
-|   Y  |  (_) |  |_) |  ___/ 
-|___|__/\____/|   __/ \____)
-              |__|         
-
--->
+<?php get_template_part( 'asciiart' ); ?>
 
 </body>
 </html>

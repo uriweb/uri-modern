@@ -4,10 +4,9 @@
 
 #sitebanner {
     position: relative;
-    background-color: #fff;
-    background-position: center center;
-    background-size: cover;
     border-top: 1px solid $white;
+    margin-bottom: 1px;
+    z-index: 10;
 }
 
 #sitebanner.light {
@@ -27,6 +26,26 @@
         background: rgba(0,0,0,.15);
     }
     
+}
+
+#sb-backdrop {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#sb-background-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    background-position: center center;
+    background-size: cover;
 }
 
 #sb-screen {
@@ -69,22 +88,27 @@
     
 } // #siteidentity
 
-#sitesocial {
+#sitesocial ul {
     font-size: initial;
     margin-top: 1rem;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: $break1) {
     #sitebranding {
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
     }
-    #sitesocial {
+    #sitesocial ul {
         margin-top: 0;
     }
 } // min-width: 600px
 
+@media screen and (min-width: $break2) {
+    #sitebanner {
+        margin-bottom: 0;
+    }
+}
 
 @media screen and (min-width: 1050px) {
     
