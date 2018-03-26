@@ -200,7 +200,7 @@
 #gateways-label {
     display: block;
     position: absolute;
-    right: $brandbarheight;
+    right: calc(#{$brandbarheight} + 1px);
     z-index: 9997;
     height: $brandbarheight;
     line-height: $brandbarheight;
@@ -309,7 +309,7 @@
         margin-right: calc((100vw - 1000px) / 2);
     }
     #gateways-menu {
-        right: $brandbarheight;
+        right: calc(#{$brandbarheight} + 1px);
     }
 } // min-width: 1050px
 
