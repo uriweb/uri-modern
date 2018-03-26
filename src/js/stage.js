@@ -4,7 +4,7 @@
  * @package uri-modern
  */
 
-(function(){
+( function() {
 
 	'use strict';
 
@@ -14,13 +14,13 @@
 
 		var stage = document.getElementById( 'stage' );
 
-		if (stage !== null) {
+		if ( stage !== null ) {
 			setTheStage( stage );
 		}
 
 	}
 
-	function setTheStage(stage) {
+	function setTheStage( stage ) {
 
 		var els = {}, overlay, masthead;
 
@@ -33,13 +33,13 @@
 		document.getElementById( 'page' ).insertBefore( stage, els.content );
 
 		// Resize any superheros.
-		if (CLResizeSuperheros !== null) {
+		if ( CLResizeSuperheros !== null ) {
 			CLResizeSuperheros();
 		}
 
 		// Create the stage overlay div.
 		overlay           = document.createElement( 'div' );
-		overlay.classList = "stage-overlay";
+		overlay.classList = 'stage-overlay';
 		stage.insertBefore( overlay, stage.childNodes[0] );
 
 		// Store the masthead specs.
@@ -70,7 +70,7 @@
 
 	}
 
-	function handleScroll(els) {
+	function handleScroll( els ) {
 
 		var contentPosition, windowHeight;
 
@@ -78,10 +78,10 @@
 		windowHeight    = window.innerHeight;
 
 		// If the top of the content is below the bottom of the masthead...
-		if (contentPosition > els.masthead.h + els.masthead.offset) {
+		if ( contentPosition > els.masthead.h + els.masthead.offset ) {
 
 			// Make the masthead fixed (if it isn't already).
-			if (els.docClassList.contains( 'stage-fluid' )) {
+			if ( els.docClassList.contains( 'stage-fluid' ) ) {
 
 				els.docClassList.remove( 'stage-fluid' );
 				els.masthead.el.style.top = 'initial';
@@ -93,7 +93,7 @@
 		} else { // otherwise, if the content is at or above the masthead...
 
 			// Make the masthead fluid (if it isn't already).
-			if ( ! els.docClassList.contains( 'stage-fluid' )) {
+			if ( ! els.docClassList.contains( 'stage-fluid' ) ) {
 				els.docClassList.add( 'stage-fluid' );
 				els.masthead.el.style.top = windowHeight - els.masthead.h + els.masthead.offset + 'px';
 			}
@@ -102,44 +102,44 @@
 
 	}
 
-	function drawElements(els) {
+	function drawElements( els ) {
 
 		var p, d, t, e;
 
-		// the scroll position.
+		// The scroll position.
 		p = window.pageYOffset;
 
-		// set a special body class if the scroll is 0.
-		if (p == 0 && ! els.docClassList.contains( 'stage-initial' )) {
+		// Set a special body class if the scroll is 0.
+		if ( p === 0 && ! els.docClassList.contains( 'stage-initial' ) ) {
 			els.docClassList.add( 'stage-initial' );
-		} else if (els.docClassList.contains( 'stage-initial' )) {
+		} else if ( els.docClassList.contains( 'stage-initial' ) ) {
 			els.docClassList.remove( 'stage-initial' );
 		}
 
-		// the distance over which to tween the animation.
+		// The distance over which to tween the animation.
 		d = els.stage.h - els.masthead.h;
 
 		/*
-		 * the position of the animation along the timing function, from 0 - 1
-		 * this could be thought of as the percent of the animation that is complete
+		 * The position of the animation along the timing function, from 0 - 1.
+		 * This could be thought of as the percent of the animation that is complete.
 		 */
 		t = Math.min( p / d * 1, 1 );
 
 		/*
-		 * the easing function
-		 * the second parameter is the power
-		 * 1: linear, 2: quad, 3: cubic, 4: quart, 5: quint, and so on
+		 * The easing function.
+		 * The second parameter is the power.
+		 * 1: linear, 2: quad, 3: cubic, 4: quart, 5: quint, and so on.
 		 *
-		 * @see http://upshots.org/actionscript/jsas-understanding-easing
+		 * @link http://upshots.org/actionscript/jsas-understanding-easing
 		 */
 		e = Math.pow( t / 1, 4 );
 
 		// Adjust the styles accordingly.
 		els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + (t * 50) + 'px); backdrop-filter: blur(' + (t * 50) + 'px); background-color: rgba(250,250,250,' + t + ')';
-		if (els.navigation !== null) {
+		if ( els.navigation !== null ) {
 			els.navigation.style.opacity = Math.min( e * 8, 1 );
 		}
-		if (els.backdrop !== null) {
+		if ( els.backdrop !== null ) {
 			els.backdrop.style.opacity = Math.min( e * 8, 1 );
 		}
 

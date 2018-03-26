@@ -4,7 +4,7 @@
  * @package uri-modern
  */
 
-(function(){
+( function() {
 
 	'use strict';
 
@@ -16,7 +16,7 @@
 
 		gstoggle.addEventListener(
 			'change', function() {
-				if (this.checked) {
+				if ( this.checked ) {
 					gsquery.focus();
 				} else {
 					gsquery.blur();
