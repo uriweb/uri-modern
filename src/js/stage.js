@@ -45,18 +45,18 @@
 		// Store the masthead specs.
 		masthead     = document.getElementById( 'masthead' );
 		els.masthead = {
-			el : masthead,
-			h : masthead.offsetHeight,
-			offset : masthead.getBoundingClientRect().top
+			el: masthead,
+			h: masthead.offsetHeight,
+			offset: masthead.getBoundingClientRect().top
 		};
 
 		// Store the stage specs.
 		els.stage = {
-			el : stage,
-			overlay : overlay,
-			h : stage.offsetHeight,
-			offset : stage.getBoundingClientRect().top,
-			initialOffset : stage.getBoundingClientRect().top + window.pageYOffset
+			el: stage,
+			overlay: overlay,
+			h: stage.offsetHeight,
+			offset: stage.getBoundingClientRect().top,
+			initialOffset: stage.getBoundingClientRect().top + window.pageYOffset
 		};
 
 		// Store a few other elements.
@@ -90,7 +90,7 @@
 				drawElements( els );
 			}
 
-		} else { // otherwise, if the content is at or above the masthead...
+		} else { // Otherwise, if the content is at or above the masthead...
 
 			// Make the masthead fluid (if it isn't already).
 			if ( ! els.docClassList.contains( 'stage-fluid' ) ) {
