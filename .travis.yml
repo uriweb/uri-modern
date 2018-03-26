@@ -80,7 +80,7 @@ script:
     # Search theme for PHP syntax errors.
     - find . \( -name '*.php' \) -exec php -lf {} \;
     # Run the theme through JSHint
-    - jshint .
+    # - jshint .
     # Run the theme through JavaScript Code Style checker
     - jscs .
     # WordPress Coding Standards
