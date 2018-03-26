@@ -57,9 +57,9 @@ function uri_modern_breadcrumbs() {
 function uri_modern_breadcrumbs_get_link( $path ) {
 	$p       = '';
 	$post_id = url_to_postid( $path );
-    
+
 	if ( 0 !== $post_id ) { // it's a post or a page.
-        $p      = get_page_by_path( $path );
+		$p      = get_page_by_path( $path );
 		$output = array(
 			'name' => get_the_title( $p->ID ),
 			'href' => get_site_url() . $path,

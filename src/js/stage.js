@@ -14,7 +14,7 @@
 
 		var stage = document.getElementById( 'stage' );
 
-		if ( stage !== null ) {
+		if ( null !== stage ) {
 			setTheStage( stage );
 		}
 
@@ -33,7 +33,7 @@
 		document.getElementById( 'page' ).insertBefore( stage, els.content );
 
 		// Resize any superheros.
-		if ( CLResizeSuperheros !== null ) {
+		if ( null !== CLResizeSuperheros ) {
 			CLResizeSuperheros();
 		}
 
@@ -110,7 +110,7 @@
 		p = window.pageYOffset;
 
 		// Set a special body class if the scroll is 0.
-		if ( p === 0 && ! els.docClassList.contains( 'stage-initial' ) ) {
+		if ( 0 === p && ! els.docClassList.contains( 'stage-initial' ) ) {
 			els.docClassList.add( 'stage-initial' );
 		} else if ( els.docClassList.contains( 'stage-initial' ) ) {
 			els.docClassList.remove( 'stage-initial' );
@@ -135,11 +135,11 @@
 		e = Math.pow( t / 1, 4 );
 
 		// Adjust the styles accordingly.
-		els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + (t * 50) + 'px); backdrop-filter: blur(' + (t * 50) + 'px); background-color: rgba(250,250,250,' + t + ')';
-		if ( els.navigation !== null ) {
+		els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + ( t * 50 ) + 'px); backdrop-filter: blur(' + ( t * 50 ) + 'px); background-color: rgba(250,250,250,' + t + ')';
+		if ( null !== els.navigation ) {
 			els.navigation.style.opacity = Math.min( e * 8, 1 );
 		}
-		if ( els.backdrop !== null ) {
+		if ( null !== els.backdrop ) {
 			els.backdrop.style.opacity = Math.min( e * 8, 1 );
 		}
 
