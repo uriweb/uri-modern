@@ -1,9 +1,14 @@
 <?php
+/**
+ * Template part for displaying feature image
+ *
+ * @package uri-modern
+ */
 
-	$link_to_fullsize = false; // initialize as false, set to true later if single
+	$link_to_fullsize = false; // initialize as false, set to true later if single.
 	$link_to_article  = false;
 
-	// show the lead art
+	// show the lead art.
 if ( has_post_thumbnail() && ! get_post_format( $post->ID ) == 'video' ) { // check if the post has a Post Thumbnail assigned to it.
 	if ( is_single() ) {
 		$image_id         = get_post_thumbnail_id( $post->ID );

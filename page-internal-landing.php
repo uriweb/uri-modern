@@ -1,8 +1,8 @@
 <?php
 /**
- *
- *
  * Template Name: Internal Landing Page
+ *
+ * @package uri-modern
  */
 
 get_header( 'internal' );

@@ -1,8 +1,8 @@
 <?php
 /**
- *
- *
  * Template Name: External Landing Page
+ *
+ * @package uri-modern
  */
 
 get_header( 'external' );

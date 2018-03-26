@@ -16,7 +16,7 @@
 	<?php if ( is_active_sidebar( 'after-content' ) ) : ?>
 		<div id="region-after-content" class="region-after-content widgets content-width">
 			<?php dynamic_sidebar( 'after-content' ); ?>
-		</div><!-- #after-content -->
+		</div><!-- #region-after-content -->
 	<?php endif; ?>
 
 	<div id="actionbar-wrapper">

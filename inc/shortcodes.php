@@ -1,17 +1,19 @@
 <?php
 /**
- * uri-modern Shortcodes
+ * Shortcodes
  *
  * @package uri-modern
  */
 
-
 /**
  * Global Nav shortcode
+ *
+ * @param arr $atts the attributes.
+ * @param str $content the content.
  */
 function uri_modern_shortcode_gn( $atts, $content = null ) {
 
-	// Attributes
+	// Attributes.
 	extract(
 		shortcode_atts(
 			array(

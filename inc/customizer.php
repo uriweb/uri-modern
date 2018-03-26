@@ -15,7 +15,7 @@ function uri_modern_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	// rename "Header Image" section to "Header"
+	// rename "Header Image" section to "Header".
 	$wp_customize->get_section( 'header_image' )->title = esc_html__( 'Header / Footer', 'uri' );
 
 	uri_modern_options_social_media( $wp_customize );
@@ -31,7 +31,7 @@ add_action( 'customize_register', 'uri_modern_customize_register' );
  */
 function uri_modern_options_social_media( $wp_customize ) {
 
-	// Add section for social media
+	// Add section for social media.
 	$wp_customize->add_section(
 		'uri_modern_customizer_social', array(
 			'title'    => __( 'Social Media', 'uri' ),
@@ -39,7 +39,7 @@ function uri_modern_options_social_media( $wp_customize ) {
 		)
 	);
 
-	// Add field for Facebook URL
+	// Add field for Facebook URL.
 	$wp_customize->add_setting(
 		'department_facebook_URL', array(
 			'default'           => '',
@@ -61,7 +61,7 @@ function uri_modern_options_social_media( $wp_customize ) {
 		)
 	);
 
-	// Add field for Instagram URL
+	// Add field for Instagram URL.
 	$wp_customize->add_setting(
 		'department_instagram_URL', array(
 			'default'           => '',
@@ -83,7 +83,7 @@ function uri_modern_options_social_media( $wp_customize ) {
 		)
 	);
 
-	// Add field for Twitter URL
+	// Add field for Twitter URL.
 	$wp_customize->add_setting(
 		'department_twitter_URL', array(
 			'default'           => '',
@@ -105,7 +105,7 @@ function uri_modern_options_social_media( $wp_customize ) {
 		)
 	);
 
-	// Add field for YouTube URL
+	// Add field for YouTube URL.
 	$wp_customize->add_setting(
 		'department_youtube_URL', array(
 			'default'           => '',
@@ -127,7 +127,7 @@ function uri_modern_options_social_media( $wp_customize ) {
 		)
 	);
 
-	// Add field for Snapchat URL
+	// Add field for Snapchat URL.
 	$wp_customize->add_setting(
 		'department_snapchat_URL', array(
 			'default'           => '',
@@ -149,7 +149,7 @@ function uri_modern_options_social_media( $wp_customize ) {
 		)
 	);
 
-	// Add field for LinkedIn URL
+	// Add field for LinkedIn URL.
 	$wp_customize->add_setting(
 		'department_linkedin_URL', array(
 			'default'           => '',
@@ -271,7 +271,7 @@ function uri_modern_options_site_header( $wp_customize ) {
 /**
  * Sanitize input from a checkbox.  It'll be 0 or 1.
  *
- * @param mixed $value
+ * @param mixed $value the value to be sanitized.
  * @return int
  */
 function uri_modern_validate_checkbox( $value ) {
@@ -287,13 +287,13 @@ function uri_modern_validate_checkbox( $value ) {
  * (mostly, that is. One can still fool the validator to add sanitized but malformed URLs
  * like https://twitter.comuniversityofri but TLDs are hard to validate these days.)
  *
- * @param str $url is the URL to test
+ * @param str $url is the URL to test.
  * @return mixed: str on success; NULL on failure
  */
 function uri_modern_sanitize_url( $url ) {
 	$out = filter_var( $url, FILTER_VALIDATE_URL );
-	if ( ! empty( $url ) && $out === false ) {
-		// returning NULL triggers the WP UI to show that the value is unacceptable
+	if ( ! empty( $url ) && false === $out ) {
+		// returning NULL triggers the WP UI to show that the value is unacceptable.
 		return null;
 	} else {
 		return $out;

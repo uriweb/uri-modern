@@ -267,9 +267,10 @@ add_action( 'wp_enqueue_scripts', 'uri_modern_scripts' );
 /**
  * Gets the current WP path as known by Apache, not WordPress.
  *
- * @param bool $strip is a switch to strip slashes from the end of the URL
- * it does this so that paths like "who" and "who/*" can be differentiated
- * otherwise, there's no way to single out "who"
+ * @param bool $strip is a switch to strip slashes from the end of the URL.
+ * It does this so that paths like "who" and "who/*" can be differentiated.
+ * Otherwise, there's no way to single out "who".
+ *
  * @return str
  */
 function uri_modern_get_current_path( $strip = true ) {

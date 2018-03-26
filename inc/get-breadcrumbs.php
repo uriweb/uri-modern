@@ -1,6 +1,13 @@
 <?php
+/**
+ * Breadcrumbs
+ *
+ * @package uri-modern
+ */
 
-// Breadcrumbs
+/**
+ * Call the breadcrumbs
+ */
 function uri_modern_breadcrumbs() {
 	$crumbs  = array();
 	$prepend = explode( "\n", get_option( 'uri-modern-breadcrumbs', 'The University of Rhode Island (https://www.uri.edu)' ) );
@@ -34,7 +41,7 @@ function uri_modern_breadcrumbs() {
 		$path = $path . '/' . $p;
 		$link = uri_modern_breadcrumbs_get_link( $path );
 
-		if ( $link != null ) {
+		if ( null != $link ) {
 			$crumbs[] = $link;
 		}
 	}
@@ -44,16 +51,15 @@ function uri_modern_breadcrumbs() {
 
 /**
  * WP lets us hunt and peck to see what the URL might be
+ *
+ * @param str $path the path.
  */
 function uri_modern_breadcrumbs_get_link( $path ) {
 	$p       = '';
 	$post_id = url_to_postid( $path );
-
-	// echo '<pre style="font-size: 1rem">';
-	// var_dump($path);
-	// echo '</pre>';
-	if ( $post_id !== 0 ) { // it's a post or a page
-		$p      = get_page_by_path( $path );
+    
+	if ( 0 !== $post_id ) { // it's a post or a page.
+        $p      = get_page_by_path( $path );
 		$output = array(
 			'name' => get_the_title( $p->ID ),
 			'href' => get_site_url() . $path,
@@ -62,7 +68,7 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 	}
 
 	// is it a category?
-	// @todo Catch custom post type categories too
+	// @todo Catch custom post type categories too.
 	$category = get_category_by_path( $path );
 	if ( is_object( $category ) && isset( $category->term_id ) ) {
 		$output = array(
@@ -84,12 +90,17 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 
 }
 
-
+/**
+ * Format the breadcrumbs
+ *
+ * @param arr $crumbs the crumbs.
+ * @return $output
+ */
 function uri_modern_format_breadcrumbs( $crumbs ) {
 	$output = '<ol>';
 	$last   = end( $crumbs );
 	foreach ( $crumbs as $k => $c ) {
-		if ( $c === $last ) { // last crumb isn't a hyperlink
+		if ( $c === $last ) { // last crumb isn't a hyperlink.
 			$output .= '<li>' . $c['name'] . '</li>';
 		} else {
 			$output .= '<li><a href="' . $c['href'] . '">' . $c['name'] . '</a></li>';

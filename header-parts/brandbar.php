@@ -1,3 +1,12 @@
+<?php
+/**
+ * Template part for displaying the brandbar.
+ *
+ * @package uri-modern
+ */
+
+?>
+
 	<header id="brandbar" class="site-header" role="banner">
 		
 		<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island"></div>
