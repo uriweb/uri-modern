@@ -1,5 +1,7 @@
-/*
+/**
  * Search Bar Focus Control
+ *
+ * @package uri-modern
  */
 
 (function(){

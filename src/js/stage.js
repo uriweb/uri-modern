@@ -1,5 +1,7 @@
-/*
+/**
  * The Stage
+ *
+ * @package uri-modern
  */
 
 (function(){
@@ -22,25 +24,25 @@
 
 		var els = {}, overlay, masthead;
 
-		// Store a reference to the body class list and add the 'stage' class
+		// Store a reference to the body class list and add the 'stage' class.
 		els.docClassList = document.body.classList;
 		els.docClassList.add( 'stage' );
 
-		// Store the content div and put the stage before it
+		// Store the content div and put the stage before it.
 		els.content = document.getElementById( 'content' );
 		document.getElementById( 'page' ).insertBefore( stage, els.content );
 
-		// Resize any superheros
+		// Resize any superheros.
 		if (CLResizeSuperheros !== null) {
 			CLResizeSuperheros();
 		}
 
-		// Create the stage overlay div
+		// Create the stage overlay div.
 		overlay           = document.createElement( 'div' );
 		overlay.classList = "stage-overlay";
 		stage.insertBefore( overlay, stage.childNodes[0] );
 
-		// Store the masthead specs
+		// Store the masthead specs.
 		masthead     = document.getElementById( 'masthead' );
 		els.masthead = {
 			el : masthead,
@@ -48,7 +50,7 @@
 			offset : masthead.getBoundingClientRect().top
 		};
 
-		// Store the stage specs
+		// Store the stage specs.
 		els.stage = {
 			el : stage,
 			overlay : overlay,
@@ -57,11 +59,11 @@
 			initialOffset : stage.getBoundingClientRect().top + window.pageYOffset
 		};
 
-		// Store a few other elements
+		// Store a few other elements.
 		els.backdrop   = document.getElementById( 'sb-backdrop' );
 		els.navigation = document.getElementById( 'navigation' );
 
-		// Initialize scroll and add event listeners
+		// Initialize scroll and add event listeners.
 		handleScroll( els );
 		window.addEventListener( 'scroll', handleScroll.bind( null, els ) );
 		window.addEventListener( 'resize', handleScroll.bind( null, els ) );
@@ -78,19 +80,19 @@
 		// If the top of the content is below the bottom of the masthead...
 		if (contentPosition > els.masthead.h + els.masthead.offset) {
 
-			// Make the masthead fixed (if it isn't already)
+			// Make the masthead fixed (if it isn't already).
 			if (els.docClassList.contains( 'stage-fluid' )) {
 
 				els.docClassList.remove( 'stage-fluid' );
 				els.masthead.el.style.top = 'initial';
 
-			} else { // If it is fixed, draw the elements
+			} else { // If it is fixed, draw the elements.
 				drawElements( els );
 			}
 
 		} else { // otherwise, if the content is at or above the masthead...
 
-			// Make the masthead fluid (if it isn't already)
+			// Make the masthead fluid (if it isn't already).
 			if ( ! els.docClassList.contains( 'stage-fluid' )) {
 				els.docClassList.add( 'stage-fluid' );
 				els.masthead.el.style.top = windowHeight - els.masthead.h + els.masthead.offset + 'px';
@@ -104,17 +106,17 @@
 
 		var p, d, t, e;
 
-		// the scroll position
+		// the scroll position.
 		p = window.pageYOffset;
 
-		// set a special body class if the scroll is 0
+		// set a special body class if the scroll is 0.
 		if (p == 0 && ! els.docClassList.contains( 'stage-initial' )) {
 			els.docClassList.add( 'stage-initial' );
 		} else if (els.docClassList.contains( 'stage-initial' )) {
 			els.docClassList.remove( 'stage-initial' );
 		}
 
-		// the distance over which to tween the animation
+		// the distance over which to tween the animation.
 		d = els.stage.h - els.masthead.h;
 
 		/*
@@ -132,7 +134,7 @@
 		 */
 		e = Math.pow( t / 1, 4 );
 
-		// Adjust the styles accordingly
+		// Adjust the styles accordingly.
 		els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + (t * 50) + 'px); backdrop-filter: blur(' + (t * 50) + 'px); background-color: rgba(250,250,250,' + t + ')';
 		if (els.navigation !== null) {
 			els.navigation.style.opacity = Math.min( e * 8, 1 );
