@@ -28,3 +28,5 @@ Tags: themes
 Requires at least: 4.0  
 Tested up to: 4.9  
 Stable tag: 0.6.0  
+
+[![Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=develop)](https://travis-ci.org/uriweb/uri-modern)
