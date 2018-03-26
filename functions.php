@@ -10,7 +10,7 @@
 require 'inc/get-breadcrumbs.php';
 
 /**
- * returns a string to be used for cache busting
+ * Returns a string to be used for cache busting
  *
  * @return str
  */
@@ -120,9 +120,9 @@ function uri_modern_open_graph() {
 	if ( is_single() || is_page() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 
-		// use a larger image in twitter card if the image is wider than it is tall
+		// use a larger image in twitter card if the image is wider than it is tall.
 		$landscape = ( $image[1] > $image[2] );
-		if ( $landscape === true ) {
+		if ( true === $landscape ) {
 			$summary_type = 'summary_large_image';
 		}
 
@@ -136,8 +136,6 @@ function uri_modern_open_graph() {
 		if ( empty( $title ) ) {
 			$title = get_bloginfo( 'name', 'display' ); }
 
-		// setup_postdata( $post );
-		// $excerpt = get_the_excerpt($post);
 		$excerpt = '';
 		// since the excerpt is just about always empty...
 		if ( empty( $excerpt ) ) {
@@ -165,7 +163,6 @@ if ( $image_thumb ) :
 			<?php
 endif;
 	}
-	// wp_reset_postdata();
 }
 
 add_action( 'wp_head', 'uri_modern_open_graph' );
@@ -270,7 +267,7 @@ add_action( 'wp_enqueue_scripts', 'uri_modern_scripts' );
 /**
  * Gets the current WP path as known by Apache, not WordPress.
  *
- * @param bool $right is a switch to strip slashes from the end of the URL
+ * @param bool $strip is a switch to strip slashes from the end of the URL
  * it does this so that paths like "who" and "who/*" can be differentiated
  * otherwise, there's no way to single out "who"
  * @return str
@@ -293,7 +290,7 @@ function uri_modern_get_current_path( $strip = true ) {
 	if ( strpos( $current_path, $base_bits['path'] ) === 0 ) {
 		$current_path = substr( $current_path, strlen( $base_bits['path'] ) );
 	}
-	if ( $strip === true ) {
+	if ( true === $strip ) {
 		$current_path = rtrim( $current_path, '/' );
 	}
 
@@ -303,12 +300,14 @@ function uri_modern_get_current_path( $strip = true ) {
 
 /**
  * Wrap oembeds with a styleable class
+ *
+ * @param str $html the html.
+ * @param str $url is the URL that was originally included in the post.
+ * @param arr $attr is an array with width and height... neither value seems to have a purpose.
+ * @param str $post_id is the id of the current post.
  */
 function uri_modern_embed_oembed_html( $html, $url, $attr, $post_id ) {
-	// $attr is an array with width and height... neither value seems to have a purpose
-	// $post_id is the id of the current post
-	// $url is the URL that was originally included in the post
-	// parse the URL of the embed to convert the domain name into a CSS class
+	// parse the URL of the embed to convert the domain name into a CSS class.
 	preg_match( '#(http|ftp)s?://(www\.)?([a-z0-9\.\-]+)/?.*#i', $url, $matches );
 	$server_class = str_replace( '.', '-', $matches[3] );
 
@@ -319,6 +318,8 @@ add_filter( 'embed_oembed_html', 'uri_modern_embed_oembed_html', 99, 4 );
 
 /**
  * People Tool compatibility
+ *
+ * @param str $template the template.
  */
 function uri_modern_people_page_template( $template ) {
 
@@ -380,6 +381,8 @@ function uri_modern_use_alternate_site_title() {
 
 /**
  * Get the featured image caption
+ *
+ * @param obj $post the post.
  */
 function uri_modern_get_thumbnail_caption( $post ) {
 	if ( empty( $post ) ) {
@@ -442,6 +445,8 @@ require get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Add page slug to body class list in the format 'ln-{slug}'
+ *
+ * @param array $classes the classes.
  */
 function uri_modern_add_slug_body_class( $classes ) {
 	global $post;
