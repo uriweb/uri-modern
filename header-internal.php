@@ -14,35 +14,35 @@
 <?php get_template_part( 'header-parts/head' ); ?>
 
 <body <?php body_class(); ?>>
-    
+	
 <?php
-    $gtm = uri_modern_gtm_value();
-    if ( ! empty ( $gtm ) ) {
-        echo '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . $gtm . '" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
-    }
+	$gtm = uri_modern_gtm_value();
+if ( ! empty( $gtm ) ) {
+	echo '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . $gtm . '" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
+}
 ?>
-    
+	
 <div id="page" class="site">
 	<!-- <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uri' ); ?></a> -->
 
-    <div id="masthead">
-        <?php get_template_part( 'header-parts/brandbar' ); ?>
-        <?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
+	<div id="masthead">
+		<?php get_template_part( 'header-parts/brandbar' ); ?>
+		<?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
 
-        <header id="siteheader">
+		<header id="siteheader">
 
-            <?php get_template_part( 'header-parts/sitebar' ); ?>
+			<?php get_template_part( 'header-parts/sitebar' ); ?>
 
-            <div id="navigation" class="content-width">
-                <?php get_template_part( 'header-parts/breadcrumbs' ); ?>
-            </div>
-            <div class="content-width">
-                <?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
-            </div>
+			<div id="navigation" class="content-width">
+				<?php get_template_part( 'header-parts/breadcrumbs' ); ?>
+			</div>
+			<div class="content-width">
+				<?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
+			</div>
 
-        </header>
-    </div>
-    
+		</header>
+	</div>
+	
 	<div id="content" class="site-content">
-        
-    
+		
+	

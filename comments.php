@@ -24,7 +24,8 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
+	if ( have_comments() ) :
+	?>
 		<h2 class="comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
@@ -49,10 +50,12 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
+				wp_list_comments(
+					array(
+						'style'      => 'ol',
+						'short_ping' => true,
+					)
+				);
 			?>
 		</ol><!-- .comment-list -->
 
@@ -73,7 +76,8 @@ if ( post_password_required() ) {
 
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
 
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'uri' ); ?></p>
 	<?php

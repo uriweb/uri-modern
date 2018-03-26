@@ -16,50 +16,75 @@
 	<div class="entry-content">
 
 			<?php
-                get_template_part( 'template-parts/featured-image' );
-            ?>
+				get_template_part( 'template-parts/featured-image' );
+			?>
 			
 			<ul class="people-list">
-				<?php if(get_field('peopletitle')): ?><li class="people-title"><?php the_field('peopletitle'); ?></li><?php endif; ?>
-				<?php if(get_field('peopledepartment')): ?><li class="people-department"><?php the_field('peopledepartment'); ?></li><?php endif; ?>
-				<?php if(get_field('peoplephone')): ?><li class="people-phone"><strong>Phone:</strong> <?php the_field('peoplephone'); ?></li><?php endif; ?>
-				<?php if(get_field('peoplefax')): ?><li class="people-fax"><strong>Fax:</strong> <?php the_field('peoplefax'); ?></li><?php endif; ?>
-				<?php if(get_field('peopleemail')): ?><li class="people-email"><strong>Email:</strong> <a href="mailto:<?php the_field('peopleemail'); ?>"><?php the_field('peopleemail'); ?></a></li><?php endif; ?>
-				<?php if(get_field('peoplemail')): ?><li class="people-location"><strong>Office Location:</strong> <?php the_field('peoplemail'); ?></li><?php endif; ?>
-				<?php if(get_field('peopleurl')): ?><li class="people-url"><strong>Website:</strong> <a href="<?php the_field('peopleurl'); ?>"><?php the_field('peopleurl'); ?></a><?php endif; ?>
+				<?php
+				if ( get_field( 'peopletitle' ) ) :
+?>
+<li class="people-title"><?php the_field( 'peopletitle' ); ?></li><?php endif; ?>
+				<?php
+				if ( get_field( 'peopledepartment' ) ) :
+?>
+<li class="people-department"><?php the_field( 'peopledepartment' ); ?></li><?php endif; ?>
+				<?php
+				if ( get_field( 'peoplephone' ) ) :
+?>
+<li class="people-phone"><strong>Phone:</strong> <?php the_field( 'peoplephone' ); ?></li><?php endif; ?>
+				<?php
+				if ( get_field( 'peoplefax' ) ) :
+?>
+<li class="people-fax"><strong>Fax:</strong> <?php the_field( 'peoplefax' ); ?></li><?php endif; ?>
+				<?php
+				if ( get_field( 'peopleemail' ) ) :
+?>
+<li class="people-email"><strong>Email:</strong> <a href="mailto:<?php the_field( 'peopleemail' ); ?>"><?php the_field( 'peopleemail' ); ?></a></li><?php endif; ?>
+				<?php
+				if ( get_field( 'peoplemail' ) ) :
+?>
+<li class="people-location"><strong>Office Location:</strong> <?php the_field( 'peoplemail' ); ?></li><?php endif; ?>
+				<?php
+				if ( get_field( 'peopleurl' ) ) :
+?>
+<li class="people-url"><strong>Website:</strong> <a href="<?php the_field( 'peopleurl' ); ?>"><?php the_field( 'peopleurl' ); ?></a><?php endif; ?>
 			</ul>
 
-			<?php if(get_field('peoplebio')) { ?>
+			<?php if ( get_field( 'peoplebio' ) ) { ?>
 				<div class="people-bio">
 					<h3>Biography</h3>
-					<?php the_field('peoplebio'); ?>
+					<?php the_field( 'peoplebio' ); ?>
 				</div>
 			<?php } ?>
 
-			<?php if(get_field('peopleresearch')) { ?>
+			<?php if ( get_field( 'peopleresearch' ) ) { ?>
 				<div class="people-research">
 					<h3>Research</h3>
-					<?php the_field('peopleresearch'); ?>
+					<?php the_field( 'peopleresearch' ); ?>
 				</div>
 			<?php } ?>
 
-			<?php if(get_field('peopleedu')) { ?>
+			<?php if ( get_field( 'peopleedu' ) ) { ?>
 				<div class="people-education">
 					<h3>Education</h3>
-					<?php the_field('peopleedu'); ?>
+					<?php the_field( 'peopleedu' ); ?>
 				</div>
 			<?php } ?>
 
-			<?php if(get_field('peoplepubs')) { ?>
+			<?php if ( get_field( 'peoplepubs' ) ) { ?>
 				<div class="people-publications">
 					<h3>Publications</h3>
-					<?php the_field('peoplepubs'); ?>
+					<?php the_field( 'peoplepubs' ); ?>
 				</div>
 			<?php } ?>
 
-			<?php if(get_field('peoplecustom')) { ?>
+			<?php if ( get_field( 'peoplecustom' ) ) { ?>
 				<div class="people-custom">
-					<?php $getcustom = get_field('peoplecustom'); apply_filters('the_content', $getcustom); echo wpautop($getcustom); ?>
+					<?php
+					$getcustom = get_field( 'peoplecustom' );
+					apply_filters( 'the_content', $getcustom );
+					echo wpautop( $getcustom );
+?>
 				</div>
 			<?php } ?>
 
@@ -68,19 +93,21 @@
 
 
 			<?php
-				if (get_site_option('uri_comments') ) {
-					comments_template();
-				}
+			if ( get_site_option( 'uri_comments' ) ) {
+				comments_template();
+			}
 			?>
 
 
 		<?php
 			the_content();
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
 	</div><!-- .entry-content -->
 
