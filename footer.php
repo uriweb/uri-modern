@@ -47,10 +47,10 @@
 						<li><a href="https://web.uri.edu/publicsafety/" role="menuitem">Safety</a></li>
 					</ul>
 				</div>
-				<div id="sb-student-life">
-					<input id="sb-student-life-toggle" type="radio" name="storagebin" value="student-life" role="presentation">
-					<label for="sb-student-life-toggle" aria-label="Open the Student Life footer menu when browsing on mobile."><span>Student Life</span></label>
-					<ul role="menu" aria-label="The Student Life footer menu.">
+				<div id="sb-campus-life">
+					<input id="sb-campus-life-toggle" type="radio" name="storagebin" value="campus-life" role="presentation">
+					<label for="sb-campus-life-toggle" aria-label="Open the Campus Life footer menu when browsing on mobile."><span>Campus Life</span></label>
+					<ul role="menu" aria-label="The Campus Life footer menu.">
 						<li><a href="https://web.uri.edu/housing/" role="menuitem">Housing</a></li>
 						<li><a href="https://web.uri.edu/dining/" role="menuitem">Dining</a></li>
 						<li><a href="https://web.uri.edu/athletics/" role="menuitem">Athletics and Recreation</a></li>
