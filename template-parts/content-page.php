@@ -10,20 +10,22 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if ( get_field('pagetitle') === FALSE ) { ?>
+	<?php if ( get_field( 'pagetitle' ) === false ) { ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-    <?php } ?>
+	<?php } ?>
 
 	<div class="entry-content">
 		<?php
 			the_content();
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
 	</div><!-- .entry-content -->
 

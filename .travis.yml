@@ -70,8 +70,8 @@ before_script:
     - npm install -g jscs
     # Install JSHint, a JavaScript Code Quality Tool
     # @link http://jshint.com/docs/
-    - npm install -g jshint
-    - wget https://develop.svn.wordpress.org/trunk/.jshintrc
+    # - npm install -g jshint
+    # - wget https://develop.svn.wordpress.org/trunk/.jshintrc
 
 # Run test script commands.
 # Default is specific to project language.
@@ -80,7 +80,7 @@ script:
     # Search theme for PHP syntax errors.
     - find . \( -name '*.php' \) -exec php -lf {} \;
     # Run the theme through JSHint
-    - jshint .
+    # - jshint .
     # Run the theme through JavaScript Code Style checker
     - jscs .
     # WordPress Coding Standards
@@ -92,4 +92,4 @@ script:
     # -n flag: Do not print warnings (shortcut for --warning-severity=0)
     # --standard: Use WordPress as the standard.
     # --extensions: Only sniff PHP files.
-    - $WP_DEVELOP_DIR/php-codesniffer/bin/phpcs -p -s -v -n . --standard=Wordpress --extensions=php
+    - $WP_DEVELOP_DIR/php-codesniffer/bin/phpcs -p -s -v -n . --standard=./.codesniffer.ruleset.xml --extensions=php
