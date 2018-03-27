@@ -70,8 +70,8 @@ before_script:
     - npm install -g jscs
     # Install JSHint, a JavaScript Code Quality Tool
     # @link http://jshint.com/docs/
-    - npm install -g jshint
-    - wget https://develop.svn.wordpress.org/trunk/.jshintrc
+    # - npm install -g jshint
+    # - wget https://develop.svn.wordpress.org/trunk/.jshintrc
 
 # Run test script commands.
 # Default is specific to project language.
