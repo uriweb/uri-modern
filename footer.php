@@ -66,7 +66,7 @@
 						<li><a href="https://web.uri.edu/graduate-school/" role="menuitem">Graduate</a></li>
 						<li><a href="https://web.uri.edu/advising/" role="menuitem">Advising</a></li>
 						<li><a href="https://web.uri.edu/library/" role="menuitem">Library</a></li>
-						<li><a href="https://web.uri.edu/about/departments/" role="menuitem">Colleges</a></li>
+						<li><a href="https://web.uri.edu/career/students/" role="menuitem">Internships</a></li>
 					</ul>
 				</div>
 			</div>
