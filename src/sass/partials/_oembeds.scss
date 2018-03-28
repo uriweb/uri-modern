@@ -9,6 +9,13 @@
     max-width: 360px !important; 
 }
 
+.alignright,
+.alignleft {
+    .oembed iframe {
+        max-width: 100%;
+    }
+}
+
 .cl-tiles .oembed iframe {
     max-width: 100% !important;
     margin: 0 !important;

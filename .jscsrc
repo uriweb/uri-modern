@@ -1,0 +1,8 @@
+{
+    "preset": "wordpress",
+    "fileExtensions": [ ".js" ],
+    "excludeFiles": [
+        "gulpfile.js",
+        "js/script.min.js"
+    ]
+}

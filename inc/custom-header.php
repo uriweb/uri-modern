@@ -17,38 +17,42 @@
  * @uses uri_modern_header_style()
  */
 function uri_modern_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'uri_modern_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-		'width'                  => 2560,
-		'height'                 => 300,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'uri_modern_header_style',
-	) ) );
+	add_theme_support(
+		'custom-header', apply_filters(
+			'uri_modern_custom_header_args', array(
+				'default-image'      => '',
+				'default-text-color' => '000000',
+				'width'              => 2560,
+				'height'             => 300,
+				'flex-height'        => true,
+				'wp-head-callback'   => 'uri_modern_header_style',
+			)
+		)
+	);
 }
 add_action( 'after_setup_theme', 'uri_modern_custom_header_setup' );
 
 if ( ! function_exists( 'uri_modern_header_style' ) ) :
-/**
- * Styles the header image and text displayed on the blog.
- *
- * @see uri_modern_custom_header_setup().
- */
-function uri_modern_header_style() {
-	$header_text_color = get_header_textcolor();
-
-	/*
-	 * If no custom options for text are set, let's bail.
-	 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+	/**
+	 * Styles the header image and text displayed on the blog.
+	 *
+	 * @see uri_modern_custom_header_setup().
 	 */
-	if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-		return;
-	}
+	function uri_modern_header_style() {
+		$header_text_color = get_header_textcolor();
 
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
+		/*
+		 * If no custom options for text are set, let's bail.
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+		 */
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+			return;
+		}
+
+		// If we get this far, we have custom styles. Let's do this.
+		?>
+		<style type="text/css">
+		<?php
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 	?>
@@ -68,5 +72,5 @@ function uri_modern_header_style() {
 	<?php endif; ?>
 	</style>
 	<?php
-}
+	}
 endif;

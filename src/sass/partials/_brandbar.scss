@@ -26,11 +26,13 @@
 #gs {
     height: 0px;
     transition: height .4s $easeInOutQuint;
+    pointer-events: none;
 }
 
 #gsform-toggle:checked {
     & ~ #gs {
         height: 60px;
+        pointer-events: auto;
     }
 
     & ~ #gsform {
@@ -112,6 +114,7 @@
 
 #gs-submit {
     position: absolute;
+    left: -9999px;
     visibility: hidden;
 }
 
@@ -197,7 +200,7 @@
 #gateways-label {
     display: block;
     position: absolute;
-    right: $brandbarheight;
+    right: calc(#{$brandbarheight} + 1px);
     z-index: 9997;
     height: $brandbarheight;
     line-height: $brandbarheight;
@@ -306,7 +309,7 @@
         margin-right: calc((100vw - 1000px) / 2);
     }
     #gateways-menu {
-        right: $brandbarheight;
+        right: calc(#{$brandbarheight} + 1px);
     }
 } // min-width: 1050px
 
