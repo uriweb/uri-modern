@@ -59,6 +59,18 @@ body {
             width: 50%;
         }
     }
+    .aligncenter {
+        &.small {
+            width: 50%;
+        }
+        &.medium {
+            width: 75%;
+        }
+        &,
+        &.large {
+            width: 100%;
+        }
+    }
     .alignright:after,
     .alignleft:after {
         display: block;
@@ -87,6 +99,18 @@ body {
         &,
         &.large {
             width: 60%;
+        }
+    }
+    .aligncenter {
+        &.small {
+            width: 40%;
+        }
+        &.medium {
+            width: 60%;
+        }
+        &,
+        &.large {
+            width: 80%;
         }
     }
 }
