@@ -17,6 +17,7 @@ branches:
     - master
     - develop
     - /^release-.*$/
+    - /^hotfix-.*$/
     - /^travis-.*$/
 
 # Declare which versions of WordPress to test against.

@@ -26,7 +26,7 @@
 			<div id="globalbanner">
 				<a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
 				
-				<?php if ( URI_BETA_FEATURES ) : ?>
+				<?php if ( URI_BETA_FEATURES !== null && URI_BETA_FEATURES === true ) : ?>
 				
 				<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
 				<label for="gateways-toggle" id="gateways-label"><span>You</span></label>
