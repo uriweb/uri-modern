@@ -23,8 +23,8 @@ branches:
 env:
     # Latest
     # @link https://github.com/WordPress/WordPress
-    - WP_VERSION=latest WP_MULTISITE=1
-    - WP_VERSION=latest WP_MULTISITE=0
+    - WP_VERSION=master WP_MULTISITE=1
+    - WP_VERSION=master WP_MULTISITE=0
     
 # Disable XDebug
 before_install:
