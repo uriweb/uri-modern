@@ -27,6 +27,70 @@ body {
     padding-bottom: 0;
 }
 
+.alignright,
+.alignleft,
+.aligncenter {
+    display: block;
+    padding: 1.5rem 0;
+    width: 100%;
+    min-width: 200px;
+}
+
+.alignright,
+.alignleft {
+    float: none;
+}
+
+.aligncenter {
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 480px) {
+    .alignright,
+    .alignleft {
+        &.small {
+            width: 40%;
+        }
+        &.medium {
+            width: 45%;
+        }
+        &,
+        &.large {
+            width: 50%;
+        }
+    }
+    .alignright:after,
+    .alignleft:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+    .alignright {
+        float: right;
+        padding: 1rem 0 2rem 1.5rem;
+    }
+    .alignleft {
+        float: left;
+        padding: 1rem 1.5rem 2rem 0;
+    }
+}
+
+@media screen and (min-width: $break2) {
+    .alignright,
+    .alignleft {
+        &.small {
+            width: 28%;
+        }
+        &.medium {
+            width: 42%;
+        }
+        &,
+        &.large {
+            width: 60%;
+        }
+    }
+}
+
 @media screen and (min-width: 1050px) {
     .content-width,
     #main {
