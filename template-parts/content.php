@@ -36,7 +36,6 @@
 		if ( ! is_single() && ! is_page() && $excerpt = get_the_excerpt() ) {
 			the_excerpt();
 			echo '<a class="continue-reading-link" href="' . get_permalink() . '">' . $continue . '</a>';
-            get_template_part( 'template-parts/tags' );
 		} else {
 			the_content( $continue );
 
@@ -46,13 +45,11 @@
 					'after'  => '</div>',
 				)
 			);
-            
-            get_template_part( 'template-parts/tags' );
 		}
 		?>
 	</div><!-- .entry-content -->
 
-	<!-- <footer class="entry-footer">
+	<footer class="entry-footer">
 		<?php uri_modern_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

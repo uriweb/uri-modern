@@ -2,11 +2,14 @@
    TAGS
    ============================== */
 
-.tags {
+.cat-links,
+.tags-links {
+    
+    display: block;
     
     .screen-reader-text {
-        position: absolute;
-        left: -9999px;
+        font-weight: 600;
+        margin-right: 1rem;
     }
     
     a {
@@ -53,6 +56,19 @@
             border-top-color: $blue;
         }
         
+    }
+    
+}
+
+.cat-links {
+    
+    a {
+        border: 1px solid $darkgrey;
+    }
+    
+    a:before {
+        border-left-color: $darkgrey;
+        border-top-color: $darkgrey;
     }
     
 }
