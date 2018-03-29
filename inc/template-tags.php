@@ -47,30 +47,20 @@ if ( ! function_exists( 'uri_modern_entry_footer' ) ) :
 	function uri_modern_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
+			/* translators: used between list items */
 			$categories_list = get_the_category_list( esc_html__( ' ', 'uri' ) );
 			if ( $categories_list && uri_modern_categorized_blog() ) {
-				printf( '<span class="cat-links"><span class="screen-reader-text">Posted in:</span>' . esc_html__( '%1$s', 'uri' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				/* translators: %s: the list of categories */
+				printf( '<span class="cat-links"><span class="screen-reader-text">Posted in:</span>' . esc_html__( ' %s', 'uri' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '<span class="screen-reader-text">Tagged as:</span>', esc_html__( '', 'uri' ) );
+			/* translators: used between list items */
+			$tags_list = get_the_tag_list( '<span class="screen-reader-text">Tagged as:</span>', '' );
 			if ( $tags_list ) {
-				printf( '<span class="tags-links">' . esc_html__( '%1$s', 'uri' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				/* translators: %s: the list of tags */
+				printf( '<span class="tags-links">' . esc_html__( ' %s', 'uri' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
-
-		/*
-		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
-			*/
-			/*
-			 translators: %s: post title */
-			/*
-			comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'uri' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-			echo '</span>';
-		}
-		*/
 
 		edit_post_link(
 			sprintf(
