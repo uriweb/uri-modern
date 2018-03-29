@@ -23,9 +23,9 @@ Finally, as noted by the fourth guiding principle, it's important to emphasize t
 
 ## Theme details
 
-[![Master Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=master)](https://travis-ci.org/uriweb/uri-modern)
-[![Develop Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=develop)](https://travis-ci.org/uriweb/uri-modern)
-[![devDependencies Status](https://david-dm.org/uriweb/uri-modern/dev-status.svg)](https://david-dm.org/uriweb/uri-modern?type=dev)
+[![Master Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=master "Master build status")](https://travis-ci.org/uriweb/uri-modern)
+[![Develop Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=develop "Develop build status")](https://travis-ci.org/uriweb/uri-modern)
+[![devDependencies Status](https://david-dm.org/uriweb/uri-modern/dev-status.svg "devDependencies status")](https://david-dm.org/uriweb/uri-modern?type=dev)
 
 Contributors: Brandon Fuller, John Pennypacker  
 Tags: themes  
