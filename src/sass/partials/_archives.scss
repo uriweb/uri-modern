@@ -61,6 +61,10 @@ body.archive {
         
     }
     
+    .entry-footer {
+        padding: 0 1.5rem 1rem;
+    }
+    
 }
 
 @media screen and (min-width: $break1) {
@@ -70,12 +74,13 @@ body.archive {
             padding: 2rem 2rem .7rem;
         }
         
-        .entry-title {
+        .entry-title,
+        .entry-content {
             padding: 0;
         }
         
-        .entry-content {
-            padding: 0;
+        .entry-footer {
+            padding: 0 0 0.5rem;
         }
         
         .continue-reading {
