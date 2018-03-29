@@ -9,6 +9,6 @@
 
 <div class="tags">
 
-    <?php the_tags() ?>
+    <?php the_tags('<span class="screen-reader-text">Tags:</span>', '') ?>
     
 </div>
