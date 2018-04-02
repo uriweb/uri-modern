@@ -13,6 +13,7 @@
   },
   "author": "URI",
   "authorHuman": "Brandon Fuller <bjcfuller@uri.edu>",
+  "authorURI": "https://today.uri.edu",
   "license": "GPL-3.0",
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {

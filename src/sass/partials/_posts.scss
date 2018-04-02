@@ -2,6 +2,15 @@
    POSTS AND PAGES
    ============================== */
 
+article.page,
+article.post {
+    
+    &.sticky {
+        display: initial;
+    }
+    
+}
+
 article.page {
     
     .entry-title {
@@ -143,6 +152,10 @@ nav.post-navigation {
 
 #comments {
     display: none;
+}
+
+.bypostauthor {
+    display: initial;
 }
 
 

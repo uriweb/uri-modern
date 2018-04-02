@@ -23,6 +23,10 @@
     
 }
 
+.wp-caption-text {
+    display: block;
+}
+
 @media screen and (min-width: $break1) {
     .featured-image img {
         width: auto;
