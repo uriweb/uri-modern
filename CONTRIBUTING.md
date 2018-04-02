@@ -205,7 +205,7 @@ Essentially, this involves running:
 $ composer create-project wp-coding-standards/wpcs --no-dev
 ```
 
-Now we need to tell PHP CodeSniffer about the new rules.  If you want to use the `phpcs` and `phpcbf` commands globally, you'll need to use the absolute path to the `wpcs` directory:
+Now we need to tell PHP CodeSniffer about the new rules.  If you're using the `phpcs` and `phpcbf` commands globally, you'll need to use the absolute path to the `wpcs` directory:
 ```shell
 $ phpcs --config-set installed_paths /Users/<username>/.composer/wpcs
 ```
@@ -230,16 +230,16 @@ $ phpcs --standard=WordPress some_file.php
 $ phpcbf --standard=WordPress some_file.php
 ```
 
-To use the custom ruleset included in URI Modern, use the `--standard=.codesniffer.ruleset.xml` arguement:
-
-```shell
-$ phpcs --standard=.codesniffer.ruleset.xml some_file.php
-```
-
 Specifying the coding standard each time you run the test might get annoying.  To use the WordPress ruleset by default, run:
 
 ```shell
 $ phpcs --config-set default_standard WordPress
+```
+
+To use the custom ruleset included in URI Modern, use the `--standard=.codesniffer.ruleset.xml` arguement:
+
+```shell
+$ phpcs --standard=.codesniffer.ruleset.xml some_file.php
 ```
 
 You can check out all the PHP CodeSniffer [config options](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options) on their [wiki](https://github.com/squizlabs/PHP_CodeSniffer/wiki).
