@@ -21,6 +21,7 @@ var banner = ['/*',
 
 // include plug-ins
 var jshint = require('gulp-jshint');
+var jscs = require('gulp-jscs');
 var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 var concat = require('gulp-concat');
@@ -63,7 +64,12 @@ function scripts(done) {
   gulp.src('./src/js/*.js')
     .pipe(jshint(done))
     .pipe(jshint.reporter('default'));
-	gulp.src('./src/js/*.js')
+    
+  gulp.src('./src/js/*.js')
+    .pipe(jscs(done))
+    .pipe(jscs.reporter());
+
+  gulp.src('./src/js/*.js')
     .pipe(concat('script.min.js'))
     //.pipe(stripDebug())
     .pipe(uglify())

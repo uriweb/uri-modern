@@ -23,6 +23,7 @@
     "gulp-concat": ">=2.6.1",
     "gulp-header": "^2.0.5",
     "gulp-imagemin": "^4.1.0",
+    "gulp-jscs": "^4.1.0",
     "gulp-jshint": ">=2.0.4",
     "gulp-postcss": ">=7.0.0",
     "gulp-sass": ">=3.0.0",

@@ -131,7 +131,7 @@
 		 * Note that this does not add to the total animation time, but rather subtracts from it.
 		 */
 		l = 0.2; // Set this.
-		u = Math.max( ( t - l) / ( 1 - l ), 0 ); // The adjusted timing function.
+		u = Math.max( ( t - l ) / ( 1 - l ), 0 ); // The adjusted timing function.
 
 		/*
 		 * The easing function.
