@@ -184,16 +184,13 @@ $ vendor/bin/phpcs --version
 
 Right now, you won't be able to run PHP CodeSniffer from your project directory.  You'll have to run it from `~/.composer` and use absolute paths to any files and directories you want to test.  This will get old fast.
 
-To use `phpcs` and `phpcbf` as global commands, do one of these:
+To use `phpcs` and `phpcbf` as global commands, symlink to them in `/usr/local/bin`:
 
-* Symlink to them from `/usr/local/bin`:
-
-  ```shell
-  $ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcs /usr/local/bin/phpcs
-  $ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcbf /usr/local/bin/phpcbf
-  ```
-
-* Add `/Users/<username>/.composer/vendor/bin` to your `$PATH`.
+```shell
+# Replace <username> with yours
+$ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcs /usr/local/bin
+$ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcbf /usr/local/bin
+```
 
 You should be able to run `phpcs -h` and `phpcbf -h` from anywhere now.
 
