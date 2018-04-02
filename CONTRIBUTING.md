@@ -2,14 +2,15 @@
 
 Thanks for your interest in contributing to URI Modern!  As a contributor, there are a few things we'd like you to know.
 
-* [Questions or Problems?](#questions)
-* [Bug Reporting](#bugs)
-* [Feature Requests](#features)
+* [Have a question?](#questions)
+* [Find a bug?](#bugs)
+* [Have an idea for a feature?](#features)
+* [Guiding Principles](#principles)
 * [Submission Guidelines](#submission)
 * [Development Guidelines](#development)
 * [Code of Conduct](#conduct)
 
-## <a name="questions"></a>Have a Question?
+## <a name="questions"></a>Have a question?
 
 If you have a question about using or contributing to URI Modern that isn't answered here, let us know.  However, we ask that you not open issues for general questions.
 
@@ -33,7 +34,20 @@ Better yet, if you can fix the bug yourself, [submit a pull request](#submit-pr)
 
 If you have an idea for a new or improved feature, you can request it by [submitting an issue](#submit-issue) to the repository.
 
-If there's a new feature you'd like to work on and eventually see implemented, we ask that you first submit an issue with a proposal of your work.  That way we can make sure that your work would be beneficial to the project, and you can avoid spending time on a feature that we wouldn't end up implementing.
+If there's a new feature you'd like to work on and eventually see implemented, we ask that you first submit an issue with a proposal of your work.  That way we can make sure that your work would be beneficial to the project, and you can avoid spending time on a feature that we wouldn't end up implementing.  It might be helpful to read about our [guiding principles](#principles).
+
+## <a name="principles"></a>Guiding Principles
+
+URI Modern is a mobile-first design, built to embrace the latest web technologies and strictest accessibility standards. Our approach can be summarized by four guiding principles. We want to:
+
+1. Design a clean, beautiful interface that elevates content
+2. Be responsive and accessible
+3. Use clean, modern, and efficient code
+4. Avoid business logic
+
+Built into each of these principles is the goal of being future-proof.  By building a theme with a lean, modern architecture that leverages as much native WordPress functionality as possible, we can reduce maintenance and avoid pitfalls as WordPress inevitably grows and changes.
+
+Finally, as noted by the fourth guiding principle, it's important to emphasize that URI Modern is, by design, a theme, and *only* a theme.  This means that changing from this theme to another should change the look and feel of the website, but not impact its functionality.  Moving business logic out of the theme is a key developmental goal of this project, and will simplify maintenance and development of the website going forward.  To that end, many of the other URI Web repositories are plugins that add functionality outside the display layer.
 
 ## <a name="submission"></a>Submission Guidelines
 
@@ -105,7 +119,10 @@ $ npm install -g gulp-cli
 Finally, install gulp locally, along with dependencies:
 
 ```shell
-# Install gulp in your project directory
+# Hop into your project dir (if you're not there already)
+$ cd <project_dir>
+
+# Install gulp
 $ npm install gulp
 
 # Install gulp dependencies
@@ -139,7 +156,7 @@ For this guide, we'll use Composer.  Here's how to [install it](https://getcompo
 To make the `composer` command available, run:
 
 ```shell
-# You may need to run in sudo
+# You may need to run with sudo
 $ mv composer.phar /usr/local/bin/composer
 ```
 
@@ -167,12 +184,16 @@ $ vendor/bin/phpcs --version
 
 Right now, you won't be able to run PHP CodeSniffer from your project directory.  You'll have to run it from `~/.composer` and use absolute paths to any files and directories you want to test.  This will get old fast.
 
-To use `phpcs` and `phpcbf` as global commands, symlink to them from `/usr/local/bin`:
+To use `phpcs` and `phpcbf` as global commands, do one of these:
 
-```shell
-$ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcs /usr/local/bin/phpcs
-$ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcbf /usr/local/bin/phpcbf
-```
+* Symlink to them from `/usr/local/bin`:
+
+  ```shell
+  $ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcs /usr/local/bin/phpcs
+  $ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcbf /usr/local/bin/phpcbf
+  ```
+
+* Add `/Users/<username>/.composer/vendor/bin` to your `$PATH`.
 
 You should be able to run `phpcs -h` and `phpcbf -h` from anywhere now.
 
@@ -224,7 +245,7 @@ Specifying the coding standard each time you run the test might get annoying.  T
 $ phpcs --config-set default_standard WordPress
 ```
 
-You can check out all the PHP CodeSniffer [config options](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options) on the [wiki](https://github.com/squizlabs/PHP_CodeSniffer/wiki).
+You can check out all the PHP CodeSniffer [config options](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options) on their [wiki](https://github.com/squizlabs/PHP_CodeSniffer/wiki).
 
 ### Git Model
 
