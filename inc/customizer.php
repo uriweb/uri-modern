@@ -228,7 +228,7 @@ function uri_modern_options_site_header( $wp_customize ) {
 		'site_header_alternate_titles', array(
 			'default' => '',
 			'type'    => 'option',
-            'sanitize_callback' => 'sanitize_textarea_field'
+			'sanitize_callback' => 'sanitize_textarea_field',
 		)
 	);
 
