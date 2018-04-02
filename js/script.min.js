@@ -4,13 +4,13 @@ Theme URI: https://www.uri.edu
 Author: URI
 Author URI: https://today.uri.edu
 Description: A modern WordPress theme for the University of Rhode Island
-Version: 0.7.1
+Version: 0.8.0
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: uri-modern
 Tags: education, theme-options
 
-@version v0.7.1
+@version v0.8.0
 @author Brandon Fuller <bjcfuller@uri.edu>
 
 */
