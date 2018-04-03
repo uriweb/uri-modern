@@ -1,8 +1,9 @@
 /* ==============================
-   FEATURED IMAGES
+   FEATURED IMAGES & CAPTIONS
    ============================== */
 
-.featured-image {
+.featured-image,
+.wp-caption {
     
     max-width: 100%;
     margin-bottom: 2rem;
@@ -20,6 +21,10 @@
         color: $darkgrey;
     }
     
+}
+
+.wp-caption-text {
+    display: block;
 }
 
 @media screen and (min-width: $break1) {

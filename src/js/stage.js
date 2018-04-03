@@ -104,7 +104,7 @@
 
 	function drawElements( els ) {
 
-		var p, d, t, e;
+		var p, d, t, l, u, e;
 
 		// The scroll position.
 		p = window.pageYOffset;
@@ -126,16 +126,24 @@
 		t = Math.min( p / d * 1, 1 );
 
 		/*
+		 * The animation delay, from 0 - 1.
+		 * Essentially, the value of t at which the animaion should start.
+		 * Note that this does not add to the total animation time, but rather subtracts from it.
+		 */
+		l = 0.2; // Set this.
+		u = Math.max( ( t - l ) / ( 1 - l ), 0 ); // The adjusted timing function.
+
+		/*
 		 * The easing function.
 		 * The second parameter is the power.
 		 * 1: linear, 2: quad, 3: cubic, 4: quart, 5: quint, and so on.
 		 *
 		 * @link http://upshots.org/actionscript/jsas-understanding-easing
 		 */
-		e = Math.pow( t / 1, 4 );
+		e = Math.pow( u / 1, 4 );
 
 		// Adjust the styles accordingly.
-		els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + ( t * 50 ) + 'px); backdrop-filter: blur(' + ( t * 50 ) + 'px); background-color: rgba(250,250,250,' + t + ')';
+		els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + ( u * 50 ) + 'px); backdrop-filter: blur(' + ( u * 50 ) + 'px); background-color: rgba(250,250,250,' + u + ')';
 		if ( null !== els.navigation ) {
 			els.navigation.style.opacity = Math.min( e * 8, 1 );
 		}

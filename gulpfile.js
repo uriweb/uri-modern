@@ -2,16 +2,16 @@ var gulp = require('gulp');
 var pkg = require('./package.json');
 
 var banner = ['/*',
-  'Theme Name: <%= pkg.name %>',
+  'Theme Name: <%= pkg.themeName %>',
   'Theme URI: <%= pkg.homepage %>',
   'Author: <%= pkg.author %>',
-  'Author URI: <%= pkg.homepage %>',
+  'Author URI: <%= pkg.authorURI %>',
   'Description: <%= pkg.description %>',
   'Version: <%= pkg.version %>',
   'License: <%= pkg.license %>',
   'License URI: <%= pkg.licenseURI %>',
-  'Text Domain: <%= pkg.name %>',
-  'Tags:',
+  'Text Domain: <%= pkg.textDomain %>',
+  'Tags: education, theme-options',
   '',
   '@version v<%= pkg.version %>',
   '@author <%= pkg.authorHuman %>',
@@ -21,6 +21,7 @@ var banner = ['/*',
 
 // include plug-ins
 var jshint = require('gulp-jshint');
+var jscs = require('gulp-jscs');
 var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 var concat = require('gulp-concat');
@@ -63,7 +64,12 @@ function scripts(done) {
   gulp.src('./src/js/*.js')
     .pipe(jshint(done))
     .pipe(jshint.reporter('default'));
-	gulp.src('./src/js/*.js')
+    
+  gulp.src('./src/js/*.js')
+    .pipe(jscs(done))
+    .pipe(jscs.reporter());
+
+  gulp.src('./src/js/*.js')
     .pipe(concat('script.min.js'))
     //.pipe(stripDebug())
     .pipe(uglify())

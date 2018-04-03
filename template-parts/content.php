@@ -29,13 +29,13 @@
 
 		$continue = sprintf(
 			/* translators: %s: Name of current post. */
-						wp_kses( __( '<span class="continue-reading">Continue reading %s <span class="meta-nav">&rarr;</span></span>', 'uri-modern' ), array( 'span' => array( 'class' => array() ) ) ),
+						wp_kses( __( '<span class="continue-reading">Continue reading %s <span class="meta-nav">&rarr;</span></span>', 'uri' ), array( 'span' => array( 'class' => array() ) ) ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		);
 
 		if ( ! is_single() && ! is_page() && $excerpt = get_the_excerpt() ) {
 			the_excerpt();
-			echo '<a href="' . get_permalink() . '">' . $continue . '</a>';
+			echo '<a class="continue-reading-link" href="' . get_permalink() . '">' . $continue . '</a>';
 		} else {
 			the_content( $continue );
 
@@ -49,7 +49,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<!-- <footer class="entry-footer">
+	<footer class="entry-footer">
 		<?php uri_modern_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

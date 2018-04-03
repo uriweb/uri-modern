@@ -2,6 +2,15 @@
    POSTS AND PAGES
    ============================== */
 
+article.page,
+article.post {
+    
+    &.sticky {
+        display: initial;
+    }
+    
+}
+
 article.page {
     
     .entry-title {
@@ -40,23 +49,6 @@ article.post {
     footer {
         font-size: .8rem;
         color: $darkgrey;
-    }
-    
-    footer .cat-links a {
-        font-size: .7rem;
-        display: inline-block;
-        padding: 4px 10px;
-        margin: 0 2px;
-        color: #fff;
-        text-transform: capitalize;
-        background-color: $keaneyblue;
-        border-radius: .2rem;
-        transition: all .1s ease-in-out;
-    }
-    
-    footer .cat-links a:hover,
-    footer .cat-links a:focus {
-        background-color: $blue;
     }
     
 }
@@ -160,6 +152,10 @@ nav.post-navigation {
 
 #comments {
     display: none;
+}
+
+.bypostauthor {
+    display: initial;
 }
 
 
