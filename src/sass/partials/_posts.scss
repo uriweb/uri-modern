@@ -159,6 +159,31 @@ nav.post-navigation {
 }
 
 
+/* Video Post Format */
+
+.single-format-video .oembed iframe {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 2rem;
+}
+    
+@media screen and (min-width: $break1) {
+    
+    .single-format-video .oembed iframe {
+        height: 400px;
+    }
+    
+}
+
+@media screen and (min-width: $break2) {
+    
+    .single-format-video .oembed iframe {
+        height: 500px;
+    }
+    
+}
+
+
 /* Search Results */
 
 body.search-results {
