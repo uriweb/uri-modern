@@ -1,7 +1,9 @@
 {
   "name": "uri-modern",
-  "version": "0.7.1",
-  "description": "A modern WordPress theme for the University of Rhode Island",
+  "version": "0.8.0",
+  "description": "URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.",
+  "themeName": "URI Modern",
+  "textDomain": "uri",
   "main": "index.php",
   "homepage": "https://www.uri.edu",
   "repository": {
@@ -11,7 +13,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "URI",
+  "author": "University of Rhode Island",
   "authorHuman": "Brandon Fuller <bjcfuller@uri.edu>",
   "authorURI": "https://today.uri.edu",
   "license": "GPL-3.0",

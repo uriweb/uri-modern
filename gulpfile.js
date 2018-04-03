@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var pkg = require('./package.json');
 
 var banner = ['/*',
-  'Theme Name: <%= pkg.name %>',
+  'Theme Name: <%= pkg.themeName %>',
   'Theme URI: <%= pkg.homepage %>',
   'Author: <%= pkg.author %>',
   'Author URI: <%= pkg.authorURI %>',
@@ -10,7 +10,7 @@ var banner = ['/*',
   'Version: <%= pkg.version %>',
   'License: <%= pkg.license %>',
   'License URI: <%= pkg.licenseURI %>',
-  'Text Domain: <%= pkg.name %>',
+  'Text Domain: <%= pkg.textDomain %>',
   'Tags: education, theme-options',
   '',
   '@version v<%= pkg.version %>',
