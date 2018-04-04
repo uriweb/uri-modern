@@ -21,9 +21,9 @@
 	</header><!-- .entry-header -->
 
 	<?php
-        if ( ! has_post_format( 'video' ) ) {
-		  get_template_part( 'template-parts/featured-image' );
-        }
+	if ( ! has_post_format( 'video' ) ) {
+		get_template_part( 'template-parts/featured-image' );
+	}
 	?>
 
 	<div class="entry-content">
