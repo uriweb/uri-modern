@@ -39,7 +39,7 @@
 
 		// Create the stage overlay div.
 		overlay           = document.createElement( 'div' );
-		overlay.classList = 'stage-overlay';
+		overlay.className = 'stage-overlay';
 		stage.insertBefore( overlay, stage.childNodes[0] );
 
 		// Store the masthead specs.
