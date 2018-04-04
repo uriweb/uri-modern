@@ -92,9 +92,28 @@ if ( ! function_exists( 'uri_modern_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Add theme support for post formats
+		add_theme_support(
+			'post-formats', array(
+				'video',
+			)
+		);
+
 	}
 endif;
 add_action( 'after_setup_theme', 'uri_modern_setup' );
+
+
+/**
+ * Add post-formats to post_type 'post'.
+ */
+function uri_modern_add_post_formats_to_post() {
+	add_post_type_support( 'post', 'post-formats' );
+	register_taxonomy_for_object_type( 'post_format', 'post' );
+}
+add_action( 'init', 'uri_modern_add_post_formats_to_post', 11 );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
