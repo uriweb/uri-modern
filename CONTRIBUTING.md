@@ -217,17 +217,26 @@ $ phpcs -i
 
 #### Using PHP CodeSniffer
 
-To use PHP CodeSniffer in you project directory:
+The easiest way to use PHP CodeSniffer is to run the `.sniff` bash script included in URI Modern:
+
+```shell
+# In your project dir
+$ ./.sniff
+```
+
+This will run `phpcbf` and `phpcs` in sequence for the entire directory, using the custom ruleset and ignoring development files, much as you would if you were to run PHP CodeSniffer as described below.
+
+##### To use PHP CodeSniffer commands individually:
 
 ```shell
 # Hop into your project dir
 $ cd <project_dir>
 
 # Test code with PHP CodeSniffer
-$ phpcs --standard=WordPress some_file.php
+$ phpcs  --ignore=node_modules,gulpfile.js,js/script.built.js --standard=WordPress some_file.php
 
 # Automatically fix code with PHP Code Beautifier
-$ phpcbf --standard=WordPress some_file.php
+$ phpcbf --ignore=node_modules,gulpfile.js,js/script.built.js --standard=WordPress some_file.php
 ```
 
 Specifying the coding standard each time you run the test might get annoying.  To use the WordPress ruleset by default, run:
@@ -236,7 +245,7 @@ Specifying the coding standard each time you run the test might get annoying.  T
 $ phpcs --config-set default_standard WordPress
 ```
 
-To use the custom ruleset included in URI Modern, use the `--standard=.codesniffer.ruleset.xml` arguement:
+To use the custom ruleset included in URI Modern, set the `--standard` arguement:
 
 ```shell
 $ phpcs --standard=.codesniffer.ruleset.xml some_file.php

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+ignore=node_modules,work_files,gulpfile.js,js/script.min.js
+ruleset=.codesniffer.ruleset.xml
+warn=-n
+
+echo Running php code beautifier...
+phpcbf --standard=$ruleset --ignore=$ignore $warn .
+echo done beautifying.
+
+echo Running php codesniffer...
+phpcs --standard=$ruleset --ignore=$ignore $warn .
+echo done sniffing.
+
+echo done with sniff.
