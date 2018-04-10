@@ -9,22 +9,8 @@
  * @package uri-modern
  */
 
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<?php get_template_part( 'header-parts/head' ); ?>
+get_template_part( 'header-parts/head' ); ?>
 
-<body <?php body_class(); ?>>
-	
-<?php
-	$gtm = uri_modern_gtm_value();
-if ( ! empty( $gtm ) ) {
-	echo '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=' . $gtm . '" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
-}
-?>
-	
-<div id="page" class="site">
-	<!-- <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uri' ); ?></a> -->
-	
 	<div id="masthead">
 		<?php get_template_part( 'header-parts/brandbar' ); ?>
 		<?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
