@@ -58,10 +58,10 @@ if ( ! function_exists( 'uri_modern_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-        
-        // add custom URI image sizes
-        add_image_size( 'banner', 960 );
-        add_image_size( 'teaser-sq', 300, 300, TRUE );
+
+		// add custom URI image sizes
+		add_image_size( 'banner', 960 );
+		add_image_size( 'teaser-sq', 300, 300, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -113,10 +113,12 @@ add_action( 'after_setup_theme', 'uri_modern_setup' );
  * Label the custom image sizes.
  */
 function uri_modern_custom_sizes( $sizes ) {
-	return array_merge( $sizes, array(
-		'banner' => __( 'Banner' ),
-		'teaser-sq' => __( 'Teaser (square)' ),
-	) );
+	return array_merge(
+		 $sizes, array(
+			 'banner' => __( 'Banner' ),
+			 'teaser-sq' => __( 'Teaser (square)' ),
+		 )
+		);
 }
 add_filter( 'image_size_names_choose', 'uri_modern_custom_sizes' );
 
