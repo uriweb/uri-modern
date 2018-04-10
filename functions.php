@@ -60,8 +60,17 @@ if ( ! function_exists( 'uri_modern_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// add custom URI image sizes
-		add_image_size( 'banner', 960 );
-		add_image_size( 'teaser-sq', 300, 300, true );
+		add_image_size( 'people', 1000, 1000 );
+		add_image_size( 'people-preview', 360, 360 );
+		add_image_size( 'news', 1000 );
+		add_image_size( 'news-preview', 200, 200 );
+		add_image_size( 'bigphone-column', 728 );
+		add_image_size( 'tablet-column', 1436 );
+		add_image_size( 'full-column', 2000 );
+		add_image_size( 'hero', 2560, 1000 );
+		add_image_size( 'superhero', 2560, 1800 );
+		add_image_size( 'card-small', 700 );
+		add_image_size( 'card-large', 1000 );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -115,8 +124,17 @@ add_action( 'after_setup_theme', 'uri_modern_setup' );
 function uri_modern_custom_sizes( $sizes ) {
 	return array_merge(
 		 $sizes, array(
-			 'banner' => __( 'Banner' ),
-			 'teaser-sq' => __( 'Teaser (square)' ),
+			 'people' => __( 'People' ),
+			 'people-preview' => __( 'People (preview)' ),
+			 'news' => __( 'News Item' ),
+			 'news-preview' => __( 'News Item (preview)' ),
+			 'bigphone-column' => __( 'Phone' ),
+			 'tablet-column' => __( 'Tablet' ),
+			 'full-column' => __( 'Desktop' ),
+			 'hero' => __( 'Hero' ),
+			 'superhero' => __( 'Superhero' ),
+			 'card-small' => __( 'Card (small)' ),
+			 'card-large' => __( 'Card (large)' ),
 		 )
 		);
 }
