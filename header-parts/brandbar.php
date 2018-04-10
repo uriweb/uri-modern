@@ -17,6 +17,7 @@
 			<form id="gs" method="get" action="https://www.uri.edu/search" name="global_general_search_form">
 				<input type="hidden" name="cx" value="016863979916529535900:17qai8akniu" />
 				<input type="hidden" name="cof" value="FORID:11" />
+                <label id="gs-query-label" for="gs-query">Searchbox</label>
 				<input role="searchbox" name="q" id="gs-query" value="<?php print ( isset( $_GET['q'] ) ) ? htmlentities( $_GET['q'] ) : ''; ?>" type="text" placeholder="Search" />
 				<input type="submit" id="gs-submit" class="searchsubmit" name="searchsubmit" value="Search" />
 			</form>
