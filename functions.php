@@ -67,8 +67,7 @@ if ( ! function_exists( 'uri_modern_setup' ) ) :
 		add_image_size( 'bigphone-column', 728 );
 		add_image_size( 'tablet-column', 1436 );
 		add_image_size( 'full-column', 2000 );
-		add_image_size( 'hero', 2560, 1000 );
-		add_image_size( 'superhero', 2560, 1800 );
+		add_image_size( 'hero', 2560 );
 		add_image_size( 'card-small', 700 );
 		add_image_size( 'card-large', 1000 );
 
@@ -132,7 +131,6 @@ function uri_modern_custom_sizes( $sizes ) {
 			 'tablet-column' => __( 'Tablet' ),
 			 'full-column' => __( 'Desktop' ),
 			 'hero' => __( 'Hero' ),
-			 'superhero' => __( 'Superhero' ),
 			 'card-small' => __( 'Card (small)' ),
 			 'card-large' => __( 'Card (large)' ),
 		 )
@@ -159,7 +157,7 @@ add_action( 'init', 'uri_modern_add_post_formats_to_post', 11 );
  * @global int $content_width
  */
 function uri_modern_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'uri_modern_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'uri_modern_content_width', 1000 );
 }
 add_action( 'after_setup_theme', 'uri_modern_content_width', 0 );
 
