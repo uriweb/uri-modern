@@ -29,6 +29,7 @@
     "gulp-jshint": ">=2.0.4",
     "gulp-postcss": ">=7.0.0",
     "gulp-sass": ">=3.0.0",
+    "gulp-shell": "^0.6.5",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-strip-debug": "^3.0.0",
     "gulp-uglify": "^3.0.0",
