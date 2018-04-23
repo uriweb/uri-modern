@@ -32,6 +32,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
 var postcss = require('gulp-postcss');
 var header = require('gulp-header');
+var shell = require('gulp-shell');
 
 
 // options
@@ -113,6 +114,18 @@ function images(done) {
   //console.log('images ran');
 }
 
+// run codesniffer
+gulp.task('sniffs', sniffs);
+
+function sniffs(done) {
+    
+    return gulp.src('.', {read:false})
+        .pipe(shell(['./.sniff']));
+    
+    done();
+    //console.log('sniffs ran');
+}
+
 // watch
 gulp.task('watcher', watcher);
 
@@ -125,12 +138,15 @@ function watcher(done) {
 
 	// watch for image changes
 	gulp.watch('./src/images/**/*', images);
+    
+    // watch for any file change
+    gulp.watch('./*', sniffs);
 
 	done();
 }
 
 gulp.task( 'default',
-	gulp.parallel('images', 'scripts', 'styles', 'watcher', function(done){
+	gulp.parallel('images', 'scripts', 'styles', 'sniffs', 'watcher', function(done){
 		done();
 	})
 );
