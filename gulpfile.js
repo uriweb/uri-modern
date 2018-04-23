@@ -139,8 +139,8 @@ function watcher(done) {
 	// watch for image changes
 	gulp.watch('./src/images/**/*', images);
     
-    // watch for any file change
-    gulp.watch('./*', sniffs);
+    // watch for PHP change
+    gulp.watch('./**/*.php', sniffs);
 
 	done();
 }
