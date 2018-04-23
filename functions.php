@@ -61,11 +61,11 @@ if ( ! function_exists( 'uri_modern_setup' ) ) :
 
 		// add custom URI image sizes
 		add_image_size( 'third_column', 364 );
-        add_image_size( 'half_column', 500 );
-        add_image_size( 'full_column', 1000 );
-        add_image_size( 'hero', 1280 );
-        add_image_size( 'full_column@2x', 2000 );
-        add_image_size( 'hero@2x', 2560 );
+		add_image_size( 'half_column', 500 );
+		add_image_size( 'full_column', 1000 );
+		add_image_size( 'hero', 1280 );
+		add_image_size( 'full_column@2x', 2000 );
+		add_image_size( 'hero@2x', 2560 );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
@@ -123,7 +123,7 @@ function uri_modern_custom_sizes( $sizes ) {
 			 'half_column' => __( 'Half Column' ),
 			 'full_column' => __( 'Full Column' ),
 			 'hero' => __( 'Hero' ),
-             'full_column@2x' => __( 'Full Column @2x' ),
+			 'full_column@2x' => __( 'Full Column @2x' ),
 			 'hero@2x' => __( 'Hero @2x' ),
 		 )
 		);
