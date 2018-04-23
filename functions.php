@@ -59,6 +59,14 @@ if ( ! function_exists( 'uri_modern_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		// add custom URI image sizes
+		add_image_size( 'third_column', 364 );
+		add_image_size( 'half_column', 500 );
+		add_image_size( 'full_column', 1000 );
+		add_image_size( 'hero', 1280 );
+		add_image_size( 'full_column@2x', 2000 );
+		add_image_size( 'hero@2x', 2560 );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
@@ -106,6 +114,24 @@ add_action( 'after_setup_theme', 'uri_modern_setup' );
 
 
 /**
+ * Label the custom image sizes.
+ */
+function uri_modern_custom_sizes( $sizes ) {
+	return array_merge(
+		 $sizes, array(
+			 'third_column' => __( 'Third Column' ),
+			 'half_column' => __( 'Half Column' ),
+			 'full_column' => __( 'Full Column' ),
+			 'hero' => __( 'Hero' ),
+			 'full_column@2x' => __( 'Full Column @2x' ),
+			 'hero@2x' => __( 'Hero @2x' ),
+		 )
+		);
+}
+add_filter( 'image_size_names_choose', 'uri_modern_custom_sizes' );
+
+
+/**
  * Add post-formats to post_type 'post'.
  */
 function uri_modern_add_post_formats_to_post() {
@@ -123,7 +149,7 @@ add_action( 'init', 'uri_modern_add_post_formats_to_post', 11 );
  * @global int $content_width
  */
 function uri_modern_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'uri_modern_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'uri_modern_content_width', 1000 );
 }
 add_action( 'after_setup_theme', 'uri_modern_content_width', 0 );
 
