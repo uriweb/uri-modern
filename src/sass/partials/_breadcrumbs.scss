@@ -6,8 +6,7 @@
     
     & {
         display: none;
-        margin: 1.5rem 0 1rem;
-        font-size: .7rem;
+        font-size: .8rem;
         font-family: $type-header;
         font-weight: 600;
         color: $darkgrey;
@@ -16,19 +15,127 @@
         z-index: 10;
     }
     
+    &.has-js {
+        
+        display: block;
+        margin: 1rem 0 0;
+        
+        div {
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        div:before {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            display: block;
+            content: '';
+            width: 7px;
+            height: 7px;
+            background: transparent;
+            border-left: 1px solid $darkgrey;
+            border-bottom: 1px solid $darkgrey;
+            transform: rotate(45deg);
+        }
+        
+        div:hover,
+        div:focus {
+            cursor: pointer;
+        }
+        
+        ol {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            list-style: none;
+            background: $darkgrey;
+            padding: 1rem;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: .2rem;
+            box-shadow: $level2;
+            color: $white;
+        }
+        
+        ol.active {
+            display: block;
+        }
+        
+        ol:before {
+            position: absolute;
+            display: block;
+            content: '';
+            top: -6px;
+            left: 20px;
+            width: 14px;
+            height: 14px;
+            transform: rotate(45deg);
+            background: $darkgrey;
+            border-top-left-radius: .1rem;
+        }
+        
+        li {
+            position: relative; 
+        }
+
+        li:last-child {
+            padding-left: 15px;
+        }
+
+        li:last-child:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 6px solid $grey;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+        
+        a {
+            color: $white;
+            font-weight: 400;
+        }
+        
+    }
+    
 } // #breadcrumbs
 
 @media screen and (min-width: 700px) {
     
-    #breadcrumbs {
+    #breadcrumbs,
+    #breadcrumbs.has-js {
         
         display: block;
+        margin: 1.5rem 0 1rem;
+        font-size: .7rem;
+        
+        div {
+            display: none;
+        }
 
         ol {
             display: block;
             list-style: none;
+            position: relative;
+            top: 0;
+            left: 0;
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
             margin: 0;
             padding: 0;
+            color: inherit;
+        }
+        
+        ol:before {
+            display: none;
         }
 
         ol:after {
