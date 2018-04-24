@@ -22,32 +22,46 @@
         
         div {
             position: relative;
-            padding-left: 15px;
+            padding: .5rem;
+            border-radius: .2rem;
+            display: inline-block;
         }
         
-        div:before {
-            position: absolute;
-            top: 2px;
-            left: 0;
-            display: block;
-            content: '';
-            width: 7px;
-            height: 7px;
-            background: transparent;
-            border-left: 1px solid $darkgrey;
-            border-bottom: 1px solid $darkgrey;
-            transform: rotate(45deg);
-        }
-        
+        &.active div,
         div:hover,
         div:focus {
             cursor: pointer;
+            background: #eee;
+        }
+        
+        span {
+            position: relative;
+            font-weight: 400;
+        }
+        
+        span:last-child {
+            margin-left: 8px;
+            padding-left: 18px;
+            font-weight: 600;
+        }
+
+        span:last-child:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 4px;
+            left: 0;
+            width: 7px;
+            height: 7px;
+            border-right: 1px solid $darkgrey;
+            border-top: 1px solid $darkgrey;
+            transform: rotate(45deg);
         }
         
         ol {
             display: none;
             position: absolute;
-            top: 30px;
+            top: 43px;
             left: 0;
             list-style: none;
             background: $darkgrey;
@@ -60,7 +74,7 @@
             color: $white;
         }
         
-        ol.active {
+        &.active ol {
             display: block;
         }
         
@@ -69,7 +83,7 @@
             display: block;
             content: '';
             top: -6px;
-            left: 20px;
+            left: 25px;
             width: 14px;
             height: 14px;
             transform: rotate(45deg);
@@ -78,24 +92,19 @@
         }
         
         li {
-            position: relative; 
+            position: relative;
         }
-
-        li:last-child {
-            padding-left: 15px;
-        }
-
-        li:last-child:before {
-            content: '';
-            display: block;
+        
+        li:not(:first-child):before {
             position: absolute;
-            top: 5px;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: 6px solid $grey;
-            border-top: 4px solid transparent;
-            border-bottom: 4px solid transparent;
+            display: block;
+            content: '';
+            width: 5px;
+            height: 15px;
+            top: -7px;
+            left: -.6rem;
+            border-left: 1px dotted $grey;
+            border-bottom: 1px dotted $grey;
         }
         
         a {
@@ -103,11 +112,22 @@
             font-weight: 400;
         }
         
+        a:hover,
+        a:focus {
+            color: #91d9ff;
+        }
+        
     }
     
 } // #breadcrumbs
 
-@media screen and (min-width: 700px) {
+@for $i from 1 through 20 {
+    #breadcrumbs.has-js li:nth-child(#{$i}) {
+        margin-left: calc( #{$i} * .6rem - .6rem );    
+    }
+}
+
+@media screen and (min-width: $break1) {
     
     #breadcrumbs,
     #breadcrumbs.has-js {
@@ -151,7 +171,7 @@
 
         li:not(:first-child) {
             margin-left: 8px;
-            padding-left: 15px;
+            padding-left: 18px;
         }
 
         li:not(:first-child):before {
@@ -160,11 +180,11 @@
             position: absolute;
             top: 4px;
             left: 0;
-            width: 0;
-            height: 0;
-            border-left: 6px solid $darkgrey;
-            border-top: 3px solid transparent;
-            border-bottom: 3px solid transparent;
+            width: 6px;
+            height: 6px;
+            border-right: 1px solid $darkgrey;
+            border-top: 1px solid $darkgrey;
+            transform: rotate(45deg);
         }
 
         a {
@@ -174,6 +194,7 @@
 
         a:hover,
         a:focus {
+            color: inherit;
             text-decoration: underline;
         }
         

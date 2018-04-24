@@ -12,30 +12,38 @@
 
     function initBreadcrumbs() {
 
-        var el, ol, crumbs, div;
+        var BC = {}, div = {}, i;
 
-        el = document.getElementById( 'breadcrumbs' );
-        ol = el.querySelector( 'ol' );
-        crumbs = ol.querySelectorAll( 'li' );
-        
-        el.classList.add( 'has-js' );
+        BC.el = document.getElementById( 'breadcrumbs' );
+        BC.ol = BC.el.querySelector( 'ol' );
+        BC.crumbs = BC.ol.querySelectorAll( 'li' );
 
-        div = document.createElement( 'div' );
-        div.innerHTML = crumbs[crumbs.length - 2].querySelector( 'a' ).innerHTML;
-        div.addEventListener( 'click', handleClick.bind( null, ol ) );
+        BC.el.classList.add( 'has-js' );
 
-        el.insertBefore( div, ol );
+        div.el = document.createElement( 'div' );
+
+        div.span = document.createElement( 'span' );
+        div.span.innerHTML = BC.crumbs[BC.crumbs.length - 2].querySelector( 'a' ).innerHTML;
+        div.el.appendChild( div.span );
+
+        div.span = document.createElement( 'span' );
+        div.span.innerHTML = BC.crumbs[BC.crumbs.length - 1].innerHTML;
+        div.el.appendChild( div.span );
+
+        div.el.addEventListener( 'click', handleClick.bind( null, BC.el ) );
+
+        BC.el.insertBefore( div.el, BC.ol );
 
     }
 
-    function handleClick( ol ) {
+    function handleClick( el ) {
 
         var c = 'active';
 
-        if ( ol.classList.contains( c ) ) {
-            ol.classList.remove( c );
+        if ( el.classList.contains( c ) ) {
+            el.classList.remove( c );
         } else {
-            ol.classList.add( c );
+            el.classList.add( c );
         }
 
     }
