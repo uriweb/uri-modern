@@ -60,6 +60,7 @@ if ( ! function_exists( 'uri_modern_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// add custom URI image sizes
+		add_image_size( 'thumbnail@2x', 300, 300, true );
 		add_image_size( 'third_column', 364 );
 		add_image_size( 'half_column', 500 );
 		add_image_size( 'full_column', 1000 );
@@ -119,6 +120,7 @@ add_action( 'after_setup_theme', 'uri_modern_setup' );
 function uri_modern_custom_sizes( $sizes ) {
 	return array_merge(
 		 $sizes, array(
+			 'thumbnail@2x' => __( 'Thumbnail @2x' ),
 			 'third_column' => __( 'Third Column' ),
 			 'half_column' => __( 'Half Column' ),
 			 'full_column' => __( 'Full Column' ),
@@ -129,6 +131,16 @@ function uri_modern_custom_sizes( $sizes ) {
 		);
 }
 add_filter( 'image_size_names_choose', 'uri_modern_custom_sizes' );
+
+
+/**
+ * Set max srcset image width to 2560px
+ */
+function set_max_srcset_image_width( $max_width ) {
+	$max_width = 2560;
+	return $max_width;
+}
+add_filter( 'max_srcset_image_width', 'set_max_srcset_image_width' );
 
 
 /**
