@@ -4,12 +4,21 @@ ignore=node_modules,work_files,gulpfile.js,js/script.min.js
 ruleset=.codesniffer.ruleset.xml
 warn=-n
 
-echo Running php code beautifier...
-phpcbf --standard=$ruleset --ignore=$ignore $warn .
-echo done beautifying.
+if hash phpcs 2>/dev/null; then
 
-echo Running php codesniffer...
-phpcs --standard=$ruleset --ignore=$ignore $warn .
-echo done sniffing.
+    echo Running php code beautifier...
+    phpcbf --standard=$ruleset --ignore=$ignore $warn .
+    echo done beautifying.
 
-echo done with sniff.
+    echo Running php codesniffer...
+    phpcs --standard=$ruleset --ignore=$ignore $warn .
+    echo done sniffing.
+
+    echo done with sniff.
+
+else 
+
+    echo PHP CodeSniffer not installed.
+    echo @see CONTRIBUTING.md to get set up.
+
+fi
