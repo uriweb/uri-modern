@@ -234,7 +234,7 @@
     }
 
     p {
-        color: rgba(255,255,255,.6);
+        color: rgba(255,255,255,.5);
         max-width: 100%;
         padding: 0;
         margin: 0;
@@ -244,18 +244,19 @@
     
     a {
         text-decoration: none;
-        color: #01a7ff;
-        font-weight: 600;
+    }
+    
+    a.jobs {
+        color: $white;
+    }
+    
+    a.subtle {
+        color: inherit;
     }
     
     a:hover,
     a:focus {
         text-decoration: underline;
-    }
-    
-    a.subtle {
-        color: inherit;
-        font-weight: inherit;
     }
 
 } // #legal
@@ -359,7 +360,7 @@
     
     #legal {
         width: 100%;
-        font-size: .7rem;
+        font-size: .8rem;
         margin-top: .5rem;
         padding: 0 25px;
     }

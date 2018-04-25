@@ -101,7 +101,7 @@
         background: #fff;
         box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
         width: 100%;
-        max-width: 100%;
+        max-width: 400px;
         margin: 0;
         list-style-type: none;
         border-radius: 0 0 .2rem .2rem;
@@ -134,11 +134,19 @@
         color: $white;
     }
     
+    li.current_page_ancestor>a {
+        border-bottom: 3px solid $midgrey;
+    }
+    
 }
 
 #cl-localnav {
     
     margin-bottom: 0;
+    
+    &>ul {
+        max-width: 100%;
+    }
     
     span.cl-menu-toggle.active ~ ul.cl-menu-list {
         display: block;

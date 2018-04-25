@@ -9,6 +9,10 @@
     max-width: 360px !important; 
 }
 
+.oembed-youtube-com iframe {
+    max-width: 100%;
+}
+
 .alignright,
 .alignleft {
     .oembed iframe {

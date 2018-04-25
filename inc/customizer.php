@@ -226,8 +226,8 @@ function uri_modern_options_site_header( $wp_customize ) {
 
 	$wp_customize->add_setting(
 		'site_header_alternate_titles', array(
-			'default' => '',
-			'type'    => 'option',
+			'default'           => '',
+			'type'              => 'option',
 			'sanitize_callback' => 'sanitize_textarea_field',
 		)
 	);

@@ -16,6 +16,9 @@
         <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found" />
         <exclude name="Squiz.Commenting.FileComment.Missing" />
         
+        <exclude name="Generic.WhiteSpace.ScopeIndent.IncorrectExact" />
+        <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect" />
+        
         <!-- comment formatting -->
 		<exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
 		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
