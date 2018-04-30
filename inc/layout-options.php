@@ -21,12 +21,12 @@ if ( function_exists( 'register_field_group' ) ) {
 			'fields'     => array(
 				array(
 					'key'          => 'field_502b9eb29fc45',
-					'label'        => 'Use Custom Page or Post Title?',
+					'label'        => 'Hide Title',
 					'name'         => 'pagetitle',
 					'type'         => 'true_false',
 					'instructions' => '',
 					'required'     => '0',
-					'message'      => 'If checked the standard page title will not be used and you can use your own in the body content of the page.',
+					'message'      => 'If checked, the page or post title will be hidden.',
 					'order_no'     => '0',
 				),
 			),
@@ -43,6 +43,18 @@ if ( function_exists( 'register_field_group' ) ) {
 						'operator' => '==',
 						'value'    => 'page',
 						'order_no' => 1,
+					),
+					array(
+						'param'    => 'post_type',
+						'operator' => '==',
+						'value'    => 'people',
+						'order_no' => 0,
+					),
+					array(
+						'param'    => 'post_type',
+						'operator' => '==',
+						'value'    => 'feature',
+						'order_no' => 0,
 					),
 				),
 				'allorany' => 'any',
