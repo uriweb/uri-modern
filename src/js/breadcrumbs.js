@@ -30,15 +30,13 @@
 		div.span.innerHTML = BC.crumbs[BC.crumbs.length - 1].innerHTML;
 		div.el.appendChild( div.span );
 
-		div.el.addEventListener( 'click', handleClick.bind( null, BC.el ) );
+		div.el.addEventListener( 'click', handleClick.bind( null, BC.el, 'active' ) );
 
 		BC.el.insertBefore( div.el, BC.ol );
 
 	}
 
-	function handleClick( el ) {
-
-		var c = 'active';
+	function handleClick( el, c ) {
 
 		if ( el.classList.contains( c ) ) {
 			el.classList.remove( c );
