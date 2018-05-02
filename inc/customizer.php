@@ -20,6 +20,7 @@ function uri_modern_customize_register( $wp_customize ) {
 
 	uri_modern_options_social_media( $wp_customize );
 	uri_modern_options_site_header( $wp_customize );
+	uri_modern_options_posts( $wp_customize );
 }
 add_action( 'customize_register', 'uri_modern_customize_register' );
 
@@ -228,13 +229,75 @@ function uri_modern_options_site_header( $wp_customize ) {
 
 
 /**
+ * Creates options for posts
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function uri_modern_options_posts( $wp_customize ) {
+
+	// Add section for post options.
+	$wp_customize->add_section(
+		'uri_modern_customizer_posts', array(
+			'title'    => __( 'Post Options', 'uri' ),
+			'priority' => 70,
+		)
+	);
+
+	/* Display categories */
+	$wp_customize->add_setting(
+		'display_post_categories', array(
+			'default'           => '',
+			'type'              => 'option',
+			'sanitize_callback' => 'uri_modern_validate_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'display_post_categories',
+			array(
+				'section'     => 'uri_modern_customizer_posts',
+				'label'       => __( 'Display post categories', 'uri' ),
+				'description' => __( 'Display categories on posts and archive pages', 'uri' ),
+				'type'        => 'checkbox',
+			)
+		)
+	);
+
+	/* Display tags */
+	$wp_customize->add_setting(
+		'display_post_tags', array(
+			'default'           => '',
+			'type'              => 'option',
+			'sanitize_callback' => 'uri_modern_validate_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'display_post_tags',
+			array(
+				'section'     => 'uri_modern_customizer_posts',
+				'label'       => __( 'Display post tags', 'uri' ),
+				'description' => __( 'Display tags on posts and archive pages', 'uri' ),
+				'type'        => 'checkbox',
+			)
+		)
+	);
+
+}
+
+
+/**
  * Sanitize input from a checkbox.  It'll be 0 or 1.
  *
  * @param mixed $value the value to be sanitized.
  * @return int
  */
 function uri_modern_validate_checkbox( $value ) {
-	return filter_var( $value, FILTER_SANITIZE_NUMBER_INT );
+		return filter_var( $value, FILTER_SANITIZE_NUMBER_INT );
 }
 
 
@@ -250,13 +313,13 @@ function uri_modern_validate_checkbox( $value ) {
  * @return mixed: str on success; NULL on failure
  */
 function uri_modern_sanitize_url( $url ) {
-	$out = filter_var( $url, FILTER_VALIDATE_URL );
-	if ( ! empty( $url ) && false === $out ) {
+		$out = filter_var( $url, FILTER_VALIDATE_URL );
+		if ( ! empty( $url ) && false === $out ) {
 		// returning NULL triggers the WP UI to show that the value is unacceptable.
 		return null;
-	} else {
-		return $out;
-	}
+			} else {
+	return $out;
+			}
 }
 
 
@@ -264,6 +327,6 @@ function uri_modern_sanitize_url( $url ) {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function uri_modern_customize_preview_js() {
-	wp_enqueue_script( 'uri-modern-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), uri_modern_cache_buster(), true );
+		wp_enqueue_script( 'uri-modern-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), uri_modern_cache_buster(), true );
 }
 add_action( 'customize_preview_init', 'uri_modern_customize_preview_js' );
