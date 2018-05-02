@@ -33,15 +33,7 @@ if ( get_option( 'site_header_text_color' ) ) {
 			
 			<h1 class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php
-
-					if ( uri_modern_use_alternate_site_title() ) {
-						the_title();
-					} else {
-						bloginfo( 'name' );
-					}
-
-					?>
+					<?php bloginfo( 'name' ); ?>
 				</a>
 			</h1>
 			<?php
