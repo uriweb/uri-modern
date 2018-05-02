@@ -49,14 +49,14 @@ if ( ! function_exists( 'uri_modern_entry_footer' ) ) :
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items */
 			$categories_list = get_the_category_list( esc_html__( ' ', 'uri' ) );
-			if ( $categories_list && uri_modern_categorized_blog() ) {
+			if ( $categories_list && uri_modern_categorized_blog() && get_option( 'display_post_categories' ) ) {
 				/* translators: %s: the list of categories */
 				printf( '<span class="cat-links"><span class="screen-reader-text">Posted in:</span>' . esc_html__( ' %s', 'uri' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items */
 			$tags_list = get_the_tag_list( '<span class="screen-reader-text">Tagged as:</span>', '' );
-			if ( $tags_list ) {
+			if ( $tags_list && get_option( 'display_post_tags' ) ) {
 				/* translators: %s: the list of tags */
 				printf( '<span class="tags-links">' . esc_html__( ' %s', 'uri' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
