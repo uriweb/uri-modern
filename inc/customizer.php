@@ -18,6 +18,11 @@ function uri_modern_customize_register( $wp_customize ) {
 	// rename "Header Image" section to "Header".
 	$wp_customize->get_section( 'header_image' )->title = esc_html__( 'Header / Footer', 'uri' );
 
+	// remove unwanted sections.
+	$wp_customize->remove_section( 'colors' );
+	$wp_customize->remove_section( 'background_image' );
+
+	// add custom sections and settings/controls
 	uri_modern_options_social_media( $wp_customize );
 	uri_modern_options_site_header( $wp_customize );
 	uri_modern_options_posts( $wp_customize );
