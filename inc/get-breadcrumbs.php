@@ -10,11 +10,13 @@
  */
 function uri_modern_breadcrumbs() {
 	$crumbs  = array();
-	$prepend = explode( "\n", get_option( 'uri-modern-breadcrumbs', 'The University of Rhode Island (https://www.uri.edu)' ) );
+
+	$option_val = get_option( 'breadcrumbs_prepend' );
+	$prepend = empty( $option_val ) ? array( '[The University of Rhode Island](https://www.uri.edu)' ) : explode( "\n", $option_val );
 
 	foreach ( $prepend as $l ) {
 		$bits = explode( '(', $l );
-		$name = trim( $bits[0] );
+		$name = trim( $bits[0], '[]' );
 		$href = rtrim( $bits[1], ')' );
 		if ( ! empty( $name ) && ! empty( $href ) ) {
 			$crumbs[] = array(
