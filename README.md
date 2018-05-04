@@ -19,4 +19,4 @@ Contributors: Brandon Fuller, John Pennypacker
 Tags: themes  
 Requires at least: 4.0  
 Tested up to: 4.9  
-Stable tag: 0.10.1  
+Stable tag: 0.11.1  
