@@ -33,20 +33,12 @@ if ( get_option( 'site_header_text_color' ) ) {
 			
 			<h1 class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php
-
-					if ( uri_modern_use_alternate_site_title() ) {
-						the_title();
-					} else {
-						bloginfo( 'name' );
-					}
-
-					?>
+					<?php bloginfo( 'name' ); ?>
 				</a>
 			</h1>
 			<?php
 			$description = get_bloginfo( 'description', 'display' );
-			if ( uri_modern_show_alternate_site_title_tagline() && $description || is_customize_preview() ) :
+			if ( $description || is_customize_preview() ) :
 			?>
 				<h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
 			<?php

@@ -54,7 +54,8 @@ article.post {
 }
 
     
-nav.post-navigation {
+nav.post-navigation,
+nav.posts-navigation {
     
     margin: 0 0 2rem;
     padding: 2rem 0 0;
@@ -148,6 +149,10 @@ nav.post-navigation {
         
     }
     
+}
+
+nav.posts-navigation {
+    border-top: none;
 }
 
 #comments {

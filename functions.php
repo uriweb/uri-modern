@@ -394,50 +394,6 @@ add_filter( 'template_include', 'uri_modern_people_page_template', 99 );
 
 
 /**
- * Determine if the tagline should show on pages using
- * the page title in place of the site name in the header.
- *
- * @see inc/customizer.php
- * @return bool
- */
-function uri_modern_show_alternate_site_title_tagline() {
-	if ( get_option( 'site_header_alternate_titles_hide_tagline' ) && uri_modern_use_alternate_site_title() ) {
-		return false;
-	} else {
-		return true;
-	}
-}
-
-
-/**
- * Determine if the page should use the page title in
- * place of the site name in the header
- *
- * @see inc/customizer.php
- * @return bool
- */
-function uri_modern_use_alternate_site_title() {
-
-	$whitelist_str = get_option( 'site_header_alternate_titles' );
-	if ( empty( $whitelist_str ) ) {
-		return false;
-	}
-
-	$url       = get_site_url();
-	$permalink = get_permalink();
-
-	$whitelist = explode( PHP_EOL, $whitelist_str );
-
-	foreach ( $whitelist as $w ) {
-		if ( $url . $w == $permalink || $url . $w . '/' == $permalink ) {
-			return true;
-			break;
-		}
-	}
-}
-
-
-/**
  * Get the featured image caption
  *
  * @param obj $post the post.
@@ -460,6 +416,30 @@ function uri_modern_get_thumbnail_caption( $post ) {
 	}
 	return '';
 }
+
+
+/**
+ * Remove WordPress page title prepends
+ *
+ * @param str $t the post title.
+ */
+function uri_modern_sanitize_title( $t ) {
+
+	$prepends = array(
+		'Category: ',
+		'Archive: ',
+		'Tag: ',
+	);
+
+	foreach ( $prepends as $p ) {
+
+		if ( substr( $t, 0, strlen( $p ) ) == $p ) {
+			 return substr( $t, strlen( $p ) );
+		}
+	}
+
+}
+
 
 /**
  * Enable shortcodes in text widgets

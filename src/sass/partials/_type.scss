@@ -129,13 +129,23 @@ abbr, acronym {
 } 
 
 sup {
-    vertical-align: super;
-    font-size: 80%;
+    position: relative;
+    top: -.35em;
+    font-size: .75em;
 }
 
 sub {
-    vertical-align: sub;
-    font-size: 80%;
+    position: relative;
+    top: .25em;
+    font-size: .75em;
+}
+
+small {
+    font-size: .85em;
+}
+
+big {
+    font-size: 1.15em;
 }
 
 cite {
@@ -194,6 +204,10 @@ blockquote cite {
 
 blockquote cite:before {
 	content: ' — ';
+}
+
+.localist-widget-hl {
+	overflow: auto;
 }
 
 
