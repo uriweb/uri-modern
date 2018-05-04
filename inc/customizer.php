@@ -26,6 +26,7 @@ function uri_modern_customize_register( $wp_customize ) {
 	uri_modern_options_social_media( $wp_customize );
 	uri_modern_options_site_header( $wp_customize );
 	uri_modern_options_posts( $wp_customize );
+	uri_modern_options_breadcrumbs( $wp_customize );
 }
 add_action( 'customize_register', 'uri_modern_customize_register' );
 
@@ -288,6 +289,37 @@ function uri_modern_options_posts( $wp_customize ) {
 				'label'       => __( 'Display post tags', 'uri' ),
 				'description' => __( 'Display tags on posts and archive pages', 'uri' ),
 				'type'        => 'checkbox',
+			)
+		)
+	);
+
+}
+
+
+/**
+ * Creates options for breadcrumbs
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function uri_modern_options_breadcrumbs( $wp_customize ) {
+
+	$wp_customize->add_setting(
+		'breadcrumbs_prepend', array(
+			'default'           => '',
+			'type'              => 'option',
+			'sanitize_callback' => 'sanitize_textarea_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'breadcrumbs_prepend',
+			array(
+				'section'     => 'header_image',
+				'label'       => __( 'Prepend Breadcrumbs', 'uri' ),
+				'description' => __( 'Add links to prepend to the breadcrumb, one link per line, using the Markdown format [text](url)', 'uri' ),
+				'type'        => 'textarea',
 			)
 		)
 	);
