@@ -417,6 +417,30 @@ function uri_modern_get_thumbnail_caption( $post ) {
 	return '';
 }
 
+
+/**
+ * Remove WordPress page title prepends
+ *
+ * @param str $t the post title.
+ */
+function uri_modern_sanitize_title( $t ) {
+
+	$prepends = array(
+		'Category: ',
+		'Archive: ',
+		'Tag: ',
+	);
+
+	foreach ( $prepends as $p ) {
+
+		if ( substr( $t, 0, strlen( $p ) ) == $p ) {
+			 return substr( $t, strlen( $p ) );
+		}
+	}
+
+}
+
+
 /**
  * Enable shortcodes in text widgets
  */
