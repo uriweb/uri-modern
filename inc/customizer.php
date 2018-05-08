@@ -16,7 +16,7 @@ function uri_modern_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
 	// rename "Header Image" section to "Header".
-	$wp_customize->get_section( 'header_image' )->title = esc_html__( 'Header / Footer', 'uri' );
+	$wp_customize->get_section( 'header_image' )->title = esc_html__( 'Header', 'uri' );
 
 	// remove unwanted sections.
 	$wp_customize->remove_section( 'colors' );
@@ -25,6 +25,7 @@ function uri_modern_customize_register( $wp_customize ) {
 	// add custom sections and settings/controls
 	uri_modern_options_social_media( $wp_customize );
 	uri_modern_options_site_header( $wp_customize );
+	uri_modern_options_site_footer( $wp_customize );
 	uri_modern_options_posts( $wp_customize );
 	uri_modern_options_breadcrumbs( $wp_customize );
 }
@@ -181,7 +182,7 @@ function uri_modern_options_social_media( $wp_customize ) {
 }
 
 /**
- * Creates options for site header and footer
+ * Creates options for site header
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
@@ -209,6 +210,23 @@ function uri_modern_options_site_header( $wp_customize ) {
 		)
 	);
 
+}
+
+/**
+ * Creates options for site footer
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function uri_modern_options_site_footer( $wp_customize ) {
+
+	// Add section for footer.
+	$wp_customize->add_section(
+		'uri_modern_customizer_footer', array(
+			'title'    => __( 'Footer', 'uri' ),
+			'priority' => 60,
+		)
+	);
+
 	/* Action Bar Give url */
 	$wp_customize->add_setting(
 		'action_bar_give_url', array(
@@ -223,7 +241,7 @@ function uri_modern_options_site_header( $wp_customize ) {
 			$wp_customize,
 			'action_bar_give_url',
 			array(
-				'section'     => 'header_image',
+				'section'     => 'uri_modern_customizer_footer',
 				'label'       => __( 'Give Link', 'uri' ),
 				'description' => __( 'Set a custom URL for Give in the Action Bar (default: www.uri.edu/give)', 'uri' ),
 				'type'        => 'text',
