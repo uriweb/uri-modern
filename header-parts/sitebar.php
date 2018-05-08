@@ -29,23 +29,7 @@ if ( get_option( 'site_header_text_color' ) ) {
 	
 	<div id="sitebranding">
 
-		<div id="siteidentity">
-			
-			<h1 class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?>
-				</a>
-			</h1>
-			<?php
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) :
-			?>
-				<h2 class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></h2>
-			<?php
-			endif;
-			?>
-			
-		</div>
+		<?php get_template_part( 'header-parts/site-identity' ); ?>
 		
 		<div id="sitesocial">
 			<?php
