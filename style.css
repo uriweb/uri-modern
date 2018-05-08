@@ -4,13 +4,13 @@ Theme URI: https://www.uri.edu
 Author: University of Rhode Island
 Author URI: https://today.uri.edu
 Description: URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.
-Version: 0.11.0
+Version: 0.12.0
 License: GPL-3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: uri
 Tags: education, theme-options
 
-@version v0.11.0
+@version v0.12.0
 @author Brandon Fuller <bjcfuller@uri.edu>
 
 */
