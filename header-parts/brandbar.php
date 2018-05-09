@@ -32,13 +32,13 @@
 				<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
 				<label for="gateways-toggle" id="gateways-label"><span>You</span></label>
 				<ul id="gateways-menu" role="menu">
-					<li><a href="/gateway/future-students" role="menuitem">Future Students</a></li>
-					<li><a href="/gateway/students" role="menuitem">Students</a></li>
-					<li><a href="/gateway/faculty" role="menuitem">Faculty</a></li>
-					<li><a href="/gateway/staff" role="menuitem">Staff</a></li>
-					<li><a href="/gateway/families" role="menuitem">Parents and Families</a></li>
+					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/future-students" role="menuitem">Future Students</a></li>
+					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/students" role="menuitem">Students</a></li>
+					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/faculty" role="menuitem">Faculty</a></li>
+					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/staff" role="menuitem">Staff</a></li>
+					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/families" role="menuitem">Parents and Families</a></li>
 					<li><a href="https://alumni.uri.edu" role="menuitem">Alumni</a></li>
-					<li><a href="/gateway/community" role="menuitem">Community</a></li>
+					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/community" role="menuitem">Community</a></li>
 				</ul>
 				
 				<?php endif ?>
