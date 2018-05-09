@@ -37,7 +37,7 @@
 					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/faculty" role="menuitem">Faculty</a></li>
 					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/staff" role="menuitem">Staff</a></li>
 					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/families" role="menuitem">Parents and Families</a></li>
-					<li><a href="https://alumni.uri.edu" role="menuitem">Alumni</a></li>
+					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/alumni" role="menuitem">Alumni</a></li>
 					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/community" role="menuitem">Community</a></li>
 				</ul>
 				
