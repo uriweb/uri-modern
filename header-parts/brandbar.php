@@ -25,12 +25,12 @@
 		
 		<div id="globalbanner-wrapper">
 			<div id="globalbanner">
-				<a href="http://www.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
+				<a href="http://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
 				
 				<?php if ( URI_BETA_FEATURES !== null && URI_BETA_FEATURES === true ) : ?>
 				
 				<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
-				<label for="gateways-toggle" id="gateways-label"><span>You</span></label>
+				<label for="gateways-toggle" id="gateways-label"><span><?php echo ( URI_EASTER_EGGS !== null && URI_EASTER_EGGS === true ) ? '&#128017' : 'You'; ?></span></label>
 				<ul id="gateways-menu" role="menu">
 					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/future-students" role="menuitem">Future Students</a></li>
 					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/students" role="menuitem">Students</a></li>
