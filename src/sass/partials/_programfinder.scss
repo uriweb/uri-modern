@@ -290,3 +290,17 @@
         margin: 15px 0;
     }
 }
+
+article.type-program {
+    
+    .program-links {
+        
+        clear: both;
+        
+        div:not(:last-child) .cl-button {
+            margin-bottom: 1rem;
+        }
+        
+    }
+    
+}
