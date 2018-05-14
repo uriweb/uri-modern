@@ -1,33 +1,28 @@
 /* ===== PROGRAM FINDER ===== */
 
 #program-finder {
-    background: linear-gradient(to bottom, #f3f3f3, #eee);
-    border-width: 1px;
-    border-style: solid;
-    border-color: #eee;
-    border-bottom-color: #ddd;
-    padding: 1.5rem 2rem 1rem;
-    border-radius: 5px 5px 0 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $grey;
+    font-family: $type-sans;
 }
 
 #program-finder .has-js input#search-programs {
-    padding: .5rem;
-    font-size: 1rem;
-    line-height: 1.2rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
     display: inline-block;
     width: 80%;
     clear: both;
     box-shadow: none;
     box-sizing: border-box;
     border: 1px solid #ddd;
-    transition: all .1s ease-in-out;
     margin-bottom: 10px;
     border-radius: 2px;
 }
 
 #program-finder .has-js input#search-programs:hover,
 #program-finder .has-js input#search-programs:focus {
-    border: 1px solid #4798ea;
+    border: 1px solid $accentblue;
 }
 
 #program-finder .has-js input#search-programs:focus {
@@ -52,32 +47,27 @@
 }
 
 #program-finder .has-js #js-form-reset {
-    background: #3875d7;
-    width: 15%;
+    background: #eee;
+    width: 18%;
     float: right;
-    color: #fff;
+    color: $darkgrey;
     font-weight: 600;
-    padding: .67rem 0;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    line-height: 2rem;
     text-align: center;
-    border: 1px solid #2f68c3;
+    border: 1px solid $grey;
     border-radius: 2px;
     box-shadow: none;
     cursor: pointer;
     position: relative;
     top: 0;
-    transition: all .2s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 #program-finder .has-js #js-form-reset:hover,
 #program-finder .has-js #js-form-reset:focus {
-    box-shadow: 0 3px 8px rgba(0,0,0,.2);
-    top: -2px;
-    transition: all .1s ease-in-out;
-}
-
-#program-finder .has-js #js-form-reset:active {
-    box-shadow: 0 4px 12px rgba(0,0,0,.4);
-    top: -1px;
+    background: #fff;
 }
 
 @media screen and (max-width: 600px) {
@@ -102,21 +92,18 @@
     #program-finder .has-js #js-form-reset {
         float: none;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 2rem;
         padding: 1rem 0;
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
 }
 
 #program-status {
-    padding: 2rem 2rem 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 30px;
-    background: #f8f8f8;
-    border-top: 1px solid #fff;
-    border-width: 1px 1px 0;
-    border-style: solid;
-    border-color: #eee;
-    border-top-color: #fff;
+    padding: 2rem 0;
+    font-family: $type-sans;
 }
 
 #program-status:after {
@@ -126,7 +113,7 @@
 }
 
 #program-status.results {
-    color: #519d29;
+    color: $black;
 }
 
 #program-status.empty {
@@ -171,21 +158,6 @@
     line-height: 30px;
     margin-left: 20px;
     float: left;
-}
-
-#program-results {
-    background: #f8f8f8;
-    padding: 20px;
-    border-radius: 0 0 5px 5px;
-    border-width: 0 1px 1px;
-    border-style: solid;
-    border-color: #eee;
-}
-
-@media screen and (max-width: 600px) {
-    #program-results {
-        padding: 20px 5px 10px;
-    }
 }
 
 #program-results .cl-card {
