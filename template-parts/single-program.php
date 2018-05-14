@@ -40,9 +40,45 @@ get_header();
 							<figcaption class="wp-caption"><?php print $figcaption; ?></figcpation>
 							<?php endif; ?>
 						</figure>
-					</div>
+					</div><!-- .featured-image -->
+		
+					<div class="entry-content">
+						<?php
+
+						the_content(
+							sprintf(
+							/* translators: %s: Name of current post. */
+							wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uri-modern' ), array( 'span' => array( 'class' => array() ) ) ),
+							the_title( '<span class="screen-reader-text">"', '"</span>', false )
+						)
+							);
+
+						wp_link_pages(
+							 array(
+								 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri-modern' ),
+								 'after'  => '</div>',
+							 )
+							);
+						?>
+
+						<?php if ( $time_to_completion = get_field( 'time_to_completion' ) ) { ?>
+						<div class="time-to-completion">
+							<h3>Time to Completion</h3>
+							<?php print $time_to_completion; ?>
+						</div>
+						<?php } ?>
+
+						<?php if ( $application_deadline = get_field( 'application_deadline' ) ) { ?>
+						<div class="application-deadline">
+							<h3>Application Deadline</h3>
+							<?php print $application_deadline; ?>
+						</div>
+						<?php } ?>
+
+
+					</div><!-- .entry-content -->
 					
-					<div class="cl-boxout right program-links">
+					<div class="cl-boxout program-links">
 					
 						<?php if ( $department_website = get_field( 'department_website' ) ) { ?>
 						<div class="department-website">
@@ -80,43 +116,7 @@ get_header();
 						</div>
 						<?php } ?>
 					
-					</div>
-		
-					<div class="entry-content">
-						<?php
-
-						the_content(
-							sprintf(
-							/* translators: %s: Name of current post. */
-							wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uri-modern' ), array( 'span' => array( 'class' => array() ) ) ),
-							the_title( '<span class="screen-reader-text">"', '"</span>', false )
-						)
-							);
-
-						wp_link_pages(
-							 array(
-								 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri-modern' ),
-								 'after'  => '</div>',
-							 )
-							);
-						?>
-
-						<?php if ( $time_to_completion = get_field( 'time_to_completion' ) ) { ?>
-						<div class="time-to-completion">
-							<h3>Time to Completion</h3>
-							<?php print $time_to_completion; ?>
-						</div>
-						<?php } ?>
-
-						<?php if ( $application_deadline = get_field( 'application_deadline' ) ) { ?>
-						<div class="application-deadline">
-							<h3>Application Deadline</h3>
-							<?php print $application_deadline; ?>
-						</div>
-						<?php } ?>
-
-
-					</div><!-- .entry-content -->
+					</div><!-- .program-links -->
 		  
 		<?php endwhile; // End of the loop. ?>
 

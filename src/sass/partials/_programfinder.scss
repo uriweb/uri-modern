@@ -265,12 +265,38 @@
 
 article.type-program {
     
+    position: relative;
+    
+    .entry-content {
+        width: 100%;
+    }
+    
     .program-links {
         
-        clear: both;
+        width: 100%;
+        max-width: 360px;
         
         div:not(:last-child) .cl-button {
             margin-bottom: 1rem;
+        }
+        
+    }
+    
+}
+
+@media screen and (min-width: 800px) {
+    
+    article.type-program {
+        
+        .entry-content {
+            width: 60%;
+        }
+        
+        .program-links {
+            position: absolute;
+            top: 400px;
+            right: 0;
+            width: 38%;
         }
         
     }
