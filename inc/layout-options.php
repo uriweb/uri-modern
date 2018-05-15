@@ -29,6 +29,16 @@ if ( function_exists( 'register_field_group' ) ) {
 					'message'      => 'If checked, the page or post title will be hidden.',
 					'order_no'     => '0',
 				),
+				array(
+					'key' => 'field_5afadb7ad2b38',
+					'label' => 'Hide Featured Image',
+					'name' => 'uri_modern_hide_featured_image',
+					'type' => 'true_false',
+					'instructions' => 'Effective only on posts',
+					'required'     => '0',
+					'message'      => 'If checked, the featured image will be hidden on the post.',
+					'order_no'     => '0',
+				),
 			),
 			'location'   => array(
 				'rules'    => array(
