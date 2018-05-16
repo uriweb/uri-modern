@@ -8,6 +8,6 @@
 ?>
 
 
-<div id="breadcrumbs">
+<nav id="breadcrumbs" aria-label="Breadcrumb">
 	<?php print uri_modern_breadcrumbs(); ?>
-</div>
+</nav>

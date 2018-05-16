@@ -5,11 +5,19 @@
 body.archive {
     
     article[class^='post'] {
+		
         padding: 1.5rem 0 0;
         margin: 0 0 1rem;
         background: $white;
         border-radius: .2rem;
         border: 1px solid #eee;
+		
+		&:after {
+			display: block;
+			content: '';
+			clear: both;
+		}
+		
     }
     
     .entry-title {
@@ -46,7 +54,7 @@ body.archive {
         color: $darkgrey;
         border-radius: .2rem;
         transition: all .1s ease-in-out;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     
         &:hover,
         &:focus {
@@ -84,10 +92,10 @@ body.archive {
         }
         
         .continue-reading {
-            display: inline;
+            display: inline-block;
             width: auto;
             text-align: left;
-            padding: .5rem 1rem;
+            padding: 1rem 1rem;
         }
         
     }

@@ -12,7 +12,8 @@ function uri_modern_breadcrumbs() {
 	$crumbs  = array();
 
 	$option_val = get_option( 'breadcrumbs_prepend' );
-	$prepend = empty( $option_val ) ? array( '[The University of Rhode Island](https://www.uri.edu)' ) : explode( "\n", $option_val );
+	$default = 'The University of Rhode Island' == get_bloginfo( 'name' ) ? '' : '[The University of Rhode Island](https://www.uri.edu)';
+	$prepend = empty( $option_val ) ? array( $default ) : explode( "\n", $option_val );
 
 	foreach ( $prepend as $l ) {
 		$bits = explode( '(', $l );
@@ -103,7 +104,7 @@ function uri_modern_format_breadcrumbs( $crumbs ) {
 	$last   = end( $crumbs );
 	foreach ( $crumbs as $k => $c ) {
 		if ( $c === $last ) { // last crumb isn't a hyperlink.
-			$output .= '<li>' . $c['name'] . '</li>';
+			$output .= '<li aria-current="page">' . $c['name'] . '</li>';
 		} else {
 			$output .= '<li><a href="' . $c['href'] . '">' . $c['name'] . '</a></li>';
 		}

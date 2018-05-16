@@ -24,6 +24,30 @@ function uri_modern_cache_buster() {
 }
 
 
+/**
+ * Returns the subdomain to use
+ *
+ * @return str
+ */
+function uri_modern_get_subdomain() {
+
+	$default = 'www';
+
+	$whitelist = array(
+		'www',
+		'next',
+		'quack',
+	);
+
+	$parsed_url = parse_url( get_site_url() );
+	$host = explode( '.', $parsed_url['host'] );
+	$subdomain = $host[0];
+
+	return in_array( $subdomain, $whitelist ) ? $subdomain : $default;
+
+}
+
+
 if ( ! function_exists( 'uri_modern_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
