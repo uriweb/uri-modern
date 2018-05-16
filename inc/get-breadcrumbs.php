@@ -104,7 +104,7 @@ function uri_modern_format_breadcrumbs( $crumbs ) {
 	$last   = end( $crumbs );
 	foreach ( $crumbs as $k => $c ) {
 		if ( $c === $last ) { // last crumb isn't a hyperlink.
-			$output .= '<li>' . $c['name'] . '</li>';
+			$output .= '<li aria-current="page">' . $c['name'] . '</li>';
 		} else {
 			$output .= '<li><a href="' . $c['href'] . '">' . $c['name'] . '</a></li>';
 		}
