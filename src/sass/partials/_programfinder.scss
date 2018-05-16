@@ -263,7 +263,7 @@
     }
 }
 
-article.type-program {
+body:not(.archive) article.type-program {
     
     position: relative;
     
@@ -286,16 +286,16 @@ article.type-program {
 
 @media screen and (min-width: 800px) {
     
-    article.type-program {
+	body:not(.archive) article.type-program {
         
         .entry-content {
-            width: 60%;
+            width: calc( 100% - ( 500px + 3rem ) );
+			float: left;
         }
         
         .program-links {
-            position: absolute;
-            top: 400px;
-            right: 0;
+            float: right;
+			clear: right;
             width: 38%;
         }
         
