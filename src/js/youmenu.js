@@ -17,11 +17,13 @@
 		gateways = document.getElementById( 'gateways' );
 		input = document.getElementById( 'gateways-toggle' );
 
-		window.addEventListener( 'click', function( e ) {
-			if ( input.checked && ! gateways.contains( e.target ) ) {
-				input.checked = false;
-			}
-		}, false );
+		window.addEventListener(
+			'click', function( e ) {
+				if ( input.checked && ! gateways.contains( e.target ) ) {
+						input.checked = false;
+				}
+			}, false
+			);
 
 	}
 
