@@ -40,7 +40,7 @@
 					<input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" checked>
 					<label for="sb-university-toggle" aria-label="Open the University footer menu when browsing on mobile."><span>University</span></label>
 					<ul role="menu" aria-label="The University footer menu.">
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/about/university-leadership/" role="menuitem">Leadership</a></li>
+						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/about/leadership/" role="menuitem">Leadership</a></li>
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/diversity/" role="menuitem">Diversity and Inclusion</a></li>
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/globaluri/" role="menuitem">Global</a></li>
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/about/campuses/" role="menuitem">Campuses</a></li>
@@ -65,7 +65,7 @@
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/academics/" role="menuitem">Undergraduate</a></li>
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/graduate-school/" role="menuitem">Graduate</a></li>
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/advising/" role="menuitem">Advising</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/library/" role="menuitem">Library</a></li>
+						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/library/" role="menuitem">Libraries</a></li>
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/career/students/" role="menuitem">Internships</a></li>
 					</ul>
 				</div>
