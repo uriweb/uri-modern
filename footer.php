@@ -44,7 +44,7 @@
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/diversity/" role="menuitem">Diversity and Inclusion</a></li>
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/globaluri/" role="menuitem">Global</a></li>
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/about/campuses/" role="menuitem">Campuses</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/publicsafety/" role="menuitem">Safety</a></li>
+						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/safety/" role="menuitem">Safety</a></li>
 					</ul>
 				</div>
 				<div id="sb-campus-life">
