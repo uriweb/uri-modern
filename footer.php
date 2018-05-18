@@ -73,11 +73,8 @@
 			<div id="gimmicks">
 				<!-- Tides Widget -->
 				<?php
-				if ( URI_BETA_FEATURES !== null && URI_BETA_FEATURES === true ) {
-
-					if ( function_exists( 'uri_tides_shortcode' ) ) {
-						echo do_shortcode( '[uri-tides darkmode=true height=22]' );
-					}
+				if ( function_exists( 'uri_tides_shortcode' ) ) {
+					echo do_shortcode( '[uri-tides darkmode=true height=22]' );
 				}
 				?>
 				

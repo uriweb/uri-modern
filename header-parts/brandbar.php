@@ -26,9 +26,7 @@
 		<div id="globalbanner-wrapper">
 			<div id="globalbanner">
 				<a href="http://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
-				
-				<?php if ( URI_BETA_FEATURES !== null && URI_BETA_FEATURES === true ) : ?>
-				
+								
 				<div id="gateways">
 					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
 					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( URI_EASTER_EGGS !== null && URI_EASTER_EGGS === true ) ? '&#128017' : 'You'; ?></span></label>
@@ -42,7 +40,6 @@
 						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/community" role="menuitem">Community</a></li>
 					</ul>
 				</div>
-				<?php endif ?>
 								
 			</div>
 		</div>
