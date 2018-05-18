@@ -29,10 +29,12 @@ body {
 
 .alignright,
 .alignleft,
-.aligncenter {
+.aligncenter,
+.alignnone {
     display: block;
     padding: 1.5rem 0;
     width: 100%;
+	height: auto;
     min-width: 200px;
 }
 
@@ -48,6 +50,9 @@ body {
 @media screen and (min-width: 480px) {
     .alignright,
     .alignleft {
+		&.xsmall {
+            width: 35%;
+        }
         &.small {
             width: 40%;
         }
@@ -60,6 +65,9 @@ body {
         }
     }
     .aligncenter {
+		&.xsmall {
+            width: 25%;
+        }
         &.small {
             width: 50%;
         }
@@ -90,6 +98,9 @@ body {
 @media screen and (min-width: $break2) {
     .alignright,
     .alignleft {
+		&.xsmall {
+            width: 15%;
+        }
         &.small {
             width: 28%;
         }
@@ -102,6 +113,9 @@ body {
         }
     }
     .aligncenter {
+		&.xsmall {
+            width: 20%;
+        }
         &.small {
             width: 40%;
         }

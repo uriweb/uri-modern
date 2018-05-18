@@ -25,23 +25,21 @@
 		
 		<div id="globalbanner-wrapper">
 			<div id="globalbanner">
-				<a href="http://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
-				
-				<?php if ( URI_BETA_FEATURES !== null && URI_BETA_FEATURES === true ) : ?>
-				
-				<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
-				<label for="gateways-toggle" id="gateways-label"><span><?php echo ( URI_EASTER_EGGS !== null && URI_EASTER_EGGS === true ) ? '&#128017' : 'You'; ?></span></label>
-				<ul id="gateways-menu" role="menu">
-					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/future-students" role="menuitem">Future Students</a></li>
-					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/students" role="menuitem">Students</a></li>
-					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/faculty" role="menuitem">Faculty</a></li>
-					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/staff" role="menuitem">Staff</a></li>
-					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/families" role="menuitem">Parents and Families</a></li>
-					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/alumni" role="menuitem">Alumni</a></li>
-					<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/gateway/community" role="menuitem">Community</a></li>
-				</ul>
-				
-				<?php endif ?>
+				<a href="http://<?php uri_modern_the_subdomain(); ?>.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
+								
+				<div id="gateways">
+					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
+					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( URI_EASTER_EGGS !== null && URI_EASTER_EGGS === true ) ? '&#128017' : 'You'; ?></span></label>
+					<ul id="gateways-menu" role="menu">
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/future-students" role="menuitem">Future Students</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/students" role="menuitem">Students</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/faculty" role="menuitem">Faculty</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/staff" role="menuitem">Staff</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/families" role="menuitem">Parents and Families</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/alumni" role="menuitem">Alumni</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/community" role="menuitem">Community</a></li>
+					</ul>
+				</div>
 								
 			</div>
 		</div>

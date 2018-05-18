@@ -29,7 +29,7 @@ function uri_modern_cache_buster() {
  *
  * @return str
  */
-function uri_modern_get_subdomain() {
+function uri_modern_get_the_subdomain() {
 
 	$default = 'www';
 
@@ -45,6 +45,14 @@ function uri_modern_get_subdomain() {
 
 	return in_array( $subdomain, $whitelist ) ? $subdomain : $default;
 
+}
+
+
+/**
+ * Echos the subdomain to use
+ */
+function uri_modern_the_subdomain() {
+	echo uri_modern_get_the_subdomain();
 }
 
 

@@ -40,21 +40,21 @@
 					<input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" checked>
 					<label for="sb-university-toggle" aria-label="Open the University footer menu when browsing on mobile."><span>University</span></label>
 					<ul role="menu" aria-label="The University footer menu.">
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/about/university-leadership/" role="menuitem">Leadership</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/diversity/" role="menuitem">Diversity and Inclusion</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/globaluri/" role="menuitem">Global</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/about/campuses/" role="menuitem">Campuses</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/publicsafety/" role="menuitem">Safety</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/about/leadership/" role="menuitem">Leadership</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/diversity/" role="menuitem">Diversity and Inclusion</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/globaluri/" role="menuitem">Global</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/about/campuses/" role="menuitem">Campuses</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/safety/" role="menuitem">Safety</a></li>
 					</ul>
 				</div>
 				<div id="sb-campus-life">
 					<input id="sb-campus-life-toggle" type="radio" name="storagebin" value="campus-life" role="presentation">
 					<label for="sb-campus-life-toggle" aria-label="Open the Campus Life footer menu when browsing on mobile."><span>Campus Life</span></label>
 					<ul role="menu" aria-label="The Campus Life footer menu.">
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/housing/" role="menuitem">Housing</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/dining/" role="menuitem">Dining</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/athletics/" role="menuitem">Athletics and Recreation</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/campus-life/health-and-safety/" role="menuitem">Health and Wellness</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/housing/" role="menuitem">Housing</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/dining/" role="menuitem">Dining</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/athletics/" role="menuitem">Athletics and Recreation</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/campus-life/health-and-safety/" role="menuitem">Health and Wellness</a></li>
 						<li><a href="https://events.uri.edu" role="menuitem">Events</a></li>
 					</ul>
 				</div>
@@ -62,22 +62,19 @@
 					<input id="sb-academics-toggle" type="radio" name="storagebin" value="academics" role="presentation">
 					<label for="sb-academics-toggle" aria-label="Open the Academics footer menu when browsing on mobile."><span>Academics</span></label>
 					<ul role="menu" aria-label="The Academics footer menu.">
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/academics/" role="menuitem">Undergraduate</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/graduate-school/" role="menuitem">Graduate</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/advising/" role="menuitem">Advising</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/library/" role="menuitem">Library</a></li>
-						<li><a href="https://<?php echo uri_modern_get_subdomain(); ?>.uri.edu/career/students/" role="menuitem">Internships</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/academics/" role="menuitem">Undergraduate</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/graduate-school/" role="menuitem">Graduate</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/advising/" role="menuitem">Advising</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/library/" role="menuitem">Libraries</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/career/students/" role="menuitem">Internships</a></li>
 					</ul>
 				</div>
 			</div>
 			<div id="gimmicks">
 				<!-- Tides Widget -->
 				<?php
-				if ( URI_BETA_FEATURES !== null && URI_BETA_FEATURES === true ) {
-
-					if ( function_exists( 'uri_tides_shortcode' ) ) {
-						echo do_shortcode( '[uri-tides darkmode=true height=22]' );
-					}
+				if ( function_exists( 'uri_tides_shortcode' ) ) {
+					echo do_shortcode( '[uri-tides darkmode=true height=22]' );
 				}
 				?>
 				
