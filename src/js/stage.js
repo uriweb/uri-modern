@@ -33,8 +33,8 @@
 		document.getElementById( 'page' ).insertBefore( stage, els.content );
 
 		// Resize any superheros.
-		if ( null !== CLResizeSuperheros ) {
-			CLResizeSuperheros();
+		if ( null !== CLResizeSuperheroes ) {
+			CLResizeSuperheroes();
 		}
 
 		// Create the stage overlay div.
