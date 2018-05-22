@@ -531,6 +531,7 @@ add_filter( 'body_class', 'uri_modern_add_slug_body_class' );
  * Add a span around the title prefix so that the prefix can be hidden with CSS
  * if desired.
  * Note that this will only work with LTR languages.
+ *
  * @see https://www.binarymoon.co.uk/2017/02/hide-archive-title-prefix-wordpress/
  *
  * @param string $title Archive title.
@@ -546,11 +547,11 @@ function uri_modern_hide_archive_title( $title ) {
 	// Split the title into parts so we can wrap them with spans.
 	$title_parts = explode( ': ', $title, 2 );
 
-	// Given higher ed's propensity for colons in titles, let's be specific with our targeting	
-	$hide = array('Category', 'Tag', 'Archives');
+	// Given higher ed's propensity for colons in titles, let's be specific with our targeting
+	$hide = array( 'Category', 'Tag', 'Archives' );
 
 	// Glue it back together again.
-	if ( ! empty( $title_parts[1] ) && in_array( trim( $title_parts[0] ), $hide) ) {
+	if ( ! empty( $title_parts[1] ) && in_array( trim( $title_parts[0] ), $hide ) ) {
 		$title = wp_kses(
 			$title_parts[1],
 			array(
