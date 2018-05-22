@@ -58,6 +58,12 @@ function uri_modern_breadcrumbs() {
  * @param str $path the path.
  */
 function uri_modern_breadcrumbs_get_link( $path ) {
+	
+	// ignore pagination i.e. if the path ends in /page/N
+	if ( preg_match( '/\/page(\/(\d)*)?$/', $path, $matches ) !== 0 ) {
+		return;
+	}
+
 	$p       = '';
 	$post_id = url_to_postid( $path );
 
@@ -70,23 +76,26 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 		return $output;
 	}
 
-	// is it a category?
-	// @todo Catch custom post type categories too.
-	$category = get_category_by_path( $path );
-	if ( is_object( $category ) && isset( $category->term_id ) ) {
-		$output = array(
-			'name' => $category->name,
-			'href' => get_site_url() . '/' . $category->slug,
-		);
-		return $output;
-	}
 
 	// is it a custom post type?
+	// check this first so that it takes precedent over category
 	$slug = get_post_type_object( get_post_type() )->rewrite['slug'];
 	if ( $slug ) {
 		$output = array(
 			'name' => ucfirst( $slug ),
 			'href' => get_site_url() . $path,
+		);
+		return $output;
+	}
+
+	// is it a category?
+	// @todo Catch custom post type categories too.
+	$category = get_category_by_path( $path );
+		
+	if ( is_object( $category ) && isset( $category->term_id ) ) {
+		$output = array(
+			'name' => $category->name,
+			'href' => get_site_url() . '/' . $category->slug,
 		);
 		return $output;
 	}
