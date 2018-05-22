@@ -110,6 +110,12 @@ get_header();
 						</div>
 						<?php } ?>
 
+						<?php if ( has_category( 'bachelors' ) ) { ?>
+						<div class="admission-info">
+							<?php echo do_shortcode( '[cl-button link="https://web.uri.edu/advising/curriculum-sheets-all/" text="Curriculum Sheets"]' ); ?>
+						</div>
+						<?php } ?>
+
 						<?php if ( $apply = get_field( 'apply' ) ) { ?>
 						<div class="apply">
 							<?php echo do_shortcode( '[cl-button link="' . $apply . '" text="Apply" style="prominent"]' ); ?>
