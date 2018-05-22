@@ -546,8 +546,11 @@ function uri_modern_hide_archive_title( $title ) {
 	// Split the title into parts so we can wrap them with spans.
 	$title_parts = explode( ': ', $title, 2 );
 
+	// Given higher ed's propensity for colons in titles, let's be specific with our targeting	
+	$hide = array('Category', 'Tag', 'Archives');
+
 	// Glue it back together again.
-	if ( ! empty( $title_parts[1] ) ) {
+	if ( ! empty( $title_parts[1] ) && in_array( trim( $title_parts[0] ), $hide) ) {
 		$title = wp_kses(
 			$title_parts[1],
 			array(
