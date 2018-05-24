@@ -13,7 +13,6 @@ URI Modern 1.0.2 is a bug fix release.
 
 For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/108/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues). 
 
-
 ## How do I get set up?
 
 1. Grab a copy of the [latest version](https://github.com/uriweb/uri-modern/releases/latest)
