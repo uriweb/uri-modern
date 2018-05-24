@@ -24,6 +24,7 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 
 [![Master Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=master "Master build status")](https://travis-ci.org/uriweb/uri-modern)
 [![Develop Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=develop "Develop build status")](https://travis-ci.org/uriweb/uri-modern)
+[![CodeFactor](https://www.codefactor.io/repository/github/uriweb/uri-modern/badge/master)](https://www.codefactor.io/repository/github/uriweb/uri-modern/overview/master)
 [![devDependencies Status](https://david-dm.org/uriweb/uri-modern/dev-status.svg "devDependencies status")](https://david-dm.org/uriweb/uri-modern?type=dev)
 
 Contributors: Brandon Fuller, John Pennypacker  
