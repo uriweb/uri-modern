@@ -8,10 +8,14 @@
     margin: 0 auto;
     box-sizing: border-box;
     transition: all .2s ease-in-out;
+	padding: 0 25px;
+	color: #fff;
 }
 
-#basement {
-    padding: 0 25px;
+#basement:after {
+    display: block;
+    content: '';
+    clear: both;
 }
 
 #globalfooter {
@@ -27,27 +31,15 @@
     background-size: auto 100%;
 }
 
-#basement {
-    color: #fff;
-}
-
-#basement:after {
-    display: block;
-    content: '';
-    clear: both;
-}
-
 #storagebins {
     
-    & {
-        text-align: center;
-        font-size: .9rem;
-        width: 100vw;
-        position: relative;
-        left: 50%;
-        margin-left: -50vw;
-        background: rgba(0,0,0,.5);
-    }
+	text-align: center;
+	font-size: .9rem;
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	margin-left: -50vw;
+	background: rgba(0,0,0,.5);
     
     &:after {
         content: '';
@@ -149,14 +141,12 @@
 
 #gimmicks {
     
-    & {
-        text-align: center;
-        background: rgba(34,90,154,.6);
-        position: relative;
-        left: -50vw;
-        margin-left: 50%;
-        width: 100vw;
-    }
+	text-align: center;
+	background: rgba(34,90,154,.6);
+	position: relative;
+	left: -50vw;
+	margin-left: 50%;
+	width: 100vw;
     
     .uri-tides-widget {
         margin: 18px 0 15px;
@@ -223,15 +213,13 @@
 
 #legal {
 
-    & {
-        position: relative;
-        z-index: 10;
-        width: 300px;
-        margin: 0 auto;
-        font-size: .7rem;
-        box-sizing: border-box;
-        transtition: all .2s ease-in-out;
-    }
+	position: relative;
+	z-index: 10;
+	width: 300px;
+	margin: 0 auto;
+	font-size: .7rem;
+	box-sizing: border-box;
+	transtition: all .2s ease-in-out;
 
     p {
         color: rgba(255,255,255,.5);
@@ -267,15 +255,15 @@
         background-size: auto 500px;
     }
     #storagebins {
-        & {
-            float: left;
-            text-align: left;
-            display: block;
-            width: auto;
-            left: 0;
-            margin-left: 0;
-            background: none;
-        }
+		
+		float: left;
+		text-align: left;
+		display: block;
+		width: auto;
+		left: 0;
+		margin-left: 0;
+		background: none;
+		
         div {
             display: inline-block;
             float: none;
@@ -321,15 +309,14 @@
 
     #gimmicks {
         
-        & {
-            float: right;
-            text-align: initial;
-            background: none;
-            padding: 0;
-            left: 0;
-            margin-left: 0;
-            width: auto;
-        }   
+		float: right;
+		text-align: initial;
+		background: none;
+		padding: 0;
+		left: 0;
+		margin-left: 0;
+		width: auto;
+		
         &:after {
             display: block;
             content: '';
