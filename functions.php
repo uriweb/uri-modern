@@ -176,6 +176,15 @@ add_filter( 'max_srcset_image_width', 'set_max_srcset_image_width' );
 
 
 /**
+ * Enables the Excerpt meta box in Page edit screen.
+ */
+function uri_modern_add_excerpt_support_for_pages() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'uri_modern_add_excerpt_support_for_pages' );
+
+
+/**
  * Add post-formats to post_type 'post'.
  */
 function uri_modern_add_post_formats_to_post() {
