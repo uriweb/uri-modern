@@ -176,6 +176,15 @@ add_filter( 'max_srcset_image_width', 'set_max_srcset_image_width' );
 
 
 /**
+ * Enables the Excerpt meta box in Page edit screen.
+ */
+function uri_modern_add_excerpt_support_for_pages() {
+	add_post_type_support( 'page', 'excerpt' );
+}
+add_action( 'init', 'uri_modern_add_excerpt_support_for_pages' );
+
+
+/**
  * Add post-formats to post_type 'post'.
  */
 function uri_modern_add_post_formats_to_post() {
@@ -225,20 +234,23 @@ function uri_modern_open_graph() {
 		if ( empty( $title ) ) {
 			$title = get_bloginfo( 'name', 'display' ); }
 
-		$excerpt = '';
-		// since the excerpt is just about always empty...
+		$excerpt = get_the_excerpt();
+
 		if ( empty( $excerpt ) ) {
-			if ( strpos( $post->post_content, '<!--more' ) !== false && 1 == 2 ) {
+			if ( strpos( $post->post_content, '<!--more' ) !== false ) {
 				$bits = explode( '<!--more', $post->post_content );
 			} else {
 				$bits = explode( "\n", wordwrap( $post->post_content, 200 ) );
 			}
-			$excerpt = strip_tags( $bits[0] );
-			$excerpt = str_replace( '"', '&quot;', $excerpt );
-			$excerpt = trim( $excerpt );
+			$excerpt = $bits[0];
 		}
 
+		$excerpt = strip_tags( $excerpt );
+		$excerpt = str_replace( '"', '&quot;', $excerpt );
+		$excerpt = trim( $excerpt );
+
 		?>
+<meta name="description" content="<?php echo $excerpt; ?>" />
 <meta name="twitter:card" content="<?php echo $summary_type; ?>" />
 <meta name="twitter:site" content="@universityofri" />
 <meta name="twitter:creator" content="@universityofri" />
@@ -526,3 +538,47 @@ function uri_modern_add_slug_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'uri_modern_add_slug_body_class' );
+
+/**
+ * Add a span around the title prefix so that the prefix can be hidden with CSS
+ * if desired.
+ * Note that this will only work with LTR languages.
+ *
+ * @see https://www.binarymoon.co.uk/2017/02/hide-archive-title-prefix-wordpress/
+ *
+ * @param string $title Archive title.
+ * @return string Archive title with inserted span around prefix.
+ */
+function uri_modern_hide_archive_title( $title ) {
+	// Skip if the site isn't LTR, this is visual, not functional.
+	// Should try to work out an elegant solution that works for both directions.
+	if ( is_rtl() ) {
+		return $title;
+	}
+
+	// Split the title into parts so we can wrap them with spans.
+	$title_parts = explode( ': ', $title, 2 );
+
+	// Given higher ed's propensity for colons in titles, let's be specific with our targeting
+	$hide = array( 'Category', 'Tag', 'Archives' );
+
+	// Glue it back together again.
+	if ( ! empty( $title_parts[1] ) && in_array( trim( $title_parts[0] ), $hide ) ) {
+		$title = wp_kses(
+			$title_parts[1],
+			array(
+				'span' => array(
+					'class' => array(),
+				),
+			)
+		);
+		$title = '<span class="screen-reader-text">' . esc_html( $title_parts[0] ) . ': </span>' . $title;
+	}
+
+	return $title;
+
+}
+
+add_filter( 'get_the_archive_title', 'uri_modern_hide_archive_title' );
+
+

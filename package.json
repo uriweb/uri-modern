@@ -1,6 +1,6 @@
 {
   "name": "uri-modern",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.",
   "themeName": "URI Modern",
   "textDomain": "uri",
@@ -20,7 +20,7 @@
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
     "autoprefixer": "^8.2.0",
-    "gulp": ">=4.0.0",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-changed": "^3.2.0",
     "gulp-concat": ">=2.6.1",
     "gulp-header": "^2.0.5",

@@ -27,7 +27,7 @@
     border-radius: .2rem;
     color: $darkgrey;
     transition: all .1s ease-in-out;
-}    
+}
 
 #lnmenu span {
     padding-right: 1.2rem;
@@ -51,11 +51,9 @@
 #lnmenu:hover,
 #lnmenu:focus {
 
-    & {
-        background-color: $darkgrey;
-        color: #fff;
-        cursor: pointer;
-    }
+	background-color: $darkgrey;
+	color: #fff;
+	cursor: pointer;
 
     & span:after {
         border-top: 6px solid $white;
@@ -92,21 +90,19 @@
 #localnav>ul,
 #cl-localnav>ul {
 
-    & {
-        display: none;
-        position: absolute;
-        top: 3.9rem;
-        left: 0;
-        z-index: 10;
-        background: #fff;
-        box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
-        width: 100%;
-        max-width: 400px;
-        margin: 0;
-        list-style-type: none;
-        border-radius: 0 0 .2rem .2rem;
-        transition: all .1s ease-in-out;
-    }
+	display: none;
+	position: absolute;
+	top: 3.9rem;
+	left: 0;
+	z-index: 10;
+	background: #fff;
+	box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
+	width: 100%;
+	max-width: 400px;
+	margin: 0;
+	list-style-type: none;
+	border-radius: 0 0 .2rem .2rem;
+	transition: all .1s ease-in-out;
     
     &>li {
         margin: 0;
@@ -181,17 +177,17 @@
     }
     #localnav>ul,
     #cl-localnav>ul {
-        & {
-            display: block;
-            position: relative;
-            top: 0;
-            max-width: 100%;
-            width: 100%;
-            border-bottom: 1px solid $grey;
-            background: transparent;
-            box-shadow: none;
-            border-radius: 0;
-        }
+		
+		display: block;
+		position: relative;
+		top: 0;
+		max-width: 100%;
+		width: 100%;
+		border-bottom: 1px solid $grey;
+		background: transparent;
+		box-shadow: none;
+		border-radius: 0;
+		
         &:after {
             display: block;
             content: '';

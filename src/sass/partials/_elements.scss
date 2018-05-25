@@ -44,3 +44,11 @@ th, td {
 tr:nth-child(even) {
 	background-color: #eee;
 }
+
+
+/* SCREEN READERS */
+
+.screen-reader-text {
+	position: absolute;
+	left: -9999px;
+}

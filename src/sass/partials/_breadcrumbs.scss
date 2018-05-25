@@ -4,21 +4,19 @@
 
 #breadcrumbs {
     
-    & {
-        display: none;
-        font-size: .8rem;
-        font-family: $type-header;
-        font-weight: 600;
-        color: $darkgrey;
-        transition: margin .1s ease-in-out;
-        position: relative;
-        z-index: 10;
-    }
+	display: none;
+	font-size: .8rem;
+	font-family: $type-header;
+	font-weight: 600;
+	color: $darkgrey;
+	transition: margin .1s ease-in-out;
+	position: relative;
+	z-index: 10;
     
     &.has-js {
         
         display: block;
-        margin: 1rem 0 0;
+        margin: .8rem 0;
         
         div {
             position: relative;
@@ -134,7 +132,7 @@
 // Indendation
 @for $i from 1 through 20 {
     #breadcrumbs.has-js li:nth-child(#{$i}) {
-        margin-left: calc( #{$i} * .9rem - .9rem );    
+        margin-left: calc( #{$i} * .9rem - .9rem );
     }
 }
 
@@ -176,7 +174,7 @@
         }
 
         li {
-            position: relative; 
+            position: relative;
             float: left;
             font-size: inherit;
             margin-bottom: 0;
@@ -220,7 +218,7 @@
 }
 
 @media screen and (min-width: 920px) {
-    #breadcrumbs  { 
+    #breadcrumbs {
         margin: 1.5rem 0 1rem;
     }
 }
