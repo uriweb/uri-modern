@@ -234,20 +234,23 @@ function uri_modern_open_graph() {
 		if ( empty( $title ) ) {
 			$title = get_bloginfo( 'name', 'display' ); }
 
-		$excerpt = '';
-		// since the excerpt is just about always empty...
+		$excerpt = get_the_excerpt();
+
 		if ( empty( $excerpt ) ) {
-			if ( strpos( $post->post_content, '<!--more' ) !== false && 1 == 2 ) {
+			if ( strpos( $post->post_content, '<!--more' ) !== false ) {
 				$bits = explode( '<!--more', $post->post_content );
 			} else {
 				$bits = explode( "\n", wordwrap( $post->post_content, 200 ) );
 			}
-			$excerpt = strip_tags( $bits[0] );
-			$excerpt = str_replace( '"', '&quot;', $excerpt );
-			$excerpt = trim( $excerpt );
+			$excerpt = $bits[0];
 		}
 
+		$excerpt = strip_tags( $excerpt );
+		$excerpt = str_replace( '"', '&quot;', $excerpt );
+		$excerpt = trim( $excerpt );
+
 		?>
+<meta name="description" content="<?php echo $excerpt; ?>" />
 <meta name="twitter:card" content="<?php echo $summary_type; ?>" />
 <meta name="twitter:site" content="@universityofri" />
 <meta name="twitter:creator" content="@universityofri" />
