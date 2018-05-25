@@ -1,0 +1,91 @@
+/* ==============================
+   GOOGLE SEARCH RESULTS
+   ============================== */
+
+#cse-search-results  {
+	
+	* {
+		font-family: $type-sans;
+		font-size: 1rem;
+		color: inherit;
+		padding: 0;
+	}
+
+	.gsc-above-wrapper-area-container,
+	.gsc-resultsHeader {
+		border: none;
+	}
+
+	.gsc-results {
+		width: 100%;
+	}
+
+	.gsc-control-cse {
+		border: none;
+		background-color: transparent;
+	}
+
+
+	.gsc-webResult.gsc-result {
+		background-color: #fff;
+		margin: 0 0 .5rem;
+		padding: 1.5rem 1rem 0;
+		border: 1px solid #eee;
+	}
+
+
+	.gsc-table-result {
+		border: none;
+		padding-left: 0;
+		padding-right: 0;
+		max-width: 750px;
+	}
+
+	.gs-title {
+
+		font-size: 1.25rem;
+		text-decoration: none;
+		margin-bottom: .5rem;
+		height: auto;
+
+		a {
+
+			text-decoration: none;
+			color: $link;
+
+			&:hover,
+			&:focus {
+				color: $linkhover;
+			}
+
+		}
+
+		b {
+			font-size: inherit;
+			text-decoration: none;
+		}
+
+	}
+
+	.gsc-url-top {
+		color: $midgrey;
+		margin-bottom: 1rem;
+	}
+
+	.gs-image {
+		border: none;
+	}
+
+	.gs-snippet {
+		line-height: 1.5rem;
+	}
+
+	.gsc-cursor {
+		margin-top: 1rem;
+	}
+
+	.gsc-cursor-page {
+		background: transparent;
+	}
+	
+}

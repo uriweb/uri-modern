@@ -54,7 +54,7 @@ nav.posts-navigation {
     margin: 0 0 2rem;
     padding: 2rem 0 0;
     border-top: 1px solid #ddd;
-    font-size: 1rem;    
+    font-size: 1rem;
         
     .nav-links {
         
@@ -184,11 +184,9 @@ body.search-results {
     
     article {
 
-        & {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid $grey;
-        }
+		margin-bottom: 2rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px solid $grey;
 
         h2 {
             max-width: 500px;
@@ -205,7 +203,7 @@ body.search-results {
     h1 {
         font-size: 1.5rem;
         color: $darkgrey;
-    }   
+    }
 
     h1 span {
         display: block;

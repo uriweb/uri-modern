@@ -29,7 +29,7 @@
 }
     
 #gs {
-    height: 0px;
+    height: 0;
     transition: height .4s $easeInOutQuint;
     pointer-events: none;
 }
@@ -95,7 +95,7 @@
     background-repeat: no-repeat;
     background-size: 50% auto;
     transition: top .4s $easeInOutQuint, background-size .4s $easeInOutQuint;
-}  
+}
 
 #gsform:before {
     content: '';
@@ -106,7 +106,7 @@
     left: 0;
     width: 0;
     height: 0;
-    border-bottom: 0px solid $link;
+    border-bottom: 0 solid $link;
     border-left: calc(#{$brandbarheight} / 2) solid transparent;
     border-right: calc(#{$brandbarheight} / 2) solid transparent;
     transition: all .4s $easeInOutQuint;
@@ -172,21 +172,21 @@
 }
 
 #gateways-menu {
-    & {
-        display: none;  
-        list-style-type: none;
-        overflow: hidden;
-        position: absolute;
-        top: $brandbarheight;
-        right: 0;
-        z-index: 9996;
-        width: 220px;
-        padding: 1.5rem 0 1rem;
-        background: #fff;
-        border-radius: 0 0 .2rem .2rem;
-        box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
-        transition: right .2s ease-in-out;
-    }
+	
+	display: none;
+	list-style-type: none;
+	overflow: hidden;
+	position: absolute;
+	top: $brandbarheight;
+	right: 0;
+	z-index: 9996;
+	width: 220px;
+	padding: 1.5rem 0 1rem;
+	background: #fff;
+	border-radius: 0 0 .2rem .2rem;
+	box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
+	transition: right .2s ease-in-out;
+	
     li {
         margin: 0;
     }
@@ -219,7 +219,7 @@
     font-weight: 600;
     background-color: transparent;
     transition: all .1s ease-in-out;
-}   
+}
 
 #gateways-label:hover,
 #gateways-label:focus {
