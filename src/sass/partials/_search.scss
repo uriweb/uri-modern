@@ -5,7 +5,7 @@
 #cse-search-results  {
 	
 	* {
-		font-family: "Hind", sans-serif;
+		font-family: $type-sans;
 		font-size: 1rem;
 		color: inherit;
 		padding: 0;
@@ -51,11 +51,11 @@
 		a {
 
 			text-decoration: none;
-			color: #0047c2;
+			color: $link;
 
 			&:hover,
 			&:focus {
-				color: #003287;
+				color: $linkhover;
 			}
 
 		}
@@ -68,7 +68,7 @@
 	}
 
 	.gsc-url-top {
-		color: #999;
+		color: $midgrey;
 		margin-bottom: 1rem;
 	}
 

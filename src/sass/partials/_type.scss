@@ -206,6 +206,42 @@ blockquote cite:before {
 	content: ' — ';
 }
 
+.pullquote {
+	width: 100%;
+	max-width: 400px;
+	border-top: 10px solid $accentblue;
+	margin: 2rem auto 0;
+	box-sizing: border-box;
+}
+.pullquote cite {
+	font-family: $type-sans;
+	text-align: left;
+	margin-top: 1rem;
+	max-width: 300px;
+	position: relative;
+	padding-top: .5rem;
+}
+
+.pullquote cite:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 40px;
+	height: 1px;
+	background: $grey;
+}
+
+@media screen and (min-width: $break2) {
+	.pullquote {
+		width: 400px;
+		float: right;
+		padding: 1rem 0;
+		margin: 1rem 0 1rem 3rem;
+	}
+}
+
 .localist-widget-hl {
 	overflow: auto;
 }
