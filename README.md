@@ -10,6 +10,7 @@ URI Modern 1.0.2 fixes bugs and makes some style improvements.
 * Filters page titles based on a whitelist
 * Adjusts styles for search and pull quotes
 * Adds support for excerpts in pages
+* Uses the excerpt for open graph elements and meta description, if available
 * Minor adjustments to the program post type template
 * Other bug fixes and style tweaks
 
