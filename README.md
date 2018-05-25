@@ -4,10 +4,12 @@ URI Modern is a WordPress theme designed for the University of Rhode Island. It'
 
 ## What's new in 1.0.2
 
-URI Modern 1.0.2 is a bug fix release.
+URI Modern 1.0.2 is a bug fix release and makes some style improvements.
 
 * Consolidates screen reader text styles
 * Filters page titles based on a whitelist
+* Adjusts styles for search and pull quotes
+* Adds support for excerpts in pages
 * Minor adjustments to the program post type template
 * Other bug fixes and style tweaks
 
