@@ -2,7 +2,15 @@
 
 URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience. 
 
-## What's new in 1.0.2
+## What's new in 1.0.3
+
+URI Modern 1.0.3 is a bug fix release.
+
+* Fixes broken footer links
+
+For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/110/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues). 
+
+## New in 1.0.2
 
 URI Modern 1.0.2 fixes bugs and makes some style improvements.
 
@@ -28,10 +36,11 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 [![Master Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=master "Master build status")](https://travis-ci.org/uriweb/uri-modern)
 [![Develop Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=develop "Develop build status")](https://travis-ci.org/uriweb/uri-modern)
 [![CodeFactor](https://www.codefactor.io/repository/github/uriweb/uri-modern/badge/master)](https://www.codefactor.io/repository/github/uriweb/uri-modern/overview/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/cc0b943ef637481b87d3b17ff9f5b1c0?branch=master)](https://www.codacy.com/app/uriweb/uri-modern?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern&amp;utm_campaign=Badge_Grade)
 [![devDependencies Status](https://david-dm.org/uriweb/uri-modern/dev-status.svg "devDependencies status")](https://david-dm.org/uriweb/uri-modern?type=dev)
 
 Contributors: Brandon Fuller, John Pennypacker  
 Tags: themes  
 Requires at least: 4.0  
 Tested up to: 4.9  
-Stable tag: 1.0.2  
+Stable tag: 1.0.3  
