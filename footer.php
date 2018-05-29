@@ -43,7 +43,7 @@
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/about/leadership/" role="menuitem">Leadership</a></li>
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/diversity/" role="menuitem">Diversity and Inclusion</a></li>
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/globaluri/" role="menuitem">Global</a></li>
-						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/about/campuses/" role="menuitem">Campuses</a></li>
+						<li><a href="https://web.uri.edu/about/campuses/" role="menuitem">Campuses</a></li>
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/safety/" role="menuitem">Safety</a></li>
 					</ul>
 				</div>
@@ -54,7 +54,7 @@
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/housing/" role="menuitem">Housing</a></li>
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/dining/" role="menuitem">Dining</a></li>
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/athletics/" role="menuitem">Athletics and Recreation</a></li>
-						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/campus-life/health-and-safety/" role="menuitem">Health and Wellness</a></li>
+						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/campus-life/health-and-wellness/" role="menuitem">Health and Wellness</a></li>
 						<li><a href="https://events.uri.edu" role="menuitem">Events</a></li>
 					</ul>
 				</div>
