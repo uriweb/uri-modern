@@ -14,7 +14,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "University of Rhode Island",
-  "authorHuman": "Brandon Fuller <bjcfuller@uri.edu>",
   "authorURI": "https://today.uri.edu",
   "license": "GPL-3.0",
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
