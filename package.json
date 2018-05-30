@@ -15,6 +15,10 @@
   },
   "author": "University of Rhode Island",
   "authorURI": "https://today.uri.edu",
+  "humans": [
+    "Brandon Fuller <bjcfuller@uri.edu>",
+	"John Pennypacker <jpennypacker@uri.edu>"
+  ],
   "license": "GPL-3.0",
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
