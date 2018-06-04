@@ -17,12 +17,12 @@
   "authorURI": "https://today.uri.edu",
   "humans": [
     "Brandon Fuller <bjcfuller@uri.edu>",
-	"John Pennypacker <jpennypacker@uri.edu>"
+    "John Pennypacker <jpennypacker@uri.edu>"
   ],
   "license": "GPL-3.0",
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
-    "autoprefixer": "^8.2.0",
+    "autoprefixer": "^8.6.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-changed": "^3.2.0",
     "gulp-concat": ">=2.6.1",
@@ -31,7 +31,7 @@
     "gulp-jscs": "^4.1.0",
     "gulp-jshint": ">=2.0.4",
     "gulp-postcss": ">=7.0.0",
-    "gulp-sass": ">=3.0.0",
+    "gulp-sass": "^4.0.1",
     "gulp-shell": "^0.6.5",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-strip-debug": "^3.0.0",
