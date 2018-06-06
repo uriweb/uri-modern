@@ -60,7 +60,7 @@ function uri_modern_breadcrumbs() {
 function uri_modern_breadcrumbs_get_link( $path ) {
 
 	// ignore pagination i.e. if the path ends in /page/N
-	if ( preg_match( '/\/page(\/(\d)*)?$/', $path, $matches ) !== 0 ) {
+	if ( preg_match( '/\/page(\/(\d)*)?$/', $path ) !== 0 ) {
 		return;
 	}
 
@@ -110,7 +110,7 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 function uri_modern_format_breadcrumbs( $crumbs ) {
 	$output = '<ol>';
 	$last   = end( $crumbs );
-	foreach ( $crumbs as $k => $c ) {
+	foreach ( $crumbs as $c ) {
 		if ( $c === $last ) { // last crumb isn't a hyperlink.
 			$output .= '<li aria-current="page">' . $c['name'] . '</li>';
 		} else {
