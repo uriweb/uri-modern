@@ -62,10 +62,9 @@
 }
 
 #actionbar {
-    & {
-        display: flex;
-        padding: 0;
-    }
+	
+	display: flex;
+	padding: 0;
 
     a {
         display: block;

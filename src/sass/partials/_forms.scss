@@ -54,23 +54,22 @@ form label {
 }
 
 form input.button {
-    & {
-        display: inline-block;
-        margin: 0 .5rem;
-        padding: 1rem 2rem;
-        background: $white;
-        border: 1px solid $grey;
-        font-size: .7rem;
-        font-weight: 600;
-        letter-spacing: .1rem;
-        text-transform: uppercase;
-        text-align: center;
-        color: $darkgrey;
-        text-decoration: none;
-        border-radius: .2rem;
-        transition: all .2s ease-in-out;
-        text-shadow: none;
-    }
+	
+	display: inline-block;
+	margin: 0 .5rem;
+	padding: 1rem 2rem;
+	background: $white;
+	border: 1px solid $grey;
+	font-size: .7rem;
+	font-weight: 600;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: $darkgrey;
+	text-decoration: none;
+	border-radius: .2rem;
+	transition: all .2s ease-in-out;
+	text-shadow: none;
     
     &:first-of-type {
         margin-left: 0;
@@ -83,11 +82,10 @@ form input.button {
     }
     
     &:matches([type="submit"]) {
-        & {
-            background: $link;
-            color: $white !important;
-            border: none !important;
-        }
+		
+		background: $link;
+		color: $white !important;
+		border: none !important;
         
         &:hover,
         &:focus {

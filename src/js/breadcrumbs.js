@@ -12,7 +12,7 @@
 
 	function initBreadcrumbs() {
 
-		var BC = {}, div = {}, i;
+		var BC = {}, div = {};
 
 		BC.el = document.getElementById( 'breadcrumbs' );
 		BC.ol = BC.el.querySelector( 'ol' );
