@@ -42,22 +42,6 @@ var sassOptions = {
   outputStyle: 'compressed' //expanded, nested, compact, compressed
 };
 
-// Generate build number
-function getBuild() {
-    
-    var d, start, day, seconds, build;
-    
-    d = new Date();
-    start = new Date(d.getUTCFullYear(), 0, 0);
-    day = Math.floor( (d - start) / 86400000);
-    seconds = (d.getUTCHours() * 3600) + (d.getUTCMinutes() * 60) + d.getUTCSeconds();
-    
-    build = d.getUTCFullYear().toString().slice(2) + ("00" + (day)).slice(-3) + '.' + seconds;
-
-    return build;
-    
-}
-
 // JS concat, strip debugging and minify
 gulp.task('scripts', scripts);
 
