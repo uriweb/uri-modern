@@ -123,8 +123,6 @@ function sniffs(done) {
     return gulp.src('.', {read:false})
         .pipe(shell(['./.sniff']));
     
-    done();
-    //console.log('sniffs ran');
 }
 
 // watch
