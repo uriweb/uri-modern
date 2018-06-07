@@ -5,11 +5,28 @@
    COMPONENT LIRBARY
    ============================== */
 
+/* Boxouts */
+
+.cl-boxout {
+	
+	h1 {
+		font-size: 1.75rem;
+		margin-bottom: 1.5rem;
+	}
+	
+	p {
+		font-size: 1rem;
+	}
+	
+}
+
+
 /* Buttons */
 
 .cl-button {
     font-family: $type-sans;
 }
+
 
 /* Cards */
 
@@ -20,7 +37,7 @@
     font-family: $type-sans;
     
     p {
-        font-size: .9rem;
+        font-size: 1rem;
     }
     
 }
