@@ -23,6 +23,7 @@ body.stage {
     
     #masthead,
     #content,
+	#region-after-content,
     #actionbar-wrapper,
     #globalfooter {
         position: relative;
@@ -30,10 +31,14 @@ body.stage {
     }
     
     #content {
-        background: #fafafa;
+        background: $lightgrey;
         padding-top: 3rem;
         margin-top: 100vh;
     }
+	
+	#region-after-content {
+		background: $lightgrey;
+	}
     
     #masthead {
         position: fixed;
@@ -44,7 +49,8 @@ body.stage {
     }
     
     #sb-backdrop,
-    #navigation {
+    #navigation,
+	#region-before-content {
         opacity: 0;
     }
     

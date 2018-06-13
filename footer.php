@@ -14,8 +14,10 @@
 	</div><!-- #content -->
 
 	<?php if ( is_active_sidebar( 'after-content' ) ) : ?>
-		<div id="region-after-content" class="region-after-content widgets content-width">
-			<?php dynamic_sidebar( 'after-content' ); ?>
+		<div id="region-after-content" class="region-after-content">
+			<div class="widgets content-width">
+				<?php dynamic_sidebar( 'after-content' ); ?>
+			</div>
 		</div><!-- #region-after-content -->
 	<?php endif; ?>
 
