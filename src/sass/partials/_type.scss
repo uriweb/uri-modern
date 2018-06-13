@@ -98,8 +98,15 @@ p {
     margin: 0 0 2rem;
 }
 
-p.fullwidth {
+.fullwidth {
+	
     max-width: 100%;
+	
+	p,
+	li {
+		max-width: 100%;
+	}
+	
 }
 
 p:empty {
