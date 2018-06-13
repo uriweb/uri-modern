@@ -62,6 +62,7 @@
 		// Store a few other elements.
 		els.backdrop   = document.getElementById( 'sb-backdrop' );
 		els.navigation = document.getElementById( 'navigation' );
+		els.widgets = document.getElementById( 'region-before-content' );
 
 		// Initialize scroll and add event listeners.
 		handleScroll( els );
@@ -149,6 +150,9 @@
 		}
 		if ( null !== els.backdrop ) {
 			els.backdrop.style.opacity = Math.min( e * 8, 1 );
+		}
+		if ( null !== els.widgets ) {
+			els.widgets.style.opacity = Math.min( e * 8, 1 );
 		}
 
 	}

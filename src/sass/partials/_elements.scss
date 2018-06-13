@@ -2,29 +2,6 @@
    ELEMENTS
    ============================== */
 
-/* IMAGES */
-
-img.alignright,
-img.alignleft {
-    display: block;
-    position: relative;
-    width: 100vw;
-    height: auto;
-    left: -50vw;
-    margin-left: 50%;
-}
-
-@media screen and (min-width: 480px) {
-    img.alignright,
-    img.alignleft {
-        width: 60%;
-        height: auto;
-        float: right;
-        left: 0;
-        margin-left: 0;
-    }
-}
-
 
 /* TABLES */
 

@@ -22,9 +22,8 @@ get_template_part( 'header-parts/head' ); ?>
 			<div id="navigation" class="content-width">
 				<?php get_template_part( 'header-parts/breadcrumbs' ); ?>
 			</div>
-			<div class="content-width">
-				<?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
-			</div>
+			
+			<?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
 
 		</header>
 	</div>
