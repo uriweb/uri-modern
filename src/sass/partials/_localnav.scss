@@ -87,6 +87,15 @@
     
 }
 
+#cl-localnav>ul.cl-menu-list-no-js {
+	display: block;
+	position: relative;
+	top: 0;
+	box-shadow: none;
+	border-radius: 0;
+	background: transparent;
+}
+
 #localnav>ul,
 #cl-localnav>ul {
 
@@ -124,13 +133,28 @@
         background: $link;
         color: $white;
     }
-    
-    li.current_page_item>a {
+	
+	/* Reset styles from the Component Library */
+	li.current_page_item,
+	li.current-menu-item,
+	li.current_page_parent,
+	li.current_page_ancestor,
+	li.current-page-ancestor,
+	li.current-post-ancestor {
+		box-shadow: none;
+	}
+    /* done with reset */
+	
+    li.current_page_item>a,
+	li.current-page-item>a {
         background: $link;
         color: $white;
     }
     
-    li.current_page_ancestor>a {
+	li.current_page_parent>a,
+    li.current_page_ancestor>a,
+	li.current-page-ancestor>a, 
+	li.current-post-ancestor>a {
         border-bottom: 3px solid $midgrey;
     }
     
