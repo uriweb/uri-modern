@@ -366,6 +366,14 @@ add_action( 'wp_enqueue_scripts', 'uri_modern_scripts' );
 
 
 /**
+ * Enable styles in the WYSIWYG Editor
+ */
+if ( is_admin() ) {
+	add_editor_style( get_template_directory_uri() . '/style.css', __FILE__ );
+}
+
+
+/**
  * Gets the current WP path as known by Apache, not WordPress.
  *
  * @param bool $strip is a switch to strip slashes from the end of the URL.
