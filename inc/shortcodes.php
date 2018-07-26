@@ -14,15 +14,13 @@
 function uri_modern_shortcode_gn( $atts, $content = null ) {
 
 	// Attributes.
-	extract(
-		shortcode_atts(
+	$atts = shortcode_atts(
 			array(
 				'style' => '',
 			), $atts
-		)
-	);
+		);
 
-	$output = '<div class="globalnav breakout ' . $style . '">';
+	$output = '<div class="globalnav breakout ' . $atts['style'] . '">';
 
 	ob_start();
 	get_template_part( 'header-parts/globalnav' );
