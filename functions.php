@@ -532,6 +532,11 @@ require get_template_directory() . '/inc/layout-options.php';
 require get_template_directory() . '/inc/shortcodes.php';
 
 /**
+ * WYSIWYG additions
+ */
+require get_template_directory() . '/inc/wysiwyg.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
