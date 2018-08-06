@@ -77,7 +77,7 @@
 
 			<?php if ( get_field( 'peoplepubs' ) ) { ?>
 				<div class="people-publications">
-					<h3>Publications</h3>
+					<h3>Selected Publications</h3>
 					<?php the_field( 'peoplepubs' ); ?>
 				</div>
 			<?php } ?>
