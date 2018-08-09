@@ -47,8 +47,7 @@ if ( ! function_exists( 'uri_modern_entry_footer' ) ) :
 	function uri_modern_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items */
-			$categories_list = get_the_category_list( esc_html__( ' ', 'uri' ) );
+			$categories_list = get_the_category_list( ' ' );
 			if ( $categories_list && uri_modern_categorized_blog() && get_option( 'display_post_categories' ) ) {
 				/* translators: %s: the list of categories */
 				printf( '<span class="cat-links"><span class="screen-reader-text">Posted in:</span>' . esc_html__( ' %s', 'uri' ) . '</span>', $categories_list ); // WPCS: XSS OK.
