@@ -49,6 +49,10 @@
 ?>
 <li class="people-url"><strong>Website:</strong> <a href="<?php the_field( 'peopleurl' ); ?>"><?php the_field( 'peopleurl' ); ?></a><?php endif; ?>
 			</ul>
+			
+			<?php
+				the_content();
+			?>
 
 			<?php if ( get_field( 'peoplebio' ) ) { ?>
 				<div class="people-bio">
@@ -73,7 +77,7 @@
 
 			<?php if ( get_field( 'peoplepubs' ) ) { ?>
 				<div class="people-publications">
-					<h3>Publications</h3>
+					<h3>Selected Publications</h3>
 					<?php the_field( 'peoplepubs' ); ?>
 				</div>
 			<?php } ?>
@@ -100,8 +104,6 @@
 
 
 		<?php
-			the_content();
-
 			wp_link_pages(
 				array(
 					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri' ),

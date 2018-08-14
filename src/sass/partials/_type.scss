@@ -272,3 +272,34 @@ blockquote cite:before {
     }
     
 }
+
+
+/* FEATURES */
+
+.feature-caption {
+	font-size: .9rem;
+	color: #555;
+	padding: 0 0 1rem;
+	max-width: 360px;
+	line-height: 125%;
+	margin-bottom: 2rem;
+}
+
+.feature-caption:after {
+	display: block;
+	content: '';
+	width: 100px;
+	height: 1px;
+	background: #ccc;
+	margin-top: 1rem;
+}
+
+.feature-caption p {
+	margin-bottom: 1rem;
+}
+
+.feature-caption .credit {
+	color: #999;
+	font-size: .8rem;
+	margin: .5rem 0 1rem;
+}

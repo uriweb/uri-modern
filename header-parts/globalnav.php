@@ -8,7 +8,7 @@
 
 ?>
 	<input type="checkbox" id="globalnav-toggle" role="presentation" aria-label="Open the global navigation menu when browsing on mobile">
-	<label for="globalnav-toggle" id="globalnav-label">Main Menu<span role="presentation">open/close</span></label>
+	<label for="globalnav-toggle" id="globalnav-label">Main Menu <span role="presentation">open/close</span></label>
 	<ul id="globalnav-menu" class="content-width" role="menu">
 		<li rule="menuitem"><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/admission">Admission</a></li>
 		<li rule="menuitem"><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/academics">Academics</a></li>
