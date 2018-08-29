@@ -15,4 +15,5 @@
 		<li rule="menuitem"><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/research">Research</a></li>
 		<li rule="menuitem"><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/campus-life">Campus Life</a></li>
 		<li rule="menuitem"><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/about">About</a></li>
+		<li rule="menuitem"><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/giving">Giving</a></li>
 	</ul>
