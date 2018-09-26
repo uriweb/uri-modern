@@ -28,7 +28,7 @@
 		background: #fff;
 		padding: 1rem;
 		font-size: 1rem;
-		margin-bottom: 2rem;
+		margin: 2rem 0;
 		border: 1px solid $grey;
 	}
 	
@@ -48,12 +48,18 @@
 		background: $link;
 		padding: 3px 10px 1px;
 		border-radius: 2px;
+		transition: background .1s ease-in-out;
+	}
+	
+	.reply a:hover,
+	.reply a:focus {
+		background: $linkhover;
 	}
 	
 	.children {
 		border-left: 1px solid $grey;
 		padding-left: 1rem;
-		margin: 0 0 0 .2rem;
+		margin: 0 0 2rem .2rem;
 	}
 	
 	#respond {
@@ -86,6 +92,41 @@
 			font-size: 1rem;
 		}
 		
+		#cancel-comment-reply-link {
+			position: relative;
+			bottom: 4px;
+			font-size: .8rem;
+			font-weight: 400;
+			color: #fff;
+			background: #d38381;
+			padding: 4px 10px;
+			margin-left: .5rem;
+			border-radius: 2px;
+			transition: background .1s ease-in-out;
+		}
+		
+		#cancel-comment-reply-link:hover,
+		#cancel-comment-reply-link:focus {
+			background: #c24338;
+		}
+		
+		.form-submit #submit {
+			font-size: .8rem;
+			font-weight: 400;
+			color: #fff;
+			background: $link;
+			padding: 6px 10px;
+			border-radius: 2px;
+			border: none;
+			transition: background .1s ease-in-out;
+		}
+		
+		.form-submit #submit:hover,
+		.form-submit #submit:focus {
+			cursor: pointer;
+			background: $linkhover;
+		}
+		
 	}
 	
 }
@@ -104,7 +145,7 @@
 		
 		.children {
 			padding-left: 2rem;
-			margin: 0 0 0 .5rem;
+			margin: 0 0 2rem .5rem;
 		}
 		
 		#respond {
