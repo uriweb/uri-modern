@@ -4,26 +4,31 @@
 
 #comments {
 	
+	width: 100%;
+	max-width: 800px;
+	margin: 4rem auto 0;
 	background: #eee;
 	border-radius: .4rem;
-	padding: 2rem;®
+	border: 1px solid #eee;
+	overflow: hidden;
 	
 	.comments-title {
 		border-bottom: 1px solid $grey;
 		font-weight: 400;
 		max-width: initial;
-		padding-bottom: 1rem;
+		padding: 1rem;
 	}
 	
 	.comment-list {
 		margin: 0;
+		padding: 0 1rem;
 	}
 	
 	.comment-body {
 		background: #fff;
 		padding: 1rem;
+		font-size: 1rem;
 		margin-bottom: 2rem;
-		border-radius: .2rem;
 		border: 1px solid $grey;
 	}
 	
@@ -47,8 +52,65 @@
 	
 	.children {
 		border-left: 1px solid $grey;
-		padding-left: 2rem;
-		margin: 0 0 0 .5rem;
+		padding-left: 1rem;
+		margin: 0 0 0 .2rem;
+	}
+	
+	#respond {
+		
+		background: #fff;
+		padding: 1rem;
+		
+		.comment-notes {
+			font-size: .8rem;
+		}
+		
+		.comment-form-comment {
+			max-width: 100%;
+		}
+		
+		label {
+			color: $darkgrey;
+		}
+		
+		input {
+			display: block;
+		}
+		
+		#comment {
+			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			border: 1px solid #ddd;
+			padding: .5rem;
+			font-size: 1rem;
+		}
+		
+	}
+	
+}
+
+@media screen and (min-width: 600px) {
+	
+	#comments {
+		
+		.comments-title {
+			padding: 2rem 2rem 1rem;
+		}
+
+		.comment-list {
+			padding: 0 2rem;
+		}
+		
+		.children {
+			padding-left: 2rem;
+			margin: 0 0 0 .5rem;
+		}
+		
+		#respond {
+			padding: 2rem;
+		}
+		
 	}
 	
 }
