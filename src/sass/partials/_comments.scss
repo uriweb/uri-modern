@@ -1,0 +1,55 @@
+/* ==============================
+   COMMENTS
+   ============================== */
+
+#comments {
+	
+	background: #eee;
+	border-radius: .4rem;
+	padding: 2rem;®
+	
+	.comments-title {
+		border-bottom: 1px solid $grey;
+		font-weight: 400;
+		max-width: initial;
+		padding-bottom: 1rem;
+	}
+	
+	.comment-list {
+		margin: 0;
+	}
+	
+	.comment-body {
+		background: #fff;
+		padding: 1rem;
+		margin-bottom: 2rem;
+		border-radius: .2rem;
+		border: 1px solid $grey;
+	}
+	
+	.comment-metadata {
+		font-size: .8rem;
+		padding: .5rem 0;
+		border-bottom: 1px solid $grey;
+	}
+	
+	.comment-content {
+		padding: 1rem 0 0;
+	}
+	
+	.reply a {
+		font-size: .8rem;
+		color: #fff;
+		background: $link;
+		padding: 3px 10px 1px;
+		border-radius: 2px;
+	}
+	
+	.children {
+		border-left: 1px solid $grey;
+		padding-left: 2rem;
+		margin: 0 0 0 .5rem;
+	}
+	
+}
+
