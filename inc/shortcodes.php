@@ -17,7 +17,8 @@ function uri_modern_shortcode_gn( $atts, $content = null ) {
 	$atts = shortcode_atts(
 			array(
 				'style' => '',
-			), $atts
+			),
+		$atts
 		);
 
 	$output = '<div class="globalnav breakout ' . $atts['style'] . '">';

@@ -18,8 +18,10 @@
  */
 function uri_modern_custom_header_setup() {
 	add_theme_support(
-		'custom-header', apply_filters(
-			'uri_modern_custom_header_args', array(
+		'custom-header',
+		apply_filters(
+			'uri_modern_custom_header_args',
+			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 2560,

@@ -41,7 +41,8 @@ function uri_modern_options_social_media( $wp_customize ) {
 
 	// Add section for social media.
 	$wp_customize->add_section(
-		'uri_modern_customizer_social', array(
+		'uri_modern_customizer_social',
+		array(
 			'title'    => __( 'Social Media', 'uri' ),
 			'priority' => 70,
 		)
@@ -49,7 +50,8 @@ function uri_modern_options_social_media( $wp_customize ) {
 
 	// Add field for Facebook URL.
 	$wp_customize->add_setting(
-		'department_facebook_URL', array(
+		'department_facebook_URL',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_sanitize_url',
@@ -71,7 +73,8 @@ function uri_modern_options_social_media( $wp_customize ) {
 
 	// Add field for Instagram URL.
 	$wp_customize->add_setting(
-		'department_instagram_URL', array(
+		'department_instagram_URL',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_sanitize_url',
@@ -93,7 +96,8 @@ function uri_modern_options_social_media( $wp_customize ) {
 
 	// Add field for Twitter URL.
 	$wp_customize->add_setting(
-		'department_twitter_URL', array(
+		'department_twitter_URL',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_sanitize_url',
@@ -115,7 +119,8 @@ function uri_modern_options_social_media( $wp_customize ) {
 
 	// Add field for YouTube URL.
 	$wp_customize->add_setting(
-		'department_youtube_URL', array(
+		'department_youtube_URL',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_sanitize_url',
@@ -137,7 +142,8 @@ function uri_modern_options_social_media( $wp_customize ) {
 
 	// Add field for Snapchat URL.
 	$wp_customize->add_setting(
-		'department_snapchat_URL', array(
+		'department_snapchat_URL',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_sanitize_url',
@@ -159,7 +165,8 @@ function uri_modern_options_social_media( $wp_customize ) {
 
 	// Add field for LinkedIn URL.
 	$wp_customize->add_setting(
-		'department_linkedin_URL', array(
+		'department_linkedin_URL',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_sanitize_url',
@@ -190,7 +197,8 @@ function uri_modern_options_site_header( $wp_customize ) {
 
 	/* Site Header text color */
 	$wp_customize->add_setting(
-		'site_header_text_color', array(
+		'site_header_text_color',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_validate_checkbox',
@@ -221,7 +229,8 @@ function uri_modern_options_site_footer( $wp_customize ) {
 
 	// Add section for footer.
 	$wp_customize->add_section(
-		'uri_modern_customizer_footer', array(
+		'uri_modern_customizer_footer',
+		array(
 			'title'    => __( 'Footer', 'uri' ),
 			'priority' => 60,
 		)
@@ -229,7 +238,8 @@ function uri_modern_options_site_footer( $wp_customize ) {
 
 	/* Action Bar Give url */
 	$wp_customize->add_setting(
-		'action_bar_give_url', array(
+		'action_bar_give_url',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_sanitize_url',
@@ -261,7 +271,8 @@ function uri_modern_options_posts( $wp_customize ) {
 
 	// Add section for post options.
 	$wp_customize->add_section(
-		'uri_modern_customizer_posts', array(
+		'uri_modern_customizer_posts',
+		array(
 			'title'    => __( 'Post Options', 'uri' ),
 			'priority' => 70,
 		)
@@ -269,7 +280,8 @@ function uri_modern_options_posts( $wp_customize ) {
 
 	/* Display categories */
 	$wp_customize->add_setting(
-		'display_post_categories', array(
+		'display_post_categories',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_validate_checkbox',
@@ -291,7 +303,8 @@ function uri_modern_options_posts( $wp_customize ) {
 
 	/* Display tags */
 	$wp_customize->add_setting(
-		'display_post_tags', array(
+		'display_post_tags',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'uri_modern_validate_checkbox',
@@ -322,7 +335,8 @@ function uri_modern_options_posts( $wp_customize ) {
 function uri_modern_options_breadcrumbs( $wp_customize ) {
 
 	$wp_customize->add_setting(
-		'breadcrumbs_prepend', array(
+		'breadcrumbs_prepend',
+		array(
 			'default'           => '',
 			'type'              => 'option',
 			'sanitize_callback' => 'sanitize_textarea_field',
