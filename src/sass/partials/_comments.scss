@@ -37,13 +37,53 @@
 	}
 	
 	.comment-metadata {
+		
 		font-size: .8rem;
 		padding: .5rem 0;
 		border-bottom: 1px solid $grey;
+		
+		a {
+			position: relative;
+			color: $darkgrey;
+			padding-left: 12px;
+		}
+		
+		a:before {
+			position: absolute;
+			top: calc( 50% - 5px );
+			display: block;
+			content: '';
+			width: 9px;
+			height: 9px;
+			background-image: url(images/comments-sprite.png);
+			background-repeat: no-repeat;
+			background-position: -24px center;
+			background-size: auto 9px;
+		}
+		
+		a:hover,
+		a:focus {
+			
+			color: $link;
+			
+			&:before {
+				background-position: -33px center;
+			}
+			
+		}
+		
 	}
 	
-	.comment-author .fn {
-		padding-left: .5rem;
+	.comment-author {
+		
+		.avatar {
+			border-radius: 2px;
+		}
+		
+		.fn {
+			padding-left: .5rem;
+		}
+		
 	}
 	
 	.comment-content {
@@ -70,8 +110,8 @@
 		height: 9px;
 		background-image: url(images/comments-sprite.png);
 		background-repeat: no-repeat;
-		background-position: left center;
-		background-size: 24px auto;
+		background-position: 0 center;
+		background-size: auto 9px;
 	}
 		
 	.reply a:hover,
@@ -82,7 +122,7 @@
 		border: 1px solid $linkhover;
 		
 		&:before {
-			background-position: right center;
+			background-position: -12px center;
 		}
 		
 	}
