@@ -18,12 +18,14 @@ get_header();
 
 			get_template_part( 'template-parts/content', get_post_format() );
 
-			the_post_navigation(
-				array(
-					'prev_text' => 'Previous post',
-					'next_text' => 'Next post',
-				)
-			);
+			if ( ! get_option( 'hide_post_navigation' ) ) {
+				the_post_navigation(
+					array(
+						'prev_text' => 'Previous post',
+						'next_text' => 'Next post',
+					)
+				);
+			}
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :

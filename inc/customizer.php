@@ -324,6 +324,29 @@ function uri_modern_options_posts( $wp_customize ) {
 		)
 	);
 
+	/* Hide post navigation */
+	$wp_customize->add_setting(
+		'hide_post_navigation',
+		array(
+			'default'           => '',
+			'type'              => 'option',
+			'sanitize_callback' => 'uri_modern_validate_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'hide_post_navigation',
+			array(
+				'section'     => 'uri_modern_customizer_posts',
+				'label'       => __( 'Hide post navigation', 'uri' ),
+				'description' => __( 'Hide previous/next navigation on posts', 'uri' ),
+				'type'        => 'checkbox',
+			)
+		)
+	);
+
 }
 
 
