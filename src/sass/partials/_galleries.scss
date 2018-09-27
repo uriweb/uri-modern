@@ -3,12 +3,10 @@
    ============================== */
 
 .gallery {
-    
-    & {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-    }
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 
     .gallery-item {
         margin-bottom: 2rem;
