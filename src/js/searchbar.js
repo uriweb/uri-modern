@@ -19,7 +19,8 @@
 		}
 
 		gstoggle.addEventListener(
-			'change', function() {
+			'change',
+			function() {
 				if ( this.checked ) {
 					gsquery.focus();
 				} else {
