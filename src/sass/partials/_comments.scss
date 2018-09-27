@@ -28,7 +28,7 @@
 		background: #fff;
 		padding: 1rem;
 		font-size: 1rem;
-		margin: 2rem 0;
+		margin: 1rem 0;
 		border: 1px solid $grey;
 	}
 	
@@ -62,12 +62,93 @@
 		margin: 0 0 2rem .2rem;
 	}
 	
+	.comment-navigation {
+		
+		font-size: .8rem;
+		
+		.nav-links:after {
+			display: block;
+			content: '';
+			clear: both;
+		}
+		
+		.nav-links a {
+			color: #fff;
+			background: $link;
+			border-radius: 2px;
+			transition: background .1s ease-in-out;
+		}
+
+		.nav-links a:hover,
+		.nav-links a:focus {
+			background: $linkhover;
+		}
+		
+		.nav-previous {
+			
+			float: left;
+			position: relative;
+			
+			a {
+				padding: 3px 10px 1px 20px;
+			}
+			
+			a:before {
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: calc(50% - 5px);
+				left: 6px;
+				border-top: 4px solid transparent;
+				border-bottom: 4px solid transparent;
+				border-right: 8px solid #fff;
+			}
+			
+		}
+		
+		.nav-next {
+			
+			float: right;
+			position: relative;
+			
+			a {
+				padding: 3px 20px 1px 10px;
+			}
+			
+			a:before {
+				content: '';
+				display: block;
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: calc(50% - 5px);
+				right: 6px;
+				border-top: 4px solid transparent;
+				border-bottom: 4px solid transparent;
+				border-left: 8px solid #fff;
+			}
+			
+		}
+		
+	}
+	
+	#comment-nav-above {
+		padding: 0 1rem;
+	}
+	
+	#comment-nav-below {
+		padding: 1rem 1rem 2rem;
+	}
+	
 	#respond {
 		
 		background: #fff;
 		padding: 1rem;
 		
-		.comment-notes {
+		.comment-notes,
+		.logged-in-as {
 			font-size: .8rem;
 		}
 		
@@ -110,6 +191,10 @@
 			background: #c24338;
 		}
 		
+		.form-submit {
+			margin-bottom: 0;
+		}
+		
 		.form-submit #submit {
 			font-size: .8rem;
 			font-weight: 400;
@@ -129,6 +214,29 @@
 		
 	}
 	
+	.comment>#respond {
+		
+		position: relative;
+		margin-bottom: 2rem;
+		background: #fff;
+		border: 1px solid $grey;
+		
+		&:before {
+			display: block;
+			content: '';
+			position: absolute;
+			left: 1.9rem;
+			top: -11px;
+			width: 20px;
+			height: 20px;
+			background: #fff;
+			border-top: 1px solid $grey;
+			border-right: 1px solid $grey;
+			transform: rotate(-45deg);		
+		}
+		
+	}
+	
 }
 
 @media screen and (min-width: 600px) {
@@ -143,9 +251,21 @@
 			padding: 0 2rem;
 		}
 		
+		.comment-body {
+			margin: 2rem 0;
+		}
+		
 		.children {
 			padding-left: 2rem;
 			margin: 0 0 2rem .5rem;
+		}
+		
+		#comment-nav-above {
+			padding: 0 2rem;
+		}
+
+		#comment-nav-below {
+			padding: 1rem 2rem 2rem;
 		}
 		
 		#respond {
