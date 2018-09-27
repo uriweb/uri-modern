@@ -250,22 +250,39 @@
 		}
 		
 		#cancel-comment-reply-link {
+			
 			position: relative;
 			bottom: 4px;
 			font-size: .8rem;
 			font-weight: 400;
 			color: #fff;
 			background: #d38381;
-			padding: 4px 10px;
-			margin-left: .5rem;
+			padding: 4px 10px 4px 26px;
 			border-radius: 2px;
 			white-space: nowrap;
 			transition: background .1s ease-in-out;
+			
+			&:before {
+				position: absolute;
+				top: calc( 50% - 6px );
+				left: 7px;
+				display: block;
+				content: '';
+				width: 12px;
+				height: 12px;
+				background-image: url(images/comments-sprite.png);
+				background-repeat: no-repeat;
+				background-position: -56px center;
+				background-size: auto 12px;
+			}
+			
 		}
 		
 		#cancel-comment-reply-link:hover,
 		#cancel-comment-reply-link:focus {
+			
 			background: #c24338;
+			
 		}
 		
 		.form-submit {
@@ -314,6 +331,14 @@
 			transform: rotate(-45deg);		
 		}
 		
+	}
+	
+}
+
+@media screen and (min-width: 450px) {
+	
+	#comments #respond #cancel-comment-reply-link {
+		margin-left: .5rem;
 	}
 	
 }
