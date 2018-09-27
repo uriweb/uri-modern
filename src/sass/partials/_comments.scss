@@ -12,6 +12,10 @@
 	border: 1px solid #eee;
 	overflow: hidden;
 	
+	ol {
+		list-style-type: none;
+	}
+	
 	.comments-title {
 		border-bottom: 1px solid $grey;
 		font-weight: 400;
@@ -38,22 +42,49 @@
 		border-bottom: 1px solid $grey;
 	}
 	
+	.comment-author .fn {
+		padding-left: .5rem;
+	}
+	
 	.comment-content {
 		padding: 1rem 0 0;
 	}
 	
 	.reply a {
+		position: relative;
 		font-size: .8rem;
-		color: #fff;
-		background: $link;
-		padding: 3px 10px 1px;
+		color: $darkgrey;
+		padding: 3px 10px 1px 24px;
+		border: 1px solid $grey;
 		border-radius: 2px;
-		transition: background .1s ease-in-out;
+		transition: all .1s ease-in-out;
 	}
 	
+	.reply a:before {
+		position: absolute;
+		top: calc( 50% - 5px );
+		left: 7px;
+		display: block;
+		content: '';
+		width: 12px;
+		height: 9px;
+		background-image: url(images/comments-sprite.png);
+		background-repeat: no-repeat;
+		background-position: left center;
+		background-size: 24px auto;
+	}
+		
 	.reply a:hover,
 	.reply a:focus {
+		
+		color: #fff;
 		background: $linkhover;
+		border: 1px solid $linkhover;
+		
+		&:before {
+			background-position: right center;
+		}
+		
 	}
 	
 	.children {
@@ -74,14 +105,14 @@
 		
 		.nav-links a {
 			color: #fff;
-			background: $link;
+			background: $darkgrey;
 			border-radius: 2px;
 			transition: background .1s ease-in-out;
 		}
 
 		.nav-links a:hover,
 		.nav-links a:focus {
-			background: $linkhover;
+			background: $black;
 		}
 		
 		.nav-previous {
@@ -162,6 +193,11 @@
 		
 		input {
 			display: block;
+			box-sizing: border-box;
+			width: 100%;
+			max-width: 300px;
+			padding: .5rem;
+			font-size: 1rem;
 		}
 		
 		#comment {
@@ -183,6 +219,7 @@
 			padding: 4px 10px;
 			margin-left: .5rem;
 			border-radius: 2px;
+			white-space: nowrap;
 			transition: background .1s ease-in-out;
 		}
 		
@@ -198,6 +235,8 @@
 		.form-submit #submit {
 			font-size: .8rem;
 			font-weight: 400;
+			max-width: initial;
+			width: initial;
 			color: #fff;
 			background: $link;
 			padding: 6px 10px;
