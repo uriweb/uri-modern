@@ -16,7 +16,8 @@
 function uri_modern_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
-		'infinite-scroll', array(
+		'infinite-scroll',
+		array(
 			'container' => 'main',
 			'render'    => 'uri_modern_infinite_scroll_render',
 			'footer'    => 'page',

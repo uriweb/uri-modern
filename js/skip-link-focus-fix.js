@@ -13,7 +13,8 @@
 
 	if ( isIe && document.getElementById && window.addEventListener ) {
 		window.addEventListener(
-			'hashchange', function() {
+			'hashchange',
+			function() {
 				var id = location.hash.substring( 1 ),
 				element;
 
@@ -30,7 +31,8 @@
 
 					element.focus();
 				}
-			}, false
+			},
+			false
 		);
 	}
 })();

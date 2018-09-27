@@ -6,6 +6,7 @@
     
     background: $white;
     position: relative;
+	z-index: 9980;
     
     #globalnav-menu {
         display: none;
@@ -16,7 +17,6 @@
         position: absolute;
         left: 0;
         top: $brandbarheight;
-        z-index: 9980;
         background: $white;
         border-bottom: 1px solid $grey;
     }
