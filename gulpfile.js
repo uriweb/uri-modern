@@ -20,6 +20,15 @@ var banner = ['/*',
   '*/',
   ''].join('\n');
 
+var bannerStatic = ['/*',
+  '===================================',
+  '==      STATIC HTML VERSION      ==',
+  '===================================',
+  '*/',
+  '',
+  banner,
+  ''].join('\n');
+
 // include plug-ins
 var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
@@ -71,7 +80,8 @@ gulp.task('styles', styles);
 
 function styles(done) {
 
-	gulp.src('./src/sass/*.scss')
+	// Theme styles
+	gulp.src('./src/sass/main.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass(sassOptions).on('error', sass.logError))
 		.pipe(concat('style.css'))
@@ -79,6 +89,16 @@ function styles(done) {
 		.pipe(header(banner, { pkg : pkg } ))
 		.pipe(sourcemaps.write('./map'))
 		.pipe(gulp.dest('.'));
+	
+	// Static styles
+	gulp.src('./src/sass/static.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass(sassOptions).on('error', sass.logError))
+		.pipe(concat('style.static.css'))
+        .pipe(postcss([ autoprefixer() ]))
+		.pipe(header(bannerStatic, { pkg : pkg } ))
+		.pipe(sourcemaps.write('./map'))
+		.pipe(gulp.dest('./static'));
 
   done();
   //console.log('styles ran');
