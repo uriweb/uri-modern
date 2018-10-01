@@ -1,2 +1,3 @@
 gulpfile.js
 js/script.min.js
+static/script.static.min.js
