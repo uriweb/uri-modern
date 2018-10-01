@@ -26,7 +26,6 @@ var bannerStatic = ['/*',
   '===================================',
   '*/',
   '',
-  banner,
   ''].join('\n');
 
 // include plug-ins
@@ -34,6 +33,7 @@ var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
 var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
+var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
@@ -69,8 +69,11 @@ function scripts(done) {
     //.pipe(stripDebug())
     .pipe(uglify())
     .pipe(header(banner, { pkg : pkg } ))
-    .pipe(gulp.dest('./js/'));
-    
+    .pipe(gulp.dest('./js/')) // Pipe to main
+	.pipe(rename('script.static.min.js'))
+	.pipe(header(bannerStatic))
+    .pipe(gulp.dest('./static/')); // Pipe to static
+	
 	done();
  // console.log('scripts ran');
 }
@@ -96,7 +99,8 @@ function styles(done) {
 		.pipe(sass(sassOptions).on('error', sass.logError))
 		.pipe(concat('style.static.css'))
         .pipe(postcss([ autoprefixer() ]))
-		.pipe(header(bannerStatic, { pkg : pkg } ))
+		.pipe(header(banner, { pkg : pkg } ))
+		.pipe(header(bannerStatic))
 		.pipe(sourcemaps.write('./map'))
 		.pipe(gulp.dest('./static'));
 
@@ -104,19 +108,25 @@ function styles(done) {
   //console.log('styles ran');
 }
 
-// minify new images
+// Copy minified images to static dir
 gulp.task('images', images);
 
 function images(done) {
-  var imgSrc = './src/images/**/*',
-      imgDst = './images';
-
-  gulp.src(imgSrc)
-    .pipe(changed(imgDst))
-    .pipe(imagemin())
-    .pipe(gulp.dest(imgDst));
+	
+	 // Pipe to main
+	gulp.src('./src/images/**/*')
+		.pipe(changed('./images'))
+		.pipe(imagemin())
+		.pipe(gulp.dest('./images'));
+	
+	// Pipe to static
+	gulp.src('./src/images/**/*')
+		.pipe(changed('./static/images'))
+		.pipe(imagemin())
+		.pipe(gulp.dest('./static/images')); 
+	
 	done();
-  //console.log('images ran');
+	//console.log('images ran');
 }
 
 // run codesniffer
