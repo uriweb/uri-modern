@@ -21,7 +21,16 @@ get_header();
 
 				<div class="page-content">
 					<p><?php esc_html_e( 'We can&rsquo;t seem to find what you&rsquo;re looking for.', 'uri' ); ?></p>
-					<?php get_search_form(); ?>
+					
+					<div id="searchbox" role="search">
+						<form id="sb" method="get" action="https://www.uri.edu/search" name="global_general_search_form">
+							<input type="hidden" name="cx" value="016863979916529535900:17qai8akniu" />
+							<input type="hidden" name="cof" value="FORID:11" />
+							<input role="searchbox" name="q" id="sb-query" value="<?php print ( isset( $_GET['q'] ) ) ? htmlentities( $_GET['q'] ) : ''; ?>" type="text" placeholder="Search uri.edu" />
+							<input type="submit" id="sb-submit" class="searchsubmit" name="searchsubmit" value="Search" />
+						</form>
+					</div>
+					
 				</div><!-- .page-content -->
 			</div>
 		</section><!-- .error-404 -->
