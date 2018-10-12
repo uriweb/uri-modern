@@ -20,7 +20,11 @@ get_header();
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'Try searching for what you&rsquo;re looking for.', 'uri' ); ?></p>
+					<p>
+					<?php
+					esc_html_e( 'We can&rsquo;t find what you&rsquo;re looking for, but you can try searching for it.', 'uri' );
+					?>
+					</p>
 					
 					<div id="searchbox" role="search">
 						<form id="sb" method="get" action="https://www.uri.edu/search" name="global_general_search_form">
