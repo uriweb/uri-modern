@@ -27,9 +27,6 @@ body.error404 h1.page-title {
 	body.error404 h1.page-title {
 		font-size: 3rem;
 	}
-	.content-404 {
-		text-align: left;
-	}
     #rhody404 {
         float: left;
 		border: none;
@@ -37,7 +34,6 @@ body.error404 h1.page-title {
 		width: 150px;
     	height: 300px;
         margin: 0 50px 0 0;
-		background-position: 0 0;
 		background-color: transparent;
 		background-position: 0 0;
     	background-size: 150px auto;
@@ -46,6 +42,7 @@ body.error404 h1.page-title {
         width: calc(100% - 300px);
         float: left;
         padding-top: 2rem;
+		text-align: left;
     }
     
     section.error-404:after {
