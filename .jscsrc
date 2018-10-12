@@ -3,6 +3,7 @@
     "fileExtensions": [ ".js" ],
     "excludeFiles": [
         "gulpfile.js",
-        "js/script.min.js"
+        "js/script.min.js",
+		"static/script.static.min.js"
     ]
 }

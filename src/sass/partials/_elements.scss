@@ -6,20 +6,42 @@
 /* TABLES */
 
 table {
+	
+	font-family: Hind, Arial, sans-serif;
+	font-size: 1rem;
 	border-collapse: collapse;
 	border: 1px solid $grey;
 	margin: 0 0 26px;
-}
-th {
-	background-color: $blue;
-	color: $white;
-    font-weight: 600;
-}
-th, td {
-	padding: 1rem 1.5rem;
-}
-tr:nth-child(even) {
-	background-color: #eee;
+	
+	th {
+		background-color: $blue;
+		color: $white;
+		font-weight: 600;
+	}
+
+	th,
+	td {
+		padding: 1rem 1.5rem;
+	}
+
+	thead th {
+		text-align: left;
+	}
+
+	tbody th {
+		background-color: #c0ddf2;
+		color: #000;
+		text-align: left;
+	}
+
+	tr:nth-child(even) {
+		background-color: #eee;
+	}
+
+	.numeric {
+		text-align: right;
+	}
+	
 }
 
 

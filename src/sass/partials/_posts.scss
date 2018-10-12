@@ -49,7 +49,8 @@ article.post {
 
     
 nav.post-navigation,
-nav.posts-navigation {
+nav.posts-navigation,
+nav.pagination {
     
     margin: 0 0 2rem;
     padding: 2rem 0 0;
@@ -135,6 +136,10 @@ nav.posts-navigation {
         &>div:after {
             display: none;
         }
+		
+		.page-numbers {
+			padding: 0 .5rem;
+		}
         
     }
     
@@ -142,6 +147,10 @@ nav.posts-navigation {
 
 nav.posts-navigation {
     border-top: none;
+}
+
+nav.pagination {
+	text-align: center;
 }
 
 .bypostauthor {
