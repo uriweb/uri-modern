@@ -26,6 +26,12 @@
 		box-shadow: 0 0 0 3px #cbefff;
 	}
 	
+	#sb-query-label {
+		position: absolute;
+		left: -9999px;
+		visibility: hidden;
+	}
+	
 	#sb-submit {
 		position: absolute;
 		left: 1rem;
