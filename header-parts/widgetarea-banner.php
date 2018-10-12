@@ -5,9 +5,17 @@
  * @package uri-modern
  */
 
-if ( is_active_sidebar( 'banner' ) ) : ?>
+if ( is_active_sidebar( 'banner' ) || is_404() ) : ?>
 	<div id="region-banner" class="region-banner widgets">
-		<?php dynamic_sidebar( 'banner' ); ?>
+		<?php
+
+		if ( is_404() ) {
+			echo do_shortcode( '[uri-modern-gn]' );
+		}
+
+		dynamic_sidebar( 'banner' );
+
+		?>
 	</div><!-- #region-banner -->
 <?php
 endif;
