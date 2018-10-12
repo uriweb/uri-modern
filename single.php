@@ -23,7 +23,7 @@ get_header();
 					array(
 						'prev_text' => 'Previous post',
 						'next_text' => 'Next post',
-						'in_same_term' => true
+						'in_same_term' => true,
 					)
 				);
 			}
