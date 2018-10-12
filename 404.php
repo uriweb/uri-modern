@@ -32,7 +32,7 @@ get_header();
 							<input type="hidden" name="cof" value="FORID:11" />
 							<label id="sb-query-label" for="sb-query">Searchbox</label>
 							<input role="searchbox" name="q" id="sb-query" value="<?php print str_replace( array( '/', '-', '_' ), ' ', add_query_arg( array(), $wp->request ) ); ?>" type="text" placeholder="Search uri.edu" />
-							<input type="submit" id="sb-submit" class="searchsubmit" name="searchsubmit" value="Search" />
+							<input type="submit" id="sb-submit" class="searchsubmit" name="searchsubmit" value="Search" aria-label="Submit search" />
 						</form>
 					</div>
 					
