@@ -359,12 +359,20 @@ function uri_modern_scripts() {
 	$values = array(
 		'base' => get_site_url(),
 		'path' => array(
+			'page' => get_permalink(),
 			'theme' => get_stylesheet_directory_uri(),
 			'themes' => get_theme_root_uri(),
 			'plugins' => WP_PLUGIN_URL,
 		),
-		'is404' => is_404(),
-		'isChildTheme' => get_template_directory_uri() != get_stylesheet_directory_uri() ? true : false,
+		'theme' => array(
+			'name' => wp_get_theme()->get( 'Name' ),
+			'version' => wp_get_theme()->get( 'Version' ),
+			'textDomain' => wp_get_theme()->get( 'TextDomain' ),
+		),
+		'is' => array(
+			'404' => is_404(),
+			'childTheme' => get_template_directory_uri() != get_stylesheet_directory_uri() ? true : false,
+		),
 	);
 
 	wp_enqueue_style( 'uri-modern-style', get_template_directory_uri() . '/style.css', array(), uri_modern_cache_buster(), 'all' );

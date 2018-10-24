@@ -13,16 +13,16 @@
 	function initBreadcrumbs() {
 
 		var BC = {};
-		
+
 		BC.el = document.getElementById( 'breadcrumbs' );
 		if ( null !== BC.el ) {
 			mobileBreadcrumbs( BC );
 		}
-			
+
 	}
-	
+
 	function mobileBreadcrumbs( BC ) {
-			
+
 		var div = {};
 
 		BC.ol = BC.el.querySelector( 'ol' );
