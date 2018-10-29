@@ -23,15 +23,9 @@
 
 	<div id="actionbar-wrapper">
 		<div id="actionbar" role="menu">
-			<a href="https://www.uri.edu/apply" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>
+			<a href="<?php echo uri_modern_apply_url(); ?>" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>
 			<a href="https://www.uri.edu/tour" id="action-tour" role="menuitem"><span role="presentation"></span>Tour</a>
-			<?php
-			$ab_give_url = 'https://www.uri.edu/give';
-			if ( ! empty( get_option( 'action_bar_give_url' ) ) ) {
-				$ab_give_url = get_option( 'action_bar_give_url' );
-			}
-			?>
-			<a href="<?php echo $ab_give_url; ?>" id="action-give" role="menuitem"><span role="presentation"></span>Give</a>
+			<a href="<?php echo ! empty( $ab_give_url = get_option( 'action_bar_give_url' ) ) ? $ab_give_url : 'https://www.uri.edu/give'; ?>" id="action-give" role="menuitem"><span role="presentation"></span>Give</a>
 		</div>
 	</div><!-- #actionbar-wrapper -->
 

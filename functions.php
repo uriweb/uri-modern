@@ -524,6 +524,25 @@ function uri_modern_sanitize_title( $t ) {
 
 
 /**
+ * Callback function for Action Bar Apply button URL
+ */
+function uri_modern_apply_url() {
+
+	$url = 'https://www.uri.edu/apply';
+	$filter = 'uri_modern_modify_apply_url';
+
+	if ( has_filter( $filter ) ) {
+		$url = apply_filters( $filter, $url );
+	}
+
+	return $url;
+
+}
+
+
+
+
+/**
  * Enable shortcodes in text widgets
  */
 add_filter( 'widget_text', 'do_shortcode' );
