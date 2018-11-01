@@ -25,9 +25,15 @@ article.post {
     margin: 0 0 2rem;
     
     .entry-meta {
+		
         margin-bottom: 2rem;
         font-size: .8rem;
         color: $darkgrey;
+		
+		.meta-date {
+			display: none;
+		}
+		
     }
     
     .entry-summary {

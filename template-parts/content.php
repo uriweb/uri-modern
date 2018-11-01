@@ -11,30 +11,35 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
+	<header class="entry-header">
+		
 	<?php
-	if ( is_single() ) {
 
-		if ( ! get_field( 'pagetitle' ) ) {
-		?>
-		<header class="entry-header">
-		   <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-		</header><!-- .entry-header -->
-		<?php
-		}
-		if ( ! has_post_format( 'video' ) && ! get_field( 'uri_modern_hide_featured_image' ) ) {
-			get_template_part( 'template-parts/featured-image' );
-		}
-} else {
-		?>
-		<header class="entry-header">
-		<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ); ?>
-		</header><!-- .entry-header -->
-		<?php
-		if ( ! has_post_format( 'video' ) ) {
-			get_template_part( 'template-parts/featured-image' );
-		}
+	if ( is_single() && ! get_field( 'pagetitle' ) ) {
+
+		the_title( '<h1 class="entry-title">', '</h1>' );
+
+	} else {
+
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+
 	}
 
+	if ( is_single() && 'post' === get_post_type() ) :
+	?>
+		
+		<div class="entry-meta">
+			<?php the_date( '', '<span class="meta-date">', '</span>' ); ?>
+		</div><!-- .entry-meta -->
+		
+	<?php endif; ?>
+	
+	</header><!-- .entry-header -->
+	
+	<?php
+	if ( ! is_single() || ( ! get_field( 'uri_modern_hide_featured_image' ) && ! has_post_format( 'video' ) ) ) {
+		get_template_part( 'template-parts/featured-image' );
+	}
 	?>
 
 	<div class="entry-content">

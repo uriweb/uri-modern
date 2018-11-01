@@ -26,7 +26,7 @@ if ( function_exists( 'register_field_group' ) ) {
 					'type'         => 'true_false',
 					'instructions' => '',
 					'required'     => '0',
-					'message'      => 'If checked, the page or post title will be hidden.',
+					'message'      => 'If checked, the page or post title block will be hidden.',
 					'order_no'     => '0',
 				),
 				array(
