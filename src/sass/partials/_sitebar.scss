@@ -92,7 +92,7 @@
     margin-top: 1rem;
 }
 
-@media screen and (min-width: $break1) {
+@media all and (min-width: $break1) {
     #sitebranding {
         display: flex;
         align-items: flex-end;
@@ -103,13 +103,13 @@
     }
 } // min-width: 600px
 
-@media screen and (min-width: $break2) {
+@media all and (min-width: $break2) {
     #sitebanner {
         margin-bottom: 0;
     }
 }
 
-@media screen and (min-width: 1050px) {
+@media all and (min-width: 1050px) {
     
     #sitebranding {
         width: 1000px;
@@ -123,6 +123,10 @@
 	#sb-backdrop,
 	#sitesocial {
 		display: none;
+	}
+	#sitebranding {
+		width: 100%;
+		margin: 0;
 	}
 	#sitebanner,
 	#sitebanner.light {

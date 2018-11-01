@@ -96,7 +96,7 @@
     
 }
 
-@media screen and (min-width: $break1) {
+@media all and (min-width: $break1) {
     
     body.page-template-page-external-landing #globalnav-menu {
             position: absolute;
@@ -149,7 +149,7 @@
     
 }
 
-@media screen and (min-width: $break2) {
+@media all and (min-width: $break2) {
     .globalnav {
         
         li:not(:last-child) {

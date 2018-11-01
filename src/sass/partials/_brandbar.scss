@@ -271,7 +271,7 @@
     }
 } // #gateways-toggle:checked
 
-@media screen and (min-width: 370px) {
+@media all and (min-width: 370px) {
     #identity {
         padding-left: 220px;
         background-size: 220px auto;
@@ -287,14 +287,14 @@
     }
 }
 
-@media screen and (min-width: 420px) {
+@media all and (min-width: 420px) {
     #identity {
         padding-left: 300px;
         background-size: 275px auto;
     }
 }
 
-@media screen and (min-width: 800px) {
+@media all and (min-width: 800px) {
     #globalbanner {
         max-width: 1000px;
     }
@@ -305,7 +305,7 @@
     
 } // min-width: 800px
 
-@media screen and (min-width: 1050px) {
+@media all and (min-width: 1050px) {
     #globalbanner-wrapper {
         padding-left: 0;
     }
@@ -335,8 +335,5 @@
     
     #identity-print {
         display: block;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0 25px;
     }
 } // @media print

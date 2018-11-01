@@ -335,7 +335,7 @@
 	
 }
 
-@media screen and (min-width: 450px) {
+@media all and (min-width: 450px) {
 	
 	#comments #respond #cancel-comment-reply-link {
 		margin-left: .5rem;
@@ -343,7 +343,7 @@
 	
 }
 
-@media screen and (min-width: 600px) {
+@media all and (min-width: 600px) {
 	
 	#comments {
 		
@@ -380,3 +380,8 @@
 	
 }
 
+@media print {
+	#comments {
+		display: none;
+	}
+}

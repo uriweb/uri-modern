@@ -172,7 +172,7 @@ nav.pagination {
     margin-bottom: 2rem;
 }
     
-@media screen and (min-width: $break1) {
+@media all and (min-width: $break1) {
     
     .single-format-video .oembed iframe {
         height: 400px;
@@ -180,7 +180,7 @@ nav.pagination {
     
 }
 
-@media screen and (min-width: $break2) {
+@media all and (min-width: $break2) {
     
     .single-format-video .oembed iframe {
         height: 500px;

@@ -249,7 +249,7 @@
 
 } // #legal
 
-@media screen and (min-width: 900px) {
+@media all and (min-width: 900px) {
     #globalfooter {
         padding: 35px 0;
         background-size: auto 500px;
@@ -363,7 +363,7 @@
     }
 }
 
-@media screen and (min-width: 1050px) {
+@media all and (min-width: 1050px) {
     #basement,
     #legal,
     #tagline,
@@ -380,6 +380,7 @@
 
 @media print {
     #globalfooter {
+		background: none;
         padding: 0;
     }
     #basement,
@@ -387,8 +388,10 @@
         display: none;
     }
     #legal {
+		width: 100%;
+		margin: 0;
         padding-top: 20px;
-        border-top: 1px solid #000;
+        border-top: 1px solid #ddd;
     }
     #legal p {
         color: #000;

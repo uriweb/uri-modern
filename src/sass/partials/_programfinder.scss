@@ -70,7 +70,7 @@
     background: #fff;
 }
 
-@media screen and (max-width: 600px) {
+@media all and (max-width: 600px) {
     #program-finder {
         padding: 5px 5px 10px;
     }
@@ -254,7 +254,7 @@
     color: #fff !important;
 }
 
-@media screen and (max-width: 480px) {
+@media all and (max-width: 480px) {
     .featured-image.sc.program,
     .more-box {
         float: none;
@@ -284,7 +284,7 @@ body:not(.archive) article.type-program {
     
 }
 
-@media screen and (min-width: 800px) {
+@media all and (min-width: 800px) {
     
 	body:not(.archive) article.type-program {
         
