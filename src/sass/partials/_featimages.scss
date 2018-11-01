@@ -43,3 +43,9 @@
     
 }
 
+@media print {
+	.featured-image img {
+		max-width: 400px;
+	}
+}
+

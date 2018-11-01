@@ -163,6 +163,12 @@ nav.pagination {
     display: initial;
 }
 
+@media print {
+	article.post footer {
+		display: none;
+	}
+}
+
 
 /* Video Post Format */
 
