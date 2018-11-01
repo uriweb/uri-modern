@@ -151,3 +151,9 @@ body {
     left: 50% !important;
     margin-left: -50vw !important;
 }
+
+@media print {
+	body {
+		background: #fff;
+	}
+}

@@ -118,3 +118,20 @@
     }
     
 } // min-width: 1050px
+
+@media print {
+	#sb-backdrop,
+	#sitesocial {
+		display: none;
+	}
+	#sitebanner,
+	#sitebanner.light {
+		#siteidentity h1,
+		#siteidentity h2 {
+			color: #000;
+		}
+	}
+	#sitebanner {
+		border-bottom: 1px solid #ddd;
+	}
+}
