@@ -1,5 +1,5 @@
 /* ==============================
-   QUERY POSTS
+   DISPLAY POSTS
 
    Styling is specific to the Display Posts Shortcode plugin
    https://wordpress.org/plugins/display-posts-shortcode/
@@ -61,6 +61,25 @@ ul.display-posts-listing {
             font-size: 1rem;
             color: $darkgrey;
         }
+		
+		.date,
+		.author {
+		
+			margin-bottom: 2rem;
+			font-size: .8rem;
+			color: $darkgrey;
+
+		}
+		
+		.category-display {
+			
+			display: block;
+			
+			.category-display-label {
+				display: none;
+			}
+			
+		}
         
     } // li.listing-item
     
