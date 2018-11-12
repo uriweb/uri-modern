@@ -4,6 +4,7 @@
     "excludeFiles": [
         "gulpfile.js",
         "js/script.min.js",
+		"js/smoothscroll.min.js",
 		"static/script.static.min.js"
     ]
 }
