@@ -14,6 +14,7 @@ URI Modern 1.2.1 is a bug fix release.
 * Adds a [polyfill](http://iamdustan.com/smoothscroll/) for the [scroll behavior spec](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior)
 * Localizes theme and permalink information for JavaScript to access
 * Fixes a console error on pages without breadcrumbs
+* Updates development tools
 
 For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/134/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues). 
 
