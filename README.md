@@ -27,6 +27,7 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 
 ## Theme details
 
+[![GitHub release](https://img.shields.io/github/release/uriweb/uri-modern.svg)](https://github.com/uriweb/uri-modern/releases/latest)
 [![Master Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=master "Master build status")](https://travis-ci.org/uriweb/uri-modern)
 [![CodeFactor](https://www.codefactor.io/repository/github/uriweb/uri-modern/badge/master)](https://www.codefactor.io/repository/github/uriweb/uri-modern/overview/master)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/cc0b943ef637481b87d3b17ff9f5b1c0?branch=master)](https://www.codacy.com/app/uriweb/uri-modern?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern&amp;utm_campaign=Badge_Grade)
