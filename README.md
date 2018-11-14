@@ -2,21 +2,21 @@
 
 URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience. 
 
-## What's new in 1.2.0
+## What's new in 1.2.1
 
-URI Modern 1.2.0 is a minor release.
+URI Modern 1.2.1 is a bug fix release.
 
-* Navigation on post archives is now paginated
-* Post navigation is now limited to posts of the same category
-* Makes improvements to the 404 page:
-	- Uses Google search instead of WordPress search
-	- Includes the global navigation
-	- Improved display on mobile devices
-* Updates table styles
-* Includes a static HTML build
+* Updates link text color to comply with WCAG standards
+* Improves print styles
+* Adds a `type-mono` class for monospaced text
+* Adds the post date to posts (hidden by default)
+* Improves category display support for [Display Posts Shortcode](https://github.com/billerickson/display-posts-shortcode)
+* Adds a [polyfill](http://iamdustan.com/smoothscroll/) for the [scroll behavior spec](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior)
+* Localizes theme and permalink information for JavaScript to access
+* Fixes a console error on pages without breadcrumbs
 * Updates development tools
 
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/130/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues). 
+For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/134/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues). 
 
 ## How do I get set up?
 
@@ -27,13 +27,15 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 
 ## Theme details
 
+[![GitHub release](https://img.shields.io/github/release/uriweb/uri-modern.svg)](https://github.com/uriweb/uri-modern/releases/latest)
+[![GitHub Release Date](https://img.shields.io/github/release-date/uriweb/uri-modern.svg)](https://github.com/uriweb/uri-modern/releases/latest)
 [![Master Build Status](https://travis-ci.org/uriweb/uri-modern.svg?branch=master "Master build status")](https://travis-ci.org/uriweb/uri-modern)
 [![CodeFactor](https://www.codefactor.io/repository/github/uriweb/uri-modern/badge/master)](https://www.codefactor.io/repository/github/uriweb/uri-modern/overview/master)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/cc0b943ef637481b87d3b17ff9f5b1c0?branch=master)](https://www.codacy.com/app/uriweb/uri-modern?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://img.shields.io/codacy/grade/cc0b943ef637481b87d3b17ff9f5b1c0.svg)](https://www.codacy.com/app/uriweb/uri-modern?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern&amp;utm_campaign=Badge_Grade)
 [![devDependencies Status](https://david-dm.org/uriweb/uri-modern/dev-status.svg "devDependencies status")](https://david-dm.org/uriweb/uri-modern?type=dev)
 
 Contributors: Brandon Fuller, John Pennypacker  
 Tags: themes  
 Requires at least: 4.0  
 Tested up to: 4.9  
-Stable tag: 1.2.0  
+Stable tag: 1.2.1  

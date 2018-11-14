@@ -12,9 +12,19 @@
 
 	function initBreadcrumbs() {
 
-		var BC = {}, div = {};
+		var BC = {};
 
 		BC.el = document.getElementById( 'breadcrumbs' );
+		if ( null !== BC.el ) {
+			mobileBreadcrumbs( BC );
+		}
+
+	}
+
+	function mobileBreadcrumbs( BC ) {
+
+		var div = {};
+
 		BC.ol = BC.el.querySelector( 'ol' );
 		BC.crumbs = BC.ol.querySelectorAll( 'li' );
 

@@ -55,7 +55,7 @@ body {
     margin: 0 auto;
 }
 
-@media screen and (min-width: 480px) {
+@media all and (min-width: 480px) {
     .alignright,
     .alignleft {
 		&.xsmall {
@@ -101,7 +101,7 @@ body {
     }
 }
 
-@media screen and (min-width: $break2) {
+@media all and (min-width: $break2) {
     .alignright,
     .alignleft {
 		&.xsmall {
@@ -133,7 +133,7 @@ body {
     }
 }
 
-@media screen and (min-width: 1050px) {
+@media all and (min-width: 1050px) {
     .content-width,
     #main {
         width: 1000px;
@@ -150,4 +150,20 @@ body {
     position: relative !important;
     left: 50% !important;
     margin-left: -50vw !important;
+}
+
+@media print {
+	body {
+		background: #fff;
+		overflow: visible;
+	}
+	#main {
+		width: 100%;
+		margin: 0 0;
+		padding-bottom: 3rem;
+	}
+	.content-width {
+		width: 100%;
+		margin: 0;
+	}
 }

@@ -25,9 +25,15 @@ article.post {
     margin: 0 0 2rem;
     
     .entry-meta {
+		
         margin-bottom: 2rem;
         font-size: .8rem;
         color: $darkgrey;
+		
+		.meta-date {
+			display: none;
+		}
+		
     }
     
     .entry-summary {
@@ -157,6 +163,12 @@ nav.pagination {
     display: initial;
 }
 
+@media print {
+	article.post footer {
+		display: none;
+	}
+}
+
 
 /* Video Post Format */
 
@@ -166,7 +178,7 @@ nav.pagination {
     margin-bottom: 2rem;
 }
     
-@media screen and (min-width: $break1) {
+@media all and (min-width: $break1) {
     
     .single-format-video .oembed iframe {
         height: 400px;
@@ -174,7 +186,7 @@ nav.pagination {
     
 }
 
-@media screen and (min-width: $break2) {
+@media all and (min-width: $break2) {
     
     .single-format-video .oembed iframe {
         height: 500px;

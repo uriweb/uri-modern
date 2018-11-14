@@ -79,6 +79,11 @@ h6 {
     font-weight: 300;
 }
 
+.type-mono {
+	font-family: $type-mono;
+	font-size: .95rem;
+}
+
 .no-wrap {
     white-space: nowrap;
 }
@@ -241,7 +246,7 @@ blockquote cite:before {
 	background: $grey;
 }
 
-@media screen and (min-width: $break2) {
+@media all and (min-width: $break2) {
 	.pullquote {
 		width: 400px;
 		float: right;
@@ -272,6 +277,15 @@ blockquote cite:before {
         margin: 0 auto 2rem;
     }
     
+}
+
+@media print {
+	html{
+		font-size: 14px;
+	}
+	p {
+		max-width: 100%;
+	}
 }
 
 

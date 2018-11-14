@@ -193,7 +193,7 @@
     
 }
 
-@media screen and (min-width: $break1) {
+@media all and (min-width: $break1) {
     #localnav {
         width: 100%;
         box-sizing: border-box;

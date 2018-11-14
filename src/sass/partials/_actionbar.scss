@@ -127,7 +127,7 @@
 }
 
 
-@media screen and (min-width: 900px) {
+@media all and (min-width: 900px) {
     #actionbar a {
         
         height: 150px;
@@ -140,7 +140,7 @@
     
 }
 
-@media screen and (min-width: 1050px) {
+@media all and (min-width: 1050px) {
     #actionbar {
         width: 1000px;
         padding: 0;
@@ -151,7 +151,7 @@
 
 @media print {
     
-    #actionbar {
+    #actionbar-wrapper {
         display: none;
     }
     

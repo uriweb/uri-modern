@@ -136,7 +136,7 @@
     }
 }
 
-@media screen and (min-width: $break1) {
+@media all and (min-width: $break1) {
     
     #breadcrumbs,
     #breadcrumbs.has-js {
@@ -217,7 +217,7 @@
     
 }
 
-@media screen and (min-width: 920px) {
+@media all and (min-width: 920px) {
     #breadcrumbs {
         margin: 1.5rem 0 1rem;
     }

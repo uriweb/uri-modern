@@ -70,7 +70,7 @@ body.archive {
     
 }
 
-@media screen and (min-width: $break1) {
+@media all and (min-width: $break1) {
     body.archive {
         
         article[class^='post'] {
