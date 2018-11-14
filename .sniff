@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ignore=node_modules,work_files,gulpfile.js,js/script.min.js
+ignore=node_modules,work_files,gulpfile.js,js/script.min.js,js/smoothscroll.min.js
 ruleset=.codesniffer.ruleset.xml
 warn=-n
 
