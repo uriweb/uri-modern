@@ -526,6 +526,22 @@ function uri_modern_sanitize_title( $t ) {
 
 
 /**
+ * Wrapper for Advanced Custom Fields get_field()
+ */
+function uri_modern_get_field( $f ) {
+
+	$r = false;
+
+	if ( function_exists( 'get_field' ) ) {
+		$r = get_field( $f );
+	}
+
+	return $r;
+
+}
+
+
+/**
  * Enable shortcodes in text widgets
  */
 add_filter( 'widget_text', 'do_shortcode' );
