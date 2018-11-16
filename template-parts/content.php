@@ -15,7 +15,7 @@
 		
 	<?php
 
-	if ( is_single() && ! uri_modern_get_field( 'pagetitle' ) ) {
+	if ( is_single() && ! get_field( 'pagetitle' ) ) {
 
 		the_title( '<h1 class="entry-title">', '</h1>' );
 
@@ -37,7 +37,7 @@
 	</header><!-- .entry-header -->
 	
 	<?php
-	if ( ! is_single() || ( ! uri_modern_get_field( 'uri_modern_hide_featured_image' ) && ! has_post_format( 'video' ) ) ) {
+	if ( ! is_single() || ( ! get_field( 'uri_modern_hide_featured_image' ) && ! has_post_format( 'video' ) ) ) {
 		get_template_part( 'template-parts/featured-image' );
 	}
 	?>
