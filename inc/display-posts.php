@@ -16,7 +16,6 @@
  */
 function uri_modern_display_posts_template( $output, $original_atts ) {
 
-	// Return early if our "template" attribute is not specified
 	if ( empty( $original_atts['template'] ) ) {
 		return $output;
 	}
