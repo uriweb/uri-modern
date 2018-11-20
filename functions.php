@@ -582,6 +582,11 @@ require get_template_directory() . '/inc/shortcodes.php';
 require get_template_directory() . '/inc/wysiwyg.php';
 
 /**
+ * Display Posts customizations
+ */
+require get_template_directory() . '/inc/display-posts.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
