@@ -20,8 +20,10 @@ function uri_modern_display_posts_template( $output, $original_atts ) {
 		return $output;
 	}
 
+	$template = 'template-parts/' . $original_atts['template'];
+
 	ob_start();
-	get_template_part( $original_atts['template'] );
+	get_template_part( $template );
 	$new_output = ob_get_clean();
 
 	if ( ! empty( $new_output ) ) {
