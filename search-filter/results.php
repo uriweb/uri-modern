@@ -162,7 +162,7 @@ if ( $query->have_posts() ) : ?>
 							?>
 							<div class="people-expertise people-field">Areas of expertise: 
 							<?php
-							$terms = implode( ', ', $terms );
+							$terms = implode( '<span class="separator">, </span>', $terms );
 							// echo $terms;
 							echo uri_modern_result_highlight( $terms, $search );
 							?>
