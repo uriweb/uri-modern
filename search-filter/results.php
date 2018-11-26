@@ -123,7 +123,7 @@ if ( $query->have_posts() ) : ?>
 						</a></h3>
 
 			
-						<?php if ( $people_title = get_field( 'peopletitle' ) ) : ?>
+						<?php if ( $people_title = uri_modern_get_field( 'peopletitle' ) ) : ?>
 							<div class="people-title people-field">
 							<?php
 								 // the_field( 'peopletitle' );
@@ -132,7 +132,7 @@ if ( $query->have_posts() ) : ?>
 							</div>
 						<?php endif; ?>
 			
-						<?php if ( $people_department = get_field( 'peopledepartment' ) ) : ?>
+						<?php if ( $people_department = uri_modern_get_field( 'peopledepartment' ) ) : ?>
 							<div class="people-department people-field">
 							<?php
 								// the_field( 'peopledepartment' );
@@ -141,7 +141,7 @@ if ( $query->have_posts() ) : ?>
 							</div>
 						<?php endif; ?>
 			
-						<?php if ( $people_research = get_field( 'peopleresearch' ) ) : ?>
+						<?php if ( $people_research = uri_modern_get_field( 'peopleresearch' ) ) : ?>
 							<div class="people-research people-field">
 							<?php
 								// the_field( 'peopleresearch' );
@@ -162,7 +162,7 @@ if ( $query->have_posts() ) : ?>
 							?>
 							<div class="people-expertise people-field">Areas of expertise: 
 							<?php
-							$terms = implode( ', ', $terms );
+							$terms = implode( '<span class="separator">, </span>', $terms );
 							// echo $terms;
 							echo uri_modern_result_highlight( $terms, $search );
 							?>

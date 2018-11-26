@@ -516,11 +516,28 @@ function uri_modern_sanitize_title( $t ) {
 	);
 
 	foreach ( $prepends as $p ) {
-
 		if ( substr( $t, 0, strlen( $p ) ) == $p ) {
 			 return substr( $t, strlen( $p ) );
 		}
 	}
+	// still here, title can go out the way it came in.
+	return $t;
+
+}
+
+
+/**
+ * Wrapper for Advanced Custom Fields get_field()
+ */
+function uri_modern_get_field() {
+
+	$r = false;
+
+	if ( function_exists( 'get_field' ) ) {
+		$r = call_user_func_array( 'get_field', func_get_args() );
+	}
+
+	return $r;
 
 }
 
@@ -564,6 +581,11 @@ require get_template_directory() . '/inc/shortcodes.php';
  * WYSIWYG additions
  */
 require get_template_directory() . '/inc/wysiwyg.php';
+
+/**
+ * Display Posts customizations
+ */
+require get_template_directory() . '/inc/display-posts.php';
 
 /**
  * Load Jetpack compatibility file.

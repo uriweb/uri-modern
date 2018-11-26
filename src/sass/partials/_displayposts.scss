@@ -27,7 +27,8 @@ ul.display-posts-listing {
         }
         
         img {
-            float: left;
+			max-width: 100%;
+			height: auto;
             margin-right: 2rem;
             margin-bottom: .5rem;
         }
@@ -35,6 +36,7 @@ ul.display-posts-listing {
         img.size-thumbnail {
             width: 100px;
             height: auto;
+			float: left;
             border-radius: .2rem;
         }
         
@@ -84,3 +86,9 @@ ul.display-posts-listing {
     } // li.listing-item
     
 } // ul.display-posts-listing
+
+@media all and (min-width: 600px) {
+	ul.display-posts-listing li.listing-item img {
+		float: left;
+	}
+}
