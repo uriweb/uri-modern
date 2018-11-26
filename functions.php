@@ -516,11 +516,12 @@ function uri_modern_sanitize_title( $t ) {
 	);
 
 	foreach ( $prepends as $p ) {
-
 		if ( substr( $t, 0, strlen( $p ) ) == $p ) {
 			 return substr( $t, strlen( $p ) );
 		}
 	}
+	// still here, title can go out the way it came in.
+	return $t;
 
 }
 
