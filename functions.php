@@ -245,14 +245,16 @@ function uri_modern_open_graph() {
 			if ( strpos( $post->post_content, '<!--more' ) !== false ) {
 				$bits = explode( '<!--more', $post->post_content );
 			} else {
-				$bits = explode( "\n", wordwrap( $post->post_content, 200 ) );
+				$bits = explode( "\n", wordwrap( $post->post_content, 400 ) );
 			}
 			$excerpt = $bits[0];
 		}
 
-		$excerpt = strip_tags( $excerpt );
-		$excerpt = str_replace( '"', '&quot;', $excerpt );
-		$excerpt = trim( $excerpt );
+		$excerpt = do_shortcode( $excerpt ); // parse shortcodes
+		$excerpt = preg_replace('/(<[^>]+>)+/', ' ... ', $excerpt ); // replace html
+		$excerpt = ltrim( $excerpt, " ."); // remove leading points of ellipses from replace
+		$excerpt = str_replace( '"', '&quot;', $excerpt ); //sanitize quotes
+		$excerpt = trim( $excerpt ); // remove whitespace on either end
 
 		?>
 <meta name="description" content="<?php echo $excerpt; ?>" />
