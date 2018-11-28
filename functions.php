@@ -251,9 +251,9 @@ function uri_modern_open_graph() {
 		}
 
 		$excerpt = do_shortcode( $excerpt ); // parse shortcodes
-		$excerpt = preg_replace('/(<[^>]+>)+/', ' ... ', $excerpt ); // replace html
-		$excerpt = ltrim( $excerpt, " ."); // remove leading points of ellipses from replace
-		$excerpt = str_replace( '"', '&quot;', $excerpt ); //sanitize quotes
+		$excerpt = preg_replace( '/(<[^>]+>)+/', ' ... ', $excerpt ); // replace html
+		$excerpt = ltrim( $excerpt, ' .' ); // remove leading points of ellipses from replace
+		$excerpt = str_replace( '"', '&quot;', $excerpt ); // sanitize quotes
 		$excerpt = trim( $excerpt ); // remove whitespace on either end
 
 		?>
