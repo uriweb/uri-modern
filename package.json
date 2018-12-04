@@ -22,7 +22,7 @@
   "license": "GPL-3.0",
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
-    "autoprefixer": "^9.3.1",
+    "autoprefixer": "^9.4.2",
     "gulp": ">=4.0.0",
     "gulp-changed": ">=3.2.0",
     "gulp-concat": ">=2.6.1",
