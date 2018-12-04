@@ -187,9 +187,8 @@ Right now, you won't be able to run PHP CodeSniffer from your project directory.
 To use `phpcs` and `phpcbf` as global commands, symlink to them in `/usr/local/bin`:
 
 ```shell
-# Replace <username> with yours
-$ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcs /usr/local/bin
-$ sudo ln -s /Users/<username>/.composer/vendor/bin/phpcbf /usr/local/bin
+$ sudo ln -s ~/.composer/vendor/bin/phpcs /usr/local/bin
+$ sudo ln -s ~/.composer/vendor/bin/phpcbf /usr/local/bin
 ```
 
 You should be able to run `phpcs -h` and `phpcbf -h` from anywhere now.
@@ -207,7 +206,7 @@ $ composer create-project wp-coding-standards/wpcs --no-dev
 
 Now we need to tell PHP CodeSniffer about the new rules.  If you're using the `phpcs` and `phpcbf` commands globally, you'll need to use the absolute path to the `wpcs` directory:
 ```shell
-$ phpcs --config-set installed_paths /Users/<username>/.composer/wpcs
+$ phpcs --config-set installed_paths ~/.composer/wpcs
 ```
 
 Verify that the new rules have been added (you should see a bunch of WordPress standards in there now):

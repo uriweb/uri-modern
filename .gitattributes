@@ -12,5 +12,6 @@
 # gulp files
 gulpfile.js export-ignore
 package.json export-ignore
+package-lock.json export-ignore
 # src files 
 src export-ignore
