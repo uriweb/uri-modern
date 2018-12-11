@@ -2,28 +2,13 @@
 
 URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience. 
 
-## What's new in 1.2.3
+## What's new in 1.2.4
 
-URI Modern 1.2.3 is a bug fix release.
+URI Modern 1.2.4 is a bug fix release.
 
-* Shortcodes are now parsed in the site meta description
-* Equalizes paragraph and list font sizes in [Component Library](https://github.com/uriweb/uri-component-library) boxouts
-* Removes excess padding on images inside aligned elements
-* Updates development tools
+* Fixes an error that caused the "Hide Title" layout option to not work properly on posts
 
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/138/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues). 
-
-## New in 1.2.2
-
-URI Modern 1.2.2 is a bug fix release.
-
-* Adds support for specifying a template when using the [Display Posts Shortcode](https://github.com/billerickson/display-posts-shortcode) plugin
-* Prevents an error from occuring in the event that the [Advanced Custom Fields](https://www.advancedcustomfields.com) plugin is not installed
-* Fixes an issue that might have caused certain pages to not display the title
-* Fixes display issues with Display Post images on narrow screens
-* Adds a style hook to expertise delimeter in search filter results
-
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/136/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues). 
+For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/141/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues). 
 
 ## How do I get set up?
 
