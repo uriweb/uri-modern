@@ -33,15 +33,17 @@
 		<severity>0</severity>
 	</rule>
     
-    <!-- Lowering the severity of non-escaped outputs to below the default threshold -->
+    <!-- Lowering the severity of non-escaped outputs to below the default threshold
     <rule ref="WordPress.XSS.EscapeOutput.OutputNotEscaped">
 		<severity>4</severity>
 	</rule>
+ 	-->
     
-    <!-- Lowering the severity of extractions to below the default threshold -->
+    <!-- Lowering the severity of extractions to below the default threshold
     <rule ref="WordPress.Functions.DontExtract.extract_extract">
         <severity>4</severity>
     </rule>
+	-->
 	
 	<!-- Lowering the severity of empty strings to below the default threshold -->
     <rule ref="WordPress.WP.I18n.NoEmptyStrings">
