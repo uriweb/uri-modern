@@ -2,29 +2,22 @@
 /**
  * Search & Filter Pro
  *
- * Sample Results Template
+ * Results Template
  *
- * @package   Search_Filter
- * @author    Ross Morsali
- * @link      http://www.designsandcode.com/
- * @copyright 2015 Designs & Code
- *
- * Note: these templates are not full page templates, rather
- * just an encaspulation of the your results loop which should
- * be inserted in to other pages by using a shortcode - think
- * of it as a template part
- *
- * This template is an absolute base example showing you what
- * you can do, for more customisation see the WordPress docs
+ * For more customization see the WordPress docs
  * and using template tags -
  *
  * http://codex.wordpress.org/Template_Tags
+ *
+ * @package uri-modern
  */
 
 $search = ( ! empty( $_REQUEST['_sf_s'] ) ) ? $_REQUEST['_sf_s'] : false;
 
 /**
  * Quick and dirty pagination
+ *
+ * @return string
  */
 function uri_modern_search_filter_pagination( $current_page, $num_pages, $offset = 3, $separator = ' ' ) {
 
@@ -50,6 +43,9 @@ function uri_modern_search_filter_pagination( $current_page, $num_pages, $offset
 
 /**
  * Quick and dirty number of results
+ *
+ * @param int $total the number of results.
+ * @return string
  */
 function uri_modern_search_filter_number_of_results( $total ) {
 	$r = ( 1 == $total ) ? 'result' : 'results';
@@ -58,17 +54,38 @@ function uri_modern_search_filter_number_of_results( $total ) {
 
 
 /**
- * Quick and dirty relevanssi highlight
+ * Highlight substring
  * if relevanssi is present, highlight search terms found in the string.
  * otherwise, return the field contents
+ *
+ * @param str $string is the haystack in which to search.
+ * @param str $search is the needle to look for.
+ * @param str $el is the HTML element to wrap matches in.  default: <mark>.
+ * @return str
  */
-function uri_modern_result_highlight( $string, $search ) {
-	if ( false !== $search && function_exists( 'relevanssi_highlight_terms' ) ) {
-		return relevanssi_highlight_terms( $string, $search );
+function uri_modern_result_highlight( $string, $search = false, $el = 'mark' ) {
+	if ( false === $search ) {
+		return $string;
 	}
+
+	if ( function_exists( 'relevanssi_highlight_terms' ) ) {
+		$string = relevanssi_highlight_terms( $string, $search );
+	} else {
+		$string = preg_replace( '/\p{L}*?' . preg_quote( $search ) . '\p{L}*/ui', "<$el>$0</$el>", $string );
+	}
+
 	return $string;
 }
 
+
+$is_table = false;
+$is_policies = false;
+
+$site_name = strtolower( get_bloginfo( 'name' ) );
+if ( false !== strpos( $site_name, 'policies' ) ) {
+	$is_table = true;
+	$is_policies = true;
+}
 
 
 $query_id = $query->query['search_filter_id'];
@@ -83,7 +100,7 @@ $sf_current_query = $searchandfilter->get( $query_id )->current_query();
 // echo '</pre>';
 if ( $query->have_posts() ) : ?>
 	<div class="search-filter-results">
-		<div class="results-meta">
+		<div class="results-meta results-meta-before">
 			<?php print uri_modern_search_filter_number_of_results( $query->found_posts ); ?>
 			<div class="pagination">
 				Page: 
@@ -99,6 +116,10 @@ if ( $query->have_posts() ) : ?>
 	
 		<div class="search-filter-results-posts ">
 			<?php
+			if ( $is_table ) :
+?>
+<table><?php endif; ?>
+			<?php
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
@@ -106,71 +127,16 @@ if ( $query->have_posts() ) : ?>
 		
 				<?php if ( get_post_type() === 'people' ) : // it's a people post, customize result display ?>
 			
-					<div class="people-result">
+					<?php
+						include 'people.php';
+					?>
+			
+				<?php elseif ( $is_policies ) : // it's a polcy ?>
+					
+					<?php
+						include 'policies.php';
+					?>
 
-						<?php if ( has_post_thumbnail() ) : ?>
-							<a href="<?php the_permalink(); ?>"><figure><?php the_post_thumbnail( 'small', array( 'class' => 'u-photo' ) ); ?></figure></a>
-						<?php else : ?>
-							<a href="<?php the_permalink(); ?>"><figure><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/default/uri80.gif" alt="Person Icon" /></figure></a>
-						<?php endif; ?>
-
-						<h3><a href="<?php the_permalink(); ?>">
-															<?php
-							// the_title();
-							$title = get_the_title();
-							echo uri_modern_result_highlight( $title, $search );
-						?>
-						</a></h3>
-
-			
-						<?php if ( $people_title = uri_modern_get_field( 'peopletitle' ) ) : ?>
-							<div class="people-title people-field">
-							<?php
-								 // the_field( 'peopletitle' );
-								 echo uri_modern_result_highlight( $people_title, $search );
-							?>
-							</div>
-						<?php endif; ?>
-			
-						<?php if ( $people_department = uri_modern_get_field( 'peopledepartment' ) ) : ?>
-							<div class="people-department people-field">
-							<?php
-								// the_field( 'peopledepartment' );
-								 echo uri_modern_result_highlight( $people_department, $search );
-							?>
-							</div>
-						<?php endif; ?>
-			
-						<?php if ( $people_research = uri_modern_get_field( 'peopleresearch' ) ) : ?>
-							<div class="people-research people-field">
-							<?php
-								// the_field( 'peopleresearch' );
-								 echo uri_modern_result_highlight( $people_research, $search );
-							?>
-							</div>
-						<?php endif; ?>
-			
-						<?php
-							// $term_lists = get_the_term_list( $post->ID, 'peoplegroups', '', ', ' );
-							// format the links so that they point to new searches
-							$terms_raw = get_the_terms( $post, 'peoplegroups' );
-							$terms = array();
-							foreach ( $terms_raw as $t ) {
-							$terms[] = '<a href="?_sft_peoplegroups=' . $t->slug . '">' . $t->name . '</a>';
-							}
-							if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
-							?>
-							<div class="people-expertise people-field">Areas of expertise: 
-							<?php
-							$terms = implode( '<span class="separator">, </span>', $terms );
-							// echo $terms;
-							echo uri_modern_result_highlight( $terms, $search );
-							?>
-							</div>
-							<?php endif; ?>
-			
-					</div>
-			
 				<?php else : // not a people post, use default search and filter template ?>
 
 					<div>
@@ -206,9 +172,15 @@ if ( $query->have_posts() ) : ?>
 									
 
 			<?php } // end while ?>
+			
+			<?php
+			if ( $is_table ) :
+?>
+</table><?php endif; ?>
+			
 		</div>
 
-		<div class="results-meta">
+		<div class="results-meta results-meta-after">
 			<?php print uri_modern_search_filter_number_of_results( $query->found_posts ); ?>
 			<div class="pagination">
 				Page: 
@@ -224,6 +196,42 @@ if ( $query->have_posts() ) : ?>
 	
 	
 	</div>
+
+			<?php if ( $is_table ) : ?>
+			
+			<script>
+
+(function($) {
+
+	$(document).ready( initExcerpter );
+
+	function initExcerpter() {
+		// hide all of the excerpt rows
+		$("tr.excerpt").toggleClass('excerpt-hidden');
+		
+		// add an toggler widget to each row
+		$("td.policy").each(function(){
+			var excerpt = $(this).parents("tr").next();
+			if( $(excerpt).hasClass('excerpt')) {
+				$(this).parent("tr").append('<td><span class="excerpt-toggler">details</span></td>').click(function(){
+					$(excerpt).toggleClass('excerpt-hidden');
+				});
+				// since we added a td, increase the colspan of the excerpt row by one
+				var cols = $("td", excerpt).attr('colspan') * 1;
+				$("td", excerpt).attr('colspan', cols + 1);
+			}
+		});
+		
+	}
+
+})(jQuery);
+
+
+			</script>
+			
+			
+			<?php endif; ?>
+
 	
 <?php else : ?>
 
