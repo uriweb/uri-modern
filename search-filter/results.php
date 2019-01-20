@@ -14,90 +14,22 @@
 
 $search = ( ! empty( $_REQUEST['_sf_s'] ) ) ? $_REQUEST['_sf_s'] : false;
 
-/**
- * Quick and dirty pagination
- *
- * @return string
- */
-function uri_modern_search_filter_pagination( $current_page, $num_pages, $offset = 3, $separator = ' ' ) {
-
-	$pagination = array();
-
-	$page = 1;
-	while ( $page <= $num_pages ) {
-
-		if ( $page == $current_page ) {
-			$pagination[] = '<span class="page-number">' . $page . '</span>';
-		} else {
-			$url = esc_url( add_query_arg( 'sf_paged', $page ) );
-			$pagination[] = '<a href="' . $url . '" class="page-number">' . $page . '</a>';
-		}
-
-		$page++;
-	}
-
-	return implode( ' ', $pagination );
-}
-
-
-
-/**
- * Quick and dirty number of results
- *
- * @param int $total the number of results.
- * @return string
- */
-function uri_modern_search_filter_number_of_results( $total ) {
-	$r = ( 1 == $total ) ? 'result' : 'results';
-	return '<div class="search-filter-total">Found ' . $total . ' ' . $r . '</div>';
-}
-
-
-/**
- * Highlight substring
- * if relevanssi is present, highlight search terms found in the string.
- * otherwise, return the field contents
- *
- * @param str $string is the haystack in which to search.
- * @param str $search is the needle to look for.
- * @param str $el is the HTML element to wrap matches in.  default: <mark>.
- * @return str
- */
-function uri_modern_result_highlight( $string, $search = false, $el = 'mark' ) {
-	if ( false === $search ) {
-		return $string;
-	}
-
-	if ( function_exists( 'relevanssi_highlight_terms' ) ) {
-		$string = relevanssi_highlight_terms( $string, $search );
-	} else {
-		$string = preg_replace( '/\p{L}*?' . preg_quote( $search ) . '\p{L}*/ui', "<$el>$0</$el>", $string );
-	}
-
-	return $string;
-}
-
 
 $is_table = false;
 $is_policies = false;
 
 $site_name = strtolower( get_bloginfo( 'name' ) );
-if ( false !== strpos( $site_name, 'policies' ) ) {
+if ( false !== strpos( $site_name, 'policies' ) ) { // @todo: find a better condition
 	$is_table = true;
 	$is_policies = true;
 }
 
 
 $query_id = $query->query['search_filter_id'];
-// echo '<pre>';
-// $vars = get_defined_vars();
-// var_dump ( array_keys ( $vars ) );
+
 $sf_current_query = $searchandfilter->get( $query_id )->current_query();
 
-// var_dump ( $sf_current_query->get_search_term() );
-//
-// var_dump ( $sf_current_query->is_filtered() );
-// echo '</pre>';
+
 if ( $query->have_posts() ) : ?>
 	<div class="search-filter-results">
 		<div class="results-meta results-meta-before">
@@ -115,68 +47,38 @@ if ( $query->have_posts() ) : ?>
 		</div>
 	
 		<div class="search-filter-results-posts ">
-			<?php
-			if ( $is_table ) :
-?>
-<table><?php endif; ?>
+			<?php if ( $is_table ) : ?>
+			<table class="search-filter-results">
+			<?php if ( $is_policies ) : ?>
+			<thead>
+			<tr>
+				<th>Policy</th>
+				<th>Category</th>
+				<th>Procedure</th>
+			</tr>
+			</thead>
+			<?php endif; ?>
+			<tbody>
+			<?php endif; ?>
+			
 			<?php
 			while ( $query->have_posts() ) {
 				$query->the_post();
 
-				?>
-		
-				<?php if ( get_post_type() === 'people' ) : // it's a people post, customize result display ?>
+				if ( get_post_type() === 'people' ) { // it's a people post, customize result display
+					include 'people.php';
+				} elseif ( $is_policies ) { // it's a polcy
+					include 'policies.php';
+				} else { // not a people post, use default search and filter template
+					include 'default.php';
+				}
+			} // end while
+			?>
 			
-					<?php
-						include 'people.php';
-					?>
-			
-				<?php elseif ( $is_policies ) : // it's a polcy ?>
-					
-					<?php
-						include 'policies.php';
-					?>
-
-				<?php else : // not a people post, use default search and filter template ?>
-
-					<div>
-						<h2><a href="<?php the_permalink(); ?>">
-															<?php
-							// the_title();
-							$title = get_the_title();
-							echo uri_modern_result_highlight( $title, $search );
-						?>
-						</a></h2>
-			
-						<p><br />
-						<?php
-							// the_excerpt();
-							$excerpt = get_the_excerpt();
-							echo uri_modern_result_highlight( $excerpt, $search );
-						?>
-						</p>
-						<?php
-							if ( has_post_thumbnail() ) {
-							echo '<p>';
-							the_post_thumbnail( 'small' );
-							echo '</p>';
-							}
-						?>
-						<p><?php the_category(); ?></p>
-						<p><?php the_tags(); ?></p>
-						<p><small><?php the_date(); ?></small></p>
-			
-					</div>
-
-				<?php endif; // end post type conditional ?>
-									
-
-			<?php } // end while ?>
-			
-			<?php
-			if ( $is_table ) :
-?>
-</table><?php endif; ?>
+			<?php if ( $is_table ) : ?>
+				</tbody>
+				</table>
+			<?php endif; ?>
 			
 		</div>
 
@@ -206,8 +108,11 @@ if ( $query->have_posts() ) : ?>
 	$(document).ready( initExcerpter );
 
 	function initExcerpter() {
+
 		// hide all of the excerpt rows
 		$("tr.excerpt").toggleClass('excerpt-hidden');
+
+		$("table.search-filter-results thead tr").eq(0).append("<th></th>");
 		
 		// add an toggler widget to each row
 		$("td.policy").each(function(){

@@ -595,6 +595,11 @@ require get_template_directory() . '/inc/display-posts.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Load the Search and Filter helper functions
+ */
+require get_template_directory() . '/inc/search-filter.php';
+
+/**
  * Add page slug to body class list in the format 'ln-{slug}'
  *
  * @param array $classes the classes.
