@@ -29,5 +29,5 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 Contributors: Brandon Fuller, John Pennypacker  
 Tags: themes  
 Requires at least: 4.0  
-Tested up to: 4.9  
-Stable tag: 1.2.4  
+Tested up to: 5.0  
+Stable tag: 1.2.5  
