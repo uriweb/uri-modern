@@ -2,7 +2,7 @@
    FORMS
    ============================== */
 
-fieldset {
+form {
     background: #fff;
     box-sizing: border-box;
     border-bottom: 1px solid $grey;
@@ -16,7 +16,7 @@ fieldset {
 }
 
 @media all and (min-width: $break1) {
-    fieldset {
+    form {
         border: 1px solid $grey;
         padding: 1.5rem 1rem;
         border-radius: .2rem;
@@ -27,12 +27,12 @@ fieldset {
 }
 
 @media all and (min-width: $break2) {
-    fieldset {
+    form {
         padding: 2rem;
     }
 }
 
-fieldset legend {
+form legend {
     background: $link;
     color: $white;
     letter-spacing: .1rem;
@@ -41,10 +41,6 @@ fieldset legend {
     text-transform: uppercase;
     font-size: .8rem;
     border-radius: 2px;
-}
-
-fieldset form:not(:first-child) {
-    margin-top: 2rem;
 }
 
 form label {
@@ -102,7 +98,7 @@ form input.button {
     100% { background: $grey; }
 }
 
-form .input-group {
+fieldset {
     display: block;
     margin: 1rem 0 2rem;
     position: relative;
