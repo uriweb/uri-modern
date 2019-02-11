@@ -36,6 +36,9 @@
 		div.span.innerHTML = BC.crumbs[BC.crumbs.length - 2].querySelector( 'a' ).innerHTML;
 		div.el.appendChild( div.span );
 
+		// Put a space in between so that long names wrap correctly
+		div.el.appendChild( document.createTextNode( ' ' ) );
+
 		div.span = document.createElement( 'span' );
 		div.span.innerHTML = BC.crumbs[BC.crumbs.length - 1].innerHTML;
 		div.el.appendChild( div.span );

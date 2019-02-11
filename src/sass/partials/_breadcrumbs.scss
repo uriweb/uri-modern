@@ -23,8 +23,8 @@
             padding: .5rem;
             border-radius: .2rem;
             display: inline-block;
-            white-space: nowrap;
             max-width: 100%;
+			line-height: 1rem;
         }
         
         &.active div,
@@ -61,7 +61,7 @@
         ol {
             display: none;
             position: absolute;
-            top: 43px;
+            top: 50px;
             left: 0;
             list-style: none;
             background: $darkgrey;
