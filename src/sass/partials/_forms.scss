@@ -10,7 +10,7 @@
 
 form.modern-form {
 	
-    background: #fff;
+    background: #f3f3f3;
     box-sizing: border-box;
     border-bottom: 1px solid $grey;
     border-top: 1px solid $grey;
@@ -30,10 +30,10 @@ form.modern-form {
 		text-transform: uppercase;
 		font-size: .8rem;
 		border-radius: 2px;
+		margin-bottom: 2rem;
 	}
 
 	label {
-		color: $midblue;
 		font-size: 1rem;
 		font-weight: 600;
 	}
@@ -99,8 +99,8 @@ form.modern-form {
 			& + label {
 
 				display: block;
-				background: none;
-				border: 1px solid $grey;
+				background: $white;
+				border: 1px solid #e5e5e5;
 				border-radius: .2rem;
 				margin: .5rem 0;
 				box-sizing: border-box;
@@ -129,13 +129,14 @@ form.modern-form {
 
 				&:hover,
 				&:focus {
+					
 					cursor: pointer;
-					background: $lightgrey;
-					//box-shadow: $level1;
-				}
-
-				&:active {
-					//box-shadow: $level2;
+					background: #fafafa;
+					
+					&:before {
+						border: 3px solid #b4daff;
+					}
+					
 				}
 
 			}
@@ -161,22 +162,21 @@ form.modern-form {
 			position: relative;
 			width: 100%;
 			max-width: 800px;
-			padding: .3rem .2rem;
+			padding: .5rem .8rem;
 			box-sizing: border-box;
 			margin-top: .5rem;
-			border: none;
+			border: 1px solid #e5e5e5;
 			outline: none;
-			background: none;
-			border-bottom: 1px solid $grey;
+			background: $white;
+			border-radius: 3px;
 			color: $black;
 			font-size: 1.2rem;
 			transition: all .2s ease-in-out;
 
 			&:hover,
 			&:focus {
-				border-bottom: 1px solid $lightgrey;
-				background: $lightgrey;
 				color: $darkgrey;
+				border: 1px solid #71b9ff;
 			}
 
 		}
@@ -190,17 +190,17 @@ form.modern-form {
 			padding: .5rem;
 			box-sizing: border-box;
 			outline: none;
-			background: none;
-			border: 1px solid $grey;
+			background: $white;
+			border: 1px solid #e5e5e5;
 			color: $black;
 			font-size: 1rem;
+			border-radius: 3px;
 			transition: all .2s ease-in-out;
 
 			&:hover,
 			&:focus {
-				border: 1px solid $lightgrey;
-				background: $lightgrey;
 				color: $darkgrey;
+				border: 1px solid #71b9ff;
 			}
 
 		}
