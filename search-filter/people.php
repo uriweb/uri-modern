@@ -62,9 +62,9 @@
 		}
 		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
 		?>
-		<div class="people-expertise people-field">Areas of expertise: 
+		<div class="people-expertise people-field tags-links"><span class="people-expertise-label">Areas of expertise: </span>
 		<?php
-		$terms = implode( '<span class="separator">, </span>', $terms );
+		$terms = implode( ' ', $terms );
 		// echo $terms;
 		echo uri_modern_result_highlight( $terms, $search );
 		?>
