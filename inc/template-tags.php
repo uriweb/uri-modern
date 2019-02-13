@@ -54,7 +54,7 @@ if ( ! function_exists( 'uri_modern_entry_footer' ) ) :
 			}
 
 			/* translators: used between list items */
-			$tags_list = get_the_tag_list( '<span class="screen-reader-text">Tagged as:</span>', '' );
+			$tags_list = get_the_tag_list( '<span class="screen-reader-text">Tagged as:</span>', ' ' );
 			if ( $tags_list && get_option( 'display_post_tags' ) ) {
 				/* translators: %s: the list of tags */
 				printf( '<span class="tags-links">' . esc_html__( ' %s', 'uri' ) . '</span>', $tags_list ); // WPCS: XSS OK.
