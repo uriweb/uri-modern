@@ -399,7 +399,7 @@ add_action( 'wp_enqueue_scripts', 'uri_modern_scripts' );
 /**
  * Enable styles in the WYSIWYG Editor (BETA FEATURE)
  */
-if ( URI_BETA_FEATURES !== null && URI_BETA_FEATURES === true ) {
+if ( defined( 'URI_BETA_FEATURES' ) && URI_BETA_FEATURES === true ) {
 
 	if ( is_admin() ) {
 		add_editor_style( get_template_directory_uri() . '/style.css', __FILE__ );
