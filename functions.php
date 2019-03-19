@@ -585,6 +585,11 @@ require get_template_directory() . '/inc/shortcodes.php';
 require get_template_directory() . '/inc/wysiwyg.php';
 
 /**
+ * Gutenberg additions
+ */
+require get_template_directory() . '/inc/gutenberg.php';
+
+/**
  * Display Posts customizations
  */
 require get_template_directory() . '/inc/display-posts.php';
