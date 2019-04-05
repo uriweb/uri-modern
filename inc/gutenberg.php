@@ -83,7 +83,19 @@ function uri_modern_allowed_blocks( $allowed_blocks ) {
 		'core-embed/ted',
 		'core-embed/tumblr',
 		'core-embed/videopress',
-		'core-embed/wordpress-tv'
+		'core-embed/wordpress-tv',
+		'uri-cl/boxout',
+		'uri-cl/button',
+		'uri-cl/card',
+		'uri-cl/hero',
+		'uri-cl/hero2',
+		'uri-cl/metric',
+		'uri-cl/notice',
+		'uri-cl/panel',
+		'uri-cl/quote',
+		'uri-cl/tab',
+		'uri-cl/tabs',
+		'uri-courses/by-subject',
 	);
 }
 add_filter( 'allowed_block_types', 'uri_modern_allowed_blocks' );
