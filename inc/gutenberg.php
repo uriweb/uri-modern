@@ -6,11 +6,6 @@
  */
 
 // @see https://www.billerickson.net/getting-your-theme-ready-for-gutenberg/
-
-/**
- *
- */
-
 // @todo: do we want align wide for images?
 // @todo: how about caption styles?
 // add_theme_support( 'align-wide' );
@@ -22,7 +17,6 @@
  *
  * @return arr
  */
-
 function uri_modern_allowed_blocks( $allowed_blocks ) {
 	return array(
 		'core/shortcode',
