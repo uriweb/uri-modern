@@ -90,6 +90,34 @@
     
 }
 
+/* Heroes */
+
+.cl-hero {
+	&.n .still {
+		background-position: 50% 0;
+	}
+	&.ne .still {
+		background-position: 100% 0;
+	}
+	&.e .still {
+		background-position: 100% 50%;
+	}
+	&.se .still {
+		background-position: 100% 100%;
+	}
+	&.s .still {
+		background-position: 50% 100%;
+	}
+	&.sw .still {
+		background-position: 0 100%;
+	}
+	&.w .still {
+		background-position: 0 50%;
+	}
+	&.nw .still {
+		background-position: 0 0;
+	}
+}
 
 /* Metrics */
 
