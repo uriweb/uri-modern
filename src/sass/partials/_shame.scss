@@ -1,0 +1,92 @@
+/* ==============================
+   SHAME
+   ============================== */
+
+@mixin message() {
+	
+	position: absolute;
+	display: block;
+	background: #f00;
+	outline: 3px solid #f00;
+	padding: .1rem .3rem;
+	color: #fff;
+	font-size: .8rem;
+	min-width: 100px;
+	opacity: .7;
+	transition: opacity .1s ease-in-out;
+	
+	&:hover {
+		opacity: 1;
+	}
+	
+}
+
+body.logged-in {
+	
+	.shame-status {
+		padding: 1rem;
+		background: #f00;
+		margin-bottom: 2rem;
+		color: #fff;
+	}
+
+	.shame-wrapper {
+	
+		position: relative;
+
+		&.shamed-image {
+
+			img {
+				outline: 5px solid #f00;
+			}
+
+			.shame-message {
+				@include message();
+			}
+
+		}
+
+		&.shamed-link {
+
+			a {
+				border-bottom: 5px solid #f00;
+
+				&:hover ~ .shame-message {
+					opacity: 1;
+				}
+
+			}
+
+			.shame-message {
+				opacity: 0;
+				pointer-events: none;
+				position: absolute;
+				top: 2rem;
+				left: 0;
+				display: block;
+				background: #f00;
+				outline: 3px solid #f00;
+				padding: .1rem .3rem;
+				color: #fff;
+				font-size: .8rem;
+				transition: opacity .2s ease-in-out;
+			}
+
+		}
+
+		&.shamed-duplicate-id {
+
+			&>.shamed-element {
+				outline: 5px solid #f00;
+			}
+
+			&>.shame-message {
+				@include message();
+			}
+
+		}
+		
+	}
+			
+		
+}
