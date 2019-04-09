@@ -78,7 +78,7 @@
 	function shameImages() {
 
 		var tests, img, i, j;
-		
+
 		tests = [
 			{
 				selector: 'alt=""',
@@ -88,8 +88,8 @@
 				selector: 'src^="file:"',
 				message: 'No sourcing local resources'
 			}
-		]
-		
+		];
+
 		for ( i = 0; i < tests.length; i++ ) {
 
 			img = data.main.querySelectorAll( 'img[' + tests[i].selector + ']' );
