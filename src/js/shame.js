@@ -77,13 +77,28 @@
 
 	function shameImages() {
 
-		var img, i;
+		var tests, img, i, j;
+		
+		tests = [
+			{
+				selector: 'alt=""',
+				message: 'Alt attribute required'
+			},
+			{
+				selector: 'src^="file:"',
+				message: 'No sourcing local resources'
+			}
+		]
+		
+		for ( i = 0; i < tests.length; i++ ) {
 
-		img = data.main.querySelectorAll( 'img[alt=""]' );
+			img = data.main.querySelectorAll( 'img[' + tests[i].selector + ']' );
 
-		for ( i = 0; i < img.length; i++ ) {
+			for ( j = 0; j < img.length; j++ ) {
 
-			displayShame( img[i], 'shamed-image', 'Alt attribute required' );
+				displayShame( img[j], 'shamed-image', tests[i].message );
+
+			}
 
 		}
 
@@ -109,6 +124,10 @@
 			{
 				selector: 'href^="///"',
 				message: 'Link href syntax error'
+			},
+			{
+				selector: 'href$=".pdf"',
+				message: 'PDF: Consider linking to a webpage instead'
 			}
 		];
 
