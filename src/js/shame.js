@@ -120,6 +120,7 @@
 		shameLinks();
 		shameIDs();
 		shameStyles();
+		shameDeprecatedTags()
 
 		displayStatus();
 
@@ -267,17 +268,32 @@
 			{
 				selectors: ['style'],
 				message: 'Avoid using inline styles',
-				type: 'suggestion'
+				type: 'warning'
 			}
 		];
 
 		Shame.iterateTests( specs, tests );
 		
-		els = data.main.querySelectorAll( 'font' );
+		els = data.main.querySelectorAll( 'style' );
 		for ( i = 0; i < els.length; i++ ) {
-			Shame.display( els[i], 'shamed-font-tag', '&lt;font&gt; tag is deprecated.', 'error' );
+			Shame.display( els[i], 'shamed-tag-style', 'Avoid &lt;style&gt; tags in the body', 'warning' );
 		}
 
+	}
+	
+	function shameDeprecatedTags() {
+		
+		var tags, els, i, j;
+		
+		tags = ['font', 'link'];
+		
+		for ( i = 0; i < tags.length; i++ ) {
+			els = data.main.querySelectorAll( tags[i] );
+			for ( j = 0; j < els.length; j++ ) {
+				Shame.display( els[j], 'shamed-tag-' + tags[i], '&lt;' + tags[i] + '&gt; tag is deprecated.', 'error' );
+			}
+		}
+		
 	}
 
 	function displayStatus() {
