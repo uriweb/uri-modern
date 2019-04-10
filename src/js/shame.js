@@ -82,15 +82,15 @@
 
 			el.classList.add( data.elClass );
 
-			++data.issues.total;
-			++data.issues[type + 's'];
+			data.issues.total++;
+			data.issues[type + 's']++;
 
 			wrapper = document.createElement( 'span' );
 			wrapper.className = 'shame-wrapper ' + classname + ' shame-type-' + type;
 
 			div = document.createElement( 'div' );
 			div.className = data.messageClass;
-			div.innerHTML = message;
+			div.innerHTML = '<div class="shame-icon">' + type + '</div><div class="shame-message-content">' + message + '</div>';
 			wrapper.appendChild( div );
 
 			el.parentNode.insertBefore( wrapper, el.nextSibling );
@@ -217,7 +217,7 @@
 					'href$=".dmg"',
 					'href$=".exe"'
 					],
-				message: 'Not all users may be able to open this file because software is not available on all operating systems.',
+				message: 'Not all users may be able to open this file because the required software is not available on all operating systems.',
 				type: 'warning'
 			}
 		];
@@ -252,23 +252,63 @@
 
 	function displayStatus() {
 
-		var div, plural, string;
+		var div, plural, delimiter, string, n = 0;
+		
+		if ( 0 == data.issues.total ) {
+			return;
+		}
 
 		div = document.createElement( 'div' );
 		div.className = 'shame-status';
+		string = 'This page has ';
+		
+		if ( data.issues.errors > 0 ) {
+			plural = ( 1 == data.issues.errors ) ? '' : 's';
+			string += data.issues.errors + ' error' + plural;
+			n++;
+		}
+		
+		if ( data.issues.warnings > 0 ) {
+			
+			n++;
+			
+			switch (n) {
+				case 1:
+					delimiter = '';
+					break;
+				case 2:
+					delimiter = ' and ';
+					if ( data.issues.suggestions > 0 ) {
+						delimiter = ', ';
+					};
+					break;
+			}
+			
+			plural = ( 1 == data.issues.warnings ) ? '' : 's';
+			string += delimiter + data.issues.warnings + ' warning' + plural;
+		}
+		
+		if ( data.issues.suggestions > 0 ) {
+			
+			switch (n) {
+				case 0:
+					delimiter = '';
+					break;
+				case 1:
+					delimiter = ' and ';
+					break;
+				case 2:
+					delimiter = ', and ';
+					break;
+			}
+			
+			plural = ( 1 == data.issues.suggestions ) ? '' : 's';
+			string += delimiter + data.issues.suggestions + ' suggestion' + plural;
+		}
+		
+		div.innerHTML = string + '.';
 
-		plural = ( 1 == data.issues.errors ) ? '' : 's';
-		string = 'This page has ' + data.issues.errors + ' error' + plural;
-
-		plural = ( 1 == data.issues.warnings ) ? '' : 's';
-		string += ', ' + data.issues.warnings + ' warning' + plural;
-
-		plural = ( 1 == data.issues.suggestions ) ? '' : 's';
-		string += ', and ' + data.issues.suggestions + ' suggestion' + plural + '.';
-
-		div.innerHTML = string;
-
-		data.main.insertBefore( div, data.main.firstChild );
+		document.getElementById( 'page' ).insertBefore( div, document.getElementById( 'masthead' ) );
 		
 		console.log( data.issues );
 

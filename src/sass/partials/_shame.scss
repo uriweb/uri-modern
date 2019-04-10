@@ -7,13 +7,14 @@
 	position: absolute;
 	display: block;
 	padding: .5rem;
-	font-family: $type-mono;
+	font-family: $type-sans;
 	font-size: .8rem;
-	line-height: .9rem;
+	line-height: 1rem;
 	width: 150px;
 	opacity: .9;
 	transition: opacity .1s ease-in-out;
 	z-index: 8000;
+	box-shadow: $level3;
 	
 	&:hover {
 		opacity: 1;
@@ -22,52 +23,94 @@
 }
 
 @mixin error() {
-	background: #f00;
+	border-top: 5px solid #C01C1C;
+	background: #ff4753;
 	color: #fff;
 }
 
 @mixin warning() {
-	background: #ff0;
+	border-top: 5px solid #FF9F10;
+	background: #fffc7b;
 	color: #000;
 }
 
 @mixin suggestion() {
-	background: #00f;
+	border-top: 5px solid #1052FF;
+	background: #6495ff;
 	color: #fff;
 }
 
 @mixin outline() {
-	outline: 5px solid rgba(255,0,0,.9);
+	outline: 2px dotted #f0f;
 }
 
 body.logged-in {
 	
 	.shame-status {
-		padding: 1rem;
-		background: #f00;
-		margin-bottom: 2rem;
+		padding: 2rem 1rem;
+		background: #ff4753;
 		color: #fff;
+		text-align: center;
+		font-family: $type-sans;
+		font-size: 1.25rem;
+		font-weight: bold;
 	}
 
 	.shame-wrapper {
 	
 		position: relative;
 		
-		&.shame-type-error .shame-message {
-			@include error();
+		.shame-icon {
+			margin-bottom: 10px;
+			padding-left: 22px;
+			text-transform: uppercase;
+			height: 16px;
+			line-height: 16px;
+			font-weight: bold;
+			background-image: url(images/errors.png);
+			background-size: 16px auto;
+			background-repeat: no-repeat;
 		}
 		
-		&.shame-type-warning .shame-message {
-			@include warning();
+		&.shame-type-error {
+			
+			.shame-message {
+				@include error();
+			}
+			
+			.shame-icon {
+				background-position: 0 0;
+			}
+			
 		}
 		
-		&.shame-type-suggestion .shame-message {
-			@include suggestion();
+		&.shame-type-warning {
+			
+			.shame-message {
+				@include warning();
+			}
+			
+			.shame-icon {
+				background-position: 0 -16px;
+			}
+			
+		}
+		
+		&.shame-type-suggestion {
+			
+			.shame-message {
+				@include suggestion();
+			}
+			
+			.shame-icon {
+				background-position: 0 -32px;
+			}
+			
 		}
 
 		&.shamed-image {
 
-			img {
+			.shamed-element {
 				@include outline();
 			}
 
@@ -79,8 +122,8 @@ body.logged-in {
 
 		&.shamed-link {
 
-			a {
-				border-bottom: 5px solid #f00;
+			.shamed-element {
+				@include outline();
 			}
 
 			.shame-message {
