@@ -6,9 +6,7 @@
 	
 	position: absolute;
 	display: block;
-	background: #f00;
 	padding: .2rem .5rem;
-	color: #fff;
 	font-family: $type-mono;
 	font-size: .8rem;
 	line-height: .9rem;
@@ -21,6 +19,21 @@
 		opacity: 1;
 	}
 	
+}
+
+@mixin error() {
+	background: #f00;
+	color: #fff;
+}
+
+@mixin warning() {
+	background: #ff0;
+	color: #000;
+}
+
+@mixin suggestion() {
+	background: #00f;
+	color: #fff;
 }
 
 @mixin outline() {
@@ -39,6 +52,18 @@ body.logged-in {
 	.shame-wrapper {
 	
 		position: relative;
+		
+		&.shame-type-error .shame-message {
+			@include error();
+		}
+		
+		&.shame-type-warning .shame-message {
+			@include warning();
+		}
+		
+		&.shame-type-suggestion .shame-message {
+			@include suggestion();
+		}
 
 		&.shamed-image {
 
