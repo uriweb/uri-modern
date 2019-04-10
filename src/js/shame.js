@@ -252,61 +252,21 @@
 
 	function displayStatus() {
 
-		var div, plural, delimiter, string, n = 0;
+		var div, plural, delimiter, string;
 		
-		if ( 0 == data.issues.total ) {
+		if ( 0 == data.issues.errors ) {
 			return;
 		}
 
 		div = document.createElement( 'div' );
 		div.className = 'shame-status';
-		string = 'This page has ';
 		
 		if ( data.issues.errors > 0 ) {
 			plural = ( 1 == data.issues.errors ) ? '' : 's';
-			string += data.issues.errors + ' error' + plural;
-			n++;
+			string = 'This page has ' + data.issues.errors + ' critical error' + plural + ' that must be addressed.';
 		}
 		
-		if ( data.issues.warnings > 0 ) {
-			
-			n++;
-			
-			switch (n) {
-				case 1:
-					delimiter = '';
-					break;
-				case 2:
-					delimiter = ' and ';
-					if ( data.issues.suggestions > 0 ) {
-						delimiter = ', ';
-					};
-					break;
-			}
-			
-			plural = ( 1 == data.issues.warnings ) ? '' : 's';
-			string += delimiter + data.issues.warnings + ' warning' + plural;
-		}
-		
-		if ( data.issues.suggestions > 0 ) {
-			
-			switch (n) {
-				case 0:
-					delimiter = '';
-					break;
-				case 1:
-					delimiter = ' and ';
-					break;
-				case 2:
-					delimiter = ', and ';
-					break;
-			}
-			
-			plural = ( 1 == data.issues.suggestions ) ? '' : 's';
-			string += delimiter + data.issues.suggestions + ' suggestion' + plural;
-		}
-		
-		div.innerHTML = string + '.';
+		div.innerHTML = string;
 
 		document.getElementById( 'page' ).insertBefore( div, document.getElementById( 'masthead' ) );
 		
