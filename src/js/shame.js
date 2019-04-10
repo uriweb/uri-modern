@@ -119,6 +119,7 @@
 		shameImages();
 		shameLinks();
 		shameIDs();
+		shameStyles();
 
 		displayStatus();
 
@@ -171,19 +172,22 @@
 				type: 'error'
 			},
 			{
-				selectors: ['href^="file:"'],
+				selectors: [
+					'href^="file:"',
+					'href^="///"'
+					],
 				message: 'No linking to local resources',
-				type: 'error'
-			},
-			{
-				selectors: ['href^="///"'],
-				message: 'Link href syntax error',
 				type: 'error'
 			},
 			{
 				selectors: ['href$=".pdf"'],
 				message: 'Consider linking to a webpage instead of a PDF',
 				type: 'suggestion'
+			},
+			{
+				selectors: ['target'],
+				message: 'This link will open in a new tab or window',
+				type: 'warning'
 			},
 			{
 				selectors: [
@@ -246,6 +250,32 @@
 				}
 			}
 
+		}
+
+	}
+	
+	function shameStyles() {
+
+		var specs, tests, els, i;
+
+		specs = {
+			tag: '*',
+			class: 'shamed-style'
+		};
+
+		tests = [
+			{
+				selectors: ['style'],
+				message: 'Avoid using inline styles',
+				type: 'suggestion'
+			}
+		];
+
+		Shame.iterateTests( specs, tests );
+		
+		els = data.main.querySelectorAll( 'font' );
+		for ( i = 0; i < els.length; i++ ) {
+			Shame.display( els[i], 'shamed-font-tag', '&lt;font&gt; tag is deprecated.', 'error' );
 		}
 
 	}

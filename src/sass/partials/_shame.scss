@@ -108,7 +108,9 @@ body.logged-in {
 			
 		}
 
-		&.shamed-image {
+		&.shamed-image,
+		&.shamed-font-tag,
+		&.shamed-style {
 
 			.shamed-element {
 				@include outline();
