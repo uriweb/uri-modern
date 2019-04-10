@@ -136,7 +136,7 @@
 		tests = [
 			{
 				selectors: ['alt=""'],
-				message: 'Alt attribute required',
+				message: 'Alt attribute required for ADA compliance',
 				type: 'error'
 			},
 			{
@@ -182,7 +182,7 @@
 			},
 			{
 				selectors: ['href$=".pdf"'],
-				message: 'PDF: Consider linking to a webpage instead',
+				message: 'Consider linking to a webpage instead of a PDF',
 				type: 'suggestion'
 			},
 			{
@@ -200,9 +200,24 @@
 					'href$=".pptm"',
 					'href$=".ppsx"',
 					'href$=".sldx"',
-					'href$=".sldm"'
+					'href$=".sldm"',
+					'href$=".pub"',
+					'href$=".xps"',
+					'href$=".accdb"',
+					'href$=".accde"'
 					],
 				message: 'Not all users may be able to open this file.  Provide a download link to the required software.',
+				type: 'warning'
+			},
+			{
+				selectors: [
+					'href$=".pages"',
+					'href$=".numbers"',
+					'href$=".keynote"',
+					'href$=".dmg"',
+					'href$=".exe"'
+					],
+				message: 'Not all users may be able to open this file because software is not available on all operating systems.',
 				type: 'warning'
 			}
 		];
@@ -254,6 +269,8 @@
 		div.innerHTML = string;
 
 		data.main.insertBefore( div, data.main.firstChild );
+		
+		console.log( data.issues );
 
 	}
 
