@@ -2,6 +2,20 @@
    SHAME
    ============================== */
 
+@mixin open-message() {
+	
+	opacity: 1;
+				
+	.shame-icon:after {
+		top: 3px;
+		transform: rotate(180deg);
+	}
+
+	.shame-message-content {
+		display: block;
+	}
+	
+}
 body.logged-in {
 	
 	.shame-status {
@@ -74,18 +88,14 @@ body.logged-in {
 			}
 			
 			&.open {
-				
-				opacity: 1;
-				
-				.shame-message-content {
-					display: block;
-				}
-				
+				@include open-message();
 			}
 			
 		}
 		
 		.shame-icon {
+			
+			position: relative;
 			padding-left: 22px;
 			text-transform: uppercase;
 			height: 16px;
@@ -94,6 +104,22 @@ body.logged-in {
 			background-image: url(images/errors.png);
 			background-size: 16px auto;
 			background-repeat: no-repeat;
+			
+			&:after {
+				position: absolute;
+				right: 4px;
+				top: 4px;
+				display: block;
+				content: '';
+				width: 0;
+				height: 0;
+				border-top: 8px solid #fff;
+				border-left: 6px solid transparent;
+				border-right: 6px solid transparent;
+				transform: rotate(0);
+				transition: all .2s ease-in-out;
+			}
+			
 		}
 		
 		.shamed-element {
@@ -121,7 +147,13 @@ body.logged-in {
 			color: #000;
 			
 			.shame-icon {
+				
 				background-position: 0 -16px;
+				
+				&:after {
+					border-top-color: #000;
+				}
+				
 			}
 			
 		}
@@ -152,14 +184,8 @@ body.logged-in {
 		
 	}
 	
-	&.shame-open-all-messages .shame-wrapper .shame-message {
-				
-		opacity: 1;
-
-		.shame-message-content {
-			display: block;
-		}
-
+	&.shame-open-all-messages .shame-wrapper .shame-message {	
+		@include open-message();
 	}
 			
 		
