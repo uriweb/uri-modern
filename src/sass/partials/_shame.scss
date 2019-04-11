@@ -2,48 +2,6 @@
    SHAME
    ============================== */
 
-@mixin message() {
-	
-	position: absolute;
-	display: block;
-	padding: .5rem;
-	font-family: $type-sans;
-	font-size: .8rem;
-	line-height: 1rem;
-	width: 150px;
-	opacity: .9;
-	transition: opacity .1s ease-in-out;
-	z-index: 8000;
-	box-shadow: $level3;
-	
-	&:hover {
-		opacity: 1;
-	}
-	
-}
-
-@mixin error() {
-	border-top: 5px solid #C01C1C;
-	background: #ff4753;
-	color: #fff;
-}
-
-@mixin warning() {
-	border-top: 5px solid #FF9F10;
-	background: #fffc7b;
-	color: #000;
-}
-
-@mixin suggestion() {
-	border-top: 5px solid #1052FF;
-	background: #6495ff;
-	color: #fff;
-}
-
-@mixin outline() {
-	outline: 2px dotted #f0f;
-}
-
 body.logged-in {
 	
 	.shame-status {
@@ -60,6 +18,35 @@ body.logged-in {
 	
 		position: relative;
 		
+		.shame-messages {
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin: 0;
+			list-style-type: none;
+			box-shadow: $level3;
+		}
+		
+		.shame-message {
+			
+			position: relative;
+			display: block;
+			padding: .5rem;
+			font-family: $type-sans;
+			font-size: .8rem;
+			line-height: 1rem;
+			width: 150px;
+			opacity: .9;
+			transition: opacity .1s ease-in-out;
+			z-index: 8000;
+			margin: 0;
+
+			&:hover {
+				opacity: 1;
+			}
+			
+		}
+		
 		.shame-icon {
 			margin-bottom: 10px;
 			padding-left: 22px;
@@ -72,11 +59,15 @@ body.logged-in {
 			background-repeat: no-repeat;
 		}
 		
-		&.shame-type-error {
+		.shamed-element {
+			outline: 2px dotted #f0f;
+		}
+		
+		.shame-type-error {
 			
-			.shame-message {
-				@include error();
-			}
+			border-top: 5px solid #C01C1C;
+			background: #ff4753;
+			color: #fff;
 			
 			.shame-icon {
 				background-position: 0 0;
@@ -84,11 +75,11 @@ body.logged-in {
 			
 		}
 		
-		&.shame-type-warning {
+		.shame-type-warning {
 			
-			.shame-message {
-				@include warning();
-			}
+			border-top: 5px solid #FF9F10;
+			background: #fffc7b;
+			color: #000;
 			
 			.shame-icon {
 				background-position: 0 -16px;
@@ -96,11 +87,11 @@ body.logged-in {
 			
 		}
 		
-		&.shame-type-suggestion {
+		.shame-type-suggestion {
 			
-			.shame-message {
-				@include suggestion();
-			}
+			border-top: 5px solid #1052FF;
+			background: #6495ff;
+			color: #fff;
 			
 			.shame-icon {
 				background-position: 0 -32px;
@@ -108,42 +99,13 @@ body.logged-in {
 			
 		}
 
-		&.shamed-image,
 		&.shamed-font-tag,
-		&.shamed-style,
-		&[class*="shamed-tag"] {
-
-			.shamed-element {
-				@include outline();
-			}
-
-			.shame-message {
-				@include message();
-			}
-
-		}
-
+		&.shamed-attribute,
+		&[class*="shamed-tag"],
 		&.shamed-link {
 
-			.shamed-element {
-				@include outline();
-			}
-
-			.shame-message {
-				@include message();
+			.shame-messages {
 				top: 2rem;
-			}
-
-		}
-
-		&.shamed-duplicate-id {
-
-			&>.shamed-element {
-				@include outline();
-			}
-
-			&>.shame-message {
-				@include message();
 			}
 
 		}

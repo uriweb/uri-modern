@@ -78,24 +78,53 @@
 		 */
 		static display( el, classname, message, type ) {
 
-			var wrapper, div;
-
-			el.classList.add( data.elClass );
-
+			var wrapper, ul;
+			
 			data.issues.total++;
 			data.issues[type + 's']++;
 
-			wrapper = document.createElement( 'span' );
-			wrapper.className = 'shame-wrapper ' + classname + ' shame-type-' + type;
+			if ( el.classList.contains( data.elClass ) ) {
+				
+				ul = el.previousSibling;
+				ul.appendChild( Shame.buildMessage( type, message ) );
+				
+			} else {
+				
+				el.classList.add( data.elClass );
 
-			div = document.createElement( 'div' );
-			div.className = data.messageClass;
-			div.innerHTML = '<div class="shame-icon">' + type + '</div><div class="shame-message-content">' + message + '</div>';
-			wrapper.appendChild( div );
+				wrapper = document.createElement( 'span' );
+				wrapper.className = 'shame-wrapper ' + classname;
 
-			el.parentNode.insertBefore( wrapper, el.nextSibling );
-			wrapper.appendChild( el );
+				ul = document.createElement( 'ul' );
+				ul.className = data.messageClass + 's';
+				
+				ul.appendChild( Shame.buildMessage( type, message ) );
+				
+				wrapper.appendChild( ul );
 
+				el.parentNode.insertBefore( wrapper, el.nextSibling );
+				wrapper.appendChild( el );
+				
+			}
+
+		}
+		
+		/**
+		 * Build the error message
+		 * @param type str The issue type
+		 * @param message str The message to display
+		 * @return el The list element
+		 */
+		static buildMessage( type, message ) {
+			
+			var li;
+			
+			li = document.createElement( 'li' );
+			li.className = data.messageClass + ' shame-type-' + type;
+			li.innerHTML = '<div class="shame-icon">' + type + '</div><div class="shame-message-content">' + message + '</div>';
+		
+			return li;
+			
 		}
 
 	}
@@ -120,7 +149,8 @@
 		shameLinks();
 		shameIDs();
 		shameStyles();
-		shameDeprecatedTags()
+		shameDeprecatedTags();
+		shameDiscouragedAttributes();
 
 		displayStatus();
 
@@ -187,7 +217,7 @@
 			},
 			{
 				selectors: ['target'],
-				message: 'This link will open in a new tab or window',
+				message: 'Opening links in a new tab or window is discouraged',
 				type: 'warning'
 			},
 			{
@@ -257,11 +287,22 @@
 	
 	function shameStyles() {
 
-		var specs, tests, els, i;
+		var els, i;
+
+		els = data.main.querySelectorAll( 'style' );
+		for ( i = 0; i < els.length; i++ ) {
+			Shame.display( els[i], 'shamed-tag-style', 'Avoid &lt;style&gt; tags in the body', 'warning' );
+		}
+
+	}
+
+	function shameDiscouragedAttributes() {
+
+		var specs, tests;
 
 		specs = {
 			tag: '*',
-			class: 'shamed-style'
+			class: 'shamed-attribute'
 		};
 
 		tests = [
@@ -269,18 +310,23 @@
 				selectors: ['style'],
 				message: 'Avoid using inline styles',
 				type: 'warning'
-			}
+			},
+			{
+				selectors: ['onclick'],
+				message: 'Avoid adding actions to elements using onclick',
+				type: 'warning'
+			},
+			{
+				selectors: ['onmouseover'],
+				message: 'Avoid adding actions to elements using onclick',
+				type: 'warning'
+			},
 		];
 
 		Shame.iterateTests( specs, tests );
-		
-		els = data.main.querySelectorAll( 'style' );
-		for ( i = 0; i < els.length; i++ ) {
-			Shame.display( els[i], 'shamed-tag-style', 'Avoid &lt;style&gt; tags in the body', 'warning' );
-		}
 
 	}
-	
+
 	function shameDeprecatedTags() {
 		
 		var tags, els, i, j;
