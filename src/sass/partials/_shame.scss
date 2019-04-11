@@ -13,6 +13,23 @@ body.logged-in {
 		font-size: 1.25rem;
 		font-weight: bold;
 	}
+	
+	.shame-open-all-messages {
+		
+		position: relative;
+		top: -2px;
+		display: inline-block;
+		margin-left: 20px;
+		font-size: .9rem;
+		padding: .4rem .5rem .2rem;
+		border-radius: 3px;
+		border: 1px solid #fff;
+		
+		&:hover {
+			cursor: pointer;
+		}
+		
+	}
 
 	.shame-wrapper {
 	
@@ -27,10 +44,6 @@ body.logged-in {
 			list-style-type: none;
 			width: 150px;
 			
-			&:hover .shame-message:not(:first-child) {
-				margin-top: 0;
-			}
-			
 		}
 		
 		.shame-message {
@@ -43,26 +56,36 @@ body.logged-in {
 			line-height: 1rem;
 			width: 100%;
 			opacity: .9;
-			transition: 
-				opacity .1s ease-in-out, 
-				margin-top .2s ease-in-out;
+			transition: opacity .1s ease-in-out;
 			z-index: 8000;
 			margin: 0 0 2px;
 			border-radius: 0 5px 5px;
 			box-shadow: 0 0 .3rem rgba(0,0,0,.3);
 			
-			&:not(:first-child) {
-				margin-top: -30%;
+			.shame-message-content {
+				display: none;
+				overflow: hidden;
+				margin-top: 10px;
 			}
 			
 			&:hover {
 				opacity: 1;
+				cursor: pointer;
+			}
+			
+			&.open {
+				
+				opacity: 1;
+				
+				.shame-message-content {
+					display: block;
+				}
+				
 			}
 			
 		}
 		
 		.shame-icon {
-			margin-bottom: 10px;
 			padding-left: 22px;
 			text-transform: uppercase;
 			height: 16px;
@@ -127,6 +150,16 @@ body.logged-in {
 
 		}
 		
+	}
+	
+	&.shame-open-all-messages .shame-wrapper .shame-message {
+				
+		opacity: 1;
+
+		.shame-message-content {
+			display: block;
+		}
+
 	}
 			
 		

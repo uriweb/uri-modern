@@ -122,7 +122,10 @@
 			li = document.createElement( 'li' );
 			li.className = data.messageClass + ' shame-type-' + type;
 			li.innerHTML = '<div class="shame-icon">' + type + '</div><div class="shame-message-content">' + message + '</div>';
-
+			li.addEventListener( 'click', function() {
+				li.classList.contains( 'open' ) ? li.classList.remove( 'open' ) : li.classList.add( 'open' );
+			});
+				
 			return li;
 
 		}
@@ -344,7 +347,7 @@
 
 	function displayStatus() {
 
-		var div, plural, delimiter, string;
+		var div, plural, delimiter, string, button;
 
 		if ( 0 == data.issues.errors ) {
 			return;
@@ -353,12 +356,24 @@
 		div = document.createElement( 'div' );
 		div.className = 'shame-status';
 
-		if ( data.issues.errors > 0 ) {
-			plural = ( 1 == data.issues.errors ) ? '' : 's';
-			string = 'This page has ' + data.issues.errors + ' critical error' + plural + ' that must be addressed.';
-		}
-
+		plural = ( 1 == data.issues.errors ) ? '' : 's';
+		string = 'This page has ' + data.issues.errors + ' critical error' + plural + ' that must be addressed.';
+		
+		button = document.createElement( 'div' );
+		button.className = 'shame-open-all-messages';
+		button.innerHTML = 'Open all messages';
+		button.addEventListener( 'click', function() {
+			if ( document.body.classList.contains( 'shame-open-all-messages' ) ) {
+				document.body.classList.remove( 'shame-open-all-messages' );
+				button.innerHTML = 'Open all messages';
+			} else {
+				document.body.classList.add( 'shame-open-all-messages' );
+				button.innerHTML = 'Close all messages';
+			}
+		});
+		
 		div.innerHTML = string;
+		div.appendChild( button );
 
 		document.getElementById( 'page' ).insertBefore( div, document.getElementById( 'masthead' ) );
 
