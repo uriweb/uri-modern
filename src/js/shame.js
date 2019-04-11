@@ -79,17 +79,17 @@
 		static display( el, classname, message, type ) {
 
 			var wrapper, ul;
-			
+
 			data.issues.total++;
 			data.issues[type + 's']++;
 
 			if ( el.classList.contains( data.elClass ) ) {
-				
+
 				ul = el.previousSibling;
 				ul.appendChild( Shame.buildMessage( type, message ) );
-				
+
 			} else {
-				
+
 				el.classList.add( data.elClass );
 
 				wrapper = document.createElement( 'span' );
@@ -97,18 +97,18 @@
 
 				ul = document.createElement( 'ul' );
 				ul.className = data.messageClass + 's';
-				
+
 				ul.appendChild( Shame.buildMessage( type, message ) );
-				
+
 				wrapper.appendChild( ul );
 
 				el.parentNode.insertBefore( wrapper, el.nextSibling );
 				wrapper.appendChild( el );
-				
+
 			}
 
 		}
-		
+
 		/**
 		 * Build the error message
 		 * @param type str The issue type
@@ -116,15 +116,15 @@
 		 * @return el The list element
 		 */
 		static buildMessage( type, message ) {
-			
+
 			var li;
-			
+
 			li = document.createElement( 'li' );
 			li.className = data.messageClass + ' shame-type-' + type;
 			li.innerHTML = '<div class="shame-icon">' + type + '</div><div class="shame-message-content">' + message + '</div>';
-		
+
 			return li;
-			
+
 		}
 
 	}
@@ -284,7 +284,7 @@
 		}
 
 	}
-	
+
 	function shameStyles() {
 
 		var els, i;
@@ -320,7 +320,7 @@
 				selectors: ['onmouseover'],
 				message: 'Avoid adding actions to elements using onmouseover',
 				type: 'warning'
-			},
+			}
 		];
 
 		Shame.iterateTests( specs, tests );
@@ -328,41 +328,39 @@
 	}
 
 	function shameDeprecatedTags() {
-		
+
 		var tags, els, i, j;
-		
+
 		tags = ['font', 'link'];
-		
+
 		for ( i = 0; i < tags.length; i++ ) {
 			els = data.main.querySelectorAll( tags[i] );
 			for ( j = 0; j < els.length; j++ ) {
 				Shame.display( els[j], 'shamed-tag-' + tags[i], '&lt;' + tags[i] + '&gt; tag is deprecated.', 'error' );
 			}
 		}
-		
+
 	}
 
 	function displayStatus() {
 
 		var div, plural, delimiter, string;
-		
+
 		if ( 0 == data.issues.errors ) {
 			return;
 		}
 
 		div = document.createElement( 'div' );
 		div.className = 'shame-status';
-		
+
 		if ( data.issues.errors > 0 ) {
 			plural = ( 1 == data.issues.errors ) ? '' : 's';
 			string = 'This page has ' + data.issues.errors + ' critical error' + plural + ' that must be addressed.';
 		}
-		
+
 		div.innerHTML = string;
 
 		document.getElementById( 'page' ).insertBefore( div, document.getElementById( 'masthead' ) );
-		
-		console.log( data.issues );
 
 	}
 
