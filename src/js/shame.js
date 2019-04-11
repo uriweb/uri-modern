@@ -318,7 +318,7 @@
 			},
 			{
 				selectors: ['onmouseover'],
-				message: 'Avoid adding actions to elements using onclick',
+				message: 'Avoid adding actions to elements using onmouseover',
 				type: 'warning'
 			},
 		];
