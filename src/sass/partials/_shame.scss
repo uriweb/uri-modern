@@ -18,6 +18,10 @@
 }
 body.logged-in {
 	
+	&.shame-open-all-messages .shame-wrapper .shame-message {	
+		@include open-message();
+	}
+	
 	.shame-status {
 		padding: 2rem 1rem;
 		background: #ff4753;
@@ -171,9 +175,8 @@ body.logged-in {
 			
 		}
 
-		&.shamed-font-tag,
-		&.shamed-attribute,
 		&[class*="shamed-tag"],
+		&.shamed-attribute,
 		&.shamed-link {
 
 			.shame-messages {
@@ -182,10 +185,6 @@ body.logged-in {
 
 		}
 		
-	}
-	
-	&.shame-open-all-messages .shame-wrapper .shame-message {	
-		@include open-message();
 	}
 			
 		
