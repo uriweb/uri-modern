@@ -28,6 +28,10 @@ function uri_modern_customize_register( $wp_customize ) {
 	uri_modern_options_site_footer( $wp_customize );
 	uri_modern_options_posts( $wp_customize );
 	uri_modern_options_breadcrumbs( $wp_customize );
+
+	if ( defined( 'URI_BETA_FEATURES' ) && URI_BETA_FEATURES === true ) {
+		uri_modern_options_beta_features( $wp_customize );
+	}
 }
 add_action( 'customize_register', 'uri_modern_customize_register' );
 
@@ -342,6 +346,70 @@ function uri_modern_options_posts( $wp_customize ) {
 				'section'     => 'uri_modern_customizer_posts',
 				'label'       => __( 'Hide post navigation', 'uri' ),
 				'description' => __( 'Hide previous/next navigation on posts', 'uri' ),
+				'type'        => 'checkbox',
+			)
+		)
+	);
+
+}
+
+/**
+ * Creates options for beta features
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function uri_modern_options_beta_features( $wp_customize ) {
+
+	// Add section for post options.
+	$wp_customize->add_section(
+		'uri_modern_customizer_beta_features',
+		array(
+			'title'    => __( 'Beta Features', 'uri' ),
+			'priority' => 200,
+		)
+	);
+
+	/* Use theme styles in the editor */
+	$wp_customize->add_setting(
+		'beta_editor_theme_styles',
+		array(
+			'default'           => '',
+			'type'              => 'option',
+			'sanitize_callback' => 'uri_modern_validate_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'beta_editor_theme_styles',
+			array(
+				'section'     => 'uri_modern_customizer_beta_features',
+				'label'       => __( 'Editor styles', 'uri' ),
+				'description' => __( 'Use theme styles in the visual editor', 'uri' ),
+				'type'        => 'checkbox',
+			)
+		)
+	);
+
+	/* Show shaming */
+	$wp_customize->add_setting(
+		'beta_shaming',
+		array(
+			'default'           => '',
+			'type'              => 'option',
+			'sanitize_callback' => 'uri_modern_validate_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'beta_shaming',
+			array(
+				'section'     => 'uri_modern_customizer_beta_features',
+				'label'       => __( 'Show shaming', 'uri' ),
+				'description' => __( 'Show errors with ADA compliance and other coding issues', 'uri' ),
 				'type'        => 'checkbox',
 			)
 		)

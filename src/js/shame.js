@@ -6,7 +6,6 @@
 
 // jshint esversion: 6
 // jscs:disable requireVarDeclFirst
-
 ( function() {
 
 	'use strict';
@@ -28,6 +27,7 @@
 
 		/**
 		 * Iterate over the tests
+		 *
 		 * @param specs obj The element information
 		 * @param tests obj The tests to perform
 		 */
@@ -51,6 +51,7 @@
 
 		/**
 		 * Do the test
+		 *
 		 * @param tag str The tag to search for
 		 * @param classname str The wrapper class to pass to Shame.display()
 		 * @param test obj The test information
@@ -71,6 +72,7 @@
 
 		/**
 		 * Display the shame
+		 *
 		 * @param el el The element to shame
 		 * @param classname str The class to give the wrapper
 		 * @param message str The message to display
@@ -111,6 +113,7 @@
 
 		/**
 		 * Build the error message
+		 *
 		 * @param type str The issue type
 		 * @param message str The message to display
 		 * @return el The list element
@@ -122,10 +125,13 @@
 			li = document.createElement( 'li' );
 			li.className = data.messageClass + ' shame-type-' + type;
 			li.innerHTML = '<div class="shame-icon">' + type + '</div><div class="shame-message-content">' + message + '</div>';
-			li.addEventListener( 'click', function() {
+			li.addEventListener(
+				 'click',
+				function() {
 				li.classList.contains( 'open' ) ? li.classList.remove( 'open' ) : li.classList.add( 'open' );
-			});
-				
+			}
+				);
+
 			return li;
 
 		}
@@ -133,12 +139,14 @@
 	}
 
 	function init() {
-
+		
 		if ( ! document.body.classList.contains( 'logged-in' ) ) {
 			return;
 		}
 
-		startShaming();
+		if ( URIMODERN.features.betaShaming ) {
+			startShaming();
+		}
 
 	}
 
@@ -358,20 +366,23 @@
 
 		plural = ( 1 == data.issues.errors ) ? '' : 's';
 		string = 'This page has ' + data.issues.errors + ' critical error' + plural + ' that must be addressed.';
-		
+
 		button = document.createElement( 'div' );
 		button.className = 'shame-open-all-messages';
 		button.innerHTML = 'Open all messages';
-		button.addEventListener( 'click', function() {
+		button.addEventListener(
+			 'click',
+			function() {
 			if ( document.body.classList.contains( 'shame-open-all-messages' ) ) {
-				document.body.classList.remove( 'shame-open-all-messages' );
-				button.innerHTML = 'Open all messages';
+					document.body.classList.remove( 'shame-open-all-messages' );
+					button.innerHTML = 'Open all messages';
 			} else {
-				document.body.classList.add( 'shame-open-all-messages' );
-				button.innerHTML = 'Close all messages';
+					document.body.classList.add( 'shame-open-all-messages' );
+					button.innerHTML = 'Close all messages';
 			}
-		});
-		
+		}
+			);
+
 		div.innerHTML = string;
 		div.appendChild( button );
 
