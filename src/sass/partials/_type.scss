@@ -64,12 +64,17 @@ h6 {
     margin: 2.5rem 0 .8rem;
 }
 
-.entry-content {
+.entry-content,
+.type-serif {
     font-family: $type-serif;
 }
 
 .type-numeric {
     font-family: $type-numeric;
+}
+
+.type-sans {
+    font-family: $type-sans;
 }
 
 .type-intro,
