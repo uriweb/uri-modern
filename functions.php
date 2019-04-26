@@ -562,6 +562,15 @@ function uri_modern_get_field() {
 
 
 /**
+ * Get user role
+ */
+function get_current_user_role() {
+   global $current_user;
+   return array_shift( $current_user->roles );
+}
+
+
+/**
  * Enable shortcodes in text widgets
  */
 add_filter( 'widget_text', 'do_shortcode' );
