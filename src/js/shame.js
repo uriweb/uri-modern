@@ -139,7 +139,7 @@
 	}
 
 	function init() {
-		
+
 		if ( ! document.body.classList.contains( 'logged-in' ) ) {
 			return;
 		}
