@@ -29,7 +29,7 @@ function uri_modern_customize_register( $wp_customize ) {
 	uri_modern_options_posts( $wp_customize );
 	uri_modern_options_breadcrumbs( $wp_customize );
 
-	if ( 'administrator' == get_current_user_role() || 'Webadmin' == get_current_user_role() ) {
+	if ( uri_modern_has_admin_privilages() ) {
 		uri_modern_options_beta_features( $wp_customize );
 	}
 }

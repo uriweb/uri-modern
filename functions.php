@@ -374,18 +374,12 @@ function uri_modern_scripts() {
 		'is' => array(
 			'404' => is_404(),
 			'childTheme' => get_template_directory_uri() != get_stylesheet_directory_uri() ? true : false,
-		),
-		'has' => array(
-			'betaFeatures' => false,
+			'admin' => uri_modern_has_admin_privilages(),
 		),
 		'features' => array(
 			'betaShaming' => false,
 		),
 	);
-
-	if ( defined( 'URI_BETA_FEATURES' ) && URI_BETA_FEATURES === true ) {
-		$values['has']['betaFeatures'] = true;
-	}
 
 	/**
 	 * Enable ADA and code compliance shaming
@@ -564,9 +558,19 @@ function uri_modern_get_field() {
 /**
  * Get user role
  */
-function get_current_user_role() {
-   global $current_user;
-   return array_shift( $current_user->roles );
+function uri_modern_has_admin_privilages() {
+
+	$admin = false;
+
+	global $current_user;
+	$role = array_shift( $current_user->roles );
+
+	if ( 'administrator' == $role || 'Webadmin' == $role ) {
+		$admin = true;
+	}
+
+	return $admin;
+
 }
 
 
