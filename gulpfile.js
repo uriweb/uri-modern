@@ -36,7 +36,7 @@ var imagemin = require('gulp-imagemin');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var stripDebug = require('gulp-strip-debug');
-var uglify = require('gulp-uglify');
+var terser = require('gulp-terser');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
@@ -67,7 +67,7 @@ function scripts(done) {
   gulp.src('./src/js/*.js')
     .pipe(concat('script.min.js'))
     //.pipe(stripDebug())
-    .pipe(uglify())
+    .pipe(terser())
     .pipe(header(banner, { pkg : pkg } ))
     .pipe(gulp.dest('./js/')) // Pipe to main
 	.pipe(rename('script.static.min.js'))

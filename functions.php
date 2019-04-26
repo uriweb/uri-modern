@@ -374,8 +374,19 @@ function uri_modern_scripts() {
 		'is' => array(
 			'404' => is_404(),
 			'childTheme' => get_template_directory_uri() != get_stylesheet_directory_uri() ? true : false,
+			'admin' => uri_modern_has_admin_privilages(),
+		),
+		'features' => array(
+			'betaShaming' => false,
 		),
 	);
+
+	/**
+	 * Enable ADA and code compliance shaming
+	 */
+	if ( get_option( 'beta_shaming' ) ) {
+		$values['features']['betaShaming'] = true;
+	}
 
 	wp_enqueue_style( 'uri-modern-style', get_template_directory_uri() . '/style.css', array(), uri_modern_cache_buster(), 'all' );
 
@@ -399,7 +410,7 @@ add_action( 'wp_enqueue_scripts', 'uri_modern_scripts' );
 /**
  * Enable styles in the WYSIWYG Editor (BETA FEATURE)
  */
-if ( defined( 'URI_BETA_FEATURES' ) && URI_BETA_FEATURES === true ) {
+if ( get_option( 'beta_editor_theme_styles' ) ) {
 
 	if ( is_admin() ) {
 		add_editor_style( get_template_directory_uri() . '/style.css', __FILE__ );
@@ -540,6 +551,25 @@ function uri_modern_get_field() {
 	}
 
 	return $r;
+
+}
+
+
+/**
+ * Get user role
+ */
+function uri_modern_has_admin_privilages() {
+
+	$admin = false;
+
+	global $current_user;
+	$role = array_shift( $current_user->roles );
+
+	if ( 'administrator' == $role || 'Webadmin' == $role ) {
+		$admin = true;
+	}
+
+	return $admin;
 
 }
 
