@@ -3,69 +3,109 @@
    ============================== */
 
 body.stage {
-    
-    #stage {
-        position: fixed;
-        top: $brandbarheight;
-        width: 100vw;
-        left: 50%;
-        margin-left: -50vw;
-        z-index: 0;
-        
-        .stage-overlay {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            z-index: 2;
-			pointer-events: none;
-        }
-        
+
+  // ALL STAGES
+  #stage {
+
+    position: relative;
+
+    .prompter {
+
+      display: block;
+      position: absolute;
+      bottom: 25px;
+      left: calc( 50% - 16px);
+      width: 0;
+      height: 30px;
+      padding-left: 30px;
+      overflow: hidden;
+      z-index: 10;
+      border-left: 1px solid rgba(255,255,255,.8);
+      border-bottom: 1px solid rgba(255,255,255,.8);
+      transform: rotate(-45deg);
+
+  		&:hover {
+  			cursor: pointer;
+  		}
+
     }
-    
+
+    &:hover .prompter,
+    &:focus .prompter {
+      animation-name: prompter-pulse;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+    }
+
+  }
+
+  // FADED STAGES
+  &.stage-type-fade {
+
+    #stage {
+
+      position: fixed;
+      top: $brandbarheight;
+      width: 100vw;
+      left: 50%;
+      margin-left: -50vw;
+      z-index: 0;
+
+      .stage-overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        pointer-events: none;
+      }
+
+    }
+
     #masthead,
     #content,
-	#region-after-content,
+    #region-after-content,
     #actionbar-wrapper,
     #globalfooter {
-        position: relative;
-        z-index: 10;
+      position: relative;
+      z-index: 10;
     }
-    
+
     #content {
-        background: $lightgrey;
-        padding-top: 3rem;
-        margin-top: 100vh;
+      background: $lightgrey;
+      padding-top: 3rem;
+      margin-top: 100vh;
     }
-	
-	#region-after-content {
-		background: $lightgrey;
-	}
-    
+
+  	#region-after-content {
+  		background: $lightgrey;
+  	}
+
     #masthead {
-        position: fixed;
-        width: 100vw;
-        left: 50%;
-        margin-left: -50vw;
-        z-index: 9999;
+      position: fixed;
+      width: 100vw;
+      left: 50%;
+      margin-left: -50vw;
+      z-index: 9999;
     }
-    
+
     #sb-backdrop,
     #navigation,
-	#region-before-content {
-        opacity: 0;
+    #region-before-content {
+      opacity: 0;
     }
-    
+
     &.stage-initial #navigation {
-        pointer-events: none;
+      pointer-events: none;
     }
-    
+
     &.stage-fluid #masthead {
-        position: absolute;
-        left: 0;
-        margin-left: 0;
+      position: absolute;
+      left: 0;
+      margin-left: 0;
     }
-    
+
+  }
+
 }
-
-
-    

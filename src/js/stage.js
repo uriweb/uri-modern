@@ -15,22 +15,53 @@
 		var stage = document.getElementById( 'stage' );
 
 		if ( null !== stage ) {
+
+			document.body.classList.add( 'stage' );
+			document.getElementById( 'page' ).insertBefore( stage, document.getElementById( 'content' ) );
+
+			addPrompter( stage );
+			determineStageType( stage );
+
+		}
+
+	}
+
+	function determineStageType( stage ) {
+
+		if ( stage.classList.contains( 'fade' ) ) {
 			setTheStage( stage );
 		}
 
 	}
 
+	function addPrompter( stage ) {
+
+		var prompt;
+
+		prompt = document.createElement( 'div' );
+		prompt.className = 'prompter';
+		prompt.innerHTML = 'Scroll down';
+		prompt.addEventListener( 'click', handlePrompterClick, false );
+		stage.appendChild( prompt );
+
+	}
+
+	function handlePrompterClick() {
+
+		document.getElementById( 'content' ).scrollIntoView( { behavior: 'smooth', block: 'start', inline: 'nearest' } );
+
+	}
+
 	function setTheStage( stage ) {
 
-		var els = {}, overlay, masthead;
+		var data = {}, overlay, masthead;
 
-		// Store a reference to the body class list and add the 'stage' class.
-		els.docClassList = document.body.classList;
-		els.docClassList.add( 'stage' );
+		// Store a reference to the body class list
+		data.docClassList = document.body.classList;
+		data.docClassList.add( 'stage-type-fade' )
 
-		// Store the content div and put the stage before it.
-		els.content = document.getElementById( 'content' );
-		document.getElementById( 'page' ).insertBefore( stage, els.content );
+		// Store the content div
+		data.content = document.getElementById( 'content' );
 
 		// Resize any superheros.
 		if ( null !== CLResizeSuperheroes ) {
@@ -44,14 +75,14 @@
 
 		// Store the masthead specs.
 		masthead     = document.getElementById( 'masthead' );
-		els.masthead = {
+		data.masthead = {
 			el: masthead,
 			h: masthead.offsetHeight,
 			offset: masthead.getBoundingClientRect().top
 		};
 
 		// Store the stage specs.
-		els.stage = {
+		data.stage = {
 			el: stage,
 			overlay: overlay,
 			h: stage.offsetHeight,
@@ -60,50 +91,50 @@
 		};
 
 		// Store a few other elements.
-		els.backdrop   = document.getElementById( 'sb-backdrop' );
-		els.navigation = document.getElementById( 'navigation' );
-		els.widgets = document.getElementById( 'region-before-content' );
+		data.backdrop   = document.getElementById( 'sb-backdrop' );
+		data.navigation = document.getElementById( 'navigation' );
+		data.widgets = document.getElementById( 'region-before-content' );
 
 		// Initialize scroll and add event listeners.
-		handleScroll( els );
-		window.addEventListener( 'scroll', handleScroll.bind( null, els ) );
-		window.addEventListener( 'resize', handleScroll.bind( null, els ) );
+		handleScroll( data );
+		window.addEventListener( 'scroll', handleScroll.bind( null, data ) );
+		window.addEventListener( 'resize', handleScroll.bind( null, data ) );
 
 	}
 
-	function handleScroll( els ) {
+	function handleScroll( data ) {
 
 		var contentPosition, windowHeight;
 
-		contentPosition = els.content.getBoundingClientRect().top;
+		contentPosition = data.content.getBoundingClientRect().top;
 		windowHeight    = window.innerHeight;
 
 		// If the top of the content is below the bottom of the masthead...
-		if ( contentPosition > els.masthead.h + els.masthead.offset ) {
+		if ( contentPosition > data.masthead.h + data.masthead.offset ) {
 
 			// Make the masthead fixed (if it isn't already).
-			if ( els.docClassList.contains( 'stage-fluid' ) ) {
+			if ( data.docClassList.contains( 'stage-fluid' ) ) {
 
-				els.docClassList.remove( 'stage-fluid' );
-				els.masthead.el.style.top = 'initial';
+				data.docClassList.remove( 'stage-fluid' );
+				data.masthead.el.style.top = 'initial';
 
 			} else { // If it is fixed, draw the elements.
-				drawElements( els );
+				drawElements( data );
 			}
 
 		} else { // Otherwise, if the content is at or above the masthead...
 
 			// Make the masthead fluid (if it isn't already).
-			if ( ! els.docClassList.contains( 'stage-fluid' ) ) {
-				els.docClassList.add( 'stage-fluid' );
-				els.masthead.el.style.top = windowHeight - els.masthead.h + els.masthead.offset + 'px';
+			if ( ! data.docClassList.contains( 'stage-fluid' ) ) {
+				data.docClassList.add( 'stage-fluid' );
+				data.masthead.el.style.top = windowHeight - data.masthead.h + data.masthead.offset + 'px';
 			}
 
 		}
 
 	}
 
-	function drawElements( els ) {
+	function drawElements( data ) {
 
 		var p, d, t, l, u, e;
 
@@ -111,14 +142,14 @@
 		p = window.pageYOffset;
 
 		// Set a special body class if the scroll is 0.
-		if ( 0 === p && ! els.docClassList.contains( 'stage-initial' ) ) {
-			els.docClassList.add( 'stage-initial' );
-		} else if ( els.docClassList.contains( 'stage-initial' ) ) {
-			els.docClassList.remove( 'stage-initial' );
+		if ( 0 === p && ! data.docClassList.contains( 'stage-initial' ) ) {
+			data.docClassList.add( 'stage-initial' );
+		} else if ( data.docClassList.contains( 'stage-initial' ) ) {
+			data.docClassList.remove( 'stage-initial' );
 		}
 
 		// The distance over which to tween the animation.
-		d = els.stage.h - els.masthead.h;
+		d = data.stage.h - data.masthead.h;
 
 		/*
 		 * The position of the animation along the timing function, from 0 - 1.
@@ -144,15 +175,15 @@
 		e = Math.pow( u / 1, 4 );
 
 		// Adjust the styles accordingly.
-		els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + ( u * 50 ) + 'px); backdrop-filter: blur(' + ( u * 50 ) + 'px); background-color: rgba(250,250,250,' + u + ')';
-		if ( null !== els.navigation ) {
-			els.navigation.style.opacity = Math.min( e * 8, 1 );
+		data.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + ( u * 50 ) + 'px); backdrop-filter: blur(' + ( u * 50 ) + 'px); background-color: rgba(250,250,250,' + u + ')';
+		if ( null !== data.navigation ) {
+			data.navigation.style.opacity = Math.min( e * 8, 1 );
 		}
-		if ( null !== els.backdrop ) {
-			els.backdrop.style.opacity = Math.min( e * 8, 1 );
+		if ( null !== data.backdrop ) {
+			data.backdrop.style.opacity = Math.min( e * 8, 1 );
 		}
-		if ( null !== els.widgets ) {
-			els.widgets.style.opacity = Math.min( e * 8, 1 );
+		if ( null !== data.widgets ) {
+			data.widgets.style.opacity = Math.min( e * 8, 1 );
 		}
 
 	}
