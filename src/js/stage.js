@@ -8,6 +8,8 @@
 
 	'use strict';
 
+	var data;
+
 	window.addEventListener( 'load', initStage, false );
 
 	function initStage() {
@@ -16,25 +18,33 @@
 
 		if ( null !== stage ) {
 
-			document.body.classList.add( 'stage' );
-			document.getElementById( 'page' ).insertBefore( stage, document.getElementById( 'content' ) );
+			data = {
+				stage: {
+					el: stage
+				},
+				bodyClassList: document.body.classList,
+				content: document.getElementById( 'content' )
+			};
 
-			addPrompter( stage );
-			determineStageType( stage );
+			data.bodyClassList.add( 'stage' );
+			document.getElementById( 'page' ).insertBefore( data.stage.el, data.content );
+
+			addPrompter();
+			determineStageType();
 
 		}
 
 	}
 
-	function determineStageType( stage ) {
+	function determineStageType() {
 
-		if ( stage.classList.contains( 'fade' ) ) {
-			setTheStage( stage );
+		if ( data.stage.el.classList.contains( 'fade' ) ) {
+			setTheStage();
 		}
 
 	}
 
-	function addPrompter( stage ) {
+	function addPrompter() {
 
 		var prompt;
 
@@ -42,26 +52,22 @@
 		prompt.className = 'prompter';
 		prompt.innerHTML = 'Scroll down';
 		prompt.addEventListener( 'click', handlePrompterClick, false );
-		stage.appendChild( prompt );
+		data.stage.el.appendChild( prompt );
 
 	}
 
 	function handlePrompterClick() {
 
-		document.getElementById( 'content' ).scrollIntoView( { behavior: 'smooth', block: 'start', inline: 'nearest' } );
+		data.content.scrollIntoView( { behavior: 'smooth', block: 'start', inline: 'nearest' } );
 
 	}
 
-	function setTheStage( stage ) {
+	function setTheStage() {
 
-		var data = {}, overlay, masthead;
+		var overlay, masthead;
 
 		// Store a reference to the body class list
-		data.docClassList = document.body.classList;
-		data.docClassList.add( 'stage-type-fade' )
-
-		// Store the content div
-		data.content = document.getElementById( 'content' );
+		data.bodyClassList.add( 'stage-type-fade' );
 
 		// Resize any superheros.
 		if ( null !== CLResizeSuperheroes ) {
@@ -69,12 +75,12 @@
 		}
 
 		// Create the stage overlay div.
-		overlay           = document.createElement( 'div' );
+		overlay = document.createElement( 'div' );
 		overlay.className = 'stage-overlay';
-		stage.insertBefore( overlay, stage.childNodes[0] );
+		data.stage.el.insertBefore( overlay, data.stage.el.childNodes[0] );
 
 		// Store the masthead specs.
-		masthead     = document.getElementById( 'masthead' );
+		masthead = document.getElementById( 'masthead' );
 		data.masthead = {
 			el: masthead,
 			h: masthead.offsetHeight,
@@ -82,13 +88,10 @@
 		};
 
 		// Store the stage specs.
-		data.stage = {
-			el: stage,
-			overlay: overlay,
-			h: stage.offsetHeight,
-			offset: stage.getBoundingClientRect().top,
-			initialOffset: stage.getBoundingClientRect().top + window.pageYOffset
-		};
+		data.stage.overlay = overlay;
+		data.stage.h = data.stage.el.offsetHeight;
+		data.stage.offset = data.stage.el.getBoundingClientRect().top;
+		data.stage.initialOffset = data.stage.el.getBoundingClientRect().top + window.pageYOffset;
 
 		// Store a few other elements.
 		data.backdrop   = document.getElementById( 'sb-backdrop' );
@@ -96,37 +99,37 @@
 		data.widgets = document.getElementById( 'region-before-content' );
 
 		// Initialize scroll and add event listeners.
-		handleScroll( data );
+		handleScroll();
 		window.addEventListener( 'scroll', handleScroll.bind( null, data ) );
 		window.addEventListener( 'resize', handleScroll.bind( null, data ) );
 
 	}
 
-	function handleScroll( data ) {
+	function handleScroll() {
 
 		var contentPosition, windowHeight;
 
 		contentPosition = data.content.getBoundingClientRect().top;
-		windowHeight    = window.innerHeight;
+		windowHeight = window.innerHeight;
 
 		// If the top of the content is below the bottom of the masthead...
 		if ( contentPosition > data.masthead.h + data.masthead.offset ) {
 
 			// Make the masthead fixed (if it isn't already).
-			if ( data.docClassList.contains( 'stage-fluid' ) ) {
+			if ( data.bodyClassList.contains( 'stage-fluid' ) ) {
 
-				data.docClassList.remove( 'stage-fluid' );
+				data.bodyClassList.remove( 'stage-fluid' );
 				data.masthead.el.style.top = 'initial';
 
 			} else { // If it is fixed, draw the elements.
-				drawElements( data );
+				drawElements();
 			}
 
 		} else { // Otherwise, if the content is at or above the masthead...
 
 			// Make the masthead fluid (if it isn't already).
-			if ( ! data.docClassList.contains( 'stage-fluid' ) ) {
-				data.docClassList.add( 'stage-fluid' );
+			if ( ! data.bodyClassList.contains( 'stage-fluid' ) ) {
+				data.bodyClassList.add( 'stage-fluid' );
 				data.masthead.el.style.top = windowHeight - data.masthead.h + data.masthead.offset + 'px';
 			}
 
@@ -134,7 +137,7 @@
 
 	}
 
-	function drawElements( data ) {
+	function drawElements() {
 
 		var p, d, t, l, u, e;
 
@@ -142,10 +145,10 @@
 		p = window.pageYOffset;
 
 		// Set a special body class if the scroll is 0.
-		if ( 0 === p && ! data.docClassList.contains( 'stage-initial' ) ) {
-			data.docClassList.add( 'stage-initial' );
-		} else if ( data.docClassList.contains( 'stage-initial' ) ) {
-			data.docClassList.remove( 'stage-initial' );
+		if ( 0 === p && ! data.bodyClassList.contains( 'stage-initial' ) ) {
+			data.bodyClassList.add( 'stage-initial' );
+		} else if ( data.bodyClassList.contains( 'stage-initial' ) ) {
+			data.bodyClassList.remove( 'stage-initial' );
 		}
 
 		// The distance over which to tween the animation.
