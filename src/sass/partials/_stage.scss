@@ -7,6 +7,7 @@ body.stage {
   // ALL STAGES
   #stage {
 
+    margin-bottom: 2rem;
     position: relative;
 
     .prompter {
@@ -75,7 +76,8 @@ body.stage {
     #content {
       background: $lightgrey;
       padding-top: 3rem;
-      margin-top: 100vh;
+      //top: $brandbarheight;
+      //margin-top: 100vh;
     }
 
   	#region-after-content {

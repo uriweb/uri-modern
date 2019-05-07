@@ -8,17 +8,17 @@
 /* Boxouts */
 
 .cl-boxout {
-	
+
 	h1 {
 		font-size: 1.75rem;
 		margin-bottom: 1.5rem;
 	}
-	
+
 	p,
 	ul {
 		font-size: 1rem;
 	}
-	
+
 }
 
 
@@ -34,23 +34,23 @@
 .cl-card,
 .cl-dcard,
 .cl-scard {
-    
+
     font-family: $type-sans;
-    
+
     p {
         font-size: 1rem;
     }
-    
+
 }
 
 .cl-scard  {
-    
+
     .cl-scard-img-overlay span:before {
         top: -2px;
     }
-    
+
     .cl-scard-category {
-    
+
         text-transform: uppercase;
 
         &:hover,
@@ -79,7 +79,7 @@
         }
 
     }
-    
+
     .cl-scard-meta {
         margin-bottom: .7rem;
     }
@@ -87,7 +87,7 @@
     .cl-scard-date {
         font-weight: 300;
     }
-    
+
 }
 
 /* Heroes */
@@ -99,13 +99,13 @@ body.home .cl-hero .block p {
 /* Metrics */
 
 .cl-metric {
-    
+
     span:first-child {
         font-family: $type-numeric;
     }
-    
+
     span:last-child {
         font-family: $type-sans;
     }
-    
+
 }

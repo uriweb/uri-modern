@@ -14,16 +14,28 @@
 
 	function initStage() {
 
-		var stage = document.getElementById( 'stage' );
+		var stage, masthead;
+
+		stage = document.getElementById( 'stage' );
 
 		if ( null !== stage ) {
 
+			masthead = document.getElementById( 'masthead' );
+
 			data = {
 				stage: {
-					el: stage
+					el: stage,
+					h: stage.offsetHeight,
+					offset: stage.getBoundingClientRect().top,
+					initialOffset: stage.getBoundingClientRect().top + window.pageYOffset
 				},
 				bodyClassList: document.body.classList,
-				content: document.getElementById( 'content' )
+				content: document.getElementById( 'content' ),
+				masthead: {
+					el: masthead,
+					h: masthead.offsetHeight,
+					offset: document.getElementById( 'brandbar' ).offsetHeight
+				}
 			};
 
 			data.bodyClassList.add( 'stage' );
@@ -79,29 +91,31 @@
 		overlay.className = 'stage-overlay';
 		data.stage.el.insertBefore( overlay, data.stage.el.childNodes[0] );
 
-		// Store the masthead specs.
-		masthead = document.getElementById( 'masthead' );
-		data.masthead = {
-			el: masthead,
-			h: masthead.offsetHeight,
-			offset: masthead.getBoundingClientRect().top
-		};
-
 		// Store the stage specs.
 		data.stage.overlay = overlay;
-		data.stage.h = data.stage.el.offsetHeight;
-		data.stage.offset = data.stage.el.getBoundingClientRect().top;
-		data.stage.initialOffset = data.stage.el.getBoundingClientRect().top + window.pageYOffset;
 
 		// Store a few other elements.
 		data.backdrop   = document.getElementById( 'sb-backdrop' );
 		data.navigation = document.getElementById( 'navigation' );
 		data.widgets = document.getElementById( 'region-before-content' );
 
+		data.content.style.marginTop = data.stage.h + data.masthead.offset + 'px';
+
 		// Initialize scroll and add event listeners.
 		handleScroll();
-		window.addEventListener( 'scroll', handleScroll.bind( null, data ) );
-		window.addEventListener( 'resize', handleScroll.bind( null, data ) );
+		window.addEventListener( 'scroll', handleScroll );
+		window.addEventListener( 'resize', handelResize );
+
+		console.log( data );
+
+	}
+
+	function handelResize() {
+
+		data.stage.h = data.stage.el.offsetHeight;
+		data.content.style.marginTop = data.stage.h + data.masthead.offset + 'px';
+
+		handleScroll;
 
 	}
 
@@ -110,10 +124,9 @@
 		var contentPosition, windowHeight;
 
 		contentPosition = data.content.getBoundingClientRect().top;
-		windowHeight = window.innerHeight;
 
 		// If the top of the content is below the bottom of the masthead...
-		if ( contentPosition > data.masthead.h + data.masthead.offset ) {
+		if ( contentPosition > data.masthead.h ) {
 
 			// Make the masthead fixed (if it isn't already).
 			if ( data.bodyClassList.contains( 'stage-fluid' ) ) {
@@ -130,7 +143,7 @@
 			// Make the masthead fluid (if it isn't already).
 			if ( ! data.bodyClassList.contains( 'stage-fluid' ) ) {
 				data.bodyClassList.add( 'stage-fluid' );
-				data.masthead.el.style.top = windowHeight - data.masthead.h + data.masthead.offset + 'px';
+				data.masthead.el.style.top = data.stage.h - data.masthead.h + data.masthead.offset + 'px';
 			}
 
 		}
