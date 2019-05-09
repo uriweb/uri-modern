@@ -429,7 +429,7 @@ if ( get_option( 'beta_editor_theme_styles' ) ) {
  */
 function uri_modern_get_current_path( $strip = true ) {
 
-	if ( strpos( $_SERVER['HTTP_REFERER'], 'wp-admin/customize.php' ) === false ) {
+	if ( ! isset ( $_SERVER['HTTP_REFERER'] ) || strpos( $_SERVER['HTTP_REFERER'], 'wp-admin/customize.php' ) === false ) {
 		$current_path = trim( $_SERVER['REQUEST_URI'] );
 	} else {
 		// when the Customizer is being used, we need to use the referrer

@@ -69,10 +69,13 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 
 	if ( 0 !== $post_id ) { // it's a post or a page.
 		$p      = get_page_by_path( $path );
-		$output = array(
-			'name' => get_the_title( $p->ID ),
-			'href' => get_site_url() . $path,
-		);
+		$output = NULL;
+		if ( is_object( $p ) ) {
+			$output = array(
+				'name' => get_the_title( $p->ID ),
+				'href' => get_site_url() . $path,
+			);
+		}
 		return $output;
 	}
 
