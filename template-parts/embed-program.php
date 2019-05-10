@@ -10,6 +10,9 @@ function uri_modern_oembed_program_styles() {
 	<style>
 		@import url("' . get_stylesheet_uri() . '");
 		@import url("' . plugins_url() . '/uri-component-library/css/cl.built.css");
+		body {
+			margin: .1rem;
+		}
 	</style>
 	';
 }
