@@ -5,6 +5,11 @@
  * @package uri-modern
  */
 
+/**
+ * Style the oembed using the component library
+ *
+ * @see https://github.com/uriweb/uri-component-library
+ */
 function uri_modern_oembed_program_styles() {
 	print '
 	<style>
@@ -23,7 +28,7 @@ get_header( 'embed' );
 ?>
 
 		<?php
-		
+
 		while ( have_posts() ) :
 			the_post();
 

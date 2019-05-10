@@ -3,9 +3,9 @@
    ============================== */
 
 #searchbox {
-	
+
 	position: relative;
-	
+
 	#sb-query {
 		font-weight: 300;
 		font-size: 1rem;
@@ -20,18 +20,18 @@
 		border-radius: .2rem;
 		outline: none;
 	}
-	
+
 	#sb-query:focus {
 		border: 1px solid #38b2e8;
 		box-shadow: 0 0 0 3px #cbefff;
 	}
-	
+
 	#sb-query-label {
 		position: absolute;
 		left: -9999px;
 		visibility: hidden;
 	}
-	
+
 	#sb-submit {
 		position: absolute;
 		left: 1rem;
@@ -47,18 +47,18 @@
 		background-repeat: no-repeat;
 		background-size: 1rem auto;
 	}
-	
+
 	#sb-submit:hover {
 		cursor: pointer;
 	}
-	
+
 }
 
 
 /* GOOGLE SEARCH RESULTS */
 
 #cse-search-results  {
-	
+
 	* {
 		font-family: $type-sans;
 		font-size: 1rem;
@@ -84,7 +84,7 @@
 	.gsc-webResult.gsc-result {
 		background-color: #fff;
 		margin: 0 0 .5rem;
-		padding: 1.5rem 1rem 0;
+		padding: 1.5rem 1rem;
 		border: 1px solid #eee;
 	}
 
@@ -142,15 +142,15 @@
 	.gsc-cursor-page {
 		background: transparent;
 	}
-	
+
 	.gs-promotion-image-box {
 		margin-right: .5rem !important;
 		margin-bottom: 1rem;
 	}
-	
+
 	.gs-promotion .gs-visibleUrl {
 		color: #999;
 		margin-bottom: 1rem;
 	}
-	
+
 }
