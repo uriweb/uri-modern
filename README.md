@@ -1,6 +1,6 @@
 # URI Modern
 
-URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience. 
+URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.
 
 ## What's new in 1.2.8
 
@@ -11,7 +11,7 @@ URI Modern 1.2.8 is a bug fix release.
 * Updates the Search & Filter template to adopt generic styling
 * Updates devDependencies
 
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/151/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues). 
+For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/151/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
 
 ## How do I get set up?
 
@@ -33,4 +33,4 @@ Contributors: Brandon Fuller, John Pennypacker
 Tags: themes  
 Requires at least: 4.0  
 Tested up to: 5.0  
-Stable tag: 1.2.8  
+Stable tag: 1.2.9  
