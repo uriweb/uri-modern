@@ -157,13 +157,13 @@ function uri_modern_custom_sizes( $sizes ) {
 	return array_merge(
 		 $sizes,
 		array(
-			'thumbnail@2x' => __( 'Thumbnail @2x' ),
-			'third_column' => __( 'Third Column' ),
-			'half_column' => __( 'Half Column' ),
-			'full_column' => __( 'Full Column' ),
-			'hero' => __( 'Hero' ),
-			'full_column@2x' => __( 'Full Column @2x' ),
-			'hero@2x' => __( 'Hero @2x' ),
+			'thumbnail@2x' => __( 'Thumbnail @2x', 'uri' ),
+			'third_column' => __( 'Third Column', 'uri' ),
+			'half_column' => __( 'Half Column', 'uri' ),
+			'full_column' => __( 'Full Column', 'uri' ),
+			'hero' => __( 'Hero', 'uri' ),
+			'full_column@2x' => __( 'Full Column @2x', 'uri' ),
+			'hero@2x' => __( 'Hero @2x', 'uri' ),
 		)
 		);
 }
@@ -689,5 +689,3 @@ function uri_modern_hide_archive_title( $title ) {
 }
 
 add_filter( 'get_the_archive_title', 'uri_modern_hide_archive_title' );
-
-
