@@ -76,7 +76,7 @@
 
 	function setTheStage() {
 
-		var overlay, masthead;
+		var overlay;
 
 		// Store a reference to the body class list
 		data.bodyClassList.add( 'stage-type-fade' );
@@ -107,8 +107,6 @@
 		window.addEventListener( 'scroll', handleScroll );
 		window.addEventListener( 'resize', handelResize );
 
-		console.log( data );
-
 	}
 
 	function handelResize() {
@@ -122,7 +120,7 @@
 
 	function handleScroll() {
 
-		var contentPosition, windowHeight;
+		var contentPosition;
 
 		contentPosition = data.content.getBoundingClientRect().top;
 
