@@ -8,38 +8,38 @@
 
 
 ul.display-posts-listing {
-    
+
 	list-style: none;
 	margin: 2rem 0;
-    
+
     li.listing-item {
-        
+
         &:not(:last-child) {
             padding-bottom: 1rem;
             margin-bottom: 1.5rem;
             border-bottom: 1px solid $grey;
         }
-        
+
         &:after {
             content: '';
             display: block;
             clear: both;
         }
-        
+
         img {
 			max-width: 100%;
 			height: auto;
             margin-right: 2rem;
             margin-bottom: .5rem;
         }
-        
+
         img.size-thumbnail {
             width: 100px;
             height: auto;
 			float: left;
             border-radius: .2rem;
         }
-        
+
         // Titles get H3 styling
         .title {
             display: block;
@@ -48,43 +48,43 @@ ul.display-posts-listing {
             font-size: 1.3rem;
             color: $black;
         }
-        
-        .title:hover,
-        .title:focus {
+
+        a.title:hover,
+        a.title:focus {
             color: $link;
         }
-        
+
         .excerpt-dash {
             display: none;
         }
-        
+
         .excerpt {
             display: block;
             font-size: 1rem;
             color: $darkgrey;
         }
-		
+
 		.date,
 		.author {
-		
+
 			margin-bottom: 2rem;
 			font-size: .8rem;
 			color: $darkgrey;
 
 		}
-		
+
 		.category-display {
-			
+
 			display: block;
-			
+
 			.category-display-label {
 				display: none;
 			}
-			
+
 		}
-        
+
     } // li.listing-item
-    
+
 } // ul.display-posts-listing
 
 @media all and (min-width: 600px) {
