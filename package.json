@@ -24,10 +24,10 @@
   "devDependencies": {
     "autoprefixer": "^9.6.1",
     "gulp": "^4.0.2",
-    "gulp-changed": "^4.0.0",
+    "gulp-changed": "^4.0.1",
     "gulp-concat": ">=2.6.1",
-    "gulp-header": "^2.0.7",
-    "gulp-imagemin": "^6.0.0",
+    "gulp-header": "^2.0.9",
+    "gulp-imagemin": "^6.1.0",
     "gulp-jscs": ">=4.1.0",
     "gulp-jshint": ">=2.0.4",
     "gulp-postcss": ">=8.0.0",
