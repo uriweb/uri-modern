@@ -23,6 +23,7 @@
 
 	<div id="actionbar-wrapper">
 		<div id="actionbar" role="menu">
+			<a href="https://www.uri.edu/connect" id="action-connect" role="menuitem"><span role="presentation"></span>Connect</a>
 			<a href="https://www.uri.edu/apply" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>
 			<a href="https://www.uri.edu/tour" id="action-tour" role="menuitem"><span role="presentation"></span>Tour</a>
 			<?php
@@ -79,11 +80,11 @@
 					echo do_shortcode( '[uri-tides darkmode=true height=22]' );
 				}
 				?>
-				
-				<?php if ( function_exists( 'uri_tides_shortcode' ) && function_exists( 'uri_cl_shortcode_social' ) ) : ?> 
+
+				<?php if ( function_exists( 'uri_tides_shortcode' ) && function_exists( 'uri_cl_shortcode_social' ) ) : ?>
 				<hr>
 				<?php endif ?>
-				
+
 				<!-- Social Media Component -->
 				<?php
 				if ( function_exists( 'uri_cl_shortcode_social' ) ) {

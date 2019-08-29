@@ -10,7 +10,7 @@ get_header();
 ?>
 
 	<main id="main" class="site-main" role="main">
-		
+
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -26,7 +26,7 @@ get_header();
 						endif;
 						?>
 					</header><!-- .entry-header -->
-					
+
 					<div class="featured-image">
 						<figure>
 
@@ -41,21 +41,21 @@ get_header();
 							<?php endif; ?>
 						</figure>
 					</div><!-- .featured-image -->
-		
+
 					<div class="entry-content">
 						<?php
 
 						the_content(
 							sprintf(
 							/* translators: %s: Name of current post. */
-							wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uri-modern' ), array( 'span' => array( 'class' => array() ) ) ),
+							wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'uri' ), array( 'span' => array( 'class' => array() ) ) ),
 							the_title( '<span class="screen-reader-text">"', '"</span>', false )
 						)
 							);
 
 						wp_link_pages(
 							 array(
-								 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri-modern' ),
+								 'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'uri' ),
 								 'after'  => '</div>',
 							 )
 							);
@@ -77,9 +77,9 @@ get_header();
 
 
 					</div><!-- .entry-content -->
-					
+
 					<div class="cl-boxout program-links">
-					
+
 						<?php if ( $department_website = uri_modern_get_field( 'department_website' ) ) { ?>
 						<div class="department-website">
 							<?php echo do_shortcode( '[cl-button link="' . $department_website . '" text="Department Website"]' ); ?>
@@ -130,9 +130,9 @@ get_header();
 							<?php echo do_shortcode( '[cl-button link="' . $apply . '" text="Apply" style="prominent"]' ); ?>
 						</div>
 						<?php } ?>
-					
+
 					</div><!-- .program-links -->
-		  
+
 		<?php endwhile; // End of the loop. ?>
 
 	</main><!-- #main -->
