@@ -6,7 +6,7 @@ URI Modern is a WordPress theme designed for the University of Rhode Island. It'
 
 URI Modern 1.3.0 is a minor release.
 
-* Stages adopt prompter arrow from CL superhero component
+* Stages adopt prompter arrow from the [Component Library](https://github.com/uriweb/uri-component-library) super-formatted hero component
 * Makes Stages content-independent
 * Adds action button for "Connect"
 * Fixes an issue with images and hyperlinks in search and filter results
