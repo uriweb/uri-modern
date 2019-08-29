@@ -9,6 +9,7 @@ URI Modern 1.3.0 is a minor release.
 * Stages adopt prompter arrow from CL superhero component
 * Makes Stages content-independent
 * Adds action button for "Connect"
+* Fixes an issue with images and hyperlinks in search and filter results
 * Updates development tools
 
 For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/163/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
@@ -32,5 +33,5 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 Contributors: Brandon Fuller, John Pennypacker  
 Tags: themes  
 Requires at least: 4.0  
-Tested up to: 5.0  
+Tested up to: 5.2  
 Stable tag: 1.3.0  
