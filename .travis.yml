@@ -27,15 +27,8 @@ env:
 # Disable XDebug
 before_install:
     - phpenv config-rm xdebug.ini
-
-# Use MySQL 5.7
-addons:
-  apt:
-   sources:
-    - mysql-5.7-trusty
-   packages:
-    - mysql-server
-    - mysql-client
+    # Create WordPress database.
+    - mysql -e 'CREATE DATABASE wordpress_test;'
 
 # Use this to prepare your build for testing.
 before_script:
@@ -56,8 +49,6 @@ before_script:
     - sed -i "s/youremptytestdbnamehere/wordpress_test/" wp-tests-config.php
     - sed -i "s/yourusernamehere/root/" wp-tests-config.php
     - sed -i "s/yourpasswordhere//" wp-tests-config.php
-    # Create WordPress database.
-    - mysql -e 'CREATE DATABASE wordpress_test;' -uroot
     # Install CodeSniffer for WordPress Coding Standards checks.
     - mkdir php-codesniffer && curl -L https://github.com/squizlabs/PHP_CodeSniffer/archive/master.tar.gz | tar xz --strip-components=1 -C php-codesniffer
     # Install WordPress Coding Standards.
