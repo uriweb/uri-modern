@@ -26,7 +26,7 @@
 		</p>
 		<?php
 			if ( has_post_thumbnail() ) {
-			echo '<figure class="image"><a href="<?php the_permalink(); ?>">';
+			echo '<figure class="image"><a href="' . the_permalink() . '">';
 			the_post_thumbnail( 'small' );
 			echo '</a></figure>';
 			}
