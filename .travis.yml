@@ -28,6 +28,15 @@ env:
 before_install:
     - phpenv config-rm xdebug.ini
 
+# Use MySQL 5.7
+addons:
+  apt:
+   sources:
+    - mysql-5.7-trusty
+   packages:
+    - mysql-server
+    - mysql-client
+
 # Use this to prepare your build for testing.
 before_script:
     # Set up WordPress installation.
