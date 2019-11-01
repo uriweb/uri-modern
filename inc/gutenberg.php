@@ -47,7 +47,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/nextpage', // Page break
 		'core/separator',
 		'core/spacer',
-		//widgets
+		// widgets
 		'core/shortcode',
 		'core/archives',
 		'core/categories',
@@ -105,7 +105,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'uri-cl/tab',
 		'uri-cl/tabs',
 		'uri-courses/by-subject',
-);
+	);
 }
 add_filter( 'allowed_block_types', 'uri_modern_allowed_blocks', 10, 2 );
 
