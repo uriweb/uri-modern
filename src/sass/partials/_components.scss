@@ -109,3 +109,25 @@ body.home .cl-hero .block p {
     }
 
 }
+
+/* Share */
+
+.cl-share .cl-share-label {
+	font-family: $type-sans;
+	line-height: 23px;
+	padding-bottom: 2px;
+}
+
+/* Slideshows */
+
+.cl-slideshow {
+
+	.carousel .slide figcaption {
+		font-family: $type-sans;
+	}
+
+	.counter {
+		font-family: $type-sans;
+	}
+
+}
