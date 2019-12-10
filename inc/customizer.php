@@ -392,29 +392,6 @@ function uri_modern_options_beta_features( $wp_customize ) {
 		)
 	);
 
-	/* Show shaming */
-	$wp_customize->add_setting(
-		'beta_shaming',
-		array(
-			'default'           => '',
-			'type'              => 'option',
-			'sanitize_callback' => 'uri_modern_validate_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'beta_shaming',
-			array(
-				'section'     => 'uri_modern_customizer_beta_features',
-				'label'       => __( 'Show shaming', 'uri' ),
-				'description' => __( 'Show errors with ADA compliance and other coding issues', 'uri' ),
-				'type'        => 'checkbox',
-			)
-		)
-	);
-
 }
 
 
