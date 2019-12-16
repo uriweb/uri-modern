@@ -1,0 +1,40 @@
+/* ======= BUTTONS ======= */
+
+a.cl-button,
+span.cl-button {
+
+	font-family: $type-sans;
+	font-size: .8rem;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	color: $blue;
+	transition: all .2s ease-in-out;
+	text-shadow: none;
+
+    &.prominent {
+        background: $blue;
+        box-shadow: 250px 0 100px -100px transparent inset;
+        padding: 1.09rem 1rem;
+    }
+
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:focus {
+        font-weight: 400;
+        border-radius: .2rem;
+    }
+
+    &:hover,
+    &:focus {
+        transition: all .3s ease-in-out;
+    }
+
+    &.prominent:hover,
+    &.prominent:focus {
+        background: $linkhover;
+        box-shadow: 350px 0 50px -100px $link inset;
+        transition: all 2s $easeOutExpo;
+    }
+
+}
