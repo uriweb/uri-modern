@@ -1,0 +1,31 @@
+/* ======= HEROS ======= */
+
+.cl-hero {
+
+  .cl-button {
+
+    background: rgba(255,255,255,.9);
+
+    &:hover,
+    &:focus {
+      background: $white;
+      color: $link;
+    }
+
+  }
+
+}
+
+body.home .cl-hero .block p {
+	font-family: $type-sans;
+}
+
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+  .cl-hero {
+    a.cl-button,
+    span.cl-button {
+      backdrop-filter: saturate(180%) blur(10px);
+      background-color: rgba(255,255,255,.7);
+    }
+  }
+}
