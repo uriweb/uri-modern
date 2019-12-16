@@ -1,0 +1,68 @@
+/* ======= OVERLAYS ======= */
+
+.cl-overlay {
+
+	.cl-overlay-block.hidden {
+
+		border-radius: 0 0 .3rem .3rem;
+
+		.cl-overlay-slider {
+			border-radius: 0 0 .3rem .3rem;
+		}
+
+	}
+
+}
+
+@media screen and (min-width: $break1) {
+  .cl-overlay {
+
+		.cl-overlay-block.hidden {
+
+			border-radius: 0;
+
+			.cl-overlay-slider {
+				border-radius: 0;
+			}
+
+		}
+
+  }
+
+}
+
+@media screen and (min-width: $break2) {
+  .cl-overlay {
+
+		.cl-overlay-block {
+			border-radius: .3rem;
+		}
+
+		.cl-overlay-slider {
+			border-radius: 0 .3rem .3rem 0;
+		}
+
+		.cl-overlay-block.hidden {
+
+			border-radius: 0 .3rem .3rem 0;
+
+			.cl-overlay-slider {
+				border-radius: 0 .3rem .3rem 0;
+			}
+
+		}
+
+  }
+
+}
+
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+  .cl-overlay .cl-overlay-block {
+		backdrop-filter: saturate(200%) blur(30px);
+		background-color: rgba(255,255,255,.7);
+	}
+	.cl-overlay.dark .cl-overlay-block {
+		backdrop-filter: saturate(200%) blur(30px);
+		background-color: rgba(0,0,0,.7);
+	}
+}
