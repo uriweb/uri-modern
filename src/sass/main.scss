@@ -30,8 +30,22 @@
 @import 'partials/oembeds';
 @import 'partials/galleries';
 @import 'partials/events';
-@import 'partials/components';
 @import 'partials/featimages';
 @import 'partials/lightbox';
 @import 'partials/programfinder';
 @import 'partials/people';
+
+/* COMPONENT LIBRARY */
+@import 'partials/cl/boxouts';
+@import 'partials/cl/buttons';
+@import 'partials/cl/cards';
+@import 'partials/cl/countdowns';
+@import 'partials/cl/heroes';
+@import 'partials/cl/metrics';
+@import 'partials/cl/notices';
+@import 'partials/cl/overlays';
+@import 'partials/cl/panels';
+@import 'partials/cl/quotes';
+@import 'partials/cl/share';
+@import 'partials/cl/slideshows';
+@import 'partials/cl/videos';

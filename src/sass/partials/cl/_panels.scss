@@ -1,0 +1,50 @@
+/* ======= PANELS ======= */
+
+
+.cl-panel {
+
+  border-radius: .2rem;
+
+  a.cl-button,
+  span.cl-button {
+    border-radius: 2px;
+  }
+
+}
+
+@media screen and (min-width: $break2) {
+
+  .cl-panel {
+
+    a.cl-button,
+    span.cl-button {
+      width: 100%;
+      max-width: 100%;
+    }
+
+  }
+
+}
+
+
+/* SUPER PANELS */
+
+.cl-panel-super {
+
+	.cl-button {
+
+	  background: none;
+	  color: #fff;
+	  max-width: 250px;
+	  padding: .5rem;
+	  border-radius: .2rem;
+
+		&:hover,
+		&:focus {
+		  border: 1px solid transparent;
+		  background: rgba(0,0,0,.5);
+		}
+
+	}
+
+}
