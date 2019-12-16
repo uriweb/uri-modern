@@ -1,0 +1,18 @@
+/* ======= METRICS ======= */
+
+.cl-metric {
+
+  border-radius: .2rem;
+
+  span:first-child {
+    font-family: $type-numeric;
+    font-weight: 500;
+  }
+
+  span:last-child {
+    font-family: $type-sans;
+    font-weight: 600;
+    font-size: .9rem;
+  }
+
+}
