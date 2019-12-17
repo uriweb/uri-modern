@@ -55,10 +55,21 @@ STATIC VERSION
 @import 'partials/cl/videos';
 
 p {
-    font-family: 'Charter', Georgia, 'Times New Roman', serif;
+    font-family: Charter, Georgia, serif;
     line-height: 1.875;
     margin: 0 0 2rem;
     max-width: 750px;
+}
+
+.editor-styles-wrapper {
+	line-height: 1.2;
+}
+
+.components-placeholder.editor-media-placeholder {
+	.components-placeholder__instructions {
+		font-size: .875rem;
+		margin: .5rem;
+	}
 }
 
 /* RichText doesn't create the same markup, so we need to re-style card text */
@@ -94,4 +105,79 @@ p {
 
     //.editor-post-title__input {
     //}
+}
+
+.cl-button textarea, textarea.cl-button {
+    border-radius: 0;
+    font-family: "Hind", sans-serif !important;
+    text-transform: uppercase;
+    background-color: transparent !important;
+}
+
+/** QUOTES **/
+.cl-quote {
+    font-family: Charter, Georgia, serif;
+    textarea {
+        font: inherit;
+    }
+    cite textarea {
+        position: relative;
+        top: .375rem;
+    }
+    .cl-quote-image img {
+        border-radius: 50%;
+    }
+    .editor-media-placeholder {
+        display: none;
+    }
+    &.selected {
+        .editor-media-placeholder {
+            display: block;
+        }
+    }
+}
+
+/** METRICS **/
+.cl-metric {
+    textarea, span {
+        text-align: center;
+    }
+    &.right, &.left {
+        position: relative;
+        width: 35%;
+        z-index: 5;
+    }
+    &.dark textarea {
+        color: #fff;
+    }
+}
+
+
+
+/** BUTTONS **/
+.cl-button {
+    font-size: .85rem;
+    font-weight: 700;
+    padding: 1rem;
+    text-transform: uppercase;
+    textarea {
+        border-radius: 0;
+        color: $black;
+        display: block;
+        height: 1rem;
+        letter-spacing: .1rem;
+        margin: 0;
+        padding: 2px 0 0;
+        text-align: center;
+    }
+    &.prominent textarea, &:hover textarea {
+        color: #fff;
+    }
+    &.disabled textarea {
+        color: rgba(0,0,0,0.4);
+        font-weight: 400;
+    }
+}
+.cl-button, .cl-button:visited {
+    text-decoration: none !important;
 }
