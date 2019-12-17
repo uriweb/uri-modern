@@ -1,0 +1,29 @@
+/* ======= GUTENBERG EDITOR ======= */
+
+/** BUTTONS **/
+
+.cl-button {
+
+  font-size: .85rem;
+  font-weight: 700;
+
+  textarea {
+    font-family: "Hind", sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+  }
+
+}
+
+/** CARDS **/
+
+.cl-card {
+  .cl-card-text div {
+			font-size: 1rem;
+		}
+}
+
+/** QUOTES **/
+.cl-quote {
+  font-family: Charter, Georgia, serif;
+}

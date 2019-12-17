@@ -31,3 +31,51 @@
    //.editor-post-title__input {
    //}
 }
+
+p {
+    font-family: Charter, Georgia, serif;
+    line-height: 1.875;
+    margin: 0 0 2rem;
+    max-width: 750px;
+}
+
+.editor-styles-wrapper {
+	line-height: 1.2;
+}
+
+.components-placeholder.editor-media-placeholder {
+	.components-placeholder__instructions {
+		font-size: .875rem;
+		margin: .5rem;
+	}
+}
+
+.block-editor-writing-flow {
+    background-color: $lightgrey;
+}
+.wp-block {
+    max-width: $break3;
+
+    // &[data-align="wide"] {
+    // 	max-width: $content__width--wide;
+    // }
+
+    &[data-align="full"] {
+        max-width: none;
+    }
+}
+
+.editor-post-title__block {
+    color: $black;
+    font-family: $type-header;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+
+    textarea {
+        font: inherit;
+    }
+
+    //.editor-post-title__input {
+    //}
+}
