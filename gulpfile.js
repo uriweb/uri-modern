@@ -55,7 +55,7 @@ var sassOptions = {
 gulp.task('scripts', scripts);
 
 function scripts(done) {
-    
+
   gulp.src('./src/js/*.js')
     .pipe(jshint(done))
     .pipe(jshint.reporter('default'));
@@ -70,12 +70,18 @@ function scripts(done) {
     .pipe(terser())
     .pipe(header(banner, { pkg : pkg } ))
     .pipe(gulp.dest('./js/')) // Pipe to main
-	.pipe(rename('script.static.min.js'))
-	.pipe(header(bannerStatic))
+    .pipe(rename('script.static.min.js'))
+    .pipe(header(bannerStatic))
     .pipe(gulp.dest('./static/')); // Pipe to static
-	
-	done();
- // console.log('scripts ran');
+  
+  gulp.src('./src/block-editor/*.js')
+    .pipe(jshint(done))
+    .pipe(jshint.reporter('default'))
+    .pipe(terser())
+    .pipe(rename('block-editor.min.js'))
+    .pipe(gulp.dest('./js/')); // Pipe to main
+  done();
+  // console.log('scripts ran');
 }
 
 // CSS concat, auto-prefix and minify
@@ -83,26 +89,35 @@ gulp.task('styles', styles);
 
 function styles(done) {
 
-	// Theme styles
-	gulp.src('./src/sass/main.scss')
-		.pipe(sourcemaps.init())
-		.pipe(sass(sassOptions).on('error', sass.logError))
-		.pipe(concat('style.css'))
-        .pipe(postcss([ autoprefixer() ]))
-		.pipe(header(banner, { pkg : pkg } ))
-		.pipe(sourcemaps.write('./map'))
-		.pipe(gulp.dest('.'));
-	
-	// Static styles
-	gulp.src('./src/sass/static.scss')
-		.pipe(sourcemaps.init())
-		.pipe(sass(sassOptions).on('error', sass.logError))
-		.pipe(concat('style.static.css'))
-        .pipe(postcss([ autoprefixer() ]))
-		.pipe(header(banner, { pkg : pkg } ))
-		.pipe(header(bannerStatic))
-		.pipe(sourcemaps.write('./map'))
-		.pipe(gulp.dest('./static'));
+  // Theme styles
+  gulp.src('./src/sass/main.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(concat('style.css'))
+    .pipe(postcss([ autoprefixer() ]))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(sourcemaps.write('./map'))
+    .pipe(gulp.dest('.'));
+
+  // Static styles
+  gulp.src('./src/sass/static.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(concat('style.static.css'))
+    .pipe(postcss([ autoprefixer() ]))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(header(bannerStatic))
+    .pipe(sourcemaps.write('./map'))
+    .pipe(gulp.dest('./static'));
+
+  // Block editor and admin-side styles
+  gulp.src('./src/sass/admin.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass(sassOptions).on('error', sass.logError))
+  .pipe(concat('style.admin.css'))
+  .pipe(postcss([ autoprefixer() ]))
+  .pipe(sourcemaps.write('./map'))
+  .pipe(gulp.dest('.'));
 
   done();
   //console.log('styles ran');
@@ -112,48 +127,47 @@ function styles(done) {
 gulp.task('images', images);
 
 function images(done) {
-	
-	 // Pipe to main
-	gulp.src('./src/images/**/*')
-		.pipe(changed('./images'))
-		.pipe(imagemin())
-		.pipe(gulp.dest('./images'));
-	
-	// Pipe to static
-	gulp.src('./src/images/**/*')
-		.pipe(changed('./static/images'))
-		.pipe(imagemin())
-		.pipe(gulp.dest('./static/images')); 
-	
-	done();
-	//console.log('images ran');
+
+  // Pipe to main
+  gulp.src('./src/images/**/*')
+    .pipe(changed('./images'))
+    .pipe(imagemin())
+    .pipe(gulp.dest('./images'));
+
+  // Pipe to static
+  gulp.src('./src/images/**/*')
+    .pipe(changed('./static/images'))
+    .pipe(imagemin())
+    .pipe(gulp.dest('./static/images')); 
+
+  done();
+  //console.log('images ran');
 }
 
 // run codesniffer
 gulp.task('sniffs', sniffs);
 
 function sniffs(done) {
-    
     return gulp.src('.', {read:false})
         .pipe(shell(['./.sniff']));
-    
 }
 
 // watch
 gulp.task('watcher', watcher);
 
 function watcher(done) {
-	// watch for JS changes
-	gulp.watch('./src/js/*.js', scripts);
+  // watch for JS changes
+  gulp.watch('./src/js/*.js', scripts);
+  gulp.watch('./src/block-editor/*.js', scripts);
 
-	// watch for CSS changes
-	gulp.watch('./src/sass/**/*', styles);
+  // watch for CSS changes
+  gulp.watch('./src/sass/**/*', styles);
 
-	// watch for image changes
-	gulp.watch('./src/images/**/*', images);
-    
-    // watch for PHP change
-    gulp.watch('./**/*.php', sniffs);
+  // watch for image changes
+  gulp.watch('./src/images/**/*', images);
+
+  // watch for PHP change
+  gulp.watch('./**/*.php', sniffs);
 
 	done();
 }
