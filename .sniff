@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ignore=node_modules,work_files,gulpfile.js,js/script.min.js,js/smoothscroll.min.js
+ignore=node_modules,work_files,gulpfile.js,js/script.min.js,js/smoothscroll.min.js,js/block-editor.min.js
 ruleset=.codesniffer.ruleset.xml
 warn=-n
 
@@ -16,7 +16,7 @@ if hash phpcs 2>/dev/null; then
 
     echo done with sniff.
 
-else 
+else
 
     echo PHP CodeSniffer not installed.
     echo @see CONTRIBUTING.md to get set up.
