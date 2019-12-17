@@ -38,3 +38,15 @@ span.cl-button {
     }
 
 }
+
+.button-list .cl-button {
+
+	display: block;
+	clear: both;
+	margin-bottom: 1rem;
+
+	&:last-child {
+		margin-bottom: 2rem;
+	}
+	
+}
