@@ -3,8 +3,10 @@ language: php
 
 # Declare versions of PHP to use. Use one decimal max.
 php:
-    - "7.0"
-    - "5.6"
+    - "7.1"
+    - "7.2"
+    - "7.3"
+    - "7.4"
 
 # Ditch sudo and use containers.
 # @link http://docs.travis-ci.com/user/migrating-from-legacy/#Why-migrate-to-container-based-infrastructure%3F
