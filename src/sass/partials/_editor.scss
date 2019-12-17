@@ -1,0 +1,33 @@
+/* ==============================
+   EDITOR
+   ============================== */
+
+.block-editor-writing-flow {
+   background-color: $lightgrey;
+}
+.wp-block {
+   max-width: $break3;
+
+   // &[data-align="wide"] {
+   // 	max-width: $content__width--wide;
+   // }
+
+   &[data-align="full"] {
+       max-width: none;
+   }
+}
+
+.editor-post-title__block {
+   color: $black;
+   font-family: $type-header;
+   font-size: 2rem;
+   font-weight: 700;
+   margin-bottom: 2rem;
+
+   textarea {
+       font: inherit;
+   }
+
+   //.editor-post-title__input {
+   //}
+}

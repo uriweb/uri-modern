@@ -24,34 +24,19 @@ STATIC VERSION
 // @import 'partials/localnav';
 // @import 'partials/search';
 // @import 'partials/404';
-@import 'partials/components';
+@import 'partials/editor';
 
-.block-editor-writing-flow {
-    background-color: $lightgrey;
-}
-.wp-block {
-    max-width: $break3;
-
-    // &[data-align="wide"] {
-    // 	max-width: $content__width--wide;
-    // }
-
-    &[data-align="full"] {
-        max-width: none;
-    }
-}
-
-.editor-post-title__block {
-    color: $black;
-    font-family: $type-header;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-
-    textarea {
-        font: inherit;
-    }
-
-    //.editor-post-title__input {
-    //}
-}
+/* COMPONENT LIBRARY */
+@import 'partials/cl/boxouts';
+@import 'partials/cl/buttons';
+@import 'partials/cl/cards';
+@import 'partials/cl/countdowns';
+@import 'partials/cl/heroes';
+@import 'partials/cl/metrics';
+@import 'partials/cl/notices';
+@import 'partials/cl/overlays';
+@import 'partials/cl/panels';
+@import 'partials/cl/quotes';
+@import 'partials/cl/share';
+@import 'partials/cl/slideshows';
+@import 'partials/cl/videos';
