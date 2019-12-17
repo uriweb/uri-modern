@@ -107,77 +107,22 @@ p {
     //}
 }
 
-.cl-button textarea, textarea.cl-button {
-    border-radius: 0;
+/** BUTTONS **/
+
+.cl-button {
+
+  font-size: .85rem;
+  font-weight: 700;
+
+  textarea {
     font-family: "Hind", sans-serif !important;
     text-transform: uppercase;
-    background-color: transparent !important;
+    letter-spacing: .1rem;
+  }
+
 }
 
 /** QUOTES **/
 .cl-quote {
-    font-family: Charter, Georgia, serif;
-    textarea {
-        font: inherit;
-    }
-    cite textarea {
-        position: relative;
-        top: .375rem;
-    }
-    .cl-quote-image img {
-        border-radius: 50%;
-    }
-    .editor-media-placeholder {
-        display: none;
-    }
-    &.selected {
-        .editor-media-placeholder {
-            display: block;
-        }
-    }
-}
-
-/** METRICS **/
-.cl-metric {
-    textarea, span {
-        text-align: center;
-    }
-    &.right, &.left {
-        position: relative;
-        width: 35%;
-        z-index: 5;
-    }
-    &.dark textarea {
-        color: #fff;
-    }
-}
-
-
-
-/** BUTTONS **/
-.cl-button {
-    font-size: .85rem;
-    font-weight: 700;
-    padding: 1rem;
-    text-transform: uppercase;
-    textarea {
-        border-radius: 0;
-        color: $black;
-        display: block;
-        height: 1rem;
-        letter-spacing: .1rem;
-        margin: 0;
-        padding: 2px 0 0;
-        text-align: center;
-    }
-    &.prominent textarea, &:hover textarea {
-        color: #fff;
-    }
-    &.disabled textarea {
-        color: rgba(0,0,0,0.4);
-        font-weight: 400;
-    }
-}
-.cl-button, .cl-button:visited {
-    text-decoration: none !important;
+  font-family: Charter, Georgia, serif;
 }
