@@ -56,8 +56,15 @@ STATIC VERSION
 
 p {
     font-family: 'Charter', Georgia, 'Times New Roman', serif;
+    line-height: 1.875;
+    margin: 0 0 2rem;
+    max-width: 750px;
 }
 
+/* RichText doesn't create the same markup, so we need to re-style card text */
+.cl-card-text div {
+  line-height: 1.875;
+}
 
 .block-editor-writing-flow {
     background-color: $lightgrey;
