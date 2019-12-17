@@ -17,10 +17,13 @@
 
 /** CARDS **/
 
-.cl-card {
-  .cl-card-text div {
-			font-size: 1rem;
-		}
+.cl-card .cl-card-text div {
+	font-size: 1rem;
+}
+
+/** HEROES **/
+.cl-hero.no-image {
+  background-color: $blue;
 }
 
 /** QUOTES **/
