@@ -31,7 +31,7 @@ STATIC VERSION
 }
 .wp-block {
     max-width: $break3;
-    
+
     // &[data-align="wide"] {
     // 	max-width: $content__width--wide;
     // }
@@ -52,6 +52,6 @@ STATIC VERSION
         font: inherit;
     }
 
-    .editor-post-title__input {
-    }
+    //.editor-post-title__input {
+    //}
 }
