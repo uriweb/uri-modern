@@ -56,14 +56,15 @@ gulp.task('scripts', scripts);
 
 function scripts(done) {
 
-  gulp.src('./src/js/*.js')
+  gulp.src('./src/js/**/*.js')
     .pipe(jshint(done))
     .pipe(jshint.reporter('default'));
-    
-  gulp.src('./src/js/*.js')
+
+  gulp.src('./src/js/**/*.js')
     .pipe(jscs(done))
     .pipe(jscs.reporter());
 
+  // Process top-level js (front side)
   gulp.src('./src/js/*.js')
     .pipe(concat('script.min.js'))
     //.pipe(stripDebug())
@@ -73,13 +74,13 @@ function scripts(done) {
     .pipe(rename('script.static.min.js'))
     .pipe(header(bannerStatic))
     .pipe(gulp.dest('./static/')); // Pipe to static
-  
-  gulp.src('./src/block-editor/*.js')
-    .pipe(jshint(done))
-    .pipe(jshint.reporter('default'))
+
+  // Process block editor js (admin side)
+  gulp.src('./src/js/block-editor/*.js')
+    .pipe(concat('block-editor.min.js'))
     .pipe(terser())
-    .pipe(rename('block-editor.min.js'))
     .pipe(gulp.dest('./js/')); // Pipe to main
+
   done();
   // console.log('scripts ran');
 }
@@ -112,12 +113,12 @@ function styles(done) {
 
   // Block editor and admin-side styles
   gulp.src('./src/sass/admin.scss')
-  .pipe(sourcemaps.init())
-  .pipe(sass(sassOptions).on('error', sass.logError))
-  .pipe(concat('style.admin.css'))
-  .pipe(postcss([ autoprefixer() ]))
-  .pipe(sourcemaps.write('./map'))
-  .pipe(gulp.dest('.'));
+    .pipe(sourcemaps.init())
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(concat('style.admin.css'))
+    .pipe(postcss([ autoprefixer() ]))
+    .pipe(sourcemaps.write('./map'))
+    .pipe(gulp.dest('.'));
 
   done();
   //console.log('styles ran');
@@ -138,7 +139,7 @@ function images(done) {
   gulp.src('./src/images/**/*')
     .pipe(changed('./static/images'))
     .pipe(imagemin())
-    .pipe(gulp.dest('./static/images')); 
+    .pipe(gulp.dest('./static/images'));
 
   done();
   //console.log('images ran');
@@ -158,7 +159,7 @@ gulp.task('watcher', watcher);
 function watcher(done) {
   // watch for JS changes
   gulp.watch('./src/js/*.js', scripts);
-  gulp.watch('./src/block-editor/*.js', scripts);
+  gulp.watch('./src/js/block-editor/*.js', scripts);
 
   // watch for CSS changes
   gulp.watch('./src/sass/**/*', styles);

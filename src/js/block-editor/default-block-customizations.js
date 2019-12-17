@@ -13,6 +13,7 @@
 	wp.domReady(
 		() => {
 			wp.blocks.unregisterBlockType( 'core/button' );
+
 			// Possible alternatives
 			// wp.blocks.unregisterBlockStyle( 'core/button', 'default' );
 			// wp.blocks.unregisterBlockStyle( 'core/button', 'outline' );
@@ -21,13 +22,13 @@
 	);
 
 	jQuery( document ).ready(
-		function($) {
+		function( $ ) {
 
 			// Featured image checkbox id: #acf-field_5afadb7ad2b38
 			// featured image checkbox id: #acf-field_502b9eb29fc45
 			// @see inc/layout-options.php
-			var f = $( "#acf-field_502b9eb29fc45" );
-			if ( f.is( ":checked" ) ) {
+			var f = $( '#acf-field_502b9eb29fc45' );
+			if ( f.is( ':checked' ) ) {
 				toggleTitle();
 			}
 			f.on( 'change', toggleTitle );
@@ -35,7 +36,7 @@
 	);
 
 	function toggleTitle() {
-		jQuery( ".editor-post-title" ).toggle( 400 );
+		jQuery( '.editor-post-title' ).toggle( 400 );
 	}
 }
 )();
