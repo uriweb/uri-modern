@@ -13,6 +13,18 @@
     letter-spacing: .1rem;
   }
 
+  &.prominent {
+
+    textarea {
+      color: $white;
+    }
+
+    textarea::placeholder {
+      color: rgba(255,255,255,.5);
+    }
+
+  }
+
 }
 
 /** CARDS **/
