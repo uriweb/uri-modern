@@ -2,8 +2,27 @@
 
 .cl-hero {
 
+  &:not(.fullwidth),
+  &:not(.super) {
+
+    .cl-hero-proper {
+      border-radius: .2rem;
+    }
+
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-family: $type-sans;
+  }
+
   .cl-button {
 
+    color: $blue;
     background: rgba(255,255,255,.9);
 
     &:hover,

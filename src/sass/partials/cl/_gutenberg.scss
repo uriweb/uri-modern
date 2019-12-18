@@ -29,8 +29,26 @@
 
 /** CARDS **/
 
-.cl-card .cl-card-text div {
-	font-size: 1rem;
+.cl-card {
+
+  .cl-card-text div {
+  	font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  &:hover img,
+  &:focus img {
+    transform: none;
+  }
+
+  &:hover textarea.cl-button,
+  &:focus textarea.cl-button,
+  textarea.cl-button:hover,
+  textarea.cl-button:focus {
+    background: $white !important;
+    color: $link !important;
+  }
+
 }
 
 /** HEROES **/
