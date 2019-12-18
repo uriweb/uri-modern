@@ -6,6 +6,7 @@
 .cl-scard {
 
     font-family: $type-sans;
+    border-radius: .2rem;
 
     p {
         font-size: 1rem;
@@ -22,20 +23,71 @@
 
 .cl-card {
 
+    box-shadow: $level1;
+
+    img {
+      transform: scale(1);
+      transform-origin: center bottom;
+      transition: transform .2s ease-in-out;
+    }
+
     .cl-button {
+
         font-size: .8rem;
         font-weight: 700;
         letter-spacing: .1rem;
         text-transform: uppercase;
-        color: $blue;
+        color: $midgrey;
         transition: all .2s;
+        text-align: left;
+        padding: 0 1.2rem 1.2rem;
+        border-top: none;
+        position: relative;
+
+        &:after {
+          display: block;
+          position: absolute;
+          top: 1px;
+          right: 1.5rem;
+          content: '';
+          width: 10px;
+          height: calc( 111 / 128 * 10px );
+          background-image: url('images/cl/icon-card-link.png');
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+        }
+
     }
 
     &:hover .cl-button,
     &:focus .cl-button,
     .cl-button:hover,
     .cl-button:focus {
+
         transition: all .3s;
+        background: inherit;
+        color: $link;
+        border-top: none;
+
+        &:after {
+          background-position: 0 100%;
+        }
+    }
+
+    &:hover,
+    &:focus {
+
+      box-shadow: $level2;
+
+      img {
+        transform: scale(1.03);
+      }
+
+    }
+
+    &:active {
+      box-shadow: $level3;
     }
 
 }
