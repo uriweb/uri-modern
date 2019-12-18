@@ -36,18 +36,19 @@
         font-size: .8rem;
         font-weight: 700;
         letter-spacing: .1rem;
+        line-height: 1rem;
         text-transform: uppercase;
         color: $midgrey;
         transition: all .2s;
         text-align: left;
-        padding: 0 1.2rem 1.2rem;
+        padding: 0 2.6rem 1.2rem 1.2rem;
         border-top: none;
         position: relative;
 
         &:after {
           display: block;
           position: absolute;
-          top: 1px;
+          top: 2px;
           right: 1.5rem;
           content: '';
           width: 10px;
@@ -78,6 +79,7 @@
     &:hover,
     &:focus {
 
+      top: 0;
       box-shadow: $level2;
 
       img {
