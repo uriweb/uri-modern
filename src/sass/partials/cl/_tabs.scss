@@ -8,6 +8,13 @@
   border: 1px solid #eee;
 
   [role="tablist"] a {
+    font-family: $type-sans;
+    font-size: .9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: #333;
+    padding: .6rem 1.5rem .5rem;
     border-right: none;
   }
 

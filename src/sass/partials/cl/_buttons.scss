@@ -38,7 +38,6 @@ span.cl-button {
 				border: none;
 				box-shadow: $level2;
 				transform: translateY(-2px);
-        transition: all .3s ease-in-out;
     }
 
 		&:active {
@@ -49,7 +48,6 @@ span.cl-button {
     &.prominent:focus {
         background: $blue;
         //box-shadow: 350px 0 50px -100px $link inset;
-        transition: all 1s $easeOutExpo;
     }
 
 }
