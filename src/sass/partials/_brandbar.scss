@@ -27,7 +27,7 @@
     width: 100%;
     background: $keaneyblue;
 }
-    
+
 #gs {
     height: 0;
     transition: height .4s $easeInOutQuint;
@@ -45,7 +45,7 @@
         background-color: $link;
         background-size: 50% auto;
     }
-    
+
     & ~ #gsform:before {
         top: -11px;
         border-bottom: 11px solid $link;
@@ -172,7 +172,7 @@
 }
 
 #gateways-menu {
-	
+
 	display: none;
 	list-style-type: none;
 	overflow: hidden;
@@ -186,7 +186,7 @@
 	border-radius: 0 0 .2rem .2rem;
 	box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
 	transition: right .2s ease-in-out;
-	
+
     li {
         margin: 0;
     }
@@ -200,7 +200,7 @@
         background: $blue;
         color: $white;
     }
-    
+
 } // #gateways-menu
 
 #gateways-toggle {
@@ -235,14 +235,15 @@
     content: '';
     display: block;
     position: absolute;
-    top: calc(#{$brandbarheight} / 2 - 4px);
-    right: 0.5rem;
-    width: 0;
-    height: 0;
-    border-top: 6px solid $white;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    transform: rotate(0);
+    top: calc(#{$brandbarheight} / 2 - 5px);
+    right: 0.6rem;
+    width: 8px;
+    height: 8px;
+    background-image: url('images/close.svg');
+    background-position: 0 -16px;
+    background-size: 8px auto;
+    background-repeat: no-repeat;
+    transform: rotate(-45deg);
     transition: transform .2s $easeInOutQuart;
 }
 
@@ -264,7 +265,7 @@
         border-right: 20px solid transparent;
     }
     & ~ #gateways-label span:after {
-        transform: rotate(180deg);
+        transform: rotate(0);
     }
     & ~ #gateways-menu {
         display: block;
@@ -277,13 +278,13 @@
         background-size: 220px auto;
     }
     #gateways-label {
-        padding: 0 1rem;
+        padding: 0 1.1rem 0 1rem;
     }
     #gateways-label span {
         padding-right: 1.1rem;
     }
     #gateways-label span:after {
-        right: .8rem;
+        right: 1rem;
     }
 }
 
@@ -298,11 +299,11 @@
     #globalbanner {
         max-width: 1000px;
     }
-    
+
     #gsform {
         background-size: 40% auto;
     }
-    
+
 } // min-width: 800px
 
 @media all and (min-width: 1050px) {
@@ -332,7 +333,7 @@
     #localnav {
         display: none;
     }
-    
+
     #identity-print {
         display: block;
     }

@@ -73,6 +73,13 @@
 
     }
 
+    ul a {
+      font-weight: 400;
+      color: $black;
+      letter-spacing: initial;
+      text-transform: initial;
+    }
+
     ul.reveal ~ span.cl-menu-arrow {
       transform: rotate(0);
       top: 1.12rem;
