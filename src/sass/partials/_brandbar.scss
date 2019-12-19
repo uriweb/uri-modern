@@ -47,8 +47,8 @@
     }
 
     & ~ #gsform:before {
-        top: -11px;
-        border-bottom: 11px solid $link;
+        top: -10px;
+        border-bottom: 10px solid $link;
     }
 
 }
@@ -93,7 +93,7 @@
     background-image: url('images/search.svg');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 50% auto;
+    background-size: 40% auto;
     transition: top .4s $easeInOutQuint, background-size .4s $easeInOutQuint;
 }
 
@@ -103,12 +103,12 @@
     z-index: 9997;
     position: absolute;
     top: 0;
-    left: 0;
+    left: calc(#{$brandbarheight} / 5.5);
     width: 0;
     height: 0;
     border-bottom: 0 solid $link;
-    border-left: calc(#{$brandbarheight} / 2) solid transparent;
-    border-right: calc(#{$brandbarheight} / 2) solid transparent;
+    border-left: calc(#{$brandbarheight} / 3) solid transparent;
+    border-right: calc(#{$brandbarheight} / 3) solid transparent;
     transition: all .4s $easeInOutQuint;
 }
 
@@ -184,7 +184,7 @@
 	padding: 1.5rem 0 1rem;
 	background: #fff;
 	border-radius: 0 0 .2rem .2rem;
-	box-shadow: 0 1rem 3rem rgba(0,0,0,.3);
+	box-shadow: $level2;
 	transition: right .2s ease-in-out;
 
     li {
@@ -213,7 +213,7 @@
     right: calc(#{$brandbarheight} + 1px);
     z-index: 9997;
     height: $brandbarheight;
-    line-height: $brandbarheight;
+    line-height: calc(#{$brandbarheight} + 1px);
     padding: 0 .5rem;
     font-size: .8rem;
     font-weight: 600;
@@ -235,7 +235,7 @@
     content: '';
     display: block;
     position: absolute;
-    top: calc(#{$brandbarheight} / 2 - 5px);
+    top: calc(#{$brandbarheight} / 2 - 4px);
     right: 0.6rem;
     width: 8px;
     height: 8px;
@@ -257,12 +257,12 @@
         z-index: 9997;
         position: absolute;
         top: $brandbarheight;
-        left: calc(50% - 20px);
+        left: calc(50% - 12px);
         width: 0;
         height: 0;
-        border-top: 11px solid $link;
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
+        border-top: 10px solid $link;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
     }
     & ~ #gateways-label span:after {
         transform: rotate(0);
@@ -301,7 +301,7 @@
     }
 
     #gsform {
-        background-size: 40% auto;
+        background-size: 35% auto;
     }
 
 } // min-width: 800px

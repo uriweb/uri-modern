@@ -161,7 +161,7 @@
     li.current_page_ancestor>a,
 	li.current-page-ancestor>a,
 	li.current-post-ancestor>a {
-        border-bottom: 2px solid $midgrey;
+        border-bottom: 2px solid #005eff;
     }
 
 }
@@ -203,7 +203,7 @@
     #localnav {
         width: 100%;
         box-sizing: border-box;
-        padding: 2rem 0 4rem;
+        padding: 1rem 0 4rem;
     }
     #localnav>ul,
     #cl-localnav>ul {
