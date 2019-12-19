@@ -8,33 +8,47 @@ span.cl-button {
 	font-weight: 700;
 	letter-spacing: .1rem;
 	text-transform: uppercase;
-	color: $blue;
+	color: $link;
 	transition: all .2s ease-in-out;
 	text-shadow: none;
+	border-radius: .2rem;
+	transform: translateY(0);
+	border: none;
+	box-shadow: $level1;
 
     &.prominent {
         background: $blue;
-        box-shadow: 250px 0 100px -100px transparent inset;
-        padding: 1.09rem 1rem;
+        //box-shadow: 250px 0 100px -100px transparent inset;
+        //padding: 1.09rem 1rem;
     }
 
     &.disabled,
     &.disabled:hover,
     &.disabled:focus {
+				box-shadow: none;
+				transform: none;
         font-weight: 400;
         border-radius: .2rem;
+				padding: calc(1rem - 1px);
     }
 
     &:hover,
     &:focus {
-        transition: all .3s ease-in-out;
+				background: $white;
+				color: $link;
+				border: none;
+				box-shadow: $level2;
+				transform: translateY(-2px);
     }
+
+		&:active {
+			box-shadow: $level3;
+		}
 
     &.prominent:hover,
     &.prominent:focus {
-        background: $linkhover;
-        box-shadow: 350px 0 50px -100px $link inset;
-        transition: all 2s $easeOutExpo;
+        background: $blue;
+        //box-shadow: 350px 0 50px -100px $link inset;
     }
 
 }
@@ -48,5 +62,5 @@ span.cl-button {
 	&:last-child {
 		margin-bottom: 2rem;
 	}
-	
+
 }

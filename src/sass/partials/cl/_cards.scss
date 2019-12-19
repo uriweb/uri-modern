@@ -3,17 +3,33 @@
 
 .cl-card,
 .cl-dcard,
-.cl-scard {
+.cl-scard,
+.cl-tiles .cl-card,
+.cl-tiles .cl-dcard,
+.cl-tiles .cl-scard {
 
     font-family: $type-sans;
+    border-radius: .2rem;
+    transform: translateY(0);
+    transition: all .2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+    }
+
+    .cl-card-text {
+      padding: 1.6rem 1.5rem 0;
+    }
 
     p {
         font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 
 		h2 {
 			font-size: 1.3rem;
-			margin-bottom: 1.3rem;
+			margin-bottom: 1.7rem;
 		}
 
 }
@@ -22,20 +38,83 @@
 
 .cl-card {
 
+    box-shadow: $level1;
+
+    img {
+      transform: scale(1);
+      transform-origin: center bottom;
+      transition: transform .2s ease-in-out;
+    }
+
     .cl-button {
+
         font-size: .8rem;
         font-weight: 700;
         letter-spacing: .1rem;
+        line-height: 1rem;
         text-transform: uppercase;
-        color: $blue;
+        color: $midgrey;
         transition: all .2s;
+        text-align: left;
+        padding: 0 2.9rem 1.2rem 1.5rem;
+        border-top: none;
+        position: relative;
+
+        &:first-of-type {
+
+          padding-top: 1.2rem;
+
+          &:after {
+            top: calc( 1.2rem + 2px );
+          }
+
+        }
+
+        &:after {
+          display: block;
+          position: absolute;
+          top: 2px;
+          right: 1.5rem;
+          content: '';
+          width: 10px;
+          height: calc( 111 / 128 * 10px );
+          background-image: url('images/cl/icon-card-link.png');
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+        }
+
     }
 
     &:hover .cl-button,
     &:focus .cl-button,
     .cl-button:hover,
     .cl-button:focus {
+
         transition: all .3s;
+        background: inherit;
+        color: $link;
+        border-top: none;
+
+        &:after {
+          background-position: 0 100%;
+        }
+    }
+
+    &:hover,
+    &:focus {
+
+      top: 0;
+      box-shadow: $level2;
+
+      img {
+        transform: scale(1.03);
+      }
+
+    }
+
+    &:active {
+      box-shadow: $level3;
     }
 
 }

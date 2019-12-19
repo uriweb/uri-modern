@@ -2,14 +2,35 @@
 
 .cl-hero {
 
-  .cl-button {
+  &:not(.fullwidth),
+  &:not(.super) {
 
-    background: rgba(255,255,255,.9);
+    .cl-hero-proper {
+      border-radius: .2rem;
+    }
+
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-family: $type-sans;
+  }
+
+  a.cl-button,
+  span.cl-button {
+
+    //color: $link;
+    background-color: $white !important;
 
     &:hover,
     &:focus {
-      background: $white;
+      //background: $white;
       color: $link;
+      top: 0;
     }
 
   }
