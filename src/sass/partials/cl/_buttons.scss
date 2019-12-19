@@ -29,6 +29,7 @@ span.cl-button {
 				transform: none;
         font-weight: 400;
         border-radius: .2rem;
+				padding: calc(1rem - 1px);
     }
 
     &:hover,
