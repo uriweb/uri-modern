@@ -1,0 +1,59 @@
+/* ======= TABS ======= */
+
+.cl-tabs.cl-tabs-js {
+
+	box-shadow: none;
+	background: #efefef;
+  border-radius: .2rem;
+  border: 1px solid #eee;
+
+  [role="tablist"] a {
+    border-right: none;
+  }
+
+}
+
+@media screen and (min-width:550px) {
+
+  .cl-tabs.cl-tabs-js {
+
+    border: none;
+    padding: .5rem;
+    border-radius: .4rem;
+
+    [role="tablist"] li {
+      margin: 0 .2rem;
+    }
+
+    [role="tablist"] li:first-of-type {
+      margin: 0 .2rem 0 0;
+    }
+
+    [role="tablist"] a {
+      border-radius: .2rem .2rem 0 0;
+      border-right: none;
+      background: #e3e3e3;
+    }
+
+    [role="tablist"] a:not([aria-selected]):hover,
+    [role="tablist"] a:not([aria-selected]):focus {
+      background: $grey;
+    }
+
+    [role="tabpanel"] {
+
+      border-radius: .2rem;
+
+      &:first-of-type {
+        border-radius: 0 .2rem .2rem .2rem;
+      }
+
+    }
+
+    [role="tablist"] [aria-selected] {
+      border: none;
+    }
+
+  }
+
+}
