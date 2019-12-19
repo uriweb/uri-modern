@@ -88,6 +88,37 @@
 
     ul.cl-menu-list {
 
+      ul {
+
+        box-shadow: $level2;
+        border-radius: .2rem;
+        margin-top: .7rem;
+
+        &:before {
+          display: block;
+          content: '';
+          position: absolute;
+          top: -6px;
+          left: 1rem;
+          width: 0;
+          height: 0;
+          border-bottom: 6px solid #fff;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+        }
+
+        li:first-child {
+          border-radius: .2rem .2rem 0 0;
+          overflow: hidden;
+        }
+
+        li:last-child {
+          border-radius: 0 0 .2rem .2rem;
+          overflow: hidden;
+        }
+
+      }
+
       a.cl-menu-trigger {
         padding-right: 2.5rem;
       }
