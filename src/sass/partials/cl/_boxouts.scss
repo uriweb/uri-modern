@@ -18,19 +18,28 @@
 	}
 
   h1 {
-		font-size: 1.75rem;
+		font-size: 2rem;
 		margin-bottom: 1.5rem;
 	}
 
-  &.left h1,
-  &.right h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1.2rem;
+  &.left,
+  &.right {
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1.3rem;
+    }
+
+    p,
+    ul {
+      font-size: 1.1rem;
+    }
+
   }
 
 	p,
 	ul {
-		font-size: 1.1rem;
+		font-size: 1.2rem;
     font-family: $type-sans;
 	}
 
