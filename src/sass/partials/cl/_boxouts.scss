@@ -38,4 +38,12 @@
 		width: 100%;
 	}
 
+  a.cl-button,
+  span.cl-button {
+    &:not(.prominent),
+    &:not(.disabled) {
+      //border: 1px solid $white;
+    }
+  }
+
 }

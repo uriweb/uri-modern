@@ -3,18 +3,33 @@
 
 .cl-card,
 .cl-dcard,
-.cl-scard {
+.cl-scard,
+.cl-tiles .cl-card,
+.cl-tiles .cl-dcard,
+.cl-tiles .cl-scard {
 
     font-family: $type-sans;
     border-radius: .2rem;
+    transform: translateY(0);
+    transition: all .2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+    }
+
+    .cl-card-text {
+      padding: 1.6rem 1.5rem 0;
+    }
 
     p {
         font-size: 1rem;
+        margin-bottom: 1.5rem;
     }
 
 		h2 {
 			font-size: 1.3rem;
-			margin-bottom: 1.3rem;
+			margin-bottom: 1.7rem;
 		}
 
 }
@@ -41,9 +56,19 @@
         color: $midgrey;
         transition: all .2s;
         text-align: left;
-        padding: 0 2.6rem 1.2rem 1.2rem;
+        padding: 0 2.9rem 1.2rem 1.5rem;
         border-top: none;
         position: relative;
+
+        &:first-of-type {
+
+          padding-top: 1.2rem;
+
+          &:after {
+            top: calc( 1.2rem + 2px );
+          }
+
+        }
 
         &:after {
           display: block;

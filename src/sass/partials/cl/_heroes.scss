@@ -20,14 +20,15 @@
     font-family: $type-sans;
   }
 
-  .cl-button {
+  a.cl-button,
+  span.cl-button {
 
-    color: $blue;
-    background: rgba(255,255,255,.9);
+    //color: $link;
+    background-color: $white !important;
 
     &:hover,
     &:focus {
-      background: $white;
+      //background: $white;
       color: $link;
       top: 0;
     }
