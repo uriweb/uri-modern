@@ -2,12 +2,19 @@
    ELEMENTS
    ============================== */
 
+figcaption {
+	color: $darkgrey;
+	font-family: $type-sans;
+	font-size: 1rem;
+	line-height: 1.5;
+	padding: .5rem 0;
+}
 
 /* TABLES */
 
 table {
 	
-	font-family: Hind, Arial, sans-serif;
+	font-family: $type-sans;
 	font-size: 1rem;
 	border-collapse: collapse;
 	border: 1px solid $grey;
