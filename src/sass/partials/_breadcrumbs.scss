@@ -3,7 +3,7 @@
    ============================== */
 
 #breadcrumbs {
-    
+
 	display: none;
 	font-size: .8rem;
 	font-family: $type-header;
@@ -12,12 +12,12 @@
 	transition: margin .1s ease-in-out;
 	position: relative;
 	z-index: 10;
-    
+
     &.has-js {
-        
+
         display: block;
         margin: .8rem 0;
-        
+
         div {
             position: relative;
             padding: .5rem;
@@ -26,19 +26,19 @@
             max-width: 100%;
 			line-height: 1rem;
         }
-        
+
         &.active div,
         div:hover,
         div:focus {
             cursor: pointer;
             background: #eee;
         }
-        
+
         span {
             position: relative;
             font-weight: 400;
         }
-        
+
         span:last-child {
             margin-left: 8px;
             padding-left: 18px;
@@ -57,7 +57,7 @@
             border-top: 1px solid $darkgrey;
             transform: rotate(45deg);
         }
-        
+
         ol {
             display: none;
             position: absolute;
@@ -73,11 +73,11 @@
             box-shadow: $level2;
             color: $white;
         }
-        
+
         &.active ol {
             display: block;
         }
-        
+
         ol:before {
             position: absolute;
             display: block;
@@ -90,17 +90,17 @@
             background: $darkgrey;
             border-top-left-radius: .1rem;
         }
-        
+
         li {
             position: relative;
             font-size: 1rem;
             margin-bottom: 0.8rem;
         }
-        
+
         li:last-child {
             margin-bottom: 0;
         }
-        
+
         li:not(:first-child):before {
             position: absolute;
             display: block;
@@ -112,21 +112,21 @@
             border-left: 1px solid $grey;
             border-bottom: 1px solid $grey;
         }
-        
+
         a {
             color: $white;
             font-weight: 400;
             padding: .2rem .4rem;
             border-radius: .2rem;
         }
-        
+
         a:hover,
         a:focus {
             background: $accentblue;
         }
-        
+
     }
-    
+
 } // #breadcrumbs
 
 // Indendation
@@ -137,14 +137,14 @@
 }
 
 @media all and (min-width: $break1) {
-    
+
     #breadcrumbs,
     #breadcrumbs.has-js {
-        
+
         display: block;
-        margin: 1.5rem 0 1rem;
+        margin: 1.2rem 0 .8rem;
         font-size: .7rem;
-        
+
         div {
             display: none;
         }
@@ -162,7 +162,7 @@
             padding: 0;
             color: inherit;
         }
-        
+
         ol:before {
             display: none;
         }
@@ -212,9 +212,9 @@
             text-decoration: underline;
             background: none;
         }
-        
+
     } // #breadcrumbs
-    
+
 }
 
 @media all and (min-width: 920px) {

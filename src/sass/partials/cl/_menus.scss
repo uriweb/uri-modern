@@ -99,8 +99,9 @@
 
         box-shadow: $level2;
         border-radius: .2rem;
-        margin-top: .7rem;
+        margin-top: .5rem;
 
+        /*
         &:before {
           display: block;
           content: '';
@@ -113,6 +114,7 @@
           border-left: 8px solid transparent;
           border-right: 8px solid transparent;
         }
+        */
 
         li:first-child {
           border-radius: .2rem .2rem 0 0;
