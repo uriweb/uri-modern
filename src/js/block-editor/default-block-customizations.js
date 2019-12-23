@@ -13,12 +13,10 @@
 	wp.domReady(
 		() => {
 			wp.blocks.unregisterBlockType( 'core/button' );
-
 			// Possible alternatives
 			// wp.blocks.unregisterBlockStyle( 'core/button', 'default' );
 			// wp.blocks.unregisterBlockStyle( 'core/button', 'outline' );
 			// wp.blocks.unregisterBlockStyle( 'core/button', 'squared' );
-
 			var f = jQuery( '#acf-field_502b9eb29fc45' );
 			if ( f.prop( 'checked' ) ) {
 				toggleTitle();

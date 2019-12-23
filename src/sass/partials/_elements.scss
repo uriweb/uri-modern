@@ -10,6 +10,21 @@ figcaption {
 	padding: .5rem 0;
 }
 
+
+dl {
+	margin-left: .5rem;
+	dt {
+		display: block;
+		font-family: $type-sans;
+		font-weight: bold;
+	}
+	dd {
+		display: block;
+		margin-bottom: 2rem;
+	}
+}
+
+
 /* TABLES */
 
 table {
