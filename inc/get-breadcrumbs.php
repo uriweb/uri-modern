@@ -81,8 +81,12 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 
 	// is it a custom post type?
 	// check this first so that it takes precedent over category
-	$slug = get_post_type_object( get_post_type() )->rewrite['slug'];
-	if ( $slug ) {
+	$post_type_object = get_post_type_object( get_post_type() );
+	if ( is_object( $post_type_object ) ) {
+		$slug = $post_type_object->rewrite['slug'];
+	}
+	
+	if ( isset( $slug ) ) {
 		$output = array(
 			'name' => ucfirst( $slug ),
 			'href' => get_site_url() . $path,
