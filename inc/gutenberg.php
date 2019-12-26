@@ -7,7 +7,6 @@
 
 // @see https://www.billerickson.net/getting-your-theme-ready-for-gutenberg/
 // @todo: do we want align wide for images?
-// @todo: how about caption styles?
 // add_theme_support( 'align-wide' );
 // js way to disable a block:
 // wp.blocks.unregisterBlockType( 'core/verse' );
@@ -16,8 +15,9 @@
  * Gutenberg scripts and styles
  */
 function uri_modern_gutenberg_scripts() {
-	$cache_buster = filemtime( get_stylesheet_directory() . '/js/block-editor.min.js' );
-	wp_enqueue_script( 'uri-modern-block-editor', get_stylesheet_directory_uri() . '/js/block-editor.min.js', array( 'wp-blocks', 'wp-dom' ), $cache_buster, true );
+	$file = get_template_directory() . '/js/block-editor.min.js';
+	$cache_buster = filemtime( $file );
+	wp_enqueue_script( 'uri-modern-block-editor', $file, array( 'wp-blocks', 'wp-dom' ), $cache_buster, true );
 }
 add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
 

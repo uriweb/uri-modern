@@ -18,7 +18,7 @@ function uri_modern_breadcrumbs() {
 	foreach ( $prepend as $l ) {
 		$bits = explode( '(', $l );
 		$name = trim( $bits[0], '[]' );
-		$href = rtrim( $bits[1], ')' );
+		$href = @rtrim( $bits[1], ')' );
 		if ( ! empty( $name ) && ! empty( $href ) ) {
 			$crumbs[] = array(
 				'name' => $name,
