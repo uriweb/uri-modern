@@ -85,7 +85,7 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 	if ( is_object( $post_type_object ) ) {
 		$slug = $post_type_object->rewrite['slug'];
 	}
-	
+
 	if ( isset( $slug ) ) {
 		$output = array(
 			'name' => ucfirst( $slug ),

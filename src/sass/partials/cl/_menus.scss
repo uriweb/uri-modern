@@ -48,7 +48,7 @@
       height: 8px;
       border: none;
       background-image: url('images/close.svg');
-      background-position: 0 -32px;
+      background-position: 0 -8px;
       background-size: 8px auto;
       background-repeat: no-repeat;
       transform: rotate(-45deg);
@@ -98,8 +98,8 @@
       ul {
 
         box-shadow: $level2;
-        border-radius: .2rem;
-        margin-top: .5rem;
+        border-radius: 0 0 .2rem .2rem;
+        margin-top: 0;
 
         /*
         &:before {
