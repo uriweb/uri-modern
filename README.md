@@ -6,7 +6,7 @@ URI Modern is a WordPress theme designed for the University of Rhode Island. It'
 
 URI Modern 2.0 is a major release focused on style refinements and improving core functionality.
 
-#### A Refined Look
+### A Refined Look
 
 The [URI Component Library](https://github.com/uriweb/uri-component-library) v4.0 and later relies on themes to control the look and feel of components beyond the general styles provided out-of-the-box.  URI Modern introduces a refined look for components, as well as other widely-used elements of the theme.
 
@@ -14,7 +14,7 @@ The [URI Component Library](https://github.com/uriweb/uri-component-library) v4.
 * Introduces a refined look for site menus and brand bar elements
 * Adds styles for definition lists
 
-#### General Improvements
+### General Improvements
 
 * Improves theme support for the Gutenberg block editor, including previewing theme fonts, background colors, and page title visibility
 * Improves responsiveness of certain oEmbed elements
