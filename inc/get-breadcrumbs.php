@@ -69,13 +69,10 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 
 	if ( 0 !== $post_id ) { // it's a post or a page.
 		$p      = get_page_by_path( $path );
-		$output = null;
-		if ( is_object( $p ) ) {
-			$output = array(
-				'name' => get_the_title( $p->ID ),
-				'href' => get_site_url() . $path,
-			);
-		}
+		$output = array(
+			'name' => get_the_title( $p->ID ),
+			'href' => get_site_url() . $path,
+		);
 		return $output;
 	}
 
@@ -127,5 +124,3 @@ function uri_modern_format_breadcrumbs( $crumbs ) {
 	$output .= '</ol>';
 	return $output;
 }
-
-
