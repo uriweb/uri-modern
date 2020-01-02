@@ -13,6 +13,7 @@
 	wp.domReady(
 		() => {
 			wp.blocks.unregisterBlockType( 'core/button' );
+
 			// Possible alternatives
 			// wp.blocks.unregisterBlockStyle( 'core/button', 'default' );
 			// wp.blocks.unregisterBlockStyle( 'core/button', 'outline' );
