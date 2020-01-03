@@ -58,7 +58,7 @@
     & span:after {
         border-top: 6px solid $white;
     }
-    
+
 }
 
 #lnmenu-toggle:checked {
@@ -76,15 +76,15 @@
         display: block;
     }
 }
-    
+
 #localnav>ul {
-    
+
     overflow: hidden;
-    
+
     ul {
         display: none;
     }
-    
+
 }
 
 #cl-localnav>ul.cl-menu-list-no-js {
@@ -112,7 +112,7 @@
 	list-style-type: none;
 	border-radius: 0 0 .2rem .2rem;
 	transition: all .1s ease-in-out;
-    
+
     &>li {
         margin: 0;
     }
@@ -124,16 +124,24 @@
     a {
         display: block;
         padding: 1rem;
-        color: $black;
+        color: #333;
+        text-transform: initial;
+        letter-spacing: initial;
         transition: all .1s ease-in-out;
     }
-    
+
     a:hover,
     a:focus {
+
         background: $link;
         color: $white;
+
+        & ~ span.cl-menu-arrow {
+          background-position: 0 -16px;
+        }
+
     }
-	
+
 	/* Reset styles from the Component Library */
 	li.current_page_item,
 	li.current-menu-item,
@@ -144,74 +152,89 @@
 		box-shadow: none;
 	}
     /* done with reset */
-	
-    li.current_page_item>a,
+
+  li.current_page_item>a,
 	li.current-page-item>a {
-        background: $link;
-        color: $white;
-    }
-    
+    background: $link;
+    color: $white;
+  }
+
 	li.current_page_parent>a,
-    li.current_page_ancestor>a,
+  li.current_page_ancestor>a,
 	li.current-page-ancestor>a,
 	li.current-post-ancestor>a {
-        border-bottom: 3px solid $midgrey;
+    //border-bottom: 1px solid $midgrey;
+    background: #eee;
+
+    &:hover,
+    &:focus {
+      background: $link;
+      color: $white;
     }
-    
+
+  }
+
 }
 
 #cl-localnav {
-    
+
+    font-family: $type-header;
     margin-bottom: 0;
-    
+
     &>ul {
         max-width: 100%;
     }
-    
+
+    span.cl-menu-toggle {
+      text-transform: initial;
+      letter-spacing: initial;
+    }
+
     span.cl-menu-toggle.active ~ ul.cl-menu-list {
         display: block;
     }
-    
+
     ul.sub-menu a {
         padding: 1rem 1rem 1rem 1.5rem;
-        border-left: 3px solid $darkgrey;
+        border-left: 2px solid $darkgrey;
         background: #eee;
     }
-    
+
     ul.sub-menu a:hover,
     ul.sub-menu a:focus {
         background: $link;
     }
-    
+
     span.cl-menu-arrow {
-        top: 1.5rem;
+        top: 1.4rem;
     }
-    
+
     li.current_page_item span.cl-menu-arrow {
-        border-top: 8px solid $white;
+        //border-top: 8px solid $white;
     }
-    
+
 }
 
 @media all and (min-width: $break1) {
     #localnav {
         width: 100%;
         box-sizing: border-box;
-        padding: 2rem 0 4rem;
+        padding: .5rem 0 3rem;
     }
     #localnav>ul,
     #cl-localnav>ul {
-		
-		display: block;
-		position: relative;
-		top: 0;
-		max-width: 100%;
-		width: 100%;
-		border-bottom: 1px solid $grey;
-		background: transparent;
-		box-shadow: none;
-		border-radius: 0;
-		
+
+    		display: block;
+    		position: relative;
+    		top: 0;
+    		max-width: 100%;
+    		width: 100%;
+    		//border-bottom: 1px solid $grey;
+        //padding-bottom: 1rem;
+    		background: transparent;
+    		box-shadow: inset 0 -2px 0 #ddd;
+    		border-radius: 0;
+
         &:after {
             display: block;
             content: '';
@@ -223,31 +246,85 @@
             border: none !important;
             padding-right: 3rem;
         }
+
         li.current_page_item>a,
+        li.current-page-item>a,
+        li.current_page_ancestor>a,
+      	li.current-page-ancestor>a,
+      	li.current-post-ancestor>a,
         a:hover,
         a:focus {
-            background: none;
+
+          background: none;
+          color: $black;
+          border-bottom-color: transparent;
+
+          & ~ span.cl-menu-arrow {
+            border: none;
+            background-position: 0 -8px;
+          }
+
+        }
+
+        li.current_page_item>a,
+        li.current-page-item>a,
+        li.current_page_ancestor>a,
+      	li.current-page-ancestor>a,
+      	li.current-post-ancestor>a {
             color: $black;
-            border-bottom-color: $accentblue;
-        }
-        li.current_page_item>a {
+            //border-radius: .2rem;
+            //padding: .3rem .6rem .2rem;
+            //background: #eee;
+            border-bottom: 2px solid #000;
             font-weight: 600;
+
+            & ~ span.cl-menu-arrow {
+              border: none;
+              background-position: 0 -8px;
+            }
+
+            &:hover,
+            &:focus {
+
+              background: transparent;
+              color: $black;
+
+              & ~ span.cl-menu-arrow {
+                background-position: 0 -8px;
+              }
+
+            }
+
         }
+
         a {
-            padding: .3rem 0;
-            border-bottom-width: 3px;
+            color: #555;
+            padding: .3rem 0 .8rem;
+            font-weight: 400;
+            border-bottom-width: 2px;
             border-bottom-style: solid;
             border-bottom-color: transparent;
         }
-        
+
         ul a,
         ul.sub-menu a {
-            padding: .5rem 1rem;
+            padding: .7rem 1rem .5rem;
         }
-            
+
     }
-    
+
     #cl-localnav {
+
+        font-size: 1rem;
+
+        &.cl-menu-js {
+
+          li.menu-item-has-children {
+            margin-right: 2.5rem;
+          }
+
+        }
+
         li.current_page_item {
             box-shadow: none;
         }
@@ -256,44 +333,40 @@
             padding-right: 0;
         }
         a.cl-menu-trigger {
-            padding-right: 2rem;
+          //padding: .3rem 2rem .2rem .6rem !important;
+          padding-right: 1.5rem;
         }
         span.cl-menu-arrow {
-            top: .9rem;
-            right: 0;
-        }
-        span.cl-menu-arrow,
-        li.current_page_item span.cl-menu-arrow {
-            border-top: 8px solid #999;
-        }
-        a:hover ~ span.cl-menu-arrow {
-            border-top: 8px solid $accentblue;
+            top: .85rem;
+            right: 0rem;
+            background-position: 0 -32px;
         }
         ul.sub-menu {
             a {
                 border-left: none;
                 background: none;
             }
-            
+
             li {
                 a:hover,
                 a:focus {
-                    border-bottom: 3px solid transparent;
+                    border-bottom: 2px solid transparent;
                     background: #eee;
+                    color: $black;
                 }
             }
-            
+
             li.current_page_item {
                 a:hover,
                 a:focus {
-                    border-bottom: 3px solid $accentblue;
+                    border-bottom: 2px solid $midgrey;
                     background: none;
                 }
             }
         }
-            
+
     }
-        
+
     #lnmenu {
         display: none;
     }

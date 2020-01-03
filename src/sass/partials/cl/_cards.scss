@@ -1,0 +1,257 @@
+/* ======= CARDS ======= */
+
+
+.cl-card,
+.cl-dcard,
+.cl-scard,
+.cl-tiles .cl-card,
+.cl-tiles .cl-dcard,
+.cl-tiles .cl-scard {
+
+    font-family: $type-sans;
+    border-radius: .2rem;
+    transform: translateY(0);
+    transition: all .2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-2px);
+    }
+
+    .cl-card-text {
+      padding: 1.5rem 1.5rem 0;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+		h2 {
+			font-size: 1.3rem;
+			margin-bottom: 1.7rem;
+      line-height: 1.5rem;
+		}
+
+}
+
+/* Action Cards */
+
+.cl-card {
+
+    box-shadow: $level1;
+
+    img {
+      transform: scale(1);
+      transform-origin: center bottom;
+      transition: transform .2s ease-in-out;
+    }
+
+    .cl-button {
+
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: .1rem;
+        line-height: 1rem;
+        text-transform: uppercase;
+        color: $midgrey;
+        transition: all .2s;
+        text-align: left;
+        padding: 0 2.9rem 1.2rem 1.5rem;
+        border-top: none;
+        position: relative;
+
+        &:first-of-type {
+
+          padding-top: 1.2rem;
+
+          &:after {
+            top: calc( 1.2rem + 2px );
+          }
+
+        }
+
+        &:after {
+          display: block;
+          position: absolute;
+          top: 2px;
+          right: 1.5rem;
+          content: '';
+          width: 10px;
+          height: calc( 111 / 128 * 10px );
+          background-image: url('images/cl/icon-card-link.png');
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: 100% auto;
+        }
+
+    }
+
+    &:hover .cl-button,
+    &:focus .cl-button,
+    .cl-button:hover,
+    .cl-button:focus {
+
+        transition: all .3s;
+        background: inherit;
+        color: $link;
+        border-top: none;
+
+        &:after {
+          background-position: 0 100%;
+        }
+    }
+
+    &:hover,
+    &:focus {
+
+      top: 0;
+      box-shadow: $level2;
+
+      img {
+        transform: scale(1.03);
+      }
+
+    }
+
+    &:active {
+      box-shadow: $level3;
+    }
+
+}
+
+
+/* Story Cards */
+
+.cl-scard {
+
+    border-radius: .2rem .2rem 0 0;
+
+    img {
+        border-radius: .2rem .2rem 0 0;
+    }
+
+    .cl-scard-img-overlay {
+
+      background: rgba(0,0,0,.7);
+      transition: all .2s ease-in-out;
+
+      &:hover,
+      &:focus {
+
+        span {
+          font-size: 1.25rem;
+          left: -.625rem;
+          padding-left: 1.85rem;
+        }
+
+        span:before {
+          width: 1.35rem;
+          height: 1.25rem;
+        }
+
+      }
+
+      span {
+        font-size: 1rem;
+        left: -.5rem;
+        padding-left: 1.6rem;
+        transition: all .1s ease-in-out;
+      }
+
+      span:before {
+        top: -2px;
+        width: 1.1rem;
+        height: 1rem;
+        transition: all .1s ease-in-out;
+      }
+
+    }
+
+    .cl-scard-category {
+
+      text-transform: uppercase;
+      color: #555;
+
+      &:hover,
+      &:focus {
+
+        color: inherit;
+
+        &:after {
+          width: 100%;
+        }
+
+      }
+
+      &-news {
+
+        color: #e64646;
+
+        &:after {
+          border-bottom-color: #e64646;
+        }
+
+      }
+
+      &-story {
+
+        color: #1475a8;
+
+        &:after {
+          border-bottom-color: #1475a8;
+        }
+
+      }
+
+      &:after {
+        display: block;
+        content: '';
+        position: relative;
+        left: 0;
+        bottom: 0;
+        width: 1.5rem;
+        height: .5rem;
+        border-bottom: 1px solid #ddd;
+        transition: width .2s ease-in-out;
+      }
+
+    }
+
+    .cl-scard-body {
+
+      h2, p {
+        transition: color .1s ease-in-out;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+
+        h2, p {
+          color: $keaneyblue !important;
+        }
+
+      }
+
+    }
+
+    .cl-scard-meta {
+      margin-bottom: .7rem;
+      color: #999;
+      border-top: 1px solid #eee;
+    }
+
+    .cl-scard-date {
+      font-weight: 300;
+    }
+
+}
+
+@supports ( (backdrop-filter: initial) or (-webkit-backdrop-filter: initial) ) {
+  .cl-scard .cl-scard-img-overlay {
+    background: rgba(0,0,0,.1);
+    -webkit-backdrop-filter: blur(20px) saturate(250%);
+    backdrop-filter: blur(20px) saturate(250%);
+  }
+}

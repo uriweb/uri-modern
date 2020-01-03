@@ -1,0 +1,66 @@
+/* ======= BUTTONS ======= */
+
+a.cl-button,
+span.cl-button {
+
+	font-family: $type-sans;
+	font-size: .8rem;
+	font-weight: 700;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	color: $link;
+	transition: all .2s ease-in-out;
+	text-shadow: none;
+	border-radius: .2rem;
+	transform: translateY(0);
+	border: none;
+	box-shadow: $level1;
+
+    &.prominent {
+        background: $blue;
+        //box-shadow: 250px 0 100px -100px transparent inset;
+        //padding: 1.09rem 1rem;
+    }
+
+    &.disabled,
+    &.disabled:hover,
+    &.disabled:focus {
+				box-shadow: none;
+				transform: none;
+        font-weight: 400;
+        border-radius: .2rem;
+				padding: calc(1rem - 1px);
+    }
+
+    &:hover,
+    &:focus {
+				background: $white;
+				color: $link;
+				border: none;
+				box-shadow: $level2;
+				transform: translateY(-2px);
+    }
+
+		&:active {
+			box-shadow: $level3;
+		}
+
+    &.prominent:hover,
+    &.prominent:focus {
+        background: $blue;
+        //box-shadow: 350px 0 50px -100px $link inset;
+    }
+
+}
+
+.button-list .cl-button {
+
+	display: block;
+	clear: both;
+	margin-bottom: 1rem;
+
+	&:last-child {
+		margin-bottom: 2rem;
+	}
+
+}

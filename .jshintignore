@@ -1,4 +1,5 @@
 gulpfile.js
 js/script.min.js
 js/smoothscroll.min.js
+js/block-editor.min.js
 static/script.static.min.js

@@ -376,17 +376,8 @@ function uri_modern_scripts() {
 			'childTheme' => get_template_directory_uri() != get_stylesheet_directory_uri() ? true : false,
 			'admin' => uri_modern_has_admin_privilages(),
 		),
-		'features' => array(
-			'betaShaming' => false,
-		),
+		'features' => array(),
 	);
-
-	/**
-	 * Enable ADA and code compliance shaming
-	 */
-	if ( get_option( 'beta_shaming' ) ) {
-		$values['features']['betaShaming'] = true;
-	}
 
 	wp_enqueue_style( 'uri-modern-style', get_template_directory_uri() . '/style.css', array(), uri_modern_cache_buster(), 'all' );
 

@@ -7,10 +7,19 @@
 
 // @see https://www.billerickson.net/getting-your-theme-ready-for-gutenberg/
 // @todo: do we want align wide for images?
-// @todo: how about caption styles?
 // add_theme_support( 'align-wide' );
 // js way to disable a block:
 // wp.blocks.unregisterBlockType( 'core/verse' );
+
+/**
+ * Gutenberg scripts and styles
+ */
+function uri_modern_gutenberg_scripts() {
+	$file = get_template_directory() . '/js/block-editor.min.js';
+	$cache_buster = filemtime( $file );
+	wp_enqueue_script( 'uri-modern-block-editor', $file, array( 'wp-blocks', 'wp-dom' ), $cache_buster, true );
+}
+add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
 
 /**
  * Specifiy which core blocks are permitted.
@@ -112,7 +121,7 @@ add_filter( 'allowed_block_types', 'uri_modern_allowed_blocks', 10, 2 );
 
 // Editor Styles
 add_theme_support( 'editor-styles' );
-add_editor_style( 'style.css' );
+add_editor_style( 'style.admin.css' );
 
 
 
@@ -125,7 +134,7 @@ add_theme_support( 'disable-custom-colors' );
 
 // Adds support for editor color palette.
 add_theme_support(
-	 'editor-color-palette',
+	'editor-color-palette',
 	array(
 		array(
 			'name'  => __( 'URI Blue', 'uri' ),
@@ -202,6 +211,5 @@ add_theme_support(
 			'slug'  => 'link-hover-blue',
 			'color' => '#003287',
 		),
-
 	)
-	);
+);

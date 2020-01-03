@@ -1,3 +1,7 @@
+/*
+STATIC VERSION
+*/
+
 /* RESET AND VARS */
 @import 'partials/base';
 
@@ -10,30 +14,31 @@
 @import 'partials/type';
 @import 'partials/layout';
 @import 'partials/elements';
-@import 'partials/forms';
-@import 'partials/brandbar';
-@import 'partials/globalnav';
-@import 'partials/actionbar';
-@import 'partials/footer';
-@import 'partials/sitebar';
-@import 'partials/breadcrumbs';
-@import 'partials/localnav';
-@import 'partials/search';
+// @import 'partials/forms';
+// @import 'partials/brandbar';
+// @import 'partials/globalnav';
+// @import 'partials/actionbar';
+// @import 'partials/footer';
+// @import 'partials/sitebar';
+// @import 'partials/breadcrumbs';
+// @import 'partials/localnav';
+// @import 'partials/search';
 @import 'partials/stage';
-@import 'partials/404';
-@import 'partials/widgetareas';
-@import 'partials/archives';
+// @import 'partials/404';
+// @import 'partials/widgetareas';
+// @import 'partials/archives';
 @import 'partials/posts';
 @import 'partials/displayposts';
-@import 'partials/comments';
-@import 'partials/tags';
+// @import 'partials/comments';
+// @import 'partials/tags';
 @import 'partials/oembeds';
 @import 'partials/galleries';
-@import 'partials/events';
+// @import 'partials/events';
 @import 'partials/featimages';
 @import 'partials/lightbox';
 @import 'partials/programfinder';
 @import 'partials/people';
+@import 'partials/editor';
 
 /* COMPONENT LIBRARY */
 @import 'partials/cl/boxouts';
@@ -51,3 +56,4 @@
 @import 'partials/cl/slideshows';
 @import 'partials/cl/tabs';
 @import 'partials/cl/videos';
+@import 'partials/cl/gutenberg'; // Keep Last

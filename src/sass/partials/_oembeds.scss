@@ -34,3 +34,21 @@
 .wp-embedded-content {
 	max-width: 100% !important;
 }
+
+.embed-responsive {
+    display: block;
+    height: 0;
+    padding: 0 0 56.25%;
+    position: relative;
+}
+.embed-responsive-16x9 {
+    padding-bottom: 56.25%;
+}
+.embed-responsive-4x3 {
+   padding-bottom: 75%;
+}
+.embed-responsive iframe {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
