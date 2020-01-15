@@ -18,6 +18,7 @@
     "gulpfile.js",
     "js/script.min.js",
     "js/block-editor.min.js",
-    "js/smoothscroll.min.js"
+    "js/smoothscroll.min.js",
+    "static/**"
   ]
 }
