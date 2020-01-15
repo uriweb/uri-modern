@@ -32,10 +32,10 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/paragraph',
 		'core/image',
 		'core/heading',
-		'core/subhead',
+		// 'core/subhead',
 		'core/gallery',
 		'core/list',
-		'core/quote',
+		// 'core/quote',
 		'core/audio',
 		'core/cover', // previously core/cover-image
 		'core/file',
@@ -47,9 +47,9 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/freeform', // Classic
 		'core/html', // Custom HTML
 		'core/preformatted',
-		'core/pullquote',
+		// 'core/pullquote',
 		// layout
-		'core/button',
+		// 'core/button',
 		'core/columns',
 		'core/media-text',
 		'core/more',
@@ -126,90 +126,45 @@ add_editor_style( 'style.admin.css' );
 
 
 
-
-
 // COLORS //
 // disable option for custom colors
 add_theme_support( 'disable-custom-colors' );
+// register custom palette with no colors to hide the color options entirely
+add_theme_support( 'editor-color-palette' );
 
-// Adds support for editor color palette.
-add_theme_support(
-	'editor-color-palette',
-	array(
+
+/**
+ * Removes the dropcap widget with a little injected css.
+ */
+function uri_modern_hide_font_styles() {
+	// https://github.com/WordPress/gutenberg/issues/6184
+	// hide dropcap only
+	// echo '<style>.blocks-font-size .components-base-control:first-of-type { margin-bottom: 0; } .blocks-font-size .components-toggle-control { display: none; }</style>';
+	// hide the entire font size section
+	echo '<style>.blocks-font-size * { display: none; } .blocks-font-size { border: 0 !important; height: 0; padding: 0 !important; margin-top: 32px !important; }</style>';
+}
+add_action( 'admin_head', 'uri_modern_hide_font_styles' );
+
+
+/**
+ * Removes options for different font sizes
+ * Not in use since we're using CSS to hide the entire pane
+ *
+ * @see uri_modern_hide_font_styles
+ */
+function uri_modern_set_font_sizes() {
+	// removes the text box where users can enter custom pixel sizes
+	add_theme_support( 'disable-custom-font-sizes' );
+	// forces the dropdown for font sizes to only contain "normal"
+	add_theme_support(
+		'editor-font-sizes',
 		array(
-			'name'  => __( 'URI Blue', 'uri' ),
-			'slug'  => 'uri-gray',
-			'color' => '#002147',
-		),
-		array(
-			'name'  => __( 'Light Blue', 'uri' ),
-			'slug'  => 'light-blue',
-			'color' => '#c0ddf2',
-		),
-		array(
-			'name'  => __( 'Keaney Blue', 'uri' ),
-			'slug'  => 'keaney-blue',
-			'color' => '#2277b3',
-		),
-		array(
-			'name'  => __( 'Dark Blue', 'uri' ),
-			'slug'  => 'dark-blue',
-			'color' => '#001228',
-		),
-		array(
-			'name'  => __( 'URI Gold', 'uri' ),
-			'slug'  => 'uri-gold',
-			'color' => '#b5985a',
-		),
-		array(
-			'name'  => __( 'Mid Gold', 'uri' ),
-			'slug'  => 'mid-gold',
-			'color' => '#ffd453',
-		),
-		array(
-			'name'  => __( 'Light Gold', 'uri' ),
-			'slug'  => 'light-gold',
-			'color' => '#fefada',
-		),
-		array(
-			'name'  => __( 'URI Gray', 'uri' ),
-			'slug'  => 'uri-gray',
-			'color' => '#dddddd',
-		),
-		array(
-			'name'  => __( 'Light Gray', 'uri' ),
-			'slug'  => 'light-gray',
-			'color' => '#fafafa',
-		),
-		array(
-			'name'  => __( 'Mid Gray', 'uri' ),
-			'slug'  => 'mid-gray',
-			'color' => '#999999',
-		),
-		array(
-			'name'  => __( 'Dark Gray', 'uri' ),
-			'slug'  => 'dark-gray',
-			'color' => '#555555',
-		),
-		array(
-			'name'  => __( 'White', 'uri' ),
-			'slug'  => 'white',
-			'color' => '#fff',
-		),
-		array(
-			'name'  => __( 'Black', 'uri' ),
-			'slug'  => 'black',
-			'color' => '#000',
-		),
-		array(
-			'name'  => __( 'Link Blue', 'uri' ),
-			'slug'  => 'link-blue',
-			'color' => '#005eff',
-		),
-		array(
-			'name'  => __( 'Link Hover Blue', 'uri' ),
-			'slug'  => 'link-hover-blue',
-			'color' => '#003287',
-		),
-	)
-);
+			array(
+				'name' => 'Normal',
+				'size' => 20,
+				'slug' => 'normal',
+			),
+		)
+	);
+}
+// add_action( 'after_setup_theme', 'uri_modern_set_font_sizes' );
