@@ -18,6 +18,7 @@ branches:
     only:
     - master
     - develop
+    - /^dev-.*$/
     - /^travis-.*$/
 
 # Declare which versions of WordPress to test against.
