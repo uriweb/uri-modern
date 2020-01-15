@@ -28,6 +28,12 @@ dl {
 	clear: both;
 }
 
+.wp-block-cover p, .wp-block[data-type="core/cover"] p {
+	font-family: $type-header;
+	font-weight: bold;
+	max-width: 100%;
+}
+
 /* TABLES */
 
 table {
