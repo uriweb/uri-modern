@@ -29,8 +29,7 @@ var bannerStatic = ['/*',
   ''].join('\n');
 
 // include plug-ins
-var jshint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
+var eslint = require('gulp-eslint');
 var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 var rename = require('gulp-rename');
@@ -57,12 +56,8 @@ gulp.task('scripts', scripts);
 function scripts(done) {
 
   gulp.src('./src/js/**/*.js')
-    .pipe(jshint(done))
-    .pipe(jshint.reporter('default'));
-
-  gulp.src('./src/js/**/*.js')
-    .pipe(jscs(done))
-    .pipe(jscs.reporter());
+    .pipe(eslint(done))
+    .pipe(eslint.format());
 
   // Process top-level js (front side)
   gulp.src('./src/js/*.js')

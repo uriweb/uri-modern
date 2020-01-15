@@ -1,0 +1,23 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
+  "rules": {
+    "no-undef": ["warn"],
+    "no-unused-vars": ["warn"],
+    "no-bitwise": ["warn"],
+    "no-alert": ["warn"],
+    "no-console": [ "error", { "allow": ["warn", "error"] } ],
+    "jsx-a11y/label-has-associated-control": ["warn"],
+    "jsx-a11y/label-has-for": [0]
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "gulpfile.js",
+    "js/script.min.js",
+    "js/block-editor.min.js",
+    "js/smoothscroll.min.js"
+  ]
+}
