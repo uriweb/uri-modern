@@ -69,7 +69,7 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 
 	if ( 0 !== $post_id ) { // it's a post or a page.
 		$p      = get_page_by_path( $path );
-		if ( null === $p ) { // solves an issue with page break paginated pages and posts
+		if ( ! is_object( $p ) ) { // solves an issue with page break paginated pages and posts
 			return;
 		}
 		$output = array(
