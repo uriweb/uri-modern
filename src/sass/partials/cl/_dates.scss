@@ -21,6 +21,21 @@
 
   }
 
+  .cl-date-download-dialogue {
+
+    font-family: $type-sans;
+    border-radius: .2rem;
+
+    .cl-date-download-confirm {
+      border-bottom-right-radius: .2rem;
+    }
+
+    .cl-date-download-cancel {
+      border-bottom-left-radius: .2rem;
+    }
+      
+  }
+
   .cl-date-caption-wrapper {
 
     padding: .65rem 1rem .5rem;
@@ -32,6 +47,10 @@
       line-height: 1.1rem;
     }
 
+  }
+
+  .cl-date-download-notice {
+    font-family: $type-sans;
   }
 
 }
