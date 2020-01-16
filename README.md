@@ -2,29 +2,22 @@
 
 URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.
 
-## What's new in 2.0.0
+## What's new in 2.0.1
 
-URI Modern 2.0.0 is a major release focused on style refinements and improving core functionality.
+URI Modern 2.0.1 is bug fix release.
 
-### A Refined Look
+* Adds styles for default Gutenberg blocks
+* Removes certain Gutenberg functionality that is either duplicated by the [Component Library](https://github.com/uriweb/uri-component-library) or discouraged by URI web design practices
+  - Removes button, quote, and pull quote Gutenberg blocks
+  - Removes custom colors, font sizes, and drop caps
+  - Removes circular image option, striped tables, and wide separators
+* Adds styles for Component Library date and promo components
+* Removes button styles on Component Library panels formatted as `super`
+* Fixes an issue with breadcrumbs on paginated posts
+* All scripts are now linted with ESLint; JSCS and JSHint have been removed
+* Updates development tools
 
-The [URI Component Library](https://github.com/uriweb/uri-component-library) v4.0 and later relies on themes to control the look and feel of components beyond the general styles provided out-of-the-box.  URI Modern introduces a refined look for components, as well as other widely-used elements of the theme.
-
-* Introduces a refined look for several components &mdash; most notably cards, buttons, and tabs
-* Introduces a refined look for site menus and brand bar elements
-* Adds styles for definition lists
-
-### General Improvements
-
-* Improves theme support for the Gutenberg block editor, including previewing theme fonts, background colors, and page title visibility
-* Improves responsiveness of certain oEmbed elements
-* Adds a `button-list` CSS class for styling vertical groups of buttons
-* Removes accessibility and code error checking (install the [URI Code Compliance](https://github.com/uriweb/uri-code-compliance) plugin instead)
-* Fixes an issue in breadcrumbs that caused the current post to not be included
-* Other bug fixes
-* Updates devDependencies
-
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/179/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
+For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/182/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
 
 ## How do I get set up?
 
