@@ -11,6 +11,7 @@
 
 	wp.domReady(
 		() => {
+			wp.blocks.unregisterBlockStyle( 'core/image', 'circle-mask' );
 			wp.blocks.unregisterBlockType( 'core/button' );
 
 			// Possible alternatives
