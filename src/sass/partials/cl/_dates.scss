@@ -1,0 +1,56 @@
+/* ======= DATES ======= */
+
+.cl-date {
+
+  .cl-date-content-wrapper {
+
+    width: 110px;
+
+    .cl-date-month {
+      background: #2277b3;
+      font-family: $type-header;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: .8rem;
+    }
+
+    .cl-date-day {
+      font-family: $type-numeric;
+      padding: .6rem .5rem;
+    }
+
+  }
+
+  .cl-date-download-dialogue {
+
+    font-family: $type-sans;
+    border-radius: .2rem;
+
+    .cl-date-download-confirm {
+      border-bottom-right-radius: .2rem;
+    }
+
+    .cl-date-download-cancel {
+      border-bottom-left-radius: .2rem;
+    }
+      
+  }
+
+  .cl-date-caption-wrapper {
+
+    padding: .65rem 1rem .5rem;
+    border-radius: .2rem;
+
+    .cl-date-caption {
+      font-family: $type-sans;
+      color: #333;
+      line-height: 1.1rem;
+    }
+
+  }
+
+  .cl-date-download-notice {
+    font-family: $type-sans;
+  }
+
+}

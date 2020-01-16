@@ -44,7 +44,7 @@ function uri_modern_breadcrumbs() {
 		$path = $path . '/' . $p;
 		$link = uri_modern_breadcrumbs_get_link( $path );
 
-		if ( null != $link ) {
+		if ( ! empty( $link ) ) {
 			$crumbs[] = $link;
 		}
 	}
@@ -69,6 +69,9 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 
 	if ( 0 !== $post_id ) { // it's a post or a page.
 		$p      = get_page_by_path( $path );
+		if ( ! is_object( $p ) ) { // solves an issue with page break paginated pages and posts
+			return;
+		}
 		$output = array(
 			'name' => get_the_title( $p->ID ),
 			'href' => get_site_url() . $path,

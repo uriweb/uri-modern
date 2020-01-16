@@ -2,7 +2,7 @@
    ELEMENTS
    ============================== */
 
-figcaption {
+   figcaption {
 	color: $darkgrey;
 	font-family: $type-sans;
 	font-size: 1rem;
@@ -24,10 +24,67 @@ dl {
 	}
 }
 
+
+pre {
+	font-family: $type-mono;
+	font-size: 1rem;
+	margin-bottom: 2rem;
+}
+.wp-block-code {
+	color: $darkgrey;
+}
+.wp-block-verse {
+	color: $darkgrey;
+}
+.wp-block-preformatted {
+	color: $darkgrey;
+}
+
+.wp-block-file {
+	.wp-block-file__button {
+		background-color: $blue;
+		border-radius: 2px;
+		font-family: $type-sans;
+	}
+}
+
+.wp-block-media-text {
+	margin-bottom: 2rem;
+	p {
+		font-family: $type-sans;
+	}
+	.has-large-font-size {
+		font-family: $type-header;
+		font-weight: bold;
+	}
+
+}
+
+
 .wp-block-separator {
 	clear: both;
 }
 
+.wp-block-cover {
+	margin-bottom: 2rem;
+}
+.wp-block-cover p, .wp-block[data-type="core/cover"] p {
+	font-family: $type-header;
+	font-weight: bold;
+	max-width: 100%;
+}
+
+.wp-block-calendar {
+	table {
+		font-family: $type-sans;
+		th {
+			background-color: $blue;
+			color: $white;
+			font-weight: 600;
+			text-align: center;
+		}
+	}
+} 
 /* TABLES */
 
 table {
