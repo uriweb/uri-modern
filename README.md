@@ -2,22 +2,18 @@
 
 URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.
 
-## What's new in 2.0.1
+## What's new in 2.0.2
 
-URI Modern 2.0.1 is bug fix release.
+URI Modern 2.0.2 is bug fix release.
 
-* Adds styles for default Gutenberg blocks
-* Removes certain Gutenberg functionality that is either duplicated by the [Component Library](https://github.com/uriweb/uri-component-library) or discouraged by URI web design practices
-  - Removes button, quote, and pull quote Gutenberg blocks
-  - Removes custom colors, font sizes, and drop caps
-  - Removes circular image option, striped tables, and wide separators
-* Adds styles for Component Library date and promo components
-* Removes button styles on Component Library panels formatted as `super`
-* Fixes an issue with breadcrumbs on paginated posts
-* All scripts are now linted with ESLint; JSCS and JSHint have been removed
+* Removes border radius from [Component Library](https://github.com/uriweb/uri-component-library) heroes formatted as super and fullwidth
+* Fixes an issue that prevented the Classic Editor from displaying button icons properly
+* Fixes an issue that caused the Block Editor reordering controls to appear under the admin sidebar menu
+* Whitelists the [Gravity Forms](https://www.gravityforms.com) Gutenberg block
+* Other minor fixes
 * Updates development tools
 
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/182/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
+For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/185/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
 
 ## How do I get set up?
 
