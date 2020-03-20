@@ -2,8 +2,7 @@
 
 .cl-hero {
 
-  &:not(.fullwidth),
-  &:not(.super) {
+  &:not(.fullwidth):not(.super) {
 
     .cl-hero-proper {
       border-radius: .2rem;
