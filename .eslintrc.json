@@ -3,7 +3,7 @@
     "es6": true,
     "browser": true
   },
-  "extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
+  "extends": [ "plugin:@wordpress/eslint-plugin/recommended-with-formatting" ],
   "rules": {
     "no-undef": ["warn"],
     "no-unused-vars": ["warn"],
