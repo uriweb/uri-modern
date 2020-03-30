@@ -61,3 +61,7 @@ p {
   margin: 0 0 2rem;
   max-width: 750px;
 }
+
+p:empty {
+    display: initial;
+}
