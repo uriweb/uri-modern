@@ -38,7 +38,7 @@ STATIC VERSION
 @import 'partials/lightbox';
 @import 'partials/programfinder';
 @import 'partials/people';
-@import 'partials/editor';
+@import 'partials/editor'; // Keep last in this list
 
 /* COMPONENT LIBRARY */
 @import 'partials/cl/boxouts';
@@ -58,4 +58,4 @@ STATIC VERSION
 @import 'partials/cl/slideshows';
 @import 'partials/cl/tabs';
 @import 'partials/cl/videos';
-@import 'partials/cl/gutenberg'; // Keep Last
+@import 'partials/cl/gutenberg'; // Keep last in this list
