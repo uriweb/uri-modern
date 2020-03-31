@@ -23,7 +23,7 @@
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
     "@wordpress/eslint-plugin": "^4.0.0",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.5",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.2",
     "gulp-concat": ">=2.6.1",
