@@ -15,9 +15,8 @@
  * Gutenberg scripts and styles
  */
 function uri_modern_gutenberg_scripts() {
-	$file = get_template_directory() . '/js/block-editor.min.js';
-	$cache_buster = filemtime( $file );
-	wp_enqueue_script( 'uri-modern-block-editor', $file, array( 'wp-blocks', 'wp-dom' ), $cache_buster, true );
+	$file = get_template_directory_uri() . '/js/block-editor.min.js';
+	wp_enqueue_script( 'uri-modern-block-editor', $file, array( 'wp-blocks', 'wp-dom' ), uri_modern_cache_buster(), true );
 }
 add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
 
@@ -28,6 +27,7 @@ add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
  */
 function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 	return array(
+		'core/block',
 		// common
 		'core/paragraph',
 		'core/image',
