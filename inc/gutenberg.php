@@ -105,6 +105,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'uri-cl/boxout',
 		'uri-cl/button',
 		'uri-cl/card',
+		'uri-cl/date',
 		'uri-cl/hero',
 		'uri-cl/hero2',
 		'uri-cl/metric',
