@@ -23,4 +23,29 @@
 
   }
 
+  &.micro {
+
+    a {
+
+    	background: $blue;
+
+      &:hover,
+      &:focus {
+        background: $link;
+      }
+
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .cl-promo-micro-text-link {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: $type-sans;
+    }
+
+  }
+
 }
