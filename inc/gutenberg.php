@@ -111,6 +111,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'uri-cl/metric',
 		'uri-cl/notice',
 		'uri-cl/panel',
+		'uri-cl/promo',
 		'uri-cl/quote',
 		'uri-cl/tab',
 		'uri-cl/tabs',
