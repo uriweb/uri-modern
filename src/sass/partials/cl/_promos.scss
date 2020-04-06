@@ -5,7 +5,7 @@
   .cl-promo-backdrop-wrapper {
 
     .cl-promo-backdrop.style-brand {
-      background-color: #000;
+      background-color: $blue;
     }
 
   }
@@ -14,7 +14,7 @@
 
     .cl-promo-img {
 
-      a img {
+      .cl-promo-img-link img {
         border-radius: 3px;
         border: 1px solid rgba(255,255,255,.5);
       }
