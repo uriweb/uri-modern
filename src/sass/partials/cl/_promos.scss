@@ -41,9 +41,26 @@
     }
 
     .cl-promo-micro-text-link {
+
       text-transform: uppercase;
       font-weight: 700;
       font-family: $type-sans;
+      padding-right: 1.5rem;
+
+      &:after {
+        display: block;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        content: '';
+        width: $card-icon-width;
+        height: $card-icon-height;
+        background-image: url('images/cl/icon-card-link.png');
+        background-position: 0 calc( #{$card-icon-height} * -2 );
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+      }
+
     }
 
   }

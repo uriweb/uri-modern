@@ -70,6 +70,11 @@
   background-color: $blue;
 }
 
+/** PROMOS **/
+.cl-promo.micro .cl-promo-micro-text-link:after {
+	display: none;
+}
+
 /** QUOTES **/
 .cl-quote {
   font-family: Charter, Georgia, serif;
