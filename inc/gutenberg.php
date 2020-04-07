@@ -109,6 +109,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'uri-cl/hero',
 		'uri-cl/hero2',
 		'uri-cl/metric',
+		'uri-cl/menu',
 		'uri-cl/notice',
 		'uri-cl/panel',
 		'uri-cl/promo',
