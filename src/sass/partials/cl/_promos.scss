@@ -5,7 +5,7 @@
   .cl-promo-backdrop-wrapper {
 
     .cl-promo-backdrop.style-brand {
-      background-color: #000;
+      background-color: $blue;
     }
 
   }
@@ -14,9 +14,51 @@
 
     .cl-promo-img {
 
-      a img {
+      .cl-promo-img-link img {
         border-radius: 3px;
         border: 1px solid rgba(255,255,255,.5);
+      }
+
+    }
+
+  }
+
+  &.micro {
+
+    .cl-promo-micro-content-wrapper {
+
+    	background: $blue;
+
+      &:hover,
+      &:focus {
+        background: $link;
+      }
+
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .cl-promo-micro-text-link {
+
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: $type-sans;
+      padding-right: 1.5rem;
+
+      &:after {
+        display: block;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        content: '';
+        width: $card-icon-width;
+        height: $card-icon-height;
+        background-image: url('images/cl/icon-card-link.png');
+        background-position: 0 calc( #{$card-icon-height} * -2 );
+        background-repeat: no-repeat;
+        background-size: 100% auto;
       }
 
     }

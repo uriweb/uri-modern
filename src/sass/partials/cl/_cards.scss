@@ -77,8 +77,8 @@
           top: 2px;
           right: 1.5rem;
           content: '';
-          width: 10px;
-          height: calc( 111 / 128 * 10px );
+          width: $card-icon-width;
+          height: $card-icon-height;
           background-image: url('images/cl/icon-card-link.png');
           background-position: 0 0;
           background-repeat: no-repeat;
@@ -98,7 +98,7 @@
         border-top: none;
 
         &:after {
-          background-position: 0 100%;
+          background-position: 0 calc( #{$card-icon-height} * -1 );
         }
     }
 
