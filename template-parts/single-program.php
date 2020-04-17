@@ -61,52 +61,40 @@ get_header();
 							);
 						?>
 
-						<?php if ( $time_to_completion = uri_modern_get_field( 'time_to_completion' ) ) { ?>
-						<div class="time-to-completion">
-							<h3>Time to Completion</h3>
-							<?php print $time_to_completion; ?>
-						</div>
-						<?php } ?>
+						<hr>
 
-						<?php if ( $application_deadline = uri_modern_get_field( 'application_deadline' ) ) { ?>
-						<div class="application-deadline">
-							<h3>Application Deadline</h3>
-							<?php print $application_deadline; ?>
+						<div class="program-info">
+
+							<?php if ( $time_to_completion = uri_modern_get_field( 'time_to_completion' ) ) { ?>
+							<div class="time-to-completion">
+								<h3>Time to Completion</h3>
+								<?php print $time_to_completion; ?>
+							</div>
+							<?php } ?>
+
+							<?php if ( $application_deadline = uri_modern_get_field( 'application_deadline' ) ) { ?>
+							<div class="application-deadline">
+								<h3>Application Deadline</h3>
+								<?php print $application_deadline; ?>
+							</div>
+							<?php } ?>
+
 						</div>
-						<?php } ?>
 
 
 					</div><!-- .entry-content -->
 
-					<div class="cl-boxout program-links">
+					<div class="program-links">
 
-						<?php if ( $department_website = uri_modern_get_field( 'department_website' ) ) { ?>
-						<div class="department-website">
-							<?php echo do_shortcode( '[cl-button link="' . $department_website . '" text="Department Website"]' ); ?>
-						</div>
-						<?php } ?>
-
-						<?php if ( $catalog_info = uri_modern_get_field( 'catalog_info' ) ) { ?>
-						<div class="catalog-info">
-							<?php echo do_shortcode( '[cl-button link="' . $catalog_info . '" text="Catalog Information"]' ); ?>
+						<?php if ( $course_schedule = uri_modern_get_field( 'course_schedule' ) ) { ?>
+						<div class="course-schedule">
+							<a href="<?php echo $course_schedule; ?>"><span class="icon"></span>Course Schedule</a>
 						</div>
 						<?php } ?>
 
 						<?php if ( $course_descriptions = uri_modern_get_field( 'course_descriptions' ) ) { ?>
 						<div class="course-descriptions">
-							<?php echo do_shortcode( '[cl-button link="' . $course_descriptions . '" text="Course Descriptions"]' ); ?>
-						</div>
-						<?php } ?>
-
-						<?php if ( $course_schedule = uri_modern_get_field( 'course_schedule' ) ) { ?>
-						<div class="course-schedule">
-							<?php echo do_shortcode( '[cl-button link="' . $course_schedule . '" text="Course Schedule"]' ); ?>
-						</div>
-						<?php } ?>
-
-						<?php if ( $admission_info = uri_modern_get_field( 'admission_info' ) ) { ?>
-						<div class="admission-info">
-							<?php echo do_shortcode( '[cl-button link="' . $admission_info . '" text="Admission Information"]' ); ?>
+							<a href="<?php echo $course_descriptions; ?>"><span class="icon"></span>Course Descriptions</a>
 						</div>
 						<?php } ?>
 
@@ -117,12 +105,34 @@ get_header();
 							<div class="curriculum-sheets">
 							<?php
 							if ( null !== $curriculum_sheets ) {
-								echo do_shortcode( '[cl-button link="' . $curriculum_sheets . '" text="Curriculum Sheets"]' );
+								echo '<a href="' . $curriculum_sheets . '"><span class="icon"></span>Curriculum Sheets</a>';
 								} else if ( has_category( 'bachelors' ) ) {
-								echo do_shortcode( '[cl-button link="https://web.uri.edu/advising/curriculum-sheets-all/" text="Curriculum Sheets"]' );
+								echo '<a href="https://web.uri.edu/advising/curriculum-sheets-all/"><span class="icon"></span>Curriculum Sheets</a>';
 								}
 							?>
 							</div>
+						<?php } ?>
+
+						<?php if ( $catalog_info = uri_modern_get_field( 'catalog_info' ) ) { ?>
+						<div class="catalog-info">
+							<a href="<?php echo $catalog_info; ?>"><span class="icon"></span>Catalog Information</a>
+						</div>
+						<?php } ?>
+
+					</div><!-- .program-links -->
+
+					<div class="cl-tiles thirds">
+
+						<?php if ( $department_website = uri_modern_get_field( 'department_website' ) ) { ?>
+						<div class="department-website">
+							<?php echo do_shortcode( '[cl-button link="' . $department_website . '" text="Department Website"]' ); ?>
+						</div>
+						<?php } ?>
+
+						<?php if ( $admission_info = uri_modern_get_field( 'admission_info' ) ) { ?>
+						<div class="admission-info">
+							<?php echo do_shortcode( '[cl-button link="' . $admission_info . '" text="Admission Information"]' ); ?>
+						</div>
 						<?php } ?>
 
 						<?php if ( $apply = uri_modern_get_field( 'apply' ) ) { ?>
@@ -131,7 +141,7 @@ get_header();
 						</div>
 						<?php } ?>
 
-					</div><!-- .program-links -->
+					</div>
 
 		<?php endwhile; // End of the loop. ?>
 

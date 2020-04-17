@@ -7,3 +7,151 @@
 #program-status {
     font-family: $type-sans;
 }
+
+.type-program {
+
+  .featured-image {
+
+    width: 100%;
+
+    img {
+      border-radius: .2rem;
+    }
+
+  }
+
+  .cl-button {
+    margin-bottom: .8rem;
+  }
+
+}
+
+.program-info,
+.program-links {
+  width: 100%;
+  background: #eee;
+  border-radius: .2rem;
+  overflow: hidden;
+}
+
+.program-info {
+
+  margin-bottom: 5px;
+  color: $darkgrey;
+
+  h3 {
+    color: $darkgrey;
+  }
+
+  &>div {
+
+    padding: 1.5rem 2.5rem 1.5rem 1.5rem;
+
+    &:nth-child(2) {
+      border-top: 2px solid #fafafa;
+    }
+
+  }
+
+}
+
+.program-links {
+
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+
+  &>div {
+
+    flex: 1 0 calc( 50% - 1px );
+
+    &:not(:nth-child(1)) {
+      border-left: 2px solid #fafafa;
+    }
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      border-bottom: 2px solid #fafafa;
+    }
+
+  }
+
+  a {
+
+    display: block;
+    padding: 3.2rem 1rem 4rem;
+    text-align: center;
+    font-size: .9rem;
+
+    &:hover,
+    &:focus {
+      background: $grey;
+      color: $link;
+    }
+
+  }
+
+  .icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto .8rem;
+    background-image: url(images/program-finder/sprite_icons.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: auto 100%;
+  }
+
+  .course-schedule .icon {
+    background-position: 0 0;
+  }
+
+  .course-descriptions .icon {
+    background-position: -24px 0;
+  }
+
+  .curriculum-sheets .icon {
+    background-position: -48px 0;
+  }
+
+  .catalog-info .icon {
+    background-position: -72px 0;
+  }
+
+}
+
+@media screen and (min-width: $break2 ) {
+
+  .type-program .featured-image {
+    max-width: 350px;
+  }
+
+  .program-info,
+  .program-links {
+
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    background: #eee;
+    border-radius: .2rem;
+    overflow: hidden;
+
+    &>div {
+
+      flex: 1 0 0;
+      border-top: none !important;
+      border-bottom: none !important;
+
+      &:not(:nth-child(1)) {
+        border-left: 2px solid #fafafa;
+      }
+
+    }
+
+  }
+
+  .program-links a {
+    font-size: 1rem;
+  }
+
+}
