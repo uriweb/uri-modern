@@ -58,15 +58,14 @@
 		$terms_raw = get_the_terms( $post, 'peoplegroups' );
 		$terms = array();
 		foreach ( $terms_raw as $t ) {
-		$terms[] = '<a href="?_sft_peoplegroups=' . $t->slug . '">' . $t->name . '</a>';
+		$terms[] = '<a href="?_sft_peoplegroups=' . $t->slug . '">' . uri_modern_result_highlight( $t->name, $search ) . '</a>';
 		}
 		if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
 		?>
 		<div class="people-expertise people-field tags-links"><span class="people-expertise-label">Areas of expertise: </span>
 		<?php
 		$terms = implode( ' ', $terms );
-		// echo $terms;
-		echo uri_modern_result_highlight( $terms, $search );
+		echo $terms;
 		?>
 		</div>
 		<?php endif; ?>
