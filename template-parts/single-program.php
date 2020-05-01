@@ -65,6 +65,38 @@ get_header();
 
 						<div class="program-info">
 
+							<?php if ( $accreditation = uri_modern_get_field( 'accreditation' ) ) { ?>
+							<div class="accreditation">
+								<h3>Accreditation</h3>
+								<?php print $accreditation; ?>
+							</div>
+							<?php } ?>
+
+							<?php if ( $specializations = uri_modern_get_field( 'specializations' ) ) { ?>
+							<div class="specializations">
+								<h3>Specializations</h3>
+								<?php
+								$specializations = explode( ',', $specializations );
+								print '<ul>';
+								foreach ( $specializations as $s ) {
+									print '<li>' . trim( $s ) . '</li>';
+								}
+								print '</ul>';
+								?>
+							</div>
+							<?php } ?>
+
+						</div>
+
+						<div class="program-info">
+
+							<?php if ( $classes_offered = uri_modern_get_field( 'classes_offered' ) ) { ?>
+							<div class="classes-offered">
+								<h3>Classes Offered</h3>
+								<?php print $classes_offered; ?>
+							</div>
+							<?php } ?>
+
 							<?php if ( $time_to_completion = uri_modern_get_field( 'time_to_completion' ) ) { ?>
 							<div class="time-to-completion">
 								<h3>Time to Completion</h3>
