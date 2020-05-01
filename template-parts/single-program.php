@@ -99,19 +99,18 @@ get_header();
 						<?php } ?>
 
 						<?php
-							$curriculum_sheets = get_field( 'curriculum_sheets' );
-							if ( null !== $curriculum_sheets || has_category( 'bachelors' ) ) {
-							?>
-							<div class="curriculum-sheets">
-							<?php
-							if ( null !== $curriculum_sheets ) {
-								echo '<a href="' . $curriculum_sheets . '"><span class="icon"></span>Curriculum Sheets</a>';
-								} else if ( has_category( 'bachelors' ) ) {
-								echo '<a href="https://web.uri.edu/advising/curriculum-sheets-all/"><span class="icon"></span>Curriculum Sheets</a>';
-								}
-							?>
-							</div>
-						<?php } ?>
+						$curriculum_sheets = get_field( 'curriculum_sheets' );
+						$curriculum_default_link = 'https://web.uri.edu/advising/curriculum-sheets-all/';
+						if ( ( null != $curriculum_sheets || ! empty( $curriculum_sheets ) ) && $curriculum_default_link != $curriculum_sheets ) {
+							echo '<div class="advising">';
+							echo '<a href="' . $curriculum_sheets . '"><span class="icon"></span>Advising</a>';
+							echo '</div>';
+						} else if ( has_category( 'bachelors' ) ) {
+							echo '<div class="curriculum-sheets">';
+							echo '<a href="' . $curriculum_default_link . '"><span class="icon"></span>Curriculum Sheets</a>';
+							echo '</div>';
+						}
+						?>
 
 						<?php if ( $catalog_info = uri_modern_get_field( 'catalog_info' ) ) { ?>
 						<div class="catalog-info">
