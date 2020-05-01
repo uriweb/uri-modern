@@ -68,7 +68,18 @@ get_header();
 							<?php if ( $accreditation = uri_modern_get_field( 'accreditation' ) ) { ?>
 							<div class="accreditation">
 								<h3>Accreditation</h3>
-								<?php print $accreditation; ?>
+								<?php
+								$accreditation = explode( ',', $accreditation );
+								if ( 1 == sizeof( $accreditation ) ) {
+									print $accreditation[0];
+								} else {
+									print '<ul>';
+									foreach ( $accreditation as $a ) {
+										print '<li>' . trim( $a ) . '</li>';
+									}
+									print '</ul>';
+								}
+								?>
 							</div>
 							<?php } ?>
 
@@ -77,11 +88,15 @@ get_header();
 								<h3>Specializations</h3>
 								<?php
 								$specializations = explode( ',', $specializations );
-								print '<ul>';
-								foreach ( $specializations as $s ) {
-									print '<li>' . trim( $s ) . '</li>';
+								if ( 1 == sizeof( $specializations ) ) {
+									print $specializations[0];
+								} else {
+									print '<ul>';
+									foreach ( $specializations as $s ) {
+										print '<li>' . trim( $s ) . '</li>';
+									}
+									print '</ul>';
 								}
-								print '</ul>';
 								?>
 							</div>
 							<?php } ?>
