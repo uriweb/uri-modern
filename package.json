@@ -22,7 +22,7 @@
   "license": "GPL-3.0",
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
-    "@wordpress/eslint-plugin": "^4.1.0",
+    "@wordpress/eslint-plugin": "^5.1.0",
     "autoprefixer": "^9.7.6",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.2",
@@ -32,7 +32,7 @@
     "gulp-imagemin": "^7.1.0",
     "gulp-postcss": ">=8.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^4.1.0",
     "gulp-shell": "^0.8.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-strip-debug": ">=3.0.0",
