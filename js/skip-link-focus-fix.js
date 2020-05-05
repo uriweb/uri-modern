@@ -5,7 +5,6 @@
  *
  * Learn more: https://git.io/vWdr2
  *
- * @package uri-modern
  */
 
 ( function() {
