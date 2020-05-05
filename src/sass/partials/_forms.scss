@@ -8,19 +8,20 @@
 	100% { background: $grey; }
 }
 
+.modern-form form,
 form.modern-form {
-	
-    background: #f3f3f3;
-    box-sizing: border-box;
-    border-bottom: 1px solid $grey;
-    border-top: 1px solid $grey;
-    padding: 1.5rem 2rem;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    margin-left: -50vw;
-    font-family: $type-sans;
-	
+
+  background: #f3f3f3;
+  box-sizing: border-box;
+  border-bottom: 1px solid $grey;
+  border-top: 1px solid $grey;
+  padding: 1.5rem 2rem;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  font-family: $type-sans;
+
 	legend {
     	background: $link;
 		color: $white;
@@ -129,14 +130,14 @@ form.modern-form {
 
 				&:hover,
 				&:focus {
-					
+
 					cursor: pointer;
 					background: #fafafa;
-					
+
 					&:before {
 						border: 3px solid #b4daff;
 					}
-					
+
 				}
 
 			}
@@ -207,23 +208,24 @@ form.modern-form {
 
 
 	}
-	
+
 }
 
 @media all and (min-width: $break1) {
-    form.modern-form {
-        border: 1px solid $grey;
-        padding: 1.5rem 1rem;
-        border-radius: .2rem;
-        width: 100%;
-        left: 0;
-        margin-left: 0;
-    }
+	.modern-form form,
+	form.modern-form {
+    border: 1px solid $grey;
+    padding: 1.5rem 1rem;
+    border-radius: .2rem;
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+  }
 }
 
 @media all and (min-width: $break2) {
-    form.modern-form {
-        padding: 2rem;
-    }
+	.modern-form form,
+	form.modern-form {
+    padding: 2rem;
+  }
 }
-
