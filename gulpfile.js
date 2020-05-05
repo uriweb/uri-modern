@@ -55,6 +55,10 @@ gulp.task('scripts', scripts);
 
 function scripts(done) {
 
+  gulp.src('./js/**/*.js')
+    .pipe(eslint(done))
+    .pipe(eslint.format());
+
   gulp.src('./src/js/**/*.js')
     .pipe(eslint(done))
     .pipe(eslint.format());

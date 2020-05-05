@@ -1,7 +1,6 @@
 /**
  * Block Editor
  *
- * @package uri-modern
  */
 
 // jshint esversion: 6
