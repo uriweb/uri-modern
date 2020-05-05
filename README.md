@@ -34,4 +34,4 @@ Contributors: Brandon Fuller, John Pennypacker
 Tags: themes  
 Requires at least: 4.0  
 Tested up to: 5.4  
-Stable tag: 2.1.0  
+Stable tag: 2.2.0  
