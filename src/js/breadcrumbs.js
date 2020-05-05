@@ -1,7 +1,6 @@
 /**
  * Mobile breadcrumbs control
  *
- * @package uri-modern
  */
 
 ( function() {

@@ -61,46 +61,117 @@ get_header();
 							);
 						?>
 
-						<?php if ( $time_to_completion = uri_modern_get_field( 'time_to_completion' ) ) { ?>
-						<div class="time-to-completion">
-							<h3>Time to Completion</h3>
-							<?php print $time_to_completion; ?>
-						</div>
-						<?php } ?>
+						<hr>
 
-						<?php if ( $application_deadline = uri_modern_get_field( 'application_deadline' ) ) { ?>
-						<div class="application-deadline">
-							<h3>Application Deadline</h3>
-							<?php print $application_deadline; ?>
+						<div class="program-info">
+
+							<?php if ( $accreditation = uri_modern_get_field( 'accreditation' ) ) { ?>
+							<div class="accreditation">
+								<h3>Accreditation</h3>
+								<?php
+								$accreditation = explode( ',', $accreditation );
+								if ( 1 == sizeof( $accreditation ) ) {
+									print $accreditation[0];
+								} else {
+									print '<ul>';
+									foreach ( $accreditation as $a ) {
+										print '<li>' . trim( $a ) . '</li>';
+									}
+									print '</ul>';
+								}
+								?>
+							</div>
+							<?php } ?>
+
+							<?php if ( $specializations = uri_modern_get_field( 'specializations' ) ) { ?>
+							<div class="specializations">
+								<h3>Specializations</h3>
+								<?php
+								$specializations = explode( ',', $specializations );
+								if ( 1 == sizeof( $specializations ) ) {
+									print $specializations[0];
+								} else {
+									print '<ul>';
+									foreach ( $specializations as $s ) {
+										print '<li>' . trim( $s ) . '</li>';
+									}
+									print '</ul>';
+								}
+								?>
+							</div>
+							<?php } ?>
+
 						</div>
-						<?php } ?>
+
+						<div class="program-info">
+
+							<?php if ( $classes_offered = uri_modern_get_field( 'classes_offered' ) ) { ?>
+							<div class="classes-offered">
+								<h3>Classes Offered</h3>
+								<?php print $classes_offered; ?>
+							</div>
+							<?php } ?>
+
+							<?php if ( $time_to_completion = uri_modern_get_field( 'time_to_completion' ) ) { ?>
+							<div class="time-to-completion">
+								<h3>Time to Completion</h3>
+								<?php print $time_to_completion; ?>
+							</div>
+							<?php } ?>
+
+							<?php if ( $application_deadline = uri_modern_get_field( 'application_deadline' ) ) { ?>
+							<div class="application-deadline">
+								<h3>Application Deadline</h3>
+								<?php print $application_deadline; ?>
+							</div>
+							<?php } ?>
+
+						</div>
 
 
 					</div><!-- .entry-content -->
 
-					<div class="cl-boxout program-links">
+					<div class="program-links">
 
-						<?php if ( $department_website = uri_modern_get_field( 'department_website' ) ) { ?>
-						<div class="department-website">
-							<?php echo do_shortcode( '[cl-button link="' . $department_website . '" text="Department Website"]' ); ?>
-						</div>
-						<?php } ?>
-
-						<?php if ( $catalog_info = uri_modern_get_field( 'catalog_info' ) ) { ?>
-						<div class="catalog-info">
-							<?php echo do_shortcode( '[cl-button link="' . $catalog_info . '" text="Catalog Information"]' ); ?>
+						<?php if ( $course_schedule = uri_modern_get_field( 'course_schedule' ) ) { ?>
+						<div class="course-schedule">
+							<a href="<?php echo $course_schedule; ?>"><span class="icon"></span>Course Schedule</a>
 						</div>
 						<?php } ?>
 
 						<?php if ( $course_descriptions = uri_modern_get_field( 'course_descriptions' ) ) { ?>
 						<div class="course-descriptions">
-							<?php echo do_shortcode( '[cl-button link="' . $course_descriptions . '" text="Course Descriptions"]' ); ?>
+							<a href="<?php echo $course_descriptions; ?>"><span class="icon"></span>Course Descriptions</a>
 						</div>
 						<?php } ?>
 
-						<?php if ( $course_schedule = uri_modern_get_field( 'course_schedule' ) ) { ?>
-						<div class="course-schedule">
-							<?php echo do_shortcode( '[cl-button link="' . $course_schedule . '" text="Course Schedule"]' ); ?>
+						<?php
+						$curriculum_sheets = get_field( 'curriculum_sheets' );
+						$curriculum_default_link = 'https://web.uri.edu/advising/curriculum-sheets-all/';
+						if ( ( null != $curriculum_sheets || ! empty( $curriculum_sheets ) ) && $curriculum_default_link != $curriculum_sheets ) {
+							echo '<div class="advising">';
+							echo '<a href="' . $curriculum_sheets . '"><span class="icon"></span>Advising</a>';
+							echo '</div>';
+						} else if ( has_category( 'bachelors' ) ) {
+							echo '<div class="curriculum-sheets">';
+							echo '<a href="' . $curriculum_default_link . '"><span class="icon"></span>Curriculum Sheets</a>';
+							echo '</div>';
+						}
+						?>
+
+						<?php if ( $catalog_info = uri_modern_get_field( 'catalog_info' ) ) { ?>
+						<div class="catalog-info">
+							<a href="<?php echo $catalog_info; ?>"><span class="icon"></span>Catalog Information</a>
+						</div>
+						<?php } ?>
+
+					</div><!-- .program-links -->
+
+					<div class="cl-tiles thirds">
+
+						<?php if ( $department_website = uri_modern_get_field( 'department_website' ) ) { ?>
+						<div class="department-website">
+							<?php echo do_shortcode( '[cl-button link="' . $department_website . '" text="Department Website"]' ); ?>
 						</div>
 						<?php } ?>
 
@@ -110,28 +181,13 @@ get_header();
 						</div>
 						<?php } ?>
 
-						<?php
-							$curriculum_sheets = get_field( 'curriculum_sheets' );
-							if ( null !== $curriculum_sheets || has_category( 'bachelors' ) ) {
-							?>
-							<div class="curriculum-sheets">
-							<?php
-							if ( null !== $curriculum_sheets ) {
-								echo do_shortcode( '[cl-button link="' . $curriculum_sheets . '" text="Curriculum Sheets"]' );
-								} else if ( has_category( 'bachelors' ) ) {
-								echo do_shortcode( '[cl-button link="https://web.uri.edu/advising/curriculum-sheets-all/" text="Curriculum Sheets"]' );
-								}
-							?>
-							</div>
-						<?php } ?>
-
 						<?php if ( $apply = uri_modern_get_field( 'apply' ) ) { ?>
 						<div class="apply">
 							<?php echo do_shortcode( '[cl-button link="' . $apply . '" text="Apply" style="prominent"]' ); ?>
 						</div>
 						<?php } ?>
 
-					</div><!-- .program-links -->
+					</div>
 
 		<?php endwhile; // End of the loop. ?>
 

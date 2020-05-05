@@ -1,7 +1,6 @@
 /**
  * You menu control
  *
- * @package uri-modern
  */
 
 ( function() {

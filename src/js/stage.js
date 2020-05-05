@@ -1,7 +1,6 @@
 /**
  * The Stage
  *
- * @package uri-modern
  */
 
 ( function() {
