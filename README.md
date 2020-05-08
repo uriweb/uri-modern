@@ -4,7 +4,7 @@ URI Modern is a WordPress theme designed for the University of Rhode Island. It'
 
 ## What's new in 2.2.1
 
-URI Modern 2.2.0 is a bug fix release.
+URI Modern 2.2.1 is a bug fix release.
 
 * Updates [URI Program Finder](https://github.com/uriweb/uri-program-finder) template to comply with Program Finder [v1.4.1](https://github.com/uriweb/uri-program-finder/releases/tag/1.4.1) release
 
