@@ -41,7 +41,8 @@
 
     box-shadow: $level1;
 
-    img, iframe {
+    img,
+    .video iframe {
       transform: scale(1);
       transform-origin: center bottom;
       transition: transform .2s ease-in-out;
@@ -77,14 +78,21 @@
           top: 2px;
           right: 1.5rem;
           content: '';
-          width: $card-icon-width;
-          height: $card-icon-height;
+          width: 10px;
+          height: 10px;
           background-image: url('images/cl/icon-card-link.png');
           background-position: 0 0;
           background-repeat: no-repeat;
           background-size: 100% auto;
         }
 
+    }
+
+    &.cl-card-video-feature .cl-button:after {
+      top: 0;
+      background-image: url('images/cl/icon-card-feature.png');
+      width: 14px;
+      height: 14px;
     }
 
     &:hover .cl-button,
@@ -98,8 +106,18 @@
         border-top: none;
 
         &:after {
-          background-position: 0 calc( #{$card-icon-height} * -1 );
+          background-position: 0 -10px;
         }
+
+    }
+
+    &:hover.cl-card-video-feature .cl-button,
+    &:focus.cl-card-video-feature .cl-button,
+    &.cl-card-video-feature .cl-button:hover,
+    &.cl-card-video-feature .cl-button:focus {
+      &:after {
+        background-position: 0 -14px;
+      }
     }
 
     &:hover,
@@ -108,7 +126,8 @@
       top: 0;
       box-shadow: $level2;
 
-      img, iframe {
+      img,
+      .video iframe {
         transform: scale(1.03);
       }
 
