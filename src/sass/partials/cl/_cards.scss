@@ -41,7 +41,7 @@
 
     box-shadow: $level1;
 
-    img {
+    img, iframe {
       transform: scale(1);
       transform-origin: center bottom;
       transition: transform .2s ease-in-out;
@@ -108,7 +108,7 @@
       top: 0;
       box-shadow: $level2;
 
-      img {
+      img, iframe {
         transform: scale(1.03);
       }
 
