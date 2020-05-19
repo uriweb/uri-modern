@@ -10,13 +10,6 @@
 
     font-family: $type-sans;
     border-radius: .2rem;
-    transform: translateY(0);
-    transition: all .2s ease-in-out;
-
-    &:hover,
-    &:focus {
-      transform: translateY(-2px);
-    }
 
     .cl-card-text {
       padding: 1.5rem 1.5rem 0;
@@ -42,7 +35,8 @@
     box-shadow: $level1;
 
     img,
-    .video iframe {
+    .video iframe,
+    .video .poster {
       transform: scale(1);
       transform-origin: center bottom;
       transition: transform .2s ease-in-out;
@@ -88,7 +82,7 @@
 
     }
 
-    &.cl-card-video-feature .cl-button:after {
+    &.cl-card-theatre .cl-button:after {
       top: 0;
       background-image: url('images/cl/icon-card-feature.png');
       width: 14px;
@@ -111,10 +105,10 @@
 
     }
 
-    &:hover.cl-card-video-feature .cl-button,
-    &:focus.cl-card-video-feature .cl-button,
-    &.cl-card-video-feature .cl-button:hover,
-    &.cl-card-video-feature .cl-button:focus {
+    &:hover.cl-card-theatre .cl-button,
+    &:focus.cl-card-theatre .cl-button,
+    &.cl-card-theatre .cl-button:hover,
+    &.cl-card-theatre .cl-button:focus {
       &:after {
         background-position: 0 -14px;
       }
@@ -127,7 +121,8 @@
       box-shadow: $level2;
 
       img,
-      .video iframe {
+      .video iframe,
+      .video .poster {
         transform: scale(1.03);
       }
 
