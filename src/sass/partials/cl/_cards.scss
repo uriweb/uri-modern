@@ -42,7 +42,7 @@
       transition: transform .2s ease-in-out;
     }
 
-    .cl-button {
+    .button {
 
         font-size: .8rem;
         font-weight: 700;
@@ -50,7 +50,7 @@
         line-height: 1rem;
         text-transform: uppercase;
         color: $midgrey;
-        transition: all .2s;
+        //transition: all .2s;
         text-align: left;
         padding: 0 2.9rem 1.2rem 1.5rem;
         border-top: none;
@@ -82,20 +82,20 @@
 
     }
 
-    &.cl-card-theatre .cl-button:after {
+    &.cl-card-theatre .button:after {
       top: 0;
       background-image: url('images/cl/icon-card-feature.png');
       width: 14px;
       height: 14px;
     }
 
-    &:hover .cl-button,
-    &:focus .cl-button,
-    .cl-button:hover,
-    .cl-button:focus {
+    &:hover .button,
+    &:focus .button,
+    .button:hover,
+    .button:focus {
 
-        transition: all .3s;
-        background: inherit;
+        //transition: all .3s;
+        background: initial;
         color: $link;
         border-top: none;
 
@@ -105,12 +105,23 @@
 
     }
 
-    &:hover.cl-card-theatre .cl-button,
-    &:focus.cl-card-theatre .cl-button,
-    &.cl-card-theatre .cl-button:hover,
-    &.cl-card-theatre .cl-button:focus {
+    &.cl-card-theatre {
+
+      &:hover .button,
+      &:focus .button,
+      .button:hover,
+      .button:focus {
+        color: #1fa1ff;
+      }
+
+    }
+
+    &:hover.cl-card-theatre .button,
+    &:focus.cl-card-theatre .button,
+    &.cl-card-theatre .button:hover,
+    &.cl-card-theatre .button:focus {
       &:after {
-        background-position: 0 -14px;
+        background-position: 0 -28px;
       }
     }
 
