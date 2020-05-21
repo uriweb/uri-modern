@@ -52,7 +52,7 @@
         color: $midgrey;
         //transition: all .2s;
         text-align: left;
-        padding: 0 2.9rem 1.2rem 1.5rem;
+        padding: 1.2rem 2.9rem 1.2rem 1.5rem;
         border-top: none;
         position: relative;
 
@@ -69,7 +69,7 @@
         &:after {
           display: block;
           position: absolute;
-          top: 2px;
+          top: calc( 1.2rem + 2px );
           right: 1.5rem;
           content: '';
           width: 10px;
@@ -83,7 +83,7 @@
     }
 
     &.cl-card-theatre .button:after {
-      top: 0;
+      top: 1.2rem;
       background-image: url('images/cl/icon-card-feature.png');
       width: 14px;
       height: 14px;
