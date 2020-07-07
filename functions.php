@@ -680,3 +680,26 @@ function uri_modern_hide_archive_title( $title ) {
 }
 
 add_filter( 'get_the_archive_title', 'uri_modern_hide_archive_title' );
+
+
+/**
+ * adds an image to the rss and atom feeds
+ *
+ */
+function uri_modern_add_image_to_feed() {
+	global $post;
+
+	$output = '';
+	if ( has_post_thumbnail( $post->ID ) ) {
+		$id = get_post_thumbnail_id( $post->ID );
+		$thumbnail = wp_get_attachment_image_src( $id, 'half_column' );
+		$type =  get_post_mime_type( $id );
+		$bytes = filesize( get_attached_file( $id ) );
+
+		$output = '<enclosure url="'. $thumbnail[0] .'" length="' . $bytes . '" type="' . $type . '" />' . "\n";
+
+	}
+	echo $output;
+}
+add_action( 'rss2_item', 'uri_modern_add_image_to_feed' );
+add_action( 'atom_entry', 'uri_modern_add_image_to_feed' );
