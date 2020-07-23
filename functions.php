@@ -689,14 +689,23 @@ add_filter( 'get_the_archive_title', 'uri_modern_hide_archive_title' );
 function uri_modern_add_image_to_feed() {
 	global $post;
 
-	$output = '';
+	$output = "\n";
 	if ( has_post_thumbnail( $post->ID ) ) {
 		$id = get_post_thumbnail_id( $post->ID );
-		$thumbnail = wp_get_attachment_image_src( $id, 'half_column' );
+		$thumbnail = wp_get_attachment_image_src( $id, 'thumbnail' );
 		$type =  get_post_mime_type( $id );
-		$bytes = filesize( get_attached_file( $id ) );
-
-		$output = '<enclosure url="'. $thumbnail[0] .'" length="' . $bytes . '" type="' . $type . '" />' . "\n";
+		if( ! empty( $thumbnail ) ) {
+			$output .= "\t" . '<media:thumbnail url="'. $thumbnail[0] .'" width="'. $thumbnail[1] .'" height="'. $thumbnail[2] .'" />' . "\n";
+		} else {
+			$url = get_template_directory_uri() . '/img/default/uri-200.png';
+			$output .=  '<enclosure url="' . $url . '" type="image/png" />' . "\n";
+		}
+		$original = wp_get_attachment_image_src( $id, NULL );
+		if( ! empty( $original ) ) {
+			$bytes = filesize( get_attached_file( $id ) );			
+			$output .= "\t" . '<media:content url="'. $original[0] .'" type="' . $type . '" width="'. $original[1] .'" height="'. $original[2] .'" />' . "\n";
+			$output .= "\t" . '<enclosure url="'. $original[0] .'" length="' . $bytes . '" type="' . $type . '" />' . "\n";
+		}
 
 	}
 	echo $output;
