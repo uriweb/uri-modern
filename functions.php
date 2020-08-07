@@ -433,8 +433,10 @@ function uri_modern_get_current_path( $strip = true ) {
 	}
 
 	$base_bits = parse_url( site_url() );
-	if ( strpos( $current_path, $base_bits['path'] ) === 0 ) {
-		$current_path = substr( $current_path, strlen( $base_bits['path'] ) );
+	if( ! empty( $current_path ) && ! empty( $base_bits['path'] ) ) {
+		if ( strpos( $current_path, $base_bits['path'] ) === 0 ) {
+			$current_path = substr( $current_path, strlen( $base_bits['path'] ) );
+		}
 	}
 	if ( true === $strip ) {
 		$current_path = rtrim( $current_path, '/' );
