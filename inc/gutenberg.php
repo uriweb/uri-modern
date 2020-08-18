@@ -138,6 +138,43 @@ add_theme_support( 'editor-color-palette' );
 
 
 /**
+ * removes some core patterns, adds a few new ones.
+ */
+function uri_modern_manage_patterns() {
+	$patterns = WP_Block_Patterns_Registry::get_instance()->get_all_registered();
+
+	// unregister every core pattern
+// 	foreach( $patterns as $p ) {
+// 		if ( 'core' === substr( $p['name'], 0, 4 ) ) {
+// 			unregister_block_pattern( $p['name'] );
+// 		}
+// 	}
+
+	// unregister selected core patterns
+	unregister_block_pattern( 'core/two-buttons' );
+	unregister_block_pattern( 'core/three-buttons' );
+	// unregister_block_pattern( 'core/text-two-columns' );
+	// unregister_block_pattern( 'core/two-images' );
+	// unregister_block_pattern( 'core/text-two-columns-with-images' );
+	unregister_block_pattern( 'core/text-three-columns-buttons' );
+	// unregister_block_pattern( 'core/large-header' );
+	// unregister_block_pattern( 'core/large-header-button' );
+	// unregister_block_pattern( 'core/heading-paragraph' );
+	// unregister_block_pattern( 'core/quote' );
+
+	// unregister every core category
+	unregister_block_pattern_category( 'buttons' );
+// 	unregister_block_pattern_category( 'columns' );
+// 	unregister_block_pattern_category( 'gallery' );
+// 	unregister_block_pattern_category( 'header' );
+// 	unregister_block_pattern_category( 'text' );
+
+
+	
+}
+add_action( 'init', 'uri_modern_manage_patterns' );
+
+/**
  * Removes the dropcap widget with a little injected css.
  */
 function uri_modern_hide_font_styles() {
