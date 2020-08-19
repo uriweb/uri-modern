@@ -169,10 +169,8 @@ function uri_modern_manage_patterns() {
 // 	unregister_block_pattern_category( 'header' );
 // 	unregister_block_pattern_category( 'text' );
 
-
-	
 }
-add_action( 'init', 'uri_modern_manage_patterns' );
+add_action( 'enqueue_block_editor_assets', 'uri_modern_manage_patterns' );
 
 /**
  * Removes the dropcap widget with a little injected css.
