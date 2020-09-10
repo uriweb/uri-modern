@@ -35,19 +35,19 @@
 	max-width: 100% !important;
 }
 
-.embed-responsive {
+.embed-responsive, .wp-block-embed.is-type-video {
     display: block;
     height: 0;
     padding: 0 0 56.25%;
     position: relative;
 }
-.embed-responsive-16x9 {
+.embed-responsive-16x9, .wp-embed-aspect-16-9 {
     padding-bottom: 56.25%;
 }
 .embed-responsive-4x3 {
    padding-bottom: 75%;
 }
-.embed-responsive iframe {
+.embed-responsive iframe, .wp-block-embed.is-type-video>.wp-block-embed__wrapper {
     height: 100%;
     position: absolute;
     width: 100%;
