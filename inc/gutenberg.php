@@ -138,7 +138,7 @@ add_theme_support( 'editor-color-palette' );
 
 
 /**
- * removes some core patterns, adds a few new ones.
+ * Removes some core patterns, adds a few new ones.
  */
 function uri_modern_manage_patterns() {
 	$patterns = WP_Block_Patterns_Registry::get_instance()->get_all_registered();

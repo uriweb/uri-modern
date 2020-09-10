@@ -685,7 +685,7 @@ add_filter( 'get_the_archive_title', 'uri_modern_hide_archive_title' );
 
 
 /**
- * adds an image to the rss and atom feeds
+ * Adds an image to the rss and atom feeds
  */
 function uri_modern_add_image_to_feed() {
 	global $post;

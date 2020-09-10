@@ -1,0 +1,55 @@
+/* ==========================================
+   Banded and possibly slanted color blocking
+   ========================================== */
+
+.color-blocks .breakout {
+	padding-top: 8rem;
+	padding-bottom: 6rem;
+}
+
+.color-blocks .content-width > h2 {
+	font-size: 2.2rem;
+	margin-bottom: 3rem;
+	max-width: 500px;
+	line-height: 1.2;
+}
+
+/** default alternating block colors **/
+.color-blocks section .breakout {
+	background-color: #fafafa;
+
+}.color-blocks section:nth-child(odd) .breakout {
+	background-color: #c0ddf2;
+}
+
+.color-blocks section .cl-card {
+	z-index: 2;
+}
+
+.color-blocks section .alignright {
+	min-width: 270px;
+}
+
+.color-blocks figcaption {
+	background-color: #eee;
+	color: #fff;
+	background: rgba(0,0,0,0.5);
+	padding: 1rem;
+	border-radius: 0 0 .2rem .2rem;
+}
+
+
+@media screen and (min-width: 500px) {
+	.color-blocks.slanted section .breakout {
+		clip-path: polygon(0 2rem, 100% 0%, 100% 100%, 0% 100%);
+	}
+	.color-blocks.slanted section:nth-child(even) .breakout {
+		clip-path: polygon(0 0, 100% 2rem, 100% 100%, 0% 100%);
+	}
+	.color-blocks.slanted section:not(:last-of-type) .breakout {
+		margin-bottom: -3rem;
+	}
+	.color-blocks section .alignright {
+		min-width: 450px;
+	}
+}
