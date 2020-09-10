@@ -144,12 +144,11 @@ function uri_modern_manage_patterns() {
 	$patterns = WP_Block_Patterns_Registry::get_instance()->get_all_registered();
 
 	// unregister every core pattern
-// 	foreach( $patterns as $p ) {
-// 		if ( 'core' === substr( $p['name'], 0, 4 ) ) {
-// 			unregister_block_pattern( $p['name'] );
-// 		}
-// 	}
-
+// foreach( $patterns as $p ) {
+// if ( 'core' === substr( $p['name'], 0, 4 ) ) {
+// unregister_block_pattern( $p['name'] );
+// }
+// }
 	// unregister selected core patterns
 	unregister_block_pattern( 'core/two-buttons' );
 	unregister_block_pattern( 'core/three-buttons' );
@@ -161,14 +160,12 @@ function uri_modern_manage_patterns() {
 	// unregister_block_pattern( 'core/large-header-button' );
 	// unregister_block_pattern( 'core/heading-paragraph' );
 	// unregister_block_pattern( 'core/quote' );
-
 	// unregister every core category
 	unregister_block_pattern_category( 'buttons' );
-// 	unregister_block_pattern_category( 'columns' );
-// 	unregister_block_pattern_category( 'gallery' );
-// 	unregister_block_pattern_category( 'header' );
-// 	unregister_block_pattern_category( 'text' );
-
+// unregister_block_pattern_category( 'columns' );
+// unregister_block_pattern_category( 'gallery' );
+// unregister_block_pattern_category( 'header' );
+// unregister_block_pattern_category( 'text' );
 }
 add_action( 'enqueue_block_editor_assets', 'uri_modern_manage_patterns' );
 
