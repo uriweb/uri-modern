@@ -73,7 +73,7 @@ before_script:
     # After CodeSniffer install you should refresh your path.
     - phpenv rehash
     # Install ESLint
-    - npm install -g eslint
+    - npm install -g eslint@6
     # Install WP JS standards
     - npm install @wordpress/eslint-plugin --save-dev
 
