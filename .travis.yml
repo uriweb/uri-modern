@@ -35,6 +35,8 @@ services:
 before_install:
     # Disable XDebug
     - phpenv config-rm xdebug.ini
+    # Install latest Node.js (sometimes Travis-CI doesn't run the latest)
+    - nvm install nvm@latest -g
     # Install latest NPM (sometimes Travis-CI doesn't run the latest)
     - npm install npm@latest -g
 
