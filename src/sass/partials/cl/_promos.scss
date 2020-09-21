@@ -53,10 +53,10 @@
         top: 2px;
         right: 0;
         content: '';
-        width: $card-icon-width;
-        height: $card-icon-height;
+        width: 10px;
+        height: 10px;
         background-image: url('images/cl/icon-card-link.png');
-        background-position: 0 calc( #{$card-icon-height} * -2 );
+        background-position: 0 -20px;
         background-repeat: no-repeat;
         background-size: 100% auto;
       }
