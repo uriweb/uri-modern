@@ -28,7 +28,6 @@ add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
 function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 	return array(
 		'core/block',
-		'core/group',
 		// common
 		'core/paragraph',
 		'core/image',
@@ -52,6 +51,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		// layout
 		// 'core/button',
 		'core/columns',
+		'core/group',
 		'core/media-text',
 		'core/more',
 		'core/nextpage', // Page break
