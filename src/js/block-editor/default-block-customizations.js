@@ -31,3 +31,32 @@
 		jQuery( '.editor-post-title' ).fadeToggle( 400 );
 	}
 }() );
+
+
+/**
+ * Disables the drop cap feature in the block editor
+ */
+var removeDropCap = function(settings, name) {
+	if (name !== 'core/paragraph') {
+		return settings;
+	}
+
+	var newSettings = Object.assign({}, settings);
+
+	if (
+		newSettings.supports &&
+		newSettings.supports.__experimentalFeatures &&
+		newSettings.supports.__experimentalFeatures.typography &&
+		newSettings.supports.__experimentalFeatures.typography.dropCap
+	) {
+		newSettings.supports.__experimentalFeatures.typography.dropCap = false;
+	}
+
+	return newSettings;
+	};
+
+	wp.hooks.addFilter(
+		'blocks.registerBlockType',
+		'sc/gb/remove-drop-cap',
+		removeDropCap
+	);
