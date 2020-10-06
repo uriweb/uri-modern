@@ -68,14 +68,14 @@ get_header();
 							<?php if ( has_category( 'accelerated' ) ) { ?>
 							<div class="accelerated">
 								<span class="icon"></span>
-								This program has an accelerated option
+								Accelerated bachelor's to master's option
 							</div>
 							<?php } ?>
 
 							<?php if ( has_category( 'accelerated' ) ) { ?>
 							<div class="online">
 								<span class="icon"></span>
-								This is a fully online program
+								Fully online program
 							</div>
 							<?php } ?>
 

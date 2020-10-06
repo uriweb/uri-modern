@@ -33,16 +33,18 @@
 	}
 }() );
 
-
 /**
  * Disables the drop cap feature in the block editor
+ *
+ * @param {Object} settings
+ * @param {string} name
  */
-var removeDropCap = function(settings, name) {
-	if (name !== 'core/paragraph') {
+const removeDropCap = function( settings, name ) {
+	if ( name !== 'core/paragraph' ) {
 		return settings;
 	}
 
-	var newSettings = Object.assign({}, settings);
+	const newSettings = Object.assign( {}, settings );
 
 	if (
 		newSettings.supports &&
@@ -54,10 +56,10 @@ var removeDropCap = function(settings, name) {
 	}
 
 	return newSettings;
-	};
+};
 
-	wp.hooks.addFilter(
-		'blocks.registerBlockType',
-		'sc/gb/remove-drop-cap',
-		removeDropCap
-	);
+wp.hooks.addFilter(
+	'blocks.registerBlockType',
+	'sc/gb/remove-drop-cap',
+	removeDropCap
+);
