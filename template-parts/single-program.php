@@ -63,6 +63,24 @@ get_header();
 
 						<hr>
 
+						<div class="program-options">
+
+							<?php if ( has_category( 'accelerated' ) ) { ?>
+							<div class="accelerated">
+								<span class="icon"></span>
+								This program has an accelerated option
+							</div>
+							<?php } ?>
+
+							<?php if ( has_category( 'accelerated' ) ) { ?>
+							<div class="online">
+								<span class="icon"></span>
+								This is a fully online program
+							</div>
+							<?php } ?>
+
+						</div>
+
 						<div class="program-info">
 
 							<?php if ( $accreditation = uri_modern_get_field( 'accreditation' ) ) { ?>
