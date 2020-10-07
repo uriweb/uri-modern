@@ -68,7 +68,7 @@ get_header();
 							<?php if ( has_category( 'accelerated' ) ) { ?>
 							<div class="accelerated">
 								<span class="icon"></span>
-								Accelerated bachelor's to master's option
+								Optional bachelor's to master's in five years
 							</div>
 							<?php } ?>
 
