@@ -68,11 +68,17 @@ get_header();
 							<?php if ( has_category( 'accelerated' ) ) { ?>
 							<div class="accelerated">
 								<span class="icon"></span>
-								Optional bachelor's to master's in five years
+								<?php
+									if ( $accelerated_language = uri_modern_get_field( 'accelerated_language' ) ) {
+										print $accelerated_language;
+									} else {
+										echo "Optional bachelor's to master's in five years";
+									}
+								?>
 							</div>
 							<?php } ?>
 
-							<?php if ( has_category( 'accelerated' ) ) { ?>
+							<?php if ( has_category( 'online' ) ) { ?>
 							<div class="online">
 								<span class="icon"></span>
 								Fully online program
