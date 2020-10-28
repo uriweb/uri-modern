@@ -7,7 +7,7 @@
 .codesniffer.ruleset.xml export-ignore
 .sniff export-ignore
 .travis.yml export-ignore
-.eslintrc.json export-ignore
+.eslintrc.yml export-ignore
 # gulp files
 gulpfile.js export-ignore
 package.json export-ignore

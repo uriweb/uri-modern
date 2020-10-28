@@ -51,6 +51,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		// layout
 		// 'core/button',
 		'core/columns',
+		'core/group',
 		'core/media-text',
 		'core/more',
 		'core/nextpage', // Page break
@@ -123,52 +124,52 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 add_filter( 'allowed_block_types', 'uri_modern_allowed_blocks', 10, 2 );
 
 
-// Editor Styles
-add_theme_support( 'editor-styles' );
-add_editor_style( 'style.admin.css' );
-
-
-
-
-// COLORS //
-// disable option for custom colors
-add_theme_support( 'disable-custom-colors' );
-// register custom palette with no colors to hide the color options entirely
-add_theme_support( 'editor-color-palette' );
-
 
 /**
- * Removes the dropcap widget with a little injected css.
+ * Custom editor colors.
  */
-function uri_modern_hide_font_styles() {
-	// https://github.com/WordPress/gutenberg/issues/6184
-	// hide dropcap only
-	// echo '<style>.blocks-font-size .components-base-control:first-of-type { margin-bottom: 0; } .blocks-font-size .components-toggle-control { display: none; }</style>';
-	// hide the entire font size section
-	echo '<style>.blocks-font-size * { display: none; } .blocks-font-size { border: 0 !important; height: 0; padding: 0 !important; margin-top: 32px !important; }</style>';
+function uri_modern_custom_colors() {
+	add_theme_support( 'editor-color-palette', array() );
+	add_theme_support( 'editor-gradient-presets', array() );
+	add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'disable-custom-gradients' );
 }
-add_action( 'admin_head', 'uri_modern_hide_font_styles' );
-
+add_action( 'after_setup_theme', 'uri_modern_custom_colors' );
 
 /**
  * Removes options for different font sizes
  * Not in use since we're using CSS to hide the entire pane
  *
- * @see uri_modern_hide_font_styles
+ * @see https://make.wordpress.org/core/2020/01/23/controlling-the-block-editor/
  */
 function uri_modern_set_font_sizes() {
-	// removes the text box where users can enter custom pixel sizes
-	add_theme_support( 'disable-custom-font-sizes' );
-	// forces the dropdown for font sizes to only contain "normal"
-	add_theme_support(
-		'editor-font-sizes',
-		array(
-			array(
-				'name' => 'Normal',
-				'size' => 20,
-				'slug' => 'normal',
-			),
-		)
-	);
+	// removes the text box where users can specify custom font sizes
+	add_theme_support( 'editor-font-sizes', array() );
 }
-// add_action( 'after_setup_theme', 'uri_modern_set_font_sizes' );
+add_action( 'after_setup_theme', 'uri_modern_set_font_sizes' );
+
+/**
+ * Custom block editor CSS.
+ */
+function uri_modern_block_editor_styles() {
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'style.admin.css' );
+}
+add_action( 'after_setup_theme', 'uri_modern_block_editor_styles' );
+
+
+
+
+/**
+ * Removes the dropcap widget with a little injected css.
+ */
+// function uri_modern_hide_font_styles() {
+// https://github.com/WordPress/gutenberg/issues/6184
+// hide dropcap only
+// echo '<style>.blocks-font-size .components-base-control:first-of-type { margin-bottom: 0; } .blocks-font-size .components-toggle-control { display: none; }</style>';
+// hide the entire font size section
+// echo '<style>.blocks-font-size * { display: none; } .blocks-font-size { border: 0 !important; height: 0; padding: 0 !important; margin-top: 32px !important; }</style>';
+// }
+// add_action( 'admin_head', 'uri_modern_hide_font_styles' );
+
+

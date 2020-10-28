@@ -10,13 +10,6 @@
 
     font-family: $type-sans;
     border-radius: .2rem;
-    transform: translateY(0);
-    transition: all .2s ease-in-out;
-
-    &:hover,
-    &:focus {
-      transform: translateY(-2px);
-    }
 
     .cl-card-text {
       padding: 1.5rem 1.5rem 0;
@@ -41,13 +34,15 @@
 
     box-shadow: $level1;
 
-    img {
+    img,
+    .video iframe,
+    .video .poster {
       transform: scale(1);
       transform-origin: center bottom;
       transition: transform .2s ease-in-out;
     }
 
-    .cl-button {
+    .button {
 
         font-size: .8rem;
         font-weight: 700;
@@ -55,9 +50,9 @@
         line-height: 1rem;
         text-transform: uppercase;
         color: $midgrey;
-        transition: all .2s;
+        //transition: all .2s;
         text-align: left;
-        padding: 0 2.9rem 1.2rem 1.5rem;
+        padding: 1.2rem 2.9rem 1.2rem 1.5rem;
         border-top: none;
         position: relative;
 
@@ -74,11 +69,11 @@
         &:after {
           display: block;
           position: absolute;
-          top: 2px;
+          top: calc( 1.2rem + 2px );
           right: 1.5rem;
           content: '';
-          width: $card-icon-width;
-          height: $card-icon-height;
+          width: 10px;
+          height: 10px;
           background-image: url('images/cl/icon-card-link.png');
           background-position: 0 0;
           background-repeat: no-repeat;
@@ -87,19 +82,47 @@
 
     }
 
-    &:hover .cl-button,
-    &:focus .cl-button,
-    .cl-button:hover,
-    .cl-button:focus {
+    &.cl-card-theatre .button:after {
+      top: 1.2rem;
+      background-image: url('images/cl/icon-card-feature.png');
+      width: 14px;
+      height: 14px;
+    }
 
-        transition: all .3s;
-        background: inherit;
+    &:hover .button,
+    &:focus .button,
+    .button:hover,
+    .button:focus {
+
+        //transition: all .3s;
+        background: initial;
         color: $link;
         border-top: none;
 
         &:after {
-          background-position: 0 calc( #{$card-icon-height} * -1 );
+          background-position: 0 -10px;
         }
+
+    }
+
+    &.cl-card-theatre {
+
+      &:hover .button,
+      &:focus .button,
+      .button:hover,
+      .button:focus {
+        color: #1fa1ff;
+      }
+
+    }
+
+    &:hover.cl-card-theatre .button,
+    &:focus.cl-card-theatre .button,
+    &.cl-card-theatre .button:hover,
+    &.cl-card-theatre .button:focus {
+      &:after {
+        background-position: 0 -28px;
+      }
     }
 
     &:hover,
@@ -108,7 +131,9 @@
       top: 0;
       box-shadow: $level2;
 
-      img {
+      img,
+      .video iframe,
+      .video .poster {
         transform: scale(1.03);
       }
 
@@ -120,6 +145,18 @@
 
 }
 
+@media screen and (min-width: $break1 ) {
+
+  .cl-card {
+
+    .cl-card-text {
+      padding-bottom: 2rem;
+    }
+
+  }
+
+
+}
 
 /* Story Cards */
 

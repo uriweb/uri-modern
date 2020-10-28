@@ -11,6 +11,7 @@
 	wp.domReady(
 		() => {
 			wp.blocks.unregisterBlockStyle( 'core/image', 'circle-mask' );
+			wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
 			wp.blocks.unregisterBlockStyle( 'core/table', 'stripes' );
 			wp.blocks.unregisterBlockStyle( 'core/separator', 'wide' );
 
@@ -31,3 +32,34 @@
 		jQuery( '.editor-post-title' ).fadeToggle( 400 );
 	}
 }() );
+
+/**
+ * Disables the drop cap feature in the block editor
+ *
+ * @param {Object} settings
+ * @param {string} name
+ */
+const removeDropCap = function( settings, name ) {
+	if ( name !== 'core/paragraph' ) {
+		return settings;
+	}
+
+	const newSettings = Object.assign( {}, settings );
+
+	if (
+		newSettings.supports &&
+		newSettings.supports.__experimentalFeatures &&
+		newSettings.supports.__experimentalFeatures.typography &&
+		newSettings.supports.__experimentalFeatures.typography.dropCap
+	) {
+		newSettings.supports.__experimentalFeatures.typography.dropCap = false;
+	}
+
+	return newSettings;
+};
+
+wp.hooks.addFilter(
+	'blocks.registerBlockType',
+	'sc/gb/remove-drop-cap',
+	removeDropCap
+);

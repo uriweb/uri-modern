@@ -433,8 +433,10 @@ function uri_modern_get_current_path( $strip = true ) {
 	}
 
 	$base_bits = parse_url( site_url() );
-	if ( strpos( $current_path, $base_bits['path'] ) === 0 ) {
-		$current_path = substr( $current_path, strlen( $base_bits['path'] ) );
+	if ( ! empty( $current_path ) && ! empty( $base_bits['path'] ) ) {
+		if ( strpos( $current_path, $base_bits['path'] ) === 0 ) {
+			$current_path = substr( $current_path, strlen( $base_bits['path'] ) );
+		}
 	}
 	if ( true === $strip ) {
 		$current_path = rtrim( $current_path, '/' );
@@ -680,3 +682,33 @@ function uri_modern_hide_archive_title( $title ) {
 }
 
 add_filter( 'get_the_archive_title', 'uri_modern_hide_archive_title' );
+
+
+/**
+ * Adds an image to the rss and atom feeds
+ */
+function uri_modern_add_image_to_feed() {
+	global $post;
+
+	$output = "\n";
+	if ( has_post_thumbnail( $post->ID ) ) {
+		$id = get_post_thumbnail_id( $post->ID );
+		$thumbnail = wp_get_attachment_image_src( $id, 'thumbnail' );
+		$type = get_post_mime_type( $id );
+		if ( ! empty( $thumbnail ) ) {
+			$output .= "\t" . '<media:thumbnail url="' . $thumbnail[0] . '" width="' . $thumbnail[1] . '" height="' . $thumbnail[2] . '" />' . "\n";
+		} else {
+			$url = get_template_directory_uri() . '/img/default/uri-200.png';
+			$output .= '<enclosure url="' . $url . '" type="image/png" />' . "\n";
+		}
+		$original = wp_get_attachment_image_src( $id, null );
+		if ( ! empty( $original ) ) {
+			$bytes = filesize( get_attached_file( $id ) );
+			$output .= "\t" . '<media:content url="' . $original[0] . '" type="' . $type . '" width="' . $original[1] . '" height="' . $original[2] . '" />' . "\n";
+			$output .= "\t" . '<enclosure url="' . $original[0] . '" length="' . $bytes . '" type="' . $type . '" />' . "\n";
+		}
+}
+	echo $output;
+}
+add_action( 'rss2_item', 'uri_modern_add_image_to_feed' );
+add_action( 'atom_entry', 'uri_modern_add_image_to_feed' );

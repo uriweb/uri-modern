@@ -63,6 +63,30 @@ get_header();
 
 						<hr>
 
+						<div class="program-options">
+
+							<?php if ( has_category( 'accelerated' ) ) { ?>
+							<div class="accelerated">
+								<span class="icon"></span>
+								<?php
+									if ( $accelerated_language = uri_modern_get_field( 'accelerated_language' ) ) {
+										print $accelerated_language;
+									} else {
+										echo "Optional bachelor's to master's in five years";
+									}
+								?>
+							</div>
+							<?php } ?>
+
+							<?php if ( has_category( 'online' ) ) { ?>
+							<div class="online">
+								<span class="icon"></span>
+								Fully online program
+							</div>
+							<?php } ?>
+
+						</div>
+
 						<div class="program-info">
 
 							<?php if ( $accreditation = uri_modern_get_field( 'accreditation' ) ) { ?>

@@ -35,6 +35,8 @@ services:
 before_install:
     # Disable XDebug
     - phpenv config-rm xdebug.ini
+    # Install latest Node.js (sometimes Travis-CI doesn't run the latest)
+    - nvm install lts/*
     # Install latest NPM (sometimes Travis-CI doesn't run the latest)
     - npm install npm@latest -g
 
@@ -73,7 +75,7 @@ before_script:
     # After CodeSniffer install you should refresh your path.
     - phpenv rehash
     # Install ESLint
-    - npm install -g eslint
+    - npm install -g eslint@6
     # Install WP JS standards
     - npm install @wordpress/eslint-plugin --save-dev
 

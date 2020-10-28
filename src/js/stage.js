@@ -67,7 +67,7 @@
 		// Resize any superheros.
 		if ( null !== CLResizeSuperheroes ) {
 			CLResizeSuperheroes();
-			data.stage.h = stage.offsetHeight;
+			data.stage.h = data.stage.el.offsetHeight;
 		}
 
 		// Create the stage overlay div.

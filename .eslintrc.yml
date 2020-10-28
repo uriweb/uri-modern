@@ -1,0 +1,37 @@
+# Specify project environments
+env:
+  es6: true
+  browser: true
+
+# Specify rule extensions
+extends:
+  - 'plugin:@wordpress/eslint-plugin/recommended-with-formatting'
+
+# Configure rules
+rules:
+    no-undef: warn
+    no-unused-vars: warn
+    no-bitwise: warn
+    no-alert: warn
+    no-console:
+      - error
+      - allow:
+        - warn
+        - error
+    jsx-a11y/label-has-associated-control: warn
+    jsx-a11y/label-has-for: off
+
+# Specify global variables to ignore
+# Some of these aren't really globals, but this is useful for ignoring no-undef for class vars etc.
+globals:
+  CLResizeSuperheroes: readonly
+  jQuery: readonly
+
+# Specify files and directories to ignore
+ignorePatterns:
+  - 'gulpfile.js'
+  - 'js/script.min.js'
+  - 'js/block-editor.min.js'
+  - 'js/smoothscroll.min.js'
+  - 'node_modules/'
+  - 'static/**'
