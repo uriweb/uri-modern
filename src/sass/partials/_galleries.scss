@@ -2,6 +2,11 @@
    GALLERIES
    ============================== */
 
+/** Fixes sloppy figcaptions in WP galleries **/
+.wp-block-gallery .blocks-gallery-item figcaption {
+	width: calc(100% - 19px);
+}
+
 .gallery {
 
 	display: flex;
