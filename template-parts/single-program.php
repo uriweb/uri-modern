@@ -70,9 +70,9 @@ get_header();
 								<span class="icon"></span>
 								<?php
 									if ( $accelerated_language = uri_modern_get_field( 'accelerated_language' ) ) {
-										print $accelerated_language;
+									print $accelerated_language;
 									} else {
-										echo "Optional bachelor's to master's in five years";
+										echo '<a href="https://www.uri.edu/programs/abm/">Optional bachelor&#39;s to master&#39;s in five years</a>';
 									}
 								?>
 							</div>
@@ -81,7 +81,7 @@ get_header();
 							<?php if ( has_category( 'online' ) ) { ?>
 							<div class="online">
 								<span class="icon"></span>
-								Fully online program
+								<a href="https://www.uri.edu/programs/?program-type=14">Fully online program</a>
 							</div>
 							<?php } ?>
 
@@ -149,15 +149,15 @@ get_header();
 
 						<?php
 						$curriculum_sheets = get_field( 'curriculum_sheets' );
-						$curriculum_default_link = 'https://web.uri.edu/advising/curriculum-sheets-all/';
+						$curriculum_default_link = 'https:// web.uri.edu/advising/curriculum-sheets-all/';
 						if ( ( null != $curriculum_sheets || ! empty( $curriculum_sheets ) ) && $curriculum_default_link != $curriculum_sheets ) {
-							echo '<div class="advising">';
-							echo '<a href="' . $curriculum_sheets . '"><span class="icon"></span>Advising</a>';
-							echo '</div>';
+										echo '<div class="advising">';
+										echo '<a href="' . $curriculum_sheets . '"><span class="icon"></span>Advising</a>';
+										echo '</div>';
 						} else if ( has_category( 'bachelors' ) ) {
-							echo '<div class="curriculum-sheets">';
-							echo '<a href="' . $curriculum_default_link . '"><span class="icon"></span>Curriculum Sheets</a>';
-							echo '</div>';
+										echo '<div class="curriculum-sheets">';
+										echo '<a href="' . $curriculum_default_link . '"><span class="icon"></span>Curriculum Sheets</a>';
+										echo '</div>';
 						}
 						?>
 

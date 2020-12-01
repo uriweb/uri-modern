@@ -8,21 +8,15 @@
 
 URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.
 
-## What's new in 2.3.0
+## What's new in 2.3.1
 
-URI Modern 2.3.0 is a minor release focused on compatibility with associated plugins.
+URI Modern 2.3.1 is a bug fix release.
 
-* Adds compatibility for [URI Component Library v5.0](https://github.com/uriweb/uri-component-library/releases/tag/v5.0.0)
-* Adds compatibility for [URI Program Finder v1.5](https://github.com/uriweb/uri-program-finder/releases/tag/v1.5)
-* Adds support for Block Editor group blocks
-* Removes support for setting drop caps, colors and gradients, and font size in the Block Editor
-* Removes support for Block Editor rounded image styles
-* Featured images are now included in RSS and Atom feeds
-* Fixes an issue that may cause embedded YouTube videos to be too large for mobile devices
-* Updates development tools, including migrating to Autoprefixer v10 (plus required peer dependencies)
-* Other bug fixes
+* Fixes a few style glitches, including images on mobile and image captions in WordPress galleries
+* Updates the [Program Finder](https://github.com/uriweb/uri-program-finder) template with links for program details
+* Updates development tools
 
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/199/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
+For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/201/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
 
 ## How do I get set up?
 
@@ -41,6 +35,6 @@ __Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](h
 __Tags:__ themes  
 __Requires at least:__ 4.0  
 __Tested up to:__ 5.5  
-__Stable tag:__ 2.3.0  
+__Stable tag:__ 2.3.1  
 __License:__ GPL-3.0  
 __Licence URI:__ https://www.gnu.org/licenses/gpl-3.0.html

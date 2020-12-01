@@ -2,7 +2,12 @@
    ELEMENTS
    ============================== */
 
-   figcaption {
+/** fix for stretched images **/
+.wp-block-image img {
+	height: auto;
+}
+
+figcaption {
 	color: $darkgrey;
 	font-family: $type-sans;
 	font-size: 1rem;
