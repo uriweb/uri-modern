@@ -29,7 +29,7 @@
 								
 				<div id="gateways">
 					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
-					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( URI_EASTER_EGGS !== null && URI_EASTER_EGGS === true ) ? '&#128017' : 'You'; ?></span></label>
+					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( defined( 'URI_EASTER_EGGS' ) && URI_EASTER_EGGS === true ) ? '&#128017' : 'You'; ?></span></label>
 					<ul id="gateways-menu" role="menu">
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/future-students" role="menuitem">Future Students</a></li>
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/students" role="menuitem">Students</a></li>

@@ -50,7 +50,7 @@ $midgrey: #999999;
 $darkgrey: #555555;
 $black: #000000;
 
-$link: #0047c2;
+$link: #005eff;
 $linkhover: #003287;
 
 $accentblue: #057fd4;
@@ -61,9 +61,12 @@ $accentblue: #057fd4;
    ============================== */
 
 // [x-offset y-offset blur-radius color]
-$level1: 0 .1rem .3rem rgba(0,0,0,0.1);
-$level2: 0 .3rem 1rem rgba(0,0,0,0.2);
-$level3: 0 .3rem 1rem rgba(0,0,0,0.35);
+$level1:  0 .1rem .15rem rgba(0,0,0,0.1),
+          0 .1rem .3rem rgba(0,0,0,0.1);
+$level2:  0 .3rem 1rem rgba(0,0,0,0.1),
+          0 .3rem 3rem rgba(0,0,0,0.1);
+$level3:  0 .3rem .5rem rgba(0,0,0,0.2),
+          0 .3rem 2rem rgba(0,0,0,0.2);
 
 
 /* ==============================
@@ -83,6 +86,8 @@ $type-header: 'Lato', 'Hind', Arial, sans-serif;
 $type-sans: 'Hind', Arial, sans-serif;
 $type-serif: 'Charter', 'Georgia', serif;
 $type-numeric: 'Rubik', 'Hind', Arial, sans-serif;
+$type-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
 
 $maxtypewidth: 750px;
 

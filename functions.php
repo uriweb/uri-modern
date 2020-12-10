@@ -157,13 +157,13 @@ function uri_modern_custom_sizes( $sizes ) {
 	return array_merge(
 		 $sizes,
 		array(
-			'thumbnail@2x' => __( 'Thumbnail @2x' ),
-			'third_column' => __( 'Third Column' ),
-			'half_column' => __( 'Half Column' ),
-			'full_column' => __( 'Full Column' ),
-			'hero' => __( 'Hero' ),
-			'full_column@2x' => __( 'Full Column @2x' ),
-			'hero@2x' => __( 'Hero @2x' ),
+			'thumbnail@2x' => __( 'Thumbnail @2x', 'uri' ),
+			'third_column' => __( 'Third Column', 'uri' ),
+			'half_column' => __( 'Half Column', 'uri' ),
+			'full_column' => __( 'Full Column', 'uri' ),
+			'hero' => __( 'Hero', 'uri' ),
+			'full_column@2x' => __( 'Full Column @2x', 'uri' ),
+			'hero@2x' => __( 'Hero @2x', 'uri' ),
 		)
 		);
 }
@@ -245,14 +245,16 @@ function uri_modern_open_graph() {
 			if ( strpos( $post->post_content, '<!--more' ) !== false ) {
 				$bits = explode( '<!--more', $post->post_content );
 			} else {
-				$bits = explode( "\n", wordwrap( $post->post_content, 200 ) );
+				$bits = explode( "\n", wordwrap( $post->post_content, 400 ) );
 			}
 			$excerpt = $bits[0];
 		}
 
-		$excerpt = strip_tags( $excerpt );
-		$excerpt = str_replace( '"', '&quot;', $excerpt );
-		$excerpt = trim( $excerpt );
+		$excerpt = do_shortcode( $excerpt ); // parse shortcodes
+		$excerpt = preg_replace( '/(<[^>]+>)+/', ' ... ', $excerpt ); // replace html
+		$excerpt = ltrim( $excerpt, ' .' ); // remove leading points of ellipses from replace
+		$excerpt = str_replace( '"', '&quot;', $excerpt ); // sanitize quotes
+		$excerpt = trim( $excerpt ); // remove whitespace on either end
 
 		?>
 <meta name="description" content="<?php echo $excerpt; ?>" />
@@ -372,12 +374,16 @@ function uri_modern_scripts() {
 		'is' => array(
 			'404' => is_404(),
 			'childTheme' => get_template_directory_uri() != get_stylesheet_directory_uri() ? true : false,
+			'admin' => uri_modern_has_admin_privilages(),
 		),
+		'features' => array(),
 	);
 
 	wp_enqueue_style( 'uri-modern-style', get_template_directory_uri() . '/style.css', array(), uri_modern_cache_buster(), 'all' );
 
 	wp_enqueue_script( 'uri-modern-navigation', get_template_directory_uri() . '/js/navigation.js', array(), uri_modern_cache_buster(), true );
+
+	wp_enqueue_script( 'uri-modern-smoothscroll', get_template_directory_uri() . '/js/smoothscroll.min.js', array(), uri_modern_cache_buster(), true );
 
 	wp_enqueue_script( 'uri-modern-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), uri_modern_cache_buster(), true );
 
@@ -395,7 +401,7 @@ add_action( 'wp_enqueue_scripts', 'uri_modern_scripts' );
 /**
  * Enable styles in the WYSIWYG Editor (BETA FEATURE)
  */
-if ( URI_BETA_FEATURES !== null && URI_BETA_FEATURES === true ) {
+if ( get_option( 'beta_editor_theme_styles' ) ) {
 
 	if ( is_admin() ) {
 		add_editor_style( get_template_directory_uri() . '/style.css', __FILE__ );
@@ -414,7 +420,7 @@ if ( URI_BETA_FEATURES !== null && URI_BETA_FEATURES === true ) {
  */
 function uri_modern_get_current_path( $strip = true ) {
 
-	if ( strpos( $_SERVER['HTTP_REFERER'], 'wp-admin/customize.php' ) === false ) {
+	if ( ! isset( $_SERVER['HTTP_REFERER'] ) || strpos( $_SERVER['HTTP_REFERER'], 'wp-admin/customize.php' ) === false ) {
 		$current_path = trim( $_SERVER['REQUEST_URI'] );
 	} else {
 		// when the Customizer is being used, we need to use the referrer
@@ -427,8 +433,10 @@ function uri_modern_get_current_path( $strip = true ) {
 	}
 
 	$base_bits = parse_url( site_url() );
-	if ( strpos( $current_path, $base_bits['path'] ) === 0 ) {
-		$current_path = substr( $current_path, strlen( $base_bits['path'] ) );
+	if ( ! empty( $current_path ) && ! empty( $base_bits['path'] ) ) {
+		if ( strpos( $current_path, $base_bits['path'] ) === 0 ) {
+			$current_path = substr( $current_path, strlen( $base_bits['path'] ) );
+		}
 	}
 	if ( true === $strip ) {
 		$current_path = rtrim( $current_path, '/' );
@@ -514,11 +522,47 @@ function uri_modern_sanitize_title( $t ) {
 	);
 
 	foreach ( $prepends as $p ) {
-
 		if ( substr( $t, 0, strlen( $p ) ) == $p ) {
 			 return substr( $t, strlen( $p ) );
 		}
 	}
+	// still here, title can go out the way it came in.
+	return $t;
+
+}
+
+
+/**
+ * Wrapper for Advanced Custom Fields get_field()
+ */
+function uri_modern_get_field() {
+
+	$r = false;
+
+	if ( function_exists( 'get_field' ) ) {
+		$r = call_user_func_array( 'get_field', func_get_args() );
+	}
+
+	return $r;
+
+}
+
+
+/**
+ * Get user role
+ */
+function uri_modern_has_admin_privilages() {
+
+	$admin = false;
+
+	global $current_user;
+	$role = array_shift( $current_user->roles );
+
+	if ( 'administrator' == $role || 'Webadmin' == $role ) {
+		$admin = true;
+	}
+
+	return $admin;
 
 }
 
@@ -583,9 +627,24 @@ require get_template_directory() . '/inc/shortcodes.php';
 require get_template_directory() . '/inc/wysiwyg.php';
 
 /**
+ * Gutenberg additions
+ */
+require get_template_directory() . '/inc/gutenberg.php';
+
+/**
+ * Display Posts customizations
+ */
+require get_template_directory() . '/inc/display-posts.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load the Search and Filter helper functions
+ */
+require get_template_directory() . '/inc/search-filter.php';
 
 /**
  * Add page slug to body class list in the format 'ln-{slug}'
@@ -644,3 +703,31 @@ function uri_modern_hide_archive_title( $title ) {
 add_filter( 'get_the_archive_title', 'uri_modern_hide_archive_title' );
 
 
+/**
+ * Adds an image to the rss and atom feeds
+ */
+function uri_modern_add_image_to_feed() {
+	global $post;
+
+	$output = "\n";
+	if ( has_post_thumbnail( $post->ID ) ) {
+		$id = get_post_thumbnail_id( $post->ID );
+		$thumbnail = wp_get_attachment_image_src( $id, 'thumbnail' );
+		$type = get_post_mime_type( $id );
+		if ( ! empty( $thumbnail ) ) {
+			$output .= "\t" . '<media:thumbnail url="' . $thumbnail[0] . '" width="' . $thumbnail[1] . '" height="' . $thumbnail[2] . '" />' . "\n";
+		} else {
+			$url = get_template_directory_uri() . '/img/default/uri-200.png';
+			$output .= '<enclosure url="' . $url . '" type="image/png" />' . "\n";
+		}
+		$original = wp_get_attachment_image_src( $id, null );
+		if ( ! empty( $original ) ) {
+			$bytes = filesize( get_attached_file( $id ) );
+			$output .= "\t" . '<media:content url="' . $original[0] . '" type="' . $type . '" width="' . $original[1] . '" height="' . $original[2] . '" />' . "\n";
+			$output .= "\t" . '<enclosure url="' . $original[0] . '" length="' . $bytes . '" type="' . $type . '" />' . "\n";
+		}
+}
+	echo $output;
+}
+add_action( 'rss2_item', 'uri_modern_add_image_to_feed' );
+add_action( 'atom_entry', 'uri_modern_add_image_to_feed' );

@@ -1,0 +1,49 @@
+/* ======= COUNTDOWNS ======= */
+
+@keyframes reveal-countdown {
+
+	from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+	to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+.cl-countdown {
+
+  opacity: 0;
+  transform: translateY(-20px);
+  animation-name: reveal-countdown;
+  animation-duration: 1s;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+
+  .message {
+  	background: $midgold;
+  	border-radius: .25rem;
+    border: 1px solid #d2a400;
+  }
+
+  a.message {
+    border-radius: .2rem;
+  }
+
+  .dismiss {
+
+  	opacity: .5;
+  	transition: opacity .2s ease-in-out;
+
+    &:hover,
+    &:focus {
+    	opacity: 1;
+    }
+
+  }
+
+}

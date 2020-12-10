@@ -24,14 +24,37 @@
 @import 'partials/widgetareas';
 @import 'partials/archives';
 @import 'partials/posts';
-@import 'partials/queryposts';
+@import 'partials/displayposts';
 @import 'partials/comments';
 @import 'partials/tags';
 @import 'partials/oembeds';
 @import 'partials/galleries';
 @import 'partials/events';
-@import 'partials/components';
 @import 'partials/featimages';
 @import 'partials/lightbox';
 @import 'partials/programfinder';
 @import 'partials/people';
+@import 'partials/code';
+
+/* COMPONENT LIBRARY */
+@import 'partials/cl/boxouts';
+@import 'partials/cl/buttons';
+@import 'partials/cl/cards';
+@import 'partials/cl/countdowns';
+@import 'partials/cl/dates';
+@import 'partials/cl/heroes';
+@import 'partials/cl/menus';
+@import 'partials/cl/metrics';
+@import 'partials/cl/notices';
+@import 'partials/cl/overlays';
+@import 'partials/cl/panels';
+@import 'partials/cl/promos';
+@import 'partials/cl/quotes';
+@import 'partials/cl/share';
+@import 'partials/cl/slideshows';
+@import 'partials/cl/tabs';
+@import 'partials/cl/videos';
+
+/* EXTRAS */
+@import 'partials/extra/color-blocks';
+@import 'partials/extra/color-blocks-palette-summer-2020';

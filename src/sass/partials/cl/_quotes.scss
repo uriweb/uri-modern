@@ -1,0 +1,23 @@
+/* ======= QUOTES ======= */
+
+.cl-quote {
+
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+
+  blockquote {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+  cite {
+    color: $darkgrey;
+    font-family: $type-sans;
+  }
+
+  cite:before {
+    background: $darkgrey;
+  }
+
+}

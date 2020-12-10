@@ -4,38 +4,44 @@
 
 article.page,
 article.post {
-    
+
     &.sticky {
         display: initial;
     }
-    
+
 }
 
 article.page {
-    
+
     .entry-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
         margin-bottom: 2.5rem;
     }
-    
+
 }
 
 article.post {
-    
+
     margin: 0 0 2rem;
-    
+
     .entry-meta {
+
         margin-bottom: 2rem;
         font-size: .8rem;
         color: $darkgrey;
+
+		.meta-date {
+			display: none;
+		}
+
     }
-    
+
     .entry-summary {
         border-left: 5px solid #eee;
         padding-left: 1.5rem;
         margin-bottom: 1rem;
     }
-    
+
     .entry-content {
         margin-bottom: 2rem;
     }
@@ -44,27 +50,27 @@ article.post {
         font-size: .8rem;
         color: $darkgrey;
     }
-    
+
 }
 
-    
+
 nav.post-navigation,
 nav.posts-navigation,
 nav.pagination {
-    
+
     margin: 0 0 2rem;
     padding: 2rem 0 0;
     border-top: 1px solid #ddd;
     font-size: 1rem;
-        
+
     .nav-links {
-        
+
         &:after {
             content: '';
             display: block;
             clear: both;
         }
-        
+
         &>div a {
             background: #eee;
             padding: .5rem 1rem;
@@ -91,11 +97,11 @@ nav.pagination {
             border-bottom: 7px solid transparent;
             transition: all .1s ease-in-out;
         }
-        
+
         .nav-previous {
-            
+
             float: left;
-            
+
             a {
                 padding-left: 30px;
             }
@@ -109,13 +115,13 @@ nav.pagination {
             a:focus:before {
                 border-right: 12px solid $white;
             }
-            
+
         }
-        
+
         .nav-next {
-            
+
             float: right;
-            
+
             a {
                 padding-right: 30px;
             }
@@ -129,20 +135,20 @@ nav.pagination {
             a:focus:after {
                 border-left: 12px solid $white;
             }
-            
+
         }
 
         &>div:before,
         &>div:after {
             display: none;
         }
-		
+
 		.page-numbers {
 			padding: 0 .5rem;
 		}
-        
+
     }
-    
+
 }
 
 nav.posts-navigation {
@@ -157,6 +163,12 @@ nav.pagination {
     display: initial;
 }
 
+@media print {
+	article.post footer {
+		display: none;
+	}
+}
+
 
 /* Video Post Format */
 
@@ -165,28 +177,28 @@ nav.pagination {
     height: 300px;
     margin-bottom: 2rem;
 }
-    
-@media screen and (min-width: $break1) {
-    
+
+@media all and (min-width: $break1) {
+
     .single-format-video .oembed iframe {
         height: 400px;
     }
-    
+
 }
 
-@media screen and (min-width: $break2) {
-    
+@media all and (min-width: $break2) {
+
     .single-format-video .oembed iframe {
         height: 500px;
     }
-    
+
 }
 
 
 /* Search Results */
 
 body.search-results {
-    
+
     article {
 
 		margin-bottom: 2rem;
@@ -215,5 +227,5 @@ body.search-results {
         font-size: 2.8rem;
         color: $black;
     }
-    
+
 }

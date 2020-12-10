@@ -57,6 +57,7 @@
 #actionbar {
 
 	display: flex;
+  flex-wrap: wrap;
 	width: 100%;
 	padding: 0;
     margin: 0 auto;
@@ -65,7 +66,7 @@
 
     a {
         display: block;
-        flex: 1;
+        width: 50%;
         height: 120px;
         text-align: center;
         color: #003b8d;
@@ -78,7 +79,7 @@
         color: $white;
         background: linear-gradient(-135deg, #009DFF, #0900FF);
     }
-    
+
     a span {
         display: block;
         position: relative;
@@ -90,57 +91,71 @@
         background-repeat: no-repeat;
         background-size: 24px auto;
     }
-    
+
     #action-apply span {
         background-position: center 0;
     }
-    
+
     #action-tour span {
         background-position: center -48px;
     }
-    
+
     #action-give span {
         background-position: center -96px;
     }
-    
+
+    #action-connect span {
+        background-position: center -144px;
+    }
+
     #action-apply:hover span {
         background-position: center -24px;
         //animation-name: ab_apply_animate;
         //animation-duration: .8s;
         //animation-timing-function: ease-in-out;
     }
-    
+
     #action-tour:hover span {
         background-position: center -72px;
         //animation-name: ab_tour_animate;
         //animation-duration: .8s;
         //animation-timing-function: ease-in-out;
     }
-    
+
     #action-give:hover span {
         background-position: center -120px;
         //animation-name: ab_give_animate;
         //animation-duration: .7s;
         //animation-timing-function: ease-in-out;
     }
-    
+
+    #action-connect:hover span {
+        background-position: center -168px;
+    }
+
 }
 
+@media all and (min-width: 600px) {
+   #actionbar a {
+     flex: 1;
+     width: initial;
+   }
+}
 
-@media screen and (min-width: 900px) {
+@media all and (min-width: 900px) {
     #actionbar a {
-        
+
         height: 150px;
-        
+
         span {
             margin-top: 2.5rem;
         }
-        
+
     }
-    
+
 }
 
-@media screen and (min-width: 1050px) {
+@media all and (min-width: 1050px) {
     #actionbar {
         width: 1000px;
         padding: 0;
@@ -150,9 +165,9 @@
 /* PRINT */
 
 @media print {
-    
-    #actionbar {
+
+    #actionbar-wrapper {
         display: none;
     }
-    
+
 }

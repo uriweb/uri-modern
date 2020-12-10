@@ -18,7 +18,7 @@ function uri_modern_breadcrumbs() {
 	foreach ( $prepend as $l ) {
 		$bits = explode( '(', $l );
 		$name = trim( $bits[0], '[]' );
-		$href = rtrim( $bits[1], ')' );
+		$href = @rtrim( $bits[1], ')' );
 		if ( ! empty( $name ) && ! empty( $href ) ) {
 			$crumbs[] = array(
 				'name' => $name,
@@ -44,7 +44,7 @@ function uri_modern_breadcrumbs() {
 		$path = $path . '/' . $p;
 		$link = uri_modern_breadcrumbs_get_link( $path );
 
-		if ( null != $link ) {
+		if ( ! empty( $link ) ) {
 			$crumbs[] = $link;
 		}
 	}
@@ -69,6 +69,9 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 
 	if ( 0 !== $post_id ) { // it's a post or a page.
 		$p      = get_page_by_path( $path );
+		if ( ! is_object( $p ) ) { // solves an issue with page break paginated pages and posts
+			return;
+		}
 		$output = array(
 			'name' => get_the_title( $p->ID ),
 			'href' => get_site_url() . $path,
@@ -78,8 +81,12 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 
 	// is it a custom post type?
 	// check this first so that it takes precedent over category
-	$slug = get_post_type_object( get_post_type() )->rewrite['slug'];
-	if ( $slug ) {
+	$post_type_object = get_post_type_object( get_post_type() );
+	if ( is_object( $post_type_object ) ) {
+		$slug = $post_type_object->rewrite['slug'];
+	}
+
+	if ( isset( $slug ) ) {
 		$output = array(
 			'name' => ucfirst( $slug ),
 			'href' => get_site_url() . $path,
@@ -120,5 +127,3 @@ function uri_modern_format_breadcrumbs( $crumbs ) {
 	$output .= '</ol>';
 	return $output;
 }
-
-

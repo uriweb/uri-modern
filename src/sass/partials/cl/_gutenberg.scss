@@ -1,0 +1,79 @@
+/* ======= GUTENBERG EDITOR ======= */
+
+/** CLASSIC EDITOR BLOCK **/
+
+.mce-ico {
+	color: #333;
+	font: normal 20px/1 dashicons, tinymce, Arial;
+}
+
+/** BUTTONS **/
+
+.cl-button {
+
+  font-size: .85rem;
+  font-weight: 700;
+
+  textarea {
+    font-family: "Hind", sans-serif !important;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+  }
+
+  &:hover,
+  &:focus {
+    &:not(.prominent) textarea:focus {
+      color: $black;
+    }
+  }
+
+  &.prominent {
+
+    textarea {
+      color: $white;
+    }
+
+    textarea::placeholder {
+      color: rgba(255,255,255,.5);
+    }
+
+  }
+
+}
+
+/** CARDS **/
+
+.cl-card {
+
+  .cl-card-text div {
+  	font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  &:hover img,
+  &:focus img {
+    transform: none;
+  }
+
+	.cl-card-container.button textarea {
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+
+
+}
+
+/** HEROES **/
+.cl-hero.no-image {
+  background-color: $blue;
+}
+
+/** PROMOS **/
+.cl-promo.micro .cl-promo-micro-text-link:after {
+	display: none;
+}
+
+/** QUOTES **/
+.cl-quote {
+  font-family: Charter, Georgia, serif;
+}

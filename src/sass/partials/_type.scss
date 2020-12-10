@@ -17,8 +17,8 @@ body {
 h1 {
     font-family: $type-header;
     font-weight: 700;
-    font-size: 1.875rem;
-    margin-bottom: 2rem;
+    font-size: 2.5rem; //1.875rem;
+    margin-bottom: 2.5rem; //2rem;
     max-width: 800px;
     color: $black;
 }
@@ -64,7 +64,8 @@ h6 {
     margin: 2.5rem 0 .8rem;
 }
 
-.entry-content {
+.entry-content,
+.type-serif {
     font-family: $type-serif;
 }
 
@@ -72,11 +73,20 @@ h6 {
     font-family: $type-numeric;
 }
 
+.type-sans {
+    font-family: $type-sans;
+}
+
 .type-intro,
 .section-intro p {
     font-family: $type-sans;
     font-size: 1.5rem;
     font-weight: 300;
+}
+
+.type-mono {
+	font-family: $type-mono;
+	font-size: .95rem;
 }
 
 .no-wrap {
@@ -100,14 +110,14 @@ p {
 }
 
 .fullwidth {
-	
+
     max-width: 100%;
-	
+
 	p,
 	li {
 		max-width: 100%;
 	}
-	
+
 }
 
 p:empty {
@@ -241,7 +251,7 @@ blockquote cite:before {
 	background: $grey;
 }
 
-@media screen and (min-width: $break2) {
+@media all and (min-width: $break2) {
 	.pullquote {
 		width: 400px;
 		float: right;
@@ -258,20 +268,29 @@ blockquote cite:before {
 /* SECTIONS */
 
 .section-intro {
-    
+
     text-align: center;
     margin-bottom: 3rem;
-    
+
     h1 {
         font-size: 2.5rem;
         margin: 0 auto 2rem;
     }
-    
+
     p {
         max-width: 650px;
         margin: 0 auto 2rem;
     }
-    
+
+}
+
+@media print {
+	html{
+		font-size: 14px;
+	}
+	p {
+		max-width: 100%;
+	}
 }
 
 

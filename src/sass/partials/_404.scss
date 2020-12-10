@@ -23,7 +23,7 @@ body.error404 h1.page-title {
     background-repeat: no-repeat;
 }
 
-@media screen and (min-width: 600px) {
+@media all and (min-width: 600px) {
 	body.error404 h1.page-title {
 		font-size: 3rem;
 	}

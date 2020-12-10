@@ -1,0 +1,58 @@
+/* ======= BOXOUTS ======= */
+
+
+.cl-boxout {
+
+    border-radius: .2rem;
+    //box-shadow: inset 0 .15rem .2rem rgba(0,0,0,.06);
+    //border-bottom: 1px solid #fff;
+    transition: width .2s ease-in-out;
+
+	img {
+		margin: 1.2rem 0;
+		border-radius: 2px;
+	}
+
+	img:first-child {
+		margin-top: 0;
+	}
+
+  h1 {
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+	}
+
+  &.left,
+  &.right {
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1.3rem;
+    }
+
+    p,
+    ul {
+      font-size: 1.1rem;
+    }
+
+  }
+
+	p,
+	ul {
+		font-size: 1.2rem;
+    font-family: $type-sans;
+	}
+
+	p {
+		width: 100%;
+	}
+
+  a.cl-button,
+  span.cl-button {
+    &:not(.prominent),
+    &:not(.disabled) {
+      //border: 1px solid $white;
+    }
+  }
+
+}

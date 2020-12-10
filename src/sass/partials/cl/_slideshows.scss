@@ -1,0 +1,84 @@
+/* ======= SLIDESHOW ======= */
+
+
+.cl-slideshow {
+
+  .carousel-wrapper {
+
+		border-radius: .2rem;
+
+    .carousel .slide figcaption {
+			font-family: $type-sans;
+			border-radius: 0 0 .2rem .2rem;
+			transition: opacity .4s ease-in-out .1s;
+		}
+
+		.controls {
+
+			transition: opacity .4s ease-in-out .1s;
+
+      .controller {
+
+        transition: padding .2s ease-in-out;
+
+				&:after {
+	        transition: all .2s ease-in-out;
+	      }
+
+      }
+
+    }
+
+    &:hover .controls {
+			transition: opacity .4s ease-in-out .5s;
+    }
+
+	}
+
+  .counter {
+		font-family: $type-sans;
+		border-radius: 10px;
+  }
+
+	&.dark .carousel-wrapper .controls .controller:after {
+		transition: all .2s ease-in-out;
+	}
+
+} // .cl-slideshow
+
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+
+    .cl-slideshow {
+
+			.carousel-wrapper .carousel .slide figcaption,
+			.carousel-wrapper .controls .controller,
+			.counter {
+				backdrop-filter: saturate(180%) blur(20px);
+				background-color: rgba(255,255,255,.5);
+			}
+
+			&.dark {
+
+				.carousel-wrapper .carousel .slide figcaption,
+				.carousel-wrapper .controls .controller,
+				.counter {
+					background-color: rgba(0,0,0,.5);
+				}
+
+			}
+
+		}
+
+}
+
+@media screen and (min-width: $break1) {
+
+  .cl-slideshow .carousel-wrapper .carousel .slide {
+
+		figcaption {
+			border-radius: 5px;
+		}
+
+  }
+
+}

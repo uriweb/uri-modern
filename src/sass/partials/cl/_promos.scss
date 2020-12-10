@@ -1,0 +1,68 @@
+/* ======= PROMOS ======= */
+
+.cl-promo {
+
+  .cl-promo-backdrop-wrapper {
+
+    .cl-promo-backdrop.style-brand {
+      background-color: $blue;
+    }
+
+  }
+
+  .cl-promo-content {
+
+    .cl-promo-img {
+
+      .cl-promo-img-link img {
+        border-radius: 3px;
+        border: 1px solid rgba(255,255,255,.5);
+      }
+
+    }
+
+  }
+
+  &.micro {
+
+    .cl-promo-micro-content-wrapper {
+
+    	background: $blue;
+
+      &:hover,
+      &:focus {
+        background: $link;
+      }
+
+    }
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    .cl-promo-micro-text-link {
+
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: $type-sans;
+      padding-right: 1.5rem;
+
+      &:after {
+        display: block;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-image: url('images/cl/icon-card-link.png');
+        background-position: 0 -20px;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+      }
+
+    }
+
+  }
+
+}

@@ -3,7 +3,8 @@
    ============================== */
 
 .cat-links,
-.tags-links {
+.tags-links,
+.display-posts-listing .category-display {
     
     a {
         position: relative;
@@ -31,7 +32,8 @@
     
 }
 
-.cat-links {
+.cat-links,
+.display-posts-listing .category-display {
     
     a {
         color: $keaneyblue;
@@ -85,5 +87,9 @@
         border-radius: 50%;
     }
     
+}
+
+.display-posts-listing .category-display a {
+	line-height: .8rem;
 }
         

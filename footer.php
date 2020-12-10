@@ -23,9 +23,16 @@
 
 	<div id="actionbar-wrapper">
 		<div id="actionbar" role="menu">
-			<a href="<?php echo uri_modern_apply_url(); ?>" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>
+			<a href="https://www.uri.edu/connect" id="action-connect" role="menuitem"><span role="presentation"></span>Connect</a>
+			<a href="https://www.uri.edu/apply" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>
 			<a href="https://www.uri.edu/tour" id="action-tour" role="menuitem"><span role="presentation"></span>Tour</a>
-			<a href="<?php echo ! empty( $ab_give_url = get_option( 'action_bar_give_url' ) ) ? $ab_give_url : 'https://www.uri.edu/give'; ?>" id="action-give" role="menuitem"><span role="presentation"></span>Give</a>
+			<?php
+			$ab_give_url = 'https://www.uri.edu/give';
+			if ( ! empty( get_option( 'action_bar_give_url' ) ) ) {
+				$ab_give_url = get_option( 'action_bar_give_url' );
+			}
+			?>
+			<a href="<?php echo $ab_give_url; ?>" id="action-give" role="menuitem"><span role="presentation"></span>Give</a>
 		</div>
 	</div><!-- #actionbar-wrapper -->
 
@@ -73,11 +80,11 @@
 					echo do_shortcode( '[uri-tides darkmode=true height=22]' );
 				}
 				?>
-				
-				<?php if ( function_exists( 'uri_tides_shortcode' ) && function_exists( 'uri_cl_shortcode_social' ) ) : ?> 
+
+				<?php if ( function_exists( 'uri_tides_shortcode' ) && function_exists( 'uri_cl_shortcode_social' ) ) : ?>
 				<hr>
 				<?php endif ?>
-				
+
 				<!-- Social Media Component -->
 				<?php
 				if ( function_exists( 'uri_cl_shortcode_social' ) ) {

@@ -1,0 +1,51 @@
+/* ======= HEROS ======= */
+
+.cl-hero {
+
+  &:not(.fullwidth):not(.super) {
+
+    .cl-hero-proper {
+      border-radius: .2rem;
+    }
+
+  }
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-family: $type-sans;
+  }
+
+  a.cl-button,
+  span.cl-button {
+
+    //color: $link;
+    background-color: $white !important;
+
+    &:hover,
+    &:focus {
+      //background: $white;
+      color: $link;
+      top: 0;
+    }
+
+  }
+
+}
+
+body.home .cl-hero .block p {
+	font-family: $type-sans;
+}
+
+@supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
+  .cl-hero {
+    a.cl-button,
+    span.cl-button {
+      backdrop-filter: saturate(180%) blur(10px);
+      background-color: rgba(255,255,255,.7);
+    }
+  }
+}

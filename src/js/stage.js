@@ -1,138 +1,148 @@
 /**
  * The Stage
  *
- * @package uri-modern
  */
 
 ( function() {
-
 	'use strict';
+
+	let data;
 
 	window.addEventListener( 'load', initStage, false );
 
 	function initStage() {
+		let masthead;
 
-		var stage = document.getElementById( 'stage' );
+		const stage = document.getElementById( 'stage' );
 
 		if ( null !== stage ) {
-			setTheStage( stage );
-		}
+			masthead = document.getElementById( 'masthead' );
 
+			data = {
+				stage: {
+					el: stage,
+					h: stage.offsetHeight,
+					offset: stage.getBoundingClientRect().top,
+					initialOffset: stage.getBoundingClientRect().top + window.pageYOffset,
+				},
+				bodyClassList: document.body.classList,
+				content: document.getElementById( 'content' ),
+				masthead: {
+					el: masthead,
+					h: masthead.offsetHeight,
+					offset: document.getElementById( 'brandbar' ).offsetHeight,
+				},
+			};
+
+			data.bodyClassList.add( 'stage' );
+			document.getElementById( 'page' ).insertBefore( data.stage.el, data.content );
+
+			addPrompter();
+			determineStageType();
+		}
 	}
 
-	function setTheStage( stage ) {
+	function determineStageType() {
+		if ( data.stage.el.classList.contains( 'fade' ) ) {
+			setTheStage();
+		}
+	}
 
-		var els = {}, overlay, masthead;
+	function addPrompter() {
+		const prompt = document.createElement( 'div' );
+		prompt.className = 'prompter';
+		prompt.innerHTML = 'Scroll down';
+		prompt.addEventListener( 'click', handlePrompterClick, false );
+		data.stage.el.appendChild( prompt );
+	}
 
-		// Store a reference to the body class list and add the 'stage' class.
-		els.docClassList = document.body.classList;
-		els.docClassList.add( 'stage' );
+	function handlePrompterClick() {
+		data.content.scrollIntoView( { behavior: 'smooth', block: 'start', inline: 'nearest' } );
+	}
 
-		// Store the content div and put the stage before it.
-		els.content = document.getElementById( 'content' );
-		document.getElementById( 'page' ).insertBefore( stage, els.content );
+	function setTheStage() {
+		// Store a reference to the body class list
+		data.bodyClassList.add( 'stage-type-fade' );
 
 		// Resize any superheros.
 		if ( null !== CLResizeSuperheroes ) {
 			CLResizeSuperheroes();
+			data.stage.h = data.stage.el.offsetHeight;
 		}
 
 		// Create the stage overlay div.
-		overlay           = document.createElement( 'div' );
+		const overlay = document.createElement( 'div' );
 		overlay.className = 'stage-overlay';
-		stage.insertBefore( overlay, stage.childNodes[0] );
-
-		// Store the masthead specs.
-		masthead     = document.getElementById( 'masthead' );
-		els.masthead = {
-			el: masthead,
-			h: masthead.offsetHeight,
-			offset: masthead.getBoundingClientRect().top
-		};
+		data.stage.el.insertBefore( overlay, data.stage.el.childNodes[ 0 ] );
 
 		// Store the stage specs.
-		els.stage = {
-			el: stage,
-			overlay: overlay,
-			h: stage.offsetHeight,
-			offset: stage.getBoundingClientRect().top,
-			initialOffset: stage.getBoundingClientRect().top + window.pageYOffset
-		};
+		data.stage.overlay = overlay;
 
 		// Store a few other elements.
-		els.backdrop   = document.getElementById( 'sb-backdrop' );
-		els.navigation = document.getElementById( 'navigation' );
-		els.widgets = document.getElementById( 'region-before-content' );
+		data.backdrop = document.getElementById( 'sb-backdrop' );
+		data.navigation = document.getElementById( 'navigation' );
+		data.widgets = document.getElementById( 'region-before-content' );
+
+		data.content.style.marginTop = data.stage.h + data.masthead.offset + 'px';
 
 		// Initialize scroll and add event listeners.
-		handleScroll( els );
-		window.addEventListener( 'scroll', handleScroll.bind( null, els ) );
-		window.addEventListener( 'resize', handleScroll.bind( null, els ) );
-
+		handleScroll();
+		window.addEventListener( 'scroll', handleScroll );
+		window.addEventListener( 'resize', handelResize );
 	}
 
-	function handleScroll( els ) {
+	function handelResize() {
+		data.stage.h = data.stage.el.offsetHeight;
+		data.content.style.marginTop = data.stage.h + data.masthead.offset + 'px';
 
-		var contentPosition, windowHeight;
+		handleScroll();
+	}
 
-		contentPosition = els.content.getBoundingClientRect().top;
-		windowHeight    = window.innerHeight;
+	function handleScroll() {
+		const contentPosition = data.content.getBoundingClientRect().top;
 
 		// If the top of the content is below the bottom of the masthead...
-		if ( contentPosition > els.masthead.h + els.masthead.offset ) {
-
+		if ( contentPosition > data.masthead.h ) {
 			// Make the masthead fixed (if it isn't already).
-			if ( els.docClassList.contains( 'stage-fluid' ) ) {
-
-				els.docClassList.remove( 'stage-fluid' );
-				els.masthead.el.style.top = 'initial';
-
+			if ( data.bodyClassList.contains( 'stage-fluid' ) ) {
+				data.bodyClassList.remove( 'stage-fluid' );
+				data.masthead.el.style.top = 'initial';
 			} else { // If it is fixed, draw the elements.
-				drawElements( els );
+				drawElements();
 			}
-
-		} else { // Otherwise, if the content is at or above the masthead...
-
-			// Make the masthead fluid (if it isn't already).
-			if ( ! els.docClassList.contains( 'stage-fluid' ) ) {
-				els.docClassList.add( 'stage-fluid' );
-				els.masthead.el.style.top = windowHeight - els.masthead.h + els.masthead.offset + 'px';
-			}
-
+		} else if ( ! data.bodyClassList.contains( 'stage-fluid' ) ) { // Otherwise, if the content is at or above the masthead, make the masthead fluid (if it isn't already).
+			data.bodyClassList.add( 'stage-fluid' );
+			data.masthead.el.style.top = data.stage.h - data.masthead.h + data.masthead.offset + 'px';
 		}
-
 	}
 
-	function drawElements( els ) {
-
-		var p, d, t, l, u, e;
-
+	function drawElements() {
 		// The scroll position.
-		p = window.pageYOffset;
+		const p = window.pageYOffset;
 
 		// Set a special body class if the scroll is 0.
-		if ( 0 === p && ! els.docClassList.contains( 'stage-initial' ) ) {
-			els.docClassList.add( 'stage-initial' );
-		} else if ( els.docClassList.contains( 'stage-initial' ) ) {
-			els.docClassList.remove( 'stage-initial' );
+		if ( 0 === p && ! data.bodyClassList.contains( 'stage-initial' ) ) {
+			data.bodyClassList.add( 'stage-initial' );
+		} else if ( data.bodyClassList.contains( 'stage-initial' ) ) {
+			data.bodyClassList.remove( 'stage-initial' );
 		}
 
 		// The distance over which to tween the animation.
-		d = els.stage.h - els.masthead.h;
+		const d = data.stage.h - data.masthead.h;
 
 		/*
 		 * The position of the animation along the timing function, from 0 - 1.
 		 * This could be thought of as the percent of the animation that is complete.
 		 */
-		t = Math.min( p / d * 1, 1 );
+		const t = Math.min( p / d * 1, 1 );
 
 		/*
 		 * The animation delay, from 0 - 1.
 		 * Essentially, the value of t at which the animaion should start.
 		 * Note that this does not add to the total animation time, but rather subtracts from it.
 		 */
-		l = 0.2; // Set this.
-		u = Math.max( ( t - l ) / ( 1 - l ), 0 ); // The adjusted timing function.
+		const l = 0.2; // Set this.
+		const u = Math.max( ( t - l ) / ( 1 - l ), 0 ); // The adjusted timing function.
 
 		/*
 		 * The easing function.
@@ -141,20 +151,18 @@
 		 *
 		 * @link http://upshots.org/actionscript/jsas-understanding-easing
 		 */
-		e = Math.pow( u / 1, 4 );
+		const e = Math.pow( u / 1, 4 );
 
 		// Adjust the styles accordingly.
-		els.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + ( u * 50 ) + 'px); backdrop-filter: blur(' + ( u * 50 ) + 'px); background-color: rgba(250,250,250,' + u + ')';
-		if ( null !== els.navigation ) {
-			els.navigation.style.opacity = Math.min( e * 8, 1 );
+		data.stage.overlay.style.cssText = '-webkit-backdrop-filter: blur(' + ( u * 50 ) + 'px); backdrop-filter: blur(' + ( u * 50 ) + 'px); background-color: rgba(250,250,250,' + u + ')';
+		if ( null !== data.navigation ) {
+			data.navigation.style.opacity = Math.min( e * 8, 1 );
 		}
-		if ( null !== els.backdrop ) {
-			els.backdrop.style.opacity = Math.min( e * 8, 1 );
+		if ( null !== data.backdrop ) {
+			data.backdrop.style.opacity = Math.min( e * 8, 1 );
 		}
-		if ( null !== els.widgets ) {
-			els.widgets.style.opacity = Math.min( e * 8, 1 );
+		if ( null !== data.widgets ) {
+			data.widgets.style.opacity = Math.min( e * 8, 1 );
 		}
-
 	}
-
-})();
+}() );
