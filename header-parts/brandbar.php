@@ -25,7 +25,7 @@
 		
 		<div id="globalbanner-wrapper">
 			<div id="globalbanner">
-				<a href="http://<?php uri_modern_the_subdomain(); ?>.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
+				<a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
 								
 				<div id="gateways">
 					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">

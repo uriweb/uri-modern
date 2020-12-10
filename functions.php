@@ -568,23 +568,37 @@ function uri_modern_has_admin_privilages() {
 
 
 /**
- * Callback function for Action Bar Apply button URL
+ * Callback function for Action Bar buttons
  */
-function uri_modern_apply_url() {
+function uri_modern_action_bar_link( $link ) {
 
-	$url = 'https://www.uri.edu/apply';
-	$filter = 'uri_modern_modify_apply_url';
+	$apply = apply_filters( 'uri_modern_action_bar_link', $link );
 
-	if ( has_filter( $filter ) ) {
-		$url = apply_filters( $filter, $url );
+	$atts = '';
+	if ( ! empty( $apply['title'] ) ) {
+		$atts .= ' title="' . esc_attr( $apply['title'] ) . '"';
 	}
-
-	return $url;
-
+	if ( ! empty( $apply['class'] ) ) {
+		$atts .= ' class="' . esc_attr( $apply['class'] ) . '"';
+	}
+	return '<a href="' . esc_url( $apply['href'] ) . '" id="' . esc_attr( $apply['id'] ) . '" role="menuitem"><span role="presentation"' . $atts . '></span>' . wp_filter_post_kses( $apply['text'] ) . '</a>';
 }
 
-
-
+/**
+ * Filter for action buttons function for Action Bar buttons
+ */
+function uri_modern_action_bar_filter_callback( $apply ) {
+	$defaults = array(
+		'class' => '',
+		'href' => 'https://www.uri.edu/apply',
+		'id' => 'action-apply',
+		'text' => 'Apply',
+		'title' => '',
+	);
+	$apply = array_replace( $defaults, $apply );
+	return $apply;
+}
+add_filter( 'uri_modern_action_bar_link', 'uri_modern_action_bar_filter_callback', 10, 1 );
 
 /**
  * Enable shortcodes in text widgets
