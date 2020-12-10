@@ -34,7 +34,7 @@
 				echo uri_modern_action_bar_link( $link );
 
 				// apply
-				if ( $GLOBALS['actionbar_apply'] == 'graduate' ) {
+				if ( 'graduate' === $GLOBALS['actionbar_apply'] ) {
 					$link = array(
 						'href' => 'https://www.uri.edu/apply/graduate',
 						'id' => 'action-apply',
