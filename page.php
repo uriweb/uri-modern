@@ -15,6 +15,10 @@
  */
 
 get_header();
+
+// echo 'page template' . microtime();
+$GLOBALS['actionbar_apply'] = 'graduate';
+
 ?>
 
 	<main id="main" class="site-main" role="main">

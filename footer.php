@@ -34,27 +34,11 @@
 				echo uri_modern_action_bar_link( $link );
 
 				// apply
-				if ( 'graduate' === $GLOBALS['actionbar_apply'] ) {
-					$link = array(
-						'href' => 'https://www.uri.edu/apply/graduate',
-						'id' => 'action-apply',
-						'text' => 'Apply',
-						'title' => 'Apply with GradCAS',
-					);
-				} else {
-// $link = array(
-// 'href' => 'https://www.uri.edu/apply/undergraduate',
-// 'id' => 'action-apply',
-// 'text' => 'Apply',
-// 'title' => 'Apply with CommonApp',
-// );
-					$link = array(
-						'href' => 'https://www.uri.edu/apply',
-						'id' => 'action-apply',
-						'text' => 'Apply',
-						'title' => '',
-					);
-				}
+				$link = array(
+					'href' => 'https://www.uri.edu/apply',
+					'id' => 'action-apply',
+					'text' => 'Apply',
+				);
 				echo uri_modern_action_bar_link( $link );
 
 				// tour

@@ -585,9 +585,9 @@ function uri_modern_action_bar_link( $link ) {
 }
 
 /**
- * Filter for action buttons function for Action Bar buttons
+ * Filter for action bar buttons
  */
-function uri_modern_action_bar_filter_callback( $apply ) {
+function uri_modern_action_bar_filter_callback( $a ) {
 	$defaults = array(
 		'class' => '',
 		'href' => 'https://www.uri.edu/apply',
@@ -595,10 +595,28 @@ function uri_modern_action_bar_filter_callback( $apply ) {
 		'text' => 'Apply',
 		'title' => '',
 	);
-	$apply = array_replace( $defaults, $apply );
-	return $apply;
+
+	// if we're in a graduate context, and it's the apply button, override the passed values
+	// @todo: how to allow for overrides in a non-clunky way?
+	// - changing $GLOBALS['actionbar_apply'] works
+	// - getting away from a global would be better
+	if ( empty( $a['text'] ) || 'Apply' === $a['text'] ) {
+		// it's an apply button, let's check for a context to determine grad or undergrad
+		if ( isset( $GLOBALS['actionbar_apply'] ) && 'graduate' == $GLOBALS['actionbar_apply'] ) {
+			// it's a grad school page, override the link
+			$a['href'] = 'https://www.uri.edu/apply/graduate';
+			$a['title'] = 'Apply with GradCAS';
+		}
+	}
+
+	// Finally, customize the link with supplied input
+	$link = array_replace( $defaults, $a );
+
+	return $link;
 }
 add_filter( 'uri_modern_action_bar_link', 'uri_modern_action_bar_filter_callback', 10, 1 );
+
+
 
 /**
  * Enable shortcodes in text widgets
