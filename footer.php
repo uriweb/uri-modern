@@ -24,7 +24,7 @@
 	<div id="actionbar-wrapper">
 		<div id="actionbar" role="menu">
 			<a href="https://www.uri.edu/connect" id="action-connect" role="menuitem"><span role="presentation"></span>Connect</a>
-			<a href="https://www.uri.edu/apply" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>
+			<a href="<?php echo uri_modern_apply_url(); ?>" id="action-apply" role="menuitem"><span role="presentation"></span>Apply</a>
 			<a href="https://www.uri.edu/tour" id="action-tour" role="menuitem"><span role="presentation"></span>Tour</a>
 			<?php
 			$ab_give_url = 'https://www.uri.edu/give';
