@@ -602,7 +602,9 @@ function uri_modern_action_bar_filter_callback( $a ) {
 	// - getting away from a global would be better
 	if ( empty( $a['text'] ) || 'Apply' === $a['text'] ) {
 		// it's an apply button, let's check for a context to determine grad or undergrad
-		if ( isset( $GLOBALS['actionbar_apply'] ) && 'graduate' == $GLOBALS['actionbar_apply'] ) {
+		$is_grad = get_option( 'action_bar_apply_url_is_graduate', false );
+
+		if ( $is_grad ) {
 			// it's a grad school page, override the link
 			$a['href'] = 'https://www.uri.edu/apply/graduate';
 			$a['title'] = 'Apply with GradCAS';
