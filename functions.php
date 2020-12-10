@@ -604,6 +604,13 @@ function uri_modern_action_bar_filter_callback( $a ) {
 		// it's an apply button, let's check for a context to determine grad or undergrad
 		$is_grad = get_option( 'action_bar_apply_url_is_graduate', false );
 
+		if ( ! $is_grad ) {
+			$field = uri_modern_get_field( 'is_graduate' );
+			if ( isset( $field[0] ) && 'graduate' === strtolower( $field[0] ) ) {
+				$is_grad = true;
+			}
+		}
+
 		if ( $is_grad ) {
 			// it's a grad school page, override the link
 			$a['href'] = 'https://www.uri.edu/apply/graduate';
