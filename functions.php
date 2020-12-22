@@ -568,6 +568,66 @@ function uri_modern_has_admin_privilages() {
 
 
 /**
+ * Callback function for Action Bar buttons
+ */
+function uri_modern_action_bar_link( $link ) {
+
+	$apply = apply_filters( 'uri_modern_action_bar_link', $link );
+
+	$atts = '';
+	if ( ! empty( $apply['title'] ) ) {
+		$atts .= ' title="' . esc_attr( $apply['title'] ) . '"';
+	}
+	if ( ! empty( $apply['class'] ) ) {
+		$atts .= ' class="' . esc_attr( $apply['class'] ) . '"';
+	}
+	return '<a href="' . esc_url( $apply['href'] ) . '" id="' . esc_attr( $apply['id'] ) . '" role="menuitem"><span role="presentation"' . $atts . '></span>' . wp_filter_post_kses( $apply['text'] ) . '</a>';
+}
+
+/**
+ * Filter for action bar buttons
+ */
+function uri_modern_action_bar_filter_callback( $a ) {
+	$defaults = array(
+		'class' => '',
+		'href' => 'https://www.uri.edu/apply',
+		'id' => 'action-apply',
+		'text' => 'Apply',
+		'title' => '',
+	);
+
+	// if we're in a graduate context, and it's the apply button, override the passed values
+	// @todo: how to allow for overrides in a non-clunky way?
+	// - changing $GLOBALS['actionbar_apply'] works
+	// - getting away from a global would be better
+	if ( empty( $a['text'] ) || 'Apply' === $a['text'] ) {
+		// it's an apply button, let's check for a context to determine grad or undergrad
+		$is_grad = get_option( 'action_bar_apply_url_is_graduate', false );
+
+		if ( ! $is_grad ) {
+			$field = uri_modern_get_field( 'is_graduate' );
+			if ( isset( $field[0] ) && 'graduate' === strtolower( $field[0] ) ) {
+				$is_grad = true;
+			}
+		}
+
+		if ( $is_grad ) {
+			// it's a grad school page, override the link
+			$a['href'] = 'https://www.uri.edu/apply/graduate';
+			$a['title'] = 'Apply with GradCAS';
+		}
+	}
+
+	// Finally, customize the link with supplied input
+	$link = array_replace( $defaults, $a );
+
+	return $link;
+}
+add_filter( 'uri_modern_action_bar_link', 'uri_modern_action_bar_filter_callback', 10, 1 );
+
+
+
+/**
  * Enable shortcodes in text widgets
  */
 add_filter( 'widget_text', 'do_shortcode' );

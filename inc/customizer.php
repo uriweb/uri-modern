@@ -263,6 +263,34 @@ function uri_modern_options_site_footer( $wp_customize ) {
 		)
 	);
 
+	/* Action Bar Apply url */
+	$wp_customize->add_setting(
+		'action_bar_apply_url_is_graduate',
+		array(
+			'default'           => '',
+			'type'              => 'option',
+			'sanitize_callback' => '',
+			'capability'        => 'delete_site',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'action_bar_apply_url_is_graduate',
+			array(
+				'section'     => 'uri_modern_customizer_footer',
+				'label'       => __( 'Site is grad-only', 'uri' ),
+				'description' => __( 'If this entire site is for grad students only, This changes the apply button in the Action Bar.', 'uri' ),
+				'type'        => 'checkbox',
+				'choices'     => array(
+					'undergraduate' => 'Undergraduate',
+					'graduate' => 'Graduate',
+				),
+			)
+		)
+	);
+
 }
 
 
