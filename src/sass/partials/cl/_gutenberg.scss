@@ -1,5 +1,11 @@
 /* ======= GUTENBERG EDITOR ======= */
 
+.blocks-shortcode__textarea,
+.block-editor-plain-text[aria-label="HTML"] {
+	font-family: $type-mono;
+	font-size: .95rem;
+}
+
 /** CLASSIC EDITOR BLOCK **/
 
 .mce-ico {
