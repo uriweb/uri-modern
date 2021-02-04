@@ -6,7 +6,7 @@ html {
     font-family: $type-sans;
     font-weight: 400;
     font-size: 16px;
-    color: $black;
+    color: var(--global-text-color);
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -20,7 +20,7 @@ h1 {
     font-size: 2.5rem; //1.875rem;
     margin-bottom: 2.5rem; //2rem;
     max-width: 800px;
-    color: $black;
+    color: var(--global-text-color);
 }
 
 h2 {
@@ -28,7 +28,7 @@ h2 {
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
-    color: $black;
+    color: var(--global-text-color);
     max-width: 800px;
 }
 
@@ -36,7 +36,7 @@ h3 {
     font-family: $type-header;
     font-weight: 700;
     font-size: 1.3rem;
-    color: $black;
+    color: var(--global-text-color);
     margin-bottom: 1.3rem;
 }
 
@@ -44,7 +44,7 @@ h4 {
     font-family: $type-header;
     font-weight: 700;
     font-size: 1.2rem;
-    color: $darkgrey;
+    color: var(--global-text-color-alt);
     margin: 2.5rem 0 1.3rem;
 }
 
@@ -52,7 +52,7 @@ h5 {
     font-family: $type-header;
     font-weight: 700;
     font-size: 1rem;
-    color: $darkgrey;
+    color: var(--global-text-color-alt);
     margin: 2.5rem 0 .8rem;
 }
 
@@ -60,7 +60,7 @@ h6 {
     font-family: $type-header;
     font-weight: 400;
     font-size: 1rem;
-    color: $darkgrey;
+    color: var(--global-text-color-alt);
     margin: 2.5rem 0 .8rem;
 }
 
