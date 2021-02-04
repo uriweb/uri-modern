@@ -8,7 +8,7 @@
 	font-size: .8rem;
 	font-family: $type-header;
 	font-weight: 600;
-	color: $darkgrey;
+	color: var(--global-text-color-alt);
 	transition: margin .1s ease-in-out;
 	position: relative;
 	z-index: 10;
@@ -24,14 +24,14 @@
             border-radius: .2rem;
             display: inline-block;
             max-width: 100%;
-			line-height: 1rem;
+						line-height: 1rem;
         }
 
         &.active div,
         div:hover,
         div:focus {
             cursor: pointer;
-            background: #eee;
+            background: var(--global-eee-accent);
         }
 
         span {
@@ -53,8 +53,8 @@
             left: 0;
             width: 7px;
             height: 7px;
-            border-right: 1px solid $darkgrey;
-            border-top: 1px solid $darkgrey;
+            border-right: 1px solid var(--global-text-color-alt);
+            border-top: 1px solid var(--global-text-color-alt);
             transform: rotate(45deg);
         }
 
@@ -193,8 +193,8 @@
             left: 0;
             width: 5px;
             height: 5px;
-            border-right: 1px solid $darkgrey;
-            border-top: 1px solid $darkgrey;
+            border-right: 1px solid var(--global-text-color-alt);
+            border-top: 1px solid var(--global-text-color-alt);
             border-left: none;
             border-bottom: none;
             transform: rotate(45deg);
