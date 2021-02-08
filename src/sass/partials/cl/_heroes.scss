@@ -22,13 +22,15 @@
   a.cl-button,
   span.cl-button {
 
-    //color: $link;
-    background-color: $white !important;
+    box-sizing: border-box;
+    border: 1px solid #2a2a2a;
+    background-color: var(--global-white-accent) !important;
+    color: var(--global-link-color);
 
     &:hover,
     &:focus {
-      //background: $white;
-      color: $link;
+      border: 1px solid #2a2a2a;
+      color: var(--global-link-color);
       top: 0;
     }
 

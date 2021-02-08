@@ -313,4 +313,14 @@
     }
 
   }
+
+  .cl-scard,
+  .cl-tiles .cl-scard {
+    border: none;
+  }
+
+  .cl-scard .cl-scard-meta {
+    border-top: 1px solid #333;
+  }
+
 }

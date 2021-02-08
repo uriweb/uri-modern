@@ -8,7 +8,7 @@ span.cl-button {
 	font-weight: 700;
 	letter-spacing: .1rem;
 	text-transform: uppercase;
-	color: $link;
+	color: var(--global-link-color);
 	transition: all .2s ease-in-out;
 	text-shadow: none;
 	border-radius: .2rem;
@@ -16,10 +16,10 @@ span.cl-button {
 	border: none;
 	box-shadow: $level1;
 
-    &.prominent {
+    &.prominent,
+		&.prominent:hover,
+    &.prominent:focus {
         background: $blue;
-        //box-shadow: 250px 0 100px -100px transparent inset;
-        //padding: 1.09rem 1rem;
     }
 
     &.disabled,
@@ -35,7 +35,7 @@ span.cl-button {
     &:hover,
     &:focus {
 				background: $white;
-				color: $link;
+				color: var(--global-link-color);
 				border: none;
 				box-shadow: $level2;
 				transform: translateY(-2px);
@@ -44,12 +44,6 @@ span.cl-button {
 		&:active {
 			box-shadow: $level3;
 		}
-
-    &.prominent:hover,
-    &.prominent:focus {
-        background: $blue;
-        //box-shadow: 350px 0 50px -100px $link inset;
-    }
 
 }
 
@@ -63,4 +57,28 @@ span.cl-button {
 		margin-bottom: 2rem;
 	}
 
+}
+
+@media (prefers-color-scheme: dark) {
+	a.cl-button,
+	span.cl-button {
+
+		background: $black;
+		border: 1px solid #2a2a2a;
+		box-sizing: border-box;
+
+		&:hover,
+    &:focus {
+			background: $black;
+			border: 1px solid #2a2a2a;
+    }
+
+		&.prominent,
+		&.prominent:hover,
+    &.prominent:focus {
+        background: #2277b3;
+				border: 1px solid #2277b3;
+    }
+
+	}
 }
