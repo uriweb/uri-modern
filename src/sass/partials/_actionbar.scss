@@ -162,6 +162,16 @@
     }
 }
 
+@media (prefers-color-scheme: dark) {
+  #actionbar-wrapper {
+    background: #181818;
+    border-top: 1px solid transparent;
+  }
+  #actionbar a {
+    color: #0078e7;
+  }
+}
+
 /* PRINT */
 
 @media print {
