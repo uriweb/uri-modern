@@ -130,6 +130,8 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --global-background-color: #{$lightgrey};
   --global-text-color: #{$black};
   --global-text-color-alt: #{$darkgrey};
+  --global-link-color: #{$link};
+  --global-link-hover-color: #{$linkhover};
   --global-eee-accent: #eee;
   --global-black-accent: #{$black};
   --global-white-accent: #{$white};
@@ -137,9 +139,11 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --global-background-color: #222;
+    --global-background-color: #1c1c1c;
     --global-text-color: #{$white};
     --global-text-color-alt: #{$grey};
+    --global-link-color: #0094ff;
+    --global-link-hover-color: #48b0fb;
     --global-eee-accent: #333;
     --global-black-accent: #{$white};
     --global-white-accent: #{$black};

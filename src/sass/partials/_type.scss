@@ -125,13 +125,13 @@ p:empty {
 }
 
 a {
-    color: $link;
+    color: var(--global-link-color);
     transition: color .1s ease-in-out;
 }
 
 a:hover,
 a:focus {
-    color: $linkhover;
+    color: var(--global-link-hover-color);
 }
 
 hr {
