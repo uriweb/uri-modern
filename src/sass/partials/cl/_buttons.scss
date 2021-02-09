@@ -59,7 +59,7 @@ span.cl-button {
 
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
 	a.cl-button,
 	span.cl-button {
 

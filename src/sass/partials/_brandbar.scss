@@ -272,6 +272,13 @@
     }
 } // #gateways-toggle:checked
 
+#os-theme-switch {
+  color: #000;
+  background: #ddd;
+  font-weight: bold;
+  padding: .5rem;
+}
+
 @media all and (min-width: 370px) {
     #identity {
         padding-left: 220px;

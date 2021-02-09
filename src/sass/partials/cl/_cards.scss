@@ -294,7 +294,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   .cl-card,
   .cl-dcard,
   .cl-scard,

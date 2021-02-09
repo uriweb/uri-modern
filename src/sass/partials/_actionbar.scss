@@ -162,7 +162,7 @@
     }
 }
 
-@media (prefers-color-scheme: dark) {
+[data-theme="dark"] {
   #actionbar-wrapper {
     background: #151515;
     border-top: 1px solid transparent;

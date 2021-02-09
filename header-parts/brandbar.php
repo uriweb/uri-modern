@@ -8,9 +8,9 @@
 ?>
 
 	<header id="brandbar" class="site-header" role="banner">
-		
+
 		<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island"></div>
-		
+
 		<div id="globalsearch" role="search">
 			<input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
 			<label for="gsform-toggle" id="gsform"><span>Search</span></label>
@@ -22,11 +22,11 @@
 				<input type="submit" id="gs-submit" class="searchsubmit" name="searchsubmit" value="Search" />
 			</form>
 		</div>
-		
+
 		<div id="globalbanner-wrapper">
 			<div id="globalbanner">
 				<a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
-								
+
 				<div id="gateways">
 					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
 					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( defined( 'URI_EASTER_EGGS' ) && URI_EASTER_EGGS === true ) ? '&#128017' : 'You'; ?></span></label>
@@ -38,9 +38,13 @@
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/families" role="menuitem">Parents and Families</a></li>
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/alumni" role="menuitem">Alumni</a></li>
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/community" role="menuitem">Community</a></li>
+						<li id="os-theme-switch">
+							<input type="checkbox" id="os-theme-switch-toggle" role="presentation" aria-label="Toggles between light and dark display mode">
+							<label for="os-theme-switch-toggle" id="os-theme-switch-label">Dark mode (experimental)</label>
+						</li>
 					</ul>
 				</div>
-								
+
 			</div>
 		</div>
 

@@ -137,8 +137,7 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --global-white-accent: #{$white};
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+[data-theme="dark"] {
     --global-background-color: #1c1c1c;
     --global-text-color: #{$white};
     --global-text-color-alt: #{$grey};
@@ -147,5 +146,4 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     --global-eee-accent: #333;
     --global-black-accent: #{$white};
     --global-white-accent: #{$black};
-  }
 }
