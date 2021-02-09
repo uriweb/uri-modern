@@ -242,6 +242,13 @@
 
     }
 
+    li.current_page_parent>a,
+    li.current_page_ancestor>a,
+  	li.current-page-ancestor>a,
+  	li.current-post-ancestor>a {
+      background: #222;
+    }
+
   }
 
 }
@@ -425,6 +432,7 @@
       	li.current-page-ancestor>a,
       	li.current-post-ancestor>a {
 
+            background: transparent;
             color: $white;
             border-bottom: 2px solid #fff;
 
