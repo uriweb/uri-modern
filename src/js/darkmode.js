@@ -17,37 +17,50 @@
 			switchTheme( e, toggleSwitch );
 		}, false );
 
-		//pre-check the dark-theme checkbox if dark-theme is set
 		if ( 'dark' === document.documentElement.getAttribute( 'data-theme' ) ) {
 			toggleSwitch.checked = true;
 		}
 	}
 
-	//determines if the user has a set theme
 	function detectColorScheme() {
-		let theme = 'light'; //default to light
+		let theme = 'light';
+		let systemTheme = 'light';
+		let altered = false;
+		let userTheme;
 
-		//local storage is used to override OS theme settings
-		if ( localStorage.getItem( 'theme' ) ) {
-			if ( 'dark' === localStorage.getItem( 'theme' ) ) {
-				theme = 'dark';
+		if ( localStorage.getItem( 'altered-theme' ) ) {
+			if ( 'yes' === localStorage.getItem( 'altered-theme' ) ) {
+				altered = true;
 			}
-		} else if ( ! window.matchMedia ) {
-			//matchMedia method not supported
-			return false;
-		} else if ( window.matchMedia( '(prefers-color-scheme: dark)' ).matches ) {
-			//OS theme setting detected as dark
-			theme = 'dark';
 		}
 
-		//dark theme preferred, set document with a `data-theme` attribute
+		if ( localStorage.getItem( 'theme' ) ) {
+			userTheme = localStorage.getItem( 'theme' );
+		}
+
+		if ( window.matchMedia( '(prefers-color-scheme: dark)' ).matches ) {
+			systemTheme = 'dark';
+		}
+
+		if ( userTheme === systemTheme ) {
+			theme = systemTheme;
+			if ( altered ) {
+				localStorage.setItem( 'altered-theme', 'no' );
+			}
+		} else if ( ! altered ) {
+			theme = systemTheme;
+		} else {
+			theme = userTheme;
+		}
+
 		if ( 'dark' === theme ) {
 			document.documentElement.setAttribute( 'data-theme', 'dark' );
 		}
 	}
 
-	//function that changes the theme, and sets a localStorage variable to track the theme between page loads
 	function switchTheme( e, toggleSwitch ) {
+		localStorage.setItem( 'altered-theme', 'yes' );
+
 		if ( e.target.checked ) {
 			localStorage.setItem( 'theme', 'dark' );
 			document.documentElement.setAttribute( 'data-theme', 'dark' );
