@@ -33,7 +33,7 @@
     .cl-date-download-cancel {
       border-bottom-left-radius: .2rem;
     }
-      
+
   }
 
   .cl-date-caption-wrapper {
@@ -53,4 +53,12 @@
     font-family: $type-sans;
   }
 
+}
+
+[data-theme="dark"] {
+  .cl-date {
+    .cl-date-download-dialogue {
+      color: #000;
+    }
+  }
 }

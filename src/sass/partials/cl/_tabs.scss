@@ -20,6 +20,33 @@
 
 }
 
+[data-theme="dark"] {
+	.cl-tabs.cl-tabs-js {
+		border: 1px solid #000;
+
+		[role="tabpanel"] {
+			background: #333;
+		}
+
+		[role="tablist"] a {
+      background: #333;
+			color: #fff;
+			border-bottom: 1px solid #444;
+    }
+
+		[role="tablist"] a:not([aria-selected]),
+    [role="tablist"] a:not([aria-selected]) {
+      background: #222;
+
+			&:hover,
+			&:focus {
+				background: #282828;
+			}
+    }
+
+	}
+}
+
 @media screen and (min-width:550px) {
 
   .cl-tabs.cl-tabs-js {
@@ -62,5 +89,18 @@
     }
 
   }
+
+	[data-theme="dark"] {
+		.cl-tabs.cl-tabs-js {
+
+			background: #151515;
+			border: none;
+
+			[role="tablist"] a {
+				border-bottom: none;
+	    }
+
+		}
+	}
 
 }
