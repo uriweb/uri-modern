@@ -202,7 +202,7 @@
 
     ul.sub-menu a:hover,
     ul.sub-menu a:focus {
-        background: $link;
+        background: var(--global-link-color);
     }
 
     span.cl-menu-arrow {
@@ -212,6 +212,37 @@
     li.current_page_item span.cl-menu-arrow {
         //border-top: 8px solid $white;
     }
+
+}
+
+[data-theme="dark"] {
+
+  #localnav>ul,
+  #cl-localnav>ul {
+
+    background: #000;
+
+    &>li:not(:first-child) {
+        border-top: 1px solid #333;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    ul.sub-menu a {
+
+        border-left: 2px solid #333;
+        background: #111;
+
+        &:hover,
+        &:focus {
+            background: var(--global-link-color);
+        }
+
+    }
+
+  }
 
 }
 
@@ -229,8 +260,6 @@
     		top: 0;
     		max-width: 100%;
     		width: 100%;
-    		//border-bottom: 1px solid $grey;
-        //padding-bottom: 1rem;
     		background: transparent;
     		box-shadow: inset 0 -2px 0 #ddd;
     		border-radius: 0;
@@ -272,9 +301,6 @@
       	li.current-page-ancestor>a,
       	li.current-post-ancestor>a {
             color: $black;
-            //border-radius: .2rem;
-            //padding: .3rem .6rem .2rem;
-            //background: #eee;
             border-bottom: 2px solid #000;
             font-weight: 600;
 
@@ -333,7 +359,6 @@
             padding-right: 0;
         }
         a.cl-menu-trigger {
-          //padding: .3rem 2rem .2rem .6rem !important;
           padding-right: 1.5rem;
         }
         span.cl-menu-arrow {
@@ -369,5 +394,63 @@
 
     #lnmenu {
         display: none;
+    }
+
+    [data-theme="dark"] {
+      #localnav>ul,
+      #cl-localnav>ul {
+
+        background: transparent;
+        box-shadow: inset 0 -2px 0 #333;
+
+        li.current_page_item>a,
+        li.current-page-item>a,
+        li.current_page_ancestor>a,
+      	li.current-page-ancestor>a,
+      	li.current-post-ancestor>a,
+        a:hover,
+        a:focus {
+          color: $white;
+          border-bottom-color: transparent;
+
+          & ~ span.cl-menu-arrow {
+            background-position: 0 -16px;
+          }
+
+        }
+
+        li.current_page_item>a,
+        li.current-page-item>a,
+        li.current_page_ancestor>a,
+      	li.current-page-ancestor>a,
+      	li.current-post-ancestor>a {
+
+            color: $white;
+            border-bottom: 2px solid #fff;
+
+            &:hover,
+            &:focus {
+              background: transparent;
+              color: $white;
+            }
+
+        }
+
+      }
+      #cl-localnav>ul {
+        ul.sub-menu {
+            a {
+                border-left: none;
+            }
+
+            li {
+                a:hover,
+                a:focus {
+                    border-bottom: 2px solid transparent;
+                    color: $white;
+                }
+            }
+          }
+      }
     }
 }

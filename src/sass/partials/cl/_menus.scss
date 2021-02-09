@@ -89,6 +89,18 @@
 
 }
 
+[data-theme="dark"] {
+  .cl-menu {
+    span.cl-menu-toggle {
+      background: #333;
+      color: #fff;
+    }
+    ul.cl-menu-list ul li:not(:first-child) {
+      border-top: 1px solid #333;
+    }
+  }
+}
+
 @media screen and (min-width: $break1) {
 
   .cl-menu {
@@ -117,7 +129,7 @@
         */
 
         li:first-child {
-          border-radius: .2rem .2rem 0 0;
+          //border-radius: .2rem .2rem 0 0;
           overflow: hidden;
         }
 
