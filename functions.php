@@ -381,6 +381,8 @@ function uri_modern_scripts() {
 
 	wp_enqueue_style( 'uri-modern-style', get_template_directory_uri() . '/style.css', array(), uri_modern_cache_buster(), 'all' );
 
+	wp_enqueue_script( 'uri-modern-color-scheme', get_template_directory_uri() . '/js/color-scheme.js', array(), uri_modern_cache_buster(), false );
+
 	wp_enqueue_script( 'uri-modern-navigation', get_template_directory_uri() . '/js/navigation.js', array(), uri_modern_cache_buster(), true );
 
 	wp_enqueue_script( 'uri-modern-smoothscroll', get_template_directory_uri() . '/js/smoothscroll.min.js', array(), uri_modern_cache_buster(), true );
