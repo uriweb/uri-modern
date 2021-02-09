@@ -23,6 +23,12 @@
 
 }
 
+[data-theme="dark"] {
+  .cl-panel {
+    background: #333;
+  }
+}
+
 @media screen and (min-width: $break2) {
 
   .cl-panel {
