@@ -21,3 +21,16 @@
   }
 
 }
+
+[data-theme="dark"] {
+  .cl-quote {
+
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+
+    cite {
+      color: $midgrey;
+    }
+
+  }
+}
