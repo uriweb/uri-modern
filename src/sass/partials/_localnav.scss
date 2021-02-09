@@ -202,7 +202,7 @@
 
     ul.sub-menu a:hover,
     ul.sub-menu a:focus {
-        background: var(--global-link-color);
+        background: var(--uri-modern-link-color);
     }
 
     span.cl-menu-arrow {
@@ -237,7 +237,7 @@
 
         &:hover,
         &:focus {
-            background: var(--global-link-color);
+            background: var(--uri-modern-link-color);
         }
 
     }

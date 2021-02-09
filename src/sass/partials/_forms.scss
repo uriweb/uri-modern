@@ -135,7 +135,7 @@ form.modern-form {
 					background: #fafafa;
 
 					&:before {
-						border: 3px solid var(--global-link-color);
+						border: 3px solid var(--uri-modern-link-color);
 					}
 
 				}
@@ -149,7 +149,7 @@ form.modern-form {
 				animation-timing-function: ease-in-out;
 
 				&:before {
-					border: 9px solid var(--global-link-color);
+					border: 9px solid var(--uri-modern-link-color);
 				}
 
 			}

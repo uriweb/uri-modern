@@ -8,7 +8,7 @@ span.cl-button {
 	font-weight: 700;
 	letter-spacing: .1rem;
 	text-transform: uppercase;
-	color: var(--global-link-color);
+	color: var(--uri-modern-link-color);
 	transition: all .2s ease-in-out;
 	text-shadow: none;
 	border-radius: .2rem;
@@ -35,7 +35,7 @@ span.cl-button {
     &:hover,
     &:focus {
 				background: $white;
-				color: var(--global-link-color);
+				color: var(--uri-modern-link-color);
 				border: none;
 				box-shadow: $level2;
 				transform: translateY(-2px);

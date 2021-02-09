@@ -24,13 +24,13 @@
 
     box-sizing: border-box;
     border: 1px solid #2a2a2a;
-    background-color: var(--global-white-accent) !important;
-    color: var(--global-link-color);
+    background-color: var(--uri-modern-white-accent) !important;
+    color: var(--uri-modern-link-color);
 
     &:hover,
     &:focus {
       border: 1px solid #2a2a2a;
-      color: var(--global-link-color);
+      color: var(--uri-modern-link-color);
       top: 0;
     }
 

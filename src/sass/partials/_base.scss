@@ -127,23 +127,23 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
 :root {
   color-scheme: light dark;
-  --global-background-color: #{$lightgrey};
-  --global-text-color: #{$black};
-  --global-text-color-alt: #{$darkgrey};
-  --global-link-color: #{$link};
-  --global-link-hover-color: #{$linkhover};
-  --global-eee-accent: #eee;
-  --global-black-accent: #{$black};
-  --global-white-accent: #{$white};
+  --uri-modern-background-color: #{$lightgrey};
+  --uri-modern-text-color: #{$black};
+  --uri-modern-text-color-alt: #{$darkgrey};
+  --uri-modern-link-color: #{$link};
+  --uri-modern-link-hover-color: #{$linkhover};
+  --uri-modern-eee-accent: #eee;
+  --uri-modern-black-accent: #{$black};
+  --uri-modern-white-accent: #{$white};
 }
 
 [data-theme="dark"] {
-    --global-background-color: #1c1c1c;
-    --global-text-color: #{$white};
-    --global-text-color-alt: #{$grey};
-    --global-link-color: #0094ff;
-    --global-link-hover-color: #48b0fb;
-    --global-eee-accent: #333;
-    --global-black-accent: #{$white};
-    --global-white-accent: #{$black};
+    --uri-modern-background-color: #1c1c1c;
+    --uri-modern-text-color: #{$white};
+    --uri-modern-text-color-alt: #{$grey};
+    --uri-modern-link-color: #0094ff;
+    --uri-modern-link-hover-color: #48b0fb;
+    --uri-modern-eee-accent: #333;
+    --uri-modern-black-accent: #{$white};
+    --uri-modern-white-accent: #{$black};
 }
