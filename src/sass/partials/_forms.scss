@@ -135,7 +135,7 @@ form.modern-form {
 					background: #fafafa;
 
 					&:before {
-						border: 3px solid #b4daff;
+						border: 3px solid var(--global-link-color);
 					}
 
 				}
@@ -149,7 +149,7 @@ form.modern-form {
 				animation-timing-function: ease-in-out;
 
 				&:before {
-					border: 9px solid $link;
+					border: 9px solid var(--global-link-color);
 				}
 
 			}
@@ -228,4 +228,67 @@ form.modern-form {
 	form.modern-form {
     padding: 2rem;
   }
+}
+
+[data-theme="dark"] {
+	.modern-form form,
+	form.modern-form {
+		background: #282828;
+		border: none;
+
+		fieldset {
+
+			input[type="checkbox"],
+			input[type="radio"] {
+
+				& + label {
+
+					display: block;
+					background: #333;
+					border: 1px solid #383838;
+					color: $white;
+
+					&:before {
+						background: #333;
+					}
+
+					&:hover,
+					&:focus {
+						background: #383838;
+					}
+
+				}
+
+			}
+
+			input[type="text"],
+			input[type="password"] {
+
+				background: #333;
+				color: #fff;
+				border: 1px solid #383838;
+
+				&:hover,
+				&:focus {
+					border: 1px solid #71b9ff;
+				}
+
+			}
+
+			textarea {
+
+				background: #333;
+				color: #fff;
+				border: 1px solid #383838;
+
+				&:hover,
+				&:focus {
+					border: 1px solid #71b9ff;
+				}
+
+			}
+
+		}
+
+	}
 }
