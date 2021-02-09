@@ -168,7 +168,14 @@
     border-top: 1px solid transparent;
   }
   #actionbar a {
+    
     color: #0078e7;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+
   }
 }
 
