@@ -80,5 +80,12 @@ span.cl-button {
 				border: 1px solid #2277b3;
     }
 
+		&.disabled,
+    &.disabled:hover,
+    &.disabled:focus {
+        background: #1a1a1a;
+				color: #888;
+    }
+
 	}
 }
