@@ -3,11 +3,11 @@
    ============================== */
 
 .globalnav {
-    
+
     background: $white;
     position: relative;
-	z-index: 9980;
-    
+	  z-index: 9980;
+
     #globalnav-menu {
         display: none;
         width: 100%;
@@ -20,7 +20,7 @@
         background: $white;
         border-bottom: 1px solid $grey;
     }
-    
+
     a {
         display: inline-block;
         width: 100%;
@@ -29,12 +29,12 @@
         font-weight: 600;
         font-family: $type-sans;
     }
-    
+
     a:hover,
     a:focus {
         color: $link;
     }
-    
+
     #globalnav-toggle {
         display: none;
     }
@@ -57,11 +57,11 @@
         background-color: $link;
         color: $white;
         cursor: pointer;
-        
+
         span {
             background-position: 0 -18px;
         }
-            
+
     }
 
     #globalnav-label span {
@@ -93,16 +93,60 @@
             display: block;
         }
     }
-    
+
+}
+
+[data-theme="dark"] {
+
+  .globalnav {
+
+    #globalnav-label {
+
+      background: $darkblue;
+      color: #aaa;
+
+      span {
+        background-position: 0 0;
+      }
+
+      &:hover,
+      &:focus {
+        background: $blue;
+        color: #fff;
+
+        span {
+          background-position: 0 -18px;
+        }
+
+      }
+
+    }
+
+    #globalnav-menu {
+      background: $darkblue;
+      border-bottom: 1px solid #000;
+    }
+
+    a {
+      color: #ccc;
+
+      &:hover,
+      &:focus {
+        color: var(--uri-modern-link-color);
+      }
+    }
+
+  }
+
 }
 
 @media all and (min-width: $break1) {
-    
+
     body.page-template-page-external-landing #globalnav-menu {
             position: absolute;
             background: rgba(255,255,255,.8);
     }
-    
+
     .globalnav {
 
         background: rgba(255,255,255,.8);
@@ -115,7 +159,7 @@
             background: #fff;
             border-bottom: none;
         }
-        
+
         #globalnav-label {
             display: none;
         }
@@ -139,28 +183,52 @@
         }
 
     }
-    
+
     @supports ((-webkit-backdrop-filter: initial) or (backdrop-filter: initial)) {
         .globalnav #globalnav-menu {
             background: rgba(255,255,255,.8);
             backdrop-filter: blur(10px) saturate(250%);
         }
+
+        [data-theme="dark"] {
+          .globalnav #globalnav-menu {
+            background: rgba(0,18,40,.8);
+          }
+        }
     }
-    
+
+    [data-theme="dark"] {
+
+      body.page-template-page-external-landing #globalnav-menu {
+        background: rgba(0,18,40,.8);
+      }
+
+      .globalnav {
+
+        background: rgba(0,18,40,.8);
+
+        #globalnav-menu {
+          border-bottom: none;
+        }
+
+      }
+
+    }
+
 }
 
 @media all and (min-width: $break2) {
     .globalnav {
-        
+
         li:not(:last-child) {
             margin-right: 3rem;
         }
-        
+
         a {
             font-size: .9rem;
         }
-        
+
     }
-    
-    
+
+
 }
