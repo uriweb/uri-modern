@@ -12,6 +12,12 @@ URI Modern is a WordPress theme designed for the University of Rhode Island. It'
 
 URI Modern 2.4.0 is a minor release.
 
+* Adds a filter for dynamic control of the action bar "Apply" button
+* Adds a Customizer option to switch the "Apply" button context from undergraduate to graduate
+* Whitelists the [Ninja Tables](https://wordpress.org/plugins/ninja-tables/) block
+* Makes it easier to edit `.breakout` elements in the block editor
+* Makes it easier to read HTML and shortcode text in the block editor
+* Updates ASCII art to reflect the State of Rhode Island name change
 * Updates development tools
 
 For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/205/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
