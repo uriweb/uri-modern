@@ -181,7 +181,7 @@
 	right: 0;
 	z-index: 9996;
 	width: 220px;
-	padding: 1.5rem 0 1rem;
+	padding: 1.5rem 0 0;
 	background: #fff;
 	border-radius: 0 0 .2rem .2rem;
 	box-shadow: $level2;
@@ -272,11 +272,25 @@
     }
 } // #gateways-toggle:checked
 
-#os-theme-switch {
-  color: #000;
-  background: #ddd;
-  font-weight: bold;
-  padding: .5rem;
+[data-theme="dark"] {
+
+  #gateways-menu {
+
+    background: #222;
+
+    li a {
+
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        background: var(--uri-modern-link-color);
+      }
+
+    }
+
+  }
+
 }
 
 @media all and (min-width: 370px) {

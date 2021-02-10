@@ -40,7 +40,7 @@
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/community" role="menuitem">Community</a></li>
 						<li id="os-theme-switch">
 							<input type="checkbox" id="os-theme-switch-toggle" role="presentation" aria-label="Toggles between light and dark display mode">
-							<label for="os-theme-switch-toggle" id="os-theme-switch-label">Dark mode (experimental)</label>
+							<label for="os-theme-switch-toggle" id="os-theme-switch-label"><span class="toggle-switch" role="presentation"></span>Use dark mode</label>
 						</li>
 					</ul>
 				</div>
