@@ -38,7 +38,7 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 __Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](https://github.com/johnpennypacker)  
 __Tags:__ themes  
 __Requires at least:__ 4.0  
-__Tested up to:__ 5.5  
+__Tested up to:__ 5.6  
 __Stable tag:__ 2.4.0  
 __License:__ GPL-3.0  
 __Licence URI:__ https://www.gnu.org/licenses/gpl-3.0.html
