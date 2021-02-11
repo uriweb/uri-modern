@@ -8,15 +8,19 @@
 
 URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.
 
-## What's new in 2.3.1
+## What's new in 2.4.0
 
-URI Modern 2.3.1 is a bug fix release.
+URI Modern 2.4.0 is a minor release.
 
-* Fixes a few style glitches, including images on mobile and image captions in WordPress galleries
-* Updates the [Program Finder](https://github.com/uriweb/uri-program-finder) template with links for program details
+* Adds a filter for dynamic control of the action bar "Apply" button
+* Adds a Customizer option to switch the "Apply" button context from undergraduate to graduate
+* Whitelists the [Ninja Tables](https://wordpress.org/plugins/ninja-tables/) block
+* Makes it easier to edit `.breakout` elements in the block editor
+* Makes it easier to read HTML and shortcode text in the block editor
+* Updates ASCII art to reflect the State of Rhode Island name change
 * Updates development tools
 
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/201/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
+For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/205/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
 
 ## How do I get set up?
 
@@ -34,7 +38,7 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 __Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](https://github.com/johnpennypacker)  
 __Tags:__ themes  
 __Requires at least:__ 4.0  
-__Tested up to:__ 5.5  
-__Stable tag:__ 2.3.1  
+__Tested up to:__ 5.6  
+__Stable tag:__ 2.4.0  
 __License:__ GPL-3.0  
 __Licence URI:__ https://www.gnu.org/licenses/gpl-3.0.html

@@ -1,5 +1,17 @@
 /* ======= GUTENBERG EDITOR ======= */
 
+.blocks-shortcode__textarea,
+.block-editor-plain-text[aria-label="HTML"] {
+	font-family: $type-mono;
+	font-size: .95rem;
+}
+
+/** prevents breakout elements from being hard to edit @todo: make it look right */
+.wp-block.breakout {
+	left: 0 !important;
+	margin-left: auto !important;
+}
+
 /** CLASSIC EDITOR BLOCK **/
 
 .mce-ico {
