@@ -215,7 +215,7 @@
 
 }
 
-[data-theme="dark"] {
+[data-theme="dark"] body.honor-color-scheme {
 
   #localnav>ul,
   #cl-localnav>ul {
@@ -403,7 +403,7 @@
         display: none;
     }
 
-    [data-theme="dark"] {
+    [data-theme="dark"] body.honor-color-scheme {
       #localnav>ul,
       #cl-localnav>ul {
 
