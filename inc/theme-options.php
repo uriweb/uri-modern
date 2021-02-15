@@ -22,7 +22,7 @@ if ( function_exists( 'register_field_group' ) ) {
 				array(
 					'key' => 'field_602ad77cfce9a',
 					'label' => 'Ignore user color scheme',
-					'name' => 'uri_modern_honor_color_scheme',
+					'name' => 'uri_modern_ignore_color_scheme',
 					'type' => 'true_false',
 					'instructions' => '',
 					'required' => 0,

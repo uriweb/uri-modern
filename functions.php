@@ -715,7 +715,7 @@ add_filter( 'body_class', 'uri_modern_add_slug_body_class' );
  */
 function uri_modern_color_scheme_body_class( $classes ) {
 	global $post;
-	if ( isset( $post ) && ! uri_modern_get_field( 'uri_modern_honor_color_scheme' ) ) {
+	if ( isset( $post ) && ! uri_modern_get_field( 'uri_modern_ignore_color_scheme' ) ) {
 		$classes[] = 'honor-color-scheme';
 	}
 	return $classes;
