@@ -4,6 +4,7 @@
 
 #os-theme-switch {
 
+ position: relative;
  color: #555;
  background: #eee;
  border-top: 1px solid #ddd;
@@ -11,8 +12,52 @@
  font-size: 90%;
  margin-top: .8rem !important;
 
+ .darkmode-unavailable {
+
+   position: absolute;
+   display: flex;
+   top: 0;
+   left: 0;
+   z-index: 1;
+   opacity: .7;
+   width: 100%;
+   height: 100%;
+   box-sizing: border-box;
+   background: #fff;
+   color: #000;
+
+   div {
+     opacity: 0;
+     width: 100%;
+     align-self: center;
+     font-size: 80%;
+     text-align: center;
+     transition: opacity .2s ease-in-out;
+   }
+
+   & ~ input:checked ~ label .toggle-switch {
+    background: #888;
+  }
+
+   &:hover,
+   &:focus {
+
+     div {
+       opacity: 1;
+       cursor: default;
+     }
+
+     & ~ label {
+       filter: blur(2px);
+     }
+
+   }
+
+ }
+
  input {
 
+  position: relative;
    display: none;
 
    &:checked ~ label {
@@ -34,8 +79,11 @@
 
  label {
 
+  position: relative;
    height: 16px;
    line-height: 16px;
+   filter: initial;
+   transition: filter .2s ease-in-out;
 
    &:hover,
    &:focus {

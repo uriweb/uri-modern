@@ -21,13 +21,13 @@ if ( function_exists( 'register_field_group' ) ) {
 			'fields' => array(
 				array(
 					'key' => 'field_602ad77cfce9a',
-					'label' => 'Ignore user color scheme',
+					'label' => 'Ignore User Color Scheme',
 					'name' => 'uri_modern_ignore_color_scheme',
 					'type' => 'true_false',
 					'instructions' => '',
 					'required' => 0,
 					'conditional_logic' => 0,
-					'message' => 'Ignore the user\'s color scheme preferences',
+					'message' => 'If checked, the user\'s color scheme preferences will be ignored on this post/page.',
 					'default_value' => 0,
 				),
 			),
