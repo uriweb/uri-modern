@@ -655,6 +655,11 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Theme options
+ */
+require get_template_directory() . '/inc/theme-options.php';
+
+/**
  * Layout options
  */
 require get_template_directory() . '/inc/layout-options.php';
@@ -702,6 +707,20 @@ function uri_modern_add_slug_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'uri_modern_add_slug_body_class' );
+
+/**
+ * Add to body class list when user color scheme should be honored
+ *
+ * @param array $classes the classes.
+ */
+function uri_modern_color_scheme_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) && ! uri_modern_get_field( 'uri_modern_honor_color_scheme' ) ) {
+		$classes[] = 'honor-color-scheme';
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'uri_modern_color_scheme_body_class' );
 
 /**
  * Add a span around the title prefix so that the prefix can be hidden with CSS
