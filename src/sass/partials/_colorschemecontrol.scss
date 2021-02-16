@@ -123,11 +123,17 @@
 
 }
 
-[data-theme="dark"] body.honor-color-scheme {
+[data-theme="dark"] body.honor-color-scheme, body.force-dark-color-scheme {
 
   #os-theme-switch {
+
     background: #1c1c1c;
-    border-top: 1px solid #000;
+    border-top: 1px solid #111;
     color: #ccc;
+
+    .darkmode-unavailable {
+      background: #1c1c1c;
+      color: #fff;
+    }
   }
 }

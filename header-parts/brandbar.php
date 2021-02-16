@@ -39,9 +39,16 @@
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/alumni" role="menuitem">Alumni</a></li>
 						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/gateway/community" role="menuitem">Community</a></li>
 						<li id="os-theme-switch">
-							<?php if ( 'light' === uri_modern_get_field( 'uri_modern_color_scheme' ) ) : ?>
+							<?php
+								$scheme = uri_modern_get_field( 'uri_modern_color_scheme' );
+								$syntax = array(
+									'light' => 'Dark',
+									'dark' => 'Light',
+								);
+								if ( 'user' !== $scheme && null !== $scheme ) :
+							?>
 							<div class="darkmode-unavailable">
-								<div>Dark mode isn't available on this page.</div>
+								<div><?php echo $syntax[ $scheme ]; ?> mode isn't available on this page.</div>
 							</div>
 							<?php endif; ?>
 							<input type="checkbox" id="os-theme-switch-toggle" role="presentation" aria-label="Toggles between light and dark display mode">
