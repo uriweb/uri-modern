@@ -709,14 +709,19 @@ function uri_modern_add_slug_body_class( $classes ) {
 add_filter( 'body_class', 'uri_modern_add_slug_body_class' );
 
 /**
- * Add to body class list when user color scheme should be honored
+ * Add to body class list depending on which color scheme should be honored
  *
  * @param array $classes the classes.
  */
 function uri_modern_color_scheme_body_class( $classes ) {
 	global $post;
-	if ( isset( $post ) && ! uri_modern_get_field( 'uri_modern_ignore_color_scheme' ) ) {
-		$classes[] = 'honor-color-scheme';
+	$scheme = uri_modern_get_field( 'uri_modern_color_scheme' );
+	if ( isset( $post ) ) {
+		if ( 'user' === $scheme || null === $scheme ) {
+			$classes[] = 'honor-color-scheme';
+		} else if ( 'dark' === $scheme ) {
+			$classes[] = 'force-dark-color-scheme';
+		}
 	}
 	return $classes;
 }
