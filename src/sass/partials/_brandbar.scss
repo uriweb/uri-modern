@@ -272,7 +272,7 @@
     }
 } // #gateways-toggle:checked
 
-[data-theme="dark"] body.honor-color-scheme, body.force-dark-color-scheme {
+#{$dark-scheme-selectors} {
 
   #gateways-menu {
 

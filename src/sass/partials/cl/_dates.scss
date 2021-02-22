@@ -55,7 +55,7 @@
 
 }
 
-[data-theme="dark"] body.honor-color-scheme, body.force-dark-color-scheme {
+#{$dark-scheme-selectors} {
   .cl-date {
     .cl-date-download-dialogue {
       color: #000;

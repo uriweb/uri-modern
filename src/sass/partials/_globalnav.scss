@@ -96,7 +96,7 @@
 
 }
 
-[data-theme="dark"] body.honor-color-scheme, body.force-dark-color-scheme {
+#{$dark-scheme-selectors} {
 
   .globalnav {
 
@@ -190,14 +190,14 @@
             backdrop-filter: blur(10px) saturate(250%);
         }
 
-        [data-theme="dark"] body.honor-color-scheme, body.force-dark-color-scheme {
+        #{$dark-scheme-selectors} {
           .globalnav #globalnav-menu {
             background: rgba(0,18,40,.8);
           }
         }
     }
 
-    [data-theme="dark"] body.honor-color-scheme, body.force-dark-color-scheme {
+    #{$dark-scheme-selectors} {
 
       body.page-template-page-external-landing #globalnav-menu {
         background: rgba(0,18,40,.8);

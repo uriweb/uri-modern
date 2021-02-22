@@ -125,6 +125,11 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
    DARK MODE SUPPORT
    ============================== */
 
+$dark-scheme-selectors: '
+[data-theme="dark"] body.honor-color-scheme,
+body.force-dark-color-scheme
+';
+
 :root {
   color-scheme: light dark;
   --uri-modern-background-color: #{$lightgrey};
@@ -137,7 +142,7 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   --uri-modern-white-accent: #{$white};
 }
 
-[data-theme="dark"] body.honor-color-scheme, body.force-dark-color-scheme {
+#{$dark-scheme-selectors} {
     --uri-modern-background-color: #1c1c1c; //#001836
     --uri-modern-text-color: #{$white};
     --uri-modern-text-color-alt: #{$grey};
