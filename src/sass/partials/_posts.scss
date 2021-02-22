@@ -163,6 +163,31 @@ nav.pagination {
     display: initial;
 }
 
+#{$dark-scheme-selectors} {
+  nav.post-navigation,
+  nav.posts-navigation,
+  nav.pagination {
+
+    border-top: 1px solid #333;
+
+    .nav-links {
+
+      &>div a {
+        background: #333;
+        color: $midgrey;
+      }
+
+      &>div a:hover,
+      &>div a:focus {
+          background: $link;
+          color: $white;
+      }
+
+    }
+
+  }
+}
+
 @media print {
 	article.post footer {
 		display: none;
