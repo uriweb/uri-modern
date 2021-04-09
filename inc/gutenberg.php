@@ -104,6 +104,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core-embed/wordpress-tv',
 		// component library
 		'uri-cl/boxout',
+		'uri-cl/breakout',
 		'uri-cl/button',
 		'uri-cl/card',
 		'uri-cl/date',
@@ -172,5 +173,3 @@ add_action( 'after_setup_theme', 'uri_modern_block_editor_styles' );
 // echo '<style>.blocks-font-size * { display: none; } .blocks-font-size { border: 0 !important; height: 0; padding: 0 !important; margin-top: 32px !important; }</style>';
 // }
 // add_action( 'admin_head', 'uri_modern_hide_font_styles' );
-
-
