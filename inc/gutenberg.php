@@ -103,6 +103,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core-embed/videopress',
 		'core-embed/wordpress-tv',
 		// component library
+		'uri-cl/abstract',
 		'uri-cl/boxout',
 		'uri-cl/breakout',
 		'uri-cl/button',
