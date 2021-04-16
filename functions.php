@@ -772,3 +772,11 @@ function uri_modern_add_image_to_feed() {
 }
 add_action( 'rss2_item', 'uri_modern_add_image_to_feed' );
 add_action( 'atom_entry', 'uri_modern_add_image_to_feed' );
+
+/**
+ * Adds the correct name space for media elements in rss feed
+ */
+function uri_modern_add_media_namespace() {
+  echo "xmlns:media=\"http://search.yahoo.com/mrss/\"\n";
+}
+add_action( 'rss2_ns', 'uri_modern_add_media_namespace' );
