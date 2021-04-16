@@ -765,6 +765,7 @@ function uri_modern_add_image_to_feed() {
 		if ( ! empty( $original ) ) {
 			$bytes = filesize( get_attached_file( $id ) );
 			$output .= "\t" . '<media:content url="' . $original[0] . '" type="' . $type . '" width="' . $original[1] . '" height="' . $original[2] . '" />' . "\n";
+			// @todo: update enclosure syntax for atom feeds
 			$output .= "\t" . '<enclosure url="' . $original[0] . '" length="' . $bytes . '" type="' . $type . '" />' . "\n";
 		}
 }
