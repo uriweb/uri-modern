@@ -776,8 +776,7 @@ function uri_modern_add_image_to_feed() {
 			if ( 'atom_entry' === current_filter() ) {
 				$output .= "\t" . '<link rel="enclosure" href="' . $original[0] . '" length="' . $bytes . '" type="' . $type . '" />' . "\n";
 			}
-			
-		}
+}
 }
 	echo $output;
 }
