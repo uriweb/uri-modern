@@ -36,18 +36,18 @@ body {
     max-width: 100%;
 	height: auto;
     min-width: 200px;
-	
+
 	&.xsmall,
 	&.small,
 	&.medium,
 	&.large {
 		width: 100%;
 	}
-	
+
 	img {
 		padding-top: 0;
 	}
-	
+
 }
 
 .alignright,
@@ -154,6 +154,11 @@ body {
     position: relative !important;
     left: 50% !important;
     margin-left: -50vw !important;
+}
+
+/* Make WP column gutter equivalent to CL Tiles */
+.wp-block-columns .wp-block-column:not(:last-child) {
+  margin-right: 3%;
 }
 
 @media print {
