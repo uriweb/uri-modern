@@ -43,6 +43,7 @@ STATIC VERSION
 @import 'partials/editor'; // Keep last in this list
 
 /* COMPONENT LIBRARY */
+@import 'partials/cl/abstracts';
 @import 'partials/cl/boxouts';
 @import 'partials/cl/buttons';
 @import 'partials/cl/cards';
