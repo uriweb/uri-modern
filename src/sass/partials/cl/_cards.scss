@@ -49,8 +49,7 @@
         letter-spacing: .1rem;
         line-height: 1rem;
         text-transform: uppercase;
-        color: $midgrey;
-        //transition: all .2s;
+        color: #767676;
         text-align: left;
         padding: 1.2rem 2.9rem 1.2rem 1.5rem;
         border-top: none;
@@ -95,7 +94,6 @@
     .button:hover,
     .button:focus {
 
-        //transition: all .3s;
         background: initial;
         color: $link;
         border-top: none;
