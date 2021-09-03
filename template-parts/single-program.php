@@ -61,6 +61,10 @@ get_header();
 							);
 						?>
 
+						<div class="request-information">
+							<?php echo do_shortcode( '[cl-button link="https://admissions.uri.edu/register/request-information" text="Request Information" style="prominent"]' );?>
+						</div>
+
 						<hr>
 
 						<div class="program-options">
