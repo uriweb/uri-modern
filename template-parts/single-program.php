@@ -62,7 +62,7 @@ get_header();
 						?>
 
 						<div class="request-information">
-							<?php echo do_shortcode( '[cl-button link="https://admissions.uri.edu/register/request-information" text="Request Information" style="prominent"]' );?>
+							<?php echo do_shortcode( '[cl-button link="https://admissions.uri.edu/register/request-information" text="Request Information" style="prominent"]' ); ?>
 						</div>
 
 						<hr>
@@ -76,7 +76,7 @@ get_header();
 									if ( $accelerated_language = uri_modern_get_field( 'accelerated_language' ) ) {
 									print $accelerated_language;
 									} else {
-										echo '<a href="https://www.uri.edu/programs/abm/">Optional bachelor&#39;s to master&#39;s in five years</a>';
+									echo '<a href="https://www.uri.edu/programs/abm/">Optional bachelor&#39;s to master&#39;s in five years</a>';
 									}
 								?>
 							</div>

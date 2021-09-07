@@ -20,6 +20,7 @@ rules:
         - error
     jsx-a11y/label-has-associated-control: warn
     jsx-a11y/label-has-for: off
+    '@wordpress/no-global-event-listener': off
 
 # Specify global variables to ignore
 # Some of these aren't really globals, but this is useful for ignoring no-undef for class vars etc.
