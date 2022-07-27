@@ -12,7 +12,7 @@ function uri_modern_breadcrumbs() {
 	$crumbs  = array();
 
 	$option_val = get_option( 'breadcrumbs_prepend' );
-	$default = 'The University of Rhode Island' == get_bloginfo( 'name' ) ? '' : '[URI](https://www.uri.edu)';
+	$default = 'The University of Rhode Island' == get_bloginfo( 'name' ) ? '' : '[URI](https://' . uri_modern_the_domain() . ')';
 	$prepend = empty( $option_val ) ? array( $default ) : explode( "\n", $option_val );
 
 	foreach ( $prepend as $l ) {
