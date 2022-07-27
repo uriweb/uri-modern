@@ -25,6 +25,24 @@ function uri_modern_cache_buster() {
 
 
 /**
+ * Returns the root domain to use
+ *
+ * @return str
+ */
+function uri_modern_get_the_root_domain() {
+	$default = 'uri.edu';
+	return defined( 'URI_ROOT_DOMAIN' ) ? URI_ROOT_DOMAIN : $default;
+}
+
+/**
+ * Echos the root domain to use
+ */
+function uri_modern_the_root_domain() {
+	echo uri_modern_get_the_root_domain();
+}
+
+
+/**
  * Returns the subdomain to use
  *
  * @return str
