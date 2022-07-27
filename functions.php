@@ -613,7 +613,7 @@ function uri_modern_action_bar_link( $link ) {
 function uri_modern_action_bar_filter_callback( $a ) {
 	$defaults = array(
 		'class' => '',
-		'href' => 'https://' . uri_modern_the_domain() . '/apply',
+		'href' => 'https://' . uri_modern_get_the_domain() . '/apply',
 		'id' => 'action-apply',
 		'text' => 'Apply',
 		'title' => '',
@@ -636,7 +636,7 @@ function uri_modern_action_bar_filter_callback( $a ) {
 
 		if ( $is_grad ) {
 			// it's a grad school page, override the link
-			$a['href'] = 'https://' . uri_modern_the_domain() . '/apply/graduate';
+			$a['href'] = 'https://' . uri_modern_get_the_domain() . '/apply/graduate';
 			$a['title'] = 'Apply with GradCAS';
 		}
 	}

@@ -26,7 +26,7 @@
 			<?php
 				// connect
 				$link = array(
-					'href' => 'https://' . uri_modern_the_domain() . '/connect',
+					'href' => 'https://' . uri_modern_get_the_domain() . '/connect',
 					'id' => 'action-connect',
 					'text' => 'Connect',
 					'title' => 'Learn more about URI: Get in touch',
@@ -35,7 +35,7 @@
 
 				// apply
 				$link = array(
-					'href' => 'https://' . uri_modern_the_domain() . '/apply',
+					'href' => 'https://' . uri_modern_get_the_domain() . '/apply',
 					'id' => 'action-apply',
 					'text' => 'Apply',
 				);
@@ -43,7 +43,7 @@
 
 				// tour
 				$link = array(
-					'href' => 'https://' . uri_modern_the_domain() . '/tour',
+					'href' => 'https://' . uri_modern_get_the_domain() . '/tour',
 					'id' => 'action-tour',
 					'text' => 'Tour',
 				);
@@ -51,7 +51,7 @@
 
 				// give
 				$link = array(
-					'href' => 'https://' . uri_modern_the_domain() . '/give',
+					'href' => 'https://' . uri_modern_get_the_domain() . '/give',
 					'id' => 'action-give',
 					'text' => 'Give',
 				);
