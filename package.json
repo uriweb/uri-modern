@@ -61,5 +61,6 @@
       "Firefox >= 20",
       "iOS >=8"
     ]
-  }
+  },
+  "dependencies": {}
 }
