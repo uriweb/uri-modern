@@ -71,11 +71,11 @@
 					<input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" checked>
 					<label for="sb-university-toggle" aria-label="Open the University footer menu when browsing on mobile."><span>University</span></label>
 					<ul role="menu" aria-label="The University footer menu.">
-						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/about/leadership/" role="menuitem">Leadership</a></li>
+						<li><a href="https://www.uri.edu/about/leadership/" role="menuitem">Leadership</a></li>
 						<li><a href="https://web.uri.edu/diversity/" role="menuitem">Diversity and Inclusion</a></li>
 						<li><a href="https://web.uri.edu/global/" role="menuitem">Global</a></li>
 						<li><a href="https://web.uri.edu/about/campuses/" role="menuitem">Campuses</a></li>
-						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/safety/" role="menuitem">Safety</a></li>
+						<li><a href="https://www.uri.edu/safety/" role="menuitem">Safety</a></li>
 					</ul>
 				</div>
 				<div id="sb-campus-life">
@@ -84,8 +84,8 @@
 					<ul role="menu" aria-label="The Campus Life footer menu.">
 						<li><a href="https://web.uri.edu/housing/" role="menuitem">Housing</a></li>
 						<li><a href="https://web.uri.edu/dining/" role="menuitem">Dining</a></li>
-						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/athletics/" role="menuitem">Athletics and Recreation</a></li>
-						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/campus-life/health-and-wellness/" role="menuitem">Health and Wellness</a></li>
+						<li><a href="https://www.uri.edu/athletics/" role="menuitem">Athletics and Recreation</a></li>
+						<li><a href="https://www.uri.edu/campus-life/health-and-wellness/" role="menuitem">Health and Wellness</a></li>
 						<li><a href="https://events.uri.edu" role="menuitem">Events</a></li>
 					</ul>
 				</div>
@@ -93,7 +93,7 @@
 					<input id="sb-academics-toggle" type="radio" name="storagebin" value="academics" role="presentation">
 					<label for="sb-academics-toggle" aria-label="Open the Academics footer menu when browsing on mobile."><span>Academics</span></label>
 					<ul role="menu" aria-label="The Academics footer menu.">
-						<li><a href="https://<?php uri_modern_the_subdomain(); ?>.uri.edu/academics/" role="menuitem">Undergraduate</a></li>
+						<li><a href="https://www.uri.edu/academics/" role="menuitem">Undergraduate</a></li>
 						<li><a href="https://web.uri.edu/graduate-school/" role="menuitem">Graduate</a></li>
 						<li><a href="https://web.uri.edu/advising/" role="menuitem">Advising</a></li>
 						<li><a href="https://web.uri.edu/library/" role="menuitem">Libraries</a></li>
