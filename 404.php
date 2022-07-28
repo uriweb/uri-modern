@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<main id="main" class="site-main" role="main">
-		
+
 		<section class="error-404 not-found">
 			<div id="rhody404"></div>
 			<div class="content-404">
@@ -25,9 +25,9 @@ get_header();
 					esc_html_e( 'We can&rsquo;t find what you&rsquo;re looking for, but you can try searching for it.', 'uri' );
 					?>
 					</p>
-					
+
 					<div id="searchbox" role="search">
-						<form id="sb" method="get" action="https://www.uri.edu/search" name="global_general_search_form">
+						<form id="sb" method="get" action="https://<?php uri_modern_the_domain(); ?>/search" name="global_general_search_form">
 							<input type="hidden" name="cx" value="016863979916529535900:17qai8akniu" />
 							<input type="hidden" name="cof" value="FORID:11" />
 							<label id="sb-query-label" for="sb-query">Searchbox</label>
@@ -35,7 +35,7 @@ get_header();
 							<input type="submit" id="sb-submit" class="searchsubmit" name="searchsubmit" value="Search" aria-label="Submit search" />
 						</form>
 					</div>
-					
+
 				</div><!-- .page-content -->
 			</div>
 		</section><!-- .error-404 -->
