@@ -3,7 +3,7 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/uriweb/uri-modern)](https://github.com/uriweb/uri-modern/releases/latest)
 [![GitHub Release Date](https://img.shields.io/github/release-date/uriweb/uri-modern)](https://github.com/uriweb/uri-modern/releases/latest)
 ![GitHub](https://img.shields.io/github/license/uriweb/uri-modern)
-[![Codacy Badge](https://img.shields.io/codacy/grade/cc0b943ef637481b87d3b17ff9f5b1c0/master)](https://www.codacy.com/app/uriweb/uri-modern?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/fa900133ab854001a03182aa712eb6c2)](https://www.codacy.com/gh/uriweb/uri-modern/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern&amp;utm_campaign=Badge_Grade)
 ![GitHub top language](https://img.shields.io/github/languages/top/uriweb/uri-modern?color=violet&branch=master)
 
 URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.
