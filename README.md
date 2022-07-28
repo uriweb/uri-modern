@@ -10,7 +10,7 @@ URI Modern is a WordPress theme designed for the University of Rhode Island. It'
 
 ## What's new in 2.4.1
 
-URI Modern 2.4.1 is a bug fix release.
+URI Modern 2.4.1 is a technical adjustment release.
 
 * Adds the ability to modify certain domains in hard-coded URLs using constants configured in `wp-config.php`
 
