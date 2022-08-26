@@ -165,7 +165,7 @@ get_header();
 
 						<?php
 						$curriculum_sheets = get_field( 'curriculum_sheets' );
-						$curriculum_default_link = 'https://' . uri_modern_the_domain( 'web' ) . '/advising/curriculum-sheets-all/';
+						$curriculum_default_link = 'https://' . uri_modern_get_the_domain( 'web' ) . '/advising/curriculum-sheets-all/';
 						if ( ( null != $curriculum_sheets || ! empty( $curriculum_sheets ) ) && $curriculum_default_link != $curriculum_sheets ) {
 										echo '<div class="advising">';
 										echo '<a href="' . $curriculum_sheets . '"><span class="icon"></span>Advising</a>';
