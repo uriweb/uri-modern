@@ -61,6 +61,22 @@ get_header();
 							);
 						?>
 
+						<div class="request-information">
+							<?php
+
+							$request_information_link = 'https://admissions.uri.edu/register/request-information';
+
+							if ( has_category( 'online' ) ) {
+								$request_information_link = 'https://web.uri.edu/online/contact/';
+							} else if ( has_category( 'masters' ) || has_category( 'ph-d' ) || has_category( 'professional-degree' ) || has_category( 'graduate-certificate' ) ) {
+								$request_information_link = 'https://web.uri.edu/graduate-school/contact-us/';
+							}
+
+							echo do_shortcode( '[cl-button link="' . $request_information_link . '" text="Request Information" style="prominent"]' );
+
+							?>
+						</div>
+
 						<hr>
 
 						<div class="program-options">
