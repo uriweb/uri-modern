@@ -139,7 +139,7 @@ get_header();
 
 							<?php if ( $application_deadline = uri_modern_get_field( 'application_deadline' ) ) { ?>
 							<div class="application-deadline">
-								<h3>Application Deadline</h3>
+								<h3>Entry Term</h3>
 								<?php print $application_deadline; ?>
 							</div>
 							<?php } ?>
