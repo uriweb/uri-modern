@@ -16,6 +16,7 @@ var banner = ['/*',
   '@version v<%= pkg.version %>',
   '@author Brandon Fuller <bjcfuller@uri.edu>',
   '@author John Pennypacker <jpennypacker@uri.edu>',
+  '@author Alexandra Gauss <alexandra_gauss@uri.edu>',
   '',
   '*/',
   ''].join('\n');
@@ -36,7 +37,7 @@ var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var stripDebug = require('gulp-strip-debug');
 var terser = require('gulp-terser');
-var sass = require('gulp-sass');
+var sass = require('gulp-sass')(require('sass'));
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
 var postcss = require('gulp-postcss');
