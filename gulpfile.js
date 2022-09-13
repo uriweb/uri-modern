@@ -16,6 +16,7 @@ var banner = ['/*',
   '@version v<%= pkg.version %>',
   '@author Brandon Fuller <bjcfuller@uri.edu>',
   '@author John Pennypacker <jpennypacker@uri.edu>',
+  '@author Alexandra Gauss <alexandra_gauss@uri.edu>',
   '',
   '*/',
   ''].join('\n');
