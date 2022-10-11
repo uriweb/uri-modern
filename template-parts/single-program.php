@@ -64,12 +64,12 @@ get_header();
 						<div class="request-information">
 							<?php
 
-							$request_information_link = 'https://admissions.uri.edu/register/request-information';
+							$request_information_link = 'https://' . uri_modern_get_the_domain() . '/connect/?utm_campaign=request-info&utm_source=program-finder&utm_medium=web&utm_content=program-page';
 
 							if ( has_category( 'online' ) ) {
-								$request_information_link = 'https://web.uri.edu/online/contact/';
+								$request_information_link = 'https://' . uri_modern_get_the_domain( 'web' ) . '/online/contact/';
 							} else if ( has_category( 'masters' ) || has_category( 'ph-d' ) || has_category( 'professional-degree' ) || has_category( 'graduate-certificate' ) ) {
-								$request_information_link = 'https://web.uri.edu/graduate-school/contact-us/';
+								$request_information_link = 'https://' . uri_modern_get_the_domain( 'web' ) . '/graduate-school/contact-us/';
 							}
 
 							echo do_shortcode( '[cl-button link="' . $request_information_link . '" text="Request Information" style="prominent"]' );
