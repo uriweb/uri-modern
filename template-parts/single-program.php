@@ -64,7 +64,7 @@ get_header();
 						<div class="request-information">
 							<?php
 
-							$request_information_link = 'https://' . uri_modern_get_the_domain() . '/connect/?utm_campaign=request-info&utm_source=program-finder&utm_medium=web&utm_content=program-page';
+							$request_information_link = 'https://' . uri_modern_get_the_domain() . '/connect/?utm_campaign=request-info&utm_source=program-finder&utm_medium=web&utm_content=' . get_the_title();
 
 							if ( has_category( 'online' ) ) {
 								$request_information_link = 'https://' . uri_modern_get_the_domain( 'web' ) . '/online/contact/';
