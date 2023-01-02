@@ -23,7 +23,7 @@
   "license": "GPL-3.0",
   "licenseURI": "http://www.gnu.org/licenses/gpl.html",
   "devDependencies": {
-    "@wordpress/eslint-plugin": "^9.1.1",
+    "@wordpress/eslint-plugin": "^9.3.0",
     "autoprefixer": "^10.3.4",
     "eslint": "^7.32.0",
     "eslint-plugin-prettier": "^3.4.1",
