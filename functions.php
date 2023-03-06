@@ -782,16 +782,35 @@ function uri_modern_add_image_to_feed() {
 			$output .= "\t" . '<media:thumbnail url="' . $thumbnail[0] . '" width="' . $thumbnail[1] . '" height="' . $thumbnail[2] . '" />' . "\n";
 		} else {
 			$url = get_template_directory_uri() . '/img/default/uri-200.png';
-			$output .= '<enclosure url="' . $url . '" type="image/png" />' . "\n";
+			if ( 'rss2_item' === current_filter() ) {
+				$output .= '<enclosure url="' . $url . '" type="image/png" />' . "\n";
+			}
+			if ( 'atom_entry' === current_filter() ) {
+				$output .= '<link rel="enclosure" href="' . $url . '" type="image/png" />' . "\n";
+			}
 		}
 		$original = wp_get_attachment_image_src( $id, null );
 		if ( ! empty( $original ) ) {
 			$bytes = filesize( get_attached_file( $id ) );
 			$output .= "\t" . '<media:content url="' . $original[0] . '" type="' . $type . '" width="' . $original[1] . '" height="' . $original[2] . '" />' . "\n";
-			$output .= "\t" . '<enclosure url="' . $original[0] . '" length="' . $bytes . '" type="' . $type . '" />' . "\n";
-		}
+			if ( 'rss2_item' === current_filter() ) {
+				$output .= "\t" . '<enclosure url="' . $original[0] . '" length="' . $bytes . '" type="' . $type . '" />' . "\n";
+			}
+			if ( 'atom_entry' === current_filter() ) {
+				$output .= "\t" . '<link rel="enclosure" href="' . $original[0] . '" length="' . $bytes . '" type="' . $type . '" />' . "\n";
+			}
+}
 }
 	echo $output;
 }
 add_action( 'rss2_item', 'uri_modern_add_image_to_feed' );
 add_action( 'atom_entry', 'uri_modern_add_image_to_feed' );
+
+/**
+ * Adds the correct name space for media elements in rss feed
+ */
+function uri_modern_add_media_namespace() {
+  echo "xmlns:media=\"http://search.yahoo.com/mrss/\"\n";
+}
+add_action( 'rss2_ns', 'uri_modern_add_media_namespace' );
+add_action( 'atom_ns', 'uri_modern_add_media_namespace' );

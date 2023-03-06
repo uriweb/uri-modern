@@ -10,12 +10,18 @@ URI Modern is a WordPress theme designed for the University of Rhode Island. It'
 
 ## What's new in 2.4.4
 
-URI Modern 2.4.4 is a technical adjustment release.
+URI Modern 2.5.0 is a minor release.
 
-* Uses domain function and common URL for request info links in `single-program.php`
-* Adds UTM codes to Action Bar 'Connect' link
+> ★ URI Modern is now available on [Packagist](https://packagist.org/packages/uriweb/uri-modern)
 
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/220/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
+* Improves compatibility with current and future versions of the [Component Library](https://github.com/uriweb/uri-component-library)
+    - Whitelists Breakout and Abstract blocks
+    - Improves the accessibility and display of cards
+* Improvements to RSS feeds
+* Increases spacing between WP block columns to match that of Component Library Tiles
+* Updates development tools
+
+For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/225/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
 
 ## How do I get set up?
 
@@ -28,12 +34,11 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 
 [![Master Build Status](https://travis-ci.com/uriweb/uri-modern.svg?branch=master "Master build status")](https://travis-ci.com/uriweb/uri-modern)
 [![CodeFactor](https://www.codefactor.io/repository/github/uriweb/uri-modern/badge/master)](https://www.codefactor.io/repository/github/uriweb/uri-modern/overview/master)
-[![devDependencies Status](https://david-dm.org/uriweb/uri-modern/dev-status.svg "devDependencies status")](https://david-dm.org/uriweb/uri-modern?type=dev)
 
-__Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](https://github.com/johnpennypacker)  
+__Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](https://github.com/johnpennypacker), [alexandragauss](https://github.com/alexandragauss)  
 __Tags:__ themes  
 __Requires at least:__ 4.0  
 __Tested up to:__ 5.6  
-__Stable tag:__ 2.4.4  
+__Stable tag:__ 2.5.0  
 __License:__ GPL-3.0  
 __Licence URI:__ https://www.gnu.org/licenses/gpl-3.0.html
