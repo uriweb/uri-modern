@@ -17,6 +17,7 @@ If you have a question about using or contributing to URI Modern that isn't answ
 Instead, get in touch outside the repository by contacting someone below on the URI Web Communications team:
 
 * __Brandon Fuller__ [bjcfuller@uri.edu](mailto:bjcfuller@uri.edu)
+* __Alexandra Gauss__ [alexandra_gauss@uri.edu](mailto:alexandra_gauss@uri.edu)
 * __Sarah Couch__ [scouch@uri.edu](mailto:scouch@uri.edu)
 
 We will do our best to respond to your questions quickly and thoroughly.
