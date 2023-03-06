@@ -28,12 +28,11 @@ For complete details, see the [commit history](https://github.com/uriweb/uri-mod
 
 [![Master Build Status](https://travis-ci.com/uriweb/uri-modern.svg?branch=master "Master build status")](https://travis-ci.com/uriweb/uri-modern)
 [![CodeFactor](https://www.codefactor.io/repository/github/uriweb/uri-modern/badge/master)](https://www.codefactor.io/repository/github/uriweb/uri-modern/overview/master)
-[![devDependencies Status](https://david-dm.org/uriweb/uri-modern/dev-status.svg "devDependencies status")](https://david-dm.org/uriweb/uri-modern?type=dev)
 
-__Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](https://github.com/johnpennypacker)  
+__Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](https://github.com/johnpennypacker), [alexandragauss](https://github.com/alexandragauss)  
 __Tags:__ themes  
 __Requires at least:__ 4.0  
 __Tested up to:__ 5.6  
-__Stable tag:__ 2.4.4  
+__Stable tag:__ 2.5.0  
 __License:__ GPL-3.0  
 __Licence URI:__ https://www.gnu.org/licenses/gpl-3.0.html
