@@ -156,6 +156,11 @@ body {
     margin-left: -50vw !important;
 }
 
+/* Make WP column gutter equivalent to CL Tiles */
+.wp-block-columns .wp-block-column:not(:last-child) {
+  margin-right: 3%;
+}
+
 @media print {
 	body {
 		background: #fff;

@@ -25,6 +25,29 @@ function uri_modern_cache_buster() {
 
 
 /**
+ * Returns the root domain to use
+ *
+ * @return str
+ */
+function uri_modern_get_the_domain( $sub = 'www' ) {
+
+	if ( 'web' === $sub ) {
+		return defined( 'URI_DOMAIN_WEB' ) ? URI_DOMAIN_WEB : 'web.uri.edu';
+	}
+
+	return defined( 'URI_DOMAIN_WWW' ) ? URI_DOMAIN_WWW : 'www.uri.edu';
+
+}
+
+/**
+ * Echos the root domain to use
+ */
+function uri_modern_the_domain( $sub = 'www' ) {
+	echo uri_modern_get_the_domain( $sub );
+}
+
+
+/**
  * Returns the subdomain to use
  *
  * @return str
@@ -592,7 +615,7 @@ function uri_modern_action_bar_link( $link ) {
 function uri_modern_action_bar_filter_callback( $a ) {
 	$defaults = array(
 		'class' => '',
-		'href' => 'https://www.uri.edu/apply',
+		'href' => 'https://' . uri_modern_get_the_domain() . '/apply',
 		'id' => 'action-apply',
 		'text' => 'Apply',
 		'title' => '',
@@ -615,7 +638,7 @@ function uri_modern_action_bar_filter_callback( $a ) {
 
 		if ( $is_grad ) {
 			// it's a grad school page, override the link
-			$a['href'] = 'https://www.uri.edu/apply/graduate';
+			$a['href'] = 'https://' . uri_modern_get_the_domain() . '/apply/graduate';
 			$a['title'] = 'Apply with GradCAS';
 		}
 	}

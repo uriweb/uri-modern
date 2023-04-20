@@ -8,8 +8,6 @@
 
 .wp-block {
 
-   max-width: 85%;
-
    // &[data-align="wide"] {
    // 	max-width: $content__width--wide;
    // }
@@ -19,8 +17,18 @@
    }
 
 }
+
+.is-root-container > .wp-block {
+   max-width: 85%;
+ }
+
+/* Make WP column gutter equivalent to CL Tiles */
+.wp-block-columns .wp-block-column:not(:last-child) {
+  margin-right: 1%;
+}
+
 @media all and (min-width: 1500px) {
-  .wp-block {
+  .is-root-container > .wp-block {
     max-width: $break3;
   }
 }

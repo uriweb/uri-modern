@@ -61,6 +61,22 @@ get_header();
 							);
 						?>
 
+						<div class="request-information">
+							<?php
+
+							$request_information_link = 'https://' . uri_modern_get_the_domain() . '/connect/?utm_campaign=request-info&utm_source=program-finder&utm_medium=web&utm_content=' . get_the_title();
+
+							if ( has_category( 'online' ) ) {
+								$request_information_link = 'https://' . uri_modern_get_the_domain( 'web' ) . '/online/contact/';
+							} else if ( has_category( 'masters' ) || has_category( 'ph-d' ) || has_category( 'professional-degree' ) || has_category( 'graduate-certificate' ) ) {
+								$request_information_link = 'https://' . uri_modern_get_the_domain( 'web' ) . '/graduate-school/contact-us/';
+							}
+
+							echo do_shortcode( '[cl-button link="' . $request_information_link . '" text="Request Information" style="prominent"]' );
+
+							?>
+						</div>
+
 						<hr>
 
 						<div class="program-options">
@@ -72,7 +88,7 @@ get_header();
 									if ( $accelerated_language = uri_modern_get_field( 'accelerated_language' ) ) {
 									print $accelerated_language;
 									} else {
-										echo '<a href="https://www.uri.edu/programs/abm/">Optional bachelor&#39;s to master&#39;s in five years</a>';
+										echo '<a href="https://' . uri_modern_get_the_domain() . '/programs/abm/">Optional bachelor&#39;s to master&#39;s in five years</a>';
 									}
 								?>
 							</div>
@@ -81,7 +97,7 @@ get_header();
 							<?php if ( has_category( 'online' ) ) { ?>
 							<div class="online">
 								<span class="icon"></span>
-								<a href="https://www.uri.edu/programs/?program-type=14">Fully online program</a>
+								<a href="https://<?php uri_modern_the_domain(); ?>/programs/?program-type=14">Fully online program</a>
 							</div>
 							<?php } ?>
 
@@ -123,7 +139,7 @@ get_header();
 
 							<?php if ( $application_deadline = uri_modern_get_field( 'application_deadline' ) ) { ?>
 							<div class="application-deadline">
-								<h3>Application Deadline</h3>
+								<h3>Entry Term</h3>
 								<?php print $application_deadline; ?>
 							</div>
 							<?php } ?>
@@ -149,7 +165,7 @@ get_header();
 
 						<?php
 						$curriculum_sheets = get_field( 'curriculum_sheets' );
-						$curriculum_default_link = 'https:// web.uri.edu/advising/curriculum-sheets-all/';
+						$curriculum_default_link = 'https://' . uri_modern_get_the_domain( 'web' ) . '/advising/curriculum-sheets-all/';
 						if ( ( null != $curriculum_sheets || ! empty( $curriculum_sheets ) ) && $curriculum_default_link != $curriculum_sheets ) {
 										echo '<div class="advising">';
 										echo '<a href="' . $curriculum_sheets . '"><span class="icon"></span>Advising</a>';
