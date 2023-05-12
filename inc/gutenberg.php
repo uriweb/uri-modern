@@ -58,6 +58,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/separator',
 		'core/spacer',
 		// widgets
+		'uri/dynamic-metrics',
 		'core/shortcode',
 		'core/archives',
 		'core/categories',
