@@ -246,13 +246,18 @@ function uri_modern_open_graph() {
 	if ( is_single() || is_page() ) {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
 
-		// use a larger image in twitter card if the image is wider than it is tall.
-		$landscape = ( $image[1] > $image[2] );
-		if ( true === $landscape ) {
-			$summary_type = 'summary_large_image';
+		if ( is_array( $image ) ) {
+
+			// use a larger image in twitter card if the image is wider than it is tall.
+			$landscape = ( $image[1] > $image[2] );
+			if ( true === $landscape ) {
+				$summary_type = 'summary_large_image';
+			}
+
+			$image_thumb = $image[0];
+
 		}
 
-		$image_thumb = $image[0];
 		if ( empty( $image_thumb ) ) {
 			$image_thumb  = get_template_directory_uri() . '/images/logo-wordmark.png';
 			$summary_type = 'summary_large_image';

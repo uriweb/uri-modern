@@ -85,11 +85,18 @@ get_header();
 							<div class="accelerated">
 								<span class="icon"></span>
 								<?php
-									if ( $accelerated_language = uri_modern_get_field( 'accelerated_language' ) ) {
-									print $accelerated_language;
-									} else {
-										echo '<a href="https://' . uri_modern_get_the_domain() . '/programs/abm/">Optional bachelor&#39;s to master&#39;s in five years</a>';
+									$accelerated_link = 'https://' . uri_modern_get_the_domain() . '/programs/abm/';
+									$accelerated_language = 'Optional bachelor&#39;s to master&#39;s in five years';
+
+									if ( $accelerated_custom_language = uri_modern_get_field( 'accelerated_language' ) ) {
+										$accelerated_language = $accelerated_custom_language;
 									}
+
+									if ( $accelerated_custom_link = uri_modern_get_field( 'accelerated_link' ) ) {
+										$accelerated_link = $accelerated_custom_link;
+									}
+
+									echo '<a href="' . $accelerated_link . '">' . $accelerated_language . '</a>';
 								?>
 							</div>
 							<?php } ?>
