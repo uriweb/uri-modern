@@ -257,7 +257,7 @@ function uri_modern_open_graph() {
 			$image_thumb = $image[0];
 
 		}
-		
+
 		if ( empty( $image_thumb ) ) {
 			$image_thumb  = get_template_directory_uri() . '/images/logo-wordmark.png';
 			$summary_type = 'summary_large_image';
