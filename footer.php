@@ -131,7 +131,7 @@
 			<p>URI is an equal opportunity employer committed to the principles of affirmative action.</p>
 			<ul id="legal-links">
 				<li><a href="https://jobs.uri.edu/">Work at URI</a></li>
-				<li><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/publicrecords/">Public Records Request</a></li>
+				<li><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/publicrecords/">Public Records</a></li>
 			</ul>
 		</div>
 	</footer><!-- #globalfooter -->
