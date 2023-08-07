@@ -222,7 +222,7 @@
 	transtition: all .2s ease-in-out;
 
     p {
-        color: rgba(255,255,255,.5);
+        color: rgba(255,255,255,.6);
         max-width: 100%;
         padding: 0;
         margin: .2rem 0 0;
@@ -259,7 +259,7 @@
         &:not(:first-child) {
             padding-left: .5rem;
             margin-left: .5rem;
-            border-left: 1px solid rgba(255,255,255,0.5);
+            border-left: 1px solid rgba(255,255,255,0.4);
         }
 
     }
