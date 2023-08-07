@@ -128,7 +128,11 @@
 		<div id="tagline"></div>
 		<div id="legal">
 			<p>Copyright &copy; <a class="subtle" href="http://<?php uri_modern_the_domain(); ?>/">University of Rhode Island</a> | University of Rhode Island, Kingston, RI 02881, USA | 1.401.874.1000</p>
-			<p>URI is an equal opportunity employer committed to the principles of affirmative action.&nbsp;&nbsp;<a class="jobs" href="https://jobs.uri.edu/">Work at URI</a></p>
+			<p>URI is an equal opportunity employer committed to the principles of affirmative action.</p>
+			<ul id="legal-links">
+				<li><a href="https://jobs.uri.edu/">Work at URI</a></li>
+				<li><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/publicrecords/">Public Records Request</a></li>
+			</ul>
 		</div>
 	</footer><!-- #globalfooter -->
 </div><!-- #page -->
