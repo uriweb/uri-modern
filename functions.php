@@ -303,6 +303,12 @@ endif;
 
 add_action( 'wp_head', 'uri_modern_open_graph' );
 
+/**
+ * Set the Google Search identifier
+ */
+function uri_modern_the_gs_id() {
+	echo '016863979916529535900:17qai8akniu';
+}
 
 /**
  * Set the Google Tag Manager property ID
