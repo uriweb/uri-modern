@@ -26,7 +26,7 @@
 			<?php
 				// connect
 				$link = array(
-					'href' => 'https://' . uri_modern_get_the_domain() . '/connect/?utm_campaign=request-info&utm_source=action-bar&utm_medium=web',
+					'href' => 'https://' . uri_modern_get_the_domain() . '/connect',
 					'id' => 'action-connect',
 					'text' => 'Connect',
 					'title' => 'Learn more about URI: Get in touch',
