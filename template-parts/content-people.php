@@ -57,15 +57,15 @@
 ?>
 <li class="people-researchgate"><strong>ResearchGate:</strong> <a href="<?php the_field( 'peopleresearchgate' ); ?>"><?php the_field( 'peopleresearchgate' ); ?></a><?php endif; ?>
 				<?php
-				if ( uri_modern_get_field( 'peopleacceptingstudents' ) === 'Yes' && uri_modern_get_field('peopletypestudent')) :
+				if ( uri_modern_get_field( 'peopleacceptingstudents' ) === 'Yes' && uri_modern_get_field( 'peopletypestudent' ) ) :
 ?>
 <li class="people-acceptingstudents"><strong>Accepting Students:</strong> <?php the_field( 'peopletypestudent' ); ?></li><?php endif; ?>
 				<?php
-				if ( uri_modern_get_field( 'peopleacceptingstudents' ) === 'Yes' and !uri_modern_get_field('peopletypestudent')) :
+				if ( uri_modern_get_field( 'peopleacceptingstudents' ) === 'Yes' and ! uri_modern_get_field( 'peopletypestudent' ) ) :
 ?>
 <li class="people-acceptingstudents"><strong>Accepting Students:</strong> <?php the_field( 'peopleacceptingstudents' ); ?></li><?php endif; ?>
 				<?php
-				if ( uri_modern_get_field( 'peopleacceptingstudents' ) === 'Not at this time') :
+				if ( uri_modern_get_field( 'peopleacceptingstudents' ) === 'Not at this time' ) :
 ?>
 <li class="people-acceptingstudents"><strong>Accepting Students:</strong> <?php the_field( 'peopleacceptingstudents' ); ?></li><?php endif; ?>
 
