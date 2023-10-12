@@ -36,39 +36,39 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/gallery',
 		'core/list',
 		// 'core/quote',
-		//'core/audio',
-		//'core/cover',
+		// 'core/audio',
+		// 'core/cover',
 		'core/file',
-		//'core/video',
+		// 'core/video',
 		// ===== CORE - FORMATTING =====
 		'core/table',
-		//'core/verse',
+		// 'core/verse',
 		'core/code',
 		'core/freeform', // Classic
 		'core/html',
-		//'core/preformatted',
+		// 'core/preformatted',
 		// 'core/pullquote',
 		// ===== CORE - LAYOUT =====
 		// 'core/button',
 		'core/columns',
 		'core/group',
 		'core/media-text',
-		//'core/more',
-		//'core/nextpage', // Page break
+		// 'core/more',
+		// 'core/nextpage', // Page break
 		'core/separator',
 		'core/spacer',
 		// ===== CORE - WIDGETS =====
 		'core/shortcode',
-		//'core/archives',
-		//'core/categories',
-		//'core/latest-comments',
-		//'core/latest-posts',
+		// 'core/archives',
+		// 'core/categories',
+		// 'core/latest-comments',
+		// 'core/latest-posts',
 		'core/calendar',
 		'core/rss',
 		'core/search',
-		//'core/tag-cloud',
+		// 'core/tag-cloud',
 		// ===== CORE - EMBEDS =====
-		//'core/embed', // @see https://wordpress.stackexchange.com/questions/379612/how-to-remove-the-core-embed-blocks-in-wordpress-5-6
+		// 'core/embed', // @see https://wordpress.stackexchange.com/questions/379612/how-to-remove-the-core-embed-blocks-in-wordpress-5-6
 		// ===== URI - COMPONENT LIBRARY =====
 		'uri-cl/abstract',
 		'uri-cl/boxout',
@@ -77,7 +77,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'uri-cl/card',
 		'uri-cl/date',
 		'uri-cl/hero',
-		//'uri-cl/hero2', // Legacy hero registration (I think) -BF
+		// 'uri-cl/hero2', // Legacy hero registration (I think) -BF
 		'uri-cl/metric',
 		'uri-cl/menu',
 		'uri-cl/notice',
