@@ -47,15 +47,15 @@
 				<?php
 				if ( uri_modern_get_field( 'peopleurl' ) ) :
 ?>
-<li class="people-url"><strong>Website:</strong> <a href="<?php the_field( 'peopleurl' ); ?>"><?php the_field( 'peopleurl' ); ?></a></li><?php endif; ?>
+<li class="people-url"><strong><a href="<?php the_field( 'peopleurl' ); ?>">Website</a></strong></li><?php endif; ?>
 				<?php
 				if ( uri_modern_get_field( 'peoplegooglescholar' ) ) :
 ?>
-<li class="people-google"><strong>Google Scholar:</strong> <a href="<?php the_field( 'peoplegooglescholar' ); ?>"><?php the_field( 'peoplegooglescholar' ); ?></a><?php endif; ?>
+<li class="people-google"><strong><a href="<?php the_field( 'peoplegooglescholar' ); ?>">Google Scholar</a></strong></li><?php endif; ?>
 				<?php
 				if ( uri_modern_get_field( 'peopleresearchgate' ) ) :
 ?>
-<li class="people-researchgate"><strong>ResearchGate:</strong> <a href="<?php the_field( 'peopleresearchgate' ); ?>"><?php the_field( 'peopleresearchgate' ); ?></a><?php endif; ?>
+<li class="people-researchgate"><strong><a href="<?php the_field( 'peopleresearchgate' ); ?>">ResearchGate</a></strong></li><?php endif; ?>
 				<?php
 				if ( uri_modern_get_field( 'peopleacceptingstudents' ) === 'Yes' && uri_modern_get_field( 'peopletypestudent' ) ) :
 ?>

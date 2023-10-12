@@ -28,7 +28,7 @@ add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
 function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 	return array(
 		'core/block',
-		// common
+		// ===== CORE - COMMON =====
 		'core/paragraph',
 		'core/image',
 		'core/heading',
@@ -36,74 +36,40 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/gallery',
 		'core/list',
 		// 'core/quote',
-		'core/audio',
-		'core/cover', // previously core/cover-image
+		// 'core/audio',
+		// 'core/cover',
 		'core/file',
-		'core/video',
-		// formatting
+		// 'core/video',
+		// ===== CORE - FORMATTING =====
 		'core/table',
-		'core/verse',
+		// 'core/verse',
 		'core/code',
 		'core/freeform', // Classic
-		'core/html', // Custom HTML
-		'core/preformatted',
+		'core/html',
+		// 'core/preformatted',
 		// 'core/pullquote',
-		// layout
+		// ===== CORE - LAYOUT =====
 		// 'core/button',
 		'core/columns',
 		'core/group',
 		'core/media-text',
-		'core/more',
-		'core/nextpage', // Page break
+		// 'core/more',
+		// 'core/nextpage', // Page break
 		'core/separator',
 		'core/spacer',
-		// widgets
-		'uri/dynamic-metrics',
+		// ===== CORE - WIDGETS =====
 		'core/shortcode',
-		'core/archives',
-		'core/categories',
-		'core/latest-comments',
-		'core/latest-posts',
+		// 'core/archives',
+		// 'core/categories',
+		// 'core/latest-comments',
+		// 'core/latest-posts',
 		'core/calendar',
 		'core/rss',
 		'core/search',
-		'core/tag-cloud',
-		// embeds
-		'core/embed',
-		'core-embed/twitter',
-		'core-embed/youtube',
-		'core-embed/facebook',
-		'core-embed/instagram',
-		'core-embed/wordpress',
-		'core-embed/soundcloud',
-		'core-embed/spotify',
-		'core-embed/flickr',
-		'core-embed/vimeo',
-		'core-embed/animoto',
-		'core-embed/cloudup',
-		'core-embed/collegehumor',
-		'core-embed/dailymotion',
-		'core-embed/funnyordie',
-		'core-embed/hulu',
-		'core-embed/imgur',
-		'core-embed/issuu',
-		'core-embed/kickstarter',
-		'core-embed/meetup-com',
-		'core-embed/mixcloud',
-		'core-embed/photobucket',
-		'core-embed/polldaddy',
-		'core-embed/reddit',
-		'core-embed/reverbnation',
-		'core-embed/screencast',
-		'core-embed/scribd',
-		'core-embed/slideshare',
-		'core-embed/smugmug',
-		'core-embed/speaker',
-		'core-embed/ted',
-		'core-embed/tumblr',
-		'core-embed/videopress',
-		'core-embed/wordpress-tv',
-		// component library
+		// 'core/tag-cloud',
+		// ===== CORE - EMBEDS =====
+		// 'core/embed', // @see https://wordpress.stackexchange.com/questions/379612/how-to-remove-the-core-embed-blocks-in-wordpress-5-6
+		// ===== URI - COMPONENT LIBRARY =====
 		'uri-cl/abstract',
 		'uri-cl/boxout',
 		'uri-cl/breakout',
@@ -111,7 +77,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'uri-cl/card',
 		'uri-cl/date',
 		'uri-cl/hero',
-		'uri-cl/hero2',
+		// 'uri-cl/hero2', // Legacy hero registration (I think) -BF
 		'uri-cl/metric',
 		'uri-cl/menu',
 		'uri-cl/notice',
@@ -120,7 +86,10 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'uri-cl/quote',
 		'uri-cl/tab',
 		'uri-cl/tabs',
+		// ===== URI - MISC =====
 		'uri-courses/by-subject',
+		'uri/dynamic-metrics',
+		// ===== THIRD-PARTY =====
 		'gravityforms/form',
 		'ninja-tables/guten-block',
 	);
