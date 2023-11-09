@@ -27,9 +27,9 @@ add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
  * @see https://wordpress.stackexchange.com/questions/379612/how-to-remove-the-core-embed-blocks-in-wordpress-5-6
  * @return arr
  */
-function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
+function uri_modern_allowed_blocks( $allowed_blocks, $editor_context ) {
 
-	$blocks = array(
+	$allowed_blocks = array(
 		'core/block',
 		// ===== CORE - COMMON =====
 		'core/paragraph',
@@ -75,7 +75,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 	// Allow some blocks for admins only
 	if ( uri_modern_has_admin_privilages() ) {
 		array_push(
-			 $blocks,
+			 $allowed_blocks,
 			// ===== CORE - FORMATTING =====
 			'core/code',
 			// ===== CORE - WIDGETS =====
@@ -89,9 +89,9 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		);
 	}
 
-	return $blocks;
+	return $allowed_blocks;
 }
-add_filter( 'allowed_block_types', 'uri_modern_allowed_blocks', 10, 2 );
+add_filter( 'allowed_block_types_all', 'uri_modern_allowed_blocks', 10, 2 );
 
 
 
