@@ -2,7 +2,7 @@
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/uriweb/uri-modern)](https://github.com/uriweb/uri-modern/releases/latest)
 [![GitHub Release Date](https://img.shields.io/github/release-date/uriweb/uri-modern)](https://github.com/uriweb/uri-modern/releases/latest)
-![GitHub](https://img.shields.io/github/license/uriweb/uri-modern)
+![GitHub License](https://img.shields.io/github/license/uriweb/uri-modern)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/fa900133ab854001a03182aa712eb6c2)](https://www.codacy.com/gh/uriweb/uri-modern/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern&amp;utm_campaign=Badge_Grade)
 ![GitHub top language](https://img.shields.io/github/languages/top/uriweb/uri-modern?color=violet&branch=master)
 
