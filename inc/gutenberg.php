@@ -118,6 +118,7 @@ add_action( 'after_setup_theme', 'uri_modern_custom_colors' );
 function uri_modern_set_font_sizes() {
 	// removes the text box where users can specify custom font sizes
 	add_theme_support( 'editor-font-sizes', array() );
+	add_theme_support( 'disable-custom-font-sizes' );
 }
 add_action( 'after_setup_theme', 'uri_modern_set_font_sizes' );
 
@@ -131,7 +132,7 @@ function uri_modern_block_editor_styles() {
 add_action( 'after_setup_theme', 'uri_modern_block_editor_styles' );
 
 
-//Remove patterns
+// Remove patterns
 function uri_modern_remove_patterns() {
 	remove_theme_support( 'core-block-patterns' );
 }
