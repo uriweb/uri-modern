@@ -23,61 +23,40 @@ add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
 /**
  * Specifiy which core blocks are permitted.
  *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/core-blocks/
+ * @see https://wordpress.stackexchange.com/questions/379612/how-to-remove-the-core-embed-blocks-in-wordpress-5-6
  * @return arr
  */
 function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
-	return array(
+
+	$allowed_blocks = array(
 		'core/block',
 		// ===== CORE - COMMON =====
 		'core/paragraph',
 		'core/image',
 		'core/heading',
-		// 'core/subhead',
 		'core/gallery',
 		'core/list',
-		// 'core/quote',
-		// 'core/audio',
-		// 'core/cover',
 		'core/file',
-		// 'core/video',
 		// ===== CORE - FORMATTING =====
 		'core/table',
-		// 'core/verse',
-		'core/code',
 		'core/freeform', // Classic
 		'core/html',
-		// 'core/preformatted',
-		// 'core/pullquote',
 		// ===== CORE - LAYOUT =====
-		// 'core/button',
 		'core/columns',
 		'core/group',
 		'core/media-text',
-		// 'core/more',
-		// 'core/nextpage', // Page break
 		'core/separator',
 		'core/spacer',
 		// ===== CORE - WIDGETS =====
 		'core/shortcode',
-		// 'core/archives',
-		// 'core/categories',
-		// 'core/latest-comments',
-		// 'core/latest-posts',
-		'core/calendar',
-		'core/rss',
-		'core/search',
-		// 'core/tag-cloud',
-		// ===== CORE - EMBEDS =====
-		// 'core/embed', // @see https://wordpress.stackexchange.com/questions/379612/how-to-remove-the-core-embed-blocks-in-wordpress-5-6
 		// ===== URI - COMPONENT LIBRARY =====
-		'uri-cl/abstract',
 		'uri-cl/boxout',
 		'uri-cl/breakout',
 		'uri-cl/button',
 		'uri-cl/card',
 		'uri-cl/date',
 		'uri-cl/hero',
-		// 'uri-cl/hero2', // Legacy hero registration (I think) -BF
 		'uri-cl/metric',
 		'uri-cl/menu',
 		'uri-cl/notice',
@@ -88,11 +67,29 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'uri-cl/tabs',
 		// ===== URI - MISC =====
 		'uri-courses/by-subject',
-		'uri/dynamic-metrics',
 		// ===== THIRD-PARTY =====
 		'gravityforms/form',
 		'ninja-tables/guten-block',
 	);
+
+	// Allow some blocks for admins only
+	if ( uri_modern_has_admin_privilages() ) {
+		array_push(
+			 $allowed_blocks,
+			// ===== CORE - FORMATTING =====
+			'core/code',
+			// ===== CORE - WIDGETS =====
+			'core/calendar',
+			'core/rss',
+			'core/search',
+			// ===== URI - COMPONENT LIBRARY =====
+			'uri-cl/abstract', // in beta
+			// ===== URI - MISC =====
+			'uri/dynamic-metrics', // in beta
+		);
+	}
+
+	return $allowed_blocks;
 }
 add_filter( 'allowed_block_types', 'uri_modern_allowed_blocks', 10, 2 );
 
