@@ -27,7 +27,7 @@ add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
  * @see https://wordpress.stackexchange.com/questions/379612/how-to-remove-the-core-embed-blocks-in-wordpress-5-6
  * @return arr
  */
-function uri_modern_allowed_blocks( $allowed_blocks, $editor_context ) {
+function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 
 	$allowed_blocks = array(
 		'core/block',
@@ -91,7 +91,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $editor_context ) {
 
 	return $allowed_blocks;
 }
-add_filter( 'allowed_block_types_all', 'uri_modern_allowed_blocks', 10, 2 );
+add_filter( 'allowed_block_types', 'uri_modern_allowed_blocks', 10, 2 );
 
 
 
