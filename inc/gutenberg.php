@@ -131,7 +131,11 @@ function uri_modern_block_editor_styles() {
 add_action( 'after_setup_theme', 'uri_modern_block_editor_styles' );
 
 
-
+//Remove patterns
+function uri_modern_remove_patterns() {
+	remove_theme_support( 'core-block-patterns' );
+}
+add_action( 'after_setup_theme', 'uri_modern_remove_patterns' );
 
 /**
  * Removes the dropcap widget with a little injected css.
