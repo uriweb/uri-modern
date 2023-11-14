@@ -92,6 +92,7 @@ pre {
 } 
 /* TABLES */
 
+.wp-block-table {
 table {
 	
 	font-family: $type-sans;
@@ -109,6 +110,7 @@ table {
 	th,
 	td {
 		padding: 1rem 1.5rem;
+		border: none;
 	}
 
 	thead th {
@@ -120,6 +122,7 @@ table {
 		color: #000;
 		text-align: left;
 	}
+}
 
 	tr:nth-child(even) {
 		background-color: #eee;
