@@ -1,6 +1,10 @@
 {
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
     "version": 2,
     "settings": {
+        "layout": {
+            "contentSize": "650"
+        }, 
         "typography":{
             "customFontSize": false,
             "lineHeight": false,
