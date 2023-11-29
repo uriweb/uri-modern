@@ -94,7 +94,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'ninja-tables/guten-block',
 	);
 }
-add_filter( 'allowed_block_types', 'uri_modern_allowed_blocks', 10, 2 );
+add_filter( 'allowed_block_types_all', 'uri_modern_allowed_blocks', 10, 2 );
 
 
 
