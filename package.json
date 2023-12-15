@@ -63,5 +63,8 @@
       "Firefox >= 20",
       "iOS >=8"
     ]
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.1"
   }
 }
