@@ -217,25 +217,21 @@
 	z-index: 10;
 	width: 300px;
 	margin: 0 auto;
-	font-size: .7rem;
+	font-size: .6rem;
 	box-sizing: border-box;
 	transtition: all .2s ease-in-out;
 
     p {
-        color: rgba(255,255,255,.5);
+        color: rgba(255,255,255,.6);
         max-width: 100%;
         padding: 0;
-        margin: 0;
+        margin: .2rem 0 0;
         text-align: center;
         line-height: 1.3;
     }
     
     a {
         text-decoration: none;
-    }
-    
-    a.jobs {
-        color: $white;
     }
     
     a.subtle {
@@ -248,6 +244,31 @@
     }
 
 } // #legal
+
+#legal-links {
+
+    margin: 0 0 .2rem;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+
+        display: inline;
+        
+        &:not(:first-child) {
+            padding-left: .5rem;
+            margin-left: .5rem;
+            border-left: 1px solid $midblue;
+        }
+
+    }
+
+    a {
+        color: $white;
+    }
+
+} // #legal-links
 
 @media all and (min-width: 900px) {
     #globalfooter {
@@ -347,12 +368,17 @@
     
     #legal {
         width: 100%;
-        font-size: .8rem;
+        font-size: .7rem;
         margin-top: .5rem;
         padding: 0 25px;
     }
     #legal p {
+        margin: 0;
         text-align: left;
+    }
+    #legal-links {
+        text-align: left;
+        font-size: .8rem;
     }
     #tagline {
         background: linear-gradient(to right, $midblue 50%, $lightblue 70%, $midblue);
@@ -397,7 +423,7 @@
         color: #000;
         text-align: left;
     }
-	#legal a.jobs {
+	#legal-links {
 		display: none;
 	}
 }
