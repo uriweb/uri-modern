@@ -88,7 +88,7 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 
 	if ( isset( $slug ) ) {
 		$output = array(
-			'name' => ucwords( str_replace('-', ' ', $slug ) ),
+			'name' => ucwords( str_replace( '-', ' ', $slug ) ),
 			'href' => get_site_url() . $path,
 		);
 		return $output;
