@@ -20,6 +20,8 @@
 
 .is-root-container > .wp-block {
    max-width: 85%;
+   margin-left: auto;
+   margin-right: auto;
  }
 
 /* Make WP column gutter equivalent to CL Tiles */
@@ -44,6 +46,7 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
+    margin-top: 4rem;
 
     textarea {
       font: inherit;
@@ -52,6 +55,10 @@
     //.editor-post-title__input {
     //}
 
+}
+
+.edit-post-visual-editor__post-title-wrapper .editor-post-title {
+  margin-top: 4rem;
 }
 
 .components-placeholder.editor-media-placeholder {
