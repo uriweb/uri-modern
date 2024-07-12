@@ -1,6 +1,6 @@
 {
     "$schema": "https://schemas.wp.org/trunk/theme.json",
-        "version": 2,
+        "version": 1,
         "settings": {
             "appearanceTools": false,
             "background": {
@@ -31,8 +31,8 @@
                 "minHeight": false
             },
             "layout": {
-                "contentSize": null,
-                "wideSize": null,
+                "contentSize": "840px",
+			    "wideSize": "1100px",
                 "allowEditing": false,
                 "allowCustomContentAndWideSize":false
             },
