@@ -805,13 +805,3 @@ add_filter(
 	10,
 	2
 );
-
-// Disable Openverse
-add_filter(
-	'block_editor_settings_all',
-	function( $settings ) {
-	  $settings['enableOpenverseMediaCategory'] = false;
-	  return $settings;
-	},
-	10
-  );
