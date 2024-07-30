@@ -35,7 +35,6 @@ var changed = require('gulp-changed');
 var imagemin = require('gulp-imagemin');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
-var stripDebug = require('gulp-strip-debug');
 var terser = require('gulp-terser');
 var sass = require('gulp-sass')(require('sass'));
 var sourcemaps = require('gulp-sourcemaps');
@@ -67,7 +66,6 @@ function scripts(done) {
   // Process top-level js (front side)
   gulp.src('./src/js/*.js')
     .pipe(concat('script.min.js'))
-    //.pipe(stripDebug())
     .pipe(terser())
     .pipe(header(banner, { pkg : pkg } ))
     .pipe(gulp.dest('./js/')) // Pipe to main
