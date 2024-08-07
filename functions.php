@@ -793,3 +793,15 @@ function uri_modern_add_media_namespace() {
 }
 add_action( 'rss2_ns', 'uri_modern_add_media_namespace' );
 add_action( 'atom_ns', 'uri_modern_add_media_namespace' );
+
+// Allow webadmins to lock blocks from other users
+add_filter(
+	'block_editor_settings_all',
+	static function( $settings ) {
+		// Allow for the Admin role and above.
+		$settings['canLockBlocks'] = current_user_can( 'administrator' );
+		return $settings;
+	},
+	10,
+	2
+);

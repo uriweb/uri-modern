@@ -83,7 +83,9 @@ function uri_modern_breadcrumbs_get_link( $path ) {
 	// check this first so that it takes precedent over category
 	$post_type_object = get_post_type_object( get_post_type() );
 	if ( is_object( $post_type_object ) ) {
+		if ( isset( $slug ) ) {
 		$slug = $post_type_object->rewrite['slug'];
+		}
 	}
 
 	if ( isset( $slug ) ) {
