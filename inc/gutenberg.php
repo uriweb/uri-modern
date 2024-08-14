@@ -44,7 +44,6 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/html',
 		// ===== CORE - LAYOUT =====
 		'core/columns',
-		'core/group',
 		'core/media-text',
 		'core/separator',
 		'core/spacer',
@@ -78,6 +77,8 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 			 $allowed_blocks,
 			// ===== CORE - FORMATTING =====
 			'core/code',
+			// ===== CORE - LAYOUT =====
+			'core/group',
 			// ===== CORE - WIDGETS =====
 			'core/calendar',
 			'core/rss',
