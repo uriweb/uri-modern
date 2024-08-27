@@ -147,3 +147,12 @@ add_action( 'after_setup_theme', 'uri_modern_remove_patterns' );
 // echo '<style>.blocks-font-size * { display: none; } .blocks-font-size { border: 0 !important; height: 0; padding: 0 !important; margin-top: 32px !important; }</style>';
 // }
 // add_action( 'admin_head', 'uri_modern_hide_font_styles' );
+
+/**
+ * Disable Openverse
+ */
+function uri_modern_disable_openverse( $settings ) {
+    $settings['enableOpenverseMediaCategory'] = false;
+    return $settings;
+}
+add_filter( 'block_editor_settings_all', 'uri_modern_disable_openverse' );
