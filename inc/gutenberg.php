@@ -37,6 +37,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/heading',
 		'core/gallery',
 		'core/list',
+		'core/list-item',
 		'core/file',
 		// ===== CORE - FORMATTING =====
 		'core/table',
@@ -44,6 +45,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/html',
 		// ===== CORE - LAYOUT =====
 		'core/columns',
+		'core/column',
 		'core/media-text',
 		'core/separator',
 		'core/spacer',
