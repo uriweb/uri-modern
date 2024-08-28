@@ -135,7 +135,7 @@ a:focus {
 }
 
 hr {
-    border: none;
+    border: none !important;
     height: 1px;
     background: $grey;
     margin: 2rem 0;
