@@ -161,6 +161,14 @@ body {
   margin-right: 3%;
 }
 
+.wp-block-columns-is-layout-flex {
+    gap: 0;
+}
+
+.wp-block-columns.is-layout-flex {
+    gap: 0;
+}
+
 @media print {
 	body {
 		background: #fff;
