@@ -92,6 +92,11 @@ pre {
 } 
 /* TABLES */
 
+/** Set font for Ninja Tables */
+table {
+	font-family: $type-sans;
+}
+
 .wp-block-table {
 table {
 	
