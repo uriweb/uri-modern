@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Gutenberg
  *
@@ -14,11 +15,12 @@
 /**
  * Gutenberg scripts and styles
  */
-function uri_modern_gutenberg_scripts() {
+function uri_modern_gutenberg_scripts()
+{
 	$file = get_template_directory_uri() . '/js/block-editor.min.js';
-	wp_enqueue_script( 'uri-modern-block-editor', $file, array( 'wp-blocks', 'wp-dom' ), uri_modern_cache_buster(), true );
+	wp_enqueue_script('uri-modern-block-editor', $file, array('wp-blocks', 'wp-dom'), uri_modern_cache_buster(), true);
 }
-add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
+add_action('enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts');
 
 /**
  * Specifiy which core blocks are permitted.
@@ -27,7 +29,8 @@ add_action( 'enqueue_block_editor_assets', 'uri_modern_gutenberg_scripts' );
  * @see https://wordpress.stackexchange.com/questions/379612/how-to-remove-the-core-embed-blocks-in-wordpress-5-6
  * @return arr
  */
-function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
+function uri_modern_allowed_blocks($allowed_blocks, $post)
+{
 
 	$allowed_blocks = array(
 		'core/block',
@@ -37,6 +40,7 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 		'core/heading',
 		'core/gallery',
 		'core/list',
+		'core/list-item',
 		'core/file',
 		// ===== CORE - FORMATTING =====
 		'core/table',
@@ -72,9 +76,9 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 	);
 
 	// Allow some blocks for admins only
-	if ( uri_modern_has_admin_privilages() ) {
+	if (uri_modern_has_admin_privilages()) {
 		array_push(
-			 $allowed_blocks,
+			$allowed_blocks,
 			// ===== CORE - FORMATTING =====
 			'core/code',
 			// ===== CORE - LAYOUT =====
@@ -92,20 +96,21 @@ function uri_modern_allowed_blocks( $allowed_blocks, $post ) {
 
 	return $allowed_blocks;
 }
-add_filter( 'allowed_block_types_all', 'uri_modern_allowed_blocks', 10, 2 );
+add_filter('allowed_block_types_all', 'uri_modern_allowed_blocks', 10, 2);
 
 
 
 /**
  * Custom editor colors.
  */
-function uri_modern_custom_colors() {
-	add_theme_support( 'editor-color-palette', array() );
-	add_theme_support( 'editor-gradient-presets', array() );
-	add_theme_support( 'disable-custom-colors' );
-	add_theme_support( 'disable-custom-gradients' );
+function uri_modern_custom_colors()
+{
+	add_theme_support('editor-color-palette', array());
+	add_theme_support('editor-gradient-presets', array());
+	add_theme_support('disable-custom-colors');
+	add_theme_support('disable-custom-gradients');
 }
-add_action( 'after_setup_theme', 'uri_modern_custom_colors' );
+add_action('after_setup_theme', 'uri_modern_custom_colors');
 
 /**
  * Removes options for different font sizes
@@ -113,28 +118,31 @@ add_action( 'after_setup_theme', 'uri_modern_custom_colors' );
  *
  * @see https://make.wordpress.org/core/2020/01/23/controlling-the-block-editor/
  */
-function uri_modern_set_font_sizes() {
+function uri_modern_set_font_sizes()
+{
 	// removes the text box where users can specify custom font sizes
-	add_theme_support( 'editor-font-sizes', array() );
-	add_theme_support( 'disable-custom-font-sizes' );
+	add_theme_support('editor-font-sizes', array());
+	add_theme_support('disable-custom-font-sizes');
 }
-add_action( 'after_setup_theme', 'uri_modern_set_font_sizes' );
+add_action('after_setup_theme', 'uri_modern_set_font_sizes');
 
 /**
  * Custom block editor CSS.
  */
-function uri_modern_block_editor_styles() {
-	add_theme_support( 'editor-styles' );
-	add_editor_style( 'style.admin.css' );
+function uri_modern_block_editor_styles()
+{
+	add_theme_support('editor-styles');
+	add_editor_style('style.admin.css');
 }
-add_action( 'after_setup_theme', 'uri_modern_block_editor_styles' );
+add_action('after_setup_theme', 'uri_modern_block_editor_styles');
 
 
 // Remove patterns
-function uri_modern_remove_patterns() {
-	remove_theme_support( 'core-block-patterns' );
+function uri_modern_remove_patterns()
+{
+	remove_theme_support('core-block-patterns');
 }
-add_action( 'after_setup_theme', 'uri_modern_remove_patterns' );
+add_action('after_setup_theme', 'uri_modern_remove_patterns');
 
 /**
  * Removes the dropcap widget with a little injected css.
@@ -151,8 +159,111 @@ add_action( 'after_setup_theme', 'uri_modern_remove_patterns' );
 /**
  * Disable Openverse
  */
-function uri_modern_disable_openverse( $settings ) {
-    $settings['enableOpenverseMediaCategory'] = false;
-    return $settings;
+function uri_modern_disable_openverse($settings)
+{
+	$settings['enableOpenverseMediaCategory'] = false;
+	return $settings;
 }
-add_filter( 'block_editor_settings_all', 'uri_modern_disable_openverse' );
+add_filter('block_editor_settings_all', 'uri_modern_disable_openverse');
+
+/**
+ * Disable Font Library
+ */
+
+function uri_modern_disable_font_library($settings)
+{
+	$settings['fontLibraryEnabled'] = false;
+	return $settings;
+}
+add_filter('block_editor_settings_all', 'uri_modern_disable_font_library');
+
+/**
+ * Disable Style Tab in the Block Inspector
+ */
+
+function uri_modern_disable_inspector_tabs_by_default($settings)
+{
+	$settings['blockInspectorTabs'] = array('default' => false);
+	return $settings;
+}
+add_filter('block_editor_settings_all', 'uri_modern_disable_inspector_tabs_by_default');
+
+
+/**
+ * Disable typography?
+ */
+function uri_modern_disable_typography_for_specific_blocks($args, $block_type)
+{
+
+	// List of block types to modify.
+	$block_types_to_modify = [
+		'core/paragraph',
+		'core/heading',
+		'core/list',
+		'core/list-item',
+		'core/columns',
+		'core/column',
+		'core/media-text'
+	];
+
+	// Check if the current block type is in the list.
+	if (in_array($block_type, $block_types_to_modify, true)) {
+		// Disable typography controls.
+		$args['supports']['typography'] = array(
+			'defaultFontSizes' => false,
+			'customFontSize' => false,
+			'letterSpacing' => false,
+			'textDecoration' => false
+		);
+	}
+
+	return $args;
+}
+add_filter('register_block_type_args', 'uri_modern_disable_typography_for_specific_blocks', 10, 2);
+
+
+/**
+ * Disable duotone?
+ */
+function uri_modern_disable_duotone_for_specific_blocks($args, $block_type)
+{
+
+	// List of block types to modify.
+	$block_types_to_modify = [
+		'core/image'
+	];
+
+	// Check if the current block type is in the list.
+	if (in_array($block_type, $block_types_to_modify, true)) {
+		// Disable duotone
+		$args['supports']['filter'] = array(
+			'duotone' => false
+		);
+	}
+
+	return $args;
+}
+add_filter('register_block_type_args', 'uri_modern_disable_duotone_for_specific_blocks', 10, 2);
+
+
+/**
+ * Disable dropcap
+ */
+function uri_modern_disable_typography ($theme_json) {
+	$new_data = array(
+		'version'  => 3,
+		'settings' => array(
+			'appearanceTools' => false,
+			'typography' => array(
+				'customFontSize' => false,
+				'dropCap' => false,
+			),
+		),
+	);
+
+	return $theme_json->update_with( $new_data );
+}
+
+add_filter( 'wp_theme_json_data_default', 'uri_modern_disable_typography', 10, 2 );
+
+
