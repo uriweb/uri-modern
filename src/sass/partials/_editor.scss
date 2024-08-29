@@ -29,6 +29,12 @@
   margin-right: 1%;
 }
 
+
+.wp-block-columns.is-layout-flex {
+  gap: 3%;
+}
+
+
 @media all and (min-width: 1500px) {
   .is-root-container > .wp-block {
     max-width: $break3;
