@@ -8,11 +8,11 @@
 
 URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.
 
-## What's new in 3.0.2
+## What's new in 3.0.3
 
-URI Modern 3.0.2 is a fix release. 
+URI Modern 3.0.3 is a fix release. 
 
-* Adds jQuery as a dependency.
+* Adjusts styles for Wordpress 6.1.
 
 ## What's new in 3.0
 
@@ -49,6 +49,6 @@ __Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](h
 __Tags:__ themes  
 __Requires at least:__ 5.8  
 __Tested up to:__ 6.1.7  
-__Stable tag:__ 3.0.2  
+__Stable tag:__ 3.0.3  
 __License:__ GPL-3.0  
 __Licence URI:__ https://www.gnu.org/licenses/gpl-3.0.html
