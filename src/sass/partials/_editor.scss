@@ -29,6 +29,12 @@
   margin-right: 1%;
 }
 
+
+.wp-block-columns.is-layout-flex {
+  gap: 3%;
+}
+
+
 @media all and (min-width: 1500px) {
   .is-root-container > .wp-block {
     max-width: $break3;
@@ -79,4 +85,9 @@ p {
 
 p:empty {
     display: initial;
+}
+
+/* Adjust caption for images in the editor */
+.wp-block-image.aligncenter>figcaption,.wp-block-image .aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image.alignright>figcaption,.wp-block-image .alignright>figcaption {
+  display: block;
 }

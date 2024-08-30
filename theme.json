@@ -31,8 +31,6 @@
                 "minHeight": false
             },
             "layout": {
-                "contentSize": "840px",
-			    "wideSize": "1100px",
                 "allowEditing": false,
                 "allowCustomContentAndWideSize":false
             },
