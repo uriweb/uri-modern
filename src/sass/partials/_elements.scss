@@ -93,8 +93,7 @@ pre {
 } 
 /* TABLES */
 
-.wp-block-table {
-table {
+.wp-block-table, table {
 	
 	font-family: $type-sans;
 	font-size: 1rem;
@@ -123,7 +122,7 @@ table {
 		color: #000;
 		text-align: left;
 	}
-}
+
 
 	tr:nth-child(even) {
 		background-color: #eee;
