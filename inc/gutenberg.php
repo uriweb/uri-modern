@@ -203,7 +203,8 @@ function uri_modern_disable_typography_for_specific_blocks($args, $block_type)
 		'core/list-item',
 		'core/columns',
 		'core/column',
-		'core/media-text'
+		'core/media-text',
+		'core/table'
 	];
 
 	// Check if the current block type is in the list.
