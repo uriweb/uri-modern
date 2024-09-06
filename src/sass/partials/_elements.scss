@@ -97,7 +97,12 @@ table {
 	font-family: $type-sans;
 }
 
-.wp-block-table {
+/** Override table block core styles */
+.wp-block-table td, .wp-block-table th {
+	padding: 1rem 1.5rem;
+	border: none;
+}
+
 table {
 	
 	font-family: $type-sans;
@@ -127,8 +132,6 @@ table {
 		color: #000;
 		text-align: left;
 	}
-}
-
 	tr:nth-child(even) {
 		background-color: #eee;
 	}
@@ -136,8 +139,9 @@ table {
 	.numeric {
 		text-align: right;
 	}
-	
 }
+	
+
 
 
 /* SCREEN READERS */
