@@ -41,7 +41,6 @@ function uri_modern_allowed_blocks($allowed_blocks, $post)
 		'core/gallery',
 		'core/list',
 		'core/list-item',
-		'core/file',
 		// ===== CORE - FORMATTING =====
 		'core/table',
 		'core/freeform', // Classic
@@ -79,6 +78,8 @@ function uri_modern_allowed_blocks($allowed_blocks, $post)
 	if (uri_modern_has_admin_privilages()) {
 		array_push(
 			$allowed_blocks,
+			// ===== CORE - COMMON =====
+			'core/file',
 			// ===== CORE - FORMATTING =====
 			'core/code',
 			// ===== CORE - LAYOUT =====
@@ -190,7 +191,7 @@ add_filter('block_editor_settings_all', 'uri_modern_disable_inspector_tabs_by_de
 
 
 /**
- * Disable typography?
+ * Disable typography
  */
 function uri_modern_disable_typography_for_specific_blocks($args, $block_type)
 {
@@ -224,7 +225,7 @@ add_filter('register_block_type_args', 'uri_modern_disable_typography_for_specif
 
 
 /**
- * Disable duotone?
+ * Disable duotone
  */
 function uri_modern_disable_duotone_for_specific_blocks($args, $block_type)
 {
