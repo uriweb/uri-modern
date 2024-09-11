@@ -157,17 +157,25 @@ body {
 }
 
 /* Make WP column gutter equivalent to CL Tiles */
-/*
+
 .wp-block-columns .wp-block-column:not(:last-child) {
   margin-right: 3%;
 }
-  */
 
 /*Make WP column gap match tiles */
+/*
 .wp-block-columns-is-layout-flex {
-gap: 1%;
+    gap: 0;
+}
+    */
+
+.wp-block-columns.is-layout-flex {
+    gap: 0;
 }
 
+.wp-block-columns {
+    margin-bottom: 1.75em;
+}
 
 @media print {
 	body {
