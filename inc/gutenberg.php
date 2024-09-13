@@ -47,6 +47,7 @@ function uri_modern_allowed_blocks($allowed_blocks, $post)
 		'core/html',
 		// ===== CORE - LAYOUT =====
 		'core/columns',
+		'core/column',
 		'core/separator',
 		'core/spacer',
 		// ===== CORE - WIDGETS =====
