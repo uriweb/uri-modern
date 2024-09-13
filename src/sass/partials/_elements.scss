@@ -93,18 +93,7 @@ pre {
 } 
 /* TABLES */
 
-/** Set font for Ninja Tables */
-table {
-	font-family: $type-sans;
-}
-
-/** Override table block core styles */
-.wp-block-table td, .wp-block-table th {
-	padding: 1rem 1.5rem;
-	border: none;
-}
-
-table {
+.wp-block-table, table {
 	
 	font-family: $type-sans;
 	font-size: 1rem;
