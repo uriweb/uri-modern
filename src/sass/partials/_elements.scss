@@ -15,6 +15,12 @@ figcaption {
 	padding: .5rem 0;
 }
 
+.wp-block-image figcaption {
+	padding: 0px 25px;
+	margin-top: -20px;
+	font-size: .9rem;
+}
+
 
 dl {
 	margin-left: .5rem;
@@ -122,8 +128,6 @@ pre {
 		color: #000;
 		text-align: left;
 	}
-
-
 	tr:nth-child(even) {
 		background-color: #eee;
 	}
@@ -131,8 +135,9 @@ pre {
 	.numeric {
 		text-align: right;
 	}
-	
 }
+	
+
 
 
 /* SCREEN READERS */
