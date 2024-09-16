@@ -558,16 +558,16 @@ function uri_modern_has_admin_privilages() {
 	$admin = false;
 
 	global $current_user;
-	$role = $current_user->caps['administrator'];
+	
+	$role = array_shift( $current_user->roles );
 
-	if ( $role ) {
+	if ( 'administrator' == $role ) {
 		$admin = true;
 	}
 
 	return $admin;
 
 }
-
 
 /**
  * Callback function for Action Bar buttons
