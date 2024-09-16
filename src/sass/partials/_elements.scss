@@ -99,7 +99,13 @@ pre {
 } 
 /* TABLES */
 
-.wp-block-table, table {
+/** Override table block core styles */
+.wp-block-table td, .wp-block-table th {
+	padding: 1rem 1.5rem;
+	border: none;
+}
+
+table {
 	
 	font-family: $type-sans;
 	font-size: 1rem;
