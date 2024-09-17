@@ -556,18 +556,16 @@ function uri_modern_get_field() {
 function uri_modern_has_admin_privilages() {
 
 	$admin = false;
-
-	global $current_user;
 	
-	$role = array_shift( $current_user->roles );
+	$role = current_user_can('administrator');
 
-	if ( 'administrator' == $role ) {
+	if ( $role ) {
 		$admin = true;
 	}
 
 	return $admin;
-
 }
+
 
 /**
  * Callback function for Action Bar buttons
