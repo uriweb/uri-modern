@@ -14,11 +14,7 @@ Thanks for your interest in contributing to URI Modern!  As a contributor, there
 
 If you have a question about using or contributing to URI Modern that isn't answered here, let us know.  However, we ask that you not open issues for general questions.
 
-Instead, get in touch outside the repository by contacting someone below on the URI Web Communications team:
-
-* __Brandon Fuller__ [bjcfuller@uri.edu](mailto:bjcfuller@uri.edu)
-* __Alexandra Gauss__ [alexandra_gauss@uri.edu](mailto:alexandra_gauss@uri.edu)
-* __Sarah Couch__ [scouch@uri.edu](mailto:scouch@uri.edu)
+Instead, get in touch outside the repository by contacting us at [web-group@uri.edu](mailto:web-group@uri.edu). We will do our best to respond to your questions quickly and thoroughly.
 
 We will do our best to respond to your questions quickly and thoroughly.
 
