@@ -16,9 +16,17 @@ figcaption {
 }
 
 .wp-block-image figcaption {
-	padding: 0px 25px;
-	margin-top: -20px;
 	font-size: .9rem;
+}
+
+.wp-block-image .alignleft figcaption {
+	padding: 0px 5px;
+	margin-top: -10px;
+}
+
+.wp-block-image .alignright figcaption {
+	padding: 0px 25px;
+	margin-top: -10px;
 }
 
 
