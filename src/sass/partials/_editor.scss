@@ -86,18 +86,7 @@ p:empty {
     display: initial;
 }
 
-/*
-.wp-block-image.aligncenter>figcaption,.wp-block-image .aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image.alignright>figcaption,.wp-block-image .alignright>figcaption {
-  display: block;
-  caption-side: bottom
+.editor-styles-wrapper .wp-block-image figcaption {
+  margin-top: 0;
+  padding: .5rem 0;
 }
-
-
-.wp-block-image.alignleft {
-  margin-left: 10rem;
-}
-
-.wp-block-image.alignright {
-  margin-right: 10rem;
-}
-*/
