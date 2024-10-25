@@ -42,6 +42,6 @@ __Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](h
 __Tags:__ themes  
 __Requires at least:__ 5.8  
 __Tested up to:__ 6.4.5  
-__Stable tag:__ 3.1.3  
+__Stable tag:__ 4.0.0  
 __License:__ GPL-3.0  
 __Licence URI:__ https://www.gnu.org/licenses/gpl-3.0.html
