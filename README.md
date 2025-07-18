@@ -4,9 +4,15 @@
 [![GitHub Release Date](https://img.shields.io/github/release-date/uriweb/uri-modern)](https://github.com/uriweb/uri-modern/releases/latest)
 ![GitHub License](https://img.shields.io/github/license/uriweb/uri-modern)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/fa900133ab854001a03182aa712eb6c2)](https://www.codacy.com/gh/uriweb/uri-modern/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=uriweb/uri-modern&amp;utm_campaign=Badge_Grade)
+[![CodeFactor](https://www.codefactor.io/repository/github/uriweb/uri-modern/badge/master)](https://www.codefactor.io/repository/github/uriweb/uri-modern/overview/master)
 ![GitHub top language](https://img.shields.io/github/languages/top/uriweb/uri-modern?color=violet&branch=master)
 
-URI Modern is a WordPress theme designed for the University of Rhode Island. It's designed to replace all themes currently being used on the university's websites, and unify the online brand and experience.
+URI Modern is the primary WordPress theme for the University of Rhode Island, designed to unify the online brand and experience.
+
+## What's new in 4.0.1
+
+* Adds support for `wp_body_open`
+* Adds php8 development tools
 
 ## What's new in 4.0
 
@@ -34,13 +40,10 @@ composer require uriweb/uri-modern
 
 ## Theme details
 
-[![Master Build Status](https://travis-ci.com/uriweb/uri-modern.svg?branch=master "Master build status")](https://travis-ci.com/uriweb/uri-modern)
-[![CodeFactor](https://www.codefactor.io/repository/github/uriweb/uri-modern/badge/master)](https://www.codefactor.io/repository/github/uriweb/uri-modern/overview/master)
-
 __Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](https://github.com/johnpennypacker), [alexandragauss](https://github.com/alexandragauss)  
 __Tags:__ themes  
 __Requires at least:__ 5.8  
 __Tested up to:__ 6.4.5  
-__Stable tag:__ 4.0.0  
+__Stable tag:__ 4.0.1  
 __License:__ GPL-3.0  
 __Licence URI:__ https://www.gnu.org/licenses/gpl-3.0.html
