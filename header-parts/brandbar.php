@@ -7,7 +7,7 @@
 
 ?>
 
-	<header id="brandbar" class="site-header" role="banner">
+	<header id="brandbar" class="site-header" role="banner" aria-labelledby="The University of Rhode Island">
 
 		<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island"></div>
 
