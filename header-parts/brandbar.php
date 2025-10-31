@@ -30,7 +30,7 @@
 				<div id="gateways">
 					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
 					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( defined( 'URI_EASTER_EGGS' ) && URI_EASTER_EGGS === true ) ? '&#128017' : 'Resources for'; ?></span></label>
-						<nav id="gateways-menu" aria-labelledby="Resources for Navigation">
+						<nav id="gateways-menu" aria-label="Resources for Navigation">
 						<ul id="gateways-ul">
 						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/future-students">Future Students</a></li>
 						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/students">Students</a></li>
