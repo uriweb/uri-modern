@@ -28,7 +28,7 @@
 				<a href="https://<?php uri_modern_the_domain(); ?>/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
 
 				<div id="gateways">
-					<input type="checkbox" id="gateways-toggle" role="presentation" aria-describedby="Open the audience gateways menu when browsing on mobile">
+					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
 					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( defined( 'URI_EASTER_EGGS' ) && URI_EASTER_EGGS === true ) ? '&#128017' : 'Resources for'; ?></span></label>
 						<nav id="gateways-menu" aria-labelledby="Resources for Navigation">
 						<ul id="gateways-ul">
