@@ -14,7 +14,7 @@
 		<div id="globalsearch" role="search">
 			<input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
 			<label for="gsform-toggle" id="gsform"><span>Search</span></label>
-			<form id="gs" method="get" action="https://<?php uri_modern_the_domain(); ?>/search" name="global_general_search_form" role="search">
+			<form id="gs" method="get" action="https://<?php uri_modern_the_domain(); ?>/search" name="global_general_search_form">
 				<input type="hidden" name="cx" value="<?php uri_modern_the_gs_id(); ?>" />
 				<input type="hidden" name="cof" value="FORID:11" />
 				<label id="gs-query-label" for="gs-query">Searchbox</label>
