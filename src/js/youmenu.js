@@ -3,13 +3,13 @@
  *
  */
 
-( function() {
+(function () {
 	'use strict';
 
-	window.addEventListener( 'load', initYouMenu, false );
+	window.addEventListener('load', initYouMenu, false);
 
 	function initYouMenu() {
-		const gateways = document.getElementById( 'gateways' );
+		const gateways = document.getElementById('gateways');
 		const input = document.getElementById( 'gateways-toggle' );
 
 		window.addEventListener(
@@ -22,4 +22,4 @@
 			false
 		);
 	}
-}() );
+}());

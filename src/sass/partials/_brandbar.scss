@@ -171,6 +171,7 @@
     background-size: 180px auto;
 }
 
+
 #gateways-menu {
 
 	display: none;
@@ -202,6 +203,7 @@
     }
 
 } // #gateways-menu
+ 
 
 #gateways-toggle {
     display: none;
@@ -271,6 +273,11 @@
         display: block;
     }
 } // #gateways-toggle:checked
+
+
+#gateways-ul {
+    margin: 0;
+}
 
 @media all and (min-width: 370px) {
     #identity {
