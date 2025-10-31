@@ -71,7 +71,7 @@
 					<input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" checked>
 					<label for="sb-university-toggle" aria-label="Open the University footer menu when browsing on mobile."><span>University</span></label>
 					<ul role="menu" aria-label="The University footer menu.">
-						<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/about/leadership/">Leadership</a></li>
+						<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/president/">Leadership</a></li>
 						<li role="menuitem"><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/diversity/">Diversity and Inclusion</a></li>
 						<li role="menuitem"><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/global/">Global</a></li>
 						<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/about/campuses/">Campuses</a></li>
@@ -130,7 +130,8 @@
 			<ul id="legal-links">
 				<li><a href="https://jobs.uri.edu/">Work at URI</a></li>
 				<li><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/publicrecords/">Public Records</a></li>
-				<li><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/accessibility/">Web Accessibility</a></li>
+				<li><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/accessibility/">Accessibility</a></li>
+				<li><a href="https://<?php uri_modern_the_domain( 'www' ); ?>/wordpress/">Web Support</a></li>
 			</ul>
 			<p>Copyright &copy; <?php echo date( 'Y' ); ?> <a class="subtle" href="http://<?php uri_modern_the_domain(); ?>/">University of Rhode Island</a> | University of Rhode Island, Kingston, RI 02881, USA | 1.401.874.1000</p>
 			<p>URI is an equal opportunity employer committed to the principles of affirmative action.</p>
