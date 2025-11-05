@@ -58,7 +58,6 @@ function uri_modern_allowed_blocks($allowed_blocks, $post)
 		'uri-cl/button',
 		'uri-cl/card',
 		'uri-cl/hero',
-		'uri-cl/metric',
 		'uri-cl/menu',
 		'uri-cl/notice',
 		'uri-cl/panel',
@@ -91,6 +90,7 @@ function uri_modern_allowed_blocks($allowed_blocks, $post)
 			// ===== URI - COMPONENT LIBRARY =====
 			'uri-cl/abstract', // in beta
 			'uri-cl/date',
+			'uri-cl/metric',
 			// ===== URI - MISC =====
 			'uri/dynamic-metrics', // in beta
 		);
