@@ -71,7 +71,7 @@
 					<input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" checked>
 					<label for="sb-university-toggle" aria-label="Open the University footer menu when browsing on mobile."><span>University</span></label>
 					<ul role="menu" aria-label="The University footer menu.">
-						<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/president/">Leadership</a></li>
+						<li role="menuitem"><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/president/">Leadership</a></li>
 						<li role="menuitem"><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/diversity/">Diversity and Inclusion</a></li>
 						<li role="menuitem"><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/global/">Global</a></li>
 						<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/about/campuses/">Campuses</a></li>
