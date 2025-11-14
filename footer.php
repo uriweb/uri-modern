@@ -21,6 +21,7 @@
 		</div><!-- #region-after-content -->
 	<?php endif; ?>
 
+	<section aria-label="Quick Links" role="region">
 	<div id="actionbar-wrapper">
 		<div id="actionbar" role="menu">
 			<?php
@@ -62,7 +63,8 @@
 
 			?>
 		</div>
-	</div><!-- #actionbar-wrapper -->
+	</div>
+	</section><!-- #actionbar-wrapper -->
 
 	<footer id="globalfooter">
 		<div id="basement">
