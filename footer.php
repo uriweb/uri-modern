@@ -86,7 +86,7 @@
 						<li role="menuitem"><a href="https://<?php uri_modern_the_domain( 'web' ); ?>/dining/">Dining</a></li>
 						<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/athletics/">Athletics and Recreation</a></li>
 						<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/campus-life/health-and-wellness/">Health and Wellness</a></li>
-						<li role="menuitem"><a href="https://events.uri.edu" role="menuitem">Events</a></li>
+						<li role="menuitem"><a href="https://events.uri.edu">Events</a></li>
 					</ul>
 				</div>
 				<div id="sb-academics">
