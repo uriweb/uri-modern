@@ -7,9 +7,9 @@
 
 ?>
 
-	<header id="brandbar" class="site-header" role="banner" aria-labelledby="identity-print">
+	<header id="brandbar" class="site-header" role="banner" aria-label="Home and Search">
 
-		<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island"></div>
+		<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island Home"></div>
 
 		<div id="globalsearch" role="search">
 			<input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
@@ -29,7 +29,7 @@
 
 				<div id="gateways">
 					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
-					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( defined( 'URI_EASTER_EGGS' ) && URI_EASTER_EGGS === true ) ? '&#128017' : 'Info for'; ?></span></label>
+					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( defined( 'URI_EASTER_EGGS' ) && URI_EASTER_EGGS === true ) ? '&#128017' : 'You'; ?></span></label>
 						<nav id="gateways-menu" aria-label="Resources for Navigation">
 						<ul id="gateways-ul">
 						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/future-students">Future Students</a></li>

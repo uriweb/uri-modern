@@ -15,7 +15,7 @@ get_template_part( 'header-parts/head' ); ?>
 		<?php get_template_part( 'header-parts/brandbar' ); ?>
 		<?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
 
-		<header id="siteheader" aria-labelledby="siteidentity">
+		<header id="siteheader" aria-label="Site Masthead">
 
 			<?php get_template_part( 'header-parts/sitebar' ); ?>
 
