@@ -72,7 +72,7 @@
 		<div id="storagebins">
 			<div id="sb-university">
 				<input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" checked>
-				<label for="sb-university-toggle" aria-label="Open the University footer menu when browsing on mobile."><span>University</span></label>
+				<label for="sb-university-toggle"><span>University</span></label>
 				<ul role="menu" aria-label="The University footer menu.">
 					<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/about/leadership/">Leadership</a></li>
 					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/diversity/">Diversity and Inclusion</a></li>
@@ -83,7 +83,7 @@
 			</div>
 			<div id="sb-campus-life">
 				<input id="sb-campus-life-toggle" type="radio" name="storagebin" value="campus-life" role="presentation">
-				<label for="sb-campus-life-toggle" aria-label="Open the Campus Life footer menu when browsing on mobile."><span>Campus Life</span></label>
+				<label for="sb-campus-life-toggle"><span>Campus Life</span></label>
 				<ul role="menu" aria-label="The Campus Life footer menu.">
 					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/housing/">Housing</a></li>
 					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/dining/">Dining</a></li>
@@ -94,7 +94,7 @@
 			</div>
 			<div id="sb-academics">
 				<input id="sb-academics-toggle" type="radio" name="storagebin" value="academics" role="presentation">
-				<label for="sb-academics-toggle" aria-label="Open the Academics footer menu when browsing on mobile."><span>Academics</span></label>
+				<label for="sb-academics-toggle"><span>Academics</span></label>
 				<ul role="menu" aria-label="The Academics footer menu.">
 					<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/academics/">Undergraduate</a></li>
 					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/graduate-school/">Graduate</a></li>
