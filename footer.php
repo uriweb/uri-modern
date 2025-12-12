@@ -24,7 +24,7 @@
 
 <section aria-label="Quick Links" role="region">
 	<div id="actionbar-wrapper">
-		<div id="actionbar" role="menu">
+		<nav id="actionbar" aria-label="Quick Links">
 			<?php
 			// connect
 			$link = array(
@@ -63,11 +63,11 @@
 			echo uri_modern_action_bar_link($link);
 
 			?>
-		</div>
+		</nav>
 	</div>
 </section><!-- #actionbar-wrapper -->
 
-<footer id="globalfooter">
+<footer id="globalfooter" aria-label="footer">
 	<div id="basement">
 		<div id="storagebins">
 			<div id="sb-university">
