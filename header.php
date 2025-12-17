@@ -15,6 +15,7 @@
 get_template_part('header-parts/head'); ?>
 
 <header id="masthead">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uri' ); ?></a>
 	<?php get_template_part('header-parts/brandbar'); ?>
 	<?php get_template_part('header-parts/widgetarea-banner'); ?>
 
