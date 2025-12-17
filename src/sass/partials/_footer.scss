@@ -8,8 +8,8 @@
     margin: 0 auto;
     box-sizing: border-box;
     transition: all .2s ease-in-out;
-	padding: 0 25px;
-	color: #fff;
+    padding: 0 25px;
+    color: #fff;
 }
 
 #basement:after {
@@ -31,123 +31,54 @@
     background-size: auto 100%;
 }
 
-#storagebins {
-    
-	text-align: center;
-	font-size: .9rem;
-	width: 100vw;
-	position: relative;
-	left: 50%;
-	margin-left: -50vw;
-	background: rgba(0,0,0,.5);
-    
-    &:after {
-        content: '';
-        display: block;
-        clear: both;
-    }
-    
-    div {
-        float: left;
-        width: 33.33%;
-        box-sizing: border-box;
-    }
-    
-    div:not(:first-child) {
-        border-left: 2px solid rgba(34,90,154,.6);
-    }
-    
-    input {
-        display: none;
-    }
-    
-    label {
-        text-transform: uppercase;
-        font-weight: 600;
-        display: block;
-        width: 100%;
-        height: 60px;
-        line-height: 60px;
-        padding-bottom: 5px;
-    }
-    
-    label span:after {
-        content: '';
-        display: block;
-        position: relative;
-        top: -15px;
-        left: calc(50% - 6px);
-        width: 0;
-        height: 0;
-        border-top: 6px solid $white;
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        transform: rotate(0);
-        transition: transform .2s $easeInOutQuart;
-    }
-    
-    label:hover,
-    label:focus {
-        cursor: pointer;
-    }
-    
-    ul {
-        margin: 0;
-        padding: 1rem 0 .5rem;
-        list-style: none;
-        display: none;
-        background: $white;
-        width: 100vw;
-        position: relative;
-    }
-    
-    li {
-        max-width: 100%;
-    }
-    
-    #sb-university ul {
-        margin-left: 0;
-        left: 0;
-    }
-    
-    #sb-campus-life ul {
-        margin-left: 50%;
-        left: -50vw;
-    }
-    
-    #sb-academics ul {
-        margin-left: 100%;
-        left: -100vw;
-    }
-    
-    input:checked ~ label {
-        background: $link;
-    }
-    
-    input:checked ~ ul {
-        display: block;
-    }
+.footer-links {
 
     a {
-        color: $blue;
+        color: #fff;
+        font-size: .9rem;
     }
-    
+
     a:hover,
     a:focus {
         text-decoration: underline;
     }
-    
-} // #storagebins
+
+    ul {
+        list-style: none;
+        margin: 0 0 2rem 0rem;
+    }
+
+    li {
+        line-height: 1.4rem;
+    }
+
+    #sb-university,
+    #sb-campus-life,
+    #sb-academics {
+        margin: 2rem;
+    }
+}
+
+.footer-link-heading {
+    text-transform: uppercase;
+    font-weight: 550;
+    display: block;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: .9rem;
+    margin-bottom: 0;
+}
 
 #gimmicks {
-    
-	text-align: center;
-	background: rgba(34,90,154,.6);
-	position: relative;
-	left: -50vw;
-	margin-left: 50%;
-	width: 100vw;
-    
+
+    text-align: center;
+    background: rgba(34, 90, 154, .6);
+    position: relative;
+    left: -50vw;
+    margin-left: 50%;
+    width: 100vw;
+
     .uri-tides-widget {
         margin: 18px 0 15px;
         padding: 0;
@@ -155,37 +86,46 @@
         background: none;
         text-align: left;
     }
+
     .uri-tides-widget .label {
         font-size: .9rem;
         text-transform: uppercase;
         font-weight: 600;
         margin-bottom: .5rem;
     }
+
     .uri-tides-metrics div {
         font-family: $type-numeric;
         font-weight: 400;
     }
+
     .uri-tides-metrics em {
         font-weight: 500;
     }
+
     .uri-tides-source {
-        color: rgba(255,255,255);
+        color: rgba(255, 255, 255);
         font-size: .55rem;
     }
+
     hr {
         margin: 0;
-        background: rgba(255,255,255,.5);
+        background: rgba(255, 255, 255, .5);
     }
+
     .cl-social {
         padding: 18px 0 15px;
         margin: 0;
         display: block;
     }
+
     .cl-social li:not(:first-child) {
         margin-left: 18%;
     }
-    
-} // #gimmicks
+
+}
+
+// #gimmicks
 
 #tagline {
     position: relative;
@@ -213,37 +153,39 @@
 
 #legal {
 
-	position: relative;
-	z-index: 10;
-	width: 300px;
-	margin: 0 auto;
-	font-size: .6rem;
-	box-sizing: border-box;
-	transtition: all .2s ease-in-out;
+    position: relative;
+    z-index: 10;
+    width: 300px;
+    margin: 0 auto;
+    font-size: .6rem;
+    box-sizing: border-box;
+    transtition: all .2s ease-in-out;
 
     p {
-        color: rgba(255,255,255,.6);
+        color: rgba(255, 255, 255, .6);
         max-width: 100%;
         padding: 0;
         margin: .2rem 0 0;
         text-align: center;
         line-height: 1.3;
     }
-    
+
     a {
         text-decoration: none;
     }
-    
+
     a.subtle {
         color: inherit;
     }
-    
+
     a:hover,
     a:focus {
         text-decoration: underline;
     }
 
-} // #legal
+}
+
+// #legal
 
 #legal-links {
 
@@ -255,7 +197,7 @@
     li {
 
         display: inline;
-        
+
         &:not(:first-child) {
             padding-left: .5rem;
             margin-left: .5rem;
@@ -268,128 +210,118 @@
         color: $white;
     }
 
-} // #legal-links
+}
+
+// #legal-links
+
+@media all and (min-width: 600px) {
+
+    .footer-links {
+        display: flex;
+        column-gap: 4rem;
+
+        #sb-university,
+        #sb-campus-life,
+        #sb-academics {
+            margin: 2rem;
+        }
+    }
+}
 
 @media all and (min-width: 900px) {
     #globalfooter {
         padding: 35px 0;
         background-size: auto 500px;
     }
-    #storagebins {
-		
-		float: left;
-		text-align: left;
-		display: block;
-		width: auto;
-		left: 0;
-		margin-left: 0;
-		background: none;
-		
-        div {
-            display: inline-block;
-            float: none;
-            width: auto;
+
+    .footer-links {
+        display: flex;
+        float: left;
+        column-gap: 4rem;
+
+        #sb-university,
+        #sb-campus-life,
+        #sb-academics {
+            margin: 0rem;
         }
-        div:not(:first-child) {
-            margin-left: 3rem;
-            border-left: none;
-        }
-        label {
-            padding: 0;
-            width: auto;
-            height: auto;
-            line-height: 1;
-            padding-bottom: 0;
-        }
-        label span:after {
-            display: none;
-        }
-        label:hover,
-        label:focus {
-            cursor: default;
-        }
-        input:checked ~ label {
-            background: none;
-        }
-        ul {
-            display: block;
-            background: none;
-            padding: 1.2rem 0 1rem;
-            width: auto;
-        }
-        #sb-university ul,
-        #sb-campus-life ul,
-        #sb-academics ul {
-            margin-left: 0;
-            left: 0;
-        }
-        a {
-            color: $white;
-        }
-    } // #storagebins
+    }
+
 
     #gimmicks {
-        
-		float: right;
-		text-align: initial;
-		background: none;
-		padding: 0;
-		left: 0;
-		margin-left: 0;
-		width: auto;
-		
+
+        float: right;
+        text-align: initial;
+        background: none;
+        padding: 0;
+        left: 0;
+        margin-left: 0;
+        width: auto;
+
         &:after {
             display: block;
             content: '';
             clear: both;
         }
+
         &>* {
             float: left;
         }
+
         hr {
             display: none;
         }
+
         .uri-tides-widget {
             margin: 0;
         }
+
         .uri-tides-widget .label {
             font-size: .9rem;
         }
+
         .cl-social {
             margin-left: 3rem;
             padding: 0;
             border-top: none;
         }
+
         .cl-social li:not(:first-child) {
             margin-left: 10px;
         }
-        
-    } // #gimmicks
-    
+
+    }
+
+    // #gimmicks
+
     #legal {
         width: 100%;
         font-size: .7rem;
         margin-top: .5rem;
         padding: 0 25px;
     }
+
     #legal p {
         margin: 0;
         text-align: left;
     }
+
     #legal-links {
         text-align: left;
         font-size: .8rem;
     }
+
     #tagline {
         background: linear-gradient(to right, $midblue 50%, $lightblue 70%, $midblue);
         margin: 60px auto 0;
     }
+
     #tagline:after {
         background-position: right 25px top;
     }
 }
 
 @media all and (min-width: 1050px) {
+
     #basement,
     #legal,
     #tagline,
@@ -397,6 +329,7 @@
         width: 1000px;
         padding: 0;
     }
+
     #tagline:after {
         background-position: right top;
     }
@@ -406,24 +339,28 @@
 
 @media print {
     #globalfooter {
-		background: none;
+        background: none;
         padding: 0;
     }
+
     #basement,
     #tagline {
         display: none;
     }
+
     #legal {
-		width: 100%;
-		margin: 0;
+        width: 100%;
+        margin: 0;
         padding-top: 20px;
         border-top: 1px solid #ddd;
     }
+
     #legal p {
         color: #000;
         text-align: left;
     }
-	#legal-links {
-		display: none;
-	}
+
+    #legal-links {
+        display: none;
+    }
 }

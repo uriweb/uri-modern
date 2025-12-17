@@ -69,38 +69,35 @@
 
 <footer id="globalfooter">
 	<div id="basement">
-		<div id="storagebins">
+		<div class="footer-links">
 			<div id="sb-university">
-				<input id="sb-university-toggle" type="radio" name="storagebin" value="university" role="presentation" checked>
-				<label for="sb-university-toggle"><span>University</span></label>
-				<ul role="menu" aria-label="The University footer menu.">
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/about/leadership/">Leadership</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/diversity/">Diversity and Inclusion</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/global/">Global</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/about/campuses/">Campuses</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/safety/">Safety</a></li>
+				<h2 class="footer-link-heading">University</h2>
+				<ul>
+					<li><a href="https://<?php uri_modern_the_domain(); ?>/about/leadership/">Leadership</a></li>
+					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/diversity/">Diversity and Inclusion</a></li>
+					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/global/">Global</a></li>
+					<li><a href="https://<?php uri_modern_the_domain(); ?>/about/campuses/">Campuses</a></li>
+					<li><a href="https://<?php uri_modern_the_domain(); ?>/safety/">Safety</a></li>
 				</ul>
 			</div>
 			<div id="sb-campus-life">
-				<input id="sb-campus-life-toggle" type="radio" name="storagebin" value="campus-life" role="presentation">
-				<label for="sb-campus-life-toggle"><span>Campus Life</span></label>
-				<ul role="menu" aria-label="The Campus Life footer menu.">
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/housing/">Housing</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/dining/">Dining</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/athletics/">Athletics and Recreation</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/campus-life/health-and-wellness/">Health and Wellness</a></li>
-					<li role="menuitem"><a href="https://events.uri.edu">Events</a></li>
+				<h2 class="footer-link-heading">Campus Life</h2>
+				<ul>
+					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/housing/">Housing</a></li>
+					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/dining/">Dining</a></li>
+					<li><a href="https://<?php uri_modern_the_domain(); ?>/athletics/">Athletics and Recreation</a></li>
+					<li><a href="https://<?php uri_modern_the_domain(); ?>/campus-life/health-and-wellness/">Health and Wellness</a></li>
+					<li><a href="https://events.uri.edu">Events</a></li>
 				</ul>
 			</div>
 			<div id="sb-academics">
-				<input id="sb-academics-toggle" type="radio" name="storagebin" value="academics" role="presentation">
-				<label for="sb-academics-toggle"><span>Academics</span></label>
-				<ul role="menu" aria-label="The Academics footer menu.">
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain(); ?>/academics/">Undergraduate</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/graduate-school/">Graduate</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/advising/">Advising</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/library/">Libraries</a></li>
-					<li role="menuitem"><a href="https://<?php uri_modern_the_domain('web'); ?>/career/students/">Internships</a></li>
+				<h2 class="footer-link-heading">Academics</h2>
+				<ul>
+					<li><a href="https://<?php uri_modern_the_domain(); ?>/academics/">Undergraduate</a></li>
+					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/graduate-school/">Graduate</a></li>
+					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/advising/">Advising</a></li>
+					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/library/">Libraries</a></li>
+					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/career/students/">Internships</a></li>
 				</ul>
 			</div>
 		</div>
