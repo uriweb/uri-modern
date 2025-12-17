@@ -25,7 +25,7 @@
 
 <section aria-label="Quick Links" role="region">
 	<div id="actionbar-wrapper">
-		<div id="actionbar" role="menu">
+		<div id="actionbar">
 			<?php
 			// connect
 			$link = array(

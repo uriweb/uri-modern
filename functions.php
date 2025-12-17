@@ -551,7 +551,7 @@ function uri_modern_action_bar_link( $link ) {
 	if ( ! empty( $apply['class'] ) ) {
 		$atts .= ' class="' . esc_attr( $apply['class'] ) . '"';
 	}
-	return '<a href="' . esc_url( $apply['href'] ) . '" id="' . esc_attr( $apply['id'] ) . '" role="menuitem"><span role="presentation"' . $atts . '></span>' . wp_filter_post_kses( $apply['text'] ) . '</a>';
+	return '<a href="' . esc_url( $apply['href'] ) . '" id="' . esc_attr( $apply['id'] ) . '" ><span role="presentation"' . $atts . '></span>' . wp_filter_post_kses( $apply['text'] ) . '</a>';
 }
 
 /**
