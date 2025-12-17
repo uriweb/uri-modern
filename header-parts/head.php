@@ -5,6 +5,7 @@
  * This template is used by all header*.php templates and displays everything from <!DOCTYPE html> to <div id="page">
  *
  * @package uri-modern
+ * @todo move skip-link to header.php
  */
 
 ?>

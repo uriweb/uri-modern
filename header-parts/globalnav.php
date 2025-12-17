@@ -4,6 +4,7 @@
  * Use it by adding the shortcode [uri-modern-gn] to a customizer widget
  *
  * @package uri-modern
+ * @todo use button for mobile interaction instead of checkbox
  */
 
 ?>
