@@ -3,7 +3,6 @@
  * Template part for displaying the brandbar.
  *
  * @package uri-modern
- * @todo #brandbar should be <div>, not <header>
  * @todo #globalsearch currently cannot be focused; should be button, not checkbox
  * @todo #gateways currently cannot be focused; should be button, not checkbox
  */

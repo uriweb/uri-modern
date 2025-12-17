@@ -8,7 +8,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package uri-modern
- * @todo in #storagebins, remove inputs/labels and let lists stack on mobile
  */
 
 ?>

@@ -8,8 +8,6 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package uri-modern
- * @todo #masthead should be <header>
- * @todo #masthead should include skip-link
  */
 
 get_template_part('header-parts/head'); ?>
