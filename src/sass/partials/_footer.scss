@@ -193,15 +193,13 @@
     padding: 0;
     list-style: none;
     text-align: center;
+    display: flex;
 
     li {
 
-        display: inline;
 
         &:not(:first-child) {
-            padding-left: .5rem;
-            margin-left: .5rem;
-            border-left: 1px solid $midblue;
+            margin-left: 2rem;
         }
 
     }
@@ -308,7 +306,22 @@
     #legal-links {
         text-align: left;
         font-size: .8rem;
+
+         li {
+
+        display: inline;
+
+        &:not(:first-child) {
+            padding-left: 2rem;
+            margin-left: 2rem;
+            border-left: 1px solid $midblue;
+        }
+
     }
+        
+    }
+
+   
 
     #tagline {
         background: linear-gradient(to right, $midblue 50%, $lightblue 70%, $midblue);
