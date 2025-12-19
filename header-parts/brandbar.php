@@ -9,7 +9,7 @@
 
 ?>
 
-	<div id="brandbar" class="site-header">
+	<div id="brandbar" class="site-header" role="none">
 
 		<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island Home"></div>
 
@@ -25,9 +25,9 @@
 			</form>
 		</div>
 
-		<div id="globalbanner-wrapper">
-			<div id="globalbanner">
-				<a href="https://<?php uri_modern_the_domain(); ?>/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
+		<div id="globalbanner-wrapper" role="none">
+			<div id="globalbanner" role="none">
+				<a href="https://<?php uri_modern_the_domain(); ?>/" title="University of Rhode Island"><div id="identity">University of Rhode Island Home</div></a>
 
 				<div id="gateways">
 					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
