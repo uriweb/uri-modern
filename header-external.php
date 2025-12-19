@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The external landing page header for our theme
  *
@@ -9,19 +10,18 @@
  * @package uri-modern
  */
 
-get_template_part( 'header-parts/head' ); ?>
+get_template_part('header-parts/head'); ?>
 
-	<div id="masthead">
-		<?php get_template_part( 'header-parts/brandbar' ); ?>
-		<?php get_template_part( 'header-parts/widgetarea-banner' ); ?>
+<header id="masthead">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'uri' ); ?></a>
+	<?php get_template_part('header-parts/brandbar'); ?>
+	<?php get_template_part('header-parts/widgetarea-banner'); ?>
 
-		<header id="siteheader" aria-labelledby="siteidentity">
+	<div id="siteheader">
 
-			<?php get_template_part( 'header-parts/widgetarea-before-content' ); ?>
+		<?php get_template_part('header-parts/widgetarea-before-content'); ?>
 
-		</header>
 	</div>
-	
-	<div id="content" class="site-content">
-		
-	
+</header>
+
+<div id="content" class="site-content">
