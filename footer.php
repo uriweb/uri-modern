@@ -117,10 +117,10 @@
 			<?php
 			if (function_exists('uri_cl_shortcode_social')) { ?>
 				<ul class="cl-social light">
-					<li><a href="https://www.facebook.com/universityofri" class="cl-social-facebook" title="University Facebook">Facebook</a></li>
-					<li><a href="https://www.instagram.com/universityofri/" class="cl-social-instagram" title="University Instagram">Instagram</a></li>
-					<li><a href="https://twitter.com/universityofri" class="cl-social-twitter" title="University X">X</a></li>
-					<li><a href="https://www.youtube.com/user/UniversityOfRI" class="cl-social-youtube" title="University YouTube">YouTube</a></li>
+					<li><a href="https://www.facebook.com/universityofri" class="cl-social-facebook" title="URI Facebook">URI Facebook</a></li>
+					<li><a href="https://www.instagram.com/universityofri/" class="cl-social-instagram" title="URI Instagram">URI Instagram</a></li>
+					<li><a href="https://twitter.com/universityofri" class="cl-social-twitter" title="URI X">URI X</a></li>
+					<li><a href="https://www.youtube.com/user/UniversityOfRI" class="cl-social-youtube" title="URI YouTube">URI YouTube</a></li>
 				</ul>
 			<?php } ?>
 		</div>
