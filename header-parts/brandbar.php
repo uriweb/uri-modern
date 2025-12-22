@@ -3,13 +3,15 @@
  * Template part for displaying the brandbar.
  *
  * @package uri-modern
+ * @todo #globalsearch currently cannot be focused; should be button, not checkbox
+ * @todo #gateways currently cannot be focused; should be button, not checkbox
  */
 
 ?>
 
-	<header id="brandbar" class="site-header" role="banner">
+	<div id="brandbar" class="site-header" role="none">
 
-		<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island"></div>
+		<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island Home"></div>
 
 		<div id="globalsearch" role="search">
 			<input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
@@ -23,25 +25,27 @@
 			</form>
 		</div>
 
-		<div id="globalbanner-wrapper">
-			<div id="globalbanner">
-				<a href="https://<?php uri_modern_the_domain(); ?>/" title="University of Rhode Island"><div id="identity">University of Rhode Island</div></a>
+		<div id="globalbanner-wrapper" role="none">
+			<div id="globalbanner" role="none">
+				<a href="https://<?php uri_modern_the_domain(); ?>/" title="University of Rhode Island"><div id="identity">University of Rhode Island Home</div></a>
 
 				<div id="gateways">
 					<input type="checkbox" id="gateways-toggle" role="presentation" aria-label="Open the audience gateways menu when browsing on mobile">
 					<label for="gateways-toggle" id="gateways-label"><span><?php echo ( defined( 'URI_EASTER_EGGS' ) && URI_EASTER_EGGS === true ) ? '&#128017' : 'You'; ?></span></label>
-					<ul id="gateways-menu" role="menu">
-						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/future-students" role="menuitem">Future Students</a></li>
-						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/students" role="menuitem">Students</a></li>
-						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/faculty" role="menuitem">Faculty</a></li>
-						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/staff" role="menuitem">Staff</a></li>
-						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/families" role="menuitem">Parents and Families</a></li>
-						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/alumni" role="menuitem">Alumni</a></li>
-						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/community" role="menuitem">Community</a></li>
+						<nav id="gateways-menu" aria-label="Resources for Navigation">
+						<ul id="gateways-ul">
+						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/future-students">Future Students</a></li>
+						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/students">Students</a></li>
+						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/faculty">Faculty</a></li>
+						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/staff">Staff</a></li>
+						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/families">Parents and Families</a></li>
+						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/alumni">Alumni</a></li>
+						<li><a href="https://<?php uri_modern_the_domain(); ?>/gateway/community">Community</a></li>
 					</ul>
+			</nav>
 				</div>
 
 			</div>
 		</div>
 
-	</header><!-- #brandbar -->
+			</div><!-- #brandbar -->
