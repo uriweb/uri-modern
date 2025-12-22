@@ -67,13 +67,14 @@
 	</div>
 </section><!-- #actionbar-wrapper -->
 
+
 <footer id="globalfooter">
 	<div id="basement">
 		<div class="footer-links">
 			<div id="sb-university">
 				<h2 class="footer-link-heading">University</h2>
 				<ul>
-					<li><a href="https://<?php uri_modern_the_domain(); ?>/about/leadership/">Leadership</a></li>
+					<li><a href="https://<?php uri_modern_the_domain(); ?>/president/">Leadership</a></li>
 					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/diversity/">Diversity and Inclusion</a></li>
 					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/global/">Global</a></li>
 					<li><a href="https://<?php uri_modern_the_domain(); ?>/about/campuses/">Campuses</a></li>
