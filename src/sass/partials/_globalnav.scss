@@ -19,7 +19,15 @@
         top: $brandbarheight;
         background: $white;
         border-bottom: 1px solid $grey;
+        margin: 0 auto;
+
+        ul {
+            list-style: none;
+            margin: 0 auto;
+        }
     }
+
+
     
     a {
         display: inline-block;
