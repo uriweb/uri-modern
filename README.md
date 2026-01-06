@@ -9,32 +9,31 @@
 
 URI Modern is the primary WordPress theme for the University of Rhode Island, designed to unify the online brand and experience.
 
-## What's new in 4.0.3
+## What's new in 4.1.0
 
-* Updates EOE statement in footer
+* Updates navigation, footer, banner, contrast, and more for better accessibility.
+
+    - Add search role to search form in banner
+    - Use `<nav>` tags for You menu dropdown
+    - Use `<nav>` tags on global menu
+    - Make date component admin only
+    - Make metric component admin only
+    - Increase contrast of source text for tides widget in footer
+    - Put 'actionbar' links in region landmark
+    - Increase contrast for 'Continue Reading' button on category pages
+    - Increase contrast for feature-caption credit
+    - Hardcode social media in footer; edit accessible name
+    - Use $lightgold color on yellow notices
+    - Remove aria-labels from `<label>` elements in footer
+    - Remove menu role from links in footer--make them just links
+    - Remove menu role from actionbar 'Quick Links'--make them just links
+    - Consolidate banners into one under 'masthead'
+    - Move 'Skip to Content' link into header
+    - Enlarge touch target for legal links in footer
+    - Edit the external and internal header templates
+
 
 For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/275/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
-
-## What's new in 4.0.2
-
-* Updates footer links
-
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/273/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
-
-## What's new in 4.0.1
-
-* Adds support for `wp_body_open`
-* Adds php8 development tools
-
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/271/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
-
-## What's new in 4.0
-
-* Removes Google Tag Manager scripts
-
-> Note: Installing this version without another means of GTM or GA injection will cease all analytics tracking. Think carefully!
-
-For complete details, see the [commit history](https://github.com/uriweb/uri-modern/pull/268/commits) and the [issue tracker](https://github.com/uriweb/uri-modern/issues).
 
 
 ## How do I get set up?
@@ -57,7 +56,7 @@ composer require uriweb/uri-modern
 __Contributors:__ [bjcfuller](https://github.com/bjcfuller), [johnpennypacker](https://github.com/johnpennypacker), [alexandragauss](https://github.com/alexandragauss)  
 __Tags:__ themes  
 __Requires at least:__ 5.8  
-__Tested up to:__ 6.8.2  
-__Stable tag:__ 4.0.3  
+__Tested up to:__ 6.8.3  
+__Stable tag:__ 4.1.0  
 __License:__ GPL-3.0  
 __Licence URI:__ https://www.gnu.org/licenses/gpl-3.0.html
