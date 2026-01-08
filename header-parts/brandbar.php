@@ -14,22 +14,25 @@
 
 	<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island Home"></div>
 
-	<div id="globalsearch" role="search">
-		<input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
-		<label for="gsform-toggle" id="gsform"><span>Search</span></label>
-		<form id="gs" method="get" action="https://<?php uri_modern_the_domain(); ?>/search" name="global_general_search_form">
+	<div id="globalsearch">
+		<!--<input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
+		<label for="gsform-toggle" id="gsform"><span>Search</span></label> -->
+		<button id="gsform" aria-contorls="gs" aria-expanded="false" aria-label="Search URI"><span>Search</span></button>
+		<form id="gs" method="get" class="" action="https://<?php uri_modern_the_domain(); ?>/search" name="global_general_search_form">
+			<div role="search">
 			<input type="hidden" name="cx" value="<?php uri_modern_the_gs_id(); ?>" />
 			<input type="hidden" name="cof" value="FORID:11" />
-			<label id="gs-query-label" for="gs-query">Searchbox</label>
+			<label id="gs-query-label" for="gs-query">Search the URI website</label>
 			<input role="searchbox" name="q" id="gs-query" value="<?php print (isset($_GET['q'])) ? htmlentities($_GET['q']) : ''; ?>" type="text" placeholder="Search" />
 			<input type="submit" id="gs-submit" class="searchsubmit" name="searchsubmit" value="Search" />
+		</div>
 		</form>
 	</div>
 
 	<div id="globalbanner-wrapper" role="none">
 		<div id="globalbanner" role="none">
 			<a href="https://<?php uri_modern_the_domain(); ?>/" title="University of Rhode Island">
-				<div id="identity">University of Rhode Island Home</div>
+				<div id="identity"><span>University of Rhode Island Home</span></div>
 			</a>
 
 			<div id="gateways">
