@@ -9,21 +9,28 @@
 	window.addEventListener( 'load', initSearchBar, false );
 
 	function initSearchBar() {
-		const gstoggle = document.getElementById( 'gsform-toggle' ),
-			gsquery = document.getElementById( 'gs-query' );
+		const gstoggle = document.getElementById( 'gsform' ),
+			gsquery = document.getElementById( 'gs-query' ),
+			gs = document.getElementById( 'gs' );
 
-		if ( document.body.classList.contains( 'ln-search' ) ) {
+		/*if ( document.body.classList.contains( 'ln-search' ) ) {
 			gstoggle.checked = true;
-		}
+		} */
 
 		gstoggle.addEventListener(
-			'change',
-			function() {
-				if ( this.checked ) {
+			'click',
+			() => {
+				gstoggle.classList.toggle("gsform-show");
+				gstoggle.setAttribute('aria-expanded', "true");
+				gs.classList.toggle("gs-show");
+				gsquery.focus();
+
+				/*if ( this.checked ) {
 					gsquery.focus();
 				} else {
 					gsquery.blur();
 				}
+					*/
 			}
 		);
 	}
