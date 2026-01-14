@@ -232,7 +232,8 @@
         transition: all .1s ease-in-out;
     }
 
-    li a:hover {
+    li a:hover,
+    li a:focus {
         background: $blue;
         color: $white;
     }
@@ -289,7 +290,8 @@
 }
 
 .gateways-label:hover,
-.gateways-label:focus {
+.gateways-label:focus,
+.gateways-label:active {
     background-color: $link;
     cursor: pointer;
 }
