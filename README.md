@@ -12,6 +12,7 @@ URI Modern is the primary WordPress theme for the University of Rhode Island, de
 ## What's new in 4.1.1
 
 * Updates EOE statement in footer (this was previously changed in v4.0.3 but was inadvertenty reverted in v4.1)
+* Whitelists future Component Library Tooltip block for administrators
 
 ## New in 4.1.0
 
