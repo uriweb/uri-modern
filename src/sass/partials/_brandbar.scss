@@ -34,7 +34,7 @@
     pointer-events: none;
 }
 
-// show search box
+/* Show search box */
 .gs-show {
     height: 60px  !important;
     pointer-events: auto !important;
@@ -51,26 +51,7 @@
     border-bottom: 10px solid $link !important;
 }
 
-/*
-#gsform-toggle:checked {
-    &~#gs {
-        height: 60px;
-        pointer-events: auto;
-    }
-
-    &~#gsform {
-        top: 60px;
-        background-color: $link;
-        background-size: 50% auto;
-    }
-
-    &~#gsform:before {
-        top: -10px;
-        border-bottom: 10px solid $link;
-    }
-
-}
-    */
+// show search box
 
 #gs-query-label {
     position: absolute;
@@ -192,7 +173,7 @@
     display: none;
 }
 
-//whole nav
+/* You Nav */
 #gateways-menu {
     position: absolute;
     right: calc(#{$brandbarheight} + 1px);
@@ -203,9 +184,10 @@
         margin: 0;
     }
 }
-//end whole nav
+// You Nav
 
-//dropdown menu
+
+/* Dropdown You Nav */
 .you-dropdown {
     display: none;
     list-style-type: none;
@@ -244,40 +226,9 @@
     display: block;
 }
 
-// #gateways-dropdown
-
-/*
-#gateways-toggle {
-    //display: none;
-    display: block;
-    position: absolute;
-    right: calc(#{$brandbarheight} + 1px);
-    z-index: 9997;
-    height: $brandbarheight;
-    line-height: calc(#{$brandbarheight} + 1px);
-    padding: 0 .5rem;
-    font-size: .8rem;
-    font-weight: 600;
-    background-color: transparent;
-    transition: all .1s ease-in-out;
-    color: white;
-    border: none;
-}
-    
-
-#gateways-toggle:hover,
-#gateways-toggle:focus {
-    background-color: $link;
-    cursor: pointer;
-}
-    */
-
 .gateways-label {
     display: block;
-    //position: absolute;
     overflow: hidden;
-    //right: calc(#{$brandbarheight} + 1px);
-    //z-index: 9997;
     height: $brandbarheight;
     line-height: calc(#{$brandbarheight} + 1px);
     padding: 0 .5rem;
@@ -333,34 +284,6 @@
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
 }
-
-/*
-.gateways-toggle-checked {
-    & ~ .gateways-label {
-        background-color: $link;
-    }
-    & ~ .gateways-label:after {
-        content: '';
-        display: block;
-        z-index: 9997;
-        position: absolute;
-        top: $brandbarheight;
-        left: calc(50% - 12px);
-        width: 0;
-        height: 0;
-        border-top: 10px solid $link;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-    }
-    & ~ .gateways-label span:after {
-        transform: rotate(0);
-    }
-    & ~ .gateways-menu {
-        display: block;
-    }
-} // #gateways-toggle:checked
-
-*/
 
 
 @media all and (min-width: 370px) {
