@@ -135,7 +135,7 @@
 			<li><a href="https://<?php uri_modern_the_domain( 'www' ); ?>/wordpress/">Web Support</a></li>
 		</ul>
 		<p>Copyright &copy; <?php echo date('Y'); ?> <a class="subtle" href="http://<?php uri_modern_the_domain(); ?>/">University of Rhode Island</a> | University of Rhode Island, Kingston, RI 02881, USA | 1.401.874.1000</p>
-		<p>URI is an equal opportunity employer committed to the principles of affirmative action.</p>
+		<p>The University of Rhode Island is an equal opportunity employer.</p>
 	</div>
 </footer><!-- #globalfooter -->
 </div><!-- #page -->
