@@ -29,10 +29,10 @@
 		</form>
 	</div>
 
-	<div id="globalbanner-wrapper" role="none">
-		<div id="globalbanner" role="none">
-			<a href="https://<?php uri_modern_the_domain(); ?>/" title="University of Rhode Island">
-				<div id="identity"><span>University of Rhode Island Home</span></div>
+	<div id="globalbanner-wrapper">
+		<div id="globalbanner">
+			<a href="https://<?php uri_modern_the_domain(); ?>/" title="University of Rhode Island Home">
+				<div id="identity"><span>University of Rhode Island</span></div>
 			</a>
 
 			<div id="gateways">
