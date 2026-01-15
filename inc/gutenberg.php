@@ -91,6 +91,7 @@ function uri_modern_allowed_blocks($allowed_blocks, $post)
 			'uri-cl/abstract', // in beta
 			'uri-cl/date',
 			'uri-cl/metric',
+			'uri-cl/tooltip',
 			// ===== URI - MISC =====
 			'uri/dynamic-metrics', // in beta
 		);
