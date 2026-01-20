@@ -15,9 +15,7 @@
 	<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island Home"></div>
 
 	<div id="globalsearch">
-		<!--<input type="checkbox" id="gsform-toggle" role="presentation" aria-label="Toggle visibility of the search box.">
-		<label for="gsform-toggle" id="gsform"><span>Search</span></label> -->
-		<button id="gsform" aria-contorls="gs" aria-expanded="false" aria-label="Search URI"><span>Search</span></button>
+		<button id="gsform" aria-controls="gs" aria-expanded="false" aria-label="Search URI"><span>Search</span></button>
 		<form id="gs" method="get" class="" action="https://<?php uri_modern_the_domain(); ?>/search" name="global_general_search_form">
 			<div role="search">
 			<input type="hidden" name="cx" value="<?php uri_modern_the_gs_id(); ?>" />
