@@ -13,24 +13,20 @@
 			gsquery = document.getElementById( 'gs-query' ),
 			gs = document.getElementById( 'gs' );
 
-		/*if ( document.body.classList.contains( 'ln-search' ) ) {
-			gstoggle.checked = true;
-		} */
 
 		gstoggle.addEventListener(
 			'click',
 			() => {
-				gstoggle.classList.toggle("gsform-show");
-				gstoggle.setAttribute('aria-expanded', "true");
-				gs.classList.toggle("gs-show");
+				gstoggle.classList.toggle( 'gsform-show' );
+				gs.classList.toggle( 'gs-show' );
 				gsquery.focus();
 
-				/*if ( this.checked ) {
-					gsquery.focus();
-				} else {
-					gsquery.blur();
+				if ( gstoggle.classList.contains( 'gsform-show' ) ) {
+					gstoggle.setAttribute( 'aria-expanded', "true" );
 				}
-					*/
+				else {
+					gstoggle.setAttribute( 'aria-expanded', "false" );
+				}
 			}
 		);
 	}
