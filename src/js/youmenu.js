@@ -17,12 +17,11 @@
                 gateways.classList.toggle( 'show-dropdown' );
                 input.classList.toggle( 'gateways-toggle-checked' );
 
-                if ( gateways.classList.contains( 'show-dropdown' )) {
+                if ( gateways.classList.contains( 'show-dropdown' ) ) {
                     input.setAttribute( 'aria-expanded', "true" );
                 } else {
                     input.setAttribute( 'aria-expanded', "false" );
                 }
-
             },
             false
         );

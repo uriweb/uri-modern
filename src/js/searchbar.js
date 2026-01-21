@@ -23,8 +23,7 @@
 
 				if ( gstoggle.classList.contains( 'gsform-show' ) ) {
 					gstoggle.setAttribute( 'aria-expanded', "true" );
-				}
-				else {
+				} else {
 					gstoggle.setAttribute( 'aria-expanded', "false" );
 				}
 			}
