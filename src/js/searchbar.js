@@ -9,20 +9,21 @@
 	window.addEventListener( 'load', initSearchBar, false );
 
 	function initSearchBar() {
-		const gstoggle = document.getElementById( 'gsform-toggle' ),
-			gsquery = document.getElementById( 'gs-query' );
-
-		if ( document.body.classList.contains( 'ln-search' ) ) {
-			gstoggle.checked = true;
-		}
+		const gstoggle = document.getElementById( 'gsform' ),
+			gsquery = document.getElementById( 'gs-query' ),
+			gs = document.getElementById( 'gs' );
 
 		gstoggle.addEventListener(
-			'change',
-			function() {
-				if ( this.checked ) {
-					gsquery.focus();
+			'click',
+			() => {
+				gstoggle.classList.toggle( 'gsform-show' );
+				gs.classList.toggle( 'gs-show' );
+				gsquery.focus();
+
+				if ( gstoggle.classList.contains( 'gsform-show' ) ) {
+					gstoggle.setAttribute( 'aria-expanded', "true" );
 				} else {
-					gsquery.blur();
+					gstoggle.setAttribute( 'aria-expanded', "false" );
 				}
 			}
 		);
