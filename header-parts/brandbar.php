@@ -7,7 +7,6 @@
  * @todo #globalsearch currently cannot be focused; should be button, not checkbox
  * @todo #gateways currently cannot be focused; should be button, not checkbox
  */
-
 ?>
 
 <div id="brandbar" class="site-header" role="none">
