@@ -13,7 +13,6 @@
 			gsquery = document.getElementById( 'gs-query' ),
 			gs = document.getElementById( 'gs' );
 
-
 		gstoggle.addEventListener(
 			'click',
 			() => {
