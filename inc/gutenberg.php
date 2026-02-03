@@ -41,8 +41,6 @@ function uri_modern_allowed_blocks($allowed_blocks, $post)
 		'core/gallery',
 		'core/list',
 		'core/list-item',
-		'core/details',
-		'core/accordion',
 		// ===== CORE - FORMATTING =====
 		'core/table',
 		'core/freeform', // Classic
