@@ -9,13 +9,21 @@
 
 URI Modern is the primary WordPress theme for the University of Rhode Island, designed to unify the online brand and experience.
 
+## What's new in 4.1.4
+
+* Restructures the mobile global main menu into a button with a dropdown via Javascript
+* Removes stretchy paragraph and heading block variations for WP 6.9.x
+* Reveals search submit button for screenreaders
+* Makes Promo component admin only
+* Removes HTML editing access from non-admins
+
 ## What's new in 4.1.3
 
 * Fixes cache busting when a child theme is active
 
 ## What's new in 4.1.2
 
- * Enhances the accessibility of the You navigation menu and Search button 
+* Enhances the accessibility of the You navigation menu and Search button 
 
 ## What's new in 4.1.1
 
@@ -65,6 +73,6 @@ composer require uriweb/uri-modern
 __Contributors:__ [bjcfuller](https://github.com/bjcfuller), [alexandragauss](https://github.com/alexandragauss), [johnpennypacker](https://github.com/johnpennypacker)  
 __Tags:__ themes  
 __Requires at least:__ 5.8  
-__Tested up to:__ 6.8.3  
-__Stable tag:__ 4.1.3  
+__Tested up to:__ 6.9.1  
+__Stable tag:__ 4.1.4  
 __License:__ [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html)
