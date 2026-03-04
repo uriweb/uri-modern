@@ -8,7 +8,7 @@
     position: relative;
 	z-index: 9980;
     
-    #globalnav-menu {
+    .globalnav-dropdown {
         display: none;
         width: 100%;
         list-style: none;
@@ -42,14 +42,12 @@
     a:focus {
         color: $link;
     }
-    
-    #globalnav-toggle {
-        display: none;
-    }
 
     #globalnav-label {
         display: block;
         text-align: center;
+        margin: auto;
+        border: none;
         height: $brandbarheight;
         line-height: $brandbarheight;
         background: $white;
@@ -58,6 +56,7 @@
         font-weight: 600;
         font-family: $type-sans;
         transition: all .1s ease-in-out;
+        width: 100%;
     }
 
     #globalnav-label:hover,
@@ -72,7 +71,7 @@
             
     }
 
-    #globalnav-label span {
+    .globalnav-button span {
         display: inline-block;
         width: 0;
         height: 9px;
@@ -88,18 +87,18 @@
         transition: transform .2s ease-in-out;
     }
 
-    #globalnav-toggle:checked {
-        & ~ #globalnav-label {
-            background-color: $link;
-            color: $white;
-        }
-        & ~ #globalnav-label span {
-            background-position: 0 -18px;
-            transform: rotate(0);
-        }
+    .globalnav-label-checked span {
+        background-position: 0 -18px;
+        transform: rotate(0);
+    }
+        
+
+     .globalnav-label-checked {
+ 
         & ~ #globalnav-menu {
             display: block;
         }
+            
     }
     
 }

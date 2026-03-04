@@ -773,3 +773,11 @@ add_filter(
 	10,
 	2
 );
+
+// Allow only webadmins access to 'edit as html' and code editor
+add_filter( 'block_editor_settings_all', function( $settings ) {
+    if ( ! current_user_can( 'manage_options' ) ) { 
+        $settings['codeEditingEnabled'] = false;
+    }
+    return $settings;
+} );
