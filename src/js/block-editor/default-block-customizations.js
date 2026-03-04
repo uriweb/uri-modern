@@ -16,8 +16,7 @@
 			wp.blocks.unregisterBlockStyle( 'core/separator', 'wide' );
 			wp.blocks.unregisterBlockStyle( 'core/separator', 'dots' );
 			wp.blocks.unregisterBlockVariation( 'core/heading', 'stretchy-heading' );
-			wp.blocks.unregisterBlockVariation('core/paragraph', 'stretchy-paragraph');
-
+			wp.blocks.unregisterBlockVariation( 'core/paragraph', 'stretchy-paragraph' );
 
 			// Possible alternatives
 			// wp.blocks.unregisterBlockType( 'core/button' );

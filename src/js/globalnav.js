@@ -8,18 +8,14 @@
     window.addEventListener( 'load', initMainMenuDropdown, false );
 
     function initMainMenuDropdown() {
-        
         const mmbutton = document.getElementById( 'globalnav-label' );
-      
-      const mmdropdown = document.getElementById( 'globalnav-menu' );
+        const mmdropdown = document.getElementById( 'globalnav-menu' );
 
         mmbutton.addEventListener(
             'click',
             () => {
                 mmbutton.classList.toggle( 'globalnav-label-checked' );
-              console.log(mmbutton.classList);
-              mmdropdown.classList.toggle('globalnav-show-dropdown');
-              console.log(mmdropdown.classList);
+              mmdropdown.classList.toggle( 'globalnav-show-dropdown' );
 
                 if ( mmbutton.classList.contains( 'globalnav-label-checked' ) ) {
                     mmbutton.setAttribute( 'aria-expanded', "true" );
