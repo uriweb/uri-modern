@@ -124,6 +124,18 @@ p:empty {
     display: none;
 }
 
+p a {
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    text-decoration-color: $midgrey;
+    text-decoration-thickness: 1px;
+}
+
+p a:hover {
+    text-decoration-thickness: 2px;
+
+}
+
 a {
     color: $link;
     transition: color .1s ease-in-out;
