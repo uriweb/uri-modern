@@ -126,14 +126,16 @@ p:empty {
 
 p a {
     text-decoration: underline;
-    text-underline-offset: 7px;
-    text-decoration-color: $midgrey;
-    text-decoration-thickness: 1px;
+    text-underline-offset: .375em;
+    //text-decoration-color: $link;
+    //text-decoration-color: $midgrey;
+    text-decoration-color: black;
+    text-decoration-thickness: .01em;
 }
 
 p a:hover {
-    text-decoration-thickness: 2px;
-
+    text-decoration-thickness: .09em;
+    text-decoration-color: $midgrey;
 }
 
 a {
