@@ -140,12 +140,12 @@ After you've written some code and are thinking about [submitting a pull request
 You'll need to install some prerequisites first:
 
 * [Composer](https://getcomposer.org), which is used to install PHP CodeSniffer
-* [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer), which is used to test code locally
+* [PHP CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer), which is used to test code locally
 * [WordPress Coding Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards#installation), a collection of PHP CodeSniffer rules for WordPress
 
 #### Install Composer
 
-There are a lot of PHP dependency managers out there, so if you have one you like or are already using, feel free to [install PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer#installation) that way.
+There are a lot of PHP dependency managers out there, so if you have one you like or are already using, feel free to [install PHP CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer#installation) that way.
 
 For this guide, we'll use Composer.  Here's how to [install it](https://getcomposer.org/download/).
 
@@ -158,7 +158,7 @@ $ mv composer.phar /usr/local/bin/composer
 
 #### Install PHP CodeSniffer
 
-Install PHP CodeSniffer using their [instructions for Composer](https://github.com/squizlabs/PHP_CodeSniffer#composer).
+Install PHP CodeSniffer using their [instructions for Composer](https://github.com/PHPCSStandards/PHP_CodeSniffer#composer).
 
 Essentially, this involves running:
 
@@ -246,7 +246,7 @@ To use the custom ruleset included in URI Modern, set the `--standard` arguement
 $ phpcs --standard=.codesniffer.ruleset.xml some_file.php
 ```
 
-You can check out all the PHP CodeSniffer [config options](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Configuration-Options) on their [wiki](https://github.com/squizlabs/PHP_CodeSniffer/wiki).
+You can check out all the PHP CodeSniffer [config options](https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Configuration-Options) on their [wiki](https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki).
 
 ### Git Model
 
