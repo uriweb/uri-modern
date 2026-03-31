@@ -125,17 +125,22 @@ p:empty {
 }
 
 p a {
+    
     text-decoration: underline;
-    text-underline-offset: .375em;
+    text-underline-offset: .35em;
     //text-decoration-color: $link;
-    //text-decoration-color: $midgrey;
-    text-decoration-color: black;
+    text-decoration-color: $midgrey;
+    //text-decoration-color: black;
     text-decoration-thickness: .01em;
+    
 }
 
-p a:hover {
-    text-decoration-thickness: .09em;
-    text-decoration-color: $midgrey;
+p a:hover,
+p a:focus {
+    text-decoration: underline;
+    text-decoration-thickness: .099em;
+    text-decoration-color: black;
+    text-underline-offset: .35em;
 }
 
 a {
