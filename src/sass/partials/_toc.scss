@@ -11,6 +11,12 @@ ul.toc {
 	border-top: 1px solid #ddd;
 }
 
+ul.toc a:hover {
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	text-decoration-color: $midgrey;
+}
+
 ul.toc:before {
 	position: relative;
 	display: block;
