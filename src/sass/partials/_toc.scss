@@ -1,0 +1,55 @@
+/* ==============================
+   TABLE OF CONTENTS
+   ============================== */
+
+ul.toc {
+	list-style: none;
+	margin: 2rem 0 0;
+	padding: 2rem 0 0;
+	font-family: "Hind", "Arial", sans-serif;
+	font-size: 1rem;
+	border-top: 1px solid #ddd;
+}
+
+ul.toc a:hover {
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	text-decoration-color: $midgrey;
+}
+
+ul.toc:before {
+	position: relative;
+	display: block;
+	content: "Topics";
+	font-family: "Lato", "Hind", "Arial", sans-serif;
+	font-weight: 900;
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+}
+
+ul.toc ul {
+	list-style: none;
+	margin: .5rem 0 0 1.8rem;
+}
+
+ul.toc ul li {
+	position: relative;
+}
+
+ul.toc ul li:before {
+	position: absolute;
+	display: block;
+	content: "—";
+	top: 0;
+	left: -1.2rem;
+	color: #aaa;
+}
+
+@media screen and (min-width:600px) {
+	ul.toc {
+		margin: 0;
+		padding: 0.5rem 0 0 2rem;
+		border-top: none;
+		border-left: 1px solid #ddd;
+	}
+}
