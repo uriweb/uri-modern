@@ -82,5 +82,5 @@ __Contributors:__ [bjcfuller](https://github.com/bjcfuller), [alexandragauss](ht
 __Tags:__ themes  
 __Requires at least:__ 5.8  
 __Tested up to:__ 6.9.4  
-__Stable tag:__ 4.1.4  
+__Stable tag:__ 4.1.5  
 __License:__ [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.html)
