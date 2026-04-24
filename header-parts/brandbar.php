@@ -14,14 +14,14 @@
 	<div id="identity-print"><img src="<?php echo get_template_directory_uri() . '/images/logo-print.png'; ?>" width="120px" alt="University of Rhode Island Home"></div>
 
 	<div id="globalsearch">
-		<button id="gsform" aria-controls="gs" aria-expanded="false" aria-label="Search URI"><span>Search</span></button>
+		<button id="gsform" aria-controls="gs" aria-expanded="false" aria-label="Reveal Search Bar"><span>Search</span></button>
 		<form id="gs" method="get" class="" action="https://<?php uri_modern_the_domain(); ?>/search" name="global_general_search_form">
 			<div role="search">
 			<input type="hidden" name="cx" value="<?php uri_modern_the_gs_id(); ?>" />
 			<input type="hidden" name="cof" value="FORID:11" />
 			<label id="gs-query-label" for="gs-query">Search the URI website</label>
 			<input role="searchbox" name="q" id="gs-query" value="<?php print (isset($_GET['q'])) ? htmlentities($_GET['q']) : ''; ?>" type="text" placeholder="Search" />
-			<input type="submit" id="gs-submit" class="searchsubmit" name="searchsubmit" value="Search" />
+			<input type="submit" id="gs-submit" class="searchsubmit" name="searchsubmit" value="Submit Search" />
 		</div>
 		</form>
 	</div>

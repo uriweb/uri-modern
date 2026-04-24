@@ -7,7 +7,7 @@ html {
     font-weight: 400;
     font-size: 16px;
     color: $black;
-	-webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -85,8 +85,8 @@ h6 {
 }
 
 .type-mono {
-	font-family: $type-mono;
-	font-size: .95rem;
+    font-family: $type-mono;
+    font-size: .95rem;
 }
 
 .no-wrap {
@@ -113,15 +113,31 @@ p {
 
     max-width: 100%;
 
-	p,
-	li {
-		max-width: 100%;
-	}
+    p,
+    li {
+        max-width: 100%;
+    }
 
 }
 
 p:empty {
     display: none;
+}
+
+p a {
+    color: $link;
+    text-decoration: underline;
+    text-underline-offset: .3em;
+    text-decoration-color: $midgrey;
+    text-decoration-thickness: .01em;
+}
+
+p a:hover,
+p a:focus {
+    color: $linkhover;
+    text-decoration: underline;
+    text-decoration-color: $link;
+    text-underline-offset: .3em;
 }
 
 a {
@@ -141,9 +157,10 @@ hr {
     margin: 2rem 0;
 }
 
-abbr, acronym {
-	border-bottom: 1px dotted $link;
-	cursor: help;
+abbr,
+acronym {
+    border-bottom: 1px dotted $link;
+    cursor: help;
 }
 
 sup {
@@ -209,60 +226,61 @@ li {
 }
 
 blockquote {
-	font-style: italic;
-	padding: 1rem 2rem;
+    font-style: italic;
+    padding: 1rem 2rem;
 }
 
 blockquote cite {
-	color: $darkgrey;
-	display: block;
-	font-size: .8rem;
-	text-align: right;
-	text-transform: uppercase;
+    color: $darkgrey;
+    display: block;
+    font-size: .8rem;
+    text-align: right;
+    text-transform: uppercase;
 }
 
 blockquote cite:before {
-	content: ' — ';
+    content: ' — ';
 }
 
 .pullquote {
-	width: 100%;
-	max-width: 400px;
-	border-top: 10px solid $accentblue;
-	margin: 2rem auto 0;
-	box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    border-top: 10px solid $accentblue;
+    margin: 2rem auto 0;
+    box-sizing: border-box;
 }
+
 .pullquote cite {
-	font-family: $type-sans;
-	text-align: left;
-	margin-top: 1rem;
-	max-width: 300px;
-	position: relative;
-	padding-top: .5rem;
+    font-family: $type-sans;
+    text-align: left;
+    margin-top: 1rem;
+    max-width: 300px;
+    position: relative;
+    padding-top: .5rem;
 }
 
 .pullquote cite:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: block;
-	width: 40px;
-	height: 1px;
-	background: $grey;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: $grey;
 }
 
 @media all and (min-width: $break2) {
-	.pullquote {
-		width: 400px;
-		float: right;
-		padding: 1rem 0;
-		margin: 1rem 0 1rem 3rem;
-	}
+    .pullquote {
+        width: 400px;
+        float: right;
+        padding: 1rem 0;
+        margin: 1rem 0 1rem 3rem;
+    }
 }
 
 .localist-widget-hl {
-	overflow: auto;
+    overflow: auto;
 }
 
 
@@ -286,41 +304,53 @@ blockquote cite:before {
 }
 
 @media print {
-	html{
-		font-size: 14px;
-	}
-	p {
-		max-width: 100%;
-	}
+    html {
+        font-size: 14px;
+    }
+
+    p {
+        max-width: 100%;
+    }
 }
 
 
 /* FEATURES */
 
 .feature-caption {
-	font-size: .9rem;
-	color: #555;
-	padding: 0 0 1rem;
-	max-width: 360px;
-	line-height: 125%;
-	margin-bottom: 2rem;
+    font-size: .9rem;
+    color: #555;
+    padding: 0 0 1rem;
+    max-width: 360px;
+    line-height: 125%;
+    margin-bottom: 2rem;
 }
 
 .feature-caption:after {
-	display: block;
-	content: '';
-	width: 100px;
-	height: 1px;
-	background: #ccc;
-	margin-top: 1rem;
+    display: block;
+    content: '';
+    width: 100px;
+    height: 1px;
+    background: #ccc;
+    margin-top: 1rem;
 }
 
 .feature-caption p {
-	margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 .feature-caption .credit {
-	color: #555;
-	font-size: .8rem;
-	margin: .5rem 0 1rem;
+    color: #555;
+    font-size: .8rem;
+    margin: .5rem 0 1rem;
+}
+
+/* FOR SCREENREADERS ONLY */
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
