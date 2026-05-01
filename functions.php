@@ -314,8 +314,8 @@ function uri_modern_widgets_init() {
 			'name'          => esc_html__( 'After Content', 'uri' ),
 			'id'            => 'after-content',
 			'description'   => esc_html__( 'Widgets here appear after content and above the footer.', 'uri' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)

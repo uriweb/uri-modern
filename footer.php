@@ -15,11 +15,11 @@
 </div><!-- #content -->
 
 <?php if (is_active_sidebar('after-content')) : ?>
-	<div id="region-after-content" class="region-after-content">
+	<section id="region-after-content" class="region-after-content" aria-label="Footer Widget">
 		<div class="widgets content-width">
 			<?php dynamic_sidebar('after-content'); ?>
 		</div>
-	</div><!-- #region-after-content -->
+</section><!-- #region-after-content -->
 <?php endif; ?>
 
 <section aria-label="Quick Links" role="region">
