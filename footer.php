@@ -98,7 +98,7 @@
 					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/graduate-school/">Graduate</a></li>
 					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/advising/">Advising</a></li>
 					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/library/">Libraries</a></li>
-					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/career/students/">Internships</a></li>
+					<li><a href="https://career.uri.edu/">Internships</a></li>
 				</ul>
 			</div>
 		</div>
