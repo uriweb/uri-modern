@@ -15,11 +15,11 @@
 </div><!-- #content -->
 
 <?php if (is_active_sidebar('after-content')) : ?>
-	<div id="region-after-content" class="region-after-content">
+	<section id="region-after-content" class="region-after-content" aria-label="Footer Widget">
 		<div class="widgets content-width">
 			<?php dynamic_sidebar('after-content'); ?>
 		</div>
-	</div><!-- #region-after-content -->
+</section><!-- #region-after-content -->
 <?php endif; ?>
 
 <section aria-label="Quick Links" role="region">
@@ -98,7 +98,7 @@
 					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/graduate-school/">Graduate</a></li>
 					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/advising/">Advising</a></li>
 					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/library/">Libraries</a></li>
-					<li><a href="https://<?php uri_modern_the_domain('web'); ?>/career/students/">Internships</a></li>
+					<li><a href="https://career.uri.edu/">Internships</a></li>
 				</ul>
 			</div>
 		</div>

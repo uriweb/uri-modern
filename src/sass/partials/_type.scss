@@ -124,7 +124,8 @@ p:empty {
     display: none;
 }
 
-p a {
+p a,
+.wp-block-list li a {
     color: $link;
     text-decoration: underline;
     text-underline-offset: .3em;
@@ -133,7 +134,9 @@ p a {
 }
 
 p a:hover,
-p a:focus {
+p a:focus,
+.wp-block-list li a:hover,
+.wp-block-list li a:focus {
     color: $linkhover;
     text-decoration: underline;
     text-decoration-color: $link;
