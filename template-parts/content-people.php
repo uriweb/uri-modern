@@ -18,8 +18,24 @@
 			<?php
 				get_template_part( 'template-parts/featured-image' );
 			?>
-			
+
+			<?php
+			// Check if there are any people-list items 
+			$field_names = ['peopletitle', 'peopledepartment', 'peoplephone', 'peoplefax', 'peopleemail', 'peoplemail', 'peopleurl', 'peoplegooglescholar', 'peopleresearchgate', 'peopleacceptingstudents'];
+
+			$people_list_items = [];
+
+			foreach ($field_names as $field_name) {
+				if ( uri_modern_get_field( $field_name ) ) {
+				$people_list_items[] = $field_name;
+				}
+			}
+
+			if ( $people_list_items ) {
+			?>
 			<ul class="people-list">
+				<?php } ?>
+			
 				<?php
 				if ( uri_modern_get_field( 'peopletitle' ) ) :
 ?>
@@ -69,8 +85,12 @@
 ?>
 <li class="people-acceptingstudents"><strong>Accepting Students:</strong> <?php the_field( 'peopleacceptingstudents' ); ?></li><?php endif; ?>
 
+<?php
+if ( $people_list_items ) {
+			?>
+			</ul>
+				<?php } ?>
 
-</ul>
 			
 			<?php
 				the_content();
