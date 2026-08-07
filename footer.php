@@ -37,7 +37,7 @@
 
 			// apply
 			$link = array(
-				'href' => 'https://' . uri_modern_get_the_domain() . '/apply',
+				'href' => 'https://' . uri_modern_get_the_domain() . '/admission',
 				'id' => 'action-apply',
 				'text' => 'Apply',
 			);
