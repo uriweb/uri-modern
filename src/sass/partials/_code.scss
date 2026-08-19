@@ -483,16 +483,20 @@ a.code {
 
         padding: .5rem .2rem !important;
         font-size: 10px !important;
-        color: #aaa !important;
         background: none !important;
+        color: #000000;
 
         a {
 
-            color: #aaa !important;
+            text-decoration: underline;
+            color: #000000;
+            text-underline-offset: 2px;
 
             &:hover,
             &:focus {
-                color: #666 !important;
+                color: $link !important;
+                text-decoration: underline $link;
+                text-underline-offset: 2px;
             }
 
         } // a
